@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<dataset>
+    <widget id="1"
+           type="Text"
+           desc="text Box"/>
+</dataset>

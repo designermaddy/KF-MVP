@@ -1,0 +1,58 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.6.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+	<context:component-scan base-package="com.kornferry" />
+	<mvc:annotation-driven />
+	
+<!-- 	<context:property-placeholder location="classpath:/spring/config/properties/dbproperties.properties" system-properties-mode="OVERRIDE"/>
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
+          p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}"
+          p:username="${jdbc.username}" p:password="${jdbc.password}"/>
+          <tx:annotation-driven/>
+          <beans profile="jpa,spring-data-jpa">
+        JPA EntityManagerFactory
+        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+              p:dataSource-ref="dataSource" autowire="byName">
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+                      p:database="${jpa.database}" p:showSql="${jpa.showSql}"/>
+                the 'database' parameter refers to the database dialect being used.
+                	By default, Hibernate will use a 'HSQL' dialect because 'jpa.database' has been set to 'HSQL'
+                	inside file spring/data-access.properties
+
+                
+            </property>
+            gDickens: BOTH Persistence Unit and Packages to Scan are NOT compatible, persistenceUnit will win
+            <property name="packagesToScan" value="com.kornferry.dataaccess"/>
+        </bean>
+
+        Transaction manager for a single JPA EntityManagerFactory (alternative to JTA)
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+              p:entityManagerFactory-ref="entityManagerFactory"/>
+
+        
+            Post-processor to perform exception translation on @Repository classes (from native
+            exceptions such as JPA PersistenceExceptions to Spring's DataAccessException hierarchy).
+       
+        <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+        </beans>
+        <beans profile="jpa">
+        
+            Loads JPA beans
+            Will automatically be transactional due to @Transactional.
+            EntityManager will be auto-injected due to @PersistenceContext.
+            PersistenceExceptions will be auto-translated due to @Repository.
+       
+        <context:component-scan base-package="com.kornferry"/>
+    </beans>
+     -->
+	
+ </beans>
