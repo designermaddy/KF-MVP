@@ -1,0 +1,32 @@
+<div class="container-fluid clearfix">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_ViewRequisition.html'"></div>
+        </div>
+        <div id="pdfTabs">
+<uib-tabset active="active">
+    <uib-tab index="0" heading="Job Profile">
+        <div class="container-fluid clearfix" ng-controller="pdfLinkController">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div ng-include="'partial/_PdfList.html'"></div>
+                    </div>
+                    <div class="col-md-9">
+                        <div ng-include="'partial/_PdfViewer.html'"></div>
+                    </div>
+                </div>
+        </div>
+    </uib-tab>
+    <uib-tab index='1' heading="Team"> Team </uib-tab>
+    <uib-tab index='2' heading="Documentation"> Documentation </uib-tab>
+     <uib-tab index='3' heading="Search Results"><div ng-include="'partial/_SearchResults.html'"></div>
+    </uib-tab>
+    
+    <uib-tab index='4' heading="Candidate List"> Candidate List </uib-tab>
+    <uib-tab index='5' heading="Client Calibration"> Client Calibration </uib-tab>
+    <uib-tab index='6' heading="History"> History </uib-tab>
+    <uib-tab index='7' heading="Market Insights"> Market Insights </uib-tab>
+</uib-tabset>
+</div>
+    </div>
+</div>

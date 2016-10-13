@@ -1,0 +1,48 @@
+<div class="DataListBox" ng-controller="engagementTableController" >
+    <div class="Heading2">
+        <h2>Search Results <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></h2> </div>
+    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="table table-striped">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th st-toggle-column st-sort="EngagementNumber">Engagement</th>
+                    <th st-toggle-column st-sort="Client">Client Name</th>
+                    <th st-toggle-column st-sort="Industry">Industry</th>
+                    <th st-toggle-column st-sort="Type">Type</th>
+                    <th st-toggle-column st-sort="RequsitionCount">Requsitions</th>
+                    <th st-toggle-column st-sort="DaysLeft">Days Left</th>
+                    <th st-toggle-column st-sort="Status">Status</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input st-search="EngagementNumber" placeholder="search for EngagementNumber" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="Client" placeholder="search for Client" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="Industry" placeholder="search for Industry" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="Type" placeholder="search for Type" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="RequsitionCount" placeholder="search for RequsitionCount" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="DaysLeft" placeholder="search for DaysLeft" class="input-sm form-control" type="search" /> </th>
+                    <th>
+                        <input st-search="Status" placeholder="search for Status" class="input-sm form-control" type="search" /> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr st-select-row="row" ng-repeat="engagementListDtls in filtered = engagementListDtls.engagementList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                    <td st-toggle-item>
+                        <div class="TblRequisition"><a href="#RequisitionDetails">{{engagementListDtls.EngagementNumber}} <span>{{engagementListDtls.Engagement}}</span></a></div>
+                    </td>
+                    <td st-toggle-item>{{engagementListDtls.Client}}</td>
+                    <td st-toggle-item>{{engagementListDtls.Industry}}</td>
+                    <td st-toggle-item>{{engagementListDtls.Type}}</td>
+                    <td st-toggle-item>{{engagementListDtls.RequsitionCount}}</td>
+                    <td st-toggle-item>{{engagementListDtls.DaysLeft }}</td>
+                    <td st-toggle-item>{{engagementListDtls.Status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

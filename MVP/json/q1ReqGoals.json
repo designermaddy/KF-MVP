@@ -1,0 +1,19 @@
+[
+              { 
+              RequisitionNumber: '1029102', 
+              Requisition:'Suppliy Chain Director',
+             RequisitionDate:'08/01/2016 - 09/01/2016', 
+             Resources:'10',
+              Engagement: 'Paypal IT',
+               DaysLeft: '1', Left:'Day', Sourced:'60', Screened: '45',
+        Interviewed:'30', Offered:'15', Hired:'5'},
+              { RequisitionNumber: 'PL101', Requisition:'Director Human Resource', RequisitionDate:'08/01/2016 - 09/01/2016', Resources:'15', Engagement: 'IBM Director Human Resource', DaysLeft: '5' , Left:'Days', Sourced:'75', Screened: '50', Interviewed:'30', Offered:'15', Hired:'10'},
+              {RequisitionNumber: '1029105', Requisition:'Technical Architect', RequisitionDate:'08/01/2016 - 09/02/2016', Resources:'7',  Engagement: 'Paypal Technical Architect', DaysLeft: '8' , Left:'Days', Sourced:'35', Screened: '33',
+        Interviewed:'30', Offered:'15', Hired:'4'},
+        { RequisitionNumber: '1029117', Requisition:'Director Finance', RequisitionDate:'08/01/2016 - 09/15/2016', Resources:'3', Engagement: 'Verizon Director Finance', DaysLeft: '14' , Left:'Day', Sourced:'25', Screened: '20', Interviewed:'30', Offered:'15', Hired:'4'},
+        { RequisitionNumber: '1029122', Requisition:'Reginal Sales Manager', RequisitionDate:'08/01/2016 - 09/30/2016', Resources:'5', Engagement: 'Rite Aid Regional Sales Manager', DaysLeft: '15' , Left:'Day', Sourced:'30', Screened: '80',
+        Interviewed:'30', Offered:'15', Hired:'4'},
+        
+        
+        //
+          ];

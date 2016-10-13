@@ -1,0 +1,24 @@
+{
+	"transactionID": null,
+	"candidateList": [{
+		"candidatePercent": 73,
+		"nonCandidatePercent": 27,
+		"label":"Screened"
+	}, {
+		"candidatePercent": 16,
+		"nonCandidatePercent": 84,
+		"label":"Assessed"
+	}, {
+		"candidatePercent": 5,
+		"nonCandidatePercent": 95,
+		"label":"Interviewed"
+	}, {
+		"candidatePercent": 20,
+		"nonCandidatePercent": 80,
+		"label":"Offered"
+	}, {
+		"candidatePercent": 4,
+		"nonCandidatePercent": 96,
+		"label":"Hired"
+	}]
+}

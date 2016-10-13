@@ -1,0 +1,175 @@
+/*@import url("fineprint.css") print;
+@import url("bluish.css") projection, tv;
+@import 'custom.css';
+@import url("chrome://communicator/skin/");
+@import "common.css" screen, projection;
+@import url('landscape.css') screen and (orientation:landscape);
+
+@import url("daterangepicker.css");*/
+
+
+
+
+/* --------------------------- Bar Chart Style ---------------------------------- */
+.chart-bar                                              { width:100% !important; height:100% !important; max-width:540px; display: block; margin: 0 auto; }
+/* --------------------------- Doughnut Chart Style ---------------------------------- */
+.DoughnutChart section                                  { width:20% !important; height:130px !important; float: left; margin: 70px 0; }
+.DoughnutChart section label                            { width: 100%; text-align: center; padding-top: 20px; }
+.DoughnutChart .chart 							        { position: relative; display: inline-block; width:100%; height:100%; text-align: center; }
+.DoughnutChart .chart canvas 					        { position: absolute; top: 0; left: 0; }
+.DoughnutChart .percent 						        { display: inline-block; min-width:100px; line-height: 110px; z-index: 2; font-size: 16px; font-weight: bold;}
+.DoughnutChart .percent:after 					        { content: '%'; margin-left: 0.1em; font-size: 16px; font-weight: bold; }
+.DoughnutChart canvas                                   { width:100% !important; min-width:100px; }
+/* --------------------------- Doughnut Chart Style ---------------------------------- */
+
+
+/* --------------------------- Insight Thumbnail Style ---------------------------------- */
+.InsightsBox                                            { background-color:#fff; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);}
+.InsightThumbnail .thumbnail                            { padding: 0;}
+.InsightThumbnail .caption                              { background-color: #f5f5f5; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); padding: 3px 9px; }
+.InsightThumbnail .caption h5                           { padding: 5px 9px; font-size: 14px; font-weight: bold; border-left:3px solid #568e30; min-height: 56px; }
+.InsightThumbnail .ShareDetails                         { padding: 9px; }
+.InsightThumbnail .ShareDetails .InsightName            { display: inline-block; float: left; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
+.InsightThumbnail .ShareDetails .InsightDate            { display: inline-block; float: right; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
+.InsightThumbnail .ShareDetails .InsightTags            { display: inline-block; float: left; font-weight: bold; color: #aab2bd; padding: 5px 0; }
+.InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 16px; padding:4px 8px;   }
+
+/* --------------------------- Table List Style ---------------------------------- */
+.table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0; }
+.table-striped.table > thead > tr > th                  { border-bottom:1px solid #e6e9ed; padding:12px 8px; }
+.table-striped.table > tbody > tr > td                  { vertical-align: middle; }
+.table-striped thead                                    { background-image: linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); }
+.table-striped > tbody > tr:nth-of-type(2n)             { background-color: #f9f9f9; }
+.table-striped > tbody > tr:nth-of-type(2n+1)           { background-color: #fff; }
+.table-striped > tbody > tr td:nth-child(2) .TblResources,
+.table-striped > tbody > tr td:last-child .TblDays,
+.table-striped > tbody > tr td:nth-child(8),
+.TblRequisition, .TblRequisition span                   { padding:4px; vertical-align: middle; text-align: center; font-weight: bold; }
+.table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:3px solid #0a7fc9; border-radius:16px; color:#0a7fc9; font-size: 16px; max-width: 40px; }
+.table-striped > tbody > tr td:last-child .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:14px; font-weight:normal; }
+.table-striped > tbody > tr td:nth-child(8)             { color:#568e30; font-size: 18px; }
+.TblRequisition                                         { color: #0a7fc9; padding:0; text-align:left; font-size:14px;}
+.TblRequisition span                                    { color: #333; }
+.TblDate                                                { color: #919191; }
+.st-selected                                            { background-color: #337ab7 !important; color: #fefefe; }
+.preloader                                              { padding: 50px; background: url('../images/preloader.gif') no-repeat 50% 50% transparent; }
+.DataListBox .table-striped thead tr:last-child         { display:none; }
+
+/* --------------------------- Table Grid DataGridBox Style ---------------------------------- */
+.DataGrid							{ display:none; }
+.DataGridBox                                            { border:1px solid #e3e3e3; border-width:0 1px 1px 1px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-bottom: 15px;}
+.DataGrid h4                                            { padding:0 15px;}
+.DataGridHeader                                         { background-image:linear-gradient(to bottom, #f9fcf7 0%, #f5f9f0 100%); background-color:none;  border-top: 2px solid #106550; color: #106550;  padding: 10px; }
+.DGHeaderLeft                                           { width:80%; float:left; }
+.DGHeaderRight                                          { width:20%; float:right; }
+.DataGridContent                                        { background-color: #fff; padding: 10px; }
+.DGContentLeft                                          { width:50%; float:left; }
+.DGContentRight                                         { width:50%; float:right; }
+.DGRequisition a                                        { font-size:18px; font-weight: bold; }
+.DGRequisition span                                     { color:#333; }
+.DGDate                                                 { color:#aaa; }
+.DGResources                                            { background-color:#fff;  border: 3px solid #0a7fc9; text-align: center; border-radius: 50%; padding: 5px; width:35px; height:35px; font-size:18px; font-weight:bold; color:#0a7fc9; line-height:20px; margin:0 5px 20px 0; float: right; }
+.DGDays                                                 { float: right; margin:2px 5px 0 0; font-size: 16px; line-height: 16px;  }
+.Action                                                 { background-color:#eee; border:1px solid #ccc; display: inline-block; width:45px; position: absolute; top:10px; right:25px; font-size:16px; border-radius:5px; }
+.Action .Pin, .Action .Close                             { padding:0 5px; display:inline-block; text-align: center;  }
+.Action .Pin                                             { color:#ccc; }
+.Action .Close                                           { color:#f00; }
+.DGRequisition                                           { min-height: 60px; }
+.DGCompanyName                                           { font-size:16px; font-weight: bold; line-height:16px; }
+.DGCompanyTitle                                          { font-size:14px; line-height:14px; padding:5px 0; }
+.DGStatus                                                { background-color:#8cc152; border:1px solid #ccc; border-radius:5px; width:80px; font-size:14px; line-height:14px; font-weight: bold; padding:3px 0; color:#fff; text-align: center; float: right; }
+.DGSearch                                                { float: right; margin-top: 15px; min-width: 110px; padding: 3px 0 0; text-align: right; }
+.DataGridFooter                                          { background-color: #fff; border-top:1px solid #ccc; padding:10px 0 5px 0; }
+.DGInterviewStatus                                       { list-style: none; }
+.DGInterviewStatus li                                    { display: inline-block; float: left; width: 20%; text-align: center; }
+.DGInterviewStatus li .DGInterviewStatusNo               { background-color: #f3f3f3; width:40px; height:40px; border: 1px solid #ccc; font-size: 18px; line-height: 24px; margin:5px auto 0 auto; padding: 5px; }
+/* --------------------------- Events Style ---------------------------------- */
+.UpcomingEvents h4                                       { margin-top: 0; color: #106550; }
+.Events                                                  { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); color: #FFF; padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
+.EventsDate                                              { float: left; min-width:50px; height: 50px; width:20%; border-right:1px solid #e4e9eb; color:#cd3e06; font-size:30px; line-height:30px;   }
+.EventsDate span                                         { color:#333; font-size:18px; display: block; line-height: 18px; text-transform: uppercase;  }
+.EventsNote                                              { float: left; width:80%; text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 20px; color:#333; padding-left:10px; }
+.EventsInfo                                              { float: left; width:80%; padding-left:10px; }
+.EventsInfo .EventsNote                                  { float:none; text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 20px; color:#333; padding-left:0; }
+
+.EventsTime                                              { font-size: 12px; font-weight: 400; margin-bottom: 5px; line-height: 12px; color: #ccc; }
+.EventsFooter                                             {  border-top:1px solid #e4e9eb; margin-top:10px; }
+.EventsFooterContent                                      { width:70%; float: left; }
+.EventLocation                                            { font-size: 12px; font-weight: 400; margin: 5px 0; line-height: 12px; color: #333; }
+.EventsShare                                              { width:30%; display: inline-block; float:right; }
+.EventsShare ul                                           { margin-bottom: 0; }
+.EventsShare ul li                                        { float: left; display: inline-block; }
+.EventsShare ul li a                                      { padding:10px 5px 5px 5px; display:block; font-size: 16px; }
+.EventsPending                                            { padding:10px 10px 0 10px; font-size: 16px; font-weight:bold; color:#333; }
+/* --------------------------- Events Style ---------------------------------- */
+.HotCandidates h4                                         { margin-top: 0;}
+.HotCandidatesList                                        { width: 100%; color: #FFF; padding: 10px 10px; min-height: 120px; border-bottom: 1px solid #edf1f2; }
+.CandidatesPhoto                                          { float: left; height: 60px; min-width: 60px; width:25%; }
+.CandidatesPhoto > img                                    { border-radius: 60px; }
+.CandidatesContent                                        { width:75%; float: right; padding:5px 0 0 15px; }
+.CandidatesName                                              { text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 16px; color:#333; }
+.CandidatesDesignation                                    { text-align: left; font-size:14px; margin-bottom: 5px; line-height: 14px; color:#333; }
+.CandidatesRating .progress                               { height: 6px; margin-bottom: 5px;}
+.CandidatesRating  .progress-bar                          { background-color: #ff8300; }
+.CandidatesMail, .CandidatesPhone                          { margin: 5px 0; color: #333; }
+.CandidatesMail i, .CandidatesPhone i                      { width:60px; height:20px; margin-right: 20px; font-size: 16px; text-align: center; }
+/* --------------------------- Term Sorting Style ---------------------------------- */
+.TermSorting                                              { }
+.TermSorting ul                                           { }
+.TermSorting ul li                                        { display: inline-block; float: left; margin:0 5px; }
+.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 12px; font-weight: normal; }
+.TermSorting ul li a:active, .TermSorting ul li a.active  { background-color:#007da4; color:#fff; }
+.TermSorting ul li:last-child                             { border-left:1px solid #ccc; padding-left:10px }
+.TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
+/* --------------------------- SearchBox Style ---------------------------------- */
+.SearchBox                                                {  }
+.SearchBox label                                          { display: block; }
+.DateRange .input-group .input-group-addon                { padding:0 6px; background-color:transparent; border-radius:0; border-width:0 0 1px 0; }
+.RadioGroup                                               { }
+.RadioGroup .btn-group .btn                               { padding: 6px 9px; }
+.RadioGroup .btn-default.active, 
+.RadioGroup .btn-default:active                           {}
+.RadioGroup .btn-default                                  { background-image:none; border-color: #66b1c8; border-width:1px 0; text-shadow:0 0; }
+.RadioGroup .btn-group label:first-child.btn-default      { border-width:1px 0 1px 1px; }
+.RadioGroup .btn-group label:last-child.btn-default       { border-width:1px 1px 1px 0; }
+.RadioGroup .btn-default:focus, 
+.RadioGroup .btn-default:hover                            { background-color:transparent; border-color: #66b1c8; }
+.RadioGroup .btn-default.active, 
+.RadioGroup .btn-default:active                           { background-color: #66b1c8; color:#fff; }
+/* --------------------------- DataGridBoxList Style ---------------------------------- */
+.DataGridBoxList                                        { list-style:none; }
+/* --------------------------- HeaderPaging Style ---------------------------------- */
+.HeaderPaging                                           {}
+.HeaderPaging ul.pager                                  { margin:0; }
+.HeaderPaging .pager li > a                             { background-color:#007da4; color:#fff; font-family: FontAwesome; border:0; font-size: 10px; line-height:10px; }
+.HeaderPaging .pager li.previous > a                    { padding:6px 9px 6px 7px; }
+.HeaderPaging .pager li.next > a                        { padding:6px 8px; }
+.HeaderPaging .pager li.CurrentPage > span,
+.HeaderPaging .pager li.TotalPage > span                { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
+.HeaderPaging .pager li.CurrentPage > span              { padding:5px 0 5px 10px; }
+.HeaderPaging .pager li.TotalPage > span                { padding:5px 10px 5px 0; }
+
+
+.ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:15px; }
+.ViewBoxList, .ViewBoxActions                           { list-style:none; }
+.PrimaryHeader                                          { width:82%; display:inline-block; float: left; padding: 10px 0;}
+.PrimaryHeader a, .SecondaryHeader a                    { font-size:14px; font-weight: bold; line-height: 14px; }
+.PrimaryHeader span, .SecondaryHeader span              { color:#333; }
+.ViewBoxDate                                            { color:#aaa; padding: 11px 0; width:70%; display:inline-block; float: left; }
+.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; color:#0a7fc9; line-height:20px; float: right; }
+.ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
+.ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
+.ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
+.ViewBoxActions li:last-child                           { border-right:0; }
+.ViewBoxActions li:last-child a                         { border-right:0; padding-right:5px; }
+.ViewBoxActions li a                                    { display: inline-block; font-size:16px; text-align: center; padding:5px 15px; line-height:16px; }
+.ViewBoxCompanyName, .ViewBoxFinalStatus, 
+.ViewBoxName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.ViewBoxCompanyLocation, 
+.ViewBoxDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
+.ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
+.ViewBoxImage                                           { display: inline-block; float: left; }
+.ViewBoxImage img                                       { width:50px; height:50px; border:3px solid #106550; border-radius:25px; }
+.ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
+.SecondaryHeader                                        { padding: 5px 0; }
+.ViewBoxRight                                           { border-left:1px solid #dad8d6; }

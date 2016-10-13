@@ -1,0 +1,100 @@
+<!--<div class="Heading2" ng-controller="PageCtrl">
+    <h2>View Engagement</h2> </div>
+<div class="panel panel-default ViewBox">
+    <div class="panel-body">
+        <div class="ViewBoxContent">
+        <div class="ViewBoxHeader">
+        <div class="HeaderName"><a href="#">{{item.EngagementNumber}}<span>{{item.Engagement}}</span></a></div>
+        <div class="HeaderResource">{{item.RequsitionCount}}</div>
+        <div class="HeaderDate">{{item.StartDate}}-{{item.EndDate}}</div>
+        <div class="HeaderDaysOpen">{{item.DaysLeft }} Days</div>
+        <div class="HeaderActions">
+        <ul>
+            <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="ViewBoxFooter">
+        <div class="ViewBoxFooterTop">
+        <div class="ClientName"></div>
+        <div class="ClientContact"></div>
+        <div class="ManagingConsultent"></div>
+        <div class="PrimaryRecruiter"></div>
+        </div>
+          <div class="ViewBoxFooterBottom">
+        <div class="ClientName"></div>
+        <div class="ClientContact"></div>
+        <div class="ManagingConsultent"></div>
+        <div class="PrimaryRecruiter"></div>
+        </div>  
+        </div>
+        </div>
+    </div>
+</div>-->
+<div ng-controller="PageCtrl">
+    <div class="Heading2">
+        <h2>View Engagement <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></h2> </div>
+    <div class="panel panel-default ViewBox">
+        <div class="panel-body">
+            <ul class="ViewBoxList clearfix EngagementsView">
+                <li ng-repeat="item in filtered = items.engagementList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                    <div class="row ViewBox">
+                        <div class="ViewBoxHeader clearfix">
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="PrimaryHeader"> <a href="#EngagementDetails"> {{item.EngagementNumber}} <span>{{item.Engagement}}</span></a></div>
+                                <div class="ViewBoxCount">{{item.RequsitionCount}}</div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
+                                <div class="ViewBoxDays BGRed">{{item.DaysLeft }} Days</div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3 pull-right">
+                                <ul class="ViewBoxActions clearfix">
+                                    <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ViewBoxContent clearfix">
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="ViewBoxCompanyName">{{item.Client}} {{item.Industry}}</div>
+                                <div class="ViewBoxCompanyLocation">{{item.Location}}</div>
+                                <div class="ViewBoxFinalStatus">{{item.Status}}</div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="ViewBoxHeadName">Client Contact</div>
+                                <div class="ViewBoxImage"><img src="content/images/img1.jpg" alt=""></div>
+                                <div class="ViewBoxInfo">
+                                <div class="ViewBoxName">Jack Lee</div>
+                                <div class="ViewBoxDesignation">HR Manager</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="ViewBoxHeadName">Managing Consultant</div>
+                                <div class="ViewBoxImage"><img src="content/images/img2.jpg" alt=""></div>
+                                <div class="ViewBoxInfo">
+                                <div class="ViewBoxName">Anna Brown</div>
+                                <div class="ViewBoxDesignation"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="ViewBoxHeadName">Primary Recruiter</div>
+                                <div class="ViewBoxImage"><img src="content/images/img3.jpg" alt=""></div>
+                                <div class="ViewBoxInfo">
+                                <div class="ViewBoxName">Martin</div>
+                                <div class="ViewBoxMore"><a herf="#">2 More</a></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

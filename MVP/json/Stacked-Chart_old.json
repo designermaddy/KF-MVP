@@ -1,0 +1,77 @@
+{
+	"transactionID": null,
+	"requisitionList": null,
+	"requisitionStatusList": [{
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Source"
+	}, {
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Screen"
+	}, {
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Submit"
+	}, {
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Interview"
+	}, {
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Offer"
+	}, {
+		"requisitionPeriodList": [{
+			"months": "January",
+			"data": 65
+		}, {
+			"months": "Febrauary",
+			"data": 28
+		}, {
+			"months": "March",
+			"data": 34
+		}],
+		"status": "Accept"
+	}]
+}

@@ -1,0 +1,81 @@
+<div ng-controller="PageCtrl">
+    <div class="Heading2">
+        <h2>View Requisition <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></h2> </div>
+    <div class="panel panel-default ViewBox">
+        <div class="panel-body PaddingNull">
+            <ul class="ViewBoxList clearfix EngagementsView MarBtNull">
+                <li ng-repeat="item in filtered = items.engagementList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                    <div class="row ViewBox clearfix PadRt15">
+                        <div class="col-sm-9 col-md-9 col-lg-9 PadRtNull">
+                            <div class="ViewBoxHeader PadTp15 clearfix">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="PrimaryHeader"> <a href="#EngagementDetails"> {{item.EngagementNumber}} <span>{{item.Engagement}}</span></a></div>
+                                    <div class="ViewBoxCount">{{item.RequsitionCount}}</div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
+                                    <div class="ViewBoxDays BGRed">{{item.DaysLeft }} Days</div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4 pull-right">
+                                    <ul class="ViewBoxActions clearfix">
+                                        <li><a href="#"><i class="fa fa-signal" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ViewBoxContent clearfix">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="ViewBoxCompanyName">{{item.Client}} {{item.Industry}}</div>
+                                    <div class="ViewBoxCompanyLocation">{{item.Location}}</div>
+                                    <div class="ViewBoxFinalStatus">{{item.Status}}</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="ViewBoxCompanyName">Engagement</div>
+                                    <div class="SecondaryHeader"><a href="#EngagementDetails"> {{item.EngagementNumber}} <span>{{item.Engagement}}</span></a></div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="ViewBoxHeadName">Primary Recruiter</div>
+                                    <div class="ViewBoxImage"><img src="content/images/img1.jpg" alt=""></div>
+                                    <div class="ViewBoxInfo">
+                                        <div class="ViewBoxName">Martin</div>
+                                        <div class="ViewBoxMore"><a herf="#">2 More</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="ViewBoxHeadName">Hired</div>
+                                    <div class="ViewBoxHireStatus">0 <span>1</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 ViewBoxRight">
+                            <div class="UpcomingEvents">
+                                <div class="Heading2 MarginNone">
+                                    <h2>Client Calibration</h2> </div>
+                                <div class="Events MarBtNull">
+                                    <div class="EventsContent clearfix">
+                                        <div class="EventsDate">
+                                            <div class="Day">07<span class="Month">Sep</span></div>
+                                        </div>
+                                        <div class="EventsInfo">
+                                        <div class="EventsNote">Jeck Lee</div>
+                                        <div class="EventsTime"> 10:00 am to 04:00 pm </div>
+                                        </div>
+                                    </div>
+                                    <div class="EventsFooter">
+                                        <div class="EventsPending">
+                                            2 Video Interviews Pending
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

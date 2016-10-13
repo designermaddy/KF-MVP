@@ -1,0 +1,85 @@
+<div ng-controller="agingRequisitionTableController" class="DataListBox">
+    <div class="Heading2">
+        <h2>Aging Requisitions</h2> 
+    </div>
+    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th st-toggle-column st-sort="RequisitionNumber">Requisition</th>
+                    <th></th>
+                    <th st-toggle-column st-sort="Engagement">Engagement</th>
+                    <th st-toggle-column st-sort="Sourced">Sourced</th>
+                    <th st-toggle-column st-sort="Interviewed">Interviewed</th>
+                    <th st-toggle-column st-sort="Screened">Screened</th>
+                    <th st-toggle-column st-sort="Offered">Offered</th>
+                    <th st-toggle-column st-sort="Hired">Hired</th>
+                    <th st-toggle-column st-sort="DaysLeft">Days Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr st-select-row="row" ng-repeat="row in displayedCollections">
+                    <td st-toggle-item>
+                        <div class="TblRequisition"><a href="#Requisitions">{{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
+                        <div class="TblDate">{{row.RequisitionDate}}</div>
+                    </td>
+                    <td st-toggle-item>
+                        <div class="TblResources">{{row.Resources}}</div>
+                    </td>
+                    <td st-toggle-item>{{row.Engagement}}</td>
+                    <td st-toggle-item>{{row.Sourced}}</td>
+                    <td st-toggle-item>{{row.Screened}}</td>
+                    <td st-toggle-item>{{row.Interviewed }}</td>
+                    <td st-toggle-item>{{row.Offered}}</td>
+                    <td st-toggle-item>{{row.Hired}}</td>
+                    <td st-toggle-item>
+                        <div class="TblDays" ng-class="[getClass(row.DaysLeft)]">{{row.DaysLeft }} {{row.Left }}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div ng-controller="agingRequisitionTableController" class="DataGrid row">
+    <div class="Heading2 Open">
+        <h2>Aging Requisitions</h2> 
+    </div>
+        <div ng-repeat="row in rowCollection" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="DataGridBox">
+                <div class="DataGridHeader clearfix">
+                    <div class="DGHeaderLeft">
+                        <div class="DGRequisition"><a href="#Requisitions"> {{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
+                        <div class="DGDate">{{row.RequisitionDate}}</div>
+                    </div>
+                    <div class="DGHeaderRight">
+                        <div class="DGResources">{{row.Resources}}</div>
+                        <div class="DGDays">{{row.DaysLeft }} {{row.Left }}</div>
+                    </div>
+                </div>
+                <div class="DataGridFooter">
+                    <ul class="DGInterviewStatus clearfix">
+                        <li>
+                            <div class="DGInterviewStatusName">Screened</div>
+                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
+                        </li>
+                        <li>
+                            <div class="DGInterviewStatusName">Applied</div>
+                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
+                        </li>
+                        <li>
+                            <div class="DGInterviewStatusName">Interviewed</div>
+                            <div class="DGInterviewStatusNo">{{row.Interviewed }}</div>
+                        </li>
+                        <li>
+                            <div class="DGInterviewStatusName">Offered</div>
+                            <div class="DGInterviewStatusNo">{{row.Offered }}</div>
+                        </li>
+                        <li>
+                            <div class="DGInterviewStatusName">Hired</div>
+                            <div class="DGInterviewStatusNo">{{row.Hired }}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</div>
