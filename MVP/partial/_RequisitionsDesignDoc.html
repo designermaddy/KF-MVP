@@ -1,0 +1,80 @@
+<div class="Heading2 HeadingFloat clearfix">
+    <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span>
+    
+</div>
+<div class="panel panel-default WidgetPD" id="pdfBox" ng-controller="requisitionDocController" >
+    <div class="panel-body">
+        <ul class="clearfix" >
+            <li ng-repeat="pdfDtls in pdfDetailsData" ng-click="$ctrl.openPdf(pdfDtls.pdfPath)">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                     
+                        <label>{{pdfDtls.BenchMarkProfile}}</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="{{pdfDtls.ContentImage}}"> </div>
+                    <div class="WidgetPDFooter">{{pdfDtls.FooterText}}</div>
+                </div>
+            </li>
+           <!-- <li ng-click="$ctrl.openPdf('2')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='2' value='2'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">Healthcare Sr Advisor SMB Profile</div>
+                </div>
+            </li>
+            <li ng-click="$ctrl.openPdf('3')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='3' value='3'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">Cyber Manager Enterprise Profile</div>
+                </div>
+            </li>
+            <li ng-click="$ctrl.openPdf('4')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='4' value='4'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">Finance &amp; Accounting Manager Enterprise</div>
+                </div>
+            </li>
+            <li ng-click="$ctrl.openPdf('4')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='4' value='4'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">Finance &amp; Accounting Manager</div>
+                </div>
+            </li>
+            <li ng-click="$ctrl.openPdf('4')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='4' value='4'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">IT Supervisor SMB Profile</div>
+                </div>
+            </li>
+            <li ng-click="$ctrl.openPdf('4')">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='4' value='4'>
+                        <label>Benchmark profile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
+                    <div class="WidgetPDFooter">IT Delivery Manager Enterprise Profile</div>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</div>

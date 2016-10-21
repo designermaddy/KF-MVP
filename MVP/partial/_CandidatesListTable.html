@@ -1,0 +1,34 @@
+<div class="DataListBox" ng-controller="requisitionCandidateListController" >
+    <div class="Heading2 HeadingFloat clearfix">
+        <h2>Candidates List</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
+    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="table table-striped">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   
+                    <th st-toggle-column st-sort="CandidateName">  <input type="checkbox">&nbsp;Candidate Name</th>
+                    <th st-toggle-column st-sort="Title">Title</th>
+                    <th st-toggle-column st-sort="Location">Location</th>
+                    <th st-toggle-column st-sort="CurrentCompany">Current Company</th>
+                    <th st-toggle-column st-sort="Source">Source</th>
+                    <th st-toggle-column st-sort="UpdatedOn">Updated On</th>
+                    <th st-toggle-column st-sort="Status">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = candidateListDtls.candidateList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                   
+                    <td st-toggle-item>
+                        <div class="TblRequisition"><input type="checkbox" >&nbsp;<a href="">{{candidateListDtls.CandidateName}} </a></div>
+                    </td>
+                    <td st-toggle-item>{{candidateListDtls.Title}}</td>
+                    <td st-toggle-item>{{candidateListDtls.Location}}</td>
+                    <td st-toggle-item>{{candidateListDtls.CurrentCompany}}</td>
+                    <td st-toggle-item>{{candidateListDtls.Source}}</td>
+                    <td st-toggle-item>{{candidateListDtls.UpdatedON | date:dd.mm.yy }}</td>
+                    <td st-toggle-item>{{candidateListDtls.Status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

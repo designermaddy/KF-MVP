@@ -1,8 +1,9 @@
 <div ng-controller="agingRequisitionTableController" class="DataListBox">
-    <div class="Heading2">
-        <h2>Aging Requisitions</h2> 
+    <div class="Heading2 HeadingFloat clearfix">
+        <h2>Aging Requisitions (5)</h2>
+        <span class="pull-right Link disabled"><a href="#">View All Open Requisitions (8)</a></span>
     </div>
-    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection">
+    <div st-table="displayedCollections" st-safe-src="rowCollection">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -14,19 +15,19 @@
                     <th st-toggle-column st-sort="Screened">Screened</th>
                     <th st-toggle-column st-sort="Offered">Offered</th>
                     <th st-toggle-column st-sort="Hired">Hired</th>
-                    <th st-toggle-column st-sort="DaysLeft">Days Left</th>
+                    <th st-toggle-column st-sort="DaysLeft">Days Open</th>
                 </tr>
             </thead>
             <tbody>
                 <tr st-select-row="row" ng-repeat="row in displayedCollections">
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a href="#Requisitions">{{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
-                        <div class="TblDate">{{row.RequisitionDate}}</div>
+                        <div class="TblRequisition"><a href="#RequisitionDetails/4">{{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
+                        <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
                     <td st-toggle-item>
                         <div class="TblResources">{{row.Resources}}</div>
                     </td>
-                    <td st-toggle-item>{{row.Engagement}}</td>
+                    <td st-toggle-item><a href="#EngagementDetails/1">{{row.Engagement}}</a></td>
                     <td st-toggle-item>{{row.Sourced}}</td>
                     <td st-toggle-item>{{row.Screened}}</td>
                     <td st-toggle-item>{{row.Interviewed }}</td>
@@ -40,7 +41,7 @@
         </table>
     </div>
 </div>
-<div ng-controller="agingRequisitionTableController" class="DataGrid row">
+<!--<div ng-controller="agingRequisitionTableController" class="DataGrid row">
     <div class="Heading2 Open">
         <h2>Aging Requisitions</h2> 
     </div>
@@ -48,7 +49,7 @@
             <div class="DataGridBox">
                 <div class="DataGridHeader clearfix">
                     <div class="DGHeaderLeft">
-                        <div class="DGRequisition"><a href="#Requisitions"> {{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
+                        <div class="DGRequisition"><a href="#RequisitionDetails/3"> {{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
                         <div class="DGDate">{{row.RequisitionDate}}</div>
                     </div>
                     <div class="DGHeaderRight">
@@ -82,4 +83,4 @@
                 </div>
             </div>
     </div>
-</div>
+</div>-->

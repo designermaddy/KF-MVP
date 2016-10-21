@@ -6,7 +6,7 @@
     <li><a href="#">Q3</a></li>
     <li><a href="#">Q4</a></li>
     <li>
-        <select class="selectpicker">
+        <select>
           <option>2016</option>
           <option>2015</option>
           <option>2014</option>
@@ -14,7 +14,7 @@
         </li>
     </ul>    
     </span></div>
-    <div class="panel-body DoughnutChart" ng-controller="candidatePipelineController">
+    <div class="panel-body DoughnutChart" style="height: 266px;" ng-controller="candidatePipelineController">
         <section class="col-sm-12 col-xs-12" ng-repeat="candidatPipeData in candidatePipelineData"> <span class="chart" easypiechart percent="candidatPipeData.candidatePercent" options="options">
       <span class="percent" ng-bind="candidatPipeData.candidatePercent"></span> </span>
             <label>{{candidatPipeData.label}}</label>

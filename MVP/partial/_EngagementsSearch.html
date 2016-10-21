@@ -1,37 +1,37 @@
 <div class="Heading2">
     <h2>Engagements Search</h2> </div>
-<div class="panel panel-default SearchBox">
+<div class="panel panel-default SearchBox" ng-controller="engagementSearchController">
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
         <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel"> Engagement Name (or) ID</label>
-            <input class="input-sm form-control FormInput" type="search"> </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="name" uib-typeahead="address for address in engagement | filter:$viewValue | limitTo:8" > </div>
         <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Client Name</label>
-            <input class="input-sm form-control FormInput" type="search"> </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="cli" uib-typeahead="address for address in client | filter:$viewValue | limitTo:8" > </div>
          <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Industry</label>
-            <input class="input-sm form-control FormInput" type="search"> </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="ind" uib-typeahead="ind for ind in industry | filter:$viewValue | limitTo:8" > </div>
          <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Recruiter Name</label>
-            <input class="input-sm form-control" type="search"> </div>
+            <input class="input-sm form-control" type="search" ng-model="rec" uib-typeahead="rec for rec in recruiter | filter:$viewValue | limitTo:8" > </div>
         </div>
         <div class="row clearfix">
-        <div class="col-sm-6 col-md-3 col-lg-3 DateRange" ng-controller="engagementTableController">
-            <label class="FormLabel">From</label>
-            <div class="input-group">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="date" />
-                <span class="input-group-addon" id="DateRange1"><i class="fa fa-calendar"></i></span>
+            <div class="col-sm-6 col-md-3 col-lg-3 DatePicker" ng-controller="DatePickerCtrl">
+                <label class="FormLabel">From</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" /> <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+          </span> </div>
             </div>
-        </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 DateRange" ng-controller="engagementTableController">
-            <label class="FormLabel">To</label>
-            <div class="input-group">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="date" />
-                <span class="input-group-addon" id="DateRange2"><i class="fa fa-calendar"></i></span>
+            <div class="col-sm-6 col-md-3 col-lg-3 DatePicker" ng-controller="DatePickerCtrl">
+                <label class="FormLabel">To</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" /> <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+          </span> </div>
             </div>
-        </div>    
-        <div class="col-sm-6 col-md-4 col-lg-4 RadioGroup">
+            <!--<div class="col-sm-6 col-md-4 col-lg-4 RadioGroup">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default active">
                     <input type="radio" name="options" id="option1" autocomplete="off" checked> All </label>
@@ -44,11 +44,13 @@
                 <label class="btn btn-default">
                     <input type="radio" name="options" id="option5" autocomplete="off"> In Pipiline </label>
             </div>
+        </div>-->
+            <div class="col-sm-6 col-md-2 col-lg-2 clearfix">
+                <label class="FormLabel">&nbsp;</label>
+                <input type="checkbox"  disabled="disabled"  checked autocomplete="off"> My Engagements Only </div>
+            <div class="col-sm-6 col-md-1 col-lg-1 pull-right">
+                <button type="submit" class="btn btn-primary btn-sm pull-right" ng-click="searchlist()">GO</button>
+            </div>
         </div>
-        <div class="col-sm-6 col-md-2 col-lg-2 clearfix">
-            <label class="FormLabel">&nbsp;</label>
-            <input type="checkbox" autocomplete="off"> My Engagements Only
     </div>
 </div>
-        
-        

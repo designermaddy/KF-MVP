@@ -7,19 +7,47 @@
 
 @import url("daterangepicker.css");*/
 
+@import url("content/bootstrap/css/bootstrap-select.min.css");
 
+/* --------------------------- Profile Style ---------------------------------- */
+.UserProfileBox                                         { padding: 10px 20px;}
+.UserProfileLang                                        { padding: 10px 0; }
+.UserProfileLang .IconFlag                              {  }
+.UserProfileBox .Lang                                   { padding:0 10px; font-size: 14px; font-weight: bold; line-height: 14px; }
+.UserProfileImage                                       { display: inline-block; float: left; }
+.UserProfileImage img                                   { border-radius: 50%; height:80px; width: 80px; }
 
-
+.UserProfileDetails                                     { display: inline-block; float: left; padding: 10px 0 10px 10px; width: 178px; }
+.UserProfileNew                                         { font-size: 16px; font-weight: bold; padding:0 0 5px 0;  line-height: 16px; min-height: 22px; }
+.UserProfileDesignation                                 { font-size: 12px; padding:0 0 5px 0; color:#777; min-height: 22px;/**/ }
+.UserProfileEdit                                        { border-top: 1px solid #e7e7e7; padding: 5px 0; }
+.UserProfileFooter                                      { border-top: 1px solid #e7e7e7; padding:10px; background-color:#f9f9f9; }
+.UserProfileFooter a                                    { color: #007da4; font-size:14px; }
+.navbar-nav .UserProfile.open .dropdown-menu            { width: 300px; right: -14px; }
+/* --------------------------- ButtonSection Style ---------------------------------- */
+.ButtonSection.ProfileButton .btn                       {  }
+.ButtonSection .btn                                     { margin-right:10px; }
+.btn-danger, .btn-default, .btn-info, 
+.btn-primary, .btn-success, .btn-warning                { background-image:none;  box-shadow: 0 0 0; text-shadow: 0 0 0; }
+.btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
+.IframeBtn                                              { vertical-align: top; }
+/* --------------------------- Bar Chart Style ---------------------------------- */
+.Heading2 h2, .Heading2.HeadingFloat h2                 { color: #006450; font-size: 16px; font-weight:bold; margin-top:10px;  display: inline-block; }
+.Heading2.HeadingFloat                                  { clear: both; }
+.Heading2.HeadingFloat h2                               { float: left; display: inline-block; }
+.Heading2.First h2                                      { margin-top:0; }
+.Heading2.Open                                          { padding:0 15px; }
+.Heading2.HeadingFloat span.Link                        { display: inline-block; padding: 10px 0; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
 .chart-bar                                              { width:100% !important; height:100% !important; max-width:540px; display: block; margin: 0 auto; }
 /* --------------------------- Doughnut Chart Style ---------------------------------- */
-.DoughnutChart section                                  { width:20% !important; height:130px !important; float: left; margin: 70px 0; }
+.DoughnutChart section                                  { width:20% !important; height:130px !important; float: left; margin:53px 0; padding:0;  }
 .DoughnutChart section label                            { width: 100%; text-align: center; padding-top: 20px; }
 .DoughnutChart .chart 							        { position: relative; display: inline-block; width:100%; height:100%; text-align: center; }
 .DoughnutChart .chart canvas 					        { position: absolute; top: 0; left: 0; }
-.DoughnutChart .percent 						        { display: inline-block; min-width:100px; line-height: 110px; z-index: 2; font-size: 16px; font-weight: bold;}
+.DoughnutChart .percent 						        { display: inline-block; position: relative; top: 30%; z-index: 2; font-size: 16px; font-weight: bold; text-align: center;}
 .DoughnutChart .percent:after 					        { content: '%'; margin-left: 0.1em; font-size: 16px; font-weight: bold; }
-.DoughnutChart canvas                                   { width:100% !important; min-width:100px; }
+.DoughnutChart canvas                                   { width:100% !important; }
 /* --------------------------- Doughnut Chart Style ---------------------------------- */
 
 
@@ -32,7 +60,7 @@
 .InsightThumbnail .ShareDetails .InsightName            { display: inline-block; float: left; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
 .InsightThumbnail .ShareDetails .InsightDate            { display: inline-block; float: right; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
 .InsightThumbnail .ShareDetails .InsightTags            { display: inline-block; float: left; font-weight: bold; color: #aab2bd; padding: 5px 0; }
-.InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 16px; padding:4px 8px;   }
+.InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 50%; padding:6px 8px; width: 40px; height: 40px;  }
 
 /* --------------------------- Table List Style ---------------------------------- */
 .table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0; }
@@ -44,8 +72,8 @@
 .table-striped > tbody > tr td:nth-child(2) .TblResources,
 .table-striped > tbody > tr td:last-child .TblDays,
 .table-striped > tbody > tr td:nth-child(8),
-.TblRequisition, .TblRequisition span                   { padding:4px; vertical-align: middle; text-align: center; font-weight: bold; }
-.table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:3px solid #0a7fc9; border-radius:16px; color:#0a7fc9; font-size: 16px; max-width: 40px; }
+.TblRequisition, .TblRequisition span                   { padding:8px; vertical-align: middle; text-align: center; font-weight: bold;  }
+.table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:2px solid #0a7fc9; border-radius:50%; color:#0a7fc9; font-size: 16px; width: 40px; height: 40px; }
 .table-striped > tbody > tr td:last-child .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:14px; font-weight:normal; }
 .table-striped > tbody > tr td:nth-child(8)             { color:#568e30; font-size: 18px; }
 .TblRequisition                                         { color: #0a7fc9; padding:0; text-align:left; font-size:14px;}
@@ -53,7 +81,8 @@
 .TblDate                                                { color: #919191; }
 .st-selected                                            { background-color: #337ab7 !important; color: #fefefe; }
 .preloader                                              { padding: 50px; background: url('../images/preloader.gif') no-repeat 50% 50% transparent; }
-.DataListBox .table-striped thead tr:last-child         { display:none; }
+.st-sort-ascent:before                                  { content: '\25B2'; }
+.st-sort-descent:before                                 { content: '\25BC'; }
 
 /* --------------------------- Table Grid DataGridBox Style ---------------------------------- */
 .DataGrid							{ display:none; }
@@ -124,7 +153,7 @@
 /* --------------------------- SearchBox Style ---------------------------------- */
 .SearchBox                                                {  }
 .SearchBox label                                          { display: block; }
-.DateRange .input-group .input-group-addon                { padding:0 6px; background-color:transparent; border-radius:0; border-width:0 0 1px 0; }
+.DatePicker .input-group .input-group-btn .btn.btn-default{ padding:0 6px; background-color:transparent; border-radius:0; border-width:0 0 1px 0; background-image:none;  box-shadow:0 0 0; margin-top: -1px; }
 .RadioGroup                                               { }
 .RadioGroup .btn-group .btn                               { padding: 6px 9px; }
 .RadioGroup .btn-default.active, 
@@ -148,15 +177,15 @@
 .HeaderPaging .pager li.TotalPage > span                { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
 .HeaderPaging .pager li.CurrentPage > span              { padding:5px 0 5px 10px; }
 .HeaderPaging .pager li.TotalPage > span                { padding:5px 10px 5px 0; }
-
+/* --------------------------- ViewBoxHeader Style ---------------------------------- */
 
 .ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:15px; }
 .ViewBoxList, .ViewBoxActions                           { list-style:none; }
 .PrimaryHeader                                          { width:82%; display:inline-block; float: left; padding: 10px 0;}
 .PrimaryHeader a, .SecondaryHeader a                    { font-size:14px; font-weight: bold; line-height: 14px; }
 .PrimaryHeader span, .SecondaryHeader span              { color:#333; }
-.ViewBoxDate                                            { color:#aaa; padding: 11px 0; width:70%; display:inline-block; float: left; }
-.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; color:#0a7fc9; line-height:20px; float: right; }
+.ViewBoxDate                                            { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
+.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
 .ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
 .ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
 .ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
@@ -173,3 +202,64 @@
 .ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
 .SecondaryHeader                                        { padding: 5px 0; }
 .ViewBoxRight                                           { border-left:1px solid #dad8d6; }
+
+.WidgetPD ul li                                         { display: inline-block; float: left; }
+.WidgetPDHeader,
+.WidgetPDContent,
+.WidgetPDFooter                                         { width: 100%;  }
+.WidgetPDContent                                        { cursor: pointer; }
+.WidgetPDBox                                            { max-width: 240px;  padding: 0 15px; min-height: 240px;}
+.HeaderButton                                           { padding: 0 15px 8px;  }
+.WidgetPDHeader > label                                 { vertical-align: middle; font-size:14px; }
+.WidgetPDFooter                                         { padding: 5px 10px; font-size:14px; color:#0c80c9; height: 50px; text-overflow: ellipsis; overflow: hidden; }
+.HeaderPaging                                           { padding: 5px 0 0; }
+.WidgetJP .WidgetPDBox                                  { min-height: 170px; }
+.WidgetJP .WidgetPDHeader > label                       { vertical-align: baseline; }
+.tab-content                                            { background-color: #fff; margin:0 15px; padding:15px 0;  }
+.nav-tabs                                               { margin:0 14px; }
+.KFLayout .nav-tabs                                     { margin:0 -1px; }
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover                         { border-radius:0; }
+.dropdown-menu                                          { margin:0; }
+.dropdown-menu > li > a                                 { padding:5px 20px;}
+
+
+.Popover span:before                                    { color:#fff; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
+
+
+.profileDiv                                             { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
+
+/* --------------------------- FloatingNav Style ---------------------------------- */
+.FloatingNav { right: 0; top: 300px; position: fixed; border-radius:8px; }
+.modal-content{ padding: 10px; }
+.modal-title{ width: 93%; float: left; }
+.mt15{ margin-top:15px; }
+.icons{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
+.popup:after{  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
+.online{ width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
+
+
+.fl{float:left;}
+.mt30{ margin-top:30px; }
+.mr4{ margin-right:4%; }
+hr{ margin: 0px 0px 30px 0px;     width: 75%; }
+.pb15{ padding-bottom: 15px; }
+.jobDetails{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
+.jobWeightagerow{ 	background-color: #fff; box-shadow: 0px 0px 2px #888888; }
+.w29{ width:29%; }
+.btn-konferry{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
+.btn-save{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
+.btn-cancel{ color: #007da4 !important; background-color: #fff; border-color: #007da4; }
+.jobspan{ float: left; font-weight: bold; margin: 6px 5px; font-size: 17px; }
+.jobUl{ list-style-type: none; padding: 0px; border: 1px solid #86c6da; width: 90%; margin-top: 15px; }
+.jobLi{ display: inline-block; padding: 7px 8px; width: 32%; text-align: center; }
+#ex1Slider .slider-selection { background: #BABABA; } 
+input[type="range"]{ -webkit-appearance: none; width:75%; -moz-apperance: none; border-radius: 6px; height: 13px; background-image: -webkit-gradient( 	linear,           	left top,           	right top,          	color-stop(0.15, #86c6da),           	color-stop(0.15, #dcdada)       ); margin:10px 0px; }
+input[type='range']::-webkit-slider-thumb { -webkit-appearance: none !important; background-color: #036685; border: 1px solid #036685; border-radius:50%; height: 15px; width: 15px; }
+.jobDetails input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(197, 197, 197)));}
+.jobWeightage input[type="range"]{ width:74%; }
+#jobTile input[type="range"], #jobSkills input[type="range"],#jobIndustry  input[type="range"]{ background-image:-webkit-gradient(linear, 0% 0%, 100% 0%, to(rgb(134, 198, 218)), to(rgb(220, 218, 218))) /*background-image: -webkit-gradient( 	linear,           	left top,           	right top,          	color-stop(1.0, #00BCD4),           	color-stop(0, #C5C5C5)       );*/ }
+#jobCompany input[type="range"], #jobTitleDuration input[type="range"] { background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(220, 218, 218)));}
+#jobDuration input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.75, rgb(134, 198, 218)), color-stop(0.75, rgb(220, 218, 218))); }
+#jobPromotion input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(134, 198, 218)), from(rgb(220, 218, 218))); }

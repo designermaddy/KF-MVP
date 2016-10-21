@@ -140,8 +140,8 @@
     background-color: #fff;
     border: 1px solid #cbc9c9;
     list-style: none;
-    padding: 20px;
-    width: 250px;
+    padding: 20px 0;
+    width: 245px;
 }
 
 #pdflist ul li:hover {

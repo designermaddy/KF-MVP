@@ -1,31 +1,97 @@
-<div class="container-fluid clearfix">
+<div class="container-fluid clearfix MarTp15">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div ng-include="'partial/_ViewRequisition.html'"></div>
         </div>
-        <div id="pdfTabs">
-<uib-tabset active="active">
-    <uib-tab index="0" heading="Job Profile">
+        <div id="RDTabs" class="col-sm-12 col-md-12 col-lg-12 PaddingNull" ng-controller="requisitionCandidateListController" ng-init="indextab = showIndex">
+<uib-tabset active="indextab" >
+    <uib-tab index="0" heading="Job Profile"  >
         <div class="container-fluid clearfix" ng-controller="pdfLinkController">
                 <div class="row">
                     <div class="col-md-3">
-                        <div ng-include="'partial/_PdfList.html'"></div>
+                        <div ng-include="'partial/_JobProfileList.html'"></div>
                     </div>
                     <div class="col-md-9">
-                        <div ng-include="'partial/_PdfViewer.html'"></div>
+                        <div ng-include="'partial/_JobProfileViewer.html'"></div>
                     </div>
                 </div>
         </div>
     </uib-tab>
-    <uib-tab index='1' heading="Team"> Team </uib-tab>
-    <uib-tab index='2' heading="Documentation"> Documentation </uib-tab>
-     <uib-tab index='3' heading="Search Results"><div ng-include="'partial/_SearchResults.html'"></div>
+    <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
+    <uib-tab index='2'  heading="Documentation"> 
+        <div class="container-fluid clearfix" >
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="requisitionDocController as $ctrl">
+            <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
+        </div>
+            </div>
+        </div>
+        <script type="text/ng-template" id="modalContent.html">
+            <div class="modal-header" style="background-color : #888;">
+                <h4 style="float : left;"> BenchMark Profile</h4> <a ng-click="$ctrl.cancel()"><i class="fa fa-times" style="float : right; font-size:2.5em;"></i></a> </div>
+            <div class="modal-body">
+                <div>
+                    <ya-pdf-viewer ya-pdf-url="{{$ctrl.url}}"></ya-pdf-viewer>
+                </div>
+            </div>
+        </script>
+  
+    </uib-tab>
+
+     <uib-tab index='3'  heading="Search Results">
+        <div class="container-fluid clearfix" id="searchResultdiv">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div ng-include="'partial/_SearchResultsSearch.html'"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div ng-include="'partial/_SearchResultsTable.html'"></div>
+            </div>
+        </div>            
+    </div>
+         <div class="container-fluid clearfix">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+               <div ng-include="'partial/_SearchListCandidateDetails.html'"></div>
+            </div>
+        </div>
+         </div>
     </uib-tab>
     
-    <uib-tab index='4' heading="Candidate List"> Candidate List </uib-tab>
-    <uib-tab index='5' heading="Client Calibration"> Client Calibration </uib-tab>
-    <uib-tab index='6' heading="History"> History </uib-tab>
-    <uib-tab index='7' heading="Market Insights"> Market Insights </uib-tab>
+    <uib-tab index='4'  heading="Candidates List"> 
+        <div class="container-fluid clearfix">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div ng-include="'partial/_CandidatesListSearch.html'"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div ng-include="'partial/_CandidatesListTable.html'"></div>
+            </div>
+        </div>
+    </div>
+    </uib-tab>
+    <uib-tab index='5' heading="Applicants List">
+        <div class="container-fluid clearfix" id="applicantResultdiv" >
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div ng-include="'partial/_ApplicantsListSearch.html'"></div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div ng-include="'partial/_ApplicantsListTable.html'"></div>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid clearfix">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+               <div ng-include="'partial/_ApplicantDetails.html'"></div>
+            </div>
+        </div>
+         </div>
+    </uib-tab> 
+    <uib-tab index='6' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
+    <uib-tab index='7' heading="History" class="disabled"> History </uib-tab>
+    <uib-tab index='8' heading="Market Insights" class="disabled"> Market Insights </uib-tab>
 </uib-tabset>
 </div>
     </div>

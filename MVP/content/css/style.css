@@ -10,7 +10,10 @@ body											{ font-family:Arial, Helvetica, sans-serif; font-size:12px; backg
 h1, h2, h3, h4, h5, h6                          { font-family:"Gotham",Helvetica,Arial,sans-serif; }
 a                                               { cursor: pointer; color:#0a7fc9; }
 header a                                        { color:#fff; }
-
+.h1, .h2, .h3, h1, h2, h3                       { margin-top: 0; }
+/* --------------------------- Margin and Padding Style ---------------------------------- */
+.BorderNull										{ border:0 !important; }
+.BoxShadowNull   								{ box-shadow: 0 0 0; }
 /* --------------------------- Margin and Padding Style ---------------------------------- */
 .MarginNull										{ margin:0; }
 .MarTpNull										{ margin-top:0; }
@@ -41,9 +44,7 @@ footer .FooterBox                               { padding:5px 15px; }
 footer .FooterBox p                             { font-size:14px; font-weight:bold; }
 .KFLayout                                       { padding-right:0; }
 .SideBarContent                                 { background-color: #d9e4e7; }
-.Heading2 h2                                    { color: #006450; font-size: 16px; font-weight:bold; margin-top:10px; }
-.Heading2.First h2                              { margin-top:0; }
-.Heading2.Open h2                               { padding:0 15px; }
+
 
 /* --------------------------- navbar-collapse Style ---------------------------------- */
 .Navigation                                     { margin-right:300px; }
@@ -130,7 +131,6 @@ input[type="search"].form-control:active,
 input[type="text"].form-control:active,
 input[type="daterange"].form-control:active  { border-width:0 0 1px 0; border-radius:0; box-shadow: 0 0 0; transition: none 0s ease 0s ; height:20px; padding:0; color:#333; font-size:14px; }
 label.FormLabel                                 { color:#919191; margin-bottom:0; font-weight:normal; line-height:12px;  }
-
 
 
 

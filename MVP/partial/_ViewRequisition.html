@@ -1,6 +1,6 @@
 <div ng-controller="PageCtrl">
-    <div class="Heading2">
-        <h2>View Requisition <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></h2> </div>
+    <div class="Heading2 HeadingFloat clearfix">
+        <h2>View Requisition</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span><span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">New Search</button></span> </div>
     <div class="panel panel-default ViewBox">
         <div class="panel-body PaddingNull">
             <ul class="ViewBoxList clearfix EngagementsView MarBtNull">
@@ -14,16 +14,20 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4">
                                     <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
+                                    <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">Open</button></span>
                                     <div class="ViewBoxDays BGRed">{{item.DaysLeft }} Days</div>
+                                    
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4 pull-right">
                                     <ul class="ViewBoxActions clearfix">
-                                        <li><a href="#"><i class="fa fa-signal" aria-hidden="true"></i></a></li>
+                                        <!--<li><a href="#"><i class="fa fa-signal" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>-->
+                                        <li class="disabled"><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -55,7 +59,7 @@
                             <div class="UpcomingEvents">
                                 <div class="Heading2 MarginNone">
                                     <h2>Client Calibration</h2> </div>
-                                <div class="Events MarBtNull">
+                                <!--<div class="Events MarBtNull">
                                     <div class="EventsContent clearfix">
                                         <div class="EventsDate">
                                             <div class="Day">07<span class="Month">Sep</span></div>
@@ -70,7 +74,10 @@
                                             2 Video Interviews Pending
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
+                                <div class="Events" style="height:120px; color:#333;">
+        Coming Soon...
+    </div>
                             </div>
                         </div>
                     </div>

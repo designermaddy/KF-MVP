@@ -1,7 +1,10 @@
 <div class="container-fluid claerfix KFLayout">
     <div class="PadLtNull ContentBox">
         <div class="row">
-            <div class="Heading2 Open"><h2>Recruiting Snapshot</h2></div>
+            <div class="Heading2 HeadingFloat Open clearfix">
+                <h2>Recruiting Snapshot</h2> <span class="pull-right Popover"><div id="popover" custom-popover popover-html="<div onclick='$(&quot;#popover&quot;).popover(&quot;hide&quot;);'  class='Popover'>
+            <img class='img-responsive' style='min-width:250px;'  src='content/images/graph.jpg'>
+            </div>" popover-placement="left" class="btn btn-primary"></div></span></div>
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div ng-include="'partial/_RequisitionGoalStackedChart.html'"></div>
             </div>
@@ -14,12 +17,12 @@
         </div>
     </div>
     <div class="SideBar">
-       <div ng-include="'partial/_UpcomingEvents.html'"></div>
+        <div ng-include="'partial/_UpcomingEvents.html'"></div>
         <div ng-include="'partial/_HotCandidates.html'"></div>
     </div>
 </div>
 <div class="container-fluid InsightsBox claerfix">
     <div class="row">
-     <div ng-include="'partial/_LatestInsights.html'"></div>
+        <div ng-include="'partial/_LatestInsights.html'"></div>
     </div>
 </div>

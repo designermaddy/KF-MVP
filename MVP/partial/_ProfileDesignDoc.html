@@ -1,6 +1,24 @@
-<div id="pdfBox">
-    <span><a ng-click="$ctrl.openPdf('1')"><img style="height: 200px; width: 200px; padding : 20px;" src="content/images/nature-6.jpg"></a></span>
-    <span><a ng-click="$ctrl.openPdf('2')"><img style="height: 200px; width: 200px; padding : 20px;" src="content/images/space-1.jpg"></a></span>
-    <span><a ng-click="$ctrl.openPdf('3')"><img style="height: 200px; width: 200px; padding : 20px;" src="content/images/nature-6.jpg"></a></span>
-    <span><a ng-click="$ctrl.openPdf('4')"><img style="height: 200px; width: 200px; padding : 20px;" src="content/images/space-1.jpg"></a></span>
+<div class="Heading2 HeadingFloat clearfix">
+    <h2>Documents</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span>
+    <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">Save to Engagement</button></span>
+   
+</div>
+<div class="panel panel-default WidgetPD" id="pdfBox" >
+    <div class="panel-body">
+        <ul class="clearfix" >
+            
+            <li ng-repeat="pdfDtls in pdfDetailsData  | profileSelect:selectName">
+                <div class="WidgetPDBox">
+                    <div class="WidgetPDHeader">
+                        <input type="checkbox" name='1' value='1'>
+                        <label><!--{{pdfDtls.BenchMarkProfile}}--> BenchMarkProfile</label>
+                    </div>
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg" ng-click="openPdf(pdfDtls.DocumentNumber)"> </div>
+                    <div class="WidgetPDFooter">{{pdfDtls.FileName}}</div>
+                </div>
+            </li>
+           
+        </ul>
+  
+    </div>
 </div>

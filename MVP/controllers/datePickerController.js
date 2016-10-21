@@ -48,9 +48,9 @@ app.controller('DatePickerCtrl', function ($scope) {
     $scope.dt = new Date(year, month, day);
   };
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.formats = ['MM/dd/yyyy'];
   $scope.format = $scope.formats[0];
-  $scope.altInputFormats = ['M!/d!/yyyy'];
+  //$scope.altInputFormats = ['M!/d!/yyyy'];
 
   $scope.popup1 = {
     opened: false
