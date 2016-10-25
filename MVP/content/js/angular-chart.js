@@ -33,8 +33,8 @@
   Chart.defaults.global.legend.display = false;
   Chart.defaults.global.colors = [
       '#d40a1c', // Red
-    '#ff8300', // Orange
-    '#ffcd00', // Yellow
+    '#ff8CD00', // Orange
+    '#568E30', // Yellow
     '#46BFBD', // green
     '#97BBCD', // blue
     '#949FB1', // grey
