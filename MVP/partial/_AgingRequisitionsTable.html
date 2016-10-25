@@ -1,40 +1,45 @@
 <div ng-controller="agingRequisitionTableController" class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Aging Requisitions (5)</h2>
-        <span class="pull-right Link disabled"><a href="#">View All Open Requisitions (8)</a></span>
-    </div>
-    <div st-table="displayedCollections" st-safe-src="rowCollection">
+        <h2>Aging Requisitions (5)</h2> <span class="pull-right Link disabled"><a href="#">View All Open Requisitions (8)</a></span> </div>
+    <div class="AgingRequisitionTable" st-table="displayedCollections" st-safe-src="rowCollection">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th st-toggle-column st-sort="RequisitionNumber">Requisition</th>
+                    <th>Requisition</th>
                     <th></th>
-                    <th st-toggle-column st-sort="Engagement">Engagement</th>
-                    <th st-toggle-column st-sort="Sourced">Sourced</th>
-                    <th st-toggle-column st-sort="Interviewed">Interviewed</th>
-                    <th st-toggle-column st-sort="Screened">Screened</th>
-                    <th st-toggle-column st-sort="Offered">Offered</th>
-                    <th st-toggle-column st-sort="Hired">Hired</th>
-                    <th st-toggle-column st-sort="DaysLeft">Days Open</th>
+                    <th>Engagement</th>
+                    <th>Source</th>
+                    <th>Client Name</th>
+                    <th style="width:64px;" >Sourced</th>
+                    <th style="width:71px;" >Screened</th>
+                    <th style="width:74px;" >Submitted</th>
+                    <th style="width:82px;" >Interviewed</th>
+                    <th style="width:60px;" >Offered</th>
+                    <th style="width:70px;" >Accepted</th>
+                    <th style="width:80px;" class="SortDefault" st-toggle-column st-sort="DaysOpen">Days Open</th>
                 </tr>
             </thead>
             <tbody>
                 <tr st-select-row="row" ng-repeat="row in displayedCollections">
-                    <td st-toggle-item>
-                        <div class="TblRequisition"><a href="#RequisitionDetails/4">{{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
+                    <td>
+                        <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.poolId}} <span>{{row.requisitionTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
-                    <td st-toggle-item>
-                        <div class="TblResources">{{row.Resources}}</div>
+                    <td>
+                        <div class="TblResources">{{row.headCount}}</div>
                     </td>
-                    <td st-toggle-item><a href="#EngagementDetails/1">{{row.Engagement}}</a></td>
-                    <td st-toggle-item>{{row.Sourced}}</td>
-                    <td st-toggle-item>{{row.Screened}}</td>
-                    <td st-toggle-item>{{row.Interviewed }}</td>
-                    <td st-toggle-item>{{row.Offered}}</td>
-                    <td st-toggle-item>{{row.Hired}}</td>
-                    <td st-toggle-item>
-                        <div class="TblDays" ng-class="[getClass(row.DaysLeft)]">{{row.DaysLeft }} {{row.Left }}</div>
+                    <td><a href="#EngagementDetails/1">{{row.engagementName}}</a></td>
+                    <td>{{row.sourceSystem}}</td>
+                    <td><div class="TblClientName">{{row.client}}</div>
+                        <!--<div class="TblClientLocation">{{clientLocation}}</div>--></td>
+                    <td>{{getData(row.workflowSteps, 'Sourced');}}</td>
+                    <td>{{getData(row.workflowSteps, 'Phone Screen');}}</td>
+                    <td>{{getData(row.workflowSteps, 'Candidate Submitted');}}</td>
+                    <td>{{getData(row.workflowSteps, 'Interview');}}</td>
+                    <td>{{getData(row.workflowSteps, 'Offered');}}</td>
+                    <td>{{getData(row.workflowSteps, 'Hired');}}</td>
+                    <td>
+                        <div class="TblDays" ng-class="row.requisitionColour"> {{row.daysOpen}}</div>
                     </td>
                 </tr>
             </tbody>

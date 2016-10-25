@@ -1,5 +1,5 @@
 
-<div ng-controller="PageCtrl">
+<div ng-controller="engagementGridController">
     <ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="&lsaquo;" next-text="&rsaquo;"></ul>
     <ul class="DataGridBoxList clearfix">
     <li ng-repeat="item in filtered = items.engagementList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">

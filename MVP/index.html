@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +16,9 @@
     <link rel="stylesheet" href="content/bootstrap/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="content/css/components.css">
     <link rel="stylesheet" href="content/css/pdf.css">
+    <!--<link rel="stylesheet" href="content/select/css/selectize.default.css">
+    <link rel="stylesheet" href="content/select/css/select2.css">
+    <link rel="stylesheet" href="content/select/css/custom-select.css">-->
     <link rel="stylesheet" href="content/css/media.css"> 
 </head>
 <body ng-app="desktopApp">
@@ -24,22 +26,24 @@
         <div ng-include="'templates/header.html'"></div>
         <section class="Content">
             <div ng-view></div>
-            <nav class="FloatingNav" ng-controller="PopupDemoCont">
+            <!--<nav class="FloatingNav" ng-controller="PopupDemoCont">
                 <a class="FloatBtn FloatHelp" ng-click="open()"><img src="content/images/HelpBtn.png"></a>
-            </nav>
+            </nav>-->
         </section>
         <div ng-include="'templates/footer.html'"></div>
     </div>
+    <!-- Angular Compnents script -->
     <script src="content/js/jquery-3.1.0.min.js"></script>
     <script src="content/js/angular.min.js"></script>
     <script src="content/js/angular-route.js"></script>
-    <script src="content/js/angular-sanitize.js"></script>
+    <script src="content/js/angular-sanitize.min.js"></script>
     <script src="content/js/angular-animate.min.js"></script>
     <script src="content/js/angular-touch.min.js"></script>
     <script src="content/js/angular-cookies.js"></script>
     <script src="content/js/tether.min.js"></script>
     <script src="content/bootstrap/js/bootstrap.min.js"></script>
     <script src="content/js/ui-bootstrap.min.js"></script>
+    <!--<script src="content/select/js/custom-select.js"></script>-->
     <script src="content/js/Chart.min.js"></script>
     <script src="content/js/angular-chart.js"></script>
     <script src="content/js/angular.easypiechart.js"></script>
@@ -48,10 +52,14 @@
     <script src="content/js/lodash.js"></script>
     <script src="content/js/pdf.combined.js"></script>
     <script src="content/js/ya-pdf.js"></script>
+    <!-- Angular Compnents app script -->
     <script src="app/app.js"></script>
+    <!-- Angular Compnents directive script -->
     <script src="directive/directive.js"></script>
+    <!-- Angular Compnents services script -->
     <script src="services/services_api.js"></script>
     <!--<script src="services/services_json.js"></script>-->
+    <!-- Angular Compnents controllers script -->
     <script src="controllers/agingRequisitionTableController.js"></script>
     <script src="controllers/requisitionGoalController.js"></script>
     <script src="controllers/candidatePipelineController.js"></script>
@@ -67,12 +75,12 @@
     <script src="controllers/requisitionDocController.js"></script>
     <script src="controllers/datePickerController.js"></script>
     <script src="controllers/headerController.js"></script>
-    <script src="content/bootstrap/js/bootstrap-select.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.selectpicker').selectpicker();
-        });
-    </script>
+    <script src="controllers/requisitionCandidateListDummyController.js"></script>
+	<script src="controllers/engagementperIDRequisitionController.js"></script>
+	 <script src="controllers/engagementDocController.js"></script>
+    <script src="controllers/requisitionSearchResultsController.js"></script>
+    
+    
     <!-- Start of helpfuturestep Zendesk Widget script -->
 <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","helpfuturestep.zendesk.com");
 /*]]>*/</script>

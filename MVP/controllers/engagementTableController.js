@@ -1,6 +1,6 @@
 
 
-app.controller('engagementTableController', ['$scope','sharedProperties', function ($scope, sharedProperties) {
+app.controller('engagementTableController', ['$scope','sharedProperties','Factory', function ($scope, sharedProperties, Factory) {
       $scope.viewLoading = false;
       $scope.rowCollection = sharedProperties.getrowCollection();      
     
@@ -20,4 +20,9 @@ app.controller('engagementTableController', ['$scope','sharedProperties', functi
             $scope.rowCollection = newValue;
             setValues();            
     }); 
+	// call the API for selectedengagement per id
+	$scope.onSelectEngagementPerID = function(engagementID){
+		sharedProperties.setengagementPerIDSelected(engagementID)
+		
+	}
 }]);

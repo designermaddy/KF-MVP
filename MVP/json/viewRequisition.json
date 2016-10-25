@@ -1,0 +1,16 @@
+{
+	"transactionID": null,
+	"requisition": null,
+	"requisitionDetails": [{
+		"poolId": 39327,
+		"jobId": 1090760,
+		"requisitionTitle": "Mechanical/Structural Design/Drafter - Entry Level",
+		"requisitionDetail": "<strong>The Role</strong>\n\n<p><ul>\n<li>Develops engineering product designs that meet engineering and manufacturing requirements for deliverables such as mechanical, structural, architectural, and electrical and electronic components and systems.</li>\n<li>Defines, maintains, and releases engineering product data in electronic datasets or drawings. These may include layouts, three-dimensional models, engineering drawings, and parts lists.</li>\n<li>Ensures designs and engineering data are accurate, integrated, clearly communicated, and complete; that they conform to standards, procedures, and regulatory requirements; and that they are under configuration control.</li>\n<li>Participates in root cause analysis of customer and supplier; manufacturing, design, and documentation problems. Acts as consultant or subject matter expert to develop process improvements and contribute to technical solutions.</li>\n<li>Investigates design factors such as ease of manufacturing, interchangeability, replacibility, strength-weight efficiency, contractual specifications, and cost to develop engineering designs. Interfaces with engineers, peers, group leaders, internal and external suppliers, and customers for direction, collaboration, approval, and identifying requirements to resolve design, manufacturing, and related process issues.</li>\n</ul></p>\n\n<strong>Key Accountabilities</strong>\n\n<p><ul>\n<li>Apply knowledge of mechanical and structural design techniques;</li>\n<li>Conventional view projection (e.g., orthographic, isometric, axonometric, etc.);</li>\n<li>Descriptive geometry</li>\n<li>Geometric dimensioning and tolerancing;</li>\n<li>Company, industry, and national drawing and design standards;</li>\n<li>Mathematics (i.e., algebra, geometry, trigonometry), product configuration control and release methods; and manufacturing processes and procedures in order to develop mechanical/structural definitions of products using computer-aided design tools, and/or conventional design methods;</li>\n<li>Ability to define activities in the development of aerospace products, analyze and resolve problems, improve products and producibility, and apply spatial visualization skills.</li>\n</ul></p>\n\n<strong>Skills & Experience</strong>\n\n<p><ul>\n<li>Associates degree or equivalent trade school certificate and up to one year related work experience or an equivalent combination of education and experience.&nbsp;</li>\n<li>Please include overall gpa on your resume.</li>\n</ul></p>\n\n<strong>Other</strong>\n\n<p><p>Please note:</p>\n<ul>\n<li>This requisition is to fill hiring needs through the end of 2016 - candidates will be contacted as future program needs arise.</li>\n<li>Program selection could be established with any of the following programs based upon business need: Boeing, Airbus, Defense, Regional Jets, etc.</li>\n</ul></p>\n\n",
+		"requisitionNumber": "Spirit00002",
+		"location": {
+			"city": "Wichita",
+			"state": "Kansas",
+			"country": "United States"
+		}
+	}]
+}

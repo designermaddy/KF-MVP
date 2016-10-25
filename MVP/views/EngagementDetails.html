@@ -20,20 +20,11 @@
                     <uib-tab index='3' heading="Documentation">
                         <div class="container-fluid clearfix">
                             <div class="row">
-                                <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="requisitionDocController as $ctrl">
-                                    <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
+                                <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="engagementDocController">
+                                    <div ng-include="'partial/_EngagementDesignDoc.html'"></div>
                                 </div>
                             </div>
-                        </div>
-                        <script type="text/ng-template" id="modalContent.html">
-                            <div class="modal-header" style="background-color : #888;">
-                                <h4 style="float : left;"> BenchMark Profile</h4> <a ng-click="$ctrl.cancel()"><i class="fa fa-times" style="float : right; font-size:2.5em;"></i></a> </div>
-                            <div class="modal-body">
-                                <div>
-                                    <ya-pdf-viewer ya-pdf-url="{{$ctrl.url}}"></ya-pdf-viewer>
-                                </div>
-                            </div>
-                        </script>
+                        </div>                       
                     </uib-tab>
                     <uib-tab index='4' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
                     <uib-tab index='5' heading="History" class="disabled"> History </uib-tab>
@@ -45,4 +36,6 @@
         <div ng-include="'partial/_OtherEngagements.html'"></div>
         <div ng-include="'partial/_EngagementOverview.html'"></div>
     </div>
+    
+   
 </div>

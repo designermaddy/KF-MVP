@@ -13,6 +13,8 @@ header a                                        { color:#fff; }
 .h1, .h2, .h3, h1, h2, h3                       { margin-top: 0; }
 /* --------------------------- Margin and Padding Style ---------------------------------- */
 .BorderNull										{ border:0 !important; }
+.BorderTop                                      { border-top: 1px solid #edf1f2; }
+.BorderBottom                                   { border-bottom: 1px solid #edf1f2; }
 .BoxShadowNull   								{ box-shadow: 0 0 0; }
 /* --------------------------- Margin and Padding Style ---------------------------------- */
 .MarginNull										{ margin:0; }
@@ -33,9 +35,9 @@ header a                                        { color:#fff; }
 .PadRtNull									    { padding-right:0 !important;}
 .PadRt30									    { padding-right:30px !important;}
 /* --------------------------- Color Style ---------------------------------- */
-.BGRed                                          { background-color:#e8563e; }
-.BGOrange                                       { background-color:#ffa500; }
-.BGGreen                                        { background-color:#8cc152; }
+.BG-RED                                          { background-color:#e8563e; }
+.BG-YELLOW                                       { background-color:#ffa500; }
+.BG-GREEN                                        { background-color:#8cc152; }
 /* --------------------------- Common Template Style ---------------------------------- */
 header											{ box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); }
 .Content										{ margin:60px 0 0 0; overflow-x: hidden; min-height:calc(100vh - 40px); }

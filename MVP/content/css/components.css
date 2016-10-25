@@ -64,25 +64,52 @@
 
 /* --------------------------- Table List Style ---------------------------------- */
 .table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0; }
-.table-striped.table > thead > tr > th                  { border-bottom:1px solid #e6e9ed; padding:12px 8px; }
+.table-striped a:hover                                  { text-decoration: none; }
+.table-striped.table > thead > tr > th                  { border-bottom:1px solid #e6e9ed; padding:12px 8px; white-space: nowrap; font-size: 12px; font-weight: bold; }
 .table-striped.table > tbody > tr > td                  { vertical-align: middle; }
 .table-striped thead                                    { background-image: linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); }
 .table-striped > tbody > tr:nth-of-type(2n)             { background-color: #f9f9f9; }
 .table-striped > tbody > tr:nth-of-type(2n+1)           { background-color: #fff; }
 .table-striped > tbody > tr td:nth-child(2) .TblResources,
-.table-striped > tbody > tr td:last-child .TblDays,
-.table-striped > tbody > tr td:nth-child(8),
-.TblRequisition, .TblRequisition span                   { padding:8px; vertical-align: middle; text-align: center; font-weight: bold;  }
-.table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:2px solid #0a7fc9; border-radius:50%; color:#0a7fc9; font-size: 16px; width: 40px; height: 40px; }
-.table-striped > tbody > tr td:last-child .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:14px; font-weight:normal; }
-.table-striped > tbody > tr td:nth-child(8)             { color:#568e30; font-size: 18px; }
-.TblRequisition                                         { color: #0a7fc9; padding:0; text-align:left; font-size:14px;}
-.TblRequisition span                                    { color: #333; }
+.table-striped > tbody > tr td .TblDays,
+.TblRequisition                                         { padding: 3px; vertical-align: middle; }
+.table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:2px solid #0a7fc9; border-radius:50%; color:#0a7fc9; font-size: 16px; width: 30px; height: 30px; padding: 2px; text-align: center; }
+.table-striped > tbody > tr td .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:14px; font-weight:normal; text-align: center; }
+.TblRequisition                                         { padding:0; text-align:left; }
+.TblRequisition a                                       { font-size:14px; line-height: 16px; display: block; }
+.TblRequisition span                                    { color: #000; }
 .TblDate                                                { color: #919191; }
 .st-selected                                            { background-color: #337ab7 !important; color: #fefefe; }
 .preloader                                              { padding: 50px; background: url('../images/preloader.gif') no-repeat 50% 50% transparent; }
+.SortDefault:before,
+.st-sort-ascent:before,
+.st-sort-descent:before                                 { color:#333; font-family: FontAwesome; border:0; font-size: 10px; line-height:10px; padding:0 5px 0 0; }
+.SortDefault:before                                     { content: "\f0dc"; }
 .st-sort-ascent:before                                  { content: '\25B2'; }
 .st-sort-descent:before                                 { content: '\25BC'; }
+/* --------------------------- AgingRequisitionTable Style ---------------------------------- */
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(6),
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(7),
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(8),
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(9),
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(10)             { color:#333; font-size: 16px; text-align: center; }
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 18px; text-align: center; }
+
+/* --------------------------- RequisitionTable Style ---------------------------------- */
+.RequisitionTable .table-striped > tbody > tr td:nth-child(7),
+.RequisitionTable .table-striped > tbody > tr td:nth-child(8),
+.RequisitionTable .table-striped > tbody > tr td:nth-child(9),
+.RequisitionTable .table-striped > tbody > tr td:nth-child(10),
+.RequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#333; font-size: 16px; text-align: center; }
+.RequisitionTable .table-striped > tbody > tr td:nth-child(12)             { color:#000; font-size: 18px; text-align: center; }
+
+/* --------------------------- EngagementRequisitionTable Style ---------------------------------- */
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(6),
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(7),
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(8),
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(9),
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(10)             { color:#333; font-size: 16px; text-align: center; }
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 18px; text-align: center; }
 
 /* --------------------------- Table Grid DataGridBox Style ---------------------------------- */
 .DataGrid							{ display:none; }
@@ -178,8 +205,7 @@
 .HeaderPaging .pager li.CurrentPage > span              { padding:5px 0 5px 10px; }
 .HeaderPaging .pager li.TotalPage > span                { padding:5px 10px 5px 0; }
 /* --------------------------- ViewBoxHeader Style ---------------------------------- */
-
-.ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:15px; }
+.ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:10px; }
 .ViewBoxList, .ViewBoxActions                           { list-style:none; }
 .PrimaryHeader                                          { width:82%; display:inline-block; float: left; padding: 10px 0;}
 .PrimaryHeader a, .SecondaryHeader a                    { font-size:14px; font-weight: bold; line-height: 14px; }
@@ -198,11 +224,30 @@
 .ViewBoxDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
 .ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
 .ViewBoxImage                                           { display: inline-block; float: left; }
-.ViewBoxImage img                                       { width:50px; height:50px; border:3px solid #106550; border-radius:25px; }
+.ViewBoxImage img                                       { width:50px; height:50px; border:2px solid #106550; border-radius:25px; }
 .ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
 .SecondaryHeader                                        { padding: 5px 0; }
 .ViewBoxRight                                           { border-left:1px solid #dad8d6; }
 
+.ViewDropBox                                            { min-width: 230px; }
+.ViewDropBox .dropdown-menu > li > a                    { padding: 5px 10px; }
+.ViewDropInfo                                            { display: inline-block; float: left; padding:0 5px; }
+.ViewDropName                                           { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.ViewBoxCompanyLocation, 
+.ViewDropDesignation                                    { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
+.ViewDropImage                                          { display: inline-block; float: left; }
+.ViewDropImage img                                       { width:40px; height:40px; border:2px solid #106550; border-radius:25px; }
+.ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
+.SecondaryHeader                                        { padding: 5px 0; }
+.ViewBoxRight                                           { border-left:1px solid #dad8d6; }
+.ViewBoxStatus                                           { display: inline-block; float: left; padding: 6px 10px; }
+.ViewBoxStatus select                                   { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
+.ViewBoxHire                                            { margin-top:-26px; }
+.HireValue                                              { background-color:#fffcac; font-size:14px; padding:6px 12px; }
+.HireStatus                                             { background-color:#fffcac; margin-left: 2px; font-size:14px; margin-left:2px; padding:6px; }
+.HireStatus i                                           { font-size:12px; color: #ff0000;  }
+
+/* --------------------------- WidgetPD Style ---------------------------------- */
 .WidgetPD ul li                                         { display: inline-block; float: left; }
 .WidgetPDHeader,
 .WidgetPDContent,
@@ -210,6 +255,7 @@
 .WidgetPDContent                                        { cursor: pointer; }
 .WidgetPDBox                                            { max-width: 240px;  padding: 0 15px; min-height: 240px;}
 .HeaderButton                                           { padding: 0 15px 8px;  }
+.HeaderButton a i                                       { font-size: 20px; }
 .WidgetPDHeader > label                                 { vertical-align: middle; font-size:14px; }
 .WidgetPDFooter                                         { padding: 5px 10px; font-size:14px; color:#0c80c9; height: 50px; text-overflow: ellipsis; overflow: hidden; }
 .HeaderPaging                                           { padding: 5px 0 0; }
@@ -224,42 +270,45 @@
 .dropdown-menu                                          { margin:0; }
 .dropdown-menu > li > a                                 { padding:5px 20px;}
 
-
 .Popover span:before                                    { color:#fff; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
 
 
 .profileDiv                                             { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
 
 /* --------------------------- FloatingNav Style ---------------------------------- */
-.FloatingNav { right: 0; top: 300px; position: fixed; border-radius:8px; }
-.modal-content{ padding: 10px; }
-.modal-title{ width: 93%; float: left; }
-.mt15{ margin-top:15px; }
-.icons{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
-.popup:after{  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
-.online{ width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
+.FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
+.modal-content											{ padding: 10px; }
+.modal-content .modal-header 							{}
+.modal-title											{ width: 93%; float: left; }
+.mt15													{ margin-top:15px; }
+.icons													{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
+.popup:after											{  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
+.online													{ width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
 
 
-.fl{float:left;}
-.mt30{ margin-top:30px; }
-.mr4{ margin-right:4%; }
-hr{ margin: 0px 0px 30px 0px;     width: 75%; }
-.pb15{ padding-bottom: 15px; }
-.jobDetails{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
-.jobWeightagerow{ 	background-color: #fff; box-shadow: 0px 0px 2px #888888; }
-.w29{ width:29%; }
-.btn-konferry{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
-.btn-save{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
-.btn-cancel{ color: #007da4 !important; background-color: #fff; border-color: #007da4; }
-.jobspan{ float: left; font-weight: bold; margin: 6px 5px; font-size: 17px; }
-.jobUl{ list-style-type: none; padding: 0px; border: 1px solid #86c6da; width: 90%; margin-top: 15px; }
-.jobLi{ display: inline-block; padding: 7px 8px; width: 32%; text-align: center; }
-#ex1Slider .slider-selection { background: #BABABA; } 
-input[type="range"]{ -webkit-appearance: none; width:75%; -moz-apperance: none; border-radius: 6px; height: 13px; background-image: -webkit-gradient( 	linear,           	left top,           	right top,          	color-stop(0.15, #86c6da),           	color-stop(0.15, #dcdada)       ); margin:10px 0px; }
-input[type='range']::-webkit-slider-thumb { -webkit-appearance: none !important; background-color: #036685; border: 1px solid #036685; border-radius:50%; height: 15px; width: 15px; }
-.jobDetails input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(197, 197, 197)));}
-.jobWeightage input[type="range"]{ width:74%; }
-#jobTile input[type="range"], #jobSkills input[type="range"],#jobIndustry  input[type="range"]{ background-image:-webkit-gradient(linear, 0% 0%, 100% 0%, to(rgb(134, 198, 218)), to(rgb(220, 218, 218))) /*background-image: -webkit-gradient( 	linear,           	left top,           	right top,          	color-stop(1.0, #00BCD4),           	color-stop(0, #C5C5C5)       );*/ }
-#jobCompany input[type="range"], #jobTitleDuration input[type="range"] { background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(220, 218, 218)));}
-#jobDuration input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.75, rgb(134, 198, 218)), color-stop(0.75, rgb(220, 218, 218))); }
-#jobPromotion input[type="range"]{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(134, 198, 218)), from(rgb(220, 218, 218))); }
+.fl														{float:left;}
+.mt30													{ margin-top:30px; }
+.mr4													{ margin-right:4%; }
+hr														{ margin: 0px 0px 30px 0px;     width: 75%; }
+.pb15													{ padding-bottom: 15px; }
+.jobDetails												{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
+.jobWeightagerow										{ 	background-color: #fff; box-shadow: 0px 0px 2px #888888; }
+.w29													{ width:29%; }
+.btn-konferry											{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
+.btn-save												{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
+.btn-cancel												{ color: #007da4 !important; background-color: #fff; border-color: #007da4; }
+.jobspan												{ float: left; font-weight: bold; margin: 6px 5px; font-size: 17px; }
+.jobUl													{ list-style-type: none; padding: 0px; border: 1px solid #86c6da; width: 90%; margin-top: 15px; }
+.jobLi													{ display: inline-block; padding: 7px 8px; width: 32%; text-align: center; }
+#ex1Slider .slider-selection 							{ background: #BABABA; } 
+input[type="range"]										{ -webkit-appearance: none; width:75%; -moz-apperance: none; border-radius: 6px; height: 13px; background-image: -webkit-gradient( 	linear, left top, right top, color-stop(0.15, #86c6da), color-stop(0.15, #dcdada) ); margin:10px 0px; }
+input[type='range']::-webkit-slider-thumb 				{ -webkit-appearance: none !important; background-color: #036685; border: 1px solid #036685; border-radius:50%; height: 15px; width: 15px; }
+.jobDetails input[type="range"]							{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(197, 197, 197)));}
+.jobWeightage input[type="range"]						{ width:74%; }
+#jobTile input[type="range"], 
+#jobSkills input[type="range"],
+#jobIndustry  input[type="range"]						{ background-image:-webkit-gradient(linear, 0% 0%, 100% 0%, to(rgb(134, 198, 218)), to(rgb(220, 218, 218)));}
+#jobCompany input[type="range"], 
+#jobTitleDuration input[type="range"]					{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(220, 218, 218)));}
+#jobDuration input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.75, rgb(134, 198, 218)), color-stop(0.75, rgb(220, 218, 218))); }
+#jobPromotion input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(134, 198, 218)), from(rgb(220, 218, 218))); }

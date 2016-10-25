@@ -6,17 +6,7 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12" >
             <div ng-include="'partial/_ProfileDesignDoc.html'"></div>
-        </div>
-        <script type="text/ng-template" id="modalContent.html">
-            <div class="modal-header" style="background-color : #888;">
-                <h4 style="float : left;"> BenchMark Profile</h4> <a ng-click="$ctrl.cancel()"><i class="fa fa-times" style="float : right; font-size:2.5em;"></i></a> 
-            </div>
-            <div class="modal-body">
-                <div>
-                    <ya-pdf-viewer ya-pdf-url="{{$ctrl.url}}"></ya-pdf-viewer>
-                </div>
-            </div>
-        </script>
+        </div>        
     </div>
     </div>
     <div class="SideBar" style="min-height: 780px;">
@@ -30,10 +20,10 @@
 					<h4 class="profileheading">Job Description from Hay Group</h4>
 					<i class="fa fa-info-circle" aria-hidden="true"></i>
 					<p>Access the Hay group libraray of job description</p>
-					<a href="#">Create</a>
+					<a href=''>Create</a>
 				</div>
 				<div class="col-md-12 profileDiv">
-					<h4 class="profileheading">Job Description from Hay Group</h4>
+					<h4 class="profileheading">Compensation Data from Hay Group</h4>
 					<p>Access the Hay group tool that allows you to Grade and Price a job thereby allowing you access to compensation benchmarks.</p>
 					<a href="#">Create</a> <a href="#">Request</a>
 				</div>
@@ -46,9 +36,9 @@
 					<h4 class="profileheading">Resarch Links</h4>
 					<p>Leverage the options below to conduct company specific resarch including identification of prospective
 					candidates.Also available is a collection of curated arrticles on recruiting and talent trends.</p>
-					<a href="#">FACTIVA</a><br>
-					<a href="#" style="display: block;margin-top: 5px;">OneSource</a>
-					<a href="#" style="display: block;margin-top: 5px;">Recruiting Trends and Articles</a>
+					<a ng-click="openFactivaIframe()">FACTIVA</a><br>
+					<a ng-click="openOneSourceIframe()" style="display: block;margin-top: 5px;">OneSource</a>
+					<a ng-click="openRecruiterTrendsIframe()" style="display: block;margin-top: 5px;">Recruiting Trends and Articles</a>
 				</div>
 			</div>
         </div>

@@ -1,15 +1,22 @@
 @media (min-width:1441px) and (max-width:1680px) {
 .Content								    { margin:60px 0 0 0; overflow-x: hidden; min-height:calc(100vh - 100px); }
 .DoughnutChart .percent 					{ top:40%; }
+.ContentBox                                 { width: 79%; }
 }
 @media (max-width:1680px)                   {
-.ContentBox                                 { width: 80%; }
+.ContentBox                                 {  width:80%; }
+}
+@media (max-width:1600px)                   {
+.ContentBox                                 {  width: 79%; }
 }
 @media (max-width:1440px)                   {
 .ContentBox                                 { width:77%; }
 }
 @media (max-width:1366px)                   {
 .ContentBox                                 { width: 75.8%; }
+}
+@media (max-width:1280px)                   {
+.ContentBox                                 { width: 74.4%; }
 }
 @media (min-width: 320px) and (max-width: 1024px) {
 .UserNav                                    { width: 100%; margin-top:60px; }

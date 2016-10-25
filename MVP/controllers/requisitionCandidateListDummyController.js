@@ -1,4 +1,4 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions) {
+app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions) {
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }
@@ -6,7 +6,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         agingRequisitionList();
 
         function agingRequisitionList() {
-            var promise = Factory.getrequisitionCandidateList();
+            var promise = Factory.getrequisitionCandidateTableList();
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
                 $scope.candidateListDtls = response.data;

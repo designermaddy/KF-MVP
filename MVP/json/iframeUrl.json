@@ -1,13 +1,16 @@
 {
-    "transactionID": null,
-    "url": [{
-    "reports": "https://foresight.futurestep.com/index.php"
-    , "applicantDetails": "https://emea3.mrtedtalentlink.com/"
-    , "searchListCandidateDetails": "https://iarya.leoforce.com/Arya/"
-    , "latestInsightsManagement": "https://api.rallyverse.com/v1/profiles/2444/lists/content-hub/"
-    , "latestInsightsCarrierManagement": "http://ondemand.kf4d-stage.com/kf/workforce-insights"
-    , "addNewRequisitionTalentLink": "https://emea3.mrtedtalentlink.com/"
-    , "addNewRequisitionCRM": "https://client.loopworks.com/"
-    , "newsAndInsights": "https://ondemand.kf4d.com/kf/workforce-insights#"
-}]
+	"transactionID": null,
+	"url": [{
+		"reports": "https://foresight.futurestep.com/index.php",
+		"applicantDetails": "https://emea3.mrtedtalentlink.com/",
+		"searchListCandidateDetails": "https://iarya.leoforce.com/Arya/",
+		"latestInsightsManagement": "https://api.rallyverse.com/v1/profiles/2444/lists/content-hub/",
+		"latestInsightsCarrierManagement": "http://ondemand.kf4d-stage.com/kf/workforce-insights",
+		"addNewRequisitionTalentLink": "https://emea3.mrtedtalentlink.com/",
+		"addNewRequisitionCRM": "https://client.loopworks.com/",
+		"newsAndInsights": "https://ondemand.kf4d.com/kf/workforce-insights#",
+		"profileDesignResarchLinkFactiva": "https://ondemand.kf4d.com/kf/user#/",
+		"profileDesignResarchLinkOneSource": "https://ondemand.kf4d.com/kf/user#/",
+		"profileDesignResarchLinkRecruiterTrends": "https://ondemand.kf4d.com/kf/user#/"
+	}]
 }

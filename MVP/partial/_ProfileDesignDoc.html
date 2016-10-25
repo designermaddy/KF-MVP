@@ -1,16 +1,17 @@
 <div class="Heading2 HeadingFloat clearfix">
     <h2>Documents</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span>
-    <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">Save to Engagement</button></span>
+    <span class="HeaderButton pull-right"><button ng-disabled="saveButtonEnable" ng-click="openPopForSave()" type="submit" class="btn btn-primary btn-sm">Save to Engagement</button></span>
    
 </div>
 <div class="panel panel-default WidgetPD" id="pdfBox" >
     <div class="panel-body">
         <ul class="clearfix" >
             
-            <li ng-repeat="pdfDtls in pdfDetailsData  | profileSelect:selectName">
+            <li ng-repeat="pdfDtls in pdfDetailsData  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                 <div class="WidgetPDBox">
                     <div class="WidgetPDHeader">
-                        <input type="checkbox" name='1' value='1'>
+                        <input type="checkbox"  value="{{pdfDtls.DocumentNumber}}{{pdfDtls.DocumentNumber}}" ng-checked="selection.indexOf(pdfDtls.DocumentNumber ) > -1"
+    ng-click="toggleSelection(pdfDtls.DocumentNumber, pdfDtls.Function)" name='1' >
                         <label><!--{{pdfDtls.BenchMarkProfile}}--> BenchMarkProfile</label>
                     </div>
                     <div class="WidgetPDContent"><img src="content/images/pdf.jpg" ng-click="openPdf(pdfDtls.DocumentNumber)"> </div>

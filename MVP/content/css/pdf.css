@@ -29,7 +29,7 @@
 .ya-pdf-container {
   text-align: center;
   overflow-y: auto;
-  height: calc(100vh - 30px - 10px);
+  height: calc(100vh - 30px - 150px);
   padding-top: calc(30px + 10px); }
   .ya-pdf-container.__thumbnails .ya-pdf-pagesContainer {
     display: none; }

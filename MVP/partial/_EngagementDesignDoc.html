@@ -1,0 +1,16 @@
+<div class="Heading2 HeadingFloat clearfix">
+    <h2>Documents</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span>  
+</div>
+<div class="panel panel-default WidgetPD">
+    <div class="panel-body">
+        <ul class="clearfix" >
+            
+            <li ng-repeat="pdfDtls in pdfDetailsData  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <div class="WidgetPDBox">                    
+                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg" ng-click="openPdf(pdfDtls.DocumentNumber)"> </div>
+                    <div class="WidgetPDFooter">{{pdfDtls.FileName}}</div>
+                </div>
+            </li>           
+        </ul>  
+    </div>
+</div>

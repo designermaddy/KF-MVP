@@ -2,7 +2,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', function($sc
     var promise = Factory.getRequisitionSearchResults();
     promise.then(function(response){
             //console.log('hi');
-            var result = response.data.requisitionList;
+            var result = response.data.requisition;
             $scope.list = result.map(function(item){
                 return item.RequisitionNumber + '  ' + item.Requisition;
             });

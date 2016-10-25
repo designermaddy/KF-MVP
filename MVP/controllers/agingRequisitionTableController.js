@@ -1,6 +1,6 @@
 
 
-app.controller('agingRequisitionTableController', ['$scope','Factory', function ($scope, Factory) {
+app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location) {
 $scope.viewLoading = false;
  agingRequisitionList();
     function agingRequisitionList() {
@@ -8,7 +8,20 @@ $scope.viewLoading = false;
         promise.then(
           function resolved(response) {
 
-              $scope.rowCollection = response.data.requisitionList;
+             $scope.rowCollection = response.data.requisitionList            
+              
+              $scope.getData = function (workflowSteps, value) {
+                var output = '';
+                angular.forEach(workflowSteps, function (input) {
+                    if (input.step == value) {
+                    output = input.candidateCount;
+                }
+                });
+                 
+                return output;
+                console.log(output);
+              }
+              
 			  if($scope.rowCollection){
 				 $scope.viewLoading = true;
 			  }
@@ -20,7 +33,8 @@ $scope.viewLoading = false;
               alert(response.status + ': ' + response.statusText);
           }
       )
-    };
+    };    
+    
 $scope.itemsByPage=15;
 
   $scope.listVisible = true;
@@ -33,15 +47,24 @@ $scope.itemsByPage=15;
 				console.log($scope.gridVisible)
             }
 
-		  //ng-class="[getClass(icolor)
-		    $scope.getClass = function (strValue) {
-                    if (strValue <= 5)
-                        return "BGRed";
-                    else if (strValue < 15)
-                        return "BGOrange";
-                    else if (strValue >= 15)
-                        return "BGGreen";
-                   
-                }
-        }
-    ]);
+		  // iframe modals.
+ 
+    $scope.openTalentLinkIframe = function() {
+        var url = commonFunctions.getIframeUrl('addNewRequisitionTalentLink');
+        commonFunctions.openIframe(url);
+    }
+    $scope.openCrmIframe = function() {
+        var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
+        commonFunctions.openIframe(url);
+    }
+ 
+    $scope.sendRequisition = function() {
+     
+    }
+    
+    $scope.changeActivelink = function(row, htmlPath) {
+        commonFunctions.changeActivelink(row, htmlPath);
+    }
+
+         
+}]);
