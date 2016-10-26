@@ -8,6 +8,17 @@ getRequisitionList();
              promise.then(
                 function resolved(response) {
                   $scope.engagementResponse = response.data.engagement;
+				   $scope.getData = function (workflowSteps, value) {
+                var output = '';
+                angular.forEach(workflowSteps, function (input) {
+                    if (input.step == value) {
+                    output = input.candidateCount;
+                }
+                });
+                 
+                return output;
+                console.log(output);
+              }
                   if($scope.engagementResponse){
                      $scope.engagementClient = $scope.engagementResponse.Client;
                      $scope.engagementClientContact = $scope.engagementResponse.ClientContact;
@@ -31,6 +42,10 @@ getRequisitionList();
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
       commonFunctions.openIframe(url);
     }
+	 $scope.changeActivelink = function(row, htmlPath) {
+        commonFunctions.changeActivelink(row, htmlPath);
+    }
+
 
 }]);
 
