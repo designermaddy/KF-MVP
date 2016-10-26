@@ -17,7 +17,7 @@
             <tbody>
                 <tr st-select-row="row" ng-repeat="row in rowCollection  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a ng-click="openSearchIframe()">{{row.candidateName}} </a></div>
+                        <div class="TblRequisition"><a ng-click="openSearchIframe(row.candidateId)">{{row.candidateName}} </a></div>
                     </td>
                     <td st-toggle-item>{{row.jobTitle}}</td>
                     <td st-toggle-item>{{row.location}}</td>

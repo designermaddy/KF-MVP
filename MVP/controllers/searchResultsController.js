@@ -74,4 +74,16 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             setValues();
     });
 
+    $scope.openSearchIframe = function (candidateId) {
+        var url = commonFunctions.getIframeUrl('searchListCandidateDetails');
+        url = url.replace("{candidateId}", candidateId);
+        $('#searchListCandidateDetails iframe').attr('src', url);
+        $('#searchResultdiv').hide();
+        $('#searchListCandidateDetails').show();
+    };
+    $('#searchResultBack').click(function (event) {
+        event.preventDefault();
+        $('#searchListCandidateDetails').hide();
+        $('#searchResultdiv').show();
+    });
 }])
