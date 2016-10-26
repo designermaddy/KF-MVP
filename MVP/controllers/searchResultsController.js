@@ -6,7 +6,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     var promise = Factory.getRequisitionSearch();
     promise.then(
       function resolved(response) {
-          $scope.data = $scope.rowCollection = response.data.ArrayOfSocialAryaCandidate.SocialAryaCandidate;
+          $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
           setValues();
           $scope.candidateName = $scope.rowCollection.map(function(item) {
               return item.CandidateName;
@@ -30,7 +30,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.Status = function(row) {
         var str = '';
         if (row.Ignore == 'false') {
-            str += '<i class="fa fa-circle" aria-hidden="true"></i>';
+            //str += '<i class="fa fa-circle" aria-hidden="true"></i>';
+            str += "";
         }else if (row.Ignore == 'true') {
             str += '<i class="fa fa-ban" aria-hidden="true"></i>';
         }
@@ -38,7 +39,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         if (row.Shortlist == 'true') {
             str += '<i class="fa fa-star" aria-hidden="true"></i>';
         }else if (row.Shortlist == 'false') {
-            str += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+            //str += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+            str += "";
         }
 
         return $sce.trustAsHtml(str);
