@@ -22,7 +22,7 @@
             <tbody>
                 <tr st-select-row="row" ng-repeat="row in displayedCollections">
                     <td>
-                        <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.poolId}} <span>{{row.requisitionTitle}}</span></a></div>
+                        <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.requisitionNumber}} <span>{{row.requisitionTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
                     <td>
