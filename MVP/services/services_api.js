@@ -198,11 +198,18 @@ app.service('sharedProperties', function () {
 	var authGlobalToken = ''
 	var counter=0;
     var requisitionDetails = [];
+    var RequisitionTable = [];
 
     return {
+        setRequisitionTable : function(value) {
+            RequisitionTable = value;
+        },
         
+        getRequisitionTable : function(){
+            return RequisitionTable;
+        },
         
-		 getAuthGlobalToken : function() {
+        getAuthGlobalToken : function() {
             return authGlobalToken;
         },
         setAuthGlobalToken : function(value) {

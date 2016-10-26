@@ -4,6 +4,7 @@ app.controller('requisitionSearchResultsController', ['$scope', 'Factory', 'comm
     promise.then(
       function resolved(response) {
           $scope.rowCollection = response.data.aryaSourcedCandidatesList;
+          sharedProperties.setRequisitionTable($scope.rowCollection);
           setValues();          
       },
       function rejected(response) {
@@ -38,6 +39,12 @@ app.controller('requisitionSearchResultsController', ['$scope', 'Factory', 'comm
         }
         
         return $sce.trustAsHtml(str);
-    }
+    };
     
+    $scope.$watch(function() {
+        return sharedProperties.getRequisitionTable()
+        }, function(newValue, oldValue) {
+            $scope.rowCollection = newValue;
+            setValues();
+    });
 }])

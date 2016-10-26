@@ -1,4 +1,4 @@
-<div class="DataListBox" ng-controller="requisitionSearchResultsController" >
+<div class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Search Results({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
     <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="table table-striped">
