@@ -3,7 +3,7 @@ app.controller('requisitionSearchResultsController', ['$scope', 'Factory', 'comm
     var promise = Factory.getRequisitionSearch();
     promise.then(
       function resolved(response) {
-          $scope.rowCollection = response.data.ArrayOfSocialAryaCandidate.SocialAryaCandidate;
+          $scope.rowCollection = response.data.aryaSourcedCandidatesList;
           setValues();          
       },
       function rejected(response) {
@@ -21,18 +21,20 @@ app.controller('requisitionSearchResultsController', ['$scope', 'Factory', 'comm
       }
     }
     
-    $scope.Status = function(row) {
+    $scope.status = function(row) {
         var str = '';
-        if (row.Ignore == 'false') {
-            str += '<i class="fa fa-circle" aria-hidden="true"></i>';
-        }else if (row.Ignore == 'true') {
+        if (row.ignore == 'false') {
+            //str += '<i class="fa fa-circle" aria-hidden="true"></i>';
+            str += "";
+        }else if (row.ignore == 'true') {
             str += '<i class="fa fa-ban" aria-hidden="true"></i>';            
         }
         
-        if (row.Shortlist == 'true') {
+        if (row.shortlist == 'true') {
             str += '<i class="fa fa-star" aria-hidden="true"></i>';
-        }else if (row.Shortlist == 'false') {
-            str += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+        }else if (row.shortlist == 'false') {
+            //str += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+            str += "";
         }
         
         return $sce.trustAsHtml(str);

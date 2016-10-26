@@ -108,7 +108,25 @@ app.factory('Factory', ['$http', function ($http) {
     }
 	
     dataFactory.getRequisitionSearch = function() {
-        return $http.get('json/requisitionSearch.json');
+        // return $http.get('json/requisitionSearch.json');
+        var orgId = "2";
+        var jobId = "18508";
+        var count = "60";
+        var start = "25";
+        var url =urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start; 
+        //return $http.get(url);
+
+        return $http.get(url)
+                .then(getAryaCandidatesComplete)
+                .catch(function(message) {
+                    exception.catcher('XHR Failed for getAvengers')(message);
+                    $location.url('/');
+                });
+
+        function getAryaCandidatesComplete(data, status, headers, config) {
+            return data;
+        }
+
     }
 
     dataFactory.saveNewSearch = function(data) {

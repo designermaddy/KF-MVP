@@ -17,14 +17,14 @@
             <tbody>
                 <tr st-select-row="row" ng-repeat="row in rowCollection  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a ng-click="openSearchIframe()">{{row.CandidateName}} </a></div>
+                        <div class="TblRequisition"><a ng-click="openSearchIframe()">{{row.candidateName}} </a></div>
                     </td>
-                    <td st-toggle-item>{{row.JobTitle}}</td>
-                    <td st-toggle-item>{{row.Location}}</td>
-                    <td st-toggle-item>{{row.CurrentCompany}}</td>
+                    <td st-toggle-item>{{row.jobTitle}}</td>
+                    <td st-toggle-item>{{row.location}}</td>
+                    <td st-toggle-item>{{row.currentCompany}}</td>
                     <td st-toggle-item>{{row.SourceType}}</td>
                     <td st-toggle-item>{{row.UpdatedON | date:dd.mm.yy }}</td>
-                    <td st-toggle-item ng-bind-html = 'Status(row)'></td>
+                    <td st-toggle-item ng-bind-html = 'status(row)'></td>
                 </tr>
             </tbody>
         </table>

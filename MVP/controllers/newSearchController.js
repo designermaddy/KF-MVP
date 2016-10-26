@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    app.controller('NewSearchController', ['Factory', NewSearchController]);
+    app.controller('NewSearchController', ['Factory', '$location',  NewSearchController]);
 
     /* @ngInject */
-    function NewSearchController(Factory) {
+    function NewSearchController(Factory, $location) {
 
         /*jshint validthis: true */
         var vm = this;
@@ -45,6 +45,8 @@
 
         vm.save = function save () {
             Factory.saveNewSearch(vm.criteria);
+            var redirectPath = "Requisitions";
+            $location.path(redirectPath);
         };
     }
 })();
