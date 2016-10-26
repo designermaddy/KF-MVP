@@ -91,6 +91,13 @@ app.factory('Factory', ['$http', function ($http) {
             data : data            
         });
     }
+	dataFactory.postEngagmentRequisitionTable = function(data) {
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Profile/getDocumentByEngagement',
+            data : data            
+        });
+    }
     
     dataFactory.sendRequisition = function(data) {
         return $http({

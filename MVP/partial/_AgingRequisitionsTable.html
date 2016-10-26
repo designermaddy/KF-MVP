@@ -1,6 +1,6 @@
 <div ng-controller="agingRequisitionTableController" class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Aging Requisitions (5)</h2> <span class="pull-right Link disabled"><a href="#">View All Open Requisitions (8)</a></span> </div>
+        <h2>Aging Requisitions ({{displayedCollections.length}})</h2> <span class="pull-right Link disabled"><a href="#/Requisitions">View All Open Requisitions</a></span> </div>
     <div class="AgingRequisitionTable" st-table="displayedCollections" st-safe-src="rowCollection">
         <table class="table table-striped">
             <thead>
