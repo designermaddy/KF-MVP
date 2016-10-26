@@ -4,18 +4,7 @@
     <div class="col-md-8">
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:310px">
-                <h3>Job Description</h3>
-                <p> Cloud Architect
-                    <br> Ability to supervise and mentor technical team members to work on emerging cloud technologies
-                    <br> As a thought leader, clound architect will be the key advisor to architecture and design review, anchoring business pursuit
-                    <br> intiatives, client training and in-house capability building
-                    <br> Pre-sales
-                    <br> Responsilbe for solution development
-                    <br> Stratergy for proposals and proactive initiatives
-                    <br> Excellent communication skills
-                    <br> Ability to work with multiple stakeholder across multiple geographies
-                    <br>
-                    <br> Aditional responsibilities </p>
+                <div ng-bind-html="vm.criteria.Description"></div>
             </div>
         </div>
     </div>
@@ -32,7 +21,7 @@
                 <h6>rate</h6>
                 <hr>
                 <h3>EXPERIENCE</h3>
-                <input class="input-range" type="range" min="0" max="30" step="1" value="15"><span class="jobspan" id="range">15</span> </div>
+                <input class="input-range" type="range" min="0" max="30" step="1" value="15" ng-model="vm.criteria.MaxExp"><span class="jobspan" id="range">15</span> </div>
         </div>
     </div>
 </div>
@@ -82,7 +71,7 @@
 </div>
 <div class="row">
     <div class="col-md-12 col-lg-12">
-        <a href="#RequisitionDetails/3" class="btn btn-primary">Save</save>
+        <a href="#RequisitionDetails/3" class="btn btn-primary" ng-click="vm.save()">Save</save>
         <a href="#" class="btn btn-default disabled">Cancel</a>
     </div>
 </div>

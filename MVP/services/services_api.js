@@ -103,6 +103,18 @@ app.factory('Factory', ['$http', function ($http) {
     dataFactory.getRequisitionSearch = function() {
         return $http.get('json/requisitionSearch.json');
     }
+
+    dataFactory.saveNewSearch = function(data) {
+        // TODO: Get rid of hardcoded orgId
+        var orgId = "2";
+
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Requisition/createJob/' + orgId,
+            data : data
+        });
+    };
+
      return dataFactory;
 }]);
 
