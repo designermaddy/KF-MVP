@@ -1,7 +1,8 @@
 
 
 app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location) {
-$scope.viewLoading = false;
+
+ $scope.viewLoading = false;
  agingRequisitionList();
     function agingRequisitionList() {
         var promise = Factory.getAgingRequisitionList();
@@ -9,6 +10,7 @@ $scope.viewLoading = false;
           function resolved(response) {
 
              $scope.rowCollection = response.data.requisitionList            
+              sharedProperties.setRequisitionTable($scope.rowCollection);
               
               $scope.getData = function (workflowSteps, value) {
                 var output = '';
@@ -33,7 +35,14 @@ $scope.viewLoading = false;
               alert(response.status + ': ' + response.statusText);
           }
       )
-    };    
+    };
+
+    $scope.$watch(function() {
+        return sharedProperties.getRequisitionTable()
+        }, function(newValue, oldValue) {
+            $scope.rowCollection = newValue;
+            //setValues();
+    });
     
 $scope.itemsByPage=15;
 
