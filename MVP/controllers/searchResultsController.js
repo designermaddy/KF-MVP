@@ -9,7 +9,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
           $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
           setValues();
           $scope.candidateName = $scope.rowCollection.map(function(item) {
-              return item.CandidateName;
+              return item.candidateName;
           });
       },
       function rejected(response) {
@@ -53,7 +53,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         var candidateArray = [];
         if (name) {
             angular.forEach(newArray, function(input) {
-                if (input.CandidateName == name) {
+                if (input.candidateName == name) {
                     candidateArray.push(input);
                 }
             });
