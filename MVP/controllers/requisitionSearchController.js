@@ -70,8 +70,6 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
         newArray = clientArray;
     }
 
-
-
     if(newArray.length == 0) {
         alert('Result not found');
         sharedProperties.setRequisitionTable($scope.data);
