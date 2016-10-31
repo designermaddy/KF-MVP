@@ -44,7 +44,14 @@
         }
 
         vm.save = function save () {
-            Factory.saveNewSearch(vm.criteria);
+            var promise = Factory.saveNewSearch(vm.criteria);
+            promise.then(
+                function resolved(response) {
+                    console.log(response.data);
+                },
+                function rejected(response) {
+                    alert(response.status + ': ' + response.statusText);
+            })
             var redirectPath = "Requisitions";
             $location.path(redirectPath);
         };

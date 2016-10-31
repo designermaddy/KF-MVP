@@ -75,9 +75,11 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     });
 
     $scope.openSearchIframe = function (candidateId) {
-        //var url = commonFunctions.getIframeUrl('searchListCandidateDetails');
-        //url = url.replace("{candidateId}", candidateId);
-        //$('#searchListCandidateDetails iframe').attr('src', url);
+        var url = $("input[name='ReturnUrl']").attr('value');
+        url = url.replace("{candidateId}", candidateId);
+        $("input[name='ReturnUrl']").attr('value', url);
+        $('#arya').submit()
+        alert(candidateId);
         $('#searchResultdiv').hide();
         $('#searchListCandidateDetails').show();
     };
