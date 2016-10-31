@@ -10,7 +10,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
            if(sharedProperties.getRequisitionDetails()){
                 $scope.rowCollection = sharedProperties.getRequisitionDetails().requisitionDetails;     
     
-                console.log(sharedProperties.getRequisitionDetails().requisitionDetails)
+                //console.log(sharedProperties.getRequisitionDetails().requisitionDetails)
                 //$scope.candidateListDtls = response.data;
                 if ($scope.rowCollection) {
                     $scope.viewLoading = true;
@@ -71,11 +71,26 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
             } 
         });
     }
+
+    $scope.openAdd = function() {
+        var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'AddMe.html'
+            , controller: 'AddMeCtrl'
+            , size: 'lg'
+        });
+    }
 }]);
 
 app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {
     $scope.iframeUrl = $sce.trustAsResourceUrl(url);
     $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])
+
+app.controller('AddMeCtrl', ['$uibModalInstance', '$scope', function($uibModalInstance, $scope) {
+     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
 }])

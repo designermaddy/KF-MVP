@@ -150,7 +150,8 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
     commonFunctions.getIframeUrl = function(key) {
         var iFrameArray = sharedProperties.getIframeLinks();
         return iFrameArray[0][key];
-    }        
+    }
+
     commonFunctions.openIframe = function(url) {
         var modalInstance = $uibModal.open({
             animation: true

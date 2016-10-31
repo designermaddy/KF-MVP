@@ -3,19 +3,22 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.name = '';
     $scope.data = [];
 
-    var promise = Factory.getRequisitionSearch();
-    promise.then(
-      function resolved(response) {
-          $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
-          setValues();
-          $scope.candidateName = $scope.rowCollection.map(function(item) {
-              return item.candidateName;
-          });
-      },
-      function rejected(response) {
-          alert(response.status + ': ' + response.statusText);
-      }
-    )
+    function getData() {
+        var promise = Factory.getRequisitionSearch();
+        promise.then(
+          function resolved(response) {
+              $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
+              setValues();
+              $scope.candidateName = $scope.rowCollection.map(function(item) {
+                  return item.candidateName;
+              });
+          },
+          function rejected(response) {
+              alert(response.status + ': ' + response.statusText);
+          }
+        )
+    };
+    getData();
 
     function setValues() {
       if($scope.rowCollection){
@@ -87,4 +90,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         $('#searchListCandidateDetails').hide();
         $('#searchResultdiv').show();
     });
+
+    $scope.refreshResults = function() {
+        getData();
+    }
 }])
