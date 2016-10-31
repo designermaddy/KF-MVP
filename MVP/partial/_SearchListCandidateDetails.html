@@ -1,5 +1,18 @@
 <div id="searchListCandidateDetails" style="display:none; overflow:hidden">
 <a href="#" class="btn btn-primary btn-sm IframeBtn" id="searchResultBack"> Back </a>
-<iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>
+<!--<iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>-->
+<form
+      id="arya" target="iframe"
+      method="post" action="https://qa.leoforce.com/Arya/"
+>
+    <input type="hidden" name="LoginName" value="gsharma@leoforce.com"/>
+    <input type="hidden" name="Password" value="Password@123"/>
+    <input type="hidden" name="btnSubmit" value="Login"/>
+    <input type="hidden" name="ReturnUrl"
+value="/Arya/SocialArya/CandidateView?CandidateId=59428&JobId=18508"/>
+</form>
+<iframe name="iframe" frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-100px; margin-right:-20px"></iframe>
+<script type="text/javascript">
+    document.getElementById('arya').submit();
+</script>
 </div>
-
