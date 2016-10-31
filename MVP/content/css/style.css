@@ -8,7 +8,8 @@ html, body                                      { min-height: 100%; overflow-x: 
 /* --------------------------- Global Style ---------------------------------- */
 body											{ font-family:Arial, Helvetica, sans-serif; font-size:12px; background-color: #ececec; }
 h1, h2, h3, h4, h5, h6                          { font-family:"Gotham",Helvetica,Arial,sans-serif; }
-a                                               { cursor: pointer; color:#0a7fc9; }
+a                                               { cursor: pointer; color:#0a7fc9; text-decoration: none;}
+a:hover                                         { text-decoration: none;}
 header a                                        { color:#fff; }
 .h1, .h2, .h3, h1, h2, h3                       { margin-top: 0; }
 /* --------------------------- Margin and Padding Style ---------------------------------- */
