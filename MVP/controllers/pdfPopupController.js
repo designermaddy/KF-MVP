@@ -1,4 +1,4 @@
-app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions',function ($uibModal, $scope, Factory, sharedProperties, commonFunctions) {
+app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config) {
     
      $scope.engagmentIDName =''
      $scope.saveButtonEnable = true;
@@ -14,7 +14,7 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
     }
         
     $scope.openPdf = function (url) {
-        var url = 'https://api.recruiterdesktop.kf4d-dev.com/RD-WebApp/Profile/getDocumentById/' + url;
+        var url = config.projectUrl + '/Profile/getDocumentById/' + url;
         var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'

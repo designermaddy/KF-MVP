@@ -1,6 +1,7 @@
-app.factory('Factory', ['$http', function ($http) {
+app.factory('Factory', ['$http', 'config', function ($http, config) {
     var dataFactory = {};
-    var urlAPI = 'https://api.recruiterdesktop.kf4d-dev.com/RD-WebApp'
+    var urlAPI = config.projectUrl;
+
     dataFactory.getAgingRequisitionList = function () {
         // console.log(payRolNumber)
         //return $http.get('json/Requisition.json');

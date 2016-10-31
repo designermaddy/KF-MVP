@@ -1,4 +1,4 @@
-app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', function ($uibModal, $scope, Factory, sharedProperties) {
+app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', function ($uibModal, $scope, Factory, sharedProperties, config) {
         //getEngagementId 
         var id = sharedProperties.getengagementPerIDSelected();
         
@@ -29,7 +29,7 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
     }
     
     $scope.openPdf = function (url) {
-        var url = 'https://api.recruiterdesktop.kf4d-dev.com/RD-WebApp/Profile/getDocumentById/' + url;        
+        var url = config.projectUrl + '/Profile/getDocumentById/' + url;
         var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'
