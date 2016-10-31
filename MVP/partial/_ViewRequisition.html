@@ -13,7 +13,7 @@
                                     <div class="ViewBoxCount">{{item.RequsitionCount}}</div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div> 
+                                    <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
                                     <div class="ViewBoxStatus">
                                         <select>
                                             <option value="Open">Open</option>
@@ -22,7 +22,6 @@
                                         </select>
                                     </div>
                                     <div class="ViewBoxDays">{{item.DaysLeft }} Days</div>
-                                    
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4 pull-right">
                                     <ul class="ViewBoxActions clearfix">
@@ -54,11 +53,11 @@
                                     </div>
                                 </div>
                                 <!--<div class="col-sm-12 col-md-3 col-lg-3" ng-show="engagementResponse.engagmentUsers.length>1">-->
-                                    <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
                                     <div class="ViewBoxHeadName">&nbsp;</div>
                                     <div class="ViewBoxTeamImg"><img src="content/images/usergroup.jpg" alt=""></div>
                                     <div class="ViewBoxInfo">
-                                        <div class="ViewBoxName" uib-dropdown on-toggle="toggled(open)"> <a href id="RecruitmentTeamDropdown" uib-dropdown-toggle> Recruitment Team <span class=" fa fa-angle-down"></span></a>
+                                        <div class="ViewBoxName" uib-dropdown on-toggle="toggled(open)"> <a href id="RecruitmentTeamDropdown" uib-dropdown-toggle>({{engagementResponse.engagmentUsers.length}}) More <span class=" fa fa-angle-down"></span></a>
                                             <ul class="dropdown-menu ViewDropBox" uib-dropdown-menu aria-labelledby="RecruitmentTeamDropdown">
                                                 <li ng-repeat="recruiterName in engagementResponse.engagmentUsers">
                                                     <a href class="clearfix">
@@ -72,15 +71,16 @@
                                             </ul>
                                         </div>
                                     </div>
-                                        <div class="pull-right ViewBoxHire">
-                                    <div class="ViewBoxHeadName">Hired</div>
-                                    <div class="ViewBoxHireStatus"><span class="HireValue">0</span> <span class="HireStatus">1 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                    <div class="ViewBoxBtn">
+                                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Me</button>
+                                        <button type="submit" class="btn btn-primary btn-sm hidden"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Recruiter</button>
+                                    </div>
+                                    <div class="pull-right ViewBoxHire">
+                                        <div class="ViewBoxHeadName">Hired</div>
+                                        <div class="ViewBoxHireStatus"><span class="HireValue">0</span> <span class="HireStatus">1 <i class="fa fa-arrow-down" aria-hidden="true"></i>
 </span></div>
+                                    </div>
                                 </div>
-                                </div>
-                                
-                                
-                                
                             </div>
                         </div>
                         <div class="col-sm-3 col-md-3 col-lg-3 ViewBoxRight">
