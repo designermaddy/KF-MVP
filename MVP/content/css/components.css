@@ -30,6 +30,7 @@
 .btn-danger, .btn-default, .btn-info, 
 .btn-primary, .btn-success, .btn-warning                { background-image:none;  box-shadow: 0 0 0; text-shadow: 0 0 0; }
 .btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
+.btn-primary						{background-color:#007da4 !important;border-color: #007da4;}
 .IframeBtn                                              { vertical-align: top; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
 .Heading2 h2, .Heading2.HeadingFloat h2                 { color: #006450; font-size: 16px; font-weight:bold; margin-top:10px;  display: inline-block; }
@@ -37,7 +38,7 @@
 .Heading2.HeadingFloat h2                               { float: left; display: inline-block; }
 .Heading2.First h2                                      { margin-top:0; }
 .Heading2.Open                                          { padding:0 15px; }
-.Heading2.HeadingFloat span.Link                        { display: inline-block; padding: 10px 0; }
+.Heading2.HeadingFloat span.Link                        { display: inline-block; padding: 10px 0;font-size:14px; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
 .chart-bar                                              { width:100% !important; height:100% !important; max-width:540px; display: block; margin: 0 auto; }
 /* --------------------------- Doughnut Chart Style ---------------------------------- */
@@ -57,9 +58,9 @@
 .InsightThumbnail .caption                              { background-color: #f5f5f5; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); padding: 3px 9px; }
 .InsightThumbnail .caption h5                           { padding: 5px 9px; font-size: 14px; font-weight: bold; border-left:3px solid #568e30; min-height: 56px; }
 .InsightThumbnail .ShareDetails                         { padding: 9px; }
-.InsightThumbnail .ShareDetails .InsightName            { display: inline-block; float: left; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
-.InsightThumbnail .ShareDetails .InsightDate            { display: inline-block; float: right; font-weight: bold; color: #b5b5b5; padding: 5px 0 10px 0; }
-.InsightThumbnail .ShareDetails .InsightTags            { display: inline-block; float: left; font-weight: bold; color: #aab2bd; padding: 5px 0; }
+.InsightThumbnail .ShareDetails .InsightName            { display: inline-block; float: left; font-weight: bold; color: #777777; padding: 5px 0 10px 0; }
+.InsightThumbnail .ShareDetails .InsightDate            { display: inline-block; float: right; font-weight: bold; color: #777777; padding: 5px 0 10px 0; }
+.InsightThumbnail .ShareDetails .InsightTags            { display: inline-block; float: left; font-weight: bold; color: #506470; padding: 5px 0; }
 .InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 50%; padding:6px 8px; width: 40px; height: 40px;  }
 
 /* --------------------------- Table List Style ---------------------------------- */
@@ -74,7 +75,7 @@
 .table-striped > tbody > tr td .TblDays,
 .TblRequisition                                         { padding: 3px; vertical-align: middle; }
 .table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:2px solid #0a7fc9; border-radius:50%; color:#0a7fc9; font-size: 16px; width: 30px; height: 30px; padding: 2px; text-align: center; }
-.table-striped > tbody > tr td .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:14px; font-weight:normal; text-align: center; }
+.table-striped > tbody > tr td .TblDays      { border-radius:6px; color:#fff;  padding:2px; font-size:12px; font-weight:normal; text-align: center; }
 .TblRequisition                                         { padding:0; text-align:left; }
 .TblRequisition a                                       { font-size:14px; line-height: 16px; display: block; }
 .TblRequisition span                                    { color: #000; }
@@ -312,3 +313,13 @@ input[type='range']::-webkit-slider-thumb 				{ -webkit-appearance: none !import
 #jobTitleDuration input[type="range"]					{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(220, 218, 218)));}
 #jobDuration input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.75, rgb(134, 198, 218)), color-stop(0.75, rgb(220, 218, 218))); }
 #jobPromotion input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(134, 198, 218)), from(rgb(220, 218, 218))); }
+.profile p											{font-family:Arial;font-size:14px;}
+.profileDiv h4										{font-family:Arial;font-size:14px;font-weight:bold;}
+.popover											{top: 46px !important;left: 416.672px !important;display: block !important; max-width: 536px !important;}
+.popover.left>.arrow								{left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
+.popover.left>.arrow:after							{top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
+.close-icon											{margin: 7px 0px;color: #00c2ff;font-size: 1.2em}
+.popupImg											{margin: 4px 0px;}
+.mt20												{margin-top: 20px;}
+.mb25												{margin-bottom:25px;}
+.popupDiv input										{margin-right: 3px;}

@@ -35,7 +35,7 @@ header a                                        { color:#fff; }
 .PadRtNull									    { padding-right:0 !important;}
 .PadRt30									    { padding-right:30px !important;}
 /* --------------------------- Color Style ---------------------------------- */
-.BG-RED                                          { background-color:#e8563e; }
+.BG-RED                                          { background-color:#D40A1c }
 .BG-YELLOW                                       { background-color:#ffa500; }
 .BG-GREEN                                        { background-color:#8cc152; }
 /* --------------------------- Common Template Style ---------------------------------- */
@@ -101,7 +101,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .panel-footer, .alert, .breadcrumb				{ border-radius:0 !important; }
 .panel-group 									{ margin-bottom:0; }
 .page-header 									{ margin:10px 0 12px; }
-.panel-heading 									{ font-size:14px; font-weight:bold; border-radius:0; }
+.panel-heading 									{ font-size:16px; font-weight:bold; border-radius:0; }
 .panel-primary 				 					{ border-color:#1abc9c; }
 .panel-primary .panel-heading 					{ background-image:none; background-color:#1abc9c; border-color:#1abc9c; color: #fff; }
 .panel-primary .panel-default .panel-heading 	{ background-image:linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%); background-color:transparent; color:#333; }
