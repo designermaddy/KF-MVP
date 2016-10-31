@@ -226,6 +226,8 @@
 .ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
 .ViewBoxImage                                           { display: inline-block; float: left; }
 .ViewBoxImage img                                       { width:50px; height:50px; border:2px solid #106550; border-radius:25px; }
+.ViewBoxTeamImg                                         { display: inline-block; float: left; }
+.ViewBoxTeamImg img                                     { width:25px; height:25px; border:2px solid #106550; border-radius:25px; }
 .ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
 .SecondaryHeader                                        { padding: 5px 0; }
 .ViewBoxRight                                           { border-left:1px solid #dad8d6; }
@@ -272,7 +274,7 @@
 .dropdown-menu > li > a                                 { padding:5px 20px;}
 /* --------------------------- WidgetPD Style ---------------------------------- */
 .Popover span:before                                    { color:#fff; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
-.popover											{top: 46px !important; display: block !important; max-width: 536px !important;}
+.popover											{top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
 .popover.left>.arrow								{left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
 .popover.left>.arrow:after							{top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
 .popover.left                                       {margin-left: 50px; }
