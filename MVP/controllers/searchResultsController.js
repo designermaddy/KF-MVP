@@ -1,4 +1,4 @@
-app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', function ($scope, Factory, commonFunctions, $sce) {
+app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', function ($scope, Factory, commonFunctions, $sce, config) {
 
     $scope.name = '';
     $scope.data = [];
@@ -75,11 +75,10 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     });
 
     $scope.openSearchIframe = function (candidateId) {
-        var url = $("input[name='ReturnUrl']").attr('value');
+        var url = config.iframeUrl;
         url = url.replace("{candidateId}", candidateId);
         $("input[name='ReturnUrl']").attr('value', url);
         $('#arya').submit()
-        alert(candidateId);
         $('#searchResultdiv').hide();
         $('#searchListCandidateDetails').show();
     };
