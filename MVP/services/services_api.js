@@ -223,9 +223,19 @@ app.service('sharedProperties', function () {
     var requisitionDetails = [];
     var RequisitionTable = [];
     var JobID = '';
+
     var ClientJobID = '';
 
+    var viewCandidateId = '';
+
+
     return {
+        setViewCandidateId : function(value) {
+            viewCandidateId = value;
+        },
+        getViewCandidateId : function(){
+            return viewCandidateId;
+        },
         setJobId : function(value) {
             JobID = value;
         },

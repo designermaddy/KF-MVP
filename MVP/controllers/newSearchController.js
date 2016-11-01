@@ -52,7 +52,7 @@
                 function resolved(response) {
                     console.log(response.data.JobID);
                     sharedProperties.setJobId(response.data.JobID);
-                    var redirectPath = "Requisitions";
+                    var redirectPath = "RequisitionDetails/3";
                     $location.path(redirectPath);
                 },
                 function rejected(response) {
