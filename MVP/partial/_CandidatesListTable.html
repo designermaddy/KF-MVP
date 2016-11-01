@@ -20,7 +20,7 @@
                 <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = candidateListDtls.candidateList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                    <td><input type="checkbox" ></td>
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a href="">{{candidateListDtls.firstName + ' ' + candidateListDtls.lastName}} </a></div>
+                        <div class="TblRequisition"><a ng-click="getCandidateData(candidateListDtls.id);">{{candidateListDtls.firstName + ' ' + candidateListDtls.lastName}} </a></div>
                     </td>
                     <td st-toggle-item>{{candidateListDtls.currentJobTitle}}</td>
                     <td st-toggle-item>{{candidateListDtls.location.city}}</td>

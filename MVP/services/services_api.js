@@ -69,6 +69,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	dataFactory.getIframeList = function(){
         return $http.get('json/iframeUrl.json')
     }
+
 	dataFactory.postSaveEngagement = function(data){
 		return $http({
 			method: 'POST',
@@ -100,6 +101,14 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         });
     }
     
+    dataFactory.getDocumentByRequisition = function(data) {
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Profile/getDocumentByRequisition',
+            data : data
+        })
+    }
+
     dataFactory.sendRequisition = function(data) {
         return $http({
             method : 'POST',
@@ -111,7 +120,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getRequisitionSearch = function(jobId) {
         // return $http.get('json/requisitionSearch.json');
         var orgId = "2";
-        var jobId = jobId; //"18508";
+        var jobId = 18508;
         var count = "60";
         var start = "25";
         var url =   urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
@@ -131,7 +140,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     }
 
     dataFactory.saveNewSearch = function(data) {
-        // TODO: Get rid of hardcoded orgId
+        // TODO: Get rid of hardcoded orgId will come from SSO
         var orgId = "2";
 
         return $http({
@@ -144,6 +153,15 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.rallyVerse = function(){
          return $http.get('https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/')
     }
+
+    dataFactory.getviewCandidate = function(id) {
+        return $http({
+            method : 'GET',
+            url : urlAPI + '/Candidate/viewCandidate',
+            data : id
+        })
+    };
+
      return dataFactory;
 }]);
 
@@ -173,12 +191,14 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
 
-        sharedProperties.setJobId(row.jobId);
+
                                 
         var promise = Factory.sendRequisition(row);        
         promise.then(
           function resolved(response) {
               sharedProperties.setRequisitionDetails(response.data);
+              sharedProperties.setJobId(response.data.requisitionDetails[0].aryaJobID);
+              sharedProperties.setClientJobID(response.data.requisitionDetails[0].jobId)
               $location.path( htmlPath );
           },
           function rejected(response) {
@@ -208,11 +228,28 @@ app.service('sharedProperties', function () {
     var RequisitionTable = [];
     var JobID = '';
 
+    var ClientJobID = '';
+
+    var viewCandidateId = '';
+
+
     return {
+        setViewCandidateId : function(value) {
+            viewCandidateId = value;
+        },
+        getViewCandidateId : function(){
+            return viewCandidateId;
+        },
         setJobId : function(value) {
             JobID = value;
         },
         getJobId : function() {
+            return JobID;
+        },
+        setClientJobID : function(value) {
+            ClientJobID = value;
+        },
+        getClientJobID : function() {
             return JobID;
         },
         setRequisitionTable : function(value) {

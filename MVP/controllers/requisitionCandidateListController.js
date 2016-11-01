@@ -1,4 +1,4 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions) {
+app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', 'sharedProperties', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties) {
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }
@@ -9,6 +9,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             var promise = Factory.getrequisitionCandidateList();
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
+
                 $scope.candidateListDtls = response.data;
                 if ($scope.rowCollection) {
                     $scope.viewLoading = true;
@@ -91,5 +92,11 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             $('#applicantResultdiv').show();
         }
         
+        $scope.getCandidateData = function(id) {
+          sharedProperties.setViewCandidateId(id);
+          $('#candidatelistid').hide();
+          $('#reqCanDet').show();
+        }
+
         
 }]);
