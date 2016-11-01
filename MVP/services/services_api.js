@@ -141,6 +141,9 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         });
     };
 
+    dataFactory.rallyVerse = function(){
+         return $http.get('https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/')
+    }
      return dataFactory;
 }]);
 
