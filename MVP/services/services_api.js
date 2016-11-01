@@ -187,12 +187,14 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
 
-        sharedProperties.setJobId(row.jobId);
+
                                 
         var promise = Factory.sendRequisition(row);        
         promise.then(
           function resolved(response) {
               sharedProperties.setRequisitionDetails(response.data);
+              sharedProperties.setJobId(response.data.requisitionDetails[0].aryaJobID);
+              sharedProperties.setClientJobID(response.data.requisitionDetails[0].jobId)
               $location.path( htmlPath );
           },
           function rejected(response) {
@@ -221,12 +223,19 @@ app.service('sharedProperties', function () {
     var requisitionDetails = [];
     var RequisitionTable = [];
     var JobID = '';
+    var ClientJobID = '';
 
     return {
         setJobId : function(value) {
             JobID = value;
         },
         getJobId : function() {
+            return JobID;
+        },
+        setClientJobID : function(value) {
+            ClientJobID = value;
+        },
+        getClientJobID : function() {
             return JobID;
         },
         setRequisitionTable : function(value) {

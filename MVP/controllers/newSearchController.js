@@ -9,17 +9,18 @@
         /*jshint validthis: true */
         var vm = this;
 
-        vm.criteria = getCriteria();
+        vm.criteria = getCriteria(sharedProperties);
 
         function getCriteria() {
             // TODO: This will likely need a service, to populate the criteria
             return new Criteria();
         }
 
-        var jobId = sharedProperties.getRequisitionDetails().requisitionDetails[0].requisitionNumber;
+
 
         function Criteria() {
             // TODO: Get rid of the hard coded values; Provided here just for initial demo purposes
+            var jobId = sharedProperties.getClientJobID()
             this.ClientJobID = jobId; //"562139";
             this.AryaOrgID = 1;
             this.ClientOrgID = 1;

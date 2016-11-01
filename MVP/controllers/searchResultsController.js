@@ -85,6 +85,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.openSearchIframe = function (candidateId) {
         var url = config.iframeUrl;
         url = url.replace("{candidateId}", candidateId);
+        url=url.replace("{jobId}",  sharedProperties.getJobId());
         $("input[name='ReturnUrl']").attr('value', url);
         $('#arya').submit()
         $('#searchResultdiv').hide();
