@@ -69,6 +69,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	dataFactory.getIframeList = function(){
         return $http.get('json/iframeUrl.json')
     }
+
 	dataFactory.postSaveEngagement = function(data){
 		return $http({
 			method: 'POST',
@@ -100,6 +101,14 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         });
     }
     
+    dataFactory.getDocumentByRequisition = function(data) {
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Profile/getDocumentByRequisition',
+            data : data
+        })
+    }
+
     dataFactory.sendRequisition = function(data) {
         return $http({
             method : 'POST',
@@ -111,7 +120,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getRequisitionSearch = function(jobId) {
         // return $http.get('json/requisitionSearch.json');
         var orgId = "2";
-        var jobId = jobId; //"18508";
+        var jobId = 18508;
         var count = "60";
         var start = "25";
         var url =   urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
@@ -131,7 +140,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     }
 
     dataFactory.saveNewSearch = function(data) {
-        // TODO: Get rid of hardcoded orgId
+        // TODO: Get rid of hardcoded orgId will come from SSO
         var orgId = "2";
 
         return $http({
@@ -139,6 +148,14 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
             url : urlAPI + '/Requisition/createJob/' + orgId,
             data : data
         });
+    };
+
+    dataFactory.getviewCandidate = function(id) {
+        return $http({
+            method : 'GET',
+            url : urlAPI + '/Candidate/viewCandidate',
+            data : id
+        })
     };
 
      return dataFactory;

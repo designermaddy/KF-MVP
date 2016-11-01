@@ -9,6 +9,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             var promise = Factory.getrequisitionCandidateList();
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
+
                 $scope.candidateListDtls = response.data;
                 if ($scope.rowCollection) {
                     $scope.viewLoading = true;
@@ -91,5 +92,19 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             $('#applicantResultdiv').show();
         }
         
+        $scope.getCandidateData = function(id) {
+          var promise = Factory.getviewCandidate(id);
+          promise.then(
+          function resolved(response) {
+                console.log(response);
+                $('#candidatelistid').hide();
+                $('#reqCanDet').show();
+          },
+          function rejected(response) {
+              alert(response.status + ': ' + response.statusText);
+          }
+      )
+        }
+
         
 }]);
