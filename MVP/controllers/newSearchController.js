@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    app.controller('NewSearchController', ['Factory', '$location',  NewSearchController]);
+    app.controller('NewSearchController', ['Factory', '$location', 'sharedProperties', NewSearchController]);
 
     /* @ngInject */
-    function NewSearchController(Factory, $location) {
+    function NewSearchController(Factory, $location, sharedProperties) {
 
         /*jshint validthis: true */
         var vm = this;
@@ -16,9 +16,11 @@
             return new Criteria();
         }
 
+        var jobId = sharedProperties.getRequisitionDetails().requisitionDetails[0].requisitionNumber;
+
         function Criteria() {
             // TODO: Get rid of the hard coded values; Provided here just for initial demo purposes
-            this.ClientJobID = "562139";
+            this.ClientJobID = jobId; //"562139";
             this.AryaOrgID = 1;
             this.ClientOrgID = 1;
             this.apikey = "Z/djRosu9qHKtR4+h0y3ET0wwtOautvomeSPp6U5ENE=";
@@ -47,13 +49,15 @@
             var promise = Factory.saveNewSearch(vm.criteria);
             promise.then(
                 function resolved(response) {
-                    console.log(response.data);
+                    console.log(response.data.JobID);
+                    sharedProperties.setJobId(response.data.JobID);
+                    var redirectPath = "Requisitions";
+                    $location.path(redirectPath);
                 },
                 function rejected(response) {
                     alert(response.status + ': ' + response.statusText);
             })
-            var redirectPath = "Requisitions";
-            $location.path(redirectPath);
+
         };
     }
 })();

@@ -1,10 +1,11 @@
-app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', function ($scope, Factory, commonFunctions, $sce, config) {
+app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
 
     $scope.name = '';
     $scope.data = [];
 
-    function getData() {
-        var promise = Factory.getRequisitionSearch();
+
+    function getData(JobId) {
+        var promise = Factory.getRequisitionSearch(JobId);
         promise.then(
           function resolved(response) {
               $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
@@ -18,7 +19,11 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
           }
         )
     };
-    getData();
+
+    if (sharedProperties.getJobId()) {
+        getData(sharedProperties.getJobId());
+        console.log(sharedProperties.getJobId());
+    }
 
     function setValues() {
       if($scope.rowCollection){

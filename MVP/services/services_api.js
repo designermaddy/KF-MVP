@@ -108,13 +108,13 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         });
     }
 	
-    dataFactory.getRequisitionSearch = function() {
+    dataFactory.getRequisitionSearch = function(jobId) {
         // return $http.get('json/requisitionSearch.json');
         var orgId = "2";
-        var jobId = "18508";
+        var jobId = jobId; //"18508";
         var count = "60";
         var start = "25";
-        var url =urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start; 
+        var url =   urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
         //return $http.get(url);
 
         return $http.get(url)
@@ -169,6 +169,8 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
     commonFunctions.changeActivelink = function(row, htmlPath) {
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
+
+        sharedProperties.setJobId(row.jobId);
                                 
         var promise = Factory.sendRequisition(row);        
         promise.then(
@@ -201,8 +203,15 @@ app.service('sharedProperties', function () {
 	var counter=0;
     var requisitionDetails = [];
     var RequisitionTable = [];
+    var JobID = '';
 
     return {
+        setJobId : function(value) {
+            JobID = value;
+        },
+        getJobId : function() {
+            return JobID;
+        },
         setRequisitionTable : function(value) {
             RequisitionTable = value;
         },
