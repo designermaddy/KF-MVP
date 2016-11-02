@@ -22,7 +22,6 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
 
     if (sharedProperties.getJobId()) {
         getData(sharedProperties.getJobId());
-        console.log(sharedProperties.getJobId());
     }
 
     function setValues() {
@@ -99,6 +98,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     });
 
     $scope.refreshResults = function() {
-        getData();
+        if (sharedProperties.getJobId()) {
+            getData(sharedProperties.getJobId());
+        }
     }
 }])
