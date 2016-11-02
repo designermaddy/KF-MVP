@@ -1,44 +1,91 @@
 <link rel="stylesheet" href="content/ralleyverse/css/hub.css">
 <div class="container-fluid clearfix MarTp15 RallyVerse">
-    <div id="messages" style="position: relative; height: 1305px;" ng-controller="rallyVerseController" class="clearfix">
+    <div id="messages" style="position: relative;" ng-controller="rallyVerseController" class="clearfix">
         <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-            <div uib-slide ng-repeat="slide in slides" class="active" index="slide.id">
-        <div class="col-md-3 col-lg-3">
-
-            <div id="{{slide._id}}" class="message">
-                <div class="photo asset" style="background-image: url({{slide.asset_url}}); background-position: center center;"></div>
-
-            </div>
-
-        </div>
-
+            <div uib-slide ng-repeat="slide in slides" class="active" index="slide.id">
                 <div class="col-md-3 col-lg-3">
-
-            <div id="{{slide._id}}" class="message">
-                <div class="photo asset" style="background-image: url({{slide.asset_url1}}); background-position: center center;"></div>
-
-            </div>
-
-        </div>
-
-                    <div class="col-md-3 col-lg-3">
-
-            <div id="{{slide._id}}" class="message">
-                <div class="photo asset" style="background-image: url({{slide.asset_url2}}); background-position: center center;"></div>
-
-            </div>
-
-        </div>
-
-            <div class="col-md-3 col-lg-3">
-
-            <div id="{{slide._id}}" class="message">
-                <div class="photo asset" style="background-image: url({{slide.asset_url3}}); background-position: center center;"></div>
-
-            </div>
-
-        </div>
-
+                    <div id="{{slide._id}}" class="message">
+                        <div class="photo asset" style="background-image: url({{slide.asset_url}}); background-position: center center;"></div>
+                        <div class="content">
+                            <div class="text">
+                                <div class="TextTitle"> {{slide.title}} </div> <a href="{{slide.short_url}}" target="_blank">{{slide.short_url}}</a> </div>
+                        </div>
+                        <div class="meta-bar clearfix">
+                            <div class="source-name pull-left">{{slide.source}}</div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="social-sharing">
+                            <div class="share share-tw pull-left"> <img width="30" height="30" src="content/images/twitter.png" alt="share twitter"> </div>
+                            <div class="share share-fb pull-left"> <img width="16" height="30" src="content/images/facebook.png" alt="share facebook"> </div>
+                            <div class="share share-li pull-left"> <img width="30" height="30" src="content/images/linkedin.png" alt="share linkedin"> </div>
+                            <div class="share share-gplus pull-left"> <img width="38" height="30" src="content/images/google.png" alt="share google+"> </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div id="{{slide._id1}}" class="message">
+                        <div class="photo asset" style="background-image: url({{slide.asset_url1}}); background-position: center center;"></div>
+                        <div class="content">
+                            <div class="text">
+                                <div class="TextTitle"> {{slide.title1}} </div> <a href="{{slide.short_url1}}" target="_blank">{{slide.short_url1}}</a> </div>
+                        </div>
+                        <div class="meta-bar clearfix">
+                            <!--<div class="logo-social-network logo-slideshare icon pull-left"></div>-->
+                            <div class="source-name pull-left">{{slide.source1}}</div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="social-sharing">
+                            <div class="share share-tw pull-left"> <img width="30" height="30" src="content/images/twitter.png" alt="share twitter"> </div>
+                            <div class="share share-fb pull-left"> <img width="16" height="30" src="content/images/facebook.png" alt="share facebook"> </div>
+                            <div class="share share-li pull-left"> <img width="30" height="30" src="content/images/linkedin.png" alt="share linkedin"> </div>
+                            <div class="share share-gplus pull-left"> <img width="38" height="30" src="content/images/google.png" alt="share google+"> </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div id="{{slide._id2}}" class="message">
+                        <div class="photo asset" style="background-image: url({{slide.asset_url2}}); background-position: center center;"></div>
+                        <div class="content">
+                            <div class="text">
+                                <div class="TextTitle"> {{slide.title2}} </div> <a href="{{slide.short_url2}}" target="_blank">{{slide.short_url2}}</a> </div>
+                        </div>
+                        <div class="meta-bar clearfix">
+                            <!--<div class="logo-social-network logo-slideshare icon pull-left"></div>-->
+                            <div class="source-name pull-left">{{slide.source2}}</div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="social-sharing">
+                            <div class="share share-tw pull-left"> <img width="30" height="30" src="content/images/twitter.png" alt="share twitter"> </div>
+                            <div class="share share-fb pull-left"> <img width="16" height="30" src="content/images/facebook.png" alt="share facebook"> </div>
+                            <div class="share share-li pull-left"> <img width="30" height="30" src="content/images/linkedin.png" alt="share linkedin"> </div>
+                            <div class="share share-gplus pull-left"> <img width="38" height="30" src="content/images/google.png" alt="share google+"> </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div id="{{slide._id3}}" class="message">
+                        <div class="photo asset" style="background-image: url({{slide.asset_url3}}); background-position: center center;"></div>
+                        <div class="content">
+                            <div class="text">
+                                <div class="TextTitle"> {{slide.title3}} </div> <a href="{{slide.short_url3}}" target="_blank">{{slide.short_url3}}</a> </div>
+                        </div>
+                        <div class="meta-bar clearfix">
+                            <!--<div class="logo-social-network logo-slideshare icon pull-left"></div>-->
+                            <div class="source-name pull-left">{{slide.source3}}</div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="social-sharing">
+                            <div class="share share-tw pull-left"> <img width="30" height="30" src="content/images/twitter.png" alt="share twitter"> </div>
+                            <div class="share share-fb pull-left"> <img width="16" height="30" src="content/images/facebook.png" alt="share facebook"> </div>
+                            <div class="share share-li pull-left"> <img width="30" height="30" src="content/images/linkedin.png" alt="share linkedin"> </div>
+                            <div class="share share-gplus pull-left"> <img width="38" height="30" src="content/images/google.png" alt="share google+"> </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
