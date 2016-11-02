@@ -75,7 +75,7 @@
 .message .content .text {
     font-size: 16px;
     font-weight: normal;
-    cursor: pointer;
+   /* cursor: pointer;*/
     overflow: hidden;
     max-height: 140px;
     text-align: left;
