@@ -153,8 +153,8 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getviewCandidate = function(id) {
         return $http({
             method : 'GET',
-            url : urlAPI + '/Candidate/viewCandidate',
-            data : id
+            url : urlAPI + '/Candidate/viewCandidate/'+id,
+           // data : id
         })
     };
 
