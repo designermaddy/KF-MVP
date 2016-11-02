@@ -87,6 +87,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         url = url.replace("{candidateId}", candidateId);
         url=url.replace("{jobId}",  sharedProperties.getJobId());
         $("input[name='ReturnUrl']").attr('value', url);
+        $('#arya').attr('action', config.iframeAction);
         $('#arya').submit()
         $('#searchResultdiv').hide();
         $('#searchListCandidateDetails').show();
