@@ -60,5 +60,77 @@
             })
 
         };
+
+            vm.priceSlider1 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+        vm.priceSlider2 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+        vm.priceSlider3 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+        vm.priceSlider4 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+        vm.priceSlider5 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+
+        vm.priceSlider6 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+        vm.priceSlider8 = {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            };
+            vm.priceSlider7 = {
+                minValue: 1
+                , maxValue: 8
+                , options: {
+                    ceil: 10
+                    , floor: 0
+                    , showTicksValues: false
+                }
+            };
+            vm.refreshSlider = function () {
+                $timeout(function () {
+                    $scope.$broadcast('rzSliderForceRender');
+                });
+            };
     }
 })();
