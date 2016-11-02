@@ -22,7 +22,6 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
 
     if (sharedProperties.getJobId()) {
         getData(sharedProperties.getJobId());
-        console.log(sharedProperties.getJobId());
     }
 
     function setValues() {
@@ -87,6 +86,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         url = url.replace("{candidateId}", candidateId);
         url=url.replace("{jobId}",  sharedProperties.getJobId());
         $("input[name='ReturnUrl']").attr('value', url);
+        $('#arya').attr('action', config.iframeAction);
         $('#arya').submit()
         $('#searchResultdiv').hide();
         $('#searchListCandidateDetails').show();
@@ -98,6 +98,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     });
 
     $scope.refreshResults = function() {
-        getData();
+        if (sharedProperties.getJobId()) {
+            getData(sharedProperties.getJobId());
+        }
     }
 }])

@@ -1,4 +1,4 @@
-app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config) {
+app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout) {
     
      $scope.engagmentIDName =''
      $scope.saveButtonEnable = true;
@@ -84,6 +84,10 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
               
             $scope.options = selectFunctionArray;
             $scope.form = $scope.options[0];
+
+            $timeout(function () {
+                $('.selectpicker').selectpicker();
+                }, 50, false);
         }        
     }
 

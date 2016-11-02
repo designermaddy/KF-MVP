@@ -36,10 +36,6 @@ app.controller('rallyVerseController', ['$scope', 'Factory', function ($scope, F
                     _id1:$scope.rallyVerseItem[currLength + 1]._id,
                     _id2:$scope.rallyVerseItem[currLength + 2]._id,
                     _id3:$scope.rallyVerseItem[currLength + 3]._id,
-                    title: $scope.rallyVerseItem[currLength].title,
-                    title1: $scope.rallyVerseItem[currLength + 1].title,
-                    title2: $scope.rallyVerseItem[currLength + 2].title,
-                    title3: $scope.rallyVerseItem[currLength + 3].title,
                     short_url:$scope.rallyVerseItem[currLength].short_url,
                     short_url1:$scope.rallyVerseItem[currLength + 1].short_url,
                     short_url2:$scope.rallyVerseItem[currLength + 2].short_url,
@@ -48,6 +44,10 @@ app.controller('rallyVerseController', ['$scope', 'Factory', function ($scope, F
                     source1:$scope.rallyVerseItem[currLength + 1].source,
                     source2:$scope.rallyVerseItem[currLength + 2].source,
                     source3:$scope.rallyVerseItem[currLength + 3].source,
+                    title:$scope.rallyVerseItem[currLength].title,
+                    title1:$scope.rallyVerseItem[currLength + 1].title,
+                    title2:$scope.rallyVerseItem[currLength + 2].title,
+                    title3:$scope.rallyVerseItem[currLength + 3].title,
                     id: currIndex++
                 });
                 currLength += 4;
