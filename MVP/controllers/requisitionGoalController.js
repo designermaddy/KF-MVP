@@ -52,6 +52,7 @@ app.controller('requisitionGoalController', ['$scope','Factory',  function ($sco
       }
     };
     $scope.data = datas
+    console.log($scope.data)
    /* $scope.data = [
       [65, 59, 90, 81, 56, 55],
       [28, 48, 40, 19, 96, 27],

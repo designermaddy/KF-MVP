@@ -19,6 +19,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	  // http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionStatus
 	    //return $http.get(' http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionStatus');
 		return $http.get('json/Stacked-Chart.json');
+        // return $http.get('json/requisitionGoal.json');
         //psyroll will be available while scan the passport
        // if (payRolNumber) {
         //    
@@ -29,7 +30,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	   //return $http.get('http://172.25.148.147:8080/RD-WebApp/Candidate/getCandidatePipeline');
 	   //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east- 1.elb.amazonaws.com/RD-WebApp/Candidate/getCandidatePipeline');
         
-        return $http.get('json/Donut-Chart.json');
+        return $http.get('json/candidatePipeline.json');
     }
     
      // for engagements

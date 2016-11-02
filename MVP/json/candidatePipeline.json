@@ -1,0 +1,22 @@
+{
+  "transactionID": null,
+  "graphDetails": {
+    "method": "candPipeline",
+    "type": "recruiter",
+    "name": "Ann Young",
+    "data": {
+
+      "Source": "11",
+      "Screen": "48",
+      "Submit": "9",
+      "Interview": "2",
+      "Offer": "1"
+    },
+    "New": "255",
+    "Source": "11",
+    "Screen": "48",
+    "Submit": "9",
+    "Interview": "2",
+    "Offer": "1"
+  }
+}

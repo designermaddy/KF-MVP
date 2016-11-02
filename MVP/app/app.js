@@ -47,6 +47,15 @@ app.run(function($http, sharedProperties, $cookies) {
         
 		if(authToken){
 			$http.defaults.headers.common['RD-Access-Token'] = authToken
+               if (isset($headers['RD-Access-Token'])) {
+                setcookie('RD-Access-Token',$headers['RD-Access-Token'], time() + 2*7*24*60*60 , '/');
+                setcookie('SSO-User-Id',$idpUserId, time() + 2*7*24*60*60 , '/');
+                header("Location: /");
+                exit();
+               }else{
+               die("Authentication Failed!!");
+            }
+
 		}
 		sharedProperties.setCounter(1)
 	  }
