@@ -6,64 +6,64 @@
     "name": "Ann Young",
     "data": {
       "Source": {
-        "Okay": 0,
-        "Nearly Due": 0,
+        "Okay": "0",
+        "NearlyDue": "0",
         "Overdue": "20"
       },
       "Screen": {
-        "Okay": 0,
-        "Nearly Due": "3",
+        "Okay": "0",
+        "NearlyDue": "3",
         "Overdue": "17"
       },
       "Submit": {
         "Okay": "3",
-        "Nearly Due": "4",
+        "NearlyDue": "4",
         "Overdue": "13"
       },
       "Interview": {
         "Okay": "7",
-        "Nearly Due": 0,
+        "NearlyDue": "0",
         "Overdue": "13"
       },
       "Offer": {
         "Okay": "11",
-        "Nearly Due": 0,
+        "NearlyDue": "0",
         "Overdue": "9"
       },
       "Accept": {
         "Okay": "11",
-        "Nearly Due": 0,
+        "NearlyDue": "0",
         "Overdue": "9"
       }
     },
     "Source": {
-      "Okay": 0,
-      "Nearly Due": 0,
+      "Okay": "0",
+      "NearlyDue": "0",
       "Overdue": "20"
     },
     "Screen": {
-      "Okay": 0,
-      "Nearly Due": "3",
+      "Okay": "0",
+      "NearlyDue": "3",
       "Overdue": "17"
     },
     "Submit": {
       "Okay": "3",
-      "Nearly Due": "4",
+      "NearlyDue": "4",
       "Overdue": "13"
     },
     "Interview": {
       "Okay": "7",
-      "Nearly Due": 0,
+      "NearlyDue": "0",
       "Overdue": "13"
     },
     "Offer": {
       "Okay": "11",
-      "Nearly Due": 0,
+      "NearlyDue": "0",
       "Overdue": "9"
     },
     "Accept": {
       "Okay": "11",
-      "Nearly Due": 0,
+      "NearlyDue": "0",
       "Overdue": "9"
     }
   }

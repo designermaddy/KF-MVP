@@ -7,18 +7,26 @@ app.controller('requisitionGoalController', ['$scope','Factory',  function ($sco
         promise.then(
           function resolved(response) {
 
-              $scope.reqGoalStackBarData = response.data.requisitionStatusList;
+			 arr=[];var array=[];label=[]
+              for (var k in Object.keys(response.data.graphDetails.data))
+              {for(var j in Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])){
+                   array.push(response.data.graphDetails[Object.keys(response.data.graphDetails.data)[k]][Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])[j]])
+				  }arr.push( {"label":(Object.keys(response.data.graphDetails.data)[k]),"data":array, "months":Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])});array=[]
 
-              if($scope.reqGoalStackBarData){
-               $scope.series = $scope.reqGoalStackBarData[0].months;
-                for(var i in $scope.reqGoalStackBarData)
+                  console.log(arr)
+}
+             // $scope.reqGoalStackBarData = response.data.requisitionStatusList;
+
+              if(arr){
+               $scope.series = arr[0].months;
+                for(var i in arr)
                   {
-                        labels.push($scope.reqGoalStackBarData[i].label);
+                        labels.push(arr[i].label);
                         //datas.push([])
-                       for(var j = 0; j < Object.keys($scope.reqGoalStackBarData[0].data).length; j++) {
+                       for(var j = 0; j < Object.keys(arr[0].data).length; j++) {
     datas[j] = datas[j] || new Array();
-  //  console.log('datas[' + j + '][' + i + ']' + ' = ' +$scope.reqGoalStackBarData[i].data[Object.keys($scope.reqGoalStackBarData[i].data)[j]])
-    datas[j][i] = $scope.reqGoalStackBarData[i].data[Object.keys($scope.reqGoalStackBarData[i].data)[j]];
+  //  console.log('datas[' + j + '][' + i + ']' + ' = ' +arr[i].data[Object.keys(arr[i].data)[j]])
+    datas[j][i] = arr[i].data[Object.keys(arr[i].data)[j]];
   }            
 
                          }
@@ -52,7 +60,7 @@ app.controller('requisitionGoalController', ['$scope','Factory',  function ($sco
       }
     };
     $scope.data = datas
-    console.log($scope.data)
+    console.log("karthik"+$scope.data)
    /* $scope.data = [
       [65, 59, 90, 81, 56, 55],
       [28, 48, 40, 19, 96, 27],
