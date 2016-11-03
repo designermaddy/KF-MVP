@@ -47,8 +47,7 @@ footer .FooterBox                               { padding:10px 15px; }
 footer .FooterBox p                             { font-size:14px; font-weight:bold; }
 .KFLayout                                       { padding-right:0; }
 .SideBarContent                                 { background-color: #d9e4e7; }
-
-
+iframe.zEWidget-launcher                        { bottom: 50px !important; }
 /* --------------------------- navbar-collapse Style ---------------------------------- */
 .Navigation                                     { margin-right:300px; }
 .UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:300px; }
