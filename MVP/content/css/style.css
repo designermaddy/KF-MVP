@@ -43,7 +43,7 @@ header a                                        { color:#fff; }
 header											{ box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); }
 .Content										{ margin:60px 0 0 0; overflow-x: hidden; min-height:calc(100vh - 40px); }
 footer                                          { background-color: #fff; }
-footer .FooterBox                               { padding:5px 15px; }
+footer .FooterBox                               { padding:10px 15px; }
 footer .FooterBox p                             { font-size:14px; font-weight:bold; }
 .KFLayout                                       { padding-right:0; }
 .SideBarContent                                 { background-color: #d9e4e7; }
@@ -145,9 +145,14 @@ label.FormLabel                                 { color:#919191; margin-bottom:0
 .FormSelect .btn.dropdown-toggle:focus,
 .FormSelect .btn.dropdown-toggle:active         { background-color:#f6f6f6; }
 .FormSelect .form-control                       {height:30px;}
-
 .FormSelect .btn-group.open .FormSelect .dropdown-toggle {  -webkit-box-shadow:0 0 0; box-shadow:0 0 0; }
-.FormSelect .btn-default.active, .FormSelect .btn-default:active, .FormSelect .open>.dropdown-toggle.btn-default               {  background-color:#f6f6f6;      box-shadow: 0 0 0; }
+.FormSelect .btn-default.active, .FormSelect .btn-default:active, .FormSelect .open>.dropdown-toggle.btn-default              {  background-color:#f6f6f6;      box-shadow: 0 0 0; }
+.FormSelect .bootstrap-select .dropdown-toggle:focus { outline:none !important; }
+.FormCheckBox                                   { padding: 6px 0; vertical-align: baseline; display: inline-block; }
+.FormCheckBox:hover                             { background-color:#f6f6f6;  }
+.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; }
+.FormCheckBox input[type=checkbox]              { margin-top:0px; vertical-align: middle; }
+
 
 
 
