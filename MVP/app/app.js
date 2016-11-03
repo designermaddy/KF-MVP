@@ -43,20 +43,14 @@ app.run(function($http, sharedProperties, $cookies) {
 	  if(count==0){
 		
 		var authToken = $cookies.get('RD-Access-Token');
-        //var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
+       // var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
         
 		if(authToken){
 			$http.defaults.headers.common['RD-Access-Token'] = authToken
-               if (isset($headers['RD-Access-Token'])) {
-                setcookie('RD-Access-Token',$headers['RD-Access-Token'], time() + 2*7*24*60*60 , '/');
-                setcookie('SSO-User-Id',$idpUserId, time() + 2*7*24*60*60 , '/');
-                header("Location: /");
-                exit();
-               }else{
-               die("Authentication Failed!!");
-            }
+
 
 		}
+
 		sharedProperties.setCounter(1)
 	  }
 	  

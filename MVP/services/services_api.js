@@ -233,8 +233,16 @@ app.service('sharedProperties', function () {
 
     var viewCandidateId = '';
 
+    var reportURL ='';
+
 
     return {
+        setReportURL : function(value){
+            reportURL = value
+        },
+        getReportURL: function(){
+            return reportURL;
+        },
         setViewCandidateId : function(value) {
             viewCandidateId = value;
         },

@@ -1,12 +1,36 @@
-app.controller('requisitionGoalController', ['$scope','Factory',  function ($scope, Factory) {
+app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location',  function ($scope, Factory,sharedProperties,$location) {
   var labels=[];
   var datas = [];
+  var deeplinkURL = '';
+
    requisitonGoalStackBarChart();
     function requisitonGoalStackBarChart() {
         var promise = Factory.getRequestionGoalStackChart();
         promise.then(
           function resolved(response) {
+              deeplinkURL = response.data.graphDetails.deepLinkURI
+              sharedProperties.setReportURL(deeplinkURL)
+               datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
+              datas.push(JSON.parse("[" +response.data.graphDetails.data.NearlyDue+ "]"));
+              datas.push(JSON.parse("[" +response.data.graphDetails.data.Overdue+ "]"));
+                $scope.series = response.data.graphDetails.series
+                $scope.labels = response.data.graphDetails.lables;
+              $scope.data = datas
+               $scope.type = 'StackedBar';
 
+    $scope.options = {
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    };
+  //  $scope.data = datas
+ //  console.log("karthik"+$scope.data)
+               /*
 			 arr=[];var array=[];label=[]
               for (var k in Object.keys(response.data.graphDetails.data))
               {for(var j in Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])){
@@ -31,6 +55,7 @@ app.controller('requisitionGoalController', ['$scope','Factory',  function ($sco
 
                          }
                 }
+*/
 
 
 
@@ -43,27 +68,21 @@ app.controller('requisitionGoalController', ['$scope','Factory',  function ($sco
           }
       )
     };
-   
+  $scope.onClick = function (points, evt) {
+    console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
+        $("li[class='active']").removeClass('active');
+        $('#ReportHeader').addClass('active');
+       $location.path( '/Reports' );
+
+  };
 
    // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
-    $scope.labels = labels;
-    $scope.type = 'StackedBar';
    
-    $scope.options = {
-      scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true
-        }]
-      }
-    };
-    $scope.data = datas
-    console.log("karthik"+$scope.data)
-   /* $scope.data = [
+
+   /* $scope.kick = [
       [65, 59, 90, 81, 56, 55],
       [28, 48, 40, 19, 96, 27],
       [34, 48, 46, 79, 76, 37]
-    ];*/
+    ];
+    console.log($scope.kick)*/
   }]);

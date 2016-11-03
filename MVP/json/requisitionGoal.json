@@ -1,70 +1,45 @@
 {
   "transactionID": null,
   "graphDetails": {
-    "method": "reqGoal",
-    "type": "recruiter",
-    "name": "Ann Young",
     "data": {
-      "Source": {
-        "Okay": "0",
-        "NearlyDue": "0",
-        "Overdue": "20"
-      },
-      "Screen": {
-        "Okay": "0",
-        "NearlyDue": "3",
-        "Overdue": "17"
-      },
-      "Submit": {
-        "Okay": "3",
-        "NearlyDue": "4",
-        "Overdue": "13"
-      },
-      "Interview": {
-        "Okay": "7",
-        "NearlyDue": "0",
-        "Overdue": "13"
-      },
-      "Offer": {
-        "Okay": "11",
-        "NearlyDue": "0",
-        "Overdue": "9"
-      },
-      "Accept": {
-        "Okay": "11",
-        "NearlyDue": "0",
-        "Overdue": "9"
-      }
+      "Okay": [
+        "2",
+        "2",
+        "5",
+        "9",
+        "11",
+        "11"
+      ],
+      "NearlyDue": [
+        0,
+        "3",
+        0,
+        0,
+        0,
+        0
+      ],
+      "Overdue": [
+        "11",
+        "8",
+        "8",
+        "4",
+        "2",
+        "2"
+      ]
     },
-    "Source": {
-      "Okay": "0",
-      "NearlyDue": "0",
-      "Overdue": "20"
-    },
-    "Screen": {
-      "Okay": "0",
-      "NearlyDue": "3",
-      "Overdue": "17"
-    },
-    "Submit": {
-      "Okay": "3",
-      "NearlyDue": "4",
-      "Overdue": "13"
-    },
-    "Interview": {
-      "Okay": "7",
-      "NearlyDue": "0",
-      "Overdue": "13"
-    },
-    "Offer": {
-      "Okay": "11",
-      "NearlyDue": "0",
-      "Overdue": "9"
-    },
-    "Accept": {
-      "Okay": "11",
-      "NearlyDue": "0",
-      "Overdue": "9"
-    }
+    "lables": [
+      "Source",
+      "Screen",
+      "Submit",
+      "Interview",
+      "Offer",
+      "Accept"
+    ],
+    "series": [
+      "Okay",
+      "Nearly Due",
+      "Overdue"
+    ],
+    "deepLinkURI": "https://foresight.futurestep.com/ats/ats_req.php?ssoprovider=recruiterdesktop&mode=reqGoal"
   }
 }
