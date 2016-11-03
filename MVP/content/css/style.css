@@ -117,7 +117,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .panel-default 				 				    { border-color:#e3e3e3; }
 .panel-default .panel-heading 				    { background-image:linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color:transparent; border-color:#e3e3e3; border-left: 2px solid #106550; }
 .panel-gray                                     { background-color:#f1f1f1; }
-/* --------------------------- Content Style ---------------------------------- */
+/* --------------------------- Input Style ---------------------------------- */
 input[type="search"].form-control, 
 input[type="text"].form-control,
 input[type="daterange"].form-control,
@@ -127,7 +127,6 @@ input[type="daterange"].form-control:focus,
 input[type="search"].form-control:active, 
 input[type="text"].form-control:active,
 input[type="daterange"].form-control:active     { border-width:0 0 1px 0; border-radius:0; box-shadow: 0 0 0; transition: none 0s ease 0s ; height:30px; padding:0; color:#333; font-size:14px; padding:3px 12px; }
-
 input[type="search"].form-control:hover,
 input[type="text"].form-control:hover,
 input[type="daterange"].form-control:hover,
@@ -137,10 +136,9 @@ input[type="daterange"].form-control:focus,
 input[type="search"].form-control:active,
 input[type="text"].form-control:active,
 input[type="daterange"].form-control:active     { background-color:#f6f6f6; }
-
-
 label.FormLabel                                 { color:#919191; margin-bottom:0; font-weight:normal; line-height:12px;  }
 .FormSelect .btn.dropdown-toggle                { border:1px solid #ccc; border-width:0 0 1px 0; border-radius:0; color:#333; font-size:14px; padding:4px 12px 5px 12px;  }
+/* --------------------------- Select Style ---------------------------------- */
 .FormSelect .btn.dropdown-toggle:hover,
 .FormSelect .btn.dropdown-toggle:focus,
 .FormSelect .btn.dropdown-toggle:active         { background-color:#f6f6f6; }
@@ -150,12 +148,5 @@ label.FormLabel                                 { color:#919191; margin-bottom:0
 .FormSelect .bootstrap-select .dropdown-toggle:focus { outline:none !important; }
 .FormCheckBox                                   { padding: 6px 0; vertical-align: baseline; display: inline-block; }
 .FormCheckBox:hover                             { background-color:#f6f6f6;  }
-.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; }
+.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; font-size:14px; }
 .FormCheckBox input[type=checkbox]              { margin-top:0px; vertical-align: middle; }
-
-
-
-
-
-
-
