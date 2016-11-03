@@ -32,6 +32,7 @@
 .btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
 .btn-primary						{background-color:#007da4 !important;border-color: #007da4;}
 .IframeBtn                                              { vertical-align: top; position: absolute; float:left; }
+.btn .caret                                             { margin-left: 3px; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
 .Heading2 h2, .Heading2.HeadingFloat h2                 { color: #006450; font-size: 16px; font-weight:bold; margin-top:10px;  display: inline-block; }
 .Heading2.HeadingFloat                                  { clear: both; }
