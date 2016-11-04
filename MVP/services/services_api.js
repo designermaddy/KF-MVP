@@ -55,7 +55,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	}
      dataFactory.getrequisitionCandidateList = function(poolID){
 		//return $http.get('json/requisitionCandidateList.json');
-        return $http.get(urlAPI + '/Candidate/allCandidataList/'+poolID);
+        return $http.get(urlAPI + '/Candidate/allCandidataList');
 	}
 	
 	dataFactory.pdfDetailsList = function(){
