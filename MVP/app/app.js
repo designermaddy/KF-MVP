@@ -43,7 +43,7 @@ app.run(function($http, sharedProperties, $cookies) {
 	  if(count==0){
 		
 		var authToken = $cookies.get('RD-Access-Token');
-       // var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
+        var authToken = "cmRBdXRoVG9rZW46TUdNMll6ZzFZek10T1RreVlTMDBOak5sTFdKaU5XUXRORGc0T0RZMk5UYzRNVEV5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246VlAsaWRwVXNlcklkOmE0ZDYzY2E3LThjZjktNDFjYi1hYmI1LWQ0YjIwYmZlOTFlMyxhcnlhVXNlcklkOlJhamVuZHJhbnN1ZGhha2FyUkBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnVkYXluQG1vYmFjay5jb20sYWN0aXZhdGVQYXNzd29yZDpBc2RmMTIzNCEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO"
         
 		if(authToken){
 			$http.defaults.headers.common['RD-Access-Token'] = authToken
