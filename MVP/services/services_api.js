@@ -53,9 +53,9 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	dataFactory.getrequisitionCandidateTableList = function(){
 		return $http.get('json/candidatelist.json');        
 	}
-     dataFactory.getrequisitionCandidateList = function(){
+     dataFactory.getrequisitionCandidateList = function(poolID){
 		//return $http.get('json/requisitionCandidateList.json');
-        return $http.get(urlAPI + '/Candidate/allCandidataList ');
+        return $http.get(urlAPI + '/Candidate/allCandidataList/'+poolID);
 	}
 	
 	dataFactory.pdfDetailsList = function(){
@@ -228,6 +228,8 @@ app.service('sharedProperties', function () {
     var requisitionDetails = [];
     var RequisitionTable = [];
     var JobID = '';
+    var userName='';
+    var password='';
 
     var ClientJobID = '';
 
@@ -237,6 +239,18 @@ app.service('sharedProperties', function () {
 
 
     return {
+        setUserName : function(value){
+            userName = value
+        },
+        getUserName: function(){
+            return userName;
+        },
+         setPassword : function(value){
+            password = value
+        },
+        getPassword: function(){
+            return password;
+        },
         setReportURL : function(value){
             reportURL = value
         },

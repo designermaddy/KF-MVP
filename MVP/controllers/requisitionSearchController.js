@@ -22,7 +22,24 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
                 //return item.Recruiter;
             })
         });
+ $scope.Status = function(row) {
+        var str = '';
+        if (row.Ignore == 'false') {
+            //str += '<i class="fa fa-circle" aria-hidden="true"></i>';
+            str += "";
+        }else if (row.Ignore == 'true') {
+            str += '<i class="fa fa-ban" aria-hidden="true"></i>';
+        }
 
+        if (row.Shortlist == 'true') {
+            str += '<i class="fa fa-star" aria-hidden="true"></i>';
+        }else if (row.Shortlist == 'false') {
+            //str += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+            str += "";
+        }
+
+        return $sce.trustAsHtml(str);
+    }
 
      $scope.searchlist = function() {
        var name = $scope.name;

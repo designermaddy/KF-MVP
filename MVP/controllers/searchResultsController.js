@@ -37,8 +37,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.Status = function(row) {
         var str = '';
         if (row.Ignore == 'false') {
-            //str += '<i class="fa fa-circle" aria-hidden="true"></i>';
-            str += "";
+            str += '<i class="fa fa-circle" aria-hidden="true"></i>';
+            //str += "";
         }else if (row.Ignore == 'true') {
             str += '<i class="fa fa-ban" aria-hidden="true"></i>';
         }
@@ -85,7 +85,10 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         var url = config.iframeUrl;
         url = url.replace("{candidateId}", candidateId);
         url=url.replace("{jobId}",  sharedProperties.getJobId());
-        $("input[name='ReturnUrl']").attr('value', url);
+        userName = sharedProperties.getUserName();
+        password = sharedProperties.getPassword();
+        $("input[name='LoginName']").attr('value', userName);
+        $("input[name='Password']").attr('value', password);
         $('#arya').attr('action', config.iframeAction);
         $('#arya').submit()
         $('#searchResultdiv').hide();
