@@ -1,7 +1,7 @@
 <div ng-controller="engagementperIDRequisitionController" class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Requisitions({{engagementResponse.Requisitions.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
-    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="EngagementRequisitionTable">
+    <div ng-show="true" st-table="displayedCollections" st-safe-src="engagementResponse.Requisitions" class="EngagementRequisitionTable">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr st-select-row="row" ng-repeat="row in engagementResponse.Requisitions">
+                <tr st-select-row="row" ng-repeat="row in engagementResponse.Requisitions | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
                     <td st-toggle-item>
                         <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.requisitionNumber}} <span>{{row.requisitionTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>

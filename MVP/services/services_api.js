@@ -13,6 +13,17 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 			 return $http.get(urlAPI + '/Requisition/agingRequisition');
         //}
     };
+     dataFactory.getRequisitionTableList = function () {
+        // console.log(payRolNumber)
+        //return $http.get('json/Requisition.json');
+        //psyroll will be available while scan the passport
+       // if (payRolNumber) {
+           //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
+		   //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
+            //return $http.get('json/requisitionList.json');
+			 return $http.get(urlAPI + '/Requisition/allRequisition');
+        //}
+    };
      dataFactory.getRequestionGoalStackChart = function () {
         // console.log(payRolNumber)
        // return $http.get('json/Stacked-Chart.json');
@@ -55,7 +66,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	}
      dataFactory.getrequisitionCandidateList = function(poolID){
 		//return $http.get('json/requisitionCandidateList.json');
-        return $http.get(urlAPI + '/Candidate/allCandidataList');
+        return $http.get(urlAPI + '/Candidate/allCandidataList/'+poolID);
 	}
 	
 	dataFactory.pdfDetailsList = function(){
@@ -121,9 +132,10 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getRequisitionSearch = function(jobId) {
         // return $http.get('json/requisitionSearch.json');
         var orgId = "2";
-        var jobId = 18508;
+        var jobId = jobId;
         var count = "60";
         var start = "25";
+        if(jobId){
         var url =   urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
         //return $http.get(url);
 
@@ -133,6 +145,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
                     exception.catcher('XHR Failed for getAvengers')(message);
                     $location.url('/');
                 });
+        }
 
         function getAryaCandidatesComplete(data, status, headers, config) {
             return data;
@@ -199,7 +212,7 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
           function resolved(response) {
               sharedProperties.setRequisitionDetails(response.data);
               sharedProperties.setJobId(response.data.requisitionDetails[0].aryaJobID);
-              sharedProperties.setClientJobID(response.data.requisitionDetails[0].jobId)
+              sharedProperties.setClientJobID(response.data.requisitionDetails[0].requisitionNumber)
               $location.path( htmlPath );
           },
           function rejected(response) {
@@ -273,7 +286,7 @@ app.service('sharedProperties', function () {
             ClientJobID = value;
         },
         getClientJobID : function() {
-            return JobID;
+            return ClientJobID;
         },
         setRequisitionTable : function(value) {
             RequisitionTable = value;

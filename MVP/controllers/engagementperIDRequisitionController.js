@@ -24,7 +24,11 @@ getRequisitionList();
                      $scope.engagementClientContact = $scope.engagementResponse.ClientContact;
                      $scope.engagementConsultant = $scope.engagementResponse.EngagementConsultant;
                      $scope.engagementUsers = $scope.engagementResponse.Users;                     
-                  }            
+                  }
+                      $scope.currentPage = 1;
+                    $scope.totalItems = $scope.engagementResponse.Requisitions.length;
+                    $scope.entryLimit = 10; // items per page
+                    $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
               },
               function rejected(response) {
                   alert(response.status + ': ' + response.statusText);
@@ -45,6 +49,14 @@ getRequisitionList();
 	 $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);
     }
+      $scope.$watch('search', function (newVal, oldVal) {
+         if($scope.rowCollection){
+		$scope.filtered = filterFilter($scope.rowCollection, newVal);
+		$scope.totalItems = $scope.filtered.length;
+		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
+		$scope.currentPage = 1;
+         }
+	}, true);
 
 
 }]);

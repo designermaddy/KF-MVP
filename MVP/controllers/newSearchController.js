@@ -9,7 +9,7 @@
         /*jshint validthis: true */
         var vm = this;
 
-        vm.criteria = getCriteria(sharedProperties);
+
 
         function getCriteria() {
             // TODO: This will likely need a service, to populate the criteria
@@ -26,12 +26,15 @@
             this.ClientOrgID = 1;
             this.apikey = "Z/djRosu9qHKtR4+h0y3ET0wwtOautvomeSPp6U5ENE=";
             this.JobTitle = "Sales1 Account Executive";
+            //this.JobTitle = vm.criteria.JobTitle
             this.JobTitle_Synonyms = null;
             this.Description = "<br />\n<p><strong><u>Job Summary</u></strong></p>\n<p>The Account Executive is responsible for achieving his/her assigned sales plan..</p>";
             this.job_start_date = "10/03/2016";
             this.job_end_date = null;
             this.Location = "CHICAGO, IL";
+            //this.Location = vm.criteria.Location
             this.ZipCode = "60638";
+            //this.ZipCode = vm.criteria.ZipCode
             this.Country = null;
             this.MinExp = 0.0;
             this.MaxExp = 0.0;
@@ -47,6 +50,7 @@
         }
 
         vm.save = function save () {
+             vm.criteria = getCriteria(sharedProperties);
             var promise = Factory.saveNewSearch(vm.criteria);
             promise.then(
                 function resolved(response) {
