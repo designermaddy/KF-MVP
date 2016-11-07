@@ -31,6 +31,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	    //return $http.get(' http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionStatus');
 		//return $http.get('json/Stacked-Chart.json');
          return $http.get('json/requisitionGoal.json');
+          //return $http.get(urlAPI + '/dashboard/graphs/RequisitionGoal');
         //psyroll will be available while scan the passport
        // if (payRolNumber) {
         //    
