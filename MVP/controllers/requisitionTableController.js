@@ -1,6 +1,6 @@
 
 
-app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location) {
+app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','filterFilter', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location,filterFilter) {
 
  $scope.viewLoading = false;
  agingRequisitionList();

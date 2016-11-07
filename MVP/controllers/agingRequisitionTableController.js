@@ -10,7 +10,7 @@ app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedPr
           function resolved(response) {
 
              $scope.rowCollection = response.data.requisitionList            
-              sharedProperties.setRequisitionTable($scope.rowCollection);
+             // sharedProperties.setRequisitionTable($scope.rowCollection);
               
               $scope.getData = function (workflowSteps, value) {
                 var output = '';
@@ -37,12 +37,12 @@ app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedPr
       )
     };
 
-    $scope.$watch(function() {
+  /*  $scope.$watch(function() {
         return sharedProperties.getRequisitionTable()
         }, function(newValue, oldValue) {
             $scope.rowCollection = newValue;
             //setValues();
-    });
+    });*/
     
 $scope.itemsByPage=15;
 

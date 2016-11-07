@@ -5,7 +5,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     $scope.data = [];
 
 
-    var promise = Factory.getAgingRequisitionList();
+    var promise = Factory.getRequisitionTableList();
 
     promise.then(function(response){
             var result = $scope.data = response.data.requisitionList;
