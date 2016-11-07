@@ -1,4 +1,4 @@
-app.controller('rallyVerseController', ['$scope', 'Factory', function ($scope, Factory) {
+app.controller('rallyVerseController', ['$scope', 'Factory', 'commonFunctions', function ($scope, Factory, commonFunctions) {
         $scope.myInterval = 5000;
         var slides = $scope.slides = [];
         var currIndex = 0;
@@ -18,7 +18,7 @@ app.controller('rallyVerseController', ['$scope', 'Factory', function ($scope, F
 
 
             }, function rejected(response) {
-                alert(response.status + ': ' + response.statusText);
+                commonFunctions.error('Failed to load Rally Verse');
             })
         };
 

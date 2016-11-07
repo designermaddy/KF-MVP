@@ -201,6 +201,19 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
         });
     }
     
+    commonFunctions.error = function(message) {
+        $uibModal.open({
+            animation : true,
+            templateUrl : 'LoadError.html',
+            controller : 'LoadError',
+            resolve : {
+                message : function() {
+                    return message;
+                }
+            }
+        })
+    }
+
     commonFunctions.changeActivelink = function(row, htmlPath) {
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
