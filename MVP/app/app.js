@@ -1,5 +1,5 @@
 // create the module and name it desktopApp
-var app = angular.module('desktopApp', ['ngRoute', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule']);
+var app = angular.module('desktopApp', ['ngRoute', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner']);
 // Configure the Routes
 app.config(['$routeProvider', function ($routeProvider) {
 	//$httpProvider.interceptors.push(interceptor);
@@ -78,3 +78,26 @@ app.filter('startFrom', function () {
         return [];
     };
 });
+
+app.directive('usSpinner',   ['$http', '$rootScope' ,function ($http, $rootScope){
+        return {
+            link: function (scope, elm, attrs)
+            {
+                $rootScope.spinnerActive = false;
+                scope.isLoading = function () {
+                    return $http.pendingRequests.length > 0;
+                };
+
+                scope.$watch(scope.isLoading, function (loading)
+                {
+                    $rootScope.spinnerActive = loading;
+                    if(loading){
+                        elm.removeClass('ng-hide');
+                    }else{
+                        elm.addClass('ng-hide');
+                    }
+                });
+            }
+        };
+
+    }]);

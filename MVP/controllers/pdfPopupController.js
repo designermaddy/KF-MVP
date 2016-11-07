@@ -1,9 +1,9 @@
-app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout) {
+app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$http', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $http) {
     
      $scope.engagmentIDName =''
      $scope.saveButtonEnable = true;
-      sharedProperties.setprofileSelectedEngagementID($scope.engagmentIDName)
-      $scope.check = function () {
+     sharedProperties.setprofileSelectedEngagementID($scope.engagmentIDName)
+     $scope.check = function () {
           console.log($scope.searchText);
       }  
       
