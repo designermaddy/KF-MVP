@@ -1,8 +1,8 @@
 <div ng-controller="requisitionTableController" class="DataListBox">
+    <span us-spinner="{radius:30, width:8, length: 16}"></span>
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Requisitions({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> <span class="HeaderButton pull-right">
-          </span>
-</div>
+
             <div class="btn-group" uib-dropdown is-open="status.isopen">
       <button id="single-button" type="button" class="btn btn-primary btn-sm" uib-dropdown-toggle ng-disabled="disabled">Add New Requisition<span class="caret"></span> </button>
         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
@@ -11,6 +11,8 @@
             <li role="menuitem" class="disabled"><a href="#">Searcher Express</a></li>
         </ul>
     </div>
+</span>
+</div>
 
 <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="RequisitionTable">
     <table class="table table-striped">
@@ -63,7 +65,11 @@
         </table>
     </div>
 </div>
+<<<<<<< HEAD
 <div  class="DataGrid row">
+=======
+<!--<div ng-controller="agingRequisitionTableController" class="DataGrid row">
+>>>>>>> origin/master
     <div class="Heading2 Open">
         <h2>Aging Requisitions</h2> 
     </div>
@@ -105,4 +111,4 @@
                 </div>
             </div>
     </div>
-</div>
+</div>-->
