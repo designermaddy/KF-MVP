@@ -1,4 +1,4 @@
-app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', function ($uibModal, $scope, Factory, sharedProperties, config) {
+app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', 'commonFunctions', function ($uibModal, $scope, Factory, sharedProperties, config, commonFunctions) {
         //getEngagementId 
         var id = sharedProperties.getengagementPerIDSelected();
         
@@ -14,7 +14,7 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
               setValues();              
           },
           function rejected(response) {
-              //alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
         )
         

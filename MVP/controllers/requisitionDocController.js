@@ -1,4 +1,4 @@
-app.controller('requisitionDocController', ['$uibModal','$scope','Factory', function ($uibModal, $scope, Factory) {
+app.controller('requisitionDocController', ['$uibModal','$scope','Factory', 'commonFunctions', function ($uibModal, $scope, Factory, commonFunctions) {
     var $ctrl = this;
     $ctrl.url = 'pdf/1.pdf';
     $ctrl.openPdf = function (url) {
@@ -29,7 +29,7 @@ app.controller('requisitionDocController', ['$uibModal','$scope','Factory', func
              // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     };

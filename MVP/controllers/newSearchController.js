@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    app.controller('NewSearchController', ['Factory', '$location', 'sharedProperties', NewSearchController]);
+    app.controller('NewSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', NewSearchController]);
 
     /* @ngInject */
-    function NewSearchController(Factory, $location, sharedProperties) {
+    function NewSearchController(Factory, $location, sharedProperties, commonFunctions) {
 
         /*jshint validthis: true */
         var vm = this;
@@ -60,7 +60,7 @@
                     $location.path(redirectPath);
                 },
                 function rejected(response) {
-                    alert(response.status + ': ' + response.statusText);
+                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
 
         };

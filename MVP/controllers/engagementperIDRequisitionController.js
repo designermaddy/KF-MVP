@@ -1,4 +1,4 @@
-app.controller('engagementperIDRequisitionController', ['$scope','Factory','sharedProperties','commonFunctions', '$uibModal', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal) {
+app.controller('engagementperIDRequisitionController', ['$scope','Factory','sharedProperties','commonFunctions', '$uibModal','commonFunctions', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal,commonFunctions) {
 $scope.viewLoading = false;
 getRequisitionList();
     function getRequisitionList() {
@@ -31,7 +31,7 @@ getRequisitionList();
                     $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
               },
               function rejected(response) {
-                  alert(response.status + ': ' + response.statusText);
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
               })
            }        
     }

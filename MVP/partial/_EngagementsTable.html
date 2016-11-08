@@ -13,6 +13,7 @@
                 </tr>
             </thead>
             <tbody>
+                <span us-spinner="{radius:30, width:8, length: 16}"></span>
                 <tr st-select-row="row" ng-repeat="engagementListDtls in rowCollection  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
                         <div class="TblRequisition"><a href="#EngagementDetails/1" ng-click="onSelectEngagementPerID(engagementListDtls.EngagementNumber)" >{{engagementListDtls.EngagementNumber}} <span>{{engagementListDtls.Engagement}}</span></a></div> <div class="TblDate">{{engagementListDtls.StartDate}}-{{engagementListDtls.EndDate}}</div>
