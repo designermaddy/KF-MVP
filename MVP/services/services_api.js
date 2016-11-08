@@ -65,6 +65,15 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	dataFactory.getrequisitionCandidateTableList = function(){
 		return $http.get('json/candidatelist.json');        
 	}
+    dataFactory.postrequisitionApplicationList = function(data){
+		//return $http.get(urlAPI+'/Requisition/getPositionByRequisition');
+          return $http({
+            method : 'POST',
+            url : urlAPI+'/Requisition/getPositions',
+            data : data
+        });
+                       //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
+	}
      dataFactory.getrequisitionCandidateList = function(poolID){
 		//return $http.get('json/requisitionCandidateList.json');
         return $http.get(urlAPI + '/Candidate/allCandidataList/'+poolID);

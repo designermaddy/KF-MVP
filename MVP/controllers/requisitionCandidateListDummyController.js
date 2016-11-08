@@ -1,12 +1,18 @@
-app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions) {
+app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions','sharedProperties', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties) {
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }
         $scope.viewLoading = false;
-        agingRequisitionList();
-
-        function agingRequisitionList() {
-            var promise = Factory.getrequisitionCandidateTableList();
+        postRequisitionApplicationList();
+        var data = {}
+        //get the applicationlist for a requisition using position id
+        function postRequisitionApplicationList() {
+            var reqDetailsperRequisition = sharedProperties.getRequisitionDetails();
+            if(reqDetailsperRequisition.requisitionDetails){
+                // page and status is static mentioned by Karthik position id dynamic//
+                postData = { "requestParams": {"page":"2","status":"Open","orgId":"9855","positionId":reqDetailsperRequisition.requisitionDetails[0].positionId}}
+            }
+            var promise = Factory.postrequisitionApplicationList(postData);
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
                 $scope.candidateListDtls = response.data;
