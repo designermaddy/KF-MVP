@@ -18,7 +18,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
                     $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
                 }
             }, function rejected(response) {
-                alert(response.status + ': ' + response.statusText);
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
         };
         $scope.itemsByPage = 3;

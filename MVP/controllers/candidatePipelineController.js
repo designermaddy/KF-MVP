@@ -1,6 +1,6 @@
 
 
-app.controller('candidatePipelineController', ['$scope','Factory', function ($scope, Factory) {
+app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions', function ($scope, Factory, commonFunctions) {
 
  candidatePipelineDonutChart();
     function candidatePipelineDonutChart() {
@@ -21,7 +21,7 @@ app.controller('candidatePipelineController', ['$scope','Factory', function ($sc
              // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     };

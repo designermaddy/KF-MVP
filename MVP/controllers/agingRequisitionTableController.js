@@ -32,7 +32,7 @@ app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedPr
              // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     };

@@ -230,7 +230,7 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
               $location.path( htmlPath );
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     }

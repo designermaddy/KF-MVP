@@ -1,4 +1,4 @@
-app.controller('pdfLinkController', ['$scope', 'Factory', 'sharedProperties', function($scope, Factory, sharedProperties) {
+app.controller('pdfLinkController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', function($scope, Factory, sharedProperties, commonFunctions) {
     $scope.url = 'pdf/1.pdf';
 
    /* var data={
@@ -13,7 +13,7 @@ app.controller('pdfLinkController', ['$scope', 'Factory', 'sharedProperties', fu
              console.log(response.data);
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )*/
 

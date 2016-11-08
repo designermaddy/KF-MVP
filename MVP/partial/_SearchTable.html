@@ -6,12 +6,14 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                   <th class="SortDefault"  st-toggle-column st-sort="CandidateName">Candidate Name</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Title">Title</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="CandidateName">Search Name</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="Title">Requistion Name</th>
                    <th class="SortDefault"  st-toggle-column st-sort="Location">Location</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="CurrentCompany">Current Company</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Source">Source</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="UpdatedOn">Updated On</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="Client">Client</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="RecruiterName">Recruiter Name</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="CreatedOn">Created On</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="Status">Status</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="Result">Result</th>
                    <th st-toggle-column></th>
                 </tr>
             </thead>
@@ -22,11 +24,13 @@
                         <div class="TblRequisition"><a ng-click="openSearchIframe(row.candidateId)">{{row.candidateName}} </a></div>
                     </td>
                     <td st-toggle-item>{{row.jobTitle}}</td>
-                    <td st-toggle-item>{{row.location}}</td>
-                    <td st-toggle-item>{{row.currentCompany}}</td>
+                    <td st-toggle-item>{{row.Location   }}</td>
+                    <td st-toggle-item>{{row.Client}}</td>
                     <td st-toggle-item>{{row.SourceType}}</td>
-                    <td st-toggle-item>{{row.UpdatedON | date:dd.mm.yy }}</td>
-                    <td st-toggle-item ng-bind-html = 'Status(row)'></td>
+                    <td st-toggle-item>{{row.Job0CreatedDate | date:dd.mm.yy }}</td>
+                    <td st-toggle-item>{{row.Status}}</td>
+                    <td st-toggle-item>{{row.Result}}</td>
+                    <!--<td st-toggle-item ng-bind-html = 'Status(row)'></td>-->
                 </tr>
             </tbody>
         </table>
