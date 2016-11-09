@@ -207,9 +207,11 @@
 .HeaderPaging .pager li.previous > a                    { padding:6px 9px 6px 7px; }
 .HeaderPaging .pager li.next > a                        { padding:6px 8px; }
 .HeaderPaging .pager li.CurrentPage > span,
-.HeaderPaging .pager li.TotalPage > span                { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
+.HeaderPaging .pager li.TotalPage > span,
+.HeaderPaging .pager li.TotalList > span                { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
 .HeaderPaging .pager li.CurrentPage > span              { padding:5px 0 5px 10px; }
 .HeaderPaging .pager li.TotalPage > span                { padding:5px 10px 5px 0; }
+.HeaderPaging .pager li.TotalList > span                { padding:5px 5px 5px 0; }
 /* --------------------------- ViewBoxHeader Style ---------------------------------- */
 .ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:10px; }
 .ViewBoxList, .ViewBoxActions                           { list-style:none; }

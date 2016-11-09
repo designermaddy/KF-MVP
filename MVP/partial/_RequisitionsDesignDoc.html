@@ -1,8 +1,9 @@
+<div ng-controller="requisitionDocController">
 <div class="Heading2 HeadingFloat clearfix">
-    <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerPf.html" previous-text="" next-text=""></ul></span>
+    <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerKf.html" previous-text="" next-text=""></ul></span>
     
 </div>
-<div class="panel panel-default WidgetPD" id="pdfBox" ng-controller="requisitionDocController" >
+<div class="panel panel-default WidgetPD" id="pdfBox"  >
     <div class="panel-body">
         <ul class="clearfix" >
             <li ng-repeat="pdfDtls in pdfDetailsData" ng-click="$ctrl.openPdf(pdfDtls.pdfPath)">
@@ -77,4 +78,5 @@
             </li>-->
         </ul>
     </div>
+</div>
 </div>
