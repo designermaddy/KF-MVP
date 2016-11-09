@@ -85,4 +85,9 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
       [34, 48, 46, 79, 76, 37]
     ];
     console.log($scope.kick)*/
+
+    $timeout(function () {
+        $('#requisitionGoalList').selectpicker();
+        console.log($('.selectpicker'))
+        }, 50, false);
   }]);

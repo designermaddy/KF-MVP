@@ -26,7 +26,10 @@ app.controller('candidatePipelineController', ['$scope','Factory', function ($sc
       )
     };
 
-
+        $timeout(function () {
+        $('#candidatePipelineList').selectpicker();
+        console.log($('.selectpicker'))
+        }, 50, false);
 
 		  
         }

@@ -98,6 +98,10 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
           $('#candidatelistid').hide();
           $('#reqCanDet').show();
         }
+        $timeout(function () {
+        $('#candidateSavedSearchesList').selectpicker();
+        console.log($('.selectpicker'))
+        }, 50, false);
 
         
 }]);

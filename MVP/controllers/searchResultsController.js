@@ -105,4 +105,8 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             getData(sharedProperties.getJobId());
         }
     }
+    $timeout(function () {
+        $('#searchSavedSearchesList').selectpicker();
+        console.log($('.selectpicker'))
+        }, 50, false);
 }])

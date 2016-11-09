@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default" ng-controller="requisitionGoalController">
     <div class="panel-heading clearfix">Requisition Goal 
     <span class="TermSorting pull-right">
     <ul>
@@ -6,8 +6,8 @@
     <li><a href="#" class="active">Q2</a></li>
     <li><a href="#">Q3</a></li>
     <li><a href="#">Q4</a></li>
-    <li>
-        <select>
+    <li class="FormSelect">
+        <select class="selectpicker form-control" id="requisitionGoalList">
           <option>2016</option>
           <option>2015</option>
           <option>2014</option>
@@ -16,7 +16,7 @@
     </ul>    
     </span>
     </div>
-    <div class="panel-body BarChart" style="height: 266px;" ng-controller="requisitionGoalController">
+    <div class="panel-body BarChart" style="height: 266px;">
         <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" chart-click="onClick"></canvas>
     </div>
 </div>
