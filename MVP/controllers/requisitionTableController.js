@@ -79,9 +79,6 @@ app.controller('requisitionTableController', ['$scope','Factory', 'sharedPropert
         commonFunctions.openIframe(url);
     }
 
-    $scope.sendRequisition = function() {
-
-    }
 
     $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);

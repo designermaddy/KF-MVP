@@ -2,16 +2,17 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
   var labels=[];
   var datas = [];
   var deeplinkURL = '';
+  var graphName = 'RequisitionGoal';//'CandidatePipeline';
 
    requisitonGoalStackBarChart();
     function requisitonGoalStackBarChart() {
-        var promise = Factory.getRequestionGoalStackChart();
+        var promise = Factory.getRequestionGoalStackChart(graphName);
         promise.then(
           function resolved(response) {
-              deeplinkURL = response.data.graphDetails.deepLinkURI
+              deeplinkURL = response.data.graphDetails.deepLinkURI;
               sharedProperties.setReportURL(deeplinkURL)
                datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data.NearlyDue+ "]"));
+              datas.push(JSON.parse("[" +response.data.graphDetails.data["Nearly Due"] + "]"));
               datas.push(JSON.parse("[" +response.data.graphDetails.data.Overdue+ "]"));
                 $scope.series = response.data.graphDetails.series
                 $scope.labels = response.data.graphDetails.lables;

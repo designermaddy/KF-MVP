@@ -3,6 +3,26 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.name = '';
     $scope.data = [];
 
+    function getAryaJobId() {
+        if (sharedProperties.getClientJobID()) {
+            id = sharedProperties.getClientJobID();
+            var promise = Factory.getAryaJobId(id);
+            promise.then(
+                function resolved(response) {
+                    sharedProperties.setJobId(response.data.AryaJobID);
+                    if (sharedProperties.getJobId()) {
+                        getData(sharedProperties.getJobId());
+                    }
+                },
+                function rejected(response) {
+                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+                }
+            );
+
+        }
+    }
+
+    getAryaJobId();
 
     function getData(JobId) {
         var promise = Factory.getRequisitionSearch(JobId);
@@ -20,9 +40,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         )
     };
 
-    if (sharedProperties.getJobId()) {
-        getData(sharedProperties.getJobId());
-    }
+
 
     function setValues() {
       if($scope.rowCollection){

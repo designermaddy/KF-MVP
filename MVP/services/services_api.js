@@ -24,25 +24,11 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 			 return $http.get(urlAPI + '/Requisition/allRequisition');
         //}
     };
-     dataFactory.getRequestionGoalStackChart = function () {
-        // console.log(payRolNumber)
-       // return $http.get('json/Stacked-Chart.json');
-	  // http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionStatus
-	    //return $http.get(' http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionStatus');
-		//return $http.get('json/Stacked-Chart.json');
-         return $http.get('json/requisitionGoal.json');
-          //return $http.get(urlAPI + '/dashboard/graphs/RequisitionGoal');
-        //psyroll will be available while scan the passport
-       // if (payRolNumber) {
-        //    
-        //}
+     dataFactory.getRequestionGoalStackChart = function (graphName) {
+         return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
     };
-    dataFactory.getcandidatePipelineData = function (){
-       // return $http.get('json/Donut-Chart.json')
-	   //return $http.get('http://172.25.148.147:8080/RD-WebApp/Candidate/getCandidatePipeline');
-	   //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east- 1.elb.amazonaws.com/RD-WebApp/Candidate/getCandidatePipeline');
-        
-        return $http.get('json/candidatePipeline.json');
+    dataFactory.getcandidatePipelineData = function (graphName){
+        return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
     }
     
      // for engagements
@@ -132,6 +118,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     }
 
     dataFactory.sendRequisition = function(data) {
+        data['orgID'] = '6';
         return $http({
             method : 'POST',
             url : urlAPI + '/Requisition/viewRequisition',
@@ -139,9 +126,15 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         });
     }
 	
+    dataFactory.getAryaJobId = function(id) {
+        var orgId = '6';
+        return $http.get(urlAPI+'/Requisition/getAryaJobID/'+ orgId + '/'+ id);
+    }
+
     dataFactory.getRequisitionSearch = function(jobId) {
         // return $http.get('json/requisitionSearch.json');
-        var orgId = "2";
+        console.log(jobId);
+        var orgId = "6";
         var jobId = jobId;
         var count = "60";
         var start = "25";
@@ -165,7 +158,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 
     dataFactory.saveNewSearch = function(data) {
         // TODO: Get rid of hardcoded orgId will come from SSO
-        var orgId = "2";
+        var orgId = "6";
 
         return $http({
             method : 'POST',
@@ -228,11 +221,10 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
 
-
-                                
-        var promise = Factory.sendRequisition(row);        
+        var promise = Factory.sendRequisition(row);
         promise.then(
           function resolved(response) {
+              console.log(response.data);
               sharedProperties.setRequisitionDetails(response.data);
               sharedProperties.setJobId(response.data.requisitionDetails[0].aryaJobID);
               sharedProperties.setClientJobID(response.data.requisitionDetails[0].requisitionNumber)
@@ -257,7 +249,7 @@ app.service('sharedProperties', function () {
     var rowCollection = [];
     var profileSelectedDocumentID = []
 	var profileSelectedFunction = [];
-	 var engagementPerIDSelected ='';
+	var engagementPerIDSelected ='';
     var iframeList = [];
 	var authGlobalToken = ''
 	var counter=0;

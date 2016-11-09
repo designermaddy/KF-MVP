@@ -54,8 +54,8 @@
             var promise = Factory.saveNewSearch(vm.criteria);
             promise.then(
                 function resolved(response) {
-                    console.log(response.data.JobID);
-                    sharedProperties.setJobId(response.data.JobID);
+                    //sharedProperties.setJobId(response.data.JobID);
+                    console.log(response.data);
                     var redirectPath = "RequisitionDetails/3";
                     $location.path(redirectPath);
                 },
