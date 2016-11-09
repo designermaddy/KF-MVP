@@ -1,6 +1,6 @@
 <div ng-controller="engagementperIDRequisitionController" class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Requisitions({{engagementResponse.Requisitions.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
+        <h2>Requisitions({{engagementResponse.Requisitions.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html"  total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
     <div ng-show="true" st-table="displayedCollections" st-safe-src="engagementResponse.Requisitions" class="EngagementRequisitionTable">
         <table class="table table-striped">
             <thead>

@@ -25,7 +25,7 @@ getRequisitionList();
                      $scope.engagementConsultant = $scope.engagementResponse.EngagementConsultant;
                      $scope.engagementUsers = $scope.engagementResponse.Users;                     
                   }
-                      $scope.currentPage = 1;
+                    $scope.currentPage = 1;
                     $scope.totalItems = $scope.engagementResponse.Requisitions.length;
                     $scope.entryLimit = 10; // items per page
                     $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);

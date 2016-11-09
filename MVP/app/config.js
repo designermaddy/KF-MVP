@@ -9,5 +9,4 @@
 
     app.value('config', config);
 
-
 })();

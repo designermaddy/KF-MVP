@@ -9,7 +9,7 @@ app.controller('engagementTableController', ['$scope','sharedProperties','Factor
             $scope.viewLoading = true;
             $scope.currentPage = 1;
             $scope.totalItems = $scope.rowCollection.length;
-            $scope.entryLimit = 12; // items per page
+            $scope.entryLimit = 8; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);            
       }
     }
@@ -23,6 +23,9 @@ app.controller('engagementTableController', ['$scope','sharedProperties','Factor
 	// call the API for selectedengagement per id
 	$scope.onSelectEngagementPerID = function(engagementID){
 		sharedProperties.setengagementPerIDSelected(engagementID)
-		
 	}
+
+    $scope.selectPage = function(){
+        alert('hello')
+    }
 }]);

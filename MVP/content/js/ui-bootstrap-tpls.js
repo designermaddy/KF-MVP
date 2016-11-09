@@ -5056,7 +5056,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
               }
 
               openedTooltips.remove(ttScope);
-              
+
               if (tooltipLinkedScope) {
                 tooltipLinkedScope.$destroy();
                 tooltipLinkedScope = null;
@@ -7347,8 +7347,6 @@ angular.module("uib/template/modal/window.html", []).run(["$templateCache", func
 angular.module("uib/template/pager/pager.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("uib/template/pager/pager.html",
     "<li ng-class=\"{disabled: noPrevious()||ngDisabled, previous: align}\"><a href ng-click=\"selectPage(page - 1, $event)\" ng-disabled=\"noPrevious()||ngDisabled\" uib-tabindex-toggle>{{::getText('previous')}}</a></li>\n" +
-    "<li class=\"CurrentPage\"><span>{{ page }} of </span></li>\n" +
-    "<li class=\"TotalPage\"><span>{{ totalPages }}</span></li>\n" + 
     "<li ng-class=\"{disabled: noNext()||ngDisabled, next: align}\"><a href ng-click=\"selectPage(page + 1, $event)\" ng-disabled=\"noNext()||ngDisabled\" uib-tabindex-toggle>{{::getText('next')}}</a></li>\n" +
     "");
 }]);

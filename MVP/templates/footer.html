@@ -45,6 +45,24 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="uibPagerKf.html">
+
+<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
+    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
+    <li class="CurrentPage"><span>{{ page == 1 ? page : page * pager.itemsPerPage - pager.itemsPerPage + 1}} to </span></li>
+    <li class="TotalPage"><span>{{(page * pager.itemsPerPage) < totalItems ? page * pager.itemsPerPage : totalItems}} of </span></li>
+    <li class="TotalPage"><span>{{ totalItems }}</span></li>
+    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+</script>
+
+<script type="text/ng-template" id="uibPagerPf.html">
+<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
+    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
+    <li class="CurrentPage"><span>{{ page }} of </span></li>
+    <li class="TotalPage"><span>{{ totalPages }} </span></li>
+    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+</script>
+
 <footer>
 <div class="FooterBox clearfix">
 <div class="pull-left">
