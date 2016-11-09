@@ -37,7 +37,7 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
               sortSelect();
           },
           function rejected(response) {
-              //alert(response.status + ': ' + response.statusText);
+              //commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
         )
     };
@@ -192,7 +192,7 @@ $scope.saveEngagment = function(){
              // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
 			
           }
       )

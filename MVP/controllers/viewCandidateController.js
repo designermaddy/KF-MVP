@@ -1,4 +1,4 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', function ($scope, Factory, sharedProperties) {
+app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', function ($scope, Factory, sharedProperties, commonFunctions) {
 
     $scope.id = sharedProperties.getViewCandidateId();
 
@@ -11,7 +11,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                         getSocial($scope.row);
                   },
                   function rejected(response) {
-                      alert(response.status + ': ' + response.statusText);
+                      commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                   }
               )
         }

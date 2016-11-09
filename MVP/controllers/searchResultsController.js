@@ -15,7 +15,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
               });
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
         )
     };

@@ -1,12 +1,19 @@
-app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', '$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, $timeout) {
+app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions','sharedProperties', '$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties, $timeout) {
+
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }
         $scope.viewLoading = false;
-        agingRequisitionList();
-
-        function agingRequisitionList() {
-            var promise = Factory.getrequisitionCandidateTableList();
+        postRequisitionApplicationList();
+        var data = {}
+        //get the applicationlist for a requisition using position id
+        function postRequisitionApplicationList() {
+            var reqDetailsperRequisition = sharedProperties.getRequisitionDetails();
+            if(reqDetailsperRequisition.requisitionDetails){
+                // page and status is static mentioned by Karthik position id dynamic//
+                postData = { "requestParams": {"page":"2","status":"Open","orgId":"9855","positionId":reqDetailsperRequisition.requisitionDetails[0].positionId}}
+            }
+            var promise = Factory.postrequisitionApplicationList(postData);
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
                 $scope.candidateListDtls = response.data;
@@ -18,7 +25,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
                     $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
                 }
             }, function rejected(response) {
-                alert(response.status + ': ' + response.statusText);
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
         };
         $scope.itemsByPage = 3;

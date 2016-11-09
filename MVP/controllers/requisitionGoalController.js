@@ -1,4 +1,4 @@
-app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location',  function ($scope, Factory,sharedProperties,$location) {
+app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', function ($scope, Factory,sharedProperties,$location, commonFunctions) {
   var labels=[];
   var datas = [];
   var deeplinkURL = '';
@@ -64,7 +64,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
              // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
-              alert(response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     };

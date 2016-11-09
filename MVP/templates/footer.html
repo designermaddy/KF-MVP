@@ -13,6 +13,7 @@
     </div>
     <div class="modal-body">
         <div>
+            <span us-spinner="{radius:30, width:8, length: 16}"></span>
             <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>
         </div>
     </div>
@@ -29,6 +30,17 @@
 
             <button type="submit" class="btn btn-primary"> Proceed </button>
             <button type="submit" class="btn btn-primary"> Cancel </button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="LoadError.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Loading Error</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
+    </div>
+    <div class="modal-body">
+        <div>
+            {{message}}
         </div>
     </div>
 </script>
