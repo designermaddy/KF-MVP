@@ -1,4 +1,4 @@
-app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
+app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties','$timeout', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $timeout) {
 
     $scope.name = '';
     $scope.data = [];

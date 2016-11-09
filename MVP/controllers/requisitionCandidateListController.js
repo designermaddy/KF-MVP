@@ -1,4 +1,4 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', 'sharedProperties', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties) {
+app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', 'sharedProperties','$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties, $timeout) {
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }

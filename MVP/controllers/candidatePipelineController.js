@@ -1,6 +1,4 @@
-
-
-app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions', function ($scope, Factory, commonFunctions) {
+app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions','$timeout', function ($scope, Factory, commonFunctions, $timeout) {
 
  candidatePipelineDonutChart();
     function candidatePipelineDonutChart() {

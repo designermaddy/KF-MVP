@@ -1,4 +1,4 @@
-app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', function ($scope, Factory,sharedProperties,$location, commonFunctions) {
+app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout) {
   var labels=[];
   var datas = [];
   var deeplinkURL = '';
