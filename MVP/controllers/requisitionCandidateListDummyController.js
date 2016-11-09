@@ -1,4 +1,4 @@
-app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions) {
+app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', '$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, $timeout) {
         if ($routeParams.tab) {
             $scope.showIndex = Number($routeParams.tab);
         }
@@ -90,6 +90,8 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
             $('#applicantDetails').hide();
             $('#applicantResultdiv').show();
         }
-        
-        
+        $timeout(function () {
+        $('#SelectApplicantsList').selectpicker();
+        console.log($('.selectpicker'))
+        }, 50, false);
 }]);
