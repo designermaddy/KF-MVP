@@ -4,7 +4,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
             $scope.showIndex = Number($routeParams.tab);
         }
         $scope.viewLoading = false;
-        postRequisitionApplicationList();
+        //postRequisitionApplicationList();
         var data = {}
         //get the applicationlist for a requisition using position id
         function postRequisitionApplicationList() {
