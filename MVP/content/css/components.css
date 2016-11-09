@@ -91,6 +91,8 @@
 .SortDefault:before                                     { content: "\f0dc"; }
 .st-sort-ascent:before                                  { content: '\25B2'; }
 .st-sort-descent:before                                 { content: '\25BC'; }
+.table-striped tr th input[type=checkbox],
+.table-striped tr td input[type=checkbox]               { margin-top:0; vertical-align: middle; }
 /* --------------------------- AgingRequisitionTable Style ---------------------------------- */
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(6),
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(7),
