@@ -6,6 +6,9 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
     function candidatePipelineDonutChart() {
         var promise = Factory.getcandidatePipelineData(graphName);
+        var label = [];
+        var data = [];
+        var datainsert=[]
         promise.then(
           function resolved(response) {
 
@@ -13,10 +16,15 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
                $scope.candidatePipelineData=[];
               for (var k in Object.keys(response.data.graphDetails.data))
               {
-                  if (k < 5)
-                  $scope.candidatePipelineData.push( {"label":(Object.keys(response.data.graphDetails.data)[k]),"data":response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]]});
+
+                      label.push((Object.keys(response.data.graphDetails.data)[k]))
+                        data.push(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])
+                         //datainsert.push[data[k]]
+                  $scope.candidatePipelineData.push( {"label":label,"data":data});
+
 
                 }
+
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
