@@ -6,18 +6,18 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                   <th class="SortDefault"  st-toggle-column st-sort="CandidateName">Candidate Name</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Title">Title</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Location">Location</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="CurrentCompany">Current Company</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Source">Source</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="candidateName">Candidate Name</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="jobTitle">Title</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="location">Location</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="currentCompany">Current Company</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="SourceType">Source</th>
                    <th class="SortDefault"  st-toggle-column st-sort="UpdatedOn">Updated On</th>
                    <th st-toggle-column></th>
                 </tr>
             </thead>
             <tbody>
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <tr st-select-row="row" ng-repeat="row in rowCollection  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr st-select-row="row" ng-repeat="row in displayedCollections  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
                         <div class="TblRequisition"><a ng-click="openSearchIframe(row.candidateId)">{{row.candidateName}} </a></div>
                     </td>
