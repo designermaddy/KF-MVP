@@ -24,7 +24,10 @@ header a                                        { color:#fff; }
 .MarBtNull										{ margin-bottom:0; }
 .MarLtNull										{ margin-left:0; }
 .MarTp15									    { margin-top:15px !important;}
+.MarRt15									    { margin-right:15px;}
 .MarBt15									    { margin-bottom:15px !important;}
+.MarLt15									    { margin-left:15px;}
+.MarTp30										{ margin-top:30px; }
 .PaddingNull									{ padding:0 !important;}
 .PadTp15									    { padding-top:15px !important;}
 .PadRt15									    { padding-right:15px !important;}
@@ -35,6 +38,26 @@ header a                                        { color:#fff; }
 .PadLtNull									    { padding-left:0 !important;}
 .PadRtNull									    { padding-right:0 !important;}
 .PadRt30									    { padding-right:30px !important;}
+
+
+.mr4											{ margin-right:4%; }
+hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
+.pb15						                    { padding-bottom: 15px; }
+.mr5							                {  margin-right:5px; }
+.mb5							                {  margin-bottom:5px; }
+.ml5							                {  margin-left:5px; }
+.mt25							                {  margin-top:25px; }
+.mr8							                {  margin-right:8px; }
+.ml10							                {  margin-left:10px; }
+.mr29							                {  margin-right:29px; }
+.ml20							                {  margin-left:20px; }
+.mtb15							                {  margin:15px 0px; }
+.pt3							                {  padding-top:3px; }
+.pt25							                {  padding-top:15px; }
+.padding42							            {  padding:42px 0px; }
+.f13							                {  font-size:13px; }
+.pt19							                {  padding-top:19px; }
+.w29											{ width:29%; }
 /* --------------------------- Color Style ---------------------------------- */
 .BG-RED                                          { background-color:#D40A1c }
 .BG-YELLOW                                       { background-color:#ffa500; }
@@ -47,7 +70,7 @@ footer .FooterBox                               { padding:10px 15px; }
 footer .FooterBox p                             { font-size:14px; font-weight:bold; }
 .KFLayout                                       { padding-right:0; }
 .SideBarContent                                 { background-color: #d9e4e7; }
-iframe.zEWidget-launcher                        { bottom: 50px !important; }
+iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 10px 20px 2px 20px !important;}
 /* --------------------------- navbar-collapse Style ---------------------------------- */
 .Navigation                                     { margin-right:300px; }
 .UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:300px; }

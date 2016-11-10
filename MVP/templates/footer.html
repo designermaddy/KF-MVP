@@ -1,75 +1,10 @@
-<script type="text/ng-template" id="modalContent.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
-    </div>
-        <div class="modal-body">
-            <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
-        </div>
-</script>
-
-<script type="text/ng-template" id="Docmodal.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
-    </div>
-    <div class="modal-body">
-        <div>
-            <span us-spinner="{radius:30, width:8, length: 16}"></span>
-            <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>
-        </div>
-    </div>
-</script>
-
-<script type="text/ng-template" id="AddMe.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2>Add Me</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
-    </div>
-    <div class="modal-body">
-        <div>
-            <button type="submit" class="btn btn-primary"> Primary Recruiter</button>
-            <button type="submit" class="btn btn-primary"> Secondary Recruiter</button>
-
-            <button type="submit" class="btn btn-primary"> Proceed </button>
-            <button type="submit" class="btn btn-primary"> Cancel </button>
-        </div>
-    </div>
-</script>
-
-<script type="text/ng-template" id="LoadError.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2>Loading Error</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
-    </div>
-    <div class="modal-body">
-        <div>
-            {{message}}
-        </div>
-    </div>
-</script>
-
-<script type="text/ng-template" id="uibPagerKf.html">
-
-<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
-    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
-    <li class="CurrentPage"><span>{{ page == 1 ? page : page * pager.itemsPerPage - pager.itemsPerPage + 1}} to </span></li>
-    <li class="TotalList"><span>{{(page * pager.itemsPerPage) < totalItems ? page * pager.itemsPerPage : totalItems}} of </span></li>
-    <li class="TotalPage"><span>{{ totalItems }}</span></li>
-    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
-</script>
-
-<script type="text/ng-template" id="uibPagerPf.html">
-<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
-    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
-    <li class="CurrentPage"><span>{{ page }} of </span></li>
-    <li class="TotalPage"><span>{{ totalPages }} </span></li>
-    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
-</script>
-
 <footer>
-<div class="FooterBox clearfix">
-<div class="pull-left">
-<p>&copy; 2016 Korn Ferry. All Right Reserved.</p>
-</div>
-<div class="pull-right">
-    <p><a href="http://ondemand.kf4d.com/kf/support" target="_blank" style="line-height: 20.8px;">Contact Us</a> &nbsp; | &nbsp; &nbsp;<a href="https://s3.amazonaws.com/forte-content/Terms_of_Use_OnDemand.pdf" target="_blank">Terms</a> &nbsp; | &nbsp; &nbsp;<a href="https://cdn.kornferry.com/privacy/en-us/privacy.pdf" target="_blank">Privacy</a> &nbsp; | &nbsp; &nbsp;<a href="https://s3.amazonaws.com/forte-content/Forte3rdPartyCredits.pdf" target="_blank">3rd Party Credits</a></p>
-</div>
-</div>
+    <div class="FooterBox clearfix">
+        <div class="pull-left">
+            <p>&copy; 2016 Korn Ferry. All Right Reserved.</p>
+        </div>
+        <div class="pull-right" style="margin-right: 150px;">
+            <p><a href="http://ondemand.kf4d.com/kf/support" target="_blank" style="line-height: 20.8px;">Contact Us</a> &nbsp; | &nbsp; &nbsp;<a href="https://s3.amazonaws.com/forte-content/Terms_of_Use_OnDemand.pdf" target="_blank">Terms</a> &nbsp; | &nbsp; &nbsp;<a href="https://cdn.kornferry.com/privacy/en-us/privacy.pdf" target="_blank">Privacy</a> &nbsp; | &nbsp; &nbsp;<a href="https://s3.amazonaws.com/forte-content/Forte3rdPartyCredits.pdf" target="_blank">3rd Party Credits</a></p>
+        </div>
+    </div>
 </footer>

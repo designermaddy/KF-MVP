@@ -1,10 +1,10 @@
 <div ng-controller="engagementGridController">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>View Requisition</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage"  template-url = "uibPagerPf.html" previous-text="" next-text=""></ul></span><span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">New Search</button></span> </div>
+        <h2>View Requisition</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage"  template-url = "uibPagerPf.html" previous-text="" next-text=""></ul></span><span class="HeaderButton pull-right"><button type="submit" class="btn btn-secondary btn-sm">New Search <i class="fa fa-chevron-right" aria-hidden="true"></i></button></span> </div>
     <div class="panel panel-default ViewBox">
         <div class="panel-body PaddingNull">
             <ul class="ViewBoxList clearfix EngagementsView MarBtNull">
-                <span us-spinner="{radius:30, width:8, length: 16}"></span>
+                <span us-spinner="{radius:10, width:2, length: 4}"></span>
                 <li ng-repeat="item in filtered = rowCollection | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <div class="row ViewBox clearfix PadRt15">
                         <div class="col-sm-9 col-md-9 col-lg-9 PadRtNull">

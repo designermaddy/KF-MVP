@@ -3,9 +3,10 @@
         <div class="row"  ng-controller="popoverController">
             <div class="Heading2 HeadingFloat Open clearfix">
                 <h2>Recruiting Snapshot</h2> <span class="pull-right Popover">
-                    <button id="popover" type="button" class="btn btn-primary" uib-popover-template = "'myPopoverTemplate.html'" popover-placement='bottom-right' popover-is-open="isOpen" ng-click="initial()"></button>
+                <button id="popover" type="button" class="btn btn-primary" uib-popover-template = "'myPopoverTemplate.html'" popover-placement='bottom-right' popover-is-open="isOpen" ng-click="initial()"></button>
                 </span>
             </div>
+
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div ng-include = "ReqUrl"></div>
             </div>
@@ -29,37 +30,3 @@
 </div>
 
 
-   <script type="text/ng-template" id="myPopoverTemplate.html">
-       <div class='col-md-12'><h2>Requistions</h2>
-        <div class='col-md-1 pull-right close-icon'><a ng-click="cancel()"><i class='fa fa-times' aria-hidden='true' ></i></a></div>
-       </div>
-                    <div class='col-md-12'>
-                        <div class='row' ng-click="open('req');">
-                            <div class='col-md-4 popupDiv'><input id="reqPipeline" type='checkbox'>Requistion Pipeline
-                                <img class='img-responsive popupImg' src='content/images/sm_graph_1.png'>
-                            </div>
-                            <div class='col-md-4 popupDiv'><input id="reqHistory" type='checkbox'/>Requistion History
-                                <img class='img-responsive popupImg' src='content/images/sm_graph_2.png'>
-                            </div>
-                            <div class='col-md-4 popupDiv'><input id="reqActivity" type='checkbox'/>Requistion Activity
-                                <img class='img-responsive popupImg'  src='content/images/sm_graph_3.png'>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-12 mt20'><h2>Candidates</h2>
-                    </div>
-                    <div class='col-md-12 mb25'>
-                        <div class='row' ng-click="open('can');">
-                            <div class='col-md-4 popupDiv'><input id='canPipeline' type='checkbox'/>Candidate Pipeline
-                                <img class='img-responsive popupImg'  src='content/images/sm_graph_3.png'>
-                            </div>
-                            <div class='col-md-4 popupDiv'><input id="canHistory" type='checkbox'/>Candidate History
-                                <img class='img-responsive popupImg'  src='content/images/sm_graph_2.png'>
-                            </div>
-                            <div class='col-md-4 popupDiv'><input id="canSource" type='checkbox'/>Candidate Source
-                                <img class='img-responsive popupImg'  src='content/images/sm_graph_1.png'>
-                            </div>
-                        </div>
-                    </div>
-
-    </script>
