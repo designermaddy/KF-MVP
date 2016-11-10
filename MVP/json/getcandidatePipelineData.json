@@ -13,6 +13,6 @@
          "Offer":"10"
 
       },
-	  "link":"https://foresight.futurestep.com/ats/ats_cand.php?ssoprovider=recruiterdesktop&mode=candPipeline"
+	  "deepLinkURI":"https://foresight.futurestep.com/ats/ats_cand.php?ssoprovider=recruiterdesktop&mode=candPipeline"
    }
 }

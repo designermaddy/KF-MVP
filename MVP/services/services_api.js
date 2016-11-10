@@ -28,8 +28,8 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
          return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
     };
     dataFactory.getcandidatePipelineData = function (graphName){
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-       return $http.get('json/getcandidatePipelineData.json');
+        return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+      // return $http.get('json/getcandidatePipelineData.json');
       //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
     

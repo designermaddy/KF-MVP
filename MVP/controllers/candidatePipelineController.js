@@ -1,7 +1,7 @@
-app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions','$timeout', function ($scope, Factory, commonFunctions, $timeout) {
+app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions','$timeout','$location','sharedProperties', function ($scope, Factory, commonFunctions, $timeout,$location,sharedProperties) {
 
     var graphName = "CandidatePipeline";
-
+    var deeplinkURL = '';
  candidatePipelineDonutChart();
 
     function candidatePipelineDonutChart() {
@@ -11,7 +11,8 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
         var datainsert=[]
         promise.then(
           function resolved(response) {
-
+               deeplinkURL = response.data.graphDetails.deepLinkURI;
+              sharedProperties.setReportURL(deeplinkURL)
               // = response.data.candidateList;
                $scope.candidatePipelineData=[];
               for (var k in Object.keys(response.data.graphDetails.data))
@@ -25,13 +26,20 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
                 }
 
+
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
     };
+ $scope.onClick = function (points, evt) {
+    console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
+        $("li[class='active']").removeClass('active');
+        $('#ReportHeader').addClass('active');
+       $location.path( '/Reports' );
 
+  };
         $timeout(function () {
         $('#candidatePipelineList').selectpicker();
 
@@ -39,4 +47,5 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
 		  
         }
+
     ]);
