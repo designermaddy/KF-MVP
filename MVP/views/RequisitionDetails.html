@@ -30,7 +30,8 @@
     </uib-tab>
 
      <uib-tab index='3' heading="Search Results">
-        <div class="container-fluid clearfix" id="searchResultdiv" ng-controller="searchResultsController">
+         <div ng-controller="searchResultsController">
+        <div class="container-fluid clearfix" id="searchResultdiv" >
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div ng-include="'partial/_SearchResultsSearch.html'"></div>
@@ -39,7 +40,7 @@
                 <div ng-include="'partial/_SearchResultsTable.html'"></div>
             </div>
         </div>            
-
+            </div>
          <div class="container-fluid clearfix">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -47,7 +48,8 @@
             </div>
         </div>
          </div>
-        </div>
+
+         </div>
     </uib-tab>
     
     <uib-tab index='4'  heading="Candidates List"> 

@@ -113,11 +113,10 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         $('#searchResultdiv').hide();
         $('#searchListCandidateDetails').show();
     };
-    $('#searchResultBack').click(function (event) {
-        event.preventDefault();
+    $scope.searchResultBack = function() {
         $('#searchListCandidateDetails').hide();
         $('#searchResultdiv').show();
-    });
+    };
 
     $scope.refreshResults = function() {
         if (sharedProperties.getJobId()) {
