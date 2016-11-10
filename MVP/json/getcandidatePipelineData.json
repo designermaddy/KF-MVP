@@ -1,0 +1,18 @@
+{
+   "transactionID":null,
+   "graphDetails":{
+      "method":"candPipeline",
+      "type":"recruiter",
+      "name":"Ann Young",
+      "data":{
+         "New":"160",
+         "Source":"9",
+         "Screen":"23",
+         "Submit":"10",
+         "Interview":"17",
+         "Offer":"10"
+
+      },
+	  "link":"https://foresight.futurestep.com/ats/ats_cand.php?ssoprovider=recruiterdesktop&mode=candPipeline"
+   }
+}

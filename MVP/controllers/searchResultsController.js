@@ -107,6 +107,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         password = sharedProperties.getPassword();
         $("input[name='LoginName']").attr('value', userName);
         $("input[name='Password']").attr('value', password);
+        $("input[name='ReturnUrl']").attr('value', url);
         $('#arya').attr('action', config.iframeAction);
         $('#arya').submit()
         $('#searchResultdiv').hide();
