@@ -1,0 +1,24 @@
+<div class="panel panel-default" ng-controller="candidatePipelineController">
+    <div class="panel-heading clearfix">Candidate Source <span class="TermSorting pull-right">
+    <ul>
+    <li><a href="#">Q1</a></li>
+    <li><a href="#" class="active">Q2</a></li>
+    <li><a href="#">Q3</a></li>
+    <li><a href="#">Q4</a></li>
+    <li class="FormSelect">
+        <select id="candidatePipelineList" class="selectpicker form-control" >
+          <option>2016</option>
+          <option>2015</option>
+          <option>2014</option>
+        </select>
+        </li>
+    </ul>
+    </span></div>
+    <div class="panel-body DoughnutChart" style="height: 266px;">
+        <span us-spinner="{radius:30, width:8, length: 16}"></span>
+        <section class="col-sm-12 col-xs-12" ng-repeat="candidatPipeData in candidatePipelineData"> <span class="chart" easypiechart percent="candidatPipeData.data" options="options">
+      <span class="percent" ng-bind="candidatPipeData.data"></span> </span>
+            <label>{{candidatPipeData.label}}</label>
+        </section>
+    </div>
+</div>
