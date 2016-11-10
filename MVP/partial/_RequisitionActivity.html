@@ -1,0 +1,23 @@
+<div class="panel panel-default" ng-controller="requisitionGoalController">
+    <div class="panel-heading clearfix">Requisition Activity
+    <span class="TermSorting pull-right">
+    <ul>
+    <li><a href="#">Q1</a></li>
+    <li><a href="#" class="active">Q2</a></li>
+    <li><a href="#">Q3</a></li>
+    <li><a href="#">Q4</a></li>
+    <li class="FormSelect">
+        <select class="selectpicker form-control" id="requisitionGoalList">
+          <option>2016</option>
+          <option>2015</option>
+          <option>2014</option>
+        </select>
+</li>
+    </ul>
+    </span>
+    </div>
+    <div class="panel-body BarChart" style="height: 266px;">
+        <span us-spinner="{radius:10, width:2, length: 4}"></span>
+        <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" chart-click="onClick"></canvas>
+    </div>
+</div>

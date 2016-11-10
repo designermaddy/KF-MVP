@@ -1,49 +1,17 @@
 <div class="container-fluid claerfix KFLayout">
     <div class="PadLtNull ContentBox">
-        <div class="row">
+        <div class="row"  ng-controller="popoverController">
             <div class="Heading2 HeadingFloat Open clearfix">
                 <h2>Recruiting Snapshot</h2> <span class="pull-right Popover">
-                <div id="popover" custom-popover popover-html="<div onclick='$(&quot;#popover&quot;).popover(&quot;hide&quot;);'  class='Popover'>
-				<div class='col-md-12'><h2>Requistions</h2>
-										<div class='col-md-1 pull-right close-icon'><a href='#'><i class='fa fa-times' aria-hidden='true'></i></a></div>
-				</div>
-				<div class='col-md-12'>
-					<div class='row'>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Requistion Pipeline
-							<img class='img-responsive popupImg' src='content/images/sm_graph_1.png'>
-						</div>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Requistion History
-							<img class='img-responsive popupImg' src='content/images/sm_graph_2.png'>
-						</div>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Requistion Activity
-							<img class='img-responsive popupImg'  src='content/images/sm_graph_3.png'>
-						</div>
-					</div>
-				</div>
-				<div class='col-md-12 mt20'><h2>Candidates</h2>
-				</div>
-				<div class='col-md-12 mb25'>
-					<div class='row'>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Candidate Pipeline
-							<img class='img-responsive popupImg'  src='content/images/sm_graph_3.png'>
-						</div>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Candidate History
-							<img class='img-responsive popupImg'  src='content/images/sm_graph_2.png'>
-						</div>
-						<div class='col-md-4 popupDiv'><input type='checkbox'/>Candidate Source
-							<img class='img-responsive popupImg'  src='content/images/sm_graph_1.png'>
-						</div>
-					</div>
-				</div>
-            </div>" popover-placement="left" class="btn btn-primary">
+                <button id="popover" type="button" class="btn btn-primary" uib-popover-template = "'myPopoverTemplate.html'" popover-placement='bottom-right' popover-is-open="isOpen" ng-click="initial()"></button>
+                </span>
+            </div>
 
-                </div>
-                </span></div>
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <div ng-include="'partial/_RequisitionGoalStackedChart.html'"></div>
+                <div ng-include = "ReqUrl"></div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
-                <div ng-include="'partial/_CandidatePipelineDoughnutChart.html'"></div>
+                <div ng-include = "CanUrl"></div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div ng-include="'partial/_AgingRequisitionsTable.html'"></div>
@@ -60,3 +28,5 @@
         <div ng-include="'partial/_LatestInsights.html'"></div>
     </div>
 </div>
+
+
