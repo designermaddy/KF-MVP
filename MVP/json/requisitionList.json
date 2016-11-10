@@ -1,1 +1,130 @@
-{"transactionID":null,"requisition":[{"jobId":1090760,"poolId":39327,"companyID":2392,"requisitionNumber":"Spirit00002","requisitionTitle":"Mechanical/Structural Design/Drafter - Entry Level","daysOpen":-29,"headCount":1,"workflowSteps":[{"step":"Phone Screen","candidateCount":4},{"step":"Candidate Not Interested","candidateCount":0},{"step":"Not Qualified","candidateCount":0},{"step":"Attempt to Contact","candidateCount":27},{"step":"Qualified","candidateCount":1},{"step":"Not a Fit","candidateCount":7},{"step":"Hired","candidateCount":2},{"step":"Interview","candidateCount":0},{"step":"Project On Hold","candidateCount":0},{"step":"Unable to Reach","candidateCount":2},{"step":"Sourced","candidateCount":2983},{"step":"Candidate Submitted","candidateCount":5},{"step":"Offered","candidateCount":2}],"requisitionColour":"BG-RED"},{"jobId":1101941,"poolId":39330,"companyID":2392,"requisitionNumber":"ArdentMills00503","requisitionTitle":"Warehouse Pack Operator","daysOpen":-2,"headCount":1,"workflowSteps":[{"step":"Not Qualified","candidateCount":0},{"step":"Candidate Not Interested","candidateCount":0},{"step":"Phone Screen","candidateCount":4},{"step":"Sourced","candidateCount":2983},{"step":"Attempt to Contact","candidateCount":27},{"step":"Qualified","candidateCount":1},{"step":"Not a Fit","candidateCount":7},{"step":"Candidate Submitted","candidateCount":5},{"step":"Offered","candidateCount":2},{"step":"Hired","candidateCount":2},{"step":"Interview","candidateCount":0},{"step":"Project On Hold","candidateCount":0},{"step":"Unable to Reach","candidateCount":2}],"requisitionColour":"BG-RED"},{"jobId":1101940,"poolId":39329,"companyID":2392,"requisitionNumber":"ArdentMills00635","requisitionTitle":"Production Supervisor-RTE (Ready to Eat) Operations","daysOpen":-2,"headCount":1,"workflowSteps":[{"step":"Candidate Not Interested","candidateCount":0},{"step":"Phone Screen","candidateCount":4},{"step":"Not Qualified","candidateCount":0},{"step":"Not a Fit","candidateCount":7},{"step":"Sourced","candidateCount":2983},{"step":"Candidate Submitted","candidateCount":5},{"step":"Offered","candidateCount":2},{"step":"Hired","candidateCount":2},{"step":"Interview","candidateCount":0},{"step":"Project On Hold","candidateCount":0},{"step":"Unable to Reach","candidateCount":2},{"step":"Attempt to Contact","candidateCount":27},{"step":"Qualified","candidateCount":1}],"requisitionColour":"BG-RED"},{"jobId":1101939,"poolId":39328,"companyID":2392,"requisitionNumber":"ArdentMills00634","requisitionTitle":"Maintenance & Reliability Manager","daysOpen":-2,"headCount":1,"workflowSteps":[{"step":"Candidate Not Interested","candidateCount":0},{"step":"Not Qualified","candidateCount":0},{"step":"Phone Screen","candidateCount":4},{"step":"Candidate Submitted","candidateCount":5},{"step":"Offered","candidateCount":2},{"step":"Not a Fit","candidateCount":7},{"step":"Sourced","candidateCount":2983},{"step":"Hired","candidateCount":2},{"step":"Interview","candidateCount":0},{"step":"Project On Hold","candidateCount":0},{"step":"Unable to Reach","candidateCount":2},{"step":"Attempt to Contact","candidateCount":27},{"step":"Qualified","candidateCount":1}],"requisitionColour":"BG-RED"},{"jobId":1102085,"poolId":39331,"companyID":2392,"requisitionNumber":"ArdentMills00642","requisitionTitle":"Manufacturing Associate - Utility Worker","daysOpen":-1,"headCount":1,"workflowSteps":[{"step":"Candidate Not Interested","candidateCount":0},{"step":"Phone Screen","candidateCount":4},{"step":"Not Qualified","candidateCount":0},{"step":"Sourced","candidateCount":2983},{"step":"Not a Fit","candidateCount":7},{"step":"Hired","candidateCount":2},{"step":"Interview","candidateCount":0},{"step":"Project On Hold","candidateCount":0},{"step":"Unable to Reach","candidateCount":2},{"step":"Candidate Submitted","candidateCount":5},{"step":"Offered","candidateCount":2},{"step":"Attempt to Contact","candidateCount":27},{"step":"Qualified","candidateCount":1}],"requisitionColour":"BG-RED"}],"requisitionDetails":null}
+{
+  "transactionID": null,
+  "requisitionList": null,
+  "requisitionDetails": null,
+  "requisitionListMo": null,
+  "applications": null,
+  "application": null,
+  "requisitions": [
+    {
+      "ReqNumber": "LW00000006",
+      "JobTitle": "Sr. Sales Analyst",
+      "StartDate": "10/28/2016",
+      "EndDate": null,
+      "Source": "Lumesse",
+      "Recruiter": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Brianna",
+          "id": 25450,
+          "lastName": "West",
+          "login": "brianna.west@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC1",
+          "order": 1
+        }
+      ],
+      "Data": {
+        "method": "reqCount",
+        "type": "company",
+        "name": "Lamb Weston",
+        "data": [
+          {
+            "req_number": "LW00000006",
+            "open_positions": "1",
+            "open_days": "19",
+            "sourced": null,
+            "screen": null,
+            "submit": null,
+            "interview": null,
+            "offer": null,
+            "accept": null
+          }
+        ],
+        "link": "https://foresight.futurestep.com/ats/ats_req.php?ssoprovider=recruiterdesktop&mode=reqCount"
+      },
+      "Position": 9271
+    },
+    {
+      "ReqNumber": "LW00000021",
+      "JobTitle": "Sales Representative II",
+      "StartDate": "10/26/2016",
+      "EndDate": null,
+      "Source": "Lumesse",
+      "Recruiter": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Denise",
+          "id": 25454,
+          "lastName": "Varner",
+          "login": "denise.varner@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC1",
+          "order": 1
+        }
+      ],
+      "Data": {
+        "method": "reqCount",
+        "type": "company",
+        "name": "Lamb Weston",
+        "data": [
+          {
+            "req_number": "LW00000021",
+            "open_positions": "1",
+            "open_days": "15",
+            "sourced": "1",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0"
+          }
+        ],
+        "link": "https://foresight.futurestep.com/ats/ats_req.php?ssoprovider=recruiterdesktop&mode=reqCount"
+      },
+      "Position": 9334
+    },
+    {
+      "ReqNumber": "LW00000125",
+      "JobTitle": "Manager Category Leadership-Food Service",
+      "StartDate": "11/02/2016",
+      "EndDate": null,
+      "Source": "Lumesse",
+      "Recruiter": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Brianna",
+          "id": 25450,
+          "lastName": "West",
+          "login": "brianna.west@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC1",
+          "order": 1
+        }
+      ],
+      "Data": {
+        "method": "reqCount",
+        "type": "company",
+        "name": "Lamb Weston",
+        "data": [
+          {
+            "req_number": "LW00000125",
+            "open_positions": "1",
+            "open_days": "6",
+            "sourced": null,
+            "screen": null,
+            "submit": null,
+            "interview": null,
+            "offer": null,
+            "accept": null
+          }
+        ],
+        "link": "https://foresight.futurestep.com/ats/ats_req.php?ssoprovider=recruiterdesktop&mode=reqCount"
+      },
+      "Position": 9562
+    }
+  ]
+}

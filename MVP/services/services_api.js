@@ -28,7 +28,9 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
          return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
     };
     dataFactory.getcandidatePipelineData = function (graphName){
-        return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+       return $http.get('json/getcandidatePipelineData.json');
+      //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
     
      // for engagements
@@ -89,6 +91,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	}
 	 //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function(engagementId){
+       // return $http.get('json/RequisitionList.json')
         return $http.get(urlAPI+'/engagement/viewEngagement/'+engagementId)
     }
     dataFactory.getViewRequisition = function() {
