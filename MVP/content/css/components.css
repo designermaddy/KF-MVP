@@ -31,6 +31,7 @@
 .btn-primary, .btn-success, .btn-warning                { background-image:none;  box-shadow: 0 0 0; text-shadow: 0 0 0; }
 .btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
 .btn-primary						{background-color:#007da4 !important;border-color: #007da4;}
+.btn-secondary						{background-color:#fff !important; border-color: #007da4; color:#007da4; }
 .IframeBtn                                              { vertical-align: top; position: absolute; float:left; }
 .btn .caret                                             { margin-left: 3px; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
@@ -67,7 +68,7 @@
 .InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 50%; padding:6px 8px; width: 40px; height: 40px;  }
 
 /* --------------------------- Table List Style ---------------------------------- */
-.table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0; }
+.table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0;  min-height: 300px; background-color:#fff; }
 .table-striped a:hover                                  { text-decoration: none; }
 .table-striped.table > thead > tr > th                  { border-bottom:1px solid #e6e9ed; padding:12px 8px; white-space: nowrap; font-size: 12px; font-weight: bold; }
 .table-striped.table > tbody > tr > td                  { vertical-align: middle; }
@@ -100,7 +101,7 @@
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(9),
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(10)             { color:#333; font-size: 16px; text-align: center; }
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 18px; text-align: center; }
-
+.AgingRequisitionTable .table-striped                   { min-height: 293px; }
 /* --------------------------- RequisitionTable Style ---------------------------------- */
 .RequisitionTable .table-striped > tbody > tr td:nth-child(7),
 .RequisitionTable .table-striped > tbody > tr td:nth-child(8),
@@ -108,7 +109,7 @@
 .RequisitionTable .table-striped > tbody > tr td:nth-child(10),
 .RequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#333; font-size: 16px; text-align: center; }
 .RequisitionTable .table-striped > tbody > tr td:nth-child(12)             { color:#000; font-size: 18px; text-align: center; }
-
+.RequisitionTable .table-striped                        { min-height: 300px; }
 /* --------------------------- EngagementRequisitionTable Style ---------------------------------- */
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(6),
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(7),
@@ -279,8 +280,10 @@
 .nav-tabs > li.active > a:hover                         { border-radius:0; }
 .dropdown-menu                                          { margin:0; }
 .dropdown-menu > li > a                                 { padding:5px 20px;}
+
+.WidgetPD                                               { min-height: 300px; }
 /* --------------------------- WidgetPD Style ---------------------------------- */
-.Popover span:before                                    { color:#fff; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
+.Popover span:before                                    { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
 .popover											{top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
 .popover.left>.arrow								{left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
 .popover.left>.arrow:after							{top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}

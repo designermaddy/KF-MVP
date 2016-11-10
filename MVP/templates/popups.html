@@ -1,0 +1,70 @@
+<script type="text/ng-template" id="modalContent.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
+    </div>
+        <div class="modal-body">
+            <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
+        </div>
+</script>
+
+<script type="text/ng-template" id="Docmodal.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
+    </div>
+    <div class="modal-body">
+        <div>
+            <span us-spinner="{radius:10, width:2, length: 4}"></span>
+            <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddMe.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Add Me</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
+    </div>
+    <div class="modal-body">
+        <div>
+            <button type="submit" class="btn btn-primary"> Primary Recruiter</button>
+            <button type="submit" class="btn btn-primary"> Secondary Recruiter</button>
+
+            <button type="submit" class="btn btn-primary"> Proceed </button>
+            <button type="submit" class="btn btn-primary"> Cancel </button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="LoadError.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Loading Error</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span>
+    </div>
+    <div class="modal-body">
+        <div>
+            {{message}}
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="uibPagerKf.html">
+
+<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
+    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
+    <li class="CurrentPage"><span>{{ page == 1 ? page : page * pager.itemsPerPage - pager.itemsPerPage + 1}} to </span></li>
+    <li class="TotalList"><span>{{(page * pager.itemsPerPage) < totalItems ? page * pager.itemsPerPage : totalItems}} of </span></li>
+    <li class="TotalPage"><span>{{ totalItems }}</span></li>
+    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+</script>
+
+<script type="text/ng-template" id="uibPagerPf.html">
+<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}">
+    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
+    <li class="CurrentPage"><span>{{ page }} of </span></li>
+    <li class="TotalPage"><span>{{ totalPages }} </span></li>
+    <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+</script>
+
+
+<!-- Start of helpfuturestep Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","helpfuturestep.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpfuturestep Zendesk Widget script -->
