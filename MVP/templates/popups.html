@@ -1,3 +1,4 @@
+<!-- Global Iframe Popup   -->
 <script type="text/ng-template" id="modalContent.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
@@ -5,6 +6,7 @@
         <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
     </div>
 </script>
+<!-- Global Document PDF Loader   -->
 <script type="text/ng-template" id="Docmodal.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
@@ -14,6 +16,7 @@
         </div>
     </div>
 </script>
+<!-- Requisition Details Addme Popup   -->
 <script type="text/ng-template" id="AddMe.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2>Add Me</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
@@ -26,6 +29,7 @@
         </div>
     </div>
 </script>
+<!-- Global Error Loading Popup   -->
 <script type="text/ng-template" id="LoadError.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2>Loading Error</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
@@ -33,6 +37,7 @@
         <div> {{message}} </div>
     </div>
 </script>
+<!-- Global Pager Set of Record By Set of Record and Total Data  -->
 <script type="text/ng-template" id="uibPagerKf.html">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
     <li class="CurrentPage"><span>{{ page == 1 ? page : page * pager.itemsPerPage - pager.itemsPerPage + 1}} to </span></li>
@@ -40,12 +45,14 @@
     <li class="TotalPage"><span>{{ totalItems }}</span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
 </script>
+<!-- Global Pager Page By Page  -->
 <script type="text/ng-template" id="uibPagerPf.html">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
     <li class="CurrentPage"><span>{{ page }} of </span></li>
     <li class="TotalPage"><span>{{ totalPages }} </span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
 </script>
+<!-- Dashboard Foresight Graph Popover -->
 <script type="text/ng-template" id="myPopoverTemplate.html">
     <div class="row">
         <div class='col-md-12'>
@@ -100,6 +107,7 @@
         </div>
     </div>
 </script>
+<!-- Help and Chat -->
 <!-- Start of helpfuturestep Zendesk Widget script -->
 <script>
     /*<![CDATA[*/
