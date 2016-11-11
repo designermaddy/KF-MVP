@@ -26,6 +26,8 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "views/Search.html"
         }).when("/NewSearch", {
             templateUrl: "views/NewSearch.html"
+        }).when("/ViewSearch", {
+            templateUrl: "views/ViewSearch.html"
         }).when("/News", {
             templateUrl: "views/News.html"
         }).when("/Reports", {
