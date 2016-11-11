@@ -175,9 +175,10 @@ label.FormLabel                                 { color:#919191; margin-bottom:0
 .FormSelect .btn-default.active, .FormSelect .btn-default:active, .FormSelect .open>.dropdown-toggle.btn-default              {  background-color:#f6f6f6;      box-shadow: 0 0 0; }
 .FormSelect .bootstrap-select .dropdown-toggle:focus { outline:none !important; }
 .FormCheckBox                                   { padding: 6px 0; vertical-align: baseline; display: inline-block; }
-.FormCheckBox:hover, .CheckBoxSelect.Selected   { background-color:#f6f6f6;  }
-.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; font-size:14px; }
+.FormCheckBox:hover                             { background-color:#f6f6f6;  }
+.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; font-size:14px;  }
 .FormCheckBox input[type=checkbox]              { margin-top:0px; vertical-align: middle; }
-.CheckBoxSelect                                 { padding: 6px 5px; }
+.CheckBoxSelect                                 { padding: 6px; }
 .CheckBoxSelect input                           { float: left; }
-.CheckBoxSelect label.CheckBoxLable             { float: left; text-indent: 17px; margin-top:-15px; font-size:12px; }
+.CheckBoxSelect label.CheckBoxLable             { float: left; text-indent: 17px; margin-top:-15px; font-size:12px; cursor: pointer;  }
+.CheckBoxSelect.Selected                        { background-color:#d9e4e7;  }
