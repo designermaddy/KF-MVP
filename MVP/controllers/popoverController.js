@@ -24,6 +24,7 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
     angular.forEach(list , function (val, key) {
         if (val.status == 1) {
             el = $('#' + key);
+            el.parent().addClass('Selected');
             el.prop('disabled', true);
             el.prop('checked', true);
         }
@@ -39,6 +40,7 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
                     if (val.status == 1) {
                         activeEl = $('#' + key);
                         val.status = 0;
+                        activeEl.parent().removeClass('Selected');
                         activeEl.prop('disabled', false);
                         activeEl.prop('checked', false);
                     }
@@ -46,7 +48,7 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
                         var str = 'partial/_' + val.url + '.html';
                         if (type == 'req') $scope.ReqUrl = str;
                         if (type == 'can') $scope.CanUrl = str;
-
+                        el.parent().addClass('Selected');
                         el.prop('disabled', true);
                         val.status = 1;
                     }

@@ -3,6 +3,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.name = '';
     $scope.start = 1;
     $scope.data = [];
+    $scope.total = 0;
 
      var values = {
         'orgId' : 6,
@@ -18,6 +19,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             promise.then(
                 function resolved(response) {
                     sharedProperties.setJobId(response.data.AryaJobID);
+                    $scope.total = response.data.TotalSourcedCount;
                     if (sharedProperties.getJobId()) {
                         getData();
                     }
