@@ -295,6 +295,7 @@
 .CheckBoxSelect                                         { padding: 6px 5px; }
 .CheckBoxSelect input                                   { float: left; }
 .CheckBoxSelect label.CheckBoxLable                     { float: left; text-indent: 17px; margin-top:-15px }
+.popupImg                                               { margin-top:3px; }
 /* --------------------------- FloatingNav Style ---------------------------------- */
 .FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
 .modal-content											{ padding: 10px; }
