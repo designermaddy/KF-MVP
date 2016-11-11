@@ -283,25 +283,21 @@
 
 .WidgetPD                                               { min-height: 300px; }
 /* --------------------------- WidgetPD Style ---------------------------------- */
-.Popover span:before                                    { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
-.popover											{top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
-.popover.left>.arrow								{left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
-.popover.left>.arrow:after							{top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
-.popover.left                                       {margin-left: 50px; }
-.close-icon											{margin: 7px 0px;color: #00c2ff;font-size: 1.2em}
-.popupImg											{margin: 4px 0px;}
-.mt20												{margin-top: 20px;}
-.mb25												{margin-bottom:25px;}
-.popupDiv input										{margin-right: 3px;}
-
+.Popover button:before                                  { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
+.popover                                                {top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
+.popover.left>.arrow                                    {left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
+.popover.left>.arrow:after                              {top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
+.popover.left                                           {margin-left: 50px; }
+.close-icon                                             {margin: 7px 0px;color: #00c2ff;font-size: 1.2em; margin-right: -20px;}
+.popupDiv input	                                        {margin-right: 3px;}
+.popover.bottom                                         { margin-top:0; }
 .profileDiv                                             { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
-
+.CheckBoxSelect                                         { padding: 6px 5px; }
 /* --------------------------- FloatingNav Style ---------------------------------- */
 .FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
 .modal-content											{ padding: 10px; }
 .modal-content .modal-header 							{}
 .modal-title											{ width: 93%; float: left; }
-.mt15													{ margin-top:15px; }
 .icons													{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
 .popup:after											{  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
 .online													{ width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
