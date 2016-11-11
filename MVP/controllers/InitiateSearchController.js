@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    app.controller('InitiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', InitiateSearchController]);
+    app.controller('initiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', initiateSearchController]);
 
     /* @ngInject */
-    function InitiateSearchController(Factory, $location, sharedProperties, commonFunctions) {
+    function initiateSearchController(Factory, $location, sharedProperties, commonFunctions) {
 
         /*jshint validthis: true */
         var vm = this;

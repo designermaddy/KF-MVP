@@ -1,12 +1,12 @@
 <div class="Heading2">
     <h2>New Search</h2> </div>
-<div class="panel panel-default SearchBox" ng-control="searchCandidateInfoController">
+<div class="panel panel-default SearchBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel"> Requisition Name (or) ID</label>
-                <input class="input-sm form-control FormInput" type="search" ng-model="vm.criteria.ClientJobID" uib-typeahead="address for address in list | filter:$viewValue | limitTo:8"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="name" uib-typeahead="address for address in requisition | filter:$viewValue | limitTo:8"> </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel">Job Title</label>
                 <input class="input-sm form-control FormInput" type="search" ng-model="vm.criteria.JobTitle"> </div>
@@ -17,7 +17,7 @@
                 <label class="FormLabel">Open Positions</label>
                 <input class="input-sm form-control" type="search" ng-model="vm.criteria.NoOfPositions"> </div>
         </div>
-        <div class="row clearfix">
+        <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel">Country</label>
                 <input class="input-sm form-control" type="search" ng-model="vm.criteria.Country"> </div>
@@ -25,16 +25,16 @@
         <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Location</label>
             <input class="input-sm form-control" type="search" ng-model="vm.criteria.Location"> </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
+        <div class="col-sm-6 col-md-1 col-lg-1">
             <label class="FormLabel">Zip Code</label>
             <input class="input-sm form-control" type="search" ng-model="vm.criteria.ZipCode"> </div>
 
-        <div class="col-sm-6 col-md-3 col-lg-3 FormSelect">
+        <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel"> Miles</label>
                 <select id="selectMiles" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)" ></select>
         </div>
         </div>
-        <div class="row clearfix">
+        <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-6 col-lg-6">
                 <label class="FormLabel">Search Name (Job Title)</label>
                 <input class="input-sm form-control" type="search"> </div>
