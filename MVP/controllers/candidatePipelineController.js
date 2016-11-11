@@ -11,7 +11,9 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
         var datainsert=[]
         promise.then(
           function resolved(response) {
+              if(response.data.graphDetails){
                deeplinkURL = response.data.graphDetails.deepLinkURI;
+
               sharedProperties.setReportURL(deeplinkURL)
               // = response.data.candidateList;
                $scope.candidatePipelineData=[];
@@ -26,12 +28,14 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
                 }
 
-
+ }
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
+
       )
+
     };
  $scope.onClick = function (points, evt) {
     console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B

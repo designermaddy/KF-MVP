@@ -9,7 +9,9 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
         var promise = Factory.getRequestionGoalStackChart(graphName);
         promise.then(
           function resolved(response) {
+              if( response.data.graphDetails){
               deeplinkURL = response.data.graphDetails.deepLinkURI;
+
               sharedProperties.setReportURL(deeplinkURL)
                datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
               datas.push(JSON.parse("[" +response.data.graphDetails.data["Nearly Due"] + "]"));
@@ -63,6 +65,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
              // globalDetails.userTypeID = response.data.userTypeId;
              // globalDetails.userId = response.data.userid;
              // globalDetails.userType = response.data.userType
+          }
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
