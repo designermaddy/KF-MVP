@@ -33,27 +33,26 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
      $scope.open = function(type) {
         var el = $(event.target);
         var activeEl = '';
+        if (el.is('input')) {
+            angular.forEach(list, function(val, key) {
+                if (val.type == type) {
+                    if (val.status == 1) {
+                        activeEl = $('#' + key);
+                        val.status = 0;
+                        activeEl.prop('disabled', false);
+                        activeEl.prop('checked', false);
+                    }
+                    if (key == el.attr('id')) {
+                        var str = 'partial/_' + val.url + '.html';
+                        if (type == 'req') $scope.ReqUrl = str;
+                        if (type == 'can') $scope.CanUrl = str;
 
-        angular.forEach(list, function(val, key) {
-            if (val.type == type) {
-                if (val.status == 1) {
-                    activeEl = $('#' + key);
-                    val.status = 0;
-                    activeEl.prop('disabled', false);
-                    activeEl.prop('checked', false);
+                        el.prop('disabled', true);
+                        val.status = 1;
+                    }
                 }
-                if (key == el.attr('id')) {
-                    var str = 'partial/_' + val.url + '.html';
-                    if (type == 'req') $scope.ReqUrl = str;
-                    if (type == 'can') $scope.CanUrl = str;
-
-                    el.prop('disabled', true);
-                    val.status = 1;
-                }
-            }
-
-
-        });
+            });
+        }
     }
 
 }]);
