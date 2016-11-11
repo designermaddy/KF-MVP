@@ -1,6 +1,11 @@
 app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
 
-    var promise = Factory.getSavedSearchesResponse();
+    var data = {
+        'orgId' : 6,
+        'limit' : 100
+    }
+
+    var promise = Factory.getSavedSearchesResponse(data);
     promise.then(
           function resolved(response) {
               $scope.rowCollection = response.data;
@@ -16,7 +21,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
             $scope.viewLoading = true;
             $scope.currentPage = 1;
             $scope.totalItems = $scope.rowCollection.length;
-            $scope.entryLimit = 8; // items per page
+            $scope.entryLimit = 10; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
       }
     }

@@ -182,8 +182,10 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         })
     };
 
-    dataFactory.getSavedSearchesResponse = function() {
-        return $http.get('json/SavedSearchesResponse.json');
+    dataFactory.getSavedSearchesResponse = function(data) {
+        var orgId = data.orgId;
+        var limit = data.limit;
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/0');
     }
 
      return dataFactory;
