@@ -293,6 +293,8 @@
 .popover.bottom                                         { margin-top:0; }
 .profileDiv                                             { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
 .CheckBoxSelect                                         { padding: 6px 5px; }
+.CheckBoxSelect input                                   { float: left; }
+.CheckBoxSelect label.CheckBoxLable                     { float: left; text-indent: 17px; margin-top:-15px }
 /* --------------------------- FloatingNav Style ---------------------------------- */
 .FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
 .modal-content											{ padding: 10px; }
