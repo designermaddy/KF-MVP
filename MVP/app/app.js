@@ -32,6 +32,8 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "views/Reports.html"
         }).when("/Resources", {
             templateUrl: "views/Resources.html"
+        }).when("/LogOut",{
+            templateUrl: "partial/_Logout.html"
         })
         // else 404
         .otherwise("/404", {
