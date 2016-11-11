@@ -70,7 +70,7 @@ angular.forEach(cookies, function (v, k) {
 }
 
 
-<<<<<<< HEAD
+
 /* $window.onbeforeunload = function (evt) {
 =======
    /* $window.onbeforeunload = function (evt) {
