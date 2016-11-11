@@ -54,6 +54,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
 
     $scope.Status = function(row) {
         var str = '';
+        if(row){
         if (row.Ignore == 'false') {
             str += '<i class="fa fa-circle" aria-hidden="true"></i>';
             //str += "";
@@ -69,6 +70,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         }
 
         return $sce.trustAsHtml(str);
+        }
     }
 
     $scope.searchlist = function(v) {

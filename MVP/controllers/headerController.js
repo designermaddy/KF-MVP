@@ -8,8 +8,8 @@
 // }]);
 
 
-app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties', function($scope,$http, $cookies, Factory, sharedProperties){
-    var authToken = $cookies.get('RD-Access-Token');
+app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions){
+   var authToken = $cookies.get('RD-Access-Token');
    var authToken = "cmRBdXRoVG9rZW46TUdNMll6ZzFZek10T1RreVlTMDBOak5sTFdKaU5XUXRORGc0T0RZMk5UYzRNVEV5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246VlAsaWRwVXNlcklkOmE0ZDYzY2E3LThjZjktNDFjYi1hYmI1LWQ0YjIwYmZlOTFlMyxhcnlhVXNlcklkOlJhamVuZHJhbnN1ZGhha2FyUkBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnVkYXluQG1vYmFjay5jb20sYWN0aXZhdGVQYXNzd29yZDpBc2RmMTIzNCEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO"
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');
@@ -39,6 +39,39 @@ if (authToken!==undefined){
             var data = response.data.url;                
             sharedProperties.setIframeLinks(data);            
         })
+$scope.logOut=function(){
+   // href="D:\repository\MVP\partial\_Logout.html"
+    alert("am getting called");
+      var promise = Factory.getLogOut();
+        promise.then(
+          function resolved(response) {
+              if(response.data){
 
+               console.log(response.data)
+ }
+          },
+          function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
+
+      )
+
+
+    var cookies = $cookies.getAll();
+angular.forEach(cookies, function (v, k) {
+    $cookies.remove(k);
+});
+
+
+    // call an API what praveen is giving
+
+    //
+    window.location.href   = "https://recruiterdesktop.kf4d-dev.com/Shibboleth.sso/Logout"
+}
+
+
+    $window.onbeforeunload = function (evt) {
+    $scope.logOut();
+  }
 }]);
 

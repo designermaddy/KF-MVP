@@ -181,6 +181,10 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
            // data : id
         })
     };
+     dataFactory.getLogOut = function(){
+       // return $http.get('json/RequisitionList.json')
+        return $http.get(urlAPI+'/user/logout');
+    }
 
      return dataFactory;
 }]);
