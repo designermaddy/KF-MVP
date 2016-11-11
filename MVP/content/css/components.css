@@ -199,6 +199,7 @@
 .RadioGroup .btn-default:hover                            { background-color:transparent; border-color: #66b1c8; }
 .RadioGroup .btn-default.active, 
 .RadioGroup .btn-default:active                           { background-color: #66b1c8; color:#fff; }
+.SearchRadioGroup .btn-group                              { width:100%; display: block; }
 /* --------------------------- DataGridBoxList Style ---------------------------------- */
 .DataGridBoxList                                        { list-style:none; }
 /* --------------------------- HeaderPaging Style ---------------------------------- */
