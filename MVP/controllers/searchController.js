@@ -1,20 +1,27 @@
 app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
 
+    $scope.start = 1;
+
     var data = {
         'orgId' : 6,
-        'limit' : 100
+        'limit' : 10,
+        'page'  : 1
     }
 
-    var promise = Factory.getSavedSearchesResponse(data);
-    promise.then(
-          function resolved(response) {
-              $scope.rowCollection = response.data;
-              setValues();
-          },
-          function rejected(response) {
-              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-          }
-      )
+    function getData() {
+        var promise = Factory.getSavedSearchesResponse(data);
+        promise.then(
+              function resolved(response) {
+                  $scope.rowCollection = response.data;
+                  $scope.start = data.page * data.limit - data.limit || 1;
+                  $scope.end = data.page * data.limit;
+              },
+              function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+          )
+    }
+    getData();
 
     function setValues() {
       if($scope.rowCollection){
@@ -26,7 +33,18 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
       }
     }
 
+    $scope.prev = function () {
+        if (data.page > 1) {
+            data.page -= 1;
+        }
+        getData();
+    }
+    $scope.next = function () {
+        data.page += 1;
+        getData();
+    }
+
     $scope.refreshResults = function() {
-        alert('hi');
+        getData();
     }
 }]);

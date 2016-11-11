@@ -3,11 +3,11 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
       $scope.isOpen = false;
     };
 
-    $scope.ReqUrl = "partial/_RequisitionPipeline.html";
+    $scope.ReqUrl = "partial/_RequisitionGoal.html";
     $scope.CanUrl = "partial/_CandidatePipeline.html";
 
   var list = {
-        'reqPipeline' : { 'status' : 1, 'type' : 'req', 'url' : 'RequisitionPipeline'},
+        'reqGoal' : { 'status' : 1, 'type' : 'req', 'url' : 'RequisitionGoal'},
         'reqHistory'  : { 'status' : 0, 'type' : 'req', 'url' : 'RequisitionHistory'},
         'reqActivity' : { 'status' : 0, 'type' : 'req', 'url' : 'RequisitionActivity'},
         'canPipeline' : { 'status' : 1, 'type' : 'can', 'url' : 'CandidatePipeline'},

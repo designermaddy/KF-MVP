@@ -1,7 +1,15 @@
 app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties','$timeout', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $timeout) {
 
     $scope.name = '';
+    $scope.start = 1;
     $scope.data = [];
+
+     var values = {
+        'orgId' : 6,
+        'limit' : 10,
+        'page'  : 1,
+        'jobId' : 0
+    }
 
     function getAryaJobId() {
         if (sharedProperties.getClientJobID()) {
@@ -11,7 +19,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
                 function resolved(response) {
                     sharedProperties.setJobId(response.data.AryaJobID);
                     if (sharedProperties.getJobId()) {
-                        getData(sharedProperties.getJobId());
+                        getData();
                     }
                 },
                 function rejected(response) {
@@ -24,12 +32,15 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
 
     getAryaJobId();
 
-    function getData(JobId) {
-        var promise = Factory.getRequisitionSearch(JobId);
+    function getData() {
+        values.jobId = sharedProperties.getJobId();
+        var promise = Factory.getRequisitionSearch(values);
         promise.then(
           function resolved(response) {
               $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
-              setValues();
+              $scope.start = values.page * values.limit - values.limit || 1;
+              $scope.end = values.page * values.limit;
+              //setValues();
               $scope.candidateName = $scope.rowCollection.map(function(item) {
                   return item.candidateName;
               });
@@ -40,7 +51,18 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         )
     };
 
-
+    $scope.prev = function () {
+        if (values.page > 1) {
+            values.page -= 1;
+        }
+        getData();
+    }
+    $scope.next = function () {
+        if ($scope.rowCollection.length > 1) {
+            values.page += 1;
+            getData();
+        }
+    }
 
     function setValues() {
       if($scope.rowCollection){
@@ -120,7 +142,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
 
     $scope.refreshResults = function() {
         if (sharedProperties.getJobId()) {
-            getData(sharedProperties.getJobId());
+            getData();
         }
     }
     $timeout(function () {

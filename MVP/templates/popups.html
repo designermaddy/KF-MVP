@@ -45,6 +45,7 @@
     <li class="TotalPage"><span>{{ totalItems }}</span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
 </script>
+
 <!-- Global Pager Page By Page  -->
 <script type="text/ng-template" id="uibPagerPf.html">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
@@ -62,8 +63,8 @@
             <div class='Group' ng-click="open('req');">
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="reqPipeline" type='checkbox'>
-                       <label for="reqPipeline" class="CheckBoxLable"> Requistion Pipeline <img class='img-responsive popupImg' src='content/images/sm_graph_1.png'> </label>
+                        <input id="reqGoal" type='checkbox'>
+                       <label for="reqGoal" class="CheckBoxLable"> Requistion Goal <img class='img-responsive popupImg' src='content/images/sm_graph_1.png'> </label>
                     </div>
                 </div>
                 <div class='col-md-4 popupDiv'>

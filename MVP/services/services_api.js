@@ -134,16 +134,14 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         return $http.get(urlAPI+'/Requisition/getAryaJobID/'+ orgId + '/'+ id);
     }
 
-    dataFactory.getRequisitionSearch = function(jobId) {
-        // return $http.get('json/requisitionSearch.json');
-        console.log(jobId);
-        var orgId = "6";
-        var jobId = jobId;
-        var count = "60";
-        var start = "25";
-        if(jobId){
+    dataFactory.getRequisitionSearch = function(values) {
+        var orgId = values.orgId
+        var jobId = values.jobId;
+        var count = values.limit
+        var start = values.page * count;
+
         var url =   urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
-        //return $http.get(url);
+
 
         return $http.get(url)
                 .then(getAryaCandidatesComplete)
@@ -151,7 +149,6 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
                     exception.catcher('XHR Failed for getAvengers')(message);
                     $location.url('/');
                 });
-        }
 
         function getAryaCandidatesComplete(data, status, headers, config) {
             return data;
@@ -185,7 +182,8 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getSavedSearchesResponse = function(data) {
         var orgId = data.orgId;
         var limit = data.limit;
-        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/0');
+        var page  = data.page * limit;
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
     }
 
      return dataFactory;
