@@ -58,6 +58,9 @@ hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .f13							                {  font-size:13px; }
 .pt19							                {  padding-top:19px; }
 .w29											{ width:29%; }
+.mt20			                                { margin-top: 20px;}
+.mb25			                                { margin-bottom:25px;}
+.mt15					                        { margin-top:15px; }
 /* --------------------------- Color Style ---------------------------------- */
 .BG-RED                                          { background-color:#D40A1c }
 .BG-YELLOW                                       { background-color:#ffa500; }
