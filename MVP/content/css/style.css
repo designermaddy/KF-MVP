@@ -162,6 +162,7 @@ input[type="search"].form-control:active,
 input[type="text"].form-control:active,
 input[type="daterange"].form-control:active     { background-color:#f6f6f6; }
 label.FormLabel                                 { color:#919191; margin-bottom:0; font-weight:normal; line-height:12px;  }
+label.OutputLabel                                 { color:#000; margin-bottom:0; font-weight:bold; line-height:12px; padding:10px 0;  }
 .FormSelect .btn.dropdown-toggle                { border:1px solid #ccc; border-width:0 0 1px 0; border-radius:0; color:#333; font-size:14px; padding:4px 12px 5px 12px; min-width:70px;  }
 .FormSelect .bootstrap-select .dropdown-menu.open ul li { display:block; float: none; margin: 0;  }
 .FormSelect .bootstrap-select .dropdown-menu.open ul li:last-child { display:block; float: none; margin: 0; border-left:0; padding-left:0;  }

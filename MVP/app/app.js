@@ -24,6 +24,8 @@ app.config(['$routeProvider', function ($routeProvider) {
             , controller: "requisitionCandidateListController"
         }).when("/Search", {
             templateUrl: "views/Search.html"
+        }).when("/InitiateSearch", {
+            templateUrl: "views/InitiateSearch.html"
         }).when("/NewSearch", {
             templateUrl: "views/NewSearch.html"
         }).when("/ViewSearch", {
