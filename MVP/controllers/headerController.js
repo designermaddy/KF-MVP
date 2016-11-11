@@ -70,8 +70,8 @@ angular.forEach(cookies, function (v, k) {
 }
 
 
-    $window.onbeforeunload = function (evt) {
+   /* $window.onbeforeunload = function (evt) {
     $scope.logOut();
-  }
+  }*/
 }]);
 
