@@ -182,6 +182,10 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         })
     };
 
+    dataFactory.getSavedSearchesResponse = function() {
+        return $http.get('json/SavedSearchesResponse.json');
+    }
+
      return dataFactory;
 }]);
 
