@@ -1,22 +1,50 @@
 app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
 
-    $scope.rowCollection = [{"AryaJobID":1606,"ClientJobID":"14153","Client":"Alcoa   ","Location":"Rochester, NY","Status":"Open","Job0CreatedDate":"2015-07-20T00:00:00","JobModifiedDate":"2015-07-20T00:00:00"},
-{"AryaJobID":1607,"ClientJobID":"14152","Client":"Alcoa   ","Location":"Rochester, NY","Status":"Open","Job0CreatedDate":"2015-07-20T00:00:00","JobModifiedDate":"2015-07-20T00:00:00"},
-{"AryaJobID":1608,"ClientJobID":"14151","Client":"Alcoa   ","Location":"Rochester, NY","Status":"Open","Job0CreatedDate":"2015-07-20T00:00:00","JobModifiedDate":"2015-08-24T00:00:00"}]
+    $scope.start = 1;
+
+    var data = {
+        'orgId' : 6,
+        'limit' : 10,
+        'page'  : 1
+    }
+
+    function getData() {
+        var promise = Factory.getSavedSearchesResponse(data);
+        promise.then(
+              function resolved(response) {
+                  $scope.rowCollection = response.data;
+                  $scope.start = data.page * data.limit - data.limit || 1;
+                  $scope.end = data.page * data.limit;
+              },
+              function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+          )
+    }
+    getData();
 
     function setValues() {
       if($scope.rowCollection){
             $scope.viewLoading = true;
             $scope.currentPage = 1;
             $scope.totalItems = $scope.rowCollection.length;
-            $scope.entryLimit = 8; // items per page
+            $scope.entryLimit = 10; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
       }
     }
 
-    setValues();
+    $scope.prev = function () {
+        if (data.page > 1) {
+            data.page -= 1;
+        }
+        getData();
+    }
+    $scope.next = function () {
+        data.page += 1;
+        getData();
+    }
 
     $scope.refreshResults = function() {
-        alert('hi');
+        getData();
     }
 }]);

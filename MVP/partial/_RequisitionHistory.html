@@ -1,6 +1,5 @@
 <div class="panel panel-default" ng-controller="requisitionGoalController">
-    <div class="panel-heading clearfix">Requisition History
-    <span class="TermSorting pull-right">
+    <div class="panel-heading clearfix">Requisition History <span class="TermSorting pull-right">
     <ul>
     <li><a href="#">Q1</a></li>
     <li><a href="#" class="active">Q2</a></li>
@@ -14,10 +13,8 @@
         </select>
 </li>
     </ul>
-    </span>
-    </div>
-    <div class="panel-body BarChart" style="height: 266px;">
-        <span us-spinner="{radius:30, width:8, length: 16}"></span>
+    </span> </div>
+    <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
         <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" chart-click="onClick"></canvas>
     </div>
 </div>

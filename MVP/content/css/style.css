@@ -58,6 +58,9 @@ hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .f13							                {  font-size:13px; }
 .pt19							                {  padding-top:19px; }
 .w29											{ width:29%; }
+.mt20			                                { margin-top: 20px;}
+.mb25			                                { margin-bottom:25px;}
+.mt15					                        { margin-top:15px; }
 /* --------------------------- Color Style ---------------------------------- */
 .BG-RED                                          { background-color:#D40A1c }
 .BG-YELLOW                                       { background-color:#ffa500; }
@@ -173,5 +176,9 @@ label.FormLabel                                 { color:#919191; margin-bottom:0
 .FormSelect .bootstrap-select .dropdown-toggle:focus { outline:none !important; }
 .FormCheckBox                                   { padding: 6px 0; vertical-align: baseline; display: inline-block; }
 .FormCheckBox:hover                             { background-color:#f6f6f6;  }
-.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; font-size:14px; }
+.FormCheckBox label.CheckBoxLable               { display: inline-block; margin-bottom: 0; font-weight: normal; font-size:14px;  }
 .FormCheckBox input[type=checkbox]              { margin-top:0px; vertical-align: middle; }
+.CheckBoxSelect                                 { padding: 6px; }
+.CheckBoxSelect input                           { float: left; }
+.CheckBoxSelect label.CheckBoxLable             { float: left; text-indent: 17px; margin-top:-15px; font-size:12px; cursor: pointer;  }
+.CheckBoxSelect.Selected                        { background-color:#d9e4e7;  }
