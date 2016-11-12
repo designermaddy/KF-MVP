@@ -4,14 +4,14 @@
     <div class="panel panel-default ViewBox">
         <div class="panel-body PaddingNull">
             <ul class="ViewBoxList clearfix EngagementsView MarBtNull">
+                <li>
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <li ng-repeat="item in filtered = rowCollection | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <div class="row ViewBox clearfix PadRt15">
                         <div class="col-sm-9 col-md-9 col-lg-9 PadRtNull">
                             <div class="ViewBoxHeader PadTp15 clearfix">
                                 <div class="col-sm-12 col-md-4 col-lg-4">
-                                    <div class="PrimaryHeader"> <a href="#EngagementDetails"> {{item.requisitionNumber}} <span>{{item.requisitionTitle}}</span></a></div>
-                                    <div class="ViewBoxCount">{{item.RequsitionCount}}</div>
+                                    <div class="PrimaryHeader"> <a href="#EngagementDetails"> {{item.ReqNumber}} <span>{{item.JobTitle}}</span></a></div>
+                                    <div class="ViewBoxCount">{{item.Data.data[0].open_positions}}</div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4">
                                     <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-2 col-lg-2">
                                     <div class="ViewBoxCompanyName">Engagement</div>
-                                    <div class="SecondaryHeader"><a href="#EngagementDetails"> {{item.EngagementNumber}} <span>{{item.Engagement}}</span></a></div>
+                                    <div class="SecondaryHeader"><a href="#EngagementDetails"> {{item.Position}} <span>{{item.Engagement}}</span></a></div>
                                 </div>
                                 <div class="col-sm-12 col-md-3 col-lg-3">
                                     <div class="ViewBoxHeadName">Primary Recruiter</div>

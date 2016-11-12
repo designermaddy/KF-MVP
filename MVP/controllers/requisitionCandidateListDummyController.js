@@ -4,18 +4,21 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
             $scope.showIndex = Number($routeParams.tab);
         }
         $scope.viewLoading = false;
-        //postRequisitionApplicationList();
+
+        postRequisitionApplicationList();
         var data = {}
         //get the applicationlist for a requisition using position id
         function postRequisitionApplicationList() {
             var reqDetailsperRequisition = sharedProperties.getRequisitionDetails();
-            if(reqDetailsperRequisition.requisitionDetails){
+            if(reqDetailsperRequisition.Position){
                 // page and status is static mentioned by Karthik position id dynamic//
-                postData = { "requestParams": {"page":"2","status":"Open","orgId":"9855","positionId":reqDetailsperRequisition.requisitionDetails[0].positionId}}
-            }
+                postData = {
+                    "requestParams": {"page":"2","status":"New","orgId":"9855","positionId": reqDetailsperRequisition.Position}
+                }
+
             var promise = Factory.postrequisitionApplicationList(postData);
             promise.then(function resolved(response) {
-                $scope.rowCollection = response.data.candidateList;
+                $scope.rowCollection = response.data.applications;
                 $scope.candidateListDtls = response.data;
                 if ($scope.rowCollection) {
                     $scope.viewLoading = true;
@@ -27,6 +30,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
+            }
         };
         $scope.itemsByPage = 3;
         // pagination controls

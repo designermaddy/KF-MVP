@@ -23,72 +23,27 @@
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
                 <tr st-select-row="row" ng-repeat="row in displayedCollections">
                     <td>
-                        <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.requisitionNumber}} <span>{{row.requisitionTitle}}</span></a></div>
+                        <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.ReqNumber}} <span>{{row.JobTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
                     <td>
-                        <div class="TblResources">{{row.headCount}}</div>
+                        <div class="TblResources">{{row.Data.data[0].open_positions}}</div>
                     </td>
-                    <td><a href="#EngagementDetails/1">{{row.engagementName}}</a></td>
-                    <td>{{row.sourceSystem}}</td>
-                    <td><div class="TblClientName">{{row.client}}</div>
+                    <td><a href="#EngagementDetails/1">{{row.Engagement}}</a></td>
+                    <td>{{row.Source}}</td>
+                    <td><div class="TblClientName">{{row.Client}}</div>
                         <!--<div class="TblClientLocation">{{clientLocation}}</div>--></td>
-                    <td>{{getData(row.workflowSteps, 'Sourced');}}</td>
-                    <td>{{getData(row.workflowSteps, 'Phone Screen');}}</td>
-                    <td>{{getData(row.workflowSteps, 'Candidate Submitted');}}</td>
-                    <td>{{getData(row.workflowSteps, 'Interview');}}</td>
-                    <td>{{getData(row.workflowSteps, 'Offered');}}</td>
-                    <td>{{getData(row.workflowSteps, 'Hired');}}</td>
+                    <td>{{row.Data.data[0].sourced}}</td>
+                    <td>{{row.Data.data[0].screen}}</td>
+                    <td>{{row.Data.data[0].submit}}</td>
+                    <td>{{row.Data.data[0].interview}}</td>
+                    <td>{{row.Data.data[0].offer}}</td>
+                    <td>{{row.Data.data[0].accept}}</td>
                     <td>
-                        <div class="TblDays" ng-class="row.requisitionColour"> {{row.daysOpen}}</div>
+                        <div class="TblDays" ng-class="row.Data.data[0].color"> {{row.Data.data[0].open_days}}</div>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-<!--<div ng-controller="agingRequisitionTableController" class="DataGrid row">
-    <div class="Heading2 Open">
-        <h2>Aging Requisitions</h2> 
-    </div>
-        <div ng-repeat="row in rowCollection" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="DataGridBox">
-                <div class="DataGridHeader clearfix">
-                    <div class="DGHeaderLeft">
-                        <div class="DGRequisition"><a href="#RequisitionDetails/3"> {{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
-                        <div class="DGDate">{{row.RequisitionDate}}</div>
-                    </div>
-                    <div class="DGHeaderRight">
-                        <div class="DGResources">{{row.Resources}}</div>
-                        <div class="DGDays">{{row.DaysLeft }} {{row.Left }}</div>
-                    </div>
-                </div>
-                <div class="DataGridFooter">
-                    <ul class="DGInterviewStatus clearfix">
-                        <li>
-                            <div class="DGInterviewStatusName">Screened</div>
-                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Applied</div>
-                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Interviewed</div>
-                            <div class="DGInterviewStatusNo">{{row.Interviewed }}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Offered</div>
-                            <div class="DGInterviewStatusNo">{{row.Offered }}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Hired</div>
-                            <div class="DGInterviewStatusNo">{{row.Hired }}</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-</div>-->
-
-<!--Grid-->

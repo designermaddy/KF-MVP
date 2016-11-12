@@ -6,8 +6,8 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         agingRequisitionList();
 
         function agingRequisitionList() {
-            var poolID = sharedProperties.getRequisitionDetails().requisitionDetails[0].poolId
-            var promise = Factory.getrequisitionCandidateList(poolID);
+            var positionID = sharedProperties.getRequisitionDetails().Position
+            var promise = Factory.getrequisitionCandidateList(positionID);
             promise.then(function resolved(response) {
                 $scope.rowCollection = response.data.candidateList;
 

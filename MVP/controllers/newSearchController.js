@@ -6,25 +6,18 @@
         function getReq() {
             var promise = Factory.getRequisitionTableList();
             promise.then(function(response){
-                result = response.data.requisitionList;
+                console.log(response.data);
+                result = response.data.requisitions;
                 $scope.requisition = result.map(function(item){
-                    return item.poolId + ' ' + item.requisitionTitle;
+                    return item.ReqNumber + ' ' + item.JobTitle;
                 });
             });
         }
         getReq();
 
         $scope.fillData = function($item, $model, $label, $event) {
-            var poolId = $item.match(/\d+/g)[0];
-            var reqNum;
-
-            angular.forEach(result, function(value, key) {
-                if(value.poolId == poolId){
-                    reqNum = value.requisitionNumber;
-                    getArya(reqNum);
-                }
-            });
-
+            var reqNum = $item.split(' ')[0];
+            getArya(reqNum);
         }
 
         function getArya(reqNum){
@@ -35,11 +28,9 @@
         }
 
         $scope.save = function() {
-            console.log($scope.data);
             var promise = Factory.saveNewSearch($scope.data);
             promise.then(function(response){
                 console.log(response.data);
-
             });
         }
     }]);

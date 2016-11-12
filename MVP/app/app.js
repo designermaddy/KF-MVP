@@ -21,7 +21,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "views/Requisitions.html"
         }).when("/RequisitionDetails/:tab", {
             templateUrl: "views/RequisitionDetails.html"
-            , controller: "requisitionCandidateListController"
         }).when("/Search", {
             templateUrl: "views/Search.html"
         }).when("/InitiateSearch", {

@@ -8,6 +8,8 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                   promise.then(
                   function resolved(response) {
                         $scope.row = response.data.candidateDetails[0];
+                        $scope.notes = response.data.candidateNotes;
+                        $scope.tags = response.data.candidateTags[0].tags.toString();
                         getSocial($scope.row);
                   },
                   function rejected(response) {
@@ -38,6 +40,22 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
             }
         })
         $scope.url = url;
+    }
+
+    $scope.saveNotes = function() {
+        var data = {
+            'id' : $scope.id,
+            'note' : $('#notes').val()
+        }
+        var promise = Factory.getNoteToCandidate(data);
+        promise.then(
+          function resolved(response) {
+                console.log(reposne.data);
+          },
+          function rejected(response) {
+              commonFunctions.error('Failed to load Sujeet : ' + response.status + ': ' + response.statusText);
+          }
+        );
     }
 
 }]);

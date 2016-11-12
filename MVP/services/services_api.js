@@ -10,7 +10,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
            //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
 		   //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
             //return $http.get('json/requisitionList.json');
-			 return $http.get(urlAPI + '/Requisition/agingRequisition');
+			 return $http.get(urlAPI + '/Requisition/getAgingPositions');
         //}
     };
      dataFactory.getRequisitionTableList = function () {
@@ -21,7 +21,7 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
            //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
 		   //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
             //return $http.get('json/requisitionList.json');
-			 return $http.get(urlAPI + '/Requisition/allRequisition');
+		  return $http.get(urlAPI + '/Requisition/getAllPositions');
         //}
     };
      dataFactory.getRequestionGoalStackChart = function (graphName) {
@@ -57,14 +57,15 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 		//return $http.get(urlAPI+'/Requisition/getPositionByRequisition');
           return $http({
             method : 'POST',
-            url : urlAPI+'/Requisition/getPositions',
+            url : urlAPI+'/Requisition/getPositionByRequisition',
             data : data
         });
                        //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
 	}
-     dataFactory.getrequisitionCandidateList = function(poolID){
+     dataFactory.getrequisitionCandidateList = function(positionID){
 		//return $http.get('json/requisitionCandidateList.json');
-        return $http.get(urlAPI + '/Candidate/allCandidataList/'+poolID);
+        positionID = 9343;
+        return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
 	}
 	
 	dataFactory.pdfDetailsList = function(){
@@ -190,6 +191,18 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
         return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
     }
 
+    dataFactory.getJobDescription = function(data) {
+        return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
+    }
+
+    dataFactory.getNoteToCandidate = function(data){
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Candidate/addNoteToCandidate/',
+            data : data
+        });
+    }
+
      return dataFactory;
 }]);
 
@@ -231,8 +244,13 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
     commonFunctions.changeActivelink = function(row, htmlPath) {
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
+        sharedProperties.setRequisitionDetails(row);
+        sharedProperties.setClientJobID(row.ReqNumber)
+        console.log(row);
+        $location.path( htmlPath );
 
-        var promise = Factory.sendRequisition(row);
+
+        /*var promise = Factory.sendRequisition(row);
         promise.then(
           function resolved(response) {
               console.log(response.data);
@@ -244,7 +262,7 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties','$uibModal', '$loc
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
-      )
+      )*/
     }
     
     return commonFunctions;    
@@ -269,6 +287,7 @@ app.service('sharedProperties', function () {
     var JobID = '';
     var userName='';
     var password='';
+    var initiateSearchData = [];
 
     var ClientJobID = '';
 
@@ -278,6 +297,12 @@ app.service('sharedProperties', function () {
 
 
     return {
+        setInitiateSearchData : function(value){
+            initiateSearchData = value;
+        },
+        getInitiateSearchData : function() {
+            return initiateSearchData;
+        },
         setUserName : function(value){
             userName = value
         },

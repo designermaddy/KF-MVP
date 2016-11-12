@@ -39,6 +39,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         var promise = Factory.getRequisitionSearch(values);
         promise.then(
           function resolved(response) {
+              console.log(response.data);
               $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
               $scope.start = values.page * values.limit - values.limit || 1;
               $scope.end = values.page * values.limit;
@@ -151,6 +152,5 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     }
     $timeout(function () {
         $('#searchSavedSearchesList').selectpicker();
-        console.log($('.selectpicker'))
         }, 50, false);
 }])

@@ -39,43 +39,31 @@ if (authToken!==undefined){
             var data = response.data.url;                
             sharedProperties.setIframeLinks(data);            
         })
-$scope.logOut=function(){
-   // href="D:\repository\MVP\partial\_Logout.html"
-   // alert("am getting called");
-      var promise = Factory.getLogOut();
-        promise.then(
-          function resolved(response) {
-              if(response.data){
 
-               console.log(response.data)
- }
-          },
-          function rejected(response) {
-              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-          }
-
-      )
-
-
-    var cookies = $cookies.getAll();
-angular.forEach(cookies, function (v, k) {
-    $cookies.remove(k);
-});
-
-
-    // call an API what praveen is giving
-
-    //
-    window.location.href   = "https://recruiterdesktop.kf4d-dev.com/Shibboleth.sso/Logout"
-}
+        $scope.logOut=function(){
+           var promise = Factory.getLogOut();
+            promise.then(
+              function resolved(response) {
+                  if(response.data){
+                   console.log(response.data)
+                }
+              },
+              function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+            )
+            var cookies = $cookies.getAll();
+            angular.forEach(cookies, function (v, k) {
+                $cookies.remove(k);
+            });
+            window.location.href = "https://recruiterdesktop.kf4d-dev.com/Shibboleth.sso/Logout"
+        }
 
 
 
-/* $window.onbeforeunload = function (evt) {
-=======
-   /* $window.onbeforeunload = function (evt) {
->>>>>>> origin/master
-    $scope.logOut();
-  }*/
+ /*$window.onbeforeunload = function (evt) {
+    //$scope.logOut();
+  }
+ */
 }]);
 

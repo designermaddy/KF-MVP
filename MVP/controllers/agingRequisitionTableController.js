@@ -8,28 +8,10 @@ app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedPr
         var promise = Factory.getAgingRequisitionList();
         promise.then(
           function resolved(response) {
-
-             $scope.rowCollection = response.data.requisitionList            
-             // sharedProperties.setRequisitionTable($scope.rowCollection);
-              
-              $scope.getData = function (workflowSteps, value) {
-                var output = '';
-                angular.forEach(workflowSteps, function (input) {
-                    if (input.step == value) {
-                    output = input.candidateCount;
-                }
-                });
-                 
-                return output;
-                console.log(output);
-              }
-              
+             $scope.rowCollection = response.data.requisitions;
 			  if($scope.rowCollection){
 				 $scope.viewLoading = true;
 			  }
-             // globalDetails.userTypeID = response.data.userTypeId;
-             // globalDetails.userId = response.data.userid;
-             // globalDetails.userType = response.data.userType
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -37,13 +19,6 @@ app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedPr
       )
     };
 
-  /*  $scope.$watch(function() {
-        return sharedProperties.getRequisitionTable()
-        }, function(newValue, oldValue) {
-            $scope.rowCollection = newValue;
-            //setValues();
-    });*/
-    
 $scope.itemsByPage=15;
 
   $scope.listVisible = true;
@@ -66,7 +41,6 @@ $scope.itemsByPage=15;
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
         commonFunctions.openIframe(url);
     }
-
     
     $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);

@@ -9,7 +9,7 @@ app.controller('requisitionTableController', ['$scope','Factory', 'sharedPropert
         promise.then(
           function resolved(response) {
 
-             $scope.rowCollection = response.data.requisitionList
+             $scope.rowCollection = response.data.requisitions;
               $scope.currentPage = 1;
                     $scope.totalItems = $scope.rowCollection.length;
                     $scope.entryLimit = 10; // items per page

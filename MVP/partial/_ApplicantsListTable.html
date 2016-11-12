@@ -17,19 +17,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = candidateListDtls.candidateList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = rowCollection | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                    
                     <td st-toggle-item>
                         <div class="TblRequisition"><input type="checkbox">
                             <a href="" ng-click="openApplicantIframe()">
-                        {{candidateListDtls.CandidateName}} </a>
+                        {{candidateListDtls.Applicant}} </a>
                         </div>
                     </td>
                     <td st-toggle-item>{{candidateListDtls.Title}}</td>
                     <td st-toggle-item>{{candidateListDtls.Location}}</td>
-                    <td st-toggle-item>{{candidateListDtls.CurrentCompany}}</td>
+                    <td st-toggle-item>{{candidateListDtls.Company}}</td>
                     <td st-toggle-item>{{candidateListDtls.Source}}</td>
-                    <td st-toggle-item>{{candidateListDtls.UpdatedON | date:dd.mm.yy }}</td>
+                    <td st-toggle-item>{{candidateListDtls.UpdatedOn | date:dd.mm.yy }}</td>
                     <td st-toggle-item>{{candidateListDtls.Status}}</td>
                 </tr>
             </tbody>

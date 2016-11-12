@@ -9,6 +9,31 @@
         /*jshint validthis: true */
         var vm = this;
 
+        var data = sharedProperties.getInitiateSearchData();
+        if (data.length > 0) {
+            var promise = Factory.getJobDescription(data);
+            promise.then(
+                function resolved(response) {
+                    vm.data = response.data;
+                    console.log(response.data);
+                },
+                function rejected(response) {
+                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            });
+        }else {
+            var requisitionNumber = sharedProperties.getRequisitionDetails().requisitionDetails[0].requisitionNumber;
+            var promise = Factory.getAryaJobId(requisitionNumber);
+            if (requisitionNumber) {
+                promise.then(
+                    function resolved(response) {
+                        vm.data = response.data;
+                    },
+                    function rejected(response) {
+                        commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+                });
+            }
+        }
+
 
 
         function getCriteria() {
