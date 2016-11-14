@@ -218,6 +218,16 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     }
 
 
+    dataFactory.getCandidateHistory = function(id, position) {
+        position = 9343;
+        id = 35215751;
+        return $http.get(urlAPI + '/Candidate/CandidateHistory/' + position + '/' + id);
+    }
+
+    dataFactory.getCandidateDocuments = function(id){
+        return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
+    }
+
     dataFactory.getNoteToCandidate = function(data){
         return $http({
             method : 'POST',
@@ -311,6 +321,7 @@ app.service('sharedProperties', function () {
     var userName='';
     var password='';
     var initiateSearchData = [];
+    var positionId = '';
 
     var ClientJobID = '';
 
@@ -320,6 +331,12 @@ app.service('sharedProperties', function () {
 
 
     return {
+        setPositionId : function(value) {
+            positionId = value;
+        },
+        getPositionId : function() {
+            return positionId;
+        },
         setInitiateSearchData : function(value){
             initiateSearchData = value;
         },
