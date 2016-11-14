@@ -9,29 +9,40 @@
         /*jshint validthis: true */
         var vm = this;
 
-        var data = sharedProperties.getInitiateSearchData();
-        if (data.length > 0) {
-            var promise = Factory.getJobDescription(data);
-            promise.then(
-                function resolved(response) {
-                    vm.data = response.data;
-                    console.log(response.data);
-                },
-                function rejected(response) {
-                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-            });
-        }else {
+         var getreq = function(a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var promise = Factory.getAryaJobId(requisitionNumber);
+
             if (requisitionNumber) {
                 promise.then(
                     function resolved(response) {
                         vm.data = response.data;
+                        vm.data.ReqNumber = requisitionNumber;
+                        if(a == 1){
+                           vm.data.Description = vm.jobDesc.Description;
+                           vm.data.SearchString = vm.jobDesc.SearchString;
+                        }
                     },
                     function rejected(response) {
                         commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 });
             }
+        }
+
+        var data = sharedProperties.getInitiateSearchData();
+        if (data.length > 0) {
+            var promise = Factory.getJobDescription(data);
+            promise.then(
+                function resolved(response) {
+                    vm.jobDesc = response.data;
+                    console.log(response.data);
+                    getreq(1);
+                },
+                function rejected(response) {
+                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            });
+        }else {
+            getreq(0);
         }
 
 
