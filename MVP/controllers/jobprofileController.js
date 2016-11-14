@@ -31,10 +31,12 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
             input.prop('checked', false);
         }else {
             input.prop('checked', true);
+            callPdf(a);
         }
+    };
 
-      //  var str = 'pdf/' + a + '.pdf';
-         var url = config.projectUrl + '/Profile/getDocumentById/' + a;
+    var callPdf = function(a){
+        var url = config.projectUrl + '/Profile/getDocumentById/' + a;
           var promise = Factory.getPDF(url);
         promise.then(
           function resolved(response) {
@@ -44,7 +46,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
               $scope.url =  $scope.pdfContent
 
           })
-    };
+    }
 
     $scope.changePdf(1);
 
