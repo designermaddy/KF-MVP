@@ -15,6 +15,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
                 postData = {
                     "requestParams": {"page":"2","status":"New","orgId":"9855","positionId": reqDetailsperRequisition.Position}
                 }
+                sharedProperties.setPositionId(reqDetailsperRequisition.Position);
 
             var promise = Factory.postrequisitionApplicationList(postData);
             promise.then(function resolved(response) {

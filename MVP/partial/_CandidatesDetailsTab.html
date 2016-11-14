@@ -1,0 +1,62 @@
+<div ng-controller="candidateDetailsTabController">
+<uib-tabset active="indextab">
+    <uib-tab index="0" heading="Profile Summary"  >
+        <div class="container-fluid clearfix">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div ng-include="'partial/_CandidateProfileSummary.html'"></div>
+                    </div>
+                </div>
+        </div>
+    </uib-tab>
+    <uib-tab index='1' heading="Resume">
+    <div class="container-fluid clearfix">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div ng-include="'partial/_CandidateResume.html'"></div>
+                    </div>
+                </div>
+        </div>
+
+    </uib-tab>
+    <uib-tab index='2'  heading="Assessment Results">
+        <div class="container-fluid clearfix" >
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_CandidateAssessmentResults.html'"></div>
+        </div>
+            </div>
+        </div>
+    </uib-tab>
+
+     <uib-tab index='3' heading="Documents">
+         <div class="container-fluid clearfix" >
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_CandidateDocuments.html'"></div>
+        </div>
+            </div>
+        </div>
+    </uib-tab>
+
+    <uib-tab index='4'  heading="History">
+        <div class="container-fluid clearfix" >
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_CandidateDetailsHistory.html'"></div>
+        </div>
+            </div>
+        </div>
+    </uib-tab>
+    <uib-tab index='5'  heading="Notes">
+        <div class="container-fluid clearfix" >
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_CandidateNotes.html'"></div>
+        </div>
+            </div>
+        </div>
+    </uib-tab>
+
+</uib-tabset>
+</div>
