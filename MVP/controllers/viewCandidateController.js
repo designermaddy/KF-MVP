@@ -10,6 +10,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                         $scope.row = response.data.candidateDetails[0];
                         $scope.notes = response.data.candidateNotes;
                         $scope.tags = response.data.candidateTags[0].tags.toString();
+                        console.log(response.data);
                         getSocial($scope.row);
                   },
                   function rejected(response) {
