@@ -41,14 +41,17 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
                var file = new Blob([response.data], { type: 'application/pdf' });
              var fileURL = URL.createObjectURL(file);
               $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
-                $scope.url =  $scope.pdfContent
+              $scope.url =  $scope.pdfContent
+
           })
     };
+
+    $scope.changePdf(1);
 
     $scope.$watch(function() {
         return $scope.url
         }, function(newValue, oldValue) {
-            $scope.url = $scope.pdfContent;
+            $scope.url = newValue;
             //setValues();
     });
 
