@@ -29,6 +29,7 @@
 
         $scope.save = function() {
             var promise = Factory.saveNewSearch($scope.data);
+            console.log($scope.data);
             promise.then(function(response){
                 console.log(response.data);
             });
