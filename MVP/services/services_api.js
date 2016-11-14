@@ -213,6 +213,10 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     dataFactory.getJobDescription = function(data) {
         return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
     }
+     dataFactory.getPDF = function(url) {
+        return $http.get(url,  {responseType: 'arraybuffer'});
+    }
+
 
     dataFactory.getNoteToCandidate = function(data){
         return $http({

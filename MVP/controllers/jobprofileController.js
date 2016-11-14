@@ -1,4 +1,4 @@
-app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonFunctions', 'sharedProperties', '$location', function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, $location) {
+app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonFunctions', 'sharedProperties', '$location','$sce','config', function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, $location,$sce, config) {
 
   jobProfileDocDetails();
     function jobProfileDocDetails() {
@@ -19,7 +19,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
           }
       )
     };
-     $scope.url = 'pdf/1.pdf';
+    // $scope.url = 'pdf/1.pdf';
 
 
 
@@ -33,9 +33,24 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
             input.prop('checked', true);
         }
 
-        var str = 'pdf/' + a + '.pdf';
-        $scope.url = str;
+      //  var str = 'pdf/' + a + '.pdf';
+         var url = config.projectUrl + '/Profile/getDocumentById/' + a;
+          var promise = Factory.getPDF(url);
+        promise.then(
+          function resolved(response) {
+               var file = new Blob([response.data], { type: 'application/pdf' });
+             var fileURL = URL.createObjectURL(file);
+              $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
+                $scope.url =  $scope.pdfContent
+          })
     };
+
+    $scope.$watch(function() {
+        return $scope.url
+        }, function(newValue, oldValue) {
+            $scope.url = $scope.pdfContent;
+            //setValues();
+    });
 
     $scope.initiateSearch = function() {
         var checked = $('input:checked');
