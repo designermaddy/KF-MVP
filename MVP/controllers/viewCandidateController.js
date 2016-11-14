@@ -11,7 +11,8 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                         sharedProperties.setCandidateListDetails($scope.row);
                               if(sharedProperties.getCandidateListDetails()){
                                 var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
-                                  callPdf(urlResumeLink.resumeLink);
+                                  var link = urlResumeLink.resumeLink
+                                  callPdf(link);
                               }
                                    function  callPdf( urlResumeLink){
                                        var url = urlResumeLink;
@@ -21,7 +22,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                                                var file = new Blob([response.data], { type: 'application/pdf' });
                                                var fileURL = URL.createObjectURL(file);
                                                $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
-                                                $scope.url =  $scope.pdfContent
+                                                $scope.url =  urlResumeLink
 
                                       })
                                 }
