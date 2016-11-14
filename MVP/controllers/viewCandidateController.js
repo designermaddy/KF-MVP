@@ -1,4 +1,4 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', function ($scope, Factory, sharedProperties, commonFunctions) {
+app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions','$sce', function ($scope, Factory, sharedProperties, commonFunctions,$sce) {
 
     $scope.id = sharedProperties.getViewCandidateId();
 
@@ -8,6 +8,23 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                   promise.then(
                   function resolved(response) {
                         $scope.row = response.data.candidateDetails[0];
+                        sharedProperties.setCandidateListDetails($scope.row);
+                              if(sharedProperties.getCandidateListDetails()){
+                                var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
+                                  callPdf(urlResumeLink.resumeLink);
+                              }
+                                   function  callPdf( urlResumeLink){
+                                       var url = urlResumeLink;
+                                       var promise = Factory.getPDF(url);
+                                       promise.then(
+                                           function resolved(response) {
+                                               var file = new Blob([response.data], { type: 'application/pdf' });
+                                               var fileURL = URL.createObjectURL(file);
+                                               $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
+                                                $scope.url =  $scope.pdfContent
+
+                                      })
+                                }
                         $scope.notes = response.data.candidateNotes;
                         $scope.tags = response.data.candidateTags[0].tags.toString();
                         console.log(response.data);
@@ -19,7 +36,12 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
               )
         }
     }
-
+ $scope.$watch(function() {
+        return $scope.url
+        }, function(newValue, oldValue) {
+            $scope.url = newValue;
+            //setValues();
+    });
     $scope.$watch(function() {
         return sharedProperties.getViewCandidateId();
         }, function(newValue, oldValue) {

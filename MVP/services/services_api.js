@@ -329,6 +329,8 @@ app.service('sharedProperties', function () {
 
     var reportURL ='';
 
+    var candidateListDetails = [];
+
 
     return {
         setPositionId : function(value) {
@@ -342,6 +344,12 @@ app.service('sharedProperties', function () {
         },
         getInitiateSearchData : function() {
             return initiateSearchData;
+        },
+         setCandidateListDetails : function(value){
+            candidateListDetails = value;
+        },
+        getCandidateListDetails : function() {
+            return candidateListDetails;
         },
         setUserName : function(value){
             userName = value
