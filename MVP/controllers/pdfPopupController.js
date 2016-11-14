@@ -1,4 +1,4 @@
-app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$http', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $http) {
+app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$http','$sce', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $http,$sce) {
     
      $scope.engagmentIDName =''
      $scope.saveButtonEnable = true;
@@ -15,17 +15,32 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
         
     $scope.openPdf = function (url) {
         var url = config.projectUrl + '/Profile/getDocumentById/' + url;
-        var modalInstance = $uibModal.open({
+          var promise = Factory.getPDF(url);
+        promise.then(
+          function resolved(response) {
+               var file = new Blob([response.data], { type: 'application/pdf' });
+             var fileURL = URL.createObjectURL(file);
+             $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+
+               var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'
             , controller: 'DocModalCtrl'            
             , size: 'lg'
             , resolve: {
                 url: function () {
-                    return url;
+                    return  $scope.pdfContent;
                 }
             }
         });
+          },
+              function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
+      )
+
+
+
     }
 
     function pdfDetails() {

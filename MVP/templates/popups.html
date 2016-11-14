@@ -12,7 +12,8 @@
         <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="modal-body">
         <div> <span us-spinner="{radius:10, width:2, length: 4}"></span>
-            <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>
+         <embed  ng-src="{{url}}"  type="application/pdf" style="width:100%; height:1000px" />
+           <!-- <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>-->
         </div>
     </div>
 </script>

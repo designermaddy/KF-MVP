@@ -21,7 +21,7 @@
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             });
         }else {
-            var requisitionNumber = sharedProperties.getRequisitionDetails().requisitionDetails[0].requisitionNumber;
+            var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var promise = Factory.getAryaJobId(requisitionNumber);
             if (requisitionNumber) {
                 promise.then(
