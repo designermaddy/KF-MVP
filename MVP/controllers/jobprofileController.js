@@ -1,4 +1,4 @@
-app.controller('jobprofileController', ['$uibModal','$scope','Factory', 'commonFunctions', function ($uibModal, $scope, Factory, commonFunctions) {
+app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonFunctions', 'sharedProperties', '$location', function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, $location) {
 
   jobProfileDocDetails();
     function jobProfileDocDetails() {
