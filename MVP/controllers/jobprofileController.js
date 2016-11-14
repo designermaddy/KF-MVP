@@ -2,7 +2,10 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
 
   jobProfileDocDetails();
     function jobProfileDocDetails() {
-        var promise = Factory.jobProfileDocDetailsList();
+           if(sharedProperties.getRequisitionDetails()){
+                $scope.item  = sharedProperties.getRequisitionDetails();
+            }
+        var promise = Factory.jobProfileDocDetailsList($scope.item.Engagement);
         promise.then(
           function resolved(response) {
 

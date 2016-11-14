@@ -25,23 +25,23 @@
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
                 <tr st-select-row="row" ng-repeat="row in engagementResponse.Requisitions | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.requisitionNumber}} <span>{{row.requisitionTitle}}</span></a></div>
+                        <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.ReqNumber}} <span>{{row.JobTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
                     <td st-toggle-item>
-                        <div class="TblResources">{{row.headCount}}</div>
+                        <div class="TblResources">{{row.Data.data[0].open_positions}}</div>
                     </td>
-                    <td st-toggle-item>{{row.Location}}</td>
-                    <td st-toggle-item>{{row.sourceSystem}}</td>
-                    <td st-toggle-item>{{row.RecruiterName}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Sourced');}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Phone Screen');}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Candidate Submitted');}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Interview');}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Offered');}}</td>
-                    <td st-toggle-item>{{getData(row.workflowSteps, 'Hired');}}</td>
+                    <td st-toggle-item>{{row.location}}</td>
+                    <td st-toggle-item>{{row.Source}}</td>
+                    <td st-toggle-item>{{row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].sourced}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].screen}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].submit}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].interview}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].offer}}</td>
+                    <td st-toggle-item>{{row.Data.data[0].accept}}</td>
                     <td st-toggle-item>
-                        <div class="TblDays" ng-class="row.requisitionColour"> {{row.daysOpen}}</div>
+                        <div class="TblDays" ng-class="row.Data.data[0].color"> {{row.Data.data[0].open_days}}</div>
                     </td>
                     <td st-toggle-item>{{row.Status}}</td>
                     <td st-toggle-item><i class="fa fa-pencil"></td>    					
