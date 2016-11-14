@@ -1,16 +1,16 @@
-<div id="pdflist" class="WidgetJP">
+<div id="pdflist" class="WidgetJP" >
     <div class="HeaderButton"><a ng-click="initiateSearch();" class="btn btn-primary btn-sm">Initiate Candidate Search</a></div>
     <ul>
-        <li>
-            <div class="WidgetPDBox" ng-click="changePdf('1')">
+        <li  ng-repeat="pdfDtls in pdfDetailsData" >
+            <div class="WidgetPDBox" ng-click="changePdf(pdfDtls.DocumentNumber)">
                 <div class="WidgetPDHeader">
-                    <input type="checkbox" name='1' value='1'>
-                    <label>GSK Job Description</label>
+                    <input type="checkbox" name='1' value="{{pdfDtls.DocumentNumber}}">
+                    <label>{{pdfDtls.JobDesc}}</label>
                 </div>
-                <div class="WidgetPDContent"><img src="content/images/pdf1.jpg"> </div>
+                <div class="WidgetPDContent"><img data-ng-src="data:image/PNG;base64,{{pdfDtls.Logo}}"> </div>
             </div>
         </li>
-        <li>
+      <!--   <li>
             <div class="WidgetPDBox"  ng-click="changePdf('2')">
                 <div class="WidgetPDHeader">
                     <input type="checkbox" name='2' value='2'>
@@ -27,6 +27,6 @@
                 </div>
                 <div class="WidgetPDContent"><img src="content/images/pdf3.jpg"> </div>
             </div>
-        </li>
+        </li> -->
     </ul>
 </div>

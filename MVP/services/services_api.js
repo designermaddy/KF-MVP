@@ -77,6 +77,25 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
 	dataFactory.requisitionDocDetailsList = function(){
         return $http.get('json/requisitionPdfDoc.json')
     }
+    dataFactory.jobProfileDocDetailsList = function(){
+       /* var data = {
+              "Documents": [
+                "string"
+              ],
+              "documentId": 0,
+              "engagementId": 0,
+              "function": "Cyber",
+              "requisition": 0
+            }
+
+        return $http({
+            method: 'POST',
+            url: urlAPI+'/Profile/saveDocumentToEngagement',
+            data: data
+
+        });*/
+return $http.get('json/jobProfileDoc.json')
+    }
 	dataFactory.getIframeList = function(){
         return $http.get('json/iframeUrl.json')
     }
