@@ -10,6 +10,8 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
           function resolved(response) {
 
               $scope.pdfDetailsData = response.data.documentList;
+
+
              // globalDetails.userTypeID = response.data.userTypeId;
              // globalDetails.userId = response.data.userid;
              // globalDetails.userType = response.data.userType
@@ -19,7 +21,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
           }
       )
     };
-    // $scope.url = 'pdf/1.pdf';
+
 
 
 
@@ -46,7 +48,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
           })
     };
 
-    $scope.changePdf(1);
+
 
     $scope.$watch(function() {
         return $scope.url
