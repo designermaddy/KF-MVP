@@ -1,4 +1,4 @@
-app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties','$timeout', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $timeout) {
+app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties','$timeout', '$location', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $timeout, $location) {
 
     $scope.name = '';
     $scope.start = 1;
@@ -150,6 +150,11 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             getData();
         }
     }
+
+    $scope.newSearch = function() {
+        $location.path('NewSearch');
+    }
+
     $timeout(function () {
         $('#searchSavedSearchesList').selectpicker();
         }, 50, false);

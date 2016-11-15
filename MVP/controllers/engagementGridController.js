@@ -4,6 +4,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
 	
             if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
+                sharedProperties.setNewSearchData([$scope.item.ReqNumber, $scope.item.JobTitle]);
             }
             
 	// create empty search model (object) to trigger $watch on update
