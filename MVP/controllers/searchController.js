@@ -1,4 +1,4 @@
-app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties) {
+app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', '$location', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $location) {
 
     $scope.start = 1;
 
@@ -46,5 +46,9 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
 
     $scope.refreshResults = function() {
         getData();
+    }
+
+   $scope.newSearch = function() {
+        $location.path('NewSearch');
     }
 }]);
