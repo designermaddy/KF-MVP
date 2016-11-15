@@ -218,15 +218,15 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     }
 
 
-   /* dataFactory.getCandidateHistory = function(id, position) {
+    dataFactory.getCandidateHistory = function(id, position) {
         position = 9343;
         id = 35215751;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + position + '/' + id);
-    }*/
+    }
 
- /*   dataFactory.getCandidateDocuments = function(id){
+    dataFactory.getCandidateDocuments = function(id){
         return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
-    }*/
+    }
 
     dataFactory.getNoteToCandidate = function(data){
         return $http({

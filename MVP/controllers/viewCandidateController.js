@@ -27,6 +27,16 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                                       })
                                 }
                         $scope.notes = response.data.candidateNotes;
+                      if($scope.notes.length>=2){
+                           $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
+                           $scope.noteValue2 =  $scope.notes[$scope.notes.length-1]
+                      }else{
+                          if($scope.notes[0]){
+                           $scope.noteValue1 =  $scope.notes[0]
+                          } if($scope.notes[1]){
+                           $scope.noteValue2 =  $scope.notes[1]
+                          }
+                      }
                         $scope.tags = response.data.candidateTags[0].tags.toString();
                         console.log(response.data);
                         getSocial($scope.row);
