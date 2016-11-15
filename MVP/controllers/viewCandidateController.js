@@ -22,21 +22,28 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                                                var file = new Blob([response.data], { type: 'application/pdf' });
                                                var fileURL = URL.createObjectURL(file);
                                                $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
+<<<<<<< HEAD
+                                                $scope.url =  $scope.pdfContent
+=======
                                                 $scope.url =   $scope.pdfContent
+>>>>>>> origin/master
 
                                       })
                                 }
-                        $scope.notes = response.data.candidateNotes;
-                      if($scope.notes.length>=2){
+                    $scope.notes = response.data.candidateNotes;
+                       if($scope.notes.length>=2){
                            $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
-                           $scope.noteValue2 =  $scope.notes[$scope.notes.length-1]
+                           $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
                       }else{
                           if($scope.notes[0]){
-                           $scope.noteValue1 =  $scope.notes[0]
+                           $scope.noteValue1 = $scope.notes[0]
                           } if($scope.notes[1]){
-                           $scope.noteValue2 =  $scope.notes[1]
+                           $scope.noteValue2 = $scope.notes[1]
                           }
                       }
+                     // updateNotes( $scope.notes )
+
+
                         $scope.tags = response.data.candidateTags[0].tags.toString();
                         console.log(response.data);
                         getSocial($scope.row);
@@ -46,6 +53,9 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                   }
               )
         }
+    }
+    updateNotes = function(notes){
+
     }
  $scope.$watch(function() {
         return $scope.url
@@ -85,6 +95,20 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         promise.then(
           function resolved(response) {
                 console.log(reposne.data);
+              if(response.data.candidateNotes){
+              $scope.notes = response.data.candidateNotes;
+                   if($scope.notes.length>=2){
+                           $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
+                           $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
+                      }else{
+                          if($scope.notes[0]){
+                           $scope.noteValue1 = $scope.notes[0]
+                          } if($scope.notes[1]){
+                           $scope.noteValue2 = $scope.notes[1]
+                          }
+                      }
+                   //   updateNotes( $scope.notes )
+              }
           },
           function rejected(response) {
               commonFunctions.error('Failed to load Sujeet : ' + response.status + ': ' + response.statusText);
