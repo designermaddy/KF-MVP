@@ -322,7 +322,7 @@ app.service('sharedProperties', function () {
     var password='';
     var initiateSearchData = [];
     var positionId = '';
-    var newSearchData = '';
+    var newSearchData = 0;
     var ClientJobID = '';
 
     var viewCandidateId = '';
