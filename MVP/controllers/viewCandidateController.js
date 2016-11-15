@@ -27,7 +27,17 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                                       })
                                 }
                     $scope.notes = response.data.candidateNotes;
-                      updateNotes( $scope.notes )
+                       if($scope.notes.length>=2){
+                           $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
+                           $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
+                      }else{
+                          if($scope.notes[0]){
+                           $scope.noteValue1 = $scope.notes[0]
+                          } if($scope.notes[1]){
+                           $scope.noteValue2 = $scope.notes[1]
+                          }
+                      }
+                     // updateNotes( $scope.notes )
 
 
                         $scope.tags = response.data.candidateTags[0].tags.toString();
@@ -41,16 +51,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         }
     }
     updateNotes = function(notes){
-    if(notes.length>=2){
-                           $scope.noteValue1 =  notes[notes.length-2]
-                           $scope.noteValue2 = notes[notes.length-1]
-                      }else{
-                          if(notes[0]){
-                           $scope.noteValue1 = notes[0]
-                          } if($scope.notes[1]){
-                           $scope.noteValue2 = notes[1]
-                          }
-                      }
+
     }
  $scope.$watch(function() {
         return $scope.url
@@ -92,7 +93,17 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                 console.log(reposne.data);
               if(response.data.candidateNotes){
               $scope.notes = response.data.candidateNotes;
-                      updateNotes( $scope.notes )
+                   if($scope.notes.length>=2){
+                           $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
+                           $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
+                      }else{
+                          if($scope.notes[0]){
+                           $scope.noteValue1 = $scope.notes[0]
+                          } if($scope.notes[1]){
+                           $scope.noteValue2 = $scope.notes[1]
+                          }
+                      }
+                   //   updateNotes( $scope.notes )
               }
           },
           function rejected(response) {
