@@ -22,11 +22,9 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                                                var file = new Blob([response.data], { type: 'application/pdf' });
                                                var fileURL = URL.createObjectURL(file);
                                                $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
-<<<<<<< HEAD
+
                                                 $scope.url =  $scope.pdfContent
-=======
-                                                $scope.url =   $scope.pdfContent
->>>>>>> origin/master
+
 
                                       })
                                 }
