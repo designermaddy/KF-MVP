@@ -19,8 +19,8 @@
         if (sharedProperties.getNewSearchData() !== 0){
             reqValue = sharedProperties.getNewSearchData();
             var reqNum = reqValue[0];
-            $scope.vm.name = reqNum + ' ' + reqValue[1];
-            getArya(reqNum);
+            $scope.name = reqNum + ' ' + reqValue[1];
+            getArya(reqNum, 1);
             redirectPath = "RequisitionDetails/3"
             sharedProperties.setNewSearchData(0);
         }else {
@@ -32,11 +32,22 @@
             getArya(reqNum);
         }
 
-        function getArya(reqNum){
+        function getArya(reqNum, i){
+            var i = i || 0;
+
             var promise = Factory.getAryaJobId(reqNum);
             promise.then(function(response){
                 $scope.data = response.data;
+                disableInput(i);
             });
+        }
+
+        function disableInput(i) {
+            var inputs = $('input');
+            var i = i ? 0 : 1;
+            for (i; i < 7; i++ ){
+                inputs[i].disabled = true;
+            }
         }
 
         $scope.save = function() {
