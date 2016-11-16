@@ -1,6 +1,7 @@
 app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sce', 'config', 'sharedProperties', '$location', function ($scope, Factory, commonFunctions, $sce, config, sharedProperties, $location) {
 
     $scope.start = 1;
+    sharedProperties.setNewSearchData(0);
 
     var data = {
         'orgId' : 6,

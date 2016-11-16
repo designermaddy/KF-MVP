@@ -105,7 +105,7 @@
         }
 
         $scope.vm = {
-        name : reqValue[0] + ' ' + reqValue[1],
+        name : reqValue.length > 0 ? reqValue[0] + ' ' + reqValue[1] : '',
 
         priceSlider1 : {
                 value: 5
