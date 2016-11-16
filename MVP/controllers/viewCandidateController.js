@@ -4,53 +4,53 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
 
     var getData = function(id) {
         if (id) {
-            var promise = Factory.getviewCandidate(id);
-                  promise.then(
-                  function resolved(response) {
-                        $scope.row = response.data.candidateDetails[0];
-                        sharedProperties.setCandidateListDetails($scope.row);
-                              if(sharedProperties.getCandidateListDetails()){
-                                var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
-                                  var link = urlResumeLink.resumeLink
-                                  callPdf(link);
-                              }
-                                   function  callPdf( urlResumeLink){
-                                       var url = urlResumeLink;
-                                       var promise = Factory.getPDF(url);
-                                       promise.then(
-                                           function resolved(response) {
-                                               var file = new Blob([response.data], { type: 'application/pdf' });
-                                               var fileURL = URL.createObjectURL(file);
-                                               $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
+          var promise = Factory.getviewCandidate(id);
+          promise.then(
+          function resolved(response) {
+            $scope.row = response.data.candidateDetails[0];
+            sharedProperties.setCandidateListDetails($scope.row);
+              if(sharedProperties.getCandidateListDetails()){
+                var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
+                  var link = urlResumeLink.resumeLink
+                  callPdf(link);
+              }
+           function  callPdf( urlResumeLink){
+               var url = urlResumeLink;
+               var promise = Factory.getPDF(url);
+               promise.then(
+                   function resolved(response) {
+                       var file = new Blob([response.data], { type: 'application/pdf' });
+                       var fileURL = URL.createObjectURL(file);
+                       $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
 
-                                                $scope.url =  $scope.pdfContent
-
-
-                                      })
-                                }
-                    $scope.notes = response.data.candidateNotes;
-                       if($scope.notes.length>=2){
-                           $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
-                           $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
-                      }else{
-                          if($scope.notes[0]){
-                           $scope.noteValue1 = $scope.notes[0]
-                          } if($scope.notes[1]){
-                           $scope.noteValue2 = $scope.notes[1]
-                          }
-                      }
-                     // updateNotes( $scope.notes )
+                        $scope.url =  $scope.pdfContent
 
 
-                        $scope.tags = response.data.candidateTags[0].tags.toString();
-                        console.log(response.data);
-                        getSocial($scope.row);
-                  },
-                  function rejected(response) {
-                      commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-                  }
-              )
+              })
         }
+            $scope.notes = response.data.candidateNotes;
+               if($scope.notes.length>=2){
+                   $scope.noteValue1 =  $scope.notes[$scope.notes.length-2]
+                   $scope.noteValue2 = $scope.notes[$scope.notes.length-1]
+              }else{
+                  if($scope.notes[0]){
+                   $scope.noteValue1 = $scope.notes[0]
+                  } if($scope.notes[1]){
+                   $scope.noteValue2 = $scope.notes[1]
+                  }
+              }
+             // updateNotes( $scope.notes )
+
+
+                $scope.tags = response.data.candidateTags[0].tags.toString();
+                console.log(response.data);
+                getSocial($scope.row);
+          },
+          function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
+      )
+}
     }
     updateNotes = function(notes){
 
@@ -92,7 +92,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         var promise = Factory.getNoteToCandidate(data);
         promise.then(
           function resolved(response) {
-                console.log(reposne.data);
+              //  console.log(reposne.data);
               if(response.data.candidateNotes){
               $scope.notes = response.data.candidateNotes;
                    if($scope.notes.length>=2){
@@ -109,7 +109,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
               }
           },
           function rejected(response) {
-              commonFunctions.error('Failed to load Sujeet : ' + response.status + ': ' + response.statusText);
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
         );
     }

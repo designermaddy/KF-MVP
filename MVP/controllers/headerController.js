@@ -10,7 +10,9 @@
 
 app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
    var authToken = $cookies.get('RD-Access-Token');
-   var authToken = "cmRBdXRoVG9rZW46TUdNMll6ZzFZek10T1RreVlTMDBOak5sTFdKaU5XUXRORGc0T0RZMk5UYzRNVEV5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246VlAsaWRwVXNlcklkOmE0ZDYzY2E3LThjZjktNDFjYi1hYmI1LWQ0YjIwYmZlOTFlMyxhcnlhVXNlcklkOlJhamVuZHJhbnN1ZGhha2FyUkBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnVkYXluQG1vYmFjay5jb20sYWN0aXZhdGVQYXNzd29yZDpBc2RmMTIzNCEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO"
+   if (config.production === 0) {
+    var authToken = "cmRBdXRoVG9rZW46TUdNMll6ZzFZek10T1RreVlTMDBOak5sTFdKaU5XUXRORGc0T0RZMk5UYzRNVEV5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246VlAsaWRwVXNlcklkOmE0ZDYzY2E3LThjZjktNDFjYi1hYmI1LWQ0YjIwYmZlOTFlMyxhcnlhVXNlcklkOlJhamVuZHJhbnN1ZGhha2FyUkBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnVkYXluQG1vYmFjay5jb20sYWN0aXZhdGVQYXNzd29yZDpBc2RmMTIzNCEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO";
+   }
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');
     $scope.name = $scope.values[9].split(':')[1]+" "+ $scope.values[10].split(':')[1];;
@@ -58,7 +60,7 @@ if (authToken!==undefined){
                 $cookies.remove(k);
             });
 
-            window.location.href = config.projectUrl+"/Shibboleth.sso/Logout"
+            //window.location.href = config.projectUrl+"/Shibboleth.sso/Logout"
         }
 
 

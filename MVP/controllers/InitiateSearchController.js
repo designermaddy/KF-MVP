@@ -22,6 +22,7 @@
                            vm.data.Description = vm.jobDesc.Description;
                            vm.data.SearchString = vm.jobDesc.SearchString;
                         }
+                        disableInput();
                     },
                     function rejected(response) {
                         commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -35,7 +36,6 @@
             promise.then(
                 function resolved(response) {
                     vm.jobDesc = response.data;
-                    console.log(response.data);
                     getreq(1);
                 },
                 function rejected(response) {
@@ -45,7 +45,12 @@
             getreq(0);
         }
 
-
+        function disableInput() {
+            var inputs = $('input');
+            for (var i = 0; i < 7; i++ ){
+                inputs[i].disabled = true;
+            }
+        }
 
         function getCriteria() {
             // TODO: This will likely need a service, to populate the criteria

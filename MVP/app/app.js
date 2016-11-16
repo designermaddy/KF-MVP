@@ -1,5 +1,5 @@
 // create the module and name it desktopApp
-var app = angular.module('desktopApp', ['ngRoute', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner']);
+var app = angular.module('desktopApp', ['ngRoute', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'tag-input']);
 // Configure the Routes
 app.config(['$routeProvider', function ($routeProvider) {
 	//$httpProvider.interceptors.push(interceptor);
@@ -43,12 +43,14 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "views/404.html"
         });
 }]);
-app.run(function($http, sharedProperties, $cookies) {
+app.run(function($http, sharedProperties, $cookies, config) {
 	  var count = sharedProperties.getCounter();
 	  if(count==0){
 		
 		var authToken = $cookies.get('RD-Access-Token');
+        if (config.production === 0) {
         var authToken = "cmRBdXRoVG9rZW46TUdNMll6ZzFZek10T1RreVlTMDBOak5sTFdKaU5XUXRORGc0T0RZMk5UYzRNVEV5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246VlAsaWRwVXNlcklkOmE0ZDYzY2E3LThjZjktNDFjYi1hYmI1LWQ0YjIwYmZlOTFlMyxhcnlhVXNlcklkOlJhamVuZHJhbnN1ZGhha2FyUkBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnVkYXluQG1vYmFjay5jb20sYWN0aXZhdGVQYXNzd29yZDpBc2RmMTIzNCEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO"
+        }
         
 		if(authToken){
 			$http.defaults.headers.common['RD-Access-Token'] = authToken
