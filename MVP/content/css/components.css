@@ -68,7 +68,7 @@
 .InsightThumbnail .ShareDetails .InsightShare           { display: inline-block; float: right; font-size: 16px; color: #007da4; background-color: #fff; border:3px solid #0a7fc9; border-radius: 50%; padding:6px 8px; width: 40px; height: 40px;  }
 
 /* --------------------------- Table List Style ---------------------------------- */
-.table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0;  min-height: 300px; background-color:#fff; }
+.table-striped                                          { border:1px solid #e6e9ed; margin-bottom:0;  min-height:77px; background-color:#fff; }
 .table-striped a:hover                                  { text-decoration: none; }
 .table-striped.table > thead > tr > th                  { border-bottom:1px solid #e6e9ed; padding:12px 8px; white-space: nowrap; font-size: 12px; font-weight: bold; }
 .table-striped.table > tbody > tr > td                  { vertical-align: middle; }
@@ -180,7 +180,7 @@
 .TermSorting                                              { }
 .TermSorting ul                                           { }
 .TermSorting ul li                                        { display: inline-block; float: left; margin:0 5px; }
-.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 12px; font-weight: normal; }
+.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 14px; font-weight: normal; }
 .TermSorting ul li a:active, .TermSorting ul li a.active  { background-color:#007da4; color:#fff; }
 .TermSorting ul li:last-child                             { border-left:1px solid #ccc; padding-left:10px }
 .TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
@@ -200,6 +200,7 @@
 .RadioGroup .btn-default.active, 
 .RadioGroup .btn-default:active                           { background-color: #66b1c8; color:#fff; }
 .SearchRadioGroup .btn-group                              { width:100%; display: block; }
+.TermSorting .RadioGroup .btn-group .btn                  { padding:3px 9px; }
 /* --------------------------- DataGridBoxList Style ---------------------------------- */
 .DataGridBoxList                                        { list-style:none; }
 /* --------------------------- HeaderPaging Style ---------------------------------- */
@@ -281,8 +282,10 @@
 .nav-tabs > li.active > a:hover                         { border-radius:0; }
 .dropdown-menu                                          { margin:0; }
 .dropdown-menu > li > a                                 { padding:5px 20px;}
-
 .WidgetPD                                               { min-height: 300px; }
+.SecondaryTab .tab-content                              { margin: 0; padding:0; }
+.SecondaryTab .tab-content .WidgetProfile               { border-width: 0 1px 1px 1px; }
+
 /* --------------------------- WidgetPD Style ---------------------------------- */
 .Popover button:before                                  { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
 .popover                                                {top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
@@ -351,16 +354,8 @@ textarea							{  width:100%; height:100px; }
 .srcDownload							{  font-size:14px; font-weight:bold; }
 .appointment							{  background-color: rgba(232, 232, 232, 0.25); padding-bottom: 10px; padding-top: 2px; margin-top: 10px; }
 .candidate:after							{  border-bottom: 1px solid #dad8d6; position: relative; top: 11px; width: 75%; left: 196px; }
-
-.WidgetProfileBox .ProfileHead                              { float: left; display:inline-block; max-width:150px; width:20%; }
-.WidgetProfileBox .ProfileDescription                       { float: left; display:inline-block; width:80%; }
-.WidgetProfileBox .ProfileDescription p                     { font-size: 14px; }
-.WidgetProfileBox .ProfileHead h3                           { font-size: 14px; color:#ccc; font-weight:500;  }
-.WidgetProfileBox .ProfileDesc                              { padding:0 30px 0  0; margin-bottom: 10px; }
-.WidgetProfileBox .ProfileDesc p                            { padding:0 30px 0  0; margin-bottom:5px; }
-.WidgetProfileBox .ProfileDesc h4                            { margin-top: 0; margin-bottom:5px;  padding:0; font-size:14px; font-weight:bold;  }
-
-.WidgetProfileBox .ProfileHead                              { float: left; display:inline-block; max-width:150px; width:20%; }
+/* --------------------------- candidate Profile Style ---------------------------------- */
+.WidgetProfileBox .ProfileHead                              { float: left; display:inline-block; width:20%; }
 .WidgetProfileBox .ProfileDescription                       { float: left; display:inline-block; width:80%; }
 .WidgetProfileBox .ProfileDescription p                     { font-size: 14px; }
 .WidgetProfileBox .ProfileHead h3                           { font-size: 14px; color:#ccc; font-weight:500;  }
