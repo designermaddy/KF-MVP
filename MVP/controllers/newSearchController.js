@@ -19,8 +19,8 @@
         if (sharedProperties.getNewSearchData() !== 0){
             reqValue = sharedProperties.getNewSearchData();
             var reqNum = reqValue[0];
-            $scope.vm.name = reqNum + ' ' + reqValue[1];
-            getArya(reqNum);
+            $scope.name = reqNum + ' ' + reqValue[1];
+            getArya(reqNum, 1);
             redirectPath = "RequisitionDetails/3"
             sharedProperties.setNewSearchData(0);
         }else {
@@ -32,11 +32,22 @@
             getArya(reqNum);
         }
 
-        function getArya(reqNum){
+        function getArya(reqNum, i){
+            var i = i || 0;
+
             var promise = Factory.getAryaJobId(reqNum);
             promise.then(function(response){
                 $scope.data = response.data;
+                disableInput(i);
             });
+        }
+
+        function disableInput(i) {
+            var inputs = $('input');
+            var i = i ? 0 : 1;
+            for (i; i < 7; i++ ){
+                inputs[i].disabled = true;
+            }
         }
 
         $scope.save = function() {
@@ -92,6 +103,81 @@
                          ? ("0" + now.getSeconds())
                          : (now.getSeconds())));
         }
+
+        $scope.vm = {
+        priceSlider1 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider2 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider3 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider4 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider5 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+          },
+
+
+        priceSlider6 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            },
+        priceSlider8 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            },
+            priceSlider7 : {
+                minValue: 1
+                , maxValue: 8
+                , options: {
+                    ceil: 10
+                    , floor: 0
+                    , showTicksValues: false
+                }
+            },
+            refreshSlider : function () {
+                $timeout(function () {
+                    $scope.$broadcast('rzSliderForceRender');
+                });
+            }
+                                           }
 
     }]);
 

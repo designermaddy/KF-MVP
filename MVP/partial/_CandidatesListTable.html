@@ -2,7 +2,7 @@
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Candidates List({{candidateListDtls.candidateList.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" template-url = "uibPagerKf.html" ng-model="currentPage" previous-text="" next-text=""></ul></span> <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">Add Candidate</button></span></div>
-    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="table table-striped">
+    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="CandidatesListTable">
         <table class="table table-striped">
             <thead>
                 <tr>

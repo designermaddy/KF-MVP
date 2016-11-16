@@ -2,7 +2,7 @@
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Applicants List({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html"  total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></div>
-    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="table table-striped">
+    <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="ApplicantsListTable">
         <table class="table table-striped">
             <thead>
                 <tr>
