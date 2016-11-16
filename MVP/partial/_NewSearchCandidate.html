@@ -4,7 +4,7 @@
     <div class="col-md-8">
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
-                <div ng-bind-html="data.Description"></div>
+            <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
             </div>
         </div>
     </div>
