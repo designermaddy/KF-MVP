@@ -60,7 +60,7 @@ if (authToken!==undefined){
                 $cookies.remove(k);
             });
 
-            //window.location.href = config.projectUrl+"/Shibboleth.sso/Logout"
+            window.location.href = config.projectUrl+"/Shibboleth.sso/Logout"
         }
 
 
