@@ -93,6 +93,81 @@
                          : (now.getSeconds())));
         }
 
+        $scope.vm = {
+        priceSlider1 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider2 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider3 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider4 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+        },
+        priceSlider5 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+          },
+
+
+        priceSlider6 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            },
+        priceSlider8 : {
+                value: 5
+                , options: {
+                    ceil: 5
+                    , floor: 0
+                    , showTicksValues: true
+                }
+            },
+            priceSlider7 : {
+                minValue: 1
+                , maxValue: 8
+                , options: {
+                    ceil: 10
+                    , floor: 0
+                    , showTicksValues: false
+                }
+            },
+            refreshSlider : function () {
+                $timeout(function () {
+                    $scope.$broadcast('rzSliderForceRender');
+                });
+            }
+                                           }
+
     }]);
 
 
