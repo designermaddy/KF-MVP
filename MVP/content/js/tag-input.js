@@ -6,9 +6,9 @@ angular.module('tag-input', [])
             inputTags : '=taglist'
         },
         link : function($scope, element, attrs) {
-             $scope.defaultWidth = 600
-             $scope.tagText = ''
-             $scope.placeholder = attrs.placeholder
+             $scope.defaultWidth = 150;
+             $scope.tagText = '';
+             $scope.placeholder = attrs.placeholder;
 
              $scope.tagArray = function() {
                 if ($scope.inputTags === undefined) {
