@@ -92,7 +92,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         var promise = Factory.getNoteToCandidate(data);
         promise.then(
           function resolved(response) {
-                console.log(reposne.data);
+              //  console.log(reposne.data);
               if(response.data.candidateNotes){
               $scope.notes = response.data.candidateNotes;
                    if($scope.notes.length>=2){
