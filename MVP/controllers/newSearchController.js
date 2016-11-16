@@ -19,7 +19,7 @@
         if (sharedProperties.getNewSearchData() !== 0){
             reqValue = sharedProperties.getNewSearchData();
             var reqNum = reqValue[0];
-            $scope.name = reqNum + ' ' + reqValue[1];
+            $scope.vm.name = reqNum + ' ' + reqValue[1];
             getArya(reqNum, 1);
             redirectPath = "RequisitionDetails/3"
             sharedProperties.setNewSearchData(0);
@@ -105,6 +105,8 @@
         }
 
         $scope.vm = {
+        name : reqValue[0] + ' ' + reqValue[1],
+
         priceSlider1 : {
                 value: 5
                 , options: {
