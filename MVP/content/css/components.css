@@ -180,7 +180,7 @@
 .TermSorting                                              { }
 .TermSorting ul                                           { }
 .TermSorting ul li                                        { display: inline-block; float: left; margin:0 5px; }
-.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 14px; font-weight: normal; }
+.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 14px; font-weight: normal; display: block; }
 .TermSorting ul li a:active, .TermSorting ul li a.active  { background-color:#007da4; color:#fff; }
 .TermSorting ul li:last-child                             { border-left:1px solid #ccc; padding-left:10px }
 .TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
