@@ -60,11 +60,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             url: urlAPI + '/Requisition/getPositionByRequisition',
             data: data
         });
-        //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
-    }
-    dataFactory.getrequisitionCandidateList = function (positionID) {
-        //return $http.get('json/requisitionCandidateList.json');
+    //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
+	}
+     dataFactory.getrequisitionCandidateList = function(positionID){
+		//return $http.get('json/requisitionCandidateList.json');
         positionID = 9343;
+
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
     }
 
@@ -77,20 +78,34 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.requisitionDocDetailsList = function () {
         return $http.get('json/requisitionPdfDoc.json')
     }
-    dataFactory.jobProfileDocDetailsList = function (engagment) {
-        var data = {
-            "Documents": [
+
+    dataFactory.jobProfileDocDetailsList = function(engagmentID){
+        /*var data = {
+              "Documents": [
                 "string"
               ],
-            "engagementId": 0,
-            "function": engagment,
-            "function": '',
-            "requisition": 0
+               "engagementId": 0,
+              "function": engagment,
+              "function": '',
+              "requisition": 0
+            }*/
+        {
+          var data ={
+              "Documents": [
+                  "string"
+              ],
+          "documentId": 0,
+          "engagementId": engagmentID,
+          "function": " ",
+          "requisition": 0
         }
+  }
+
 
         return $http({
             method: 'POST',
-            url: urlAPI + '/Profile/getDocumentByRequisition',
+            url: urlAPI+'/Profile/getDocumentByEngagement',
+
             data: data
 
         });
@@ -229,10 +244,25 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getJobDescription = function (data) {
         return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
     }
-    dataFactory.getPDF = function (url) {
-        return $http.get(url, {
-            responseType: 'arraybuffer'
-        });
+
+     dataFactory.getPDF = function(url) {
+
+        return $http.get(url,  {responseType: 'arraybuffer'});
+
+    }
+      dataFactory.resumeGetPDF = function(url) {
+        /*  return $http({
+             method: 'GET',
+             url: url,
+             headers: {
+               'RD-Access-Token': undefined
+              },
+             responseType: 'arraybuffer'
+
+            })*/
+         return $http.get(  'https://integrations.loopworks.com/api/candidate/get/35269247/true');
+
+                   // return $http.get(url,  {responseType: 'arraybuffer'});
     }
 
 

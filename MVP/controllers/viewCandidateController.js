@@ -4,27 +4,28 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
 
     var getData = function (id) {
         if (id) {
-            var promise = Factory.getviewCandidate(id);
-            promise.then(
-                function resolved(response) {
-                    $scope.row = response.data.candidateDetails[0];
-                    sharedProperties.setCandidateListDetails($scope.row);
-                    if (sharedProperties.getCandidateListDetails()) {
-                        var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
-                        var link = urlResumeLink.resumeLink
-                        callPdf(link);
-                    }
 
-                    function callPdf(urlResumeLink) {
-                        var url = urlResumeLink;
-                        var promise = Factory.getPDF(url);
-                        promise.then(
-                            function resolved(response) {
-                                var file = new Blob([response.data], {
-                                    type: 'application/pdf'
-                                });
-                                var fileURL = URL.createObjectURL(file);
-                                $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+          var promise = Factory.getviewCandidate(id);
+          promise.then(
+          function resolved(response) {
+            $scope.row = response.data.candidateDetails[0];
+            sharedProperties.setCandidateListDetails($scope.row);
+              if(sharedProperties.getCandidateListDetails()){
+                var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
+                  var link = urlResumeLink.resumeLink
+                  callPdf(link);
+              }
+           function  callPdf( urlResumeLink){
+               var url = urlResumeLink;
+               var promise = Factory.resumeGetPDF(url);
+               promise.then(
+                   function resolved(response) {
+                       var file = new Blob([response.data], { type: 'application/pdf' });
+                       var fileURL = URL.createObjectURL(file);
+                       $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
+
+
+
 
                                 $scope.url = $scope.pdfContent
 

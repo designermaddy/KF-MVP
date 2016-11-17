@@ -8,15 +8,15 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     var promise = Factory.getRequisitionTableList();
 
     promise.then(function(response){
-            var result = $scope.data = response.data.requisitionList;
+            var result = $scope.data = response.data.requisitions;
             $scope.requisition = result.map(function(item){
-                return item.poolId + ' ' + item.requisitionTitle;
+                return item.ReqNumber + ' ' + item.JobTitle;
             });
             $scope.engagement = result.map(function(item){
-                return item.engagementName;
+                return item.Engagement;
             });
             $scope.client = result.map(function(item){
-                return item.client;
+                return item.Client;
             });
             $scope.recruiter = result.map(function(item) {
                 //return item.Recruiter;
