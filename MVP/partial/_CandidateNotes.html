@@ -13,7 +13,7 @@
             <tbody>
                 <tr st-select-row="row" ng-repeat="note in filtered = noteList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 
-                    <td st-toggle-item>{{note.dateCreated | date:dd/mm/yy}}</td>
+                    <td st-toggle-item>{{note.dateCreated | date: "M/d/yyyy h:mm a"}}</td>
                     <td st-toggle-item>{{note.note}}</td>
                     <td st-toggle-item>{{note.createdBy}}</td>
                 </tr>

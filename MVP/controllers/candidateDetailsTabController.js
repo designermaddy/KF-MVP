@@ -39,7 +39,6 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
             promise.then(
                 function resolved(response) {
                     $scope.noteList = response.data.candidateNotes;
-                    console.log('here');
                 },
                 function rejected(response) {
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
