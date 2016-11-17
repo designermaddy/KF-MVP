@@ -1,1 +1,24 @@
-CandidateNotes
+<div class="DataListBox">
+    <span us-spinner="{radius:10, width:2, length: 4}"></span>
+
+    <div st-table="displayedCollections" st-safe-src="rowCollection" class="CandidateNotes">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   <th class="SortDefault"  st-toggle-column st-sort="dateCreated">Date</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="note">Notes</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="createdBy">Added By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr st-select-row="row" ng-repeat="note in filtered = noteList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+
+                    <td st-toggle-item>{{note.dateCreated | date:dd/mm/yy}}</td>
+                    <td st-toggle-item>{{note.note}}</td>
+                    <td st-toggle-item>{{note.createdBy}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
