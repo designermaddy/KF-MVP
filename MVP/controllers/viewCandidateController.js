@@ -16,7 +16,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
               }
            function  callPdf( urlResumeLink){
                var url = urlResumeLink;
-               var promise = Factory.getPDF(url);
+               var promise = Factory.resumeGetPDF(url);
                promise.then(
                    function resolved(response) {
                        var file = new Blob([response.data], { type: 'application/pdf' });

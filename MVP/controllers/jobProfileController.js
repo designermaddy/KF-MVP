@@ -5,7 +5,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
            if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
             }
-       var promise = Factory.jobProfileDocDetailsList($scope.item.Engagement);
+       var promise = Factory.jobProfileDocDetailsList($scope.item.ClientId);
         promise.then(
           function resolved(response) {
 
@@ -66,7 +66,9 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
             data.push(checked[i].value);
         }
         sharedProperties.setInitiateSearchData(data);
-         var redirectPath = "InitiateSearch";
+         var redirectPath = "/InitiateSearch";
+          $("li[class='active']").removeClass('active');
+        $('#searchHeader').addClass('active');
          $location.path(redirectPath);
         console.log(data);
     }

@@ -64,7 +64,7 @@ app.factory('Factory', ['$http', 'config','$cookies', function ($http, config, $
 	}
      dataFactory.getrequisitionCandidateList = function(positionID){
 		//return $http.get('json/requisitionCandidateList.json');
-        positionID = 9343;
+       // positionID = 9343;
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
 	}
 	
@@ -77,8 +77,8 @@ app.factory('Factory', ['$http', 'config','$cookies', function ($http, config, $
 	dataFactory.requisitionDocDetailsList = function(){
         return $http.get('json/requisitionPdfDoc.json')
     }
-    dataFactory.jobProfileDocDetailsList = function(engagment){
-        var data = {
+    dataFactory.jobProfileDocDetailsList = function(engagmentID){
+        /*var data = {
               "Documents": [
                 "string"
               ],
@@ -86,11 +86,23 @@ app.factory('Factory', ['$http', 'config','$cookies', function ($http, config, $
               "function": engagment,
               "function": '',
               "requisition": 0
-            }
+            }*/
+        {
+          var data ={
+              "Documents": [
+                  "string"
+              ],
+          "documentId": 0,
+          "engagementId": engagmentID,
+          "function": " ",
+          "requisition": 0
+        }
+  }
+
 
         return $http({
             method: 'POST',
-            url: urlAPI+'/Profile/getDocumentByRequisition',
+            url: urlAPI+'/Profile/getDocumentByEngagement',
             data: data
 
         });
@@ -230,7 +242,22 @@ app.factory('Factory', ['$http', 'config','$cookies', function ($http, config, $
         return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
     }
      dataFactory.getPDF = function(url) {
+
         return $http.get(url,  {responseType: 'arraybuffer'});
+    }
+      dataFactory.resumeGetPDF = function(url) {
+        /*  return $http({
+             method: 'GET',
+             url: url,
+             headers: {
+               'RD-Access-Token': undefined
+              },
+             responseType: 'arraybuffer'
+
+            })*/
+         return $http.get(  'https://integrations.loopworks.com/api/candidate/get/35269247/true');
+
+                   // return $http.get(url,  {responseType: 'arraybuffer'});
     }
 
 

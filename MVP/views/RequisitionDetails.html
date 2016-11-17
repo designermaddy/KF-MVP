@@ -79,7 +79,8 @@
         </div>
     </uib-tab>
     <uib-tab index='5' heading="Applicants List" >
-        <div class="container-fluid clearfix" id="applicantResultdiv" ng-controller="requisitionCandidateListDummyController" >
+        <div  ng-controller="requisitionCandidateListDummyController" >
+        <div class="container-fluid clearfix" id="applicantResultdiv">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div ng-include="'partial/_ApplicantsListSearch.html'"></div>
@@ -95,7 +96,8 @@
                <div ng-include="'partial/_ApplicantDetails.html'"></div>
             </div>
         </div>
-         </div>
+    </div>
+        </div>
     </uib-tab> 
     <uib-tab index='6' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
     <uib-tab index='7' heading="History" class="disabled"> History </uib-tab>
