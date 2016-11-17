@@ -1,4 +1,4 @@
-app.factory('Factory', ['$http', 'config', function ($http, config) {
+app.factory('Factory', ['$http', 'config','$cookies', function ($http, config, $cookies) {
     var dataFactory = {};
     var urlAPI = config.projectUrl;
 
@@ -82,9 +82,9 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
               "Documents": [
                 "string"
               ],
-              "documentId": 0,
-              "engagementId": 0,
+               "engagementId": 0,
               "function": engagment,
+              "function": '',
               "requisition": 0
             }
 
@@ -188,7 +188,23 @@ app.factory('Factory', ['$http', 'config', function ($http, config) {
     };
 
     dataFactory.rallyVerse = function(){
-         return $http.get('https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/')
+       // console.log('getInfo');
+         //res.removeHeader('Transfer-Encoding');
+//$cookies.remove('RD-Access-Token');
+//  delete  $http.defaults.headers.common['RD-Access-Token'] // Remove header before call
+        return $http({
+ method: 'GET',
+ url: 'https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/',
+ headers: {
+   'RD-Access-Token': undefined
+  }
+        })
+
+//}
+         //return (req)
+        //var authToken = $cookies.get('RD-Access-Token');
+
+       // $http.defaults.headers.common['RD-Access-Token'] = authToken
     }
 
     dataFactory.getviewCandidate = function(id) {

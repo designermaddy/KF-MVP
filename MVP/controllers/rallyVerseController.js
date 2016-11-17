@@ -1,4 +1,4 @@
-app.controller('rallyVerseController', ['$scope', 'Factory', 'commonFunctions', function ($scope, Factory, commonFunctions) {
+app.controller('rallyVerseController', ['$scope', 'Factory', 'commonFunctions','$cookies', function ($scope, Factory, commonFunctions,$cookies) {
         $scope.myInterval = 5000;
         var slides = $scope.slides = [];
         var currIndex = 0;
