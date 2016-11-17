@@ -1,129 +1,133 @@
 <div ng-controller="viewCandidateController">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
-<div class="Heading2 HeadingFloat clearfix" style="border-bottom: 1px solid #dad8d6;margin-bottom:25px" >
-	<a ng-click="backCandidateList();" class="pull-left" style="width:2%;margin-top:10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-    <h2>Candidate Details</h2>
-    <span class="pull-right HeaderPaging" style="font-size: 15px;color: #0a7fc9;">Compare<i class="fa fa-angle-down Mar" aria-hidden="true"></i></span>
-</div>
-<div class="row" >
-	<div class="col-md-9">
-		<div class="row candidate">
-			<div class="col-md-2 candidateimg">
-				<img src="content/images/img1.jpg" alt="">
-				<h2>{{row.firstName + ' ' + row.lastName}}</h2>
-				<div class="candidateAddress">
-					<span>{{row.profile.currentJobTitle}}</span><br>
-                    <span>{{row.profile.currentEmployer}}</span><br>
-					<span>{{row.address.city + ', ' + row.address.state}} </span><br>
-                    <span>{{row.address.country}}</span>
-				</div>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-					  <span class="sr-only">70% Complete</span>
-					</div>
-				</div>
-				<span><input type="checkbox">Hot Candidate</span>
-			</div>
-			<div class="col-md-10">
+    <div class="Heading2 HeadingFloat clearfix" style="border-bottom: 1px solid #dad8d6;margin-bottom:25px">
+        <a ng-click="backCandidateList();" class="pull-left" style="width:2%;margin-top:10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <h2>Candidate Details</h2>
+        <span class="pull-right HeaderPaging" style="font-size: 15px;color: #0a7fc9;">Compare<i class="fa fa-angle-down Mar" aria-hidden="true"></i></span>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row candidate">
+                <div class="col-md-2 candidateimg">
+                    <img src="content/images/img1.jpg" alt="">
+                    <h2>{{row.firstName + ' ' + row.lastName}}</h2>
+                    <div class="candidateAddress">
+                        <span>{{row.profile.currentJobTitle}}</span>
+                        <br>
+                        <span>{{row.profile.currentEmployer}}</span>
+                        <br>
+                        <span>{{row.address.city + ', ' + row.address.state}} </span>
+                        <br>
+                        <span>{{row.address.country}}</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            <span class="sr-only">70% Complete</span>
+                        </div>
+                    </div>
+                    <span><input type="checkbox">Hot Candidate</span>
+                </div>
+                <div class="col-md-10">
 
-					<div class="col-md-6 candidateContact">
-					<button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
-					<button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
-					<button type="submit" class="btn btn-sm btn-submit"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
-					<h4>Contact Info</h4>
-					<span class="email"><i class="fa fa-lg fa-envelope mr5" aria-hidden="true"></i>{{row.contactMethods[1].address}}</span>
-					<div class="mtb15">
-						<p><i class="fa fa-lg fa-phone mr8" aria-hidden="true"></i><span class="clsilver">Phone:</span></p>
-						<p class="ml20"><span class="clsilver">Work:</span></p>
-						<p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
-					</div>
-					<div>
-						<p><i class="fa fa-lg fa-book mr8" aria-hidden="true"></i><span class="clsilver">Address:</span></p>
-						<span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span><br>
-						<span class="ml20">{{row.addresses[0].country}}</span>
-					</div>
-					</div>
-					<div class="col-md-6">
-						<button type="submit" class="btn btn-primary btn-sm" ng-click="searchlist()">Change Status</button>
-						<div class="col-md-12">
-							<div class="row padding42">
-								<i class="fa fa-2x fa-comment-o mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-phone" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a>
-								<i class="fa fa-2x fa-envelope mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-calendar-o mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-video-camera mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-share-alt mr29" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="row">
-								<div class="col-md-2 srcDownload">
-									<div class="row">
-									Source
-									</div>
-								</div>
-								<div class="col-md-7 pull-right pt3">
-									<a href="#">Show in 4 other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="row pt25">
+                    <div class="col-md-6 candidateContact">
+                        <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
+                        <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
+                        <button type="submit" class="btn btn-sm btn-submit"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
+                        <h4>Contact Info</h4>
+                        <span class="email"><i class="fa fa-lg fa-envelope mr5" aria-hidden="true"></i>{{row.contactMethods[1].address}}</span>
+                        <div class="mtb15">
+                            <p><i class="fa fa-lg fa-phone mr8" aria-hidden="true"></i><span class="clsilver">Phone:</span></p>
+                            <p class="ml20"><span class="clsilver">Work:</span></p>
+                            <p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
+                        </div>
+                        <div>
+                            <p><i class="fa fa-lg fa-book mr8" aria-hidden="true"></i><span class="clsilver">Address:</span></p>
+                            <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
+                            <br>
+                            <span class="ml20">{{row.addresses[0].country}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-sm" ng-click="searchlist()">Change Status</button>
+                        <div class="col-md-12">
+                            <div class="row padding42">
+                                <i class="fa fa-2x fa-comment-o mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-phone" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a>
+                                <i class="fa fa-2x fa-envelope mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-calendar-o mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-video-camera mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-share-alt mr29" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2 srcDownload">
+                                    <div class="row">
+                                        Source
+                                    </div>
+                                </div>
+                                <div class="col-md-7 pull-right pt3">
+                                    <a href="#">Show in 4 other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row pt25">
                                 <a ng-href="{{url}}"><i class="fa fa-2x fa-linkedin-square mr29" aria-hidden="true"><i class="fa fa-check" aria-hidden="true"></i></i></a>
-								<i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-link mr29" aria-hidden="true"></i>
-								<i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="row pt19">
-								<div class="col-md-2 srcDownload">
-									<div class="row">
-									Download
-									</div>
-								</div>
-								<div class="col-md-9 pull-right pt3">
-									<a href="#">Resume  |</a>
-									<a href="#">Assessment Report  |</a>
-									<a href="#">Interview</a>
-								</div>
-							</div>
-						</div>
-					</div>
+                                <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-link mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row pt19">
+                                <div class="col-md-2 srcDownload">
+                                    <div class="row">
+                                        Download
+                                    </div>
+                                </div>
+                                <div class="col-md-9 pull-right pt3">
+                                    <a href="#">Resume  |</a>
+                                    <a href="#">Assessment Report  |</a>
+                                    <a href="#">Interview</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-			</div>
-		</div>
-		<div class="row mt25">
-			<div class="col-md-10 pull-right">
-				<div class="col-md-12">
-					Tags
-                    <tag-input taglist="tags" placeholder=""></tag-input>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 notes">
-		<i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
-		<i class="fa fa-lg fa-paperclip" aria-hidden="true"></i>
-		<i class="fa fa-lg fa-ellipsis-v" aria-hidden="true"></i>
-		<h4 class="MarTp30">Recuriter Notes</h4>
-		<textarea id="notes"></textarea>
-		<div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>
-		<div class="col-md-12 appointment">
-			<div class="col-md-12">
-				<div class="row">
-					<h6 class="mb5">{{noteValue1.note}}</h6>
-					<span> {{noteValue1.dateCreated}}</span>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="row">
-					<h6 class="mb5">{{noteValue2.note}}</h6>
-					<span> {{noteValue2.dateCreated}}</span>
-				</div>
-			</div>
-		</div>
-		<div class="pull-right save"><a href="#"><span>View All Notes</span><i class="fa fa-lg fa-angle-right ml5" aria-hidden="true"></i></a></div>
-	</div>
-</div>
+                </div>
+            </div>
+            <div class="row mt25">
+                <div class="col-md-10 pull-right">
+                    <div class="col-md-12">
+                        Tags
+                        <tag-input taglist="tags" placeholder=""></tag-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 notes">
+            <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+            <i class="fa fa-lg fa-paperclip" aria-hidden="true"></i>
+            <i class="fa fa-lg fa-ellipsis-v" aria-hidden="true"></i>
+            <h4 class="MarTp30">Recuriter Notes</h4>
+            <textarea id="notes"></textarea>
+            <div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>
+            <div class="col-md-12 appointment">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h6 class="mb5">{{noteValue1.note}}</h6>
+                        <span> {{noteValue1.dateCreated}}</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <h6 class="mb5">{{noteValue2.note}}</h6>
+                        <span> {{noteValue2.dateCreated}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right save"><a ng-click="viewAllNotes();"><span>View All Notes</span><i class="fa fa-lg fa-angle-right ml5" aria-hidden="true"></i></a></div>
+        </div>
+    </div>
 </div>
