@@ -64,7 +64,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
 	}
      dataFactory.getrequisitionCandidateList = function(positionID){
 		//return $http.get('json/requisitionCandidateList.json');
-       // positionID = 9343;
+        positionID = 9343;
 
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
     }
@@ -244,16 +244,11 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getJobDescription = function (data) {
         return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
     }
-<<<<<<< HEAD
+
      dataFactory.getPDF = function(url) {
 
         return $http.get(url,  {responseType: 'arraybuffer'});
-=======
-    dataFactory.getPDF = function (url) {
-        return $http.get(url, {
-            responseType: 'arraybuffer'
-        });
->>>>>>> origin/master
+
     }
       dataFactory.resumeGetPDF = function(url) {
         /*  return $http({

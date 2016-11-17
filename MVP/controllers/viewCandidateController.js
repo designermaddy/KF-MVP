@@ -25,16 +25,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                        $scope.pdfContent= $sce.trustAsResourceUrl(fileURL);
 
 
-                    function callPdf(urlResumeLink) {
-                        var url = urlResumeLink;
-                        var promise = Factory.getPDF(url);
-                        promise.then(
-                            function resolved(response) {
-                                var file = new Blob([response.data], {
-                                    type: 'application/pdf'
-                                });
-                                var fileURL = URL.createObjectURL(file);
-                                $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+
 
                                 $scope.url = $scope.pdfContent
 
