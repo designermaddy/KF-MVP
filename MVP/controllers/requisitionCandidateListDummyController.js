@@ -1,8 +1,6 @@
-app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions','sharedProperties', '$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties, $timeout) {
+app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions','sharedProperties', '$timeout', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout) {
 
-        if ($routeParams.tab) {
-            $scope.showIndex = Number($routeParams.tab);
-        }
+
         $scope.viewLoading = false;
 
         postRequisitionApplicationList();
