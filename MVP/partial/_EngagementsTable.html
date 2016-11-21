@@ -16,7 +16,7 @@
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
                 <tr st-select-row="row" ng-repeat="engagementListDtls in displayedCollections  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a href="#EngagementDetails/1" ng-click="onSelectEngagementPerID(engagementListDtls.EngagementNumber)" >{{engagementListDtls.EngagementNumber}} <span>{{engagementListDtls.Engagement}}</span></a></div> <div class="TblDate">{{engagementListDtls.StartDate}}-{{engagementListDtls.EndDate}}</div>
+                        <div class="TblRequisition"><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(engagementListDtls.EngagementNumber)" >{{engagementListDtls.EngagementNumber}} <span>{{engagementListDtls.Engagement}}</span></a></div> <div class="TblDate">{{engagementListDtls.StartDate}}-{{engagementListDtls.EndDate}}</div>
                     </td>
                     <td st-toggle-item>{{engagementListDtls.Client.ClientName}}<div class="TblDate">{{engagementListDtls.Location}}</div></td>
                     <td st-toggle-item>{{engagementListDtls.Client.Industry}}</td>

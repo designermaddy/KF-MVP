@@ -1,7 +1,5 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', '$routeParams', 'commonFunctions', 'sharedProperties','$timeout', function ($scope, Factory, filter, filterFilter, $routeParams, commonFunctions, sharedProperties, $timeout) {
-        if ($routeParams.tab) {
-            $scope.showIndex = Number($routeParams.tab);
-        }
+app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout) {
+
         $scope.viewLoading = false;
         agingRequisitionList();
 

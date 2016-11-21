@@ -10,13 +10,13 @@
             <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
                 <ul class="nav navbar-nav" bs-active-link>
                     <li class="NavClose"><a data-toggle="collapse" ng-click="collapse.close()" aria-expanded="false" aria-controls="collapse"><i class="fa fa-times" aria-hidden="true"></i></a></li>
-                    <li><a href="#/">Dashboard</a></li>
-                    <li><a href="#/ProfileDesign">Profile Design</a></li>
-                    <li><a href="#/Engagements">Engagements</a></li>
-                    <li id='requistionHeader'><a  href="#/Requisitions">Requisitions</a></li>
-                    <li id='searchHeader'><a href="#/Search">Search</a></li>
-                    <li ><a href="#/News">News & Insights</a></li>
-                    <li id='ReportHeader' ><a href="#/Reports">Reports</a></li>
+                    <li  ui-sref-active="active"><a ui-sref="home">Dashboard</a></li>
+                    <li  ui-sref-active="active"><a ui-sref="profile">Profile Design</a></li>
+                    <li  ui-sref-active="active"><a ui-sref="engagements">Engagements</a></li>
+                    <li id='requistionHeader'  ui-sref-active="active"><a  ui-sref="requisitions">Requisitions</a></li>
+                    <li  ui-sref-active="active"><a ui-sref="search">Search</a></li>
+                    <li  ui-sref-active="active"><a ui-sref="news">News & Insights</a></li>
+                    <li id='ReportHeader'  ui-sref-active="active"><a ui-sref="reports" >Reports</a></li>
                 </ul>
             </div>
         </div>

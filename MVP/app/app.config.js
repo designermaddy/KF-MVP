@@ -47,3 +47,48 @@ app.directive('bsActiveLink', ['$location', function ($location) {
         }
     }
 }]);
+
+// Configure the Routes
+/*app.config(['$routeProvider', function ($routeProvider) {
+	//$httpProvider.interceptors.push(interceptor);
+
+    $routeProvider
+    // Home
+        .when("/", {
+            templateUrl: "views/home.html"
+            , controller: 'MainCtrl'
+        })
+        // Views
+        .when("/ProfileDesign", {
+            templateUrl: "views/ProfileDesign.html"
+        }).when("/Engagements", {
+            templateUrl: "views/Engagements.html"
+        }).when("/EngagementDetails/:tab", {
+            templateUrl: "views/EngagementDetails.html"
+        }).when("/Requisitions", {
+            templateUrl: "views/Requisitions.html"
+        }).when("/RequisitionDetails/:tab", {
+            templateUrl: "views/RequisitionDetails.html"
+        }).when("/Search", {
+            templateUrl: "views/Search.html"
+        }).when("/InitiateSearch", {
+            templateUrl: "views/InitiateSearch.html"
+        }).when("/NewSearch", {
+            templateUrl: "views/NewSearch.html"
+        }).when("/ViewSearch", {
+            templateUrl: "views/ViewSearch.html"
+        }).when("/News", {
+            templateUrl: "views/News.html"
+        }).when("/Reports", {
+            templateUrl: "views/Reports.html"
+        }).when("/Resources", {
+            templateUrl: "views/Resources.html"
+        }).when("/LogOut",{
+            templateUrl: "partial/_Logout.html"
+        })
+        // else 404
+        .otherwise("/404", {
+            templateUrl: "views/404.html"
+        });
+}]);*/
+
