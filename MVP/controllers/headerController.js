@@ -11,15 +11,17 @@
 app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
    var authToken = $cookies.get('RD-Access-Token');
    if (config.production === 0) {
-    var authToken = "cmRBdXRoVG9rZW46TXpVME9XWXlaalF0WWpFek5TMDBPR1V4TFRnell6VXRNVGs0WlRZME1qUXdaalpsT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDphNGQ2M2NhNy04Y2Y5LTQxY2ItYWJiNS1kNGIyMGJmZTkxZTMsYXJ5YVVzZXJJZDpSYWplbmRyYW5zdWRoYWthclJAaGV4YXdhcmUuY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFjdGl2YXRlUGFzc3dvcmQ6QXNkZjEyMzQhLG5hbWU6VWRheSxmaXJzdE5hbWU6VWRheSxsYXN0TmFtZTpOYXlhayxkaXNwbGF5TmFtZTpVZGF5Tg==";
+    var authToken = "cmRBdXRoVG9rZW46TXpFM01EQXhNbUV0Tkdaak1TMDBOMlEzTFRsaVptVXROamcwTUdVeU5tVXdaakpqT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDphNGQ2M2NhNy04Y2Y5LTQxY2ItYWJiNS1kNGIyMGJmZTkxZTMsYXJ5YVVzZXJJZDp1ZGF5YW5AbW9iYWNrLmNvbSxhcnlhUGFzc3dvcmQ6V2VsY29tZUAxMjMsYWN0aXZhdGVVc2VySWQ6ZXJpYy5qb2huc29uQGZtY2cuY29tLGFjdGl2YXRlUGFzc3dvcmQ6aGF5LG5hbWU6VWRheSxmaXJzdE5hbWU6VWRheSxsYXN0TmFtZTpOYXlhayxkaXNwbGF5TmFtZTpVZGF5Tg==";
    }
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');
-    $scope.name = $scope.values[9].split(':')[1]+" "+ $scope.values[10].split(':')[1];;
+    $scope.name = $scope.values[9].split(':')[1]+" "+ $scope.values[10].split(':')[1];
     $scope.designation = $scope.values[2].split(':')[1];
     $scope.email = $scope.values[1].split(':')[1];
     sharedProperties.setUserName($scope.values[4].split(':')[1])
     sharedProperties.setPassword($scope.values[5].split(':')[1])
+    sharedProperties.setActiveUserName($scope.values[6].split(':')[1])
+    sharedProperties.setActivePassword($scope.values[7].split(':')[1])
      if (($http.defaults.headers.common['RD-Access-Token'])) {
                    var d = new Date();
                 setcookie('RD-Access-Token',$http.defaults.headers.common['RD-Access-Token'], d.getTime() + 2*7*24*60*60 , '/');

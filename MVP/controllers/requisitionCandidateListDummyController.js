@@ -10,17 +10,17 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
         //get the applicationlist for a requisition using position id
         function postRequisitionApplicationList() {
             var reqDetailsperRequisition = sharedProperties.getRequisitionDetails();
-            if(reqDetailsperRequisition.Position){
+            if(reqDetailsperRequisition.ReqNumber){
                 // page and status is static mentioned by Karthik position id dynamic//
-                postData = {
-                    "requestParams": {"page":"2","status":"New","orgId":"9855","positionId": reqDetailsperRequisition.Position}
-                }
+               /* postData = {
+                    "requestParams": {"page":"2","status":"New","orgId":"9855","positionId": reqDetailsperRequisition.ReqNumber}
+                }*/
                 sharedProperties.setPositionId(reqDetailsperRequisition.Position);
 
-            var promise = Factory.postrequisitionApplicationList(postData);
+            var promise = Factory.postrequisitionApplicationList(reqDetailsperRequisition.ReqNumber);
             promise.then(function resolved(response) {
-                $scope.rowCollection = response.data.applications;
-                $scope.candidateListDtls = response.data;
+                $scope.rowCollection = response.data.data;
+                $scope.candidateListDtls = response.data.data;
                 if ($scope.rowCollection) {
                     $scope.viewLoading = true;
                     $scope.currentPage = 1;

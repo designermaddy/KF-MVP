@@ -11,7 +11,7 @@
     </div>
     </div>
     <div class="SideBar" style="min-height: 780px;">
-        <div class="profile">
+			<div class="profile">
 				<p>
 				Within Korn Ferry,there is a tremenduous amount of intellectual property that allow us to enhance
 				our engagement with clients. If a <span style="font-weight:bold;">benchmark profile</span> does not exist, feel free to leverage the appropriate
@@ -19,28 +19,51 @@
 				</p>
 				<div class="col-md-12 profileDiv">
 					<h4 class="profileheading">Job Description from Hay Group</h4>
-					<i class="fa fa-info-circle" aria-hidden="true"></i>
+					<!-- <i class="fa fa-lg fa-info-circle mt15" aria-hidden="true"></i> -->
+					<a href=""  data-toggle="popover" data-placement="bottom" title="By selecting the  “Create” button below, you will have access to functional and level-based descriptions that can be tailored as needed. Descriptions are available  for levels up to Sr. Director."><img class="mt7" src="content/images/exclamation_icon.png"/></a>
 					<p>Access the Hay group libraray of job description</p>
-					<a href=''>Create</a>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-click='postHayGroupToGetLink()' ng-disabled="disabled">Create
+							</button>
 				</div>
 				<div class="col-md-12 profileDiv">
 					<h4 class="profileheading">Compensation Data from Hay Group</h4>
+					<a href=""  data-toggle="popover" data-placement="bottom" title="Benchmarks are derived from our compensation survey data and influenced by Job Grade and Location. For Vice President and higher positions, please select “request” and complete the form. Upon submission, a more detailed analysis will be conducted to generate the compensation benchmarks."><img class="mt7" src="content/images/exclamation_icon.png"/></a>
 					<p>Access the Hay group tool that allows you to Grade and Price a job thereby allowing you access to compensation benchmarks.</p>
-					<a href="#">Create</a> <a href="#">Request</a>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs mr4" uib-dropdown-toggle="" ng-disabled="disabled">Create
+							</button>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-disabled="disabled">Request
+							</button>
 				</div>
 				<div class="col-md-12 profileDiv">
 					<h4 class="profileheading">Supply and Demand</h4>
+					<a href=""  data-toggle="popover" data-placement="bottom" title="This insightful information will allow you to manage client expectations relative to cycle time and sourcing strategies that should be considered."><img class="mt7" src="content/images/exclamation_icon.png"/></a>
 					<p>Various sources to the supply, demand and projected growth of a role.</p>
-					<a href="#">Request</a>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-disabled="disabled">Request
+							</button>
 				</div>
 				<div class="col-md-12 profileDiv">
 					<h4 class="profileheading">Resarch Links</h4>
+					<a href=""  data-toggle="popover" data-placement="bottom" title="Hooray!"><img class="mt7" src="content/images/exclamation_icon.png"/></a>
 					<p>Leverage the options below to conduct company specific resarch including identification of prospective
 					candidates.Also available is a collection of curated arrticles on recruiting and talent trends.</p>
-					<a ng-click="openFactivaIframe()">FACTIVA</a><br>
+					<a href="http://insidekf/KFResources/Pages/FactivaSearch.aspx?PID=33&amp%3bSID=83" target="_blank" id="single-button" type="button" class="btn alertBtn btn-xs mr4" uib-dropdown-toggle="" ng-disabled="disabled">FACTIVA
+							</a>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-disabled="disabled">OneSource
+							</button>
+					<button id="single-button" type="button" class="btn alertBtn btn-xs mt10" uib-dropdown-toggle="" ng-disabled="disabled">Recruiting Trends and Articles
+							</button>
+					<!-- <a ng-click="openFactivaIframe()">FACTIVA</a><br>
 					<a ng-click="openOneSourceIframe()" style="display: block;margin-top: 5px;">OneSource</a>
-					<a ng-click="openRecruiterTrendsIframe()" style="display: block;margin-top: 5px;">Recruiting Trends and Articles</a>
+					<a ng-click="openRecruiterTrendsIframe()" style="display: block;margin-top: 5px;">Recruiting Trends and Articles</a> -->
 				</div>
 			</div>
         </div>
     </div>
+<script type="text/javascript">
+		$(function () { $("[data-toggle = 'tooltip']").tooltip(); });
+	</script>
+	<script>
+		 $(function (){
+      $("[data-toggle = 'popover']").popover();
+   });
+	</script>

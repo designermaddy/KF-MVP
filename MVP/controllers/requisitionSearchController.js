@@ -43,8 +43,10 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
 
      $scope.searchlist = function() {
        var name = $scope.name;
-       var requisition = name.replace(/[0-9]/g, '').trim();
-       var requisitionNumber = name.replace(/\D/g,'').trim();
+       var requisitionNumber = name.substr(0,name.indexOf(' '));
+       var requisition = name.substr(name.indexOf(' ')+1);
+       //var requisition = name.replace(/[0-9]/g, '').trim();
+       //var requisitionNumber = name.replace(/\D/g,'').trim();
        var client = $scope.cli.trim();
        var engagement = $scope.eng.trim();
 
@@ -54,7 +56,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
 
     if (requisitionNumber) {
         angular.forEach(newArray, function (input) {
-        if (input.poolId == requisitionNumber )
+        if (input.ReqNumber == requisitionNumber )
             requisitionNumberArray.push(input);
        });
         newArray = requisitionNumberArray;
@@ -63,7 +65,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     var requisitionArray = [];
     if (requisition) {
         angular.forEach(newArray, function (input) {
-        if (input.requisitionTitle == requisition )
+        if (input.JobTitle == requisition )
             requisitionArray.push(input);
        });
         newArray = requisitionArray;
@@ -72,7 +74,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     var engagementArray = [];
     if (engagement) {
         angular.forEach(newArray, function (input) {
-        if (input.engagementName == engagement )
+        if (input.Engagement == engagement )
             engagementArray.push(input);
        });
         newArray = engagementArray;
@@ -81,7 +83,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     var clientArray = [];
     if (client) {
         angular.forEach(newArray, function (input) {
-        if (input.client == client )
+        if (input.Client == client )
             clientArray.push(input);
        });
         newArray = clientArray;

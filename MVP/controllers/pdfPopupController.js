@@ -42,6 +42,24 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
 
 
     }
+    $scope.postHayGroupToGetLink = function(){
+        var credentialName =
+            { activateName:sharedProperties.getActiveUserNameName(),
+              activatePassword:sharedProperties.getActivePassword()
+             }
+        var promise = Factory.postHayGroupLink(credentialName)
+        promise.then(
+            function resolved(response){
+                if(response.data){
+                    var responseData = response.data.data;
+                    var userId = responseData.userId;
+                    var locale = responseData.locale;
+                    var authToken = responseData.authToken;
+                    commonFunctions.openIframe(config.hayGroupUrl+userId+'/'+locale+'/'+authToken)
+                }
+            }
+        )
+    }
 
     function pdfDetails() {
         var promise = Factory.pdfDetailsList();

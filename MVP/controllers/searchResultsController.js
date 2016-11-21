@@ -39,7 +39,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
         var promise = Factory.getRequisitionSearch(values);
         promise.then(
           function resolved(response) {
-              console.log(response.data);
+         //     console.log(response.data);
               $scope.data = $scope.rowCollection = response.data.aryaSourcedCandidatesList;
               $scope.start = values.page * values.limit - values.limit || 1;
               $scope.end = values.page * values.limit;

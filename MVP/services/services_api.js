@@ -1,6 +1,7 @@
 app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, $cookies) {
     var dataFactory = {};
     var urlAPI = config.projectUrl;
+    var urlHayGroupAction = config.hayGroupAction;
 
     dataFactory.getAgingRequisitionList = function () {
         // console.log(payRolNumber)
@@ -10,7 +11,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAgingPositions');
+        //return $http.get(urlAPI + '/Requisition/getAgingPositions');
+         return $http.get('json/AgingRequisitions.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -21,7 +23,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAllPositions');
+       // return $http.get(urlAPI + '/Requisition/getAllPositions');
+        return $http.get('json/AllRequisitions.json');
         //}
     };
     dataFactory.getRequestionGoalStackChart = function (graphName) {
@@ -55,16 +58,20 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
     dataFactory.postrequisitionApplicationList = function (data) {
         //return $http.get(urlAPI+'/Requisition/getPositionByRequisition');
-        return $http({
+     /*   return $http({
             method: 'POST',
             url: urlAPI + '/Requisition/getPositionByRequisition',
             data: data
-        });
+        });*/
+        return $http.get(urlAPI+'/Requisition/getApplicants/'+data)
+
+
+       // return $http.get('json/applicantList.json');
     //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
 	}
      dataFactory.getrequisitionCandidateList = function(positionID){
 		//return $http.get('json/requisitionCandidateList.json');
-        positionID = 9343;
+      //  positionID = 9343;
 
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
     }
@@ -127,7 +134,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function (engagementId) {
         // return $http.get('json/RequisitionList.json')
-        return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
+       // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
+        return $http.get('json/RequisitionforEngagment.json');
     }
     dataFactory.getViewRequisition = function () {
         return $http.get('json/viewRequisition.json');
@@ -287,6 +295,15 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getViewAllNotes = function(id){
         return $http.get(urlAPI + '/Candidate/viewAllNote/' + id);
     }
+     dataFactory.postHayGroupLink = function (creditentialDtls) {
+            return $http({
+                method: 'POST',
+                url: urlHayGroupAction,
+                data: {"outageUnfinished":false,"username":creditentialDtls.activateName,"password":creditentialDtls.activatePassword}
+
+            });
+
+        }
 
     return dataFactory;
 }]);
@@ -383,6 +400,8 @@ app.service('sharedProperties', function () {
     var reportURL = '';
 
     var candidateListDetails = [];
+    var activeUserName = '';
+    var activePassword = '';
 
 
     return {
@@ -422,12 +441,25 @@ app.service('sharedProperties', function () {
         getUserName: function () {
             return userName;
         },
-        setPassword: function (value) {
+         setPassword: function (value) {
             password = value
         },
         getPassword: function () {
             return password;
         },
+          setActiveUserName: function (value) {
+            activeUserName = value
+        },
+        getActiveUserNameName: function () {
+            return activeUserName;
+        },
+        setActivePassword: function (value) {
+            activePassword = value
+        },
+        getActivePassword: function () {
+            return activePassword;
+        },
+
         setReportURL: function (value) {
             reportURL = value
         },
