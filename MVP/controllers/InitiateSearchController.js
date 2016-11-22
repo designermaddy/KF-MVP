@@ -11,6 +11,12 @@
 
          var getreq = function(a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
+            var savedSearchDetails = sharedProperties.getSavedSearchDetails();
+            if(savedSearchDetails.fromSavedSearch == true){
+                var requisitionNumber = savedSearchDetails.clientJobId;
+                savedSearchDetails.fromSavedSearch = false;
+            }
+             $('#searchHeader').addClass('active');
             var promise = Factory.getAryaJobId(requisitionNumber);
 
             if (requisitionNumber) {

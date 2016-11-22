@@ -246,7 +246,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var orgId = data.orgId;
         var limit = data.limit;
         var page = data.page * limit;
-        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
+      // return $http.get('json/Savedsearch.json')
     }
 
     dataFactory.getJobDescription = function (data) {
@@ -304,6 +305,21 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             });
 
         }
+      dataFactory.aryaStatusSelected = function(orgID, aryaJobId, aryaStatus){
+        if(aryaStatus == "Active"){
+            aryaStatus = 'activate';
+        }else{
+            aryaStatus = 'deactivate';
+        }
+            return  $http({
+                method: 'POST',
+                url:  urlAPI + '/Requisition/updateAryaActivateStatus/'+orgID+'/'+aryaJobId,
+                data: {  "action": aryaStatus}
+
+
+
+            });
+    }
 
     return dataFactory;
 }]);
@@ -394,6 +410,7 @@ app.service('sharedProperties', function () {
     var newSearchData = 0;
     var ClientJobID = '';
     var noteDetails = {};
+    var savedSearchDetails = {};
 
     var viewCandidateId = '';
 
@@ -410,6 +427,12 @@ app.service('sharedProperties', function () {
         },
         getAllNotesDetails() {
             return noteDetails;
+        },
+        setSavedSearchDetails(data){
+            savedSearchDetails = data;
+        },
+        getSavedSearchDetails() {
+            return savedSearchDetails;
         },
         setNewSearchData: function (value) {
             newSearchData = value;
