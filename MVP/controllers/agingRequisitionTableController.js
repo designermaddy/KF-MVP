@@ -1,7 +1,7 @@
 
 
 app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location) {
-
+sharedProperties.setReportURL("empty")
  $scope.viewLoading = false;
  agingRequisitionList();
     function agingRequisitionList() {

@@ -1,45 +1,46 @@
 {
-  "transactionID": null,
-  "graphDetails": {
-    "data": {
-      "Okay": [
-        "2",
-        "2",
-        "5",
-        "9",
-        "11",
-        "11"
+   "transactionID":null,
+   "graphDetails":{
+      "data":{
+         "Okay":[
+            "5",
+            "30",
+            "69",
+            "99",
+            "99",
+            "99"
+         ],
+         "Nearly Due":[
+            "12",
+            "11",
+            "26",
+            0,
+            0,
+            0
+         ],
+         "Overdue":[
+            "82",
+            "58",
+            "4",
+            0,
+            0,
+            0
+         ]
+      },
+      "deepLinkURI":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqGoal&company=6655",
+      "lables":[
+         "Source",
+         "Screen",
+         "Submit",
+         "Interview",
+         "Offer",
+         "Accept"
       ],
-      "NearlyDue": [
-        0,
-        "3",
-        0,
-        0,
-        0,
-        0
-      ],
-      "Overdue": [
-        "11",
-        "8",
-        "8",
-        "4",
-        "2",
-        "2"
+      "series":[
+         "Okay",
+         "Nearly Due",
+         "Overdue"
       ]
-    },
-    "lables": [
-      "Source",
-      "Screen",
-      "Submit",
-      "Interview",
-      "Offer",
-      "Accept"
-    ],
-    "series": [
-      "Okay",
-      "Nearly Due",
-      "Overdue"
-    ],
-    "deepLinkURI": "https://foresight.futurestep.com/ats/ats_req.php?ssoprovider=recruiterdesktop&mode=reqGoal"
-  }
+   }
 }
+

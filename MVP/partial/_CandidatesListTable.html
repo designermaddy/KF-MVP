@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = candidateListDtls.candidateList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr  ng-repeat="candidateListDtls in filtered = candidateListDtls.candidateList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                    <td><input type="checkbox" ></td>
                     <td st-toggle-item>
                         <div class="TblRequisition"><a ng-click="getCandidateData(candidateListDtls.id);">{{candidateListDtls.firstName + ' ' + candidateListDtls.lastName}} </a></div>

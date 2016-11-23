@@ -1,4 +1,4 @@
-app.controller('popoverController', ['$scope', '$timeout', function ($scope, $timeout) {
+app.controller('popoverController', ['$scope', '$timeout','sharedProperties', function ($scope, $timeout, sharedProperties) {
     $scope.cancel = function () {
       $scope.isOpen = false;
     };
@@ -11,7 +11,7 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
   var list = {
         'reqGoal' : { 'status' : 1,  'url' : 'RequisitionGoal'},
         'reqHistory'  : { 'status' : 0,  'url' : 'RequisitionHistory'},
-        'reqActivity' : { 'status' : 0,  'url' : 'RequisitionActivity'},
+        'reqActivity' : { 'status' : 0,  'url' : 'RequisitionStatus'},
         'canPipeline' : { 'status' : 2,  'url' : 'CandidatePipeline'},
         'canHistory'  : { 'status' : 0,  'url' : 'CandidateHistory'},
         'canSource'   : { 'status' : 0,  'url' : 'CandidateSource'}
@@ -52,6 +52,7 @@ app.controller('popoverController', ['$scope', '$timeout', function ($scope, $ti
 
                     if (key == el.attr('id')) {
                         var str = 'partial/_' + val.url + '.html';
+                        sharedProperties.setSelectedForesightGraph(val.url);
                         if (turn == 1) {
                             $scope.ReqUrl = str;
                             turn = 2;

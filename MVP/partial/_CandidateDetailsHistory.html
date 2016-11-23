@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = HistoryList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr  ng-repeat="candidateListDtls in filtered = HistoryList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 
                     <td st-toggle-item>{{candidateListDtls.teimstamp}}</td>
                     <td st-toggle-item>{{candidateListDtls.location.city}}</td>

@@ -1,19 +1,19 @@
-<div class="panel panel-default" ng-controller="candidatePipelineController">
-    <div class="panel-heading clearfix">Candidate Pipeline <span class="TermSorting pull-right">
+<div class="panel panel-default" ng-controller="requisitionStatusController">
+     <div class="panel-heading clearfix">Requisition Status <span class="TermSorting pull-right">
     <ul>
-    <li ><a id="myReqs"  href="" ng-click="callmyClientRequisition('mygraph')">My Pipeline</a></li>
-    <li ><a id="clientReqs" href="" ng-click="callmyClientRequisition('company')" class="active">Company Pipeline</a></li>
+    <li ><a id="myReqs"  href="" ng-click="callmyClientRequisition('mygraph')">My Requisition Status</a></li>
+    <li ><a id="clientReqs" href="" ng-click="callmyClientRequisition('company')" class="active">
+Company Requisition Status</a></li>
     <li class="FormSelect">
-        <select >
+        <select>
 
 
           <option>Lamb Weston</option>
 
         </select>
-    </li>
+</li>
     </ul>
-    </span></div>
-     <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
+    </span> </div>
     <div class="panel-body" style="height: 266px;">
         <canvas id="bar" class="chart chart-bar" chart-data="candidatePipelineData[0].data" chart-labels="candidatePipelineData[0].label" chart-series="candidatePipelineData[0].series" chart-click="onClick"> </canvas>
         <!--  <canvas id="bar" class="chart chart-bar"

@@ -6,6 +6,20 @@
         <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
     </div>
 </script>
+<!--poppup for arya count in saved searches -->
+<!--<script type="text/ng-template" id="modalAryaCount.html">
+<div id="searchListCandidateDetails" ng-controller="searchController" >
+<a href="" class="btn btn-primary btn-sm IframeBtn" id="searchResultBack" ng-click="searchResultBack();"> Back </a>
+<iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>
+<form id="arya" target="iframe" action="{{action}}"  method="post" >
+    <input type="hidden" name="LoginName" value={{userName}}/>
+    <input type="hidden" name="Password" value={{password}}/>
+    <input type="hidden" name="btnSubmit" value="Login"/>
+    <input type="hidden" name="ReturnUrl" value = {{ReturnUrl}}/>
+</form>
+ <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
+</div>
+</script>-->
 <!-- Global Document PDF Loader   -->
 <script type="text/ng-template" id="Docmodal.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
@@ -77,7 +91,7 @@
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="reqActivity" type='checkbox' />
-                       <label for="reqActivity" class="CheckBoxLable"> Requistion Activity <img class='img-responsive popupImg' src='content/images/sm_graph_3.png'> </label>
+                       <label for="reqActivity" class="CheckBoxLable"> Requistion Status <img class='img-responsive popupImg' src='content/images/sm_graph_3.png'> </label>
                     </div>
                 </div>
         </div>

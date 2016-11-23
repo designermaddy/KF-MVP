@@ -27,12 +27,124 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get('json/AllRequisitions.json');
         //}
     };
-    dataFactory.getRequestionGoalStackChart = function (graphName) {
-        return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+    dataFactory.getChart = function (graphName, selectedBtn, companySelected) {
+      //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        data = {
+              "companyName":"LambWeston",
+              "graphName":graphName,
+              "graphType":selectedBtn,
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });
+
+       // return $http.get('json/requisitionGoal.json')
     };
-    dataFactory.getcandidatePipelineData = function (graphName) {
-        return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-        // return $http.get('json/getcandidatePipelineData.json');
+    dataFactory.getcandidatePipelineData =  function (graphName, selectedBtn, companySelected) {
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+          /*    data = {
+              "companyName":"LambWeston",
+              "graphName":"CandidatePipeline",
+              "graphType":"Company",
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });*/
+         return $http.get('json/getcandidatePipelineData.json');
+        //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
+    }
+     dataFactory.getcandidateSource = function (graphName, selectedBtn, companySelected) {
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+          /*    data = {
+              "companyName":"LambWeston",
+              "graphName":"CandidatePipeline",
+              "graphType":"Company",
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });*/
+         return $http.get('json/candidateSource.json');
+        //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
+    }
+        dataFactory.getRequisitionStatusData = function (graphName, selectedBtn, companySelected) {
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+          /*    data = {
+              "companyName":"LambWeston",
+              "graphName":"CandidatePipeline",
+              "graphType":"Company",
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });*/
+         return $http.get('json/getRequisitonStatus.json');
+        //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
+    }
+     dataFactory.getCandidateHistoryData = function (graphName, selectedBtn, companySelected) {
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+          /*    data = {
+              "companyName":"LambWeston",
+              "graphName":"CandidatePipeline",
+              "graphType":"Company",
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });*/
+         return $http.get('json/candidateHistory.json');
+        //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
+    }
+     dataFactory.getRequisitionHistoryData = function (graphName, selectedBtn, companySelected) {
+       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+          /*    data = {
+              "companyName":"LambWeston",
+              "graphName":"CandidatePipeline",
+              "graphType":"Company",
+              "quater":"",
+              "quaterYear":"",
+              "year":""
+            }
+
+         return $http({
+                method: 'POST',
+                url: (urlAPI + '/dashboard/graphDetails'),
+                data: data
+
+            });*/
+         return $http.get('json/requisitionHistory.json');
         //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
 
@@ -246,8 +358,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var orgId = data.orgId;
         var limit = data.limit;
         var page = data.page * limit;
-        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
-      // return $http.get('json/Savedsearch.json')
+       // return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
+      return $http.get('json/Savedsearch.json')
     }
 
     dataFactory.getJobDescription = function (data) {
@@ -300,6 +412,10 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             return $http({
                 method: 'POST',
                 url: urlHayGroupAction,
+                headers: {
+                'RD-Access-Token': undefined
+            },
+
                 data: {"outageUnfinished":false,"username":creditentialDtls.activateName,"password":creditentialDtls.activatePassword}
 
             });
@@ -336,6 +452,19 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'modalContent.html',
+            controller: 'ModalCancel',
+            size: 'lg',
+            resolve: {
+                url: function () {
+                    return url;
+                }
+            }
+        });
+    }
+     commonFunctions.openIframeAriyaCount = function (url) {
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'modalAryaCount.html',
             controller: 'ModalCancel',
             size: 'lg',
             resolve: {
@@ -419,6 +548,7 @@ app.service('sharedProperties', function () {
     var candidateListDetails = [];
     var activeUserName = '';
     var activePassword = '';
+    var selectedForesightGraph = '';
 
 
     return {
@@ -427,6 +557,12 @@ app.service('sharedProperties', function () {
         },
         getAllNotesDetails() {
             return noteDetails;
+        },
+        setSelectedForesightGraph(data){
+            selectedForesightGraph = data;
+        },
+        getSelectedForesightGraph() {
+            return selectedForesightGraph;
         },
         setSavedSearchDetails(data){
             savedSearchDetails = data;

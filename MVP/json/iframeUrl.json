@@ -2,7 +2,7 @@
 	"transactionID": null,
 	"url": [{
 		"reports": "https://foresight.futurestep.com/index.php",
-		"applicantDetails": "https://emea3.mrtedtalentlink.com/",
+		"applicantDetails": "https://emea3.lumessetalentlink.com/tlk/pages/restricted/hostpage.jsp",
 		"searchListCandidateDetails": "https://qa.leoforce.com/arya/SocialArya/Candidate?CandidateId={candidateId}&JobId=17072&UserName=hariprasad.veeram@leoforce.com&Password=UABhAHMAcwB3AG8AcgBkAEAAMQAyADMANAA=",
 		"latestInsightsManagement": "https://api.rallyverse.com/v1/profiles/2444/lists/content-hub/",
 		"latestInsightsCarrierManagement": "http://ondemand.kf4d-stage.com/kf/workforce-insights",

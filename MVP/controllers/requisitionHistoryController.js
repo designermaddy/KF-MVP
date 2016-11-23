@@ -1,23 +1,24 @@
-app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout) {
+app.controller('requisitionHistoryController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout) {
   var labels=[];
   var datas = [];
   var deeplinkURL = '';
-  $scope.selectedButton = 'company';
-  var graphName = 'RequisitionGoal';//'CandidatePipeline';
+  var graphName = 'RequisitionHistory';//'CandidatePipeline';
+ var deeplinkURL = '';
+     $scope.selectedButton = 'company';
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
       if(selectedButton == "myReqs"){
             $("#clientReqs").removeClass('active');
-            $('#myReqs').addClass('active');
+        $('#myReqs').addClass('active');
       }else if(selectedButton == "clientReqs"){
            $("#myReqs").removeClass('active');
-           $('#clientReqs').addClass('active');
+        $('#clientReqs').addClass('active');
       }
 
 
   }
+   requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
-   requisitonGoalStackBarChart(graphName, $scope.selectedButton );
     function requisitonGoalStackBarChart() {
         var promise = Factory.getChart(graphName, $scope.selectedButton);
         promise.then(
@@ -26,9 +27,11 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
               deeplinkURL = response.data.graphDetails.deepLinkURI;
 
 
-               datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data["Nearly Due"] + "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data.Overdue+ "]"));
+               datas.push(JSON.parse("[" +response.data.graphDetails.data.Fill+ "]"));
+              datas.push(JSON.parse("[" +response.data.graphDetails.data.Cancel + "]"));
+              datas.push(JSON.parse("[" +response.data.graphDetails.data.Hold+ "]"));
+                  datas.push(JSON.parse("[" +response.data.graphDetails.data.Open+ "]"));
+
                 $scope.series = response.data.graphDetails.series
                 $scope.labels = response.data.graphDetails.lables;
               $scope.data = datas
@@ -67,7 +70,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
     datas[j] = datas[j] || new Array();
   //  console.log('datas[' + j + '][' + i + ']' + ' = ' +arr[i].data[Object.keys(arr[i].data)[j]])
     datas[j][i] = arr[i].data[Object.keys(arr[i].data)[j]];
-  }            
+  }
 
                          }
                 }
@@ -87,7 +90,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
     };
   $scope.onClick = function (points, evt) {
     console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
-      sharedProperties.setReportURL(deeplinkURL)
+       sharedProperties.setReportURL(deeplinkURL)
         $("li[class='active']").removeClass('active');
         $('#ReportHeader').addClass('active');
        $location.path( '/Reports' );
@@ -95,7 +98,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
   };
 
    // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
-   
+
 
    /* $scope.kick = [
       [65, 59, 90, 81, 56, 55],

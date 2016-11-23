@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr st-select-row="row" ng-repeat="candidateListDtls in filtered = rowCollection | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr  ng-repeat="candidateListDtls in filtered = rowCollection | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
                         <div class="TblRequisition"><input type="checkbox">
 

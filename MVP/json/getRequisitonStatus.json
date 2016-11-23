@@ -1,0 +1,15 @@
+{
+  "transactionID": null,
+  "graphDetails": {
+    "method": "reqStatus",
+    "type": "company",
+    "name": "Lamb Weston",
+    "data": {
+      "Cancel": "47",
+      "Hold": "1",
+      "Open": "99"
+
+    },
+       "deepLinkURI": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqStatus&company=6655"
+  }
+}

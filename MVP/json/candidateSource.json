@@ -1,0 +1,15 @@
+{
+  "transactionID": null,
+  "graphDetails": {
+    "method": "candSource",
+    "type": "company",
+    "name": "Lamb Weston",
+    "data": {
+      "ExternalSite": "427",
+      "InternalSite": "15",
+      "Talentlink": "2"
+
+    },
+       "deepLinkURI": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=candSource&company=6655"
+  }
+}

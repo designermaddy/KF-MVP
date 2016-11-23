@@ -11,7 +11,7 @@
 app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
    var authToken = $cookies.get('RD-Access-Token');
    if (config.production === 0) {
-    var authToken = "cmRBdXRoVG9rZW46TXpFM01EQXhNbUV0Tkdaak1TMDBOMlEzTFRsaVptVXROamcwTUdVeU5tVXdaakpqT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDphNGQ2M2NhNy04Y2Y5LTQxY2ItYWJiNS1kNGIyMGJmZTkxZTMsYXJ5YVVzZXJJZDp1ZGF5YW5AbW9iYWNrLmNvbSxhcnlhUGFzc3dvcmQ6V2VsY29tZUAxMjMsYWN0aXZhdGVVc2VySWQ6ZXJpYy5qb2huc29uQGZtY2cuY29tLGFjdGl2YXRlUGFzc3dvcmQ6aGF5LG5hbWU6VWRheSxmaXJzdE5hbWU6VWRheSxsYXN0TmFtZTpOYXlhayxkaXNwbGF5TmFtZTpVZGF5Tg==";
+    var authToken = "cmRBdXRoVG9rZW46T1RFeU9EYzBZMkl0TWpnNFppMDBOek5rTFRneU1Ua3RaV1UyTkRSaE9Ua3lOR1JpT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDphNGQ2M2NhNy04Y2Y5LTQxY2ItYWJiNS1kNGIyMGJmZTkxZTMsYXJ5YVVzZXJJZDp1ZGF5YW5AbW9iYWNrLmNvbSxhcnlhUGFzc3dvcmQ6V2VsY29tZUAxMjMsYWN0aXZhdGVVc2VySWQ6dWRheW5AbW9iYWNrLmNvbSxhY3RpdmF0ZVBhc3N3b3JkOkFjdGl2YXRlMTIzLG5hbWU6VWRheSxmaXJzdE5hbWU6VWRheSxsYXN0TmFtZTpOYXlhayxkaXNwbGF5TmFtZTpVZGF5Tg=="
    }
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');

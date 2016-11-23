@@ -57,7 +57,11 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
                     var authToken = responseData.authToken;
                     commonFunctions.openIframe(config.hayGroupUrl+userId+'/'+locale+'/'+authToken)
                 }
-            }
+
+            },
+             function rejected(response) {
+              //commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
         )
     }
 

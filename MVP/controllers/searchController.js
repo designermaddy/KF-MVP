@@ -2,6 +2,8 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
 
     $scope.start = 1;
     sharedProperties.setNewSearchData(0);
+
+
     $scope.orgID = 6;
 
     var data = {
@@ -93,18 +95,20 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     // open iframe arya candidate
     $scope.openIframe = function(aryajobID){
        var url = config.iframeUrlAriyaSavedSearch+aryajobID
+      commonFunctions.openIframe(url)
        // url = url.replace("{candidateId}", candidateId);
         //url=url.replace("{jobId}",  sharedProperties.getJobId());
         userName = sharedProperties.getUserName();
+        $scope.userName = sharedProperties.getUserName();
         password = sharedProperties.getPassword();
         $("input[name='LoginName']").attr('value', userName);
         $("input[name='Password']").attr('value', password);
         $("input[name='ReturnUrl']").attr('value', url);
         $('#arya').attr('action', config.iframeAction);
         $('#arya').submit()
-        $('#searchResultdiv').hide();
-        $('#searchListCandidateDetails').hide();
-        commonFunctions.openIframe(url)
+        //$('#searchResultdiv').hide();
+        //$('#searchListCandidateDetails').hide();
+
     }
       $scope.initiateSearch = function(clientJobID) {
         var checked = $('input:checked');
@@ -122,3 +126,24 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
        // console.log(data);
     }
 }]);
+
+/*
+app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce','sharedProperties','config', function ($uibModalInstance, url, $scope, $sce, sharedProperties, config) {
+   var url = config.iframeUrlAriyaSavedSearch+35164
+      userName = sharedProperties.getUserName();
+        password = sharedProperties.getPassword();
+      $scope.userName = sharedProperties.getUserName();
+     $scope.password = sharedProperties.getPassword();
+    $scope.action = config.iframeAction;
+    $scope.ReturnUrl =
+        $("input[name='LoginName']").attr('value', userName);
+        $("input[name='Password']").attr('value', password);
+        $("input[name='ReturnUrl']").attr('value', url);
+        $('#arya').attr('action', config.iframeAction);
+        $('#arya').submit()
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])
+*/

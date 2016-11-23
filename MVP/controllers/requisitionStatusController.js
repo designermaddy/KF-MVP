@@ -1,8 +1,8 @@
-app.controller('candidatePipelineController', ['$scope','Factory','commonFunctions','$timeout','$location','sharedProperties', function ($scope, Factory, commonFunctions, $timeout,$location,sharedProperties) {
+app.controller('requisitionStatusController', ['$scope','Factory','commonFunctions','$timeout','$location','sharedProperties', function ($scope, Factory, commonFunctions, $timeout,$location,sharedProperties) {
 
-    var graphName = "CandidatePipeline";
+    var graphName = "RequisitionStatus";
     var deeplinkURL = '';
-    $scope.selectedButton = 'company';
+     $scope.selectedButton = 'company';
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
       if(selectedButton == "myReqs"){
@@ -52,7 +52,7 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
     };
  $scope.onClick = function (points, evt) {
     console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
-       sharedProperties.setReportURL(deeplinkURL)
+        sharedProperties.setReportURL(deeplinkURL)
         $("li[class='active']").removeClass('active');
         $('#ReportHeader').addClass('active');
        $location.path( '/Reports' );
@@ -63,7 +63,7 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
         }, 50, false);
 
-		  
+
         }
 
     ]);
