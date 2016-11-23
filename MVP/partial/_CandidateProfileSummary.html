@@ -1,5 +1,28 @@
-<div class="panel panel-default WidgetProfile">
+<div class="panel panel-default WidgetProfile" ng-controller="viewCandidateController">
     <div class="panel-body">
+        <div class="ProfileHead">
+                <h3>Current   </h3> </div>
+            <div class="ProfileDescription">
+                <p>{{currentEmployer}}</p>
+            </div>
+            <div class="ProfileHead">
+                <h3>Current JobTitle</h3> </div>
+            <div class="ProfileDescription">
+                <p>{{currentJobTitle}}</p>
+            </div>
+         <div class="ProfileHead">
+                <h3>Job Function</h3> </div>
+            <div class="ProfileDescription">
+                <p>{{jobFunction}}</p>
+            </div>
+         <div class="ProfileHead">
+                <h3>Summary</h3> </div>
+            <div class="ProfileDescription">
+                <p>{{summary}}</p>
+            </div>
+
+
+
         <!--<div class="WidgetProfileBox">
             <div class="ProfileHead">
                 <h3>Present</h3> </div>

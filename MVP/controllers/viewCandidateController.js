@@ -13,7 +13,12 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
               if(sharedProperties.getCandidateListDetails()){
                 var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
                   var link = urlResumeLink.resumeLink
-                  callPdf(link);
+                   $scope.resumeContent = $scope.row.resume;
+                  $scope.currentEmployer = $scope.row.profile.currentEmployer
+                  $scope.currentJobTitle = $scope.row.profile.currentJobTitle
+                  $scope.jobFunction = $scope.row.profile.jobFunction
+                  $scope.summary = $scope.row.profile.summary
+                 // callPdf(link);
               }
            function  callPdf( urlResumeLink){
                var url = urlResumeLink;

@@ -29,10 +29,11 @@
 					<h4 class="profileheading">Compensation Data from Hay Group</h4>
 					<a href=""  data-toggle="popover" data-placement="bottom" title="Benchmarks are derived from our compensation survey data and influenced by Job Grade and Location. For Vice President and higher positions, please select “request” and complete the form. Upon submission, a more detailed analysis will be conducted to generate the compensation benchmarks."><img class="mt7" src="content/images/exclamation_icon.png"/></a>
 					<p>Access the Hay group tool that allows you to Grade and Price a job thereby allowing you access to compensation benchmarks.</p>
-					<button id="single-button" type="button" class="btn alertBtn btn-xs mr4" uib-dropdown-toggle="" ng-disabled="disabled">Create
+					<button id="single-button" type="button" class="btn alertBtn btn-xs mr4" uib-dropdown-toggle="" ng-click='postHayGroupToGetLink()'ng-disabled="disabled">Create
 							</button>
-					<button id="single-button" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-disabled="disabled">Request
-							</button>
+
+					<a  target="_self" id="single-button" href="/json/Executive Mapping_5 27 16.xlsm" download="executivemapping.xlsm" type="button" class="btn alertBtn btn-xs" uib-dropdown-toggle="" ng-disabled="disabled">Request
+							</a>
 				</div>
 				<div class="col-md-12 profileDiv">
 					<h4 class="profileheading">Supply and Demand</h4>

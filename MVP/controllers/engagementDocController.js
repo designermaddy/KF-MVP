@@ -1,4 +1,4 @@
-app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', 'commonFunctions', function ($uibModal, $scope, Factory, sharedProperties, config, commonFunctions) {
+app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', 'commonFunctions','$sce', function ($uibModal, $scope, Factory, sharedProperties, config, commonFunctions,$sce) {
         //getEngagementId 
         var id = sharedProperties.getengagementPerIDSelected();
         
@@ -28,19 +28,35 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
       }
     }
     
-    $scope.openPdf = function (url) {
-        var url = config.projectUrl + '/Profile/getDocumentById/' + url;
-        var modalInstance = $uibModal.open({
+    $scope.openPdf = function (url, filename) {
+         var url = config.projectUrl + '/Profile/getDocumentById/' + url;
+          var promise = Factory.getPDF(url);
+        promise.then(
+          function resolved(response) {
+               var file = new Blob([response.data], { type: 'application/pdf' });
+             var fileURL = URL.createObjectURL(file);
+             $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+             $scope.fileName =  filename
+
+               var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'
             , controller: 'DocModalCtrl'            
             , size: 'lg'
             , resolve: {
                 url: function () {
-                    return url;
+                    return  $scope.pdfContent;
+                },
+                 filename: function () {
+                    return   $scope.fileName;
                 }
             }
         });
+          },
+              function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
+      )
     }
     
     

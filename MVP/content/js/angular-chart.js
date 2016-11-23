@@ -32,7 +32,7 @@
   Chart.defaults.global.elements.rectangle.borderWidth = 1;
   Chart.defaults.global.legend.display = false;
   Chart.defaults.global.colors = [
-      '#d40a1c', // Red
+    '#d40a1c', // Red
     '#ff8CD00', // Orange
     '#568E30', // Yellow
     '#46BFBD', // green
