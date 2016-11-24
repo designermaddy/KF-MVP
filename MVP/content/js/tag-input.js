@@ -1,48 +1,94 @@
-//https://codepen.io/webmatze/pen/isuHh
-angular.module('tag-input', [])
-    .directive('tagInput', function () {
+(function () {
+    app.directive('tagInput', ['Factory', 'commonFunctions', function (Factory, commonFunctions) {
         return {
-            restrict: 'E',
-            scope: {
+            restrict: 'E'
+            , scope: {
                 inputTags: '=taglist'
-            },
-            link: function ($scope, element, attrs) {
+                , autocomplete: '=autocomplete'
+                , canId: '=id'
+            }
+            , link: function ($scope, element, attrs) {
                 $scope.defaultWidth = 150;
                 $scope.tagText = '';
                 $scope.placeholder = attrs.placeholder;
-
+                if ($scope.autocomplete) {
+                    $scope.autocompleteFocus = function (event, ui) {
+                        $(element).find('input').val(ui.item.value);
+                        return false;
+                    };
+                    $scope.autocompleteSelect = function (event, ui) {
+                        $scope.$apply('tagText=\'' + ui.item.value + '\'');
+                        $scope.$apply('addTag()');
+                        return false;
+                    };
+                    $(element).find('input').autocomplete({
+                        minLength: 1
+                        , source: function (request, response) {
+                            var results = $.ui.autocomplete.filter($scope.autocomplete, request.term);
+                            response(results.slice(0, 10));
+                        }
+                        , focus: function (_this) {
+                            return function (event, ui) {
+                                return $scope.autocompleteFocus(event, ui);
+                            };
+                        }(this)
+                        , select: function (_this) {
+                            return function (event, ui) {
+                                return $scope.autocompleteSelect(event, ui);
+                            };
+                        }(this)
+                    });
+                }
                 $scope.tagArray = function () {
                     if ($scope.inputTags === undefined) {
                         return [];
                     }
-                    return $scope.inputTags.split(',').filter(tag => tag !== "");
+                    return $scope.inputTags.split(',').filter(function (tag) {
+                        return tag !== '';
+                    });
                 };
-
                 $scope.addTag = function () {
+                    var tagArray;
                     if ($scope.tagText.length === 0) {
                         return;
                     }
-                    let tagArray = $scope.tagArray();
+                    if (!$scope.checkTag($scope.tagText)) {
+                        commonFunctions.error($scope.tagText + ' -- No such tag exists. Please select one of the tags from Dropdown.');
+                        return;
+                    }
+                    Factory.addTag($scope.canId, $scope.tagText);
+                    tagArray = $scope.tagArray();
                     tagArray.push($scope.tagText);
                     $scope.inputTags = tagArray.join(',');
-                    return $scope.tagText = "";
+                    return $scope.tagText = '';
+                };
+
+                $scope.checkTag = function(tag) {
+                    if ($scope.autocomplete.indexOf(tag) !== -1) {
+                        return true;
+                    }
+                    return false;
                 };
 
                 $scope.deleteTag = function (key) {
-                    let tagArray = $scope.tagArray();
+                    var tagArray;
+                    var tag = '';
+                    tagArray = $scope.tagArray();
                     if (tagArray.length > 0 && $scope.tagText.length === 0 && key === undefined) {
-                        tagArray.pop();
-                    } else if (key !== undefined) {
-                        tagArray.splice(key, 1);
+                        tag = tagArray.pop();
                     }
+                    else {
+                        if (key !== undefined) {
+                            tag = tagArray.splice(key, 1)[0];
+                        }
+                    }
+                    if (tag.length > 1)Factory.removeTag($scope.canId, tag);
                     return $scope.inputTags = tagArray.join(',');
                 };
-
-                // Watch for changes in text field
                 $scope.$watch('tagText', function (newVal, oldVal) {
-                    if (newVal !== oldVal || newVal !== undefined) {
-
-                        let tempEl = $(`<span>${newVal}</span>`).appendTo("body");
+                    var tempEl;
+                    if (!(newVal === oldVal && newVal === undefined)) {
+                        tempEl = $('<span>' + newVal + '</span>').appendTo('body');
                         $scope.inputWidth = tempEl.width() + 5;
                         if ($scope.inputWidth < $scope.defaultWidth) {
                             $scope.inputWidth = $scope.defaultWidth;
@@ -50,10 +96,9 @@ angular.module('tag-input', [])
                         return tempEl.remove();
                     }
                 });
-
-                element.bind("keydown", function (e) {
-                    let key = e.which;
-
+                element.bind('keydown', function (e) {
+                    var key;
+                    key = e.which;
                     if (key === 9 || key === 13) {
                         e.preventDefault();
                     }
@@ -61,17 +106,16 @@ angular.module('tag-input', [])
                         return $scope.$apply('deleteTag()');
                     }
                 });
-
-                return element.bind("keyup", function (e) {
-                    let key = e.which;
-
-                    // Tab, Enter or , pressed
+                return element.bind('keyup', function (e) {
+                    var key;
+                    key = e.which;
                     if (key === 9 || key === 13 || key === 188) {
                         e.preventDefault();
                         return $scope.$apply('addTag()');
                     }
                 });
-            },
-            template: "<div class='tag-input-ctn'><div class='input-tag' data-ng-repeat=\"tag in tagArray()\">{{tag}}<div class='delete-tag' data-ng-click='deleteTag($index)'>&times;</div></div><input type='text' data-ng-style='{width: inputWidth}' data-ng-model='tagText' placeholder='{{placeholder}}'/></div>"
-        }
-    });
+            }
+            , template: '<div class=\'tag-input-ctn\'><div class=\'input-tag\' data-ng-repeat="tag in tagArray()">{{tag}}<div class=\'delete-tag\' data-ng-click=\'deleteTag($index)\'>&times;</div></div><input type=\'text\' data-ng-style=\'{width: inputWidth}\' data-ng-model=\'tagText\' placeholder=\'{{placeholder}}\'/></div>'
+        };
+                    }]);
+}.call(this));
