@@ -62,8 +62,9 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
     
 }]);
 
-app.controller('DocModalCtrl', ['$uibModalInstance', 'url', '$scope', function ($uibModalInstance, url, $scope) {
+app.controller('DocModalCtrl', ['$uibModalInstance', 'url','filename', '$scope', function ($uibModalInstance, url,filename, $scope) {
     $scope.url = url;
+     $scope.fileName = filename;
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }

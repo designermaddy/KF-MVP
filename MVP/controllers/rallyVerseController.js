@@ -18,7 +18,7 @@ app.controller('rallyVerseController', ['$scope', 'Factory', 'commonFunctions','
 
 
             }, function rejected(response) {
-                commonFunctions.error('Failed to load Rally Verse');
+                commonFunctions.error('Failed to load RallyVerse');
             })
         };
 

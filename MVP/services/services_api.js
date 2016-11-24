@@ -2,7 +2,6 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     var dataFactory = {};
     var urlAPI = config.projectUrl;
     var urlHayGroupAction = config.hayGroupAction;
-
     dataFactory.getAgingRequisitionList = function () {
         // console.log(payRolNumber)
         //return $http.get('json/Requisition.json');
@@ -12,7 +11,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
         //return $http.get(urlAPI + '/Requisition/getAgingPositions');
-         return $http.get('json/AgingRequisitions.json');
+        return $http.get('json/AgingRequisitions.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -23,33 +22,30 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-       // return $http.get(urlAPI + '/Requisition/getAllPositions');
+        // return $http.get(urlAPI + '/Requisition/getAllPositions');
         return $http.get('json/AllRequisitions.json');
         //}
     };
     dataFactory.getChart = function (graphName, selectedBtn, companySelected) {
-      //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
         data = {
-              "companyName":"LambWeston",
-              "graphName":graphName,
-              "graphType":selectedBtn,
-              "quater":"",
-              "quaterYear":"",
-              "year":""
-            }
-
-         return $http({
-                method: 'POST',
-                url: (urlAPI + '/dashboard/graphDetails'),
-                data: data
-
-            });
-
-       // return $http.get('json/requisitionGoal.json')
+            "companyName": "LambWeston"
+            , "graphName": graphName
+            , "graphType": selectedBtn
+            , "quater": ""
+            , "quaterYear": ""
+            , "year": ""
+        }
+        return $http({
+            method: 'POST'
+            , url: (urlAPI + '/dashboard/graphDetails')
+            , data: data
+        });
+        // return $http.get('json/requisitionGoal.json')
     };
-    dataFactory.getcandidatePipelineData =  function (graphName, selectedBtn, companySelected) {
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-          /*    data = {
+    dataFactory.getcandidatePipelineData = function (graphName, selectedBtn, companySelected) {
+        // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        /*    data = {
               "companyName":"LambWeston",
               "graphName":"CandidatePipeline",
               "graphType":"Company",
@@ -64,12 +60,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 data: data
 
             });*/
-         return $http.get('json/getcandidatePipelineData.json');
+        return $http.get('json/getcandidatePipelineData.json');
         //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
-     dataFactory.getcandidateSource = function (graphName, selectedBtn, companySelected) {
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-          /*    data = {
+    dataFactory.getcandidateSource = function (graphName, selectedBtn, companySelected) {
+        // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        /*    data = {
               "companyName":"LambWeston",
               "graphName":"CandidatePipeline",
               "graphType":"Company",
@@ -84,12 +80,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 data: data
 
             });*/
-         return $http.get('json/candidateSource.json');
+        return $http.get('json/candidateSource.json');
         //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
-        dataFactory.getRequisitionStatusData = function (graphName, selectedBtn, companySelected) {
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-          /*    data = {
+    dataFactory.getRequisitionStatusData = function (graphName, selectedBtn, companySelected) {
+        // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        /*    data = {
               "companyName":"LambWeston",
               "graphName":"CandidatePipeline",
               "graphType":"Company",
@@ -104,12 +100,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 data: data
 
             });*/
-         return $http.get('json/getRequisitonStatus.json');
+        return $http.get('json/getRequisitonStatus.json');
         //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
-     dataFactory.getCandidateHistoryData = function (graphName, selectedBtn, companySelected) {
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-          /*    data = {
+    dataFactory.getCandidateHistoryData = function (graphName, selectedBtn, companySelected) {
+        // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        /*    data = {
               "companyName":"LambWeston",
               "graphName":"CandidatePipeline",
               "graphType":"Company",
@@ -124,12 +120,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 data: data
 
             });*/
-         return $http.get('json/candidateHistory.json');
+        return $http.get('json/candidateHistory.json');
         //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
     }
-     dataFactory.getRequisitionHistoryData = function (graphName, selectedBtn, companySelected) {
-       // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-          /*    data = {
+    dataFactory.getRequisitionHistoryData = function (graphName, selectedBtn, companySelected) {
+            // return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+            /*    data = {
               "companyName":"LambWeston",
               "graphName":"CandidatePipeline",
               "graphType":"Company",
@@ -144,25 +140,20 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 data: data
 
             });*/
-         return $http.get('json/requisitionHistory.json');
-        //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
-    }
-
-    // for engagements
+            return $http.get('json/requisitionHistory.json');
+            //  http://localhost:8080/RD-WebApp/dashboard/graphs/CandidatePipeline
+        }
+        // for engagements
     dataFactory.getEngagementDetailsTableList = function () {
-
         return $http.get(urlAPI + '/engagement/allEngagements');
     }
     dataFactory.getEngagementOther = function () {
-
         //return $http.get('json/engagementDetails.json')
     }
     dataFactory.getEngagementOverviewStatus = function () {
-
         return $http.get('json/engagementStatusdonut.json');
     }
     dataFactory.getEngagementOverviewIndustry = function () {
-
         return $http.get('json/engagementIndustrydonut.json');
     }
     dataFactory.getrequisitionCandidateTableList = function () {
@@ -170,24 +161,20 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
     dataFactory.postrequisitionApplicationList = function (data) {
         //return $http.get(urlAPI+'/Requisition/getPositionByRequisition');
-     /*   return $http({
-            method: 'POST',
-            url: urlAPI + '/Requisition/getPositionByRequisition',
-            data: data
-        });*/
-        return $http.get(urlAPI+'/Requisition/getApplicants/'+data)
-
-
-       // return $http.get('json/applicantList.json');
-    //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
-	}
-     dataFactory.getrequisitionCandidateList = function(positionID){
-		//return $http.get('json/requisitionCandidateList.json');
-      //  positionID = 9343;
-
+        /*   return $http({
+               method: 'POST',
+               url: urlAPI + '/Requisition/getPositionByRequisition',
+               data: data
+           });*/
+        return $http.get(urlAPI + '/Requisition/getApplicants/' + data)
+            // return $http.get('json/applicantList.json');
+            //  https://api.recruiterdesktop.kf4d-dev.com//RD-WebApp/Requisition/getPositionByRequisition
+    }
+    dataFactory.getrequisitionCandidateList = function (positionID) {
+        //return $http.get('json/requisitionCandidateList.json');
+        //  positionID = 9343;
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
     }
-
     dataFactory.pdfDetailsList = function () {
         return $http.get(urlAPI + '/Profile/getAllDocuments')
     }
@@ -197,8 +184,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.requisitionDocDetailsList = function () {
         return $http.get('json/requisitionPdfDoc.json')
     }
-
-    dataFactory.jobProfileDocDetailsList = function(engagmentID){
+    dataFactory.jobProfileDocDetailsList = function (engagmentID) {
         /*var data = {
               "Documents": [
                 "string"
@@ -209,44 +195,37 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
               "requisition": 0
             }*/
         {
-          var data ={
-              "Documents": [
+            var data = {
+                "Documents": [
                   "string"
-              ],
-          "documentId": 0,
-          "engagementId": engagmentID,
-          "function": " ",
-          "requisition": 0
+              ]
+                , "documentId": 0
+                , "engagementId": engagmentID
+                , "function": " "
+                , "requisition": 0
+            }
         }
-  }
-
-
         return $http({
-            method: 'POST',
-            url: urlAPI+'/Profile/getDocumentByEngagement',
-
-            data: data
-
+            method: 'POST'
+            , url: urlAPI + '/Profile/getDocumentByEngagement'
+            , data: data
         });
         //return $http.get('json/jobProfileDoc.json')
     }
     dataFactory.getIframeList = function () {
         return $http.get('json/iframeUrl.json')
     }
-
     dataFactory.postSaveEngagement = function (data) {
             return $http({
-                method: 'POST',
-                url: urlAPI + '/Profile/saveDocumentToEngagement',
-                data: data
-
+                method: 'POST'
+                , url: urlAPI + '/Profile/saveDocumentToEngagement'
+                , data: data
             });
-
         }
         //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function (engagementId) {
         // return $http.get('json/RequisitionList.json')
-       // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
+        // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
         return $http.get('json/RequisitionforEngagment.json');
     }
     dataFactory.getViewRequisition = function () {
@@ -254,124 +233,104 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
     dataFactory.postDocumentByEngagement = function (data) {
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Profile/getDocumentByEngagement',
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Profile/getDocumentByEngagement'
+            , data: data
         });
     }
     dataFactory.postEngagmentRequisitionTable = function (data) {
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Profile/getDocumentByEngagement',
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Profile/getDocumentByEngagement'
+            , data: data
         });
     }
-
     dataFactory.getDocumentByRequisition = function (data) {
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Profile/getDocumentByRequisition',
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Profile/getDocumentByRequisition'
+            , data: data
         })
     }
-
     dataFactory.sendRequisition = function (data) {
         data['orgID'] = '6';
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Requisition/viewRequisition',
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Requisition/viewRequisition'
+            , data: data
         });
     }
-
     dataFactory.getAryaJobId = function (id) {
         var orgId = '6';
         return $http.get(urlAPI + '/Requisition/getAryaJobID/' + orgId + '/' + id);
     }
-
     dataFactory.getRequisitionSearch = function (values) {
         var orgId = values.orgId
         var jobId = values.jobId;
         var count = values.limit
         var start = values.page * count;
-
         var url = urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
-
-
-        return $http.get(url)
-            .then(getAryaCandidatesComplete)
-            .catch(function (message) {
-                exception.catcher('XHR Failed for getAvengers')(message);
-                $location.url('/');
-            });
+        return $http.get(url).then(getAryaCandidatesComplete).catch(function (message) {
+            exception.catcher('XHR Failed for getAvengers')(message);
+            $location.url('/');
+        });
 
         function getAryaCandidatesComplete(data, status, headers, config) {
             return data;
         }
-
     }
-
     dataFactory.saveNewSearch = function (data) {
         // TODO: Get rid of hardcoded orgId will come from SSO
         var orgId = "6";
-
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Requisition/createJob/' + orgId,
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Requisition/createJob/' + orgId
+            , data: data
         });
     };
-
     dataFactory.rallyVerse = function () {
         // console.log('getInfo');
         //res.removeHeader('Transfer-Encoding');
         //$cookies.remove('RD-Access-Token');
         //  delete  $http.defaults.headers.common['RD-Access-Token'] // Remove header before call
         return $http({
-            method: 'GET',
-            url: 'https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/',
-            headers: {
-                'RD-Access-Token': undefined
-            }
-        })
-
-        //}
-        //return (req)
-        //var authToken = $cookies.get('RD-Access-Token');
-
-        // $http.defaults.headers.common['RD-Access-Token'] = authToken
+                method: 'GET'
+                , url: 'https://api.rallyverse.com/v1/profiles/2446/lists/content-hub/'
+                , headers: {
+                    'RD-Access-Token': undefined
+                }
+            })
+            //}
+            //return (req)
+            //var authToken = $cookies.get('RD-Access-Token');
+            // $http.defaults.headers.common['RD-Access-Token'] = authToken
     }
-
     dataFactory.getviewCandidate = function (id) {
         return $http({
-            method: 'GET',
-            url: urlAPI + '/Candidate/viewCandidate/' + id,
-            // data : id
+            method: 'GET'
+            , url: urlAPI + '/Candidate/viewCandidate/' + id, // data : id
         })
     };
     dataFactory.getLogOut = function () {
         // return $http.get('json/RequisitionList.json')
         return $http.get(urlAPI + '/user/logout');
     }
-
     dataFactory.getSavedSearchesResponse = function (data) {
         var orgId = data.orgId;
         var limit = data.limit;
         var page = data.page * limit;
-       // return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
-      return $http.get('json/Savedsearch.json')
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
+        //return $http.get('json/Savedsearch.json')
     }
-
     dataFactory.getJobDescription = function (data) {
         return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
     }
-
-     dataFactory.getPDF = function(url) {
-
-        return $http.get(url,  {responseType: 'arraybuffer'});
-
+    dataFactory.getPDF = function (url) {
+        return $http.get(url, {
+            responseType: 'arraybuffer'
+        });
     }
-      dataFactory.resumeGetPDF = function(url) {
+    dataFactory.resumeGetPDF = function (url) {
         /*  return $http({
              method: 'GET',
              url: url,
@@ -381,113 +340,125 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
              responseType: 'arraybuffer'
 
             })*/
-         return $http.get(  'https://integrations.loopworks.com/api/candidate/get/35269247/true');
-
-                   // return $http.get(url,  {responseType: 'arraybuffer'});
+        return $http.get('https://integrations.loopworks.com/api/candidate/get/35269247/true');
+        // return $http.get(url,  {responseType: 'arraybuffer'});
     }
-
-
     dataFactory.getCandidateHistory = function (id, position) {
         position = 9343;
         id = 35215751;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + position + '/' + id);
     }
-
     dataFactory.getCandidateDocuments = function (id) {
         return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
     }
-
     dataFactory.getNoteToCandidate = function (data) {
         return $http({
-            method: 'POST',
-            url: urlAPI + '/Candidate/addNoteToCandidate/',
-            data: data
+            method: 'POST'
+            , url: urlAPI + '/Candidate/addNoteToCandidate/'
+            , data: data
         });
     }
-
-    dataFactory.getViewAllNotes = function(id){
+    dataFactory.getViewAllNotes = function (id) {
         return $http.get(urlAPI + '/Candidate/viewAllNote/' + id);
     }
-     dataFactory.postHayGroupLink = function (creditentialDtls) {
-            return $http({
-                method: 'POST',
-                url: urlHayGroupAction,
-                headers: {
+    dataFactory.getAllTags = function () {
+        return $http.get(urlAPI + '/Candidate/allTag');
+    }
+    dataFactory.addTag = function (id, tag) {
+        return $http({
+            method: 'POST'
+            , url: urlAPI + '/Candidate/AddTag'
+            , data: {
+                "candidateId": id
+                , "tag": tag
+            }
+        });
+    }
+    dataFactory.removeTag = function (id, tag) {
+        return $http({
+            method: 'POST'
+            , url: urlAPI + '/Candidate/removeTag'
+            , data: {
+                "candidateId": id
+                , "tag": tag
+            }
+        });
+    }
+    dataFactory.postHayGroupLink = function (creditentialDtls) {
+        return $http({
+            method: 'POST'
+            , url: urlHayGroupAction
+            , headers: {
                 'RD-Access-Token': undefined
-            },
-
-                data: {"outageUnfinished":false,"username":creditentialDtls.activateName,"password":creditentialDtls.activatePassword}
-
-            });
-
-        }
-      dataFactory.aryaStatusSelected = function(orgID, aryaJobId, aryaStatus){
-        if(aryaStatus == "Active"){
+            }
+            , data: {
+                "outageUnfinished": false
+                , "username": creditentialDtls.activateName
+                , "password": creditentialDtls.activatePassword
+            }
+        });
+    }
+    dataFactory.aryaStatusSelected = function (orgID, aryaJobId, aryaStatus) {
+        if (aryaStatus == "Active") {
             aryaStatus = 'activate';
-        }else{
+        }
+        else {
             aryaStatus = 'deactivate';
         }
-            return  $http({
-                method: 'POST',
-                url:  urlAPI + '/Requisition/updateAryaActivateStatus/'+orgID+'/'+aryaJobId,
-                data: {  "action": aryaStatus}
-
-
-
-            });
+        return $http({
+            method: 'POST'
+            , url: urlAPI + '/Requisition/updateAryaActivateStatus/' + orgID + '/' + aryaJobId
+            , data: {
+                "action": aryaStatus
+            }
+        });
     }
-
     return dataFactory;
 }]);
-
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', function (Factory, sharedProperties, $uibModal, $location) {
     var commonFunctions = {};
-
     commonFunctions.getIframeUrl = function (key) {
         var iFrameArray = sharedProperties.getIframeLinks();
         return iFrameArray[0][key];
     }
-
     commonFunctions.openIframe = function (url) {
         var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: 'modalContent.html',
-            controller: 'ModalCancel',
-            size: 'lg',
-            resolve: {
+            animation: true
+            , templateUrl: 'modalContent.html'
+            , controller: 'ModalCancel'
+            , size: 'lg'
+            , resolve: {
                 url: function () {
                     return url;
                 }
             }
         });
     }
-     commonFunctions.openIframeAriyaCount = function (url) {
+    commonFunctions.openIframeAriyaCount = function (url) {
         var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: 'modalAryaCount.html',
-            controller: 'ModalCancel',
-            size: 'lg',
-            resolve: {
+            animation: true
+            , templateUrl: 'modalAryaCount.html'
+            , controller: 'ModalCancel'
+            , size: 'lg'
+            , resolve: {
                 url: function () {
                     return url;
                 }
             }
         });
     }
-
     commonFunctions.error = function (message) {
         $uibModal.open({
-            animation: true,
-            templateUrl: 'LoadError.html',
-            controller: 'LoadError',
-            resolve: {
+            animation: true
+            , templateUrl: 'LoadError.html'
+            , controller: 'LoadError'
+            , resolve: {
                 message: function () {
                     return message;
                 }
             }
         })
     }
-
     commonFunctions.changeActivelink = function (row, htmlPath) {
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
@@ -495,8 +466,6 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         sharedProperties.setClientJobID(row.ReqNumber)
         console.log(row);
         $location.path(htmlPath);
-
-
         /*var promise = Factory.sendRequisition(row);
         promise.then(
           function resolved(response) {
@@ -511,10 +480,8 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
           }
       )*/
     }
-
     return commonFunctions;
 }]);
-
 app.service('sharedProperties', function () {
     var tabJobProfile = false;
     var tabDocumentation = false;
@@ -540,205 +507,133 @@ app.service('sharedProperties', function () {
     var ClientJobID = '';
     var noteDetails = {};
     var savedSearchDetails = {};
-
     var viewCandidateId = '';
-
     var reportURL = '';
-
     var candidateListDetails = [];
     var activeUserName = '';
     var activePassword = '';
     var selectedForesightGraph = '';
-
-
     return {
-        setAllNotesDetails(data){
+        setAllNotesDetails(data) {
             noteDetails = data;
-        },
-        getAllNotesDetails() {
+        }, getAllNotesDetails() {
             return noteDetails;
-        },
-        setSelectedForesightGraph(data){
+        }, setSelectedForesightGraph(data) {
             selectedForesightGraph = data;
-        },
-        getSelectedForesightGraph() {
+        }, getSelectedForesightGraph() {
             return selectedForesightGraph;
-        },
-        setSavedSearchDetails(data){
+        }, setSavedSearchDetails(data) {
             savedSearchDetails = data;
-        },
-        getSavedSearchDetails() {
+        }, getSavedSearchDetails() {
             return savedSearchDetails;
-        },
-        setNewSearchData: function (value) {
+        }, setNewSearchData: function (value) {
             newSearchData = value;
-        },
-        getNewSearchData: function () {
+        }, getNewSearchData: function () {
             return newSearchData;
-        },
-        setPositionId: function (value) {
+        }, setPositionId: function (value) {
             positionId = value;
-        },
-        getPositionId: function () {
+        }, getPositionId: function () {
             return positionId;
-        },
-        setInitiateSearchData: function (value) {
+        }, setInitiateSearchData: function (value) {
             initiateSearchData = value;
-        },
-        getInitiateSearchData: function () {
+        }, getInitiateSearchData: function () {
             return initiateSearchData;
-        },
-        setCandidateListDetails: function (value) {
+        }, setCandidateListDetails: function (value) {
             candidateListDetails = value;
-        },
-        getCandidateListDetails: function () {
+        }, getCandidateListDetails: function () {
             return candidateListDetails;
-        },
-        setUserName: function (value) {
+        }, setUserName: function (value) {
             userName = value
-        },
-        getUserName: function () {
+        }, getUserName: function () {
             return userName;
-        },
-         setPassword: function (value) {
+        }, setPassword: function (value) {
             password = value
-        },
-        getPassword: function () {
+        }, getPassword: function () {
             return password;
-        },
-          setActiveUserName: function (value) {
+        }, setActiveUserName: function (value) {
             activeUserName = value
-        },
-        getActiveUserNameName: function () {
+        }, getActiveUserNameName: function () {
             return activeUserName;
-        },
-        setActivePassword: function (value) {
+        }, setActivePassword: function (value) {
             activePassword = value
-        },
-        getActivePassword: function () {
+        }, getActivePassword: function () {
             return activePassword;
-        },
-
-        setReportURL: function (value) {
+        }, setReportURL: function (value) {
             reportURL = value
-        },
-        getReportURL: function () {
+        }, getReportURL: function () {
             return reportURL;
-        },
-        setViewCandidateId: function (value) {
+        }, setViewCandidateId: function (value) {
             viewCandidateId = value;
-        },
-        getViewCandidateId: function () {
+        }, getViewCandidateId: function () {
             return viewCandidateId;
-        },
-        setJobId: function (value) {
+        }, setJobId: function (value) {
             JobID = value;
-        },
-        getJobId: function () {
+        }, getJobId: function () {
             return JobID;
-        },
-        setClientJobID: function (value) {
+        }, setClientJobID: function (value) {
             ClientJobID = value;
-        },
-        getClientJobID: function () {
+        }, getClientJobID: function () {
             return ClientJobID;
-        },
-        setRequisitionTable: function (value) {
+        }, setRequisitionTable: function (value) {
             RequisitionTable = value;
-        },
-
-        getRequisitionTable: function () {
+        }, getRequisitionTable: function () {
             return RequisitionTable;
-        },
-
-        getAuthGlobalToken: function () {
+        }, getAuthGlobalToken: function () {
             return authGlobalToken;
-        },
-        setAuthGlobalToken: function (value) {
+        }, setAuthGlobalToken: function (value) {
             authGlobalToken = value;
-        },
-        getCounter: function () {
+        }, getCounter: function () {
             return counter;
-        },
-
-        setCounter: function (value) {
+        }, setCounter: function (value) {
             counter = value;
-        },
-        getRequisitionDetails: function () {
+        }, getRequisitionDetails: function () {
             return requisitionDetails;
-        },
-        setRequisitionDetails: function (value) {
+        }, setRequisitionDetails: function (value) {
             requisitionDetails = value;
-        },
-        getIframeLinks: function () {
+        }, getIframeLinks: function () {
             return iframeList;
-        },
-        setIframeLinks: function (value) {
+        }, setIframeLinks: function (value) {
             iframeList = value;
-        },
-        getprofileSelectedEngagementID: function () {
+        }, getprofileSelectedEngagementID: function () {
             return profileSelectedEngagementID
-        },
-        setprofileSelectedEngagementID: function (value) {
+        }, setprofileSelectedEngagementID: function (value) {
             profileSelectedEngagementID = value;
-        },
-        getprofileSelectedDocumentID: function () {
+        }, getprofileSelectedDocumentID: function () {
             return profileSelectedDocumentID;
-        },
-        setprofileSelectedDocumentID: function (value) {
+        }, setprofileSelectedDocumentID: function (value) {
             profileSelectedDocumentID = value
-        },
-        getengagementPerIDSelected: function () {
+        }, getengagementPerIDSelected: function () {
             return engagementPerIDSelected;
-        },
-        setengagementPerIDSelected: function (value) {
+        }, setengagementPerIDSelected: function (value) {
             engagementPerIDSelected = value
-        },
-        getprofileSelectedFunction: function () {
+        }, getprofileSelectedFunction: function () {
             return profileSelectedFunction;
-        },
-        setprofileSelectedFunction: function (value) {
+        }, setprofileSelectedFunction: function (value) {
             profileSelectedFunction = value
-        },
-        gettabJobProfile: function () {
+        }, gettabJobProfile: function () {
             return tabJobProfile;
-        },
-        settabJobProfile: function (value) {
+        }, settabJobProfile: function (value) {
             tabJobProfile = value;
-        },
-
-        gettabDocumentation: function () {
+        }, gettabDocumentation: function () {
             return tabDocumentation;
-        },
-        settabDocumentation: function (value) {
+        }, settabDocumentation: function (value) {
             tabDocumentation = value;
-        },
-
-        gettabSearchResults: function () {
+        }, gettabSearchResults: function () {
             return tabSearchResults;
-        },
-        settabSearchResults: function (value) {
+        }, settabSearchResults: function (value) {
             tabSearchResults = value;
-        },
-
-        gettabCandidateList: function () {
+        }, gettabCandidateList: function () {
             return tabCandidateList;
-        },
-        settabCandidateList: function (value) {
+        }, settabCandidateList: function (value) {
             tabCandidateList = value;
-        },
-        gettabApplicationList: function () {
+        }, gettabApplicationList: function () {
             return tabApplicationList;
-        },
-        settabApplicationList: function (value) {
+        }, settabApplicationList: function (value) {
             tabApplicationList = value;
-        },
-        getrowCollection: function () {
+        }, getrowCollection: function () {
             return rowCollection;
-        },
-        setrowCollection: function (value) {
+        }, setrowCollection: function (value) {
             rowCollection = value;
         }
-
     }
 });

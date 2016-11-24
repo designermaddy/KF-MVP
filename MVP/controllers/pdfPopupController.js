@@ -13,7 +13,7 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
         $scope.selectName = form;      
     }
         
-    $scope.openPdf = function (url) {
+    $scope.openPdf = function (url, filename) {
         var url = config.projectUrl + '/Profile/getDocumentById/' + url;
           var promise = Factory.getPDF(url);
         promise.then(
@@ -21,7 +21,7 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
                var file = new Blob([response.data], { type: 'application/pdf' });
              var fileURL = URL.createObjectURL(file);
              $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
-
+              $scope.fileName = filename;
                var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'
@@ -30,7 +30,12 @@ app.controller('pdfPopupController', ['$uibModal','$scope','Factory', 'sharedPro
             , resolve: {
                 url: function () {
                     return  $scope.pdfContent;
+                },
+                 filename: function () {
+                    return   $scope.fileName;
                 }
+
+
             }
         });
           },
@@ -237,3 +242,10 @@ $scope.saveEngagment = function(){
 }
 
         }]);
+app.controller('DocModalCtrl', ['$uibModalInstance', 'url','filename', '$scope', function ($uibModalInstance, url,filename, $scope) {
+    $scope.url = url;
+     $scope.fileName = filename;
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])
