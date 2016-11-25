@@ -1,0 +1,63 @@
+<div class="Heading2">
+    <h2>New Search</h2> </div>
+<div class="panel panel-default SearchBox"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
+    <div class="panel-body">
+        <div class="row MarBt15 clearfix">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Requisition </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Free Search </label>
+                </div>
+            </div>
+        </div>
+        <div class="row MarBt15 clearfix">
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel"> Requisition Name (or) ID <span class="Mandatory">*</span></label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="vm.name" uib-typeahead="address for address in requisition | filter:$viewValue | limitTo:8" typeahead-on-select="fillData($item, $model, $label, $event);"> </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel">Job Title (Search Name) <span class="Mandatory">*</span></label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="data.JobTitle"> </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel">Client Name</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="data.job_client"> </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel">Open Positions</label>
+                <input class="input-sm form-control" type="search" ng-model="data.NoOfPositions"> </div>
+        </div>
+        <div class="row MarBt15 clearfix">
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel">Country</label>
+                <input class="input-sm form-control" type="search" ng-model="data.Country"> </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="FormLabel">Location</label>
+                <input class="input-sm form-control" type="search" ng-model="data.Location"> </div>
+            <div class="col-sm-6 col-md-1 col-lg-1">
+                <label class="FormLabel">Zip Code</label>
+                <input class="input-sm form-control" type="search" ng-model="data.ZipCode"> </div>
+            <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
+                <label class="FormLabel"> Miles</label>
+                <select id="selectMiles" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)"></select>
+            </div>
+        </div>
+        <div class="row MarBt15 clearfix">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <label class="FormLabel">Job Title Synonyms</label>
+                <input class="input-sm form-control" type="search" ng-model="data.JobTitle_Synonyms"> </div>
+            <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
+                <label class="FormLabel"> Status</label>
+                <select class="selectpicker form-control"></select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default SearchBox">
+    <div class="panel-body">
+        <div class="row clearfix">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <label class="FormLabel"> Search Criteria</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="data.SearchString"> </div>
+        </div>
+    </div>
+</div>

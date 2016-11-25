@@ -409,8 +409,21 @@ textarea							                     { width:100%; height:100px; }
 .rzslider .rz-bar.rz-selection			                          { background: #86C6DB;}
 .rzslider .rz-pointer					                          { background-color: #036685;}
 
+<<<<<<< HEAD
+=======
+.InputTextBox .InputText                                           { position: absolute; top: 13px; background-color:#ccc; padding:6px; }
+.InputTextBox input[type="search"].FormInput                       { padding-left:70px; }
+
+>>>>>>> origin/master
 .ui-menu .ui-menu-item                                              { padding: 0 !important; }
 .ui-menu-item-wrapper                                               { padding: 3px 1em 3px 0.4em !important; }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active                                  { background-image: none !important; background-color: #ccc !important; }
+<<<<<<< HEAD
+=======
+
+.DownloadLink ul                                                    { list-style: none; }
+.DownloadLink ul li                                                 { float: left; }
+.DownloadLink ul li.disabled a                                      { color:#333; }
+>>>>>>> origin/master

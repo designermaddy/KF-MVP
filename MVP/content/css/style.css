@@ -72,6 +72,7 @@ hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .mr4                                            { margin-right:4%; }
 
 .fl												{float:left;}
+.Mandatory                                      { color: #f00; font-size:14px; }
 /* --------------------------- Color Style ---------------------------------- */
 .BG-RED                                         { background-color:#D40A1c }
 .BG-YELLOW                                      { background-color:#ffa500; }

@@ -4,34 +4,25 @@
     <div class="col-md-8">
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
-                <div ng-bind-html="vm.data.Description"></div>
+            <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default ViewBox">
             <div class="panel-body">
-                <div class="Heading2 HeadingFloat clearfix">
-                    <h2>Job Type</h2> </div>
-                <div class="RadioGroup SearchRadioGroup">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active" style="width:33.3%">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Full Time </label>
-                        <label class="btn btn-default" style="width:33.3%">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Part Time </label>
-                        <label class="btn btn-default" style="width:33.3%">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Contract </label>
-                    </div>
-                </div>
-                <div class="Heading2 HeadingFloat clearfix">
-                    <h2>Pay Rate</h2> </div>
-                <div class="FormBox MarBt15">
-                    <label class="FormLabel"> Rate </label>
+                <div class="row">
+                <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                    <label class="FormLabel"> Job Type </label>
                     <input class="input-sm form-control FormInput" type="search"> </div>
-                <div class="FormBox MarBt15">
-                    <label class="FormLabel"> Experience (Years) </label>
-                    <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
+                <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                    <label class="FormLabel"> Pay Rate </label>
+                    <input class="input-sm form-control FormInput" type="search"> </div>
+<div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                <label class="FormLabel"> Experience (Years) </label>
+                <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
                 </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -96,5 +87,6 @@
     </div>
 </div>
 <div class="row MarBt15">
-    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a href="#RequisitionDetails/3" class="btn btn-primary btn-save btn-konferry" ng-click="vm.save()">Save</a> <a href="#" class="btn btn-default disabled btn-cancel btn-konferry">Cancel</a> </div>
+    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a class="btn btn-primary pull-right" ng-click="save()">Save</save>
+        <a href="#" class="btn btn-default disabled pull-right">Cancel</a> </div>
 </div>
