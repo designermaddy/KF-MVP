@@ -8,7 +8,7 @@
         hayGroupUrl:'https://testactivate.haygroup.biz/autologin.html#/',
         hayGroupAction:'https://testactivate.haygroup.biz/v1/actions/login',
         foreSightGraph:'https://foresightstage.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop',
-        production : 1 //0 -> dev, 1 -> qa, 9 -> prod
+        production : 0 //0 -> dev, 1 -> qa, 9 -> prod
     };
 
     if (config.production === 0){

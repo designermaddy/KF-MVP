@@ -343,13 +343,19 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get('https://integrations.loopworks.com/api/candidate/get/35269247/true');
         // return $http.get(url,  {responseType: 'arraybuffer'});
     }
+     /** ------- Candidate Details page api's -------**/
+    dataFactory.getCandidateStatus = function (posId, canId) {
+        return $http.get(urlAPI + '/Candidate/CandidateStatus/' + posId + '/' + canId);
+    }
     dataFactory.getCandidateHistory = function (id) {
         //id = 35273950;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + id);
     }
 
     dataFactory.getCandidateResume = function(id){
-        return $http.get(urlAPI + '/Candidate/candidateResume/' + id);
+        return $http.get(urlAPI + '/Candidate/candidateResume/' + id, {
+            responseType: 'arraybuffer'
+        });
     }
 
     dataFactory.getCandidateRequisition = function(id) {
@@ -443,16 +449,27 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             }
         });
     }
-    commonFunctions.openIframeAriyaCount = function (url) {
+    commonFunctions.openIframeAriyaCount = function (action, userName, password, ReturnUrl) {
         var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'modalAryaCount.html'
-            , controller: 'ModalCancel'
+            , controller: 'modalAryaController'
             , size: 'lg'
             , resolve: {
-                url: function () {
-                    return url;
+
+                 userName: function () {
+                    return  userName;
+                },
+                password: function () {
+                    return  password;
+                },
+                ReturnUrl: function () {
+                    return  ReturnUrl;
+                },
+                 action: function () {
+                    return  action;
                 }
+
             }
         });
     }
