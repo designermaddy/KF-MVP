@@ -223,7 +223,7 @@
                 <li role="presentation" class="dropdown Help disabled">
                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false"> <i class="fa fa-question"></i> </a>
                 </li>
-                <li class="UserProfile" ng-controller="headerController">
+                <!--<li class="UserProfile" ng-controller="headerController">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="content/images/user.jpg" alt=""> <span class=" fa fa-angle-down"></span> </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                         <li>
@@ -246,6 +246,33 @@
                                
                             </div>
                              <div class="UserProfileFooter clearfix"> <a class="pull-right" href="#"><img src="content/images/logout_icon.png"/> Logout</a> </div>
+                        </li>
+                    </ul>
+                </li>-->
+                <li class="UserProfile" ng-controller="headerController">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="content/images/user.jpg" alt=""> <span class=" fa fa-angle-down"></span> </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li>
+                            <div class="UserProfileBox">
+                                <div class="UserProfileContent">
+                                    <div class="UserProfileLang"><span class="IconFlag"><img src="content/images/icon-us-flag.jpg"></span><span class="Lang">English</span></div>
+                                    <div class="UserProfileImage"><img src="content/images/user.jpg" alt=""></div>
+                                    <div class="UserProfileDetails">
+                                        <div class="UserProfileNew">{{name}}</div>
+                                        <div class="UserProfileDesignation">{{designation}}</div>
+                                        <div class="UserProfileDesignation">{{email}}</div>
+                                        <div class="UserProfileEdit"><!--<a class="disabled" herf="#">--><i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile<!--</a>--></div>
+                                    </div>
+                                </div>
+                                <div class="UserProfileNav">
+                                    <div class="ButtonSection ProfileButton">
+                                        <button type="submit" class="btn btn-white btn-sm disabled"><i class="fa fa-user" aria-hidden="true"></i> My Profile</button>
+                                        <button type="submit" class="btn btn-white btn-sm disabled"><i class="fa fa-cog" aria-hidden="true"></i> Settings</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                             <div class="UserProfileFooter clearfix"> <a class="pull-right"  ng-click="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a> </div>
                         </li>
                     </ul>
                 </li>
