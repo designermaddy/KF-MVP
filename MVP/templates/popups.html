@@ -68,6 +68,32 @@
     <li class="TotalPage"><span>{{ totalPages }} </span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
 </script>
+<!-- Requistion Candidate Detials Requistion link Popover -->
+<script type="text/ng-template" id="rcdrpt.html">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Requisition</th>
+                        <th>Engagement</th>
+                        <th>Recruiter Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody> <span us-spinner="{radius:10, width:2, length: 4}"></span>
+                    <tr ng-repeat="row in canReq  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                        <td>
+                            <a>{{row.requisitionNumber}}</a>&nbsp{{row.requisitionTitle}}
+                        </td>
+                        <td>{{row.RequisitionName}}</td>
+                        <td>{{row.recruiter}}</td>
+                        <td>{{row.stepName}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
 <!-- Dashboard Foresight Graph Popover -->
 <script type="text/ng-template" id="myPopoverTemplate.html">
     <div class="row">

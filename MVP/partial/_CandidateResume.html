@@ -1,12 +1,9 @@
-<div class="panel panel-default WidgetProfile" ng-controller="viewCandidateController">
+<div class="panel panel-default WidgetProfile">
     <div class="panel-body">
-      <p>
-      {{resumeContent}}
-    </p>
+        <span us-spinner="{radius:10, width:2, length: 4}"></span>
+            <embed ng-src="{{pdfContent}}" type="application/pdf" style="width:100%; height:1000px" />
 
-
-
-<!--        <div class="WidgetProfileBox">
+        <!--        <div class="WidgetProfileBox">
             <h3>Summary</h3>
             <div class="ResumeDescription">
                 <p>Senior executive in multinational companies with 20 years of proven track record in Integrated Supply Chain Leadership across a wide variety of companies such as: The Coca-Cola Co, Frito-Lay Int, Abbott Laboratories, Bristol-Myers Squibb, General Mills, Innophos, Becton-Dickinson and MSD in Mexico, Europe and Central America &amp; Caribbean Region (Nafta, Caricom, Euro zone).</p>
@@ -38,6 +35,5 @@
                 <p>Responsible for all Supply Chain process for the Region with sourcings in USA, CAN, Europe to attend Mexico &amp; CCA Market. Also responsible for Exports to Europe and USA.</p>
                 <p>Supporting Bioscience, Diagnostics, Diabetes, Medical Surgical, Pre-Anallytical and Injections Systems Business Units in Mexico & CCA</p>
             </div>
-        </div>-->
-    </div>
+        </div>--></div>
 </div>

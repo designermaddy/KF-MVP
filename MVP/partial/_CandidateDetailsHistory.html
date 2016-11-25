@@ -14,14 +14,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr  ng-repeat="candidateListDtls in filtered = HistoryList | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                 <tr  ng-repeat="row in historyList | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 
-                    <td st-toggle-item>{{candidateListDtls.teimstamp}}</td>
-                    <td st-toggle-item>{{candidateListDtls.location.city}}</td>
-                    <td st-toggle-item>{{candidateListDtls.stepName}}</td>
-                    <td st-toggle-item>{{candidateListDtls.source}}</td>
-                    <td st-toggle-item>{{candidateListDtls.dateModified | date:dd.mm.yy }}</td>
-                    <td st-toggle-item>{{candidateListDtls.Status}}</td>
+                    <td st-toggle-item>{{row.dateCreated | date:dd.mm.yyyy}}</td>
+                    <td st-toggle-item>{{row.type}}</td>
+                    <td st-toggle-item>{{row.name}}</td>
+                    <td st-toggle-item>{{row.status}}</td>
+                    <td st-toggle-item>{{row.comment  }}</td>
+                    <td st-toggle-item>{{row.userName}}</td>
                 </tr>
             </tbody>
         </table>

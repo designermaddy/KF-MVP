@@ -6,14 +6,14 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
   var graphName = 'RequisitionGoal';//'CandidatePipeline';
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
-      if(selectedButton == "myReqs"){
+      if(selectedButton == "mygraph"){
             $("#clientReqs").removeClass('active');
             $('#myReqs').addClass('active');
-      }else if(selectedButton == "clientReqs"){
+      }else if(selectedButton == "company"){
            $("#myReqs").removeClass('active');
            $('#clientReqs').addClass('active');
       }
-
+ requisitonGoalStackBarChart(graphName, $scope.selectedButton );
 
   }
 
@@ -24,7 +24,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
           function resolved(response) {
               if( response.data.graphDetails){
               deeplinkURL = response.data.graphDetails.deepLinkURI;
-
+              datas = [];
 
                datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
               datas.push(JSON.parse("[" +response.data.graphDetails.data["Nearly Due"] + "]"));
@@ -44,6 +44,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
         }]
       }
     };
+
   //  $scope.data = datas
  //  console.log("karthik"+$scope.data)
                /*
@@ -78,7 +79,24 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
              // globalDetails.userTypeID = response.data.userTypeId;
              // globalDetails.userId = response.data.userid;
              // globalDetails.userType = response.data.userType
+          }else{
+               $scope.data = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0]
+    ];
           }
+               $scope.type = 'StackedBar';
+
+    $scope.options = {
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    };
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);

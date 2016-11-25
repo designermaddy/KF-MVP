@@ -343,12 +343,21 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get('https://integrations.loopworks.com/api/candidate/get/35269247/true');
         // return $http.get(url,  {responseType: 'arraybuffer'});
     }
-    dataFactory.getCandidateHistory = function (id, position) {
-        position = 9343;
-        id = 35215751;
-        return $http.get(urlAPI + '/Candidate/CandidateHistory/' + position + '/' + id);
+    dataFactory.getCandidateHistory = function (id) {
+        //id = 35273950;
+        return $http.get(urlAPI + '/Candidate/CandidateHistory/' + id);
     }
+
+    dataFactory.getCandidateResume = function(id){
+        return $http.get(urlAPI + '/Candidate/candidateResume/' + id);
+    }
+
+    dataFactory.getCandidateRequisition = function(id) {
+        return $http.get(urlAPI + '/Candidate/CandidateRequisition/' + id);
+    }
+
     dataFactory.getCandidateDocuments = function (id) {
+        id = 35107633;
         return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
     }
     dataFactory.getNoteToCandidate = function (data) {

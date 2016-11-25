@@ -14,7 +14,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
                     $scope.viewLoading = true;
                     $scope.currentPage = 1;
                     $scope.totalItems = $scope.rowCollection.length;
-                    $scope.entryLimit = 12; // items per page
+                    $scope.entryLimit = 10; // items per page
                     $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
                 }
             }, function rejected(response) {

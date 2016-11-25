@@ -1,1 +1,8 @@
-_CandidateDocuments
+<ul class="clearfix">
+    <li ng-repeat="doc in doclist  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+        <div class="WidgetPDBox">
+            <div class="WidgetPDContent"><img src="content/images/pdf.jpg" ng-click="openPdf(doc.url)"> </div>
+            <div class="WidgetPDFooter">{{doc.fileName}}</div>
+        </div>
+    </li>
+</ul>

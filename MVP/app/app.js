@@ -7,7 +7,7 @@ app.run(function ($http, sharedProperties, $cookies, config) {
 
         var authToken = $cookies.get('RD-Access-Token');
         if (config.production < 9) {
-        var authToken = "cmRBdXRoVG9rZW46TnpNeFlqYzVPR0V0T0RnMU55MDBZbUkxTFRsaU9XVXROakl3TkdabE9URXlaamt5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDphNGQ2M2NhNy04Y2Y5LTQxY2ItYWJiNS1kNGIyMGJmZTkxZTMsYXJ5YVVzZXJJZDp1ZGF5YW5AbW9iYWNrLmNvbSxhcnlhUGFzc3dvcmQ6V2VsY29tZUAxMjMsYWN0aXZhdGVVc2VySWQ6dWRheW5AbW9iYWNrLmNvbSxhY3RpdmF0ZVBhc3N3b3JkOktvcm5GM3JyeSEsbmFtZTpVZGF5LGZpcnN0TmFtZTpVZGF5LGxhc3ROYW1lOk5heWFrLGRpc3BsYXlOYW1lOlVkYXlO"
+        var authToken = config.token
         }
 
         if (authToken) {
@@ -72,3 +72,14 @@ app.controller('LoadError', ['$uibModalInstance', 'message', '$scope', function 
         $uibModalInstance.dismiss('cancel');
     }
 }]);
+app.config(['ChartJsProvider', function (ChartJsProvider) {
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      chartColors: ['#568E30', '#ffff00', '#d40a1c'],
+     // responsive: false
+    });
+    // Configure all line charts
+    ChartJsProvider.setOptions('line', {
+      //showLines: false
+    });
+  }])

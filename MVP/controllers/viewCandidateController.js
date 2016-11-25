@@ -10,7 +10,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                 if (sharedProperties.getCandidateListDetails()) {
                     var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
                     var link = urlResumeLink.resumeLink
-                    $scope.resumeContent = $scope.row.resume;
+                    //$scope.resumeContent = $scope.row.resume;
                     $scope.currentEmployer = $scope.row.profile.currentEmployer
                     $scope.currentJobTitle = $scope.row.profile.currentJobTitle
                     $scope.jobFunction = $scope.row.profile.jobFunction
@@ -50,6 +50,13 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
+              var pro = Factory.getCandidateRequisition(id);
+            pro.then(function resolved(response){
+                $scope.canReq = response.data.candidateRequisition;
+                console.log($scope.canReq);
+            }, function rejected(response){
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            });
         }
     }
     updateNotes = function (notes) {}

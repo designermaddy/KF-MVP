@@ -60,7 +60,7 @@
             }else if (checkReq()) {
                 callBackend();
             }else {
-                commonFunctions.error('Please select a valid Requisition Number or ID');
+                commonFunctions.error('Please select a valid Invalid Requisition NUMBER or ID');
             }
         }
 
