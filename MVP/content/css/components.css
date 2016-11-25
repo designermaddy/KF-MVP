@@ -317,8 +317,8 @@
 /* --------------------------- jobDetails Style ---------------------------------- */
 .jobDetails												{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
 
-.jobWeightagerow										{ 	background-color: #fff; box-shadow: 0px 0px 2px #888888; }
-.btn-selected							        {  background-color:#6cce22 !important; }
+.jobWeightagerow										{ background-color: #fff; box-shadow: 0px 0px 2px #888888; }
+.btn-screened							                {  background-color:#6cce22 !important; }
 
 .btn-konferry											{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
 .btn-save												{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
