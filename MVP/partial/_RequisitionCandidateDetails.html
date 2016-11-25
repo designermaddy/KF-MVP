@@ -41,7 +41,7 @@
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Source </div>
                                 </div>
-                                <div class="col-md-7 pull-right pt3"> <a href="#">Show in 4 other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
+                                <div class="col-md-7 pull-right pt3"> <a uib-popover-template = "'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen" ng-click="">Show in 4 other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -52,7 +52,13 @@
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Download </div>
                                 </div>
-                                <div class="col-md-9 pull-right pt3"> <a href="#">Resume  |</a> <a href="#">Assessment Report  |</a> <a href="#">Interview</a> </div>
+                                <div class="col-md-9 pull-right pt3 DownloadLink">
+                                    <ul>
+                                    <li class="disabled"><a class="disabled" >Resume </a>  |</li>
+                                    <li class="disabled"><a class="disabled" >Assessment Report  </a> |</li>
+                                    <li class="disabled"><a  >Interview</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

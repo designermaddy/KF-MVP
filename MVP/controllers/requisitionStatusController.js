@@ -5,15 +5,15 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
      $scope.selectedButton = 'company';
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
-      if(selectedButton == "myReqs"){
-            $("#clientReqs").removeClass('active');
-        $('#myReqs').addClass('active');
-      }else if(selectedButton == "clientReqs"){
-           $("#myReqs").removeClass('active');
-        $('#clientReqs').addClass('active');
+        if(selectedButton == "mygraph"){
+            $("#clientReqsSource").removeClass('active');
+        $('#myReqsSource').addClass('active');
+      }else if(selectedButton == "company"){
+           $("#myReqsSource").removeClass('active');
+        $('#clientReqsSource').addClass('active');
       }
 
-
+ candidatePipelineDonutChart(graphName, $scope.selectedButton);
   }
  candidatePipelineDonutChart(graphName, $scope.selectedButton);
 
@@ -26,7 +26,7 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
           function resolved(response) {
               if(response.data.graphDetails){
                deeplinkURL = response.data.graphDetails.deepLinkURI;
-
+datas = [];
 
               // = response.data.candidateList;
                $scope.candidatePipelineData=[];
@@ -41,6 +41,9 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
 
                 }
 
+ }else{
+     data=[0,0,0]
+                $scope.candidatePipelineData.push( {"label":label,"data":data});
  }
           },
           function rejected(response) {

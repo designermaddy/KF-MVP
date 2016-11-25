@@ -6,14 +6,15 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
      $scope.selectedButton = 'company';
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
-      if(selectedButton == "myReqs"){
-            $("#clientReqs").removeClass('active');
-        $('#myReqs').addClass('active');
-      }else if(selectedButton == "clientReqs"){
-           $("#myReqs").removeClass('active');
-        $('#clientReqs').addClass('active');
+      if(selectedButton == "mygraph"){
+            $("#clientCandidateSource").removeClass('active');
+        $('#myCandidateSource').addClass('active');
+      }else if(selectedButton == "company"){
+           $("#myCandidateSource").removeClass('active');
+        $('#clientCandidateSource').addClass('active');
       }
 
+ candidatePipelineDonutChart(graphName, $scope.selectedButton);
 
   }
  candidatePipelineDonutChart(graphName, $scope.selectedButton);
@@ -23,6 +24,7 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
         var label = [];
         var data = [];
         var datainsert=[]
+         $scope.candidatePipelineData = []
         promise.then(
           function resolved(response) {
               if(response.data.graphDetails){
@@ -42,6 +44,9 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
 
                 }
 
+ }else{
+     data=[0,0,0]
+                $scope.candidatePipelineData.push( {"label":label,"data":data});
  }
           },
           function rejected(response) {

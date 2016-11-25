@@ -95,9 +95,66 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     // open iframe arya candidate
     $scope.openIframe = function(aryajobID){
        var url = config.iframeUrlAriyaSavedSearch+aryajobID
-      commonFunctions.openIframe(url)
+        $scope.ReturnUrl=url;
+        $scope.userName = sharedProperties.getUserName();
+        $scope.password = sharedProperties.getPassword();
+        $scope.action = config.iframeAction;
+        var url = config.projectUrl + '/Profile/getDocumentById/' + url;
+         /* var promise = Factory.getPDF(url);
+        promise.then(
+          function resolved(response) {
+               var file = new Blob([response.data], { type: 'application/pdf' });
+             var fileURL = URL.createObjectURL(file);
+             $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+              $scope.fileName = filename;
+               var modalInstance = $uibModal.open({
+            animation: true
+            , templateUrl: 'modalAryaCount.html'
+            , controller: 'modalAryaController'
+            , size: 'lg'
+            , resolve: {
+                url: function () {
+                    return  $scope.ReturnUrl;
+                },
+                 userName: function () {
+                    return   $scope.userName;
+                },
+                password: function () {
+                    return   $scope.password;
+                },
+                ReturnUrl: function () {
+                    return   $scope.ReturnUrl;
+                },
+                 action: function () {
+                    return   $scope.action;
+                }
+
+
+            }
+        });
+          },
+              function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+          }
+      )*/
+
+
+        // var url = config.iframeUrl;
        // url = url.replace("{candidateId}", candidateId);
-        //url=url.replace("{jobId}",  sharedProperties.getJobId());
+       // url=url.replace("{jobId}",  sharedProperties.getJobId());
+       /* userName = sharedProperties.getUserName();
+        password = sharedProperties.getPassword();
+        $("input[name='LoginName']").attr('value', userName);
+        $("input[name='Password']").attr('value', password);
+        $("input[name='ReturnUrl']").attr('value', url);
+        $('#arya').attr('action', config.iframeAction);
+        $('#arya').submit()*/
+      //  $('#searchResultdiv').hide();
+     /*   $('#searchListCandidateDetails').show();*/
+
+      commonFunctions.openIframeAriyaCount($scope.action,  $scope.userName,  $scope.password,  $scope.ReturnUrl)
+       // url = url.replace("{candidateId}", candidateId);
+       /* //url=url.replace("{jobId}",  sharedProperties.getJobId());
         userName = sharedProperties.getUserName();
         $scope.userName = sharedProperties.getUserName();
         password = sharedProperties.getPassword();
@@ -105,7 +162,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         $("input[name='Password']").attr('value', password);
         $("input[name='ReturnUrl']").attr('value', url);
         $('#arya').attr('action', config.iframeAction);
-        $('#arya').submit()
+        $('#arya').submit()*/
         //$('#searchResultdiv').hide();
         //$('#searchListCandidateDetails').hide();
 
@@ -147,3 +204,13 @@ app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce','sha
     }
 }])
 */
+app.controller('modalAryaController', ['$uibModalInstance', 'action', 'userName', 'password', 'ReturnUrl', '$scope', function ($uibModalInstance, action, userName, password, ReturnUrl, $scope) {
+    $scope.action = action;
+    $scope.userName = userName;
+    $scope.password = password;
+    $scope.ReturnUrl = ReturnUrl
+     $('#aryaCount').submit()
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])

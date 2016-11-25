@@ -313,7 +313,7 @@
 /* --------------------------- jobDetails Style ---------------------------------- */
 .jobDetails												{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
 .jobWeightagerow										{ 	background-color: #fff; box-shadow: 0px 0px 2px #888888; }
-.btn-screened							        {  background-color:#6cce22 !important; }
+.btn-selected							        {  background-color:#6cce22 !important; }
 .btn-konferry											{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
 .btn-save												{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
 .btn-cancel												{ color: #007da4 !important; background-color: #fff; border-color: #007da4; }
@@ -387,3 +387,7 @@ textarea							{  width:100%; height:100px; }
 .tooltip > .tooltip-inner 				{background-color: #ffffff;color:#333;width:600px;}
 .tooltip.top .tooltip-arrow				{background-color: #ffffff;}
 
+
+.DownloadLink ul                        { list-style: none; }
+.DownloadLink ul li                     { float: left; }
+.DownloadLink ul li.disabled a           { color:#333; padding:0 5px;  }
