@@ -319,7 +319,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var orgId = data.orgId;
         var limit = data.limit;
         var page = data.page * limit;
-        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + 0);
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
         //return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (data) {
@@ -344,9 +344,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get(url,  {responseType: 'arraybuffer'});
     }
      /** ------- Candidate Details page api's -------**/
-    dataFactory.getCandidateStatus = function (posId, canId) {
+  /*  dataFactory.getCandidateStatus = function (posId, canId) {
         return $http.get(urlAPI + '/Candidate/CandidateStatus/' + posId + '/' + canId);
-    }
+    }*/
     dataFactory.getCandidateHistory = function (id) {
         //id = 35273950;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + id);
@@ -363,7 +363,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
 
     dataFactory.getCandidateDocuments = function (id) {
-        id = 35107633;
+       // id = 35107633;
         return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
     }
     dataFactory.getNoteToCandidate = function (data) {

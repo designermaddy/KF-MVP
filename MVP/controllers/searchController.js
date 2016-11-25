@@ -99,7 +99,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         $scope.userName = sharedProperties.getUserName();
         $scope.password = sharedProperties.getPassword();
         $scope.action = config.iframeAction;
-        var url = config.projectUrl + '/Profile/getDocumentById/' + url;
+       // var url = config.projectUrl + '/Profile/getDocumentById/' + url;
          /* var promise = Factory.getPDF(url);
         promise.then(
           function resolved(response) {
@@ -152,7 +152,8 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
       //  $('#searchResultdiv').hide();
      /*   $('#searchListCandidateDetails').show();*/
 
-      commonFunctions.openIframeAriyaCount($scope.action,  $scope.userName,  $scope.password,  $scope.ReturnUrl)
+     // commonFunctions.openIframeAriyaCount($scope.action,  $scope.userName,  $scope.password,  $scope.ReturnUrl)
+         commonFunctions.openIframe(url)
        // url = url.replace("{candidateId}", candidateId);
        /* //url=url.replace("{jobId}",  sharedProperties.getJobId());
         userName = sharedProperties.getUserName();

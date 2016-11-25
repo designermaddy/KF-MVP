@@ -87,6 +87,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         $('.btn-selected').removeClass('btn-selected');
         var promise = Factory.getCandidateStatus(posId, canId);
         promise.then(function resolved(response) {
+            if(response.data){
             var i = 1;
             var step = response.data.workFlowStatu[0].stepName;
             if (step == 'Sourced') {
@@ -102,6 +103,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
                 i = 1;
             }
             $($('.candidateContact').find('button')[i - 1]).addClass('btn-selected');
+            }
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         });

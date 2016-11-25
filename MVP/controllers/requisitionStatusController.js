@@ -22,6 +22,7 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
         var label = [];
         var data = [];
         var datainsert=[]
+         $scope.candidatePipelineData = []
         promise.then(
           function resolved(response) {
               if(response.data.graphDetails){
