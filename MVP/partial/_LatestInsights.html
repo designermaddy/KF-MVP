@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="content/ralleyverse/css/hub.css">
 <div class="container-fluid clearfix MarTp15 RallyVerse">
+	<div class="Heading2 HeadingFloat clearfix">
+        <h2>Latest Insights</h2>
+    </div>
     <div id="messages" style="position: relative;" ng-controller="rallyVerseController" class="clearfix">
         <span us-spinner="{radius:10, width:2, length: 4}"></span>
         <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
@@ -32,6 +35,7 @@
                                 <div class="TextTitle"> {{slide.title1}} </div> <a href="{{slide.short_url1}}" target="_blank">{{slide.short_url1}}</a> </div>
                         </div>
                         <div class="meta-bar clearfix">
+
                             <!--<div class="logo-social-network logo-slideshare icon pull-left"></div>-->
                             <div class="source-name pull-left">{{slide.source1}}</div>
                         </div>
