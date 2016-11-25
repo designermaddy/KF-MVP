@@ -61,10 +61,21 @@ hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .mt20			                                { margin-top: 20px;}
 .mb25			                                { margin-bottom:25px;}
 .mt15					                        { margin-top:15px; }
+.mt7											{margin-top:7px;}
+.mt10											{margin-top:10px;}
+.mb10													{margin-bottom:10px;}
+.mh966									        {min-height:900px;}
+.mh879									        {min-height:879px;}
+.mb2									        {margin-bottom:2px;}
+.mt3									        {margin-top:3px;}
+.mt30                                           { margin-top:30px; }
+.mr4                                            { margin-right:4%; }
+
+.fl												{float:left;}
 /* --------------------------- Color Style ---------------------------------- */
-.BG-RED                                          { background-color:#D40A1c }
-.BG-YELLOW                                       { background-color:#ffa500; }
-.BG-GREEN                                        { background-color:#8cc152; }
+.BG-RED                                         { background-color:#D40A1c }
+.BG-YELLOW                                      { background-color:#ffa500; }
+.BG-GREEN                                       { background-color:#8cc152; }
 /* --------------------------- Common Template Style ---------------------------------- */
 header											{ box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); }
 .Content										{ margin:60px 0 0 0; overflow-x: hidden; min-height:calc(100vh - 40px); }
@@ -162,7 +173,7 @@ input[type="search"].form-control:active,
 input[type="text"].form-control:active,
 input[type="daterange"].form-control:active     { background-color:#f6f6f6; }
 label.FormLabel                                 { color:#919191; margin-bottom:0; font-weight:normal; line-height:12px;  }
-label.OutputLabel                                 { color:#000; margin-bottom:0; font-weight:bold; line-height:12px; padding:10px 0;  }
+label.OutputLabel                               { color:#000; margin-bottom:0; font-weight:bold; line-height:12px; padding:10px 0;  }
 .FormSelect .btn.dropdown-toggle                { border:1px solid #ccc; border-width:0 0 1px 0; border-radius:0; color:#333; font-size:14px; padding:4px 12px 5px 12px; min-width:120px;  }
 .FormSelect .bootstrap-select .dropdown-menu.open ul li { display:block; float: none; margin: 0;  }
 .FormSelect .bootstrap-select .dropdown-menu.open ul li:last-child { display:block; float: none; margin: 0; border-left:0; padding-left:0;  }
