@@ -417,3 +417,7 @@ textarea							                     { width:100%; height:100px; }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active                                  { background-image: none !important; background-color: #ccc !important; }
+
+.DownloadLink ul                                                    { list-style: none; }
+.DownloadLink ul li                                                 { float: left; }
+.DownloadLink ul li.disabled a                                      { color:#333; }
