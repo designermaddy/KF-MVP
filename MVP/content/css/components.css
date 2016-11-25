@@ -411,3 +411,9 @@ textarea							                     { width:100%; height:100px; }
 
 .InputTextBox .InputText                                           { position: absolute; top: 13px; background-color:#ccc; padding:6px; }
 .InputTextBox input[type="search"].FormInput                       { padding-left:70px; }
+
+.ui-menu .ui-menu-item                                              { padding: 0; }
+.ui-menu-item-wrapper                                               { padding: 3px 1em 3px 0.4em; }
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active                                  { background-image: none !important; background-color: #ccc !important; }
