@@ -105,14 +105,14 @@ app.controller('ModalCtrl', ['$uibModalInstance', 'url', function ($uibModalInst
         $uibModalInstance.dismiss('cancel');
     }
 }])
-app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', function ($uibModalInstance, $scope, fileUpload) {
+app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', 'config', function ($uibModalInstance, $scope, fileUpload, config) {
     var $ctrl = this;
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
     $scope.uploadFile = function () {
         var file = $scope.myFile;
-        var uploadUrl = "http:// 172.25.148.147:8080/RD-WebApp/Requisition/uploadRequisitionDocument";
+        var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
         fileUpload.uploadFileToUrl(file, uploadUrl);
     };
 }])
@@ -127,16 +127,22 @@ app.directive('fileModel', ['$parse', function ($parse) {
             var modelSetter = model.assign;
             element.bind('change', function () {
                 scope.$apply(function () {
+                    console.log(element[0].files[0]);
                     modelSetter(scope, element[0].files[0]);
                 });
             });
         }
     };
      }]);
-app.service('fileUpload', ['$http', function ($http) {
+app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
     this.uploadFileToUrl = function (file, uploadUrl) {
         var fd = new FormData();
-        fd.append('file', file);
+        console.log(file)
+        fd.append('document', file);
+        fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
+        fd.append('requisitionId', sharedProperties.getPositionId());
+        fd.append('file', file.name);
+
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity
             , headers: {
