@@ -90,14 +90,14 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .Navigation                                     { margin-right:300px; }
 .UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:300px; }
 .navbar-fixed-top                               { border-width:0; margin-bottom:0; }
-.navbar-collapse 								{ float:left; margin-left: 30px; }
+.navbar-collapse 								{ float:left; }
 .navbar-default									{ box-shadow:none; background:#106550; }
 .navbar-brand                                   { padding:6px 15px; height:60px; }
 .navbar-default .navbar-brand,
-.navbar-default .navbar-nav > li > a 			{ color: #fff; font-size:14px; }
+.navbar-default .navbar-nav > li > a 			{ color: #d0fff6; font-size:14px; }
 .navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .active > a 		{ background:#fff !important; font-size:14px;  }
-.navbar-default .navbar-nav > li > a 			{ padding:20px 10px; }
+.navbar-default .navbar-nav > .active > a 		{ background:#111 !important; font-size:14px;color:#fff;  }
+.navbar-default .navbar-nav > li > a 			{ padding:20px 9px; }
 .navbar-nav > li.messages-dropdown              { width: 65px; margin-right: 10px; }
 .navbar-default .navbar-nav > li a.Alert		{ width: 65px; padding:20px 25px 20px 0; text-indent:-9999px; display:inline-block; position:relative; }
 .navbar-default .navbar-nav > li a.Alert		{ background:url(../images/Alert.png) no-repeat 9px 14px; float: right;}
@@ -106,7 +106,8 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .navbar-default .navbar-nav > .open a.Alert span{ text-indent:0; left:18px; top:-5px; position: relative; background-color:rgba(119, 119, 119, 0.5); }
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover        { color:#fff; }
-.navbar-default .navbar-nav.navbar-right > li > a { padding:20px 15px; min-width:60px; height: 60px; text-align: center; }
+.navbar-default .navbar-nav.navbar-right > li > a { padding:20px 29px; min-width:60px; height: 60px; text-align: center; }
+.navbar-default .navbar-nav.navbar-right > li > a:hover  {color: #fff;}
 .navbar-default .navbar-nav.navbar-right > li.UserProfile > a { padding:15px 0 15px 15px; color:#fff; text-align: left;  height:60px; }
 .nav > li.NavClose                              { display:none; }
 /* --------------------------- User Profile Style ---------------------------------- */
@@ -123,7 +124,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .dropdown-menu.msg_list span                    { white-space: normal }
 .dropdown-menu                                  { border: medium none; box-shadow: none; display: none; float: left; font-size: 12px; left: 0; list-style: none outside none; padding: 0; position: absolute; text-shadow: none; top: 100%; z-index: 9998; border: 1px solid #D9DEE4; border-top-left-radius: 0; border-top-right-radius: 0 }
 .dropdown-menu>li>a                             { color: #5A738E }
-.navbar-nav .open .dropdown-menu                { position: absolute; background: #fff; margin-top: 0; border: 1px solid #D9DEE4; border-width:0 0 1px 1px; -webkit-box-shadow: none; right: 0; left: auto; width: 220px }
+.navbar-nav .open .dropdown-menu                { position: absolute; background: #fff; margin-top: 0; border: 1px solid #D9DEE4; border-width:0 0 1px 1px; -webkit-box-shadow: none; right: 0; left: 0px; width: 220px }
 .navbar-nav .open .dropdown-menu.msg_list       { width: 300px }
 .Help a, .Calendar a, .Notification a           { font-size: 20px !important; }
 .Help ul li a, .Calendar ul li a,
