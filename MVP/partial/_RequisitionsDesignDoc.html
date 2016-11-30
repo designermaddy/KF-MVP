@@ -1,22 +1,20 @@
 <div ng-controller="requisitionDocController">
-<div class="Heading2 HeadingFloat clearfix">
-    <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerKf.html" previous-text="" next-text=""></ul></span>
-    
-</div>
-<div class="panel panel-default WidgetPD" id="pdfBox"  >
-    <div class="panel-body">
-        <ul class="clearfix" >
-            <li ng-repeat="pdfDtls in pdfDetailsData" ng-click="$ctrl.openPdf(pdfDtls.pdfPath)">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                     
-                        <label>{{pdfDtls.JobDesc}}</label>
+    <div class="Heading2 HeadingFloat clearfix">
+        <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerKf.html" previous-text="" next-text=""></ul></span> <span class="pull-right"><a class="btn btn-primary btn-sm" ng-click="deleteDoc();"  ng-disabled="deleteButtonEnable"> Delete </a></span> <span class="pull-right"><a ng-click="uploadDocPdf();">Attach new document</a></span> </div>
+    <div class="panel panel-default WidgetPD" id="pdfBox">
+        <div class="panel-body">
+            <ul class="clearfix">
+                <li ng-repeat="pdfDtls in pdfDetailsData | orderBy:'-docType'">
+                    <div class="WidgetPDBox">
+                        <div class="WidgetPDHeader">
+                            <input ng-if="pdfDtls.docType == 'R'" type="checkbox" ng-click="addId(pdfDtls.id)">
+                            <label>{{pdfDtls.JobDesc}}</label>
+                        </div>
+                        <div class="WidgetPDContent" ng-click="openPdf(pdfDtls.id, pdfDtls.fileName, pdfDtls.docType, pdfDtls.engagementId, pdfDtls.requisitionId)"><img src="content/images/pdf.jpg"> </div>
+                        <div class="WidgetPDFooter">{{pdfDtls.fileName}}</div>
                     </div>
-                    <div class="WidgetPDContent"><img src="{{pdfDtls.ContentImage}}"> </div>
-                    <div class="WidgetPDFooter"><img data-ng-src="data:image/PNG;base64,{{pdfDtls.Logo}}"></div>
-                </div>
-            </li>
-           <!-- <li ng-click="$ctrl.openPdf('2')">
+                </li>
+                <!-- <li ng-click="$ctrl.openPdf('2')">
                 <div class="WidgetPDBox">
                     <div class="WidgetPDHeader">
                         <input type="checkbox" name='2' value='2'>
@@ -76,7 +74,7 @@
                     <div class="WidgetPDFooter">IT Delivery Manager Enterprise Profile</div>
                 </div>
             </li>-->
-        </ul>
+            </ul>
+        </div>
     </div>
-</div>
 </div>

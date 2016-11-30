@@ -111,7 +111,7 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .navbar-default .navbar-nav.navbar-right > li.UserProfile > a { padding:15px 0 15px 15px; color:#fff; text-align: left;  height:60px; }
 .nav > li.NavClose                              { display:none; }
 /* --------------------------- User Profile Style ---------------------------------- */
-.badge                                          { background-color:rgba(255, 131, 0, 0.9); left:30px; position: absolute; top: 14px; }
+.badge                                          { background-color:rgba(255, 131, 0, 0.9); left:39px; position: absolute; top: 11px; }
 li.UserProfile                                  { margin-right:14px;  }
 .user-profile img                               { width: 29px; height: 29px; border-radius: 50%; }
 .UserProfile.open img                           { border:1px solid #106550; }

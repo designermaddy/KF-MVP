@@ -182,8 +182,13 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getRequisitionSearchResults = function () {
         return $http.get('json/requisitionList.json')
     }
-    dataFactory.requisitionDocDetailsList = function () {
-        return $http.get('json/requisitionPdfDoc.json')
+    dataFactory.requisitionDocDetailsList = function (data) {
+        //return $http.get('json/requisitionPdfDoc.json')
+        return $http({
+            method : 'POST',
+            url : config.localUrl + '/Requisition/getAllRequisitionDocument',
+            data : data
+        });
     }
     dataFactory.jobProfileDocDetailsList = function (engagmentID) {
         /*var data = {
@@ -384,6 +389,13 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , url: urlAPI + '/Candidate/addNoteToCandidate/'
             , data: data
         });
+    }
+    dataFactory.removeRequisitionDocument = function(data){
+        return $http({
+            method : 'POST',
+            url : config.localUrl + '/Requisition/removeRequisitionDocument',
+            data : data
+        })
     }
     dataFactory.getViewAllNotes = function (id) {
         return $http.get(urlAPI + '/Candidate/viewAllNote/' + id);
