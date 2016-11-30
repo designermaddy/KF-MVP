@@ -15,7 +15,7 @@
                         <br> <span>{{row.address.country}}</span> </div>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"> <span class="sr-only">70% Complete</span> </div>
-                    </div> <span><input type="checkbox">Hot Candidate</span> </div>
+                    </div> <span><input class="disabled" type="checkbox">Hot Candidate</span> </div>
                 <div class="col-md-10">
                     <div class="col-md-6 candidateContact">
                         <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
@@ -50,17 +50,17 @@
                                 <div class="col-md-7 pull-right pt3" ng-hide='showReqPopover'><span>Not listed in any other Requisitions</span></div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                       <!-- <div class="col-md-12">
                             <div class="row pt25"> <a ng-href="{{url}}"><i class="fa fa-2x fa-linkedin-square mr29" aria-hidden="true"><i class="fa fa-check" aria-hidden="true"></i></i></a> <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>  <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>
                                 <i class="fa fa-2x fa-link mr29" aria-hidden="true"></i>
                                 <i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i> </div>
-                        </div>
+                        </div>-->
                         <div class="col-md-12">
                             <div class="row pt19">
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Download </div>
                                 </div>
-                                <div class="col-md-9 pull-right pt3 DownloadLink">
+                                <div class="col-md-10 pull-right pt3 DownloadLink">
                                     <ul>
                                     <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
 							</a>   |</li>
@@ -83,11 +83,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 notes">  <i class="fa fa-lg fa-bell-o clrblue" aria-hidden="true"></i>
+        <div class="col-md-3 notes">
+            <!--<i class="fa fa-lg fa-bell-o clrblue" aria-hidden="true"></i>
             <i class="fa fa-lg fa-paperclip clrblue" aria-hidden="true"></i>
             <i class="fa fa-lg fa-thumb-tack clrblue" aria-hidden="true"></i>
+
+            <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>-->
+          <!--  <h4 class="MarTp30">Recuriter Notes</h4>-->
+
             <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>
             <h4 class="MarTp30">Recruiter Notes</h4>
+
             <textarea id="notes"></textarea>
             <div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>
             <div class="col-md-12 appointment">
