@@ -2,25 +2,21 @@
 <script type="text/ng-template" id="modalContent.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2> </h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
-    <div class="modal-body">
-        <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
+    <div class="modal-body"> <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
         <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
     </div>
 </script>
 <!--poppup for arya count in saved searches -->
 <script type="text/ng-template" id="modalAryaCount.html">
-<div id="searchListCandidateDetails" ng-controller="searchController" >
-<a href="" class="btn btn-primary btn-sm IframeBtn" id="searchResultBack" ng-click="searchResultBack();"> Back </a>
-<iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>
-<form id="aryaCount" target="iframe" action="https://iarya.leoforce.com/Arya/"  method="post" >
-    <input type="hidden" name="LoginName" value={{userName}}/>
-    <input type="hidden" name="Password" value={{password}}/>
-    <input type="hidden" name="btnSubmit" value="Login"/>
-    <input type="hidden" name="ReturnUrl" value = {{ReturnUrl}}/>
-</form>
-    <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
- <iframe ng-src="{{ReturnUrl}}" frameborder="0" height="480" width="840"></iframe>
-</div>
+    <div id="searchListCandidateDetails" ng-controller="searchController"> <a href="" class="btn btn-primary btn-sm IframeBtn" id="searchResultBack" ng-click="searchResultBack();"> Back </a>
+        <iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>
+        <form id="aryaCount" target="iframe" action="https://iarya.leoforce.com/Arya/" method="post">
+            <input type="hidden" name="LoginName" value={{userName}}/>
+            <input type="hidden" name="Password" value={{password}}/>
+            <input type="hidden" name="btnSubmit" value="Login" />
+            <input type="hidden" name="ReturnUrl" value={ {ReturnUrl}}/> </form> <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
+        <iframe ng-src="{{ReturnUrl}}" frameborder="0" height="480" width="840"></iframe>
+    </div>
 </script>
 <!-- Global Document PDF Loader   -->
 <script type="text/ng-template" id="Docmodal.html">
@@ -28,8 +24,8 @@
         <h2>{{ fileName}}</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="modal-body">
         <div> <span us-spinner="{radius:10, width:2, length: 4}"></span>
-         <embed  ng-src="{{url}}"  type="application/pdf" style="width:100%; height:1000px" />
-           <!-- <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>-->
+            <embed ng-src="{{url}}" type="application/pdf" style="width:100%; height:1000px" />
+            <!-- <ya-pdf-viewer ya-pdf-url="{{url}}"></ya-pdf-viewer>-->
         </div>
     </div>
 </script>
@@ -62,7 +58,6 @@
     <li class="TotalPage"><span>{{ totalItems }}</span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
 </script>
-
 <!-- Global Pager Page By Page  -->
 <script type="text/ng-template" id="uibPagerPf.html">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
@@ -85,9 +80,7 @@
                 </thead>
                 <tbody> <span us-spinner="{radius:10, width:2, length: 4}"></span>
                     <tr ng-repeat="row in canReq  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-                        <td>
-                            <a>{{row.requisitionNumber}}</a>&nbsp{{row.requisitionTitle}}
-                        </td>
+                        <td> <a>{{row.requisitionNumber}}</a>&nbsp{{row.requisitionTitle}} </td>
                         <td>{{row.RequisitionName}}</td>
                         <td>{{row.recruiter}}</td>
                         <td>{{row.stepName}}</td>
@@ -103,48 +96,48 @@
             <h2>Requistions</h2>
             <div class='col-md-1 pull-right close-icon'><a ng-click="cancel()"><i class='fa fa-times' aria-hidden='true' ></i></a></div>
         </div>
-            <div class='Group' ng-click="open('req');">
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="reqGoal" type='checkbox'>
-                       <label for="reqGoal" class="CheckBoxLable"> Requistion Goal <img class='img-responsive popupImg' src='content/images/requisitionGoal.png'> </label>
-                    </div>
+        <div class='Group' ng-click="open('req');">
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id="reqGoal" type='checkbox'>
+                    <label for="reqGoal" class="CheckBoxLable"> Requistion Goal <img class='img-responsive popupImg' src='content/images/requisitionGoal.png'> </label>
                 </div>
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="reqHistory" type='checkbox' />
-                       <label for="reqHistory" class="CheckBoxLable"> Requistion History <img class='img-responsive popupImg' src='content/images/requisitionHistory.png'> </label>
-                    </div>
+            </div>
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id="reqHistory" type='checkbox' />
+                    <label for="reqHistory" class="CheckBoxLable"> Requistion History <img class='img-responsive popupImg' src='content/images/requisitionHistory.png'> </label>
                 </div>
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="reqActivity" type='checkbox' />
-                       <label for="reqActivity" class="CheckBoxLable"> Requistion Status <img class='img-responsive popupImg' src='content/images/requisitionStatus.png'> </label>
-                    </div>
+            </div>
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id="reqActivity" type='checkbox' />
+                    <label for="reqActivity" class="CheckBoxLable"> Requistion Status <img class='img-responsive popupImg' src='content/images/requisitionStatus.png'> </label>
                 </div>
+            </div>
         </div>
         <div class='col-md-12'>
             <h2>Candidates</h2> </div>
-            <div class='Group' ng-click="open('can');">
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id='canPipeline' type='checkbox' />
-                        <label for="canPipeline" class="CheckBoxLable"> Candidate Pipeline <img class='img-responsive popupImg' src='content/images/candidatePipeline.png'> </label>
-                    </div>
-                </div>
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="canHistory" type='checkbox' />
-                       <label for="canHistory" class="CheckBoxLable"> Candidate History <img class='img-responsive popupImg' src='content/images/candidateHistory.png'> </label>
-                    </div>
-                </div>
-                <div class='col-md-4 popupDiv'>
-                    <div class="FormCheckBox CheckBoxSelect clearfix">
-                        <input id="canSource" type='checkbox' />
-                       <label for="canSource" class="CheckBoxLable"> Candidate Source <img class='img-responsive popupImg' src='content/images/candidateSource.png'> </label>
-                    </div>
+        <div class='Group' ng-click="open('can');">
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id='canPipeline' type='checkbox' />
+                    <label for="canPipeline" class="CheckBoxLable"> Candidate Pipeline <img class='img-responsive popupImg' src='content/images/candidatePipeline.png'> </label>
                 </div>
             </div>
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id="canHistory" type='checkbox' />
+                    <label for="canHistory" class="CheckBoxLable"> Candidate History <img class='img-responsive popupImg' src='content/images/candidateHistory.png'> </label>
+                </div>
+            </div>
+            <div class='col-md-4 popupDiv'>
+                <div class="FormCheckBox CheckBoxSelect clearfix">
+                    <input id="canSource" type='checkbox' />
+                    <label for="canSource" class="CheckBoxLable"> Candidate Source <img class='img-responsive popupImg' src='content/images/candidateSource.png'> </label>
+                </div>
+            </div>
+        </div>
     </div>
 </script>
 <!-- Help and Chat -->
@@ -171,3 +164,11 @@
     /*]]>*/
 </script>
 <!-- End of helpfuturestep Zendesk Widget script -->
+<script type="text/ng-template" id="pdfDocUpload.html">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="file" file-model="myFile" />
+            <button ng-click="uploadFile()">Upload File</button>
+        </div>
+    </div>
+</script>
