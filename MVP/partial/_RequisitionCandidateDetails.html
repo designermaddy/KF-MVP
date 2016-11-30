@@ -19,33 +19,41 @@
                 <div class="col-md-10">
                     <div class="col-md-6 candidateContact">
                         <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
-                        <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
-                        <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
-                        <h4>Contact Info</h4> <span class="email"><i class="fa fa-lg fa-envelope mr5" aria-hidden="true"></i>{{row.contactMethods[1].address}}</span>
+                        <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
+                        <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
+                        <h4>Contact Info</h4> <span class="email"><i class="fa fa-lg fa-envelope mr5 clrblue" aria-hidden="true"></i><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
                         <div class="mtb15">
-                            <p><i class="fa fa-lg fa-phone mr8" aria-hidden="true"></i><span class="clsilver">Phone:</span></p>
+                            <p><i class="fa fa-lg fa-phone mr8 clrblue" aria-hidden="true"></i><span class="clsilver">Phone:</span></p>
                             <p class="ml20"><span class="clsilver">Work:</span></p>
                             <p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
                         </div>
                         <div>
-                            <p><i class="fa fa-lg fa-book mr8" aria-hidden="true"></i><span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
+                            <p><i class="fa fa-lg fa-book mr8 clrblue" aria-hidden="true"></i><span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
                             <br> <span class="ml20">{{row.addresses[0].country}}</span> </div>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary btn-sm" ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
-                            <div class="row padding42"> <i class="fa fa-2x fa-comment-o mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-phone" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a> <i class="fa fa-2x fa-envelope mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-calendar-o mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-video-camera mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-share-alt mr29" aria-hidden="true"></i> </div>
+                            <div class="row padding42">    <i class="fa fa-2x fa-comment-o mr29 clrblue" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-phone clrblue" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a>
+                                <i class="fa fa-2x fa-envelope mr29 clrblue" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-calendar-o mr29 clrblue" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-video-camera mr29 clrblue" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-share-alt mr29 clrblue" aria-hidden="true"></i> </div>
                         </div>
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Source </div>
                                 </div>
-                                <div class="col-md-7 pull-right pt3"> <a uib-popover-template = "'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen" ng-click="">Show in 4 other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
+                                 <div class="col-md-7 pull-right pt3" ng-show='showReqPopover'> <a uib-popover-template = "'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen">Show in {{canReq.length}} other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
+                                <div class="col-md-7 pull-right pt3" ng-hide='showReqPopover'><span>Not listed in any other Requisitions</span></div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="row pt25"> <a ng-href="{{url}}"><i class="fa fa-2x fa-linkedin-square mr29" aria-hidden="true"><i class="fa fa-check" aria-hidden="true"></i></i></a> <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-link mr29" aria-hidden="true"></i> <i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i> </div>
+                            <div class="row pt25"> <a ng-href="{{url}}"><i class="fa fa-2x fa-linkedin-square mr29" aria-hidden="true"><i class="fa fa-check" aria-hidden="true"></i></i></a> <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>  <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-link mr29" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i> </div>
                         </div>
                         <div class="col-md-12">
                             <div class="row pt19">
@@ -54,7 +62,10 @@
                                 </div>
                                 <div class="col-md-9 pull-right pt3 DownloadLink">
                                     <ul>
-                                    <li class="disabled">Resume   |</li>
+                                    <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
+							</a>   |</li>
+
+
                                     <li class="disabled">Assessment Report  |</li>
                                     <li class="disabled">Interview</li>
                                     </ul>
@@ -72,7 +83,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 notes"> <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i> <i class="fa fa-lg fa-paperclip" aria-hidden="true"></i> <i class="fa fa-lg fa-ellipsis-v" aria-hidden="true"></i>
+        <div class="col-md-3 notes">  <i class="fa fa-lg fa-bell-o clrblue" aria-hidden="true"></i>
+            <i class="fa fa-lg fa-paperclip clrblue" aria-hidden="true"></i>
+            <i class="fa fa-lg fa-thumb-tack clrblue" aria-hidden="true"></i>
+            <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>
             <h4 class="MarTp30">Recuriter Notes</h4>
             <textarea id="notes"></textarea>
             <div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>

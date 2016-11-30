@@ -1,10 +1,16 @@
 <div class="Heading2">
-    <h2>Job Profile Summary</h2> </div>
+    <h2>Job Profile Summary</h2>
+</div>
 <div class="row">
     <div class="col-md-8">
-        <div class="panel panel-default ViewBox">
+        <div class="panel panel-default ViewBox" ng-show="freeSearch.radioModel">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
-            <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
+                <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
+            </div>
+        </div>
+        <div class="panel panel-default ViewBox" ng-hide="freeSearch.radioModel">
+            <div class="panel-body" style="height:286px; overflow-y: scroll; ">
+                <trix-editor angular-trix ng-model="freeSearch.Description" class="trix-content"></trix-editor>
             </div>
         </div>
     </div>
@@ -12,17 +18,17 @@
         <div class="panel panel-default ViewBox">
             <div class="panel-body">
                 <div class="row">
-                <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
-                    <label class="FormLabel"> Job Type </label>
-                    <input class="input-sm form-control FormInput" type="search"> </div>
-                <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
-                    <label class="FormLabel"> Pay Rate </label>
-                    <input class="input-sm form-control FormInput" type="search"> </div>
-<div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
-                <label class="FormLabel"> Experience (Years) </label>
-                <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
-                </div>
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Job Type </label>
+                        <input class="input-sm form-control FormInput" type="search"> </div>
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Pay Rate </label>
+                        <input class="input-sm form-control FormInput" type="search"> </div>
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Experience (Years) </label>
+                        <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -87,6 +93,6 @@
     </div>
 </div>
 <div class="row MarBt15">
-    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a class="btn btn-primary pull-right" ng-click="save()">Save</save>
+    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a class="btn btn-primary pull-right" ng-click="save(freeSearch.radioModel)">Save</save>
         <a href="#" class="btn btn-default disabled pull-right">Cancel</a> </div>
 </div>
