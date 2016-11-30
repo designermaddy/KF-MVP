@@ -7,7 +7,7 @@ app.run(function ($http, sharedProperties, $cookies, config) {
 
         var authToken = $cookies.get('RD-Access-Token');
         if (config.production < 9) {
-        //var authToken = config.token
+        var authToken = config.token
         }
 
         if (authToken) {
