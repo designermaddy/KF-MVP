@@ -1,6 +1,7 @@
 app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.position = sharedProperties.getPositionId();
+    $scope.byteThere = false;
     var getHistory = function () {
         if ($scope.id) {
             var promise = Factory.getCandidateHistory($scope.id);
@@ -36,14 +37,22 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
     }
     var getResume = function () {
         if ($scope.id) {
+             $scope.byteThere = false;
             var promise = Factory.getCandidateResume($scope.id);
             promise.then(function resolved(response) {
                 console.log(response.data);
+                if(response.data.byteLength>0){
                 var file = new Blob([response.data], {
                     type: 'application/pdf'
                 });
                 var fileURL = URL.createObjectURL(file);
                 $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+                sharedProperties.setURLPdf($scope.pdfContent);
+                $scope.byteThere = true;
+                //response.data.byteLength = 0;
+                }else{
+                    $scope.byteThere = false;
+                }
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             });

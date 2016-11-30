@@ -1,3 +1,14 @@
+/*@import url("fineprint.css") print;
+@import url("bluish.css") projection, tv;
+@import 'custom.css';
+@import url("chrome://communicator/skin/");
+@import "common.css" screen, projection;
+@import url('landscape.css') screen and (orientation:landscape);
+
+@import url("daterangepicker.css");*/
+
+
+
 /* --------------------------- Profile Style ---------------------------------- */
 .UserProfileBox                                         { padding: 10px 20px;}
 .UserProfileLang                                        { padding: 10px 0; }
@@ -16,7 +27,7 @@
 /* --------------------------- ButtonSection Style ---------------------------------- */
 .ButtonSection.ProfileButton .btn                       {  }
 .ButtonSection .btn                                     { margin-right:10px; }
-.btn-danger, .btn-default, .btn-info, 
+.btn-danger, .btn-default, .btn-info,
 .btn-primary, .btn-success, .btn-warning                { background-image:none;  box-shadow: 0 0 0; text-shadow: 0 0 0; }
 .btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
 .btn-primary						{background-color:#007da4 !important;border-color: #007da4;}
@@ -90,7 +101,7 @@
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(8),
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(9),
 .AgingRequisitionTable .table-striped > tbody > tr td:nth-child(10)             { color:#333; font-size: 16px; text-align: center; }
-.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 18px; text-align: center; }
+.AgingRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#333; font-size: 16px; text-align: center; }
 .AgingRequisitionTable .table-striped                   { min-height: 293px; }
 /* --------------------------- RequisitionTable Style ---------------------------------- */
 .RequisitionTable .table-striped > tbody > tr td:nth-child(7),
@@ -181,14 +192,14 @@
 
 .RadioGroup                                               { margin-top: 7px;}
 .RadioGroup .btn-group .btn                               { padding: 6px 9px; }
-.RadioGroup .btn-default.active, 
+.RadioGroup .btn-default.active,
 .RadioGroup .btn-default:active                           {}
 .RadioGroup .btn-default                                  { background-image:none; border-color: #66b1c8; border-width:1px 0; text-shadow:0 0; }
 .RadioGroup .btn-group label:first-child.btn-default      { border-width:1px 0 1px 1px; }
 .RadioGroup .btn-group label:last-child.btn-default       { border-width:1px 1px 1px 0; }
-.RadioGroup .btn-default:focus, 
+.RadioGroup .btn-default:focus,
 .RadioGroup .btn-default:hover                            { background-color:transparent; border-color: #66b1c8; }
-.RadioGroup .btn-default.active, 
+.RadioGroup .btn-default.active,
 .RadioGroup .btn-default:active                           { background-color: #66b1c8; color:#fff; }
 .SearchRadioGroup .btn-group                              { width:100%; display: block; }
 .TermSorting .RadioGroup .btn-group .btn                  { padding:3px 9px; }
@@ -220,9 +231,9 @@
 .ViewBoxActions li:last-child                           { border-right:0; }
 .ViewBoxActions li:last-child a                         { border-right:0; padding-right:5px; }
 .ViewBoxActions li a                                    { display: inline-block; font-size:16px; text-align: center; padding:5px 14px; line-height:16px; }
-.ViewBoxCompanyName, .ViewBoxFinalStatus, 
+.ViewBoxCompanyName, .ViewBoxFinalStatus,
 .ViewBoxName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
-.ViewBoxCompanyLocation, 
+.ViewBoxCompanyLocation,
 .ViewBoxDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
 .ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
 .ViewBoxImage                                           { display: inline-block; float: left; }
@@ -237,7 +248,7 @@
 .ViewDropBox .dropdown-menu > li > a                    { padding: 5px 10px; }
 .ViewDropInfo                                            { display: inline-block; float: left; padding:0 5px; }
 .ViewDropName                                           { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
-.ViewBoxCompanyLocation, 
+.ViewBoxCompanyLocation,
 .ViewDropDesignation                                    { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
 .ViewDropImage                                          { display: inline-block; float: left; }
 .ViewDropImage img                                       { width:40px; height:40px; border:2px solid #106550; border-radius:25px; }
@@ -268,8 +279,8 @@
 .tab-content                                            { background-color: #fff; margin:0 15px; padding:15px 0;  }
 .nav-tabs                                               { margin:0 14px; }
 .KFLayout .nav-tabs                                     { margin:0 -1px; }
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover                         { border-radius:0; }
 .dropdown-menu                                          { margin:0; }
 .dropdown-menu > li > a                                 { padding:5px 20px;}
@@ -315,15 +326,15 @@
 .jobspan												{ float: left; font-weight: bold; margin: 6px 5px; font-size: 17px; }
 .jobUl													{ list-style-type: none; padding: 0px; border: 1px solid #86c6da; width: 90%; margin-top: 15px; }
 .jobLi													{ display: inline-block; padding: 7px 8px; width: 32%; text-align: center; }
-#ex1Slider .slider-selection 							{ background: #BABABA; } 
+#ex1Slider .slider-selection 							{ background: #BABABA; }
 input[type="range"]										{ -webkit-appearance: none; width:75%; -moz-apperance: none; border-radius: 6px; height: 13px; background-image: -webkit-gradient( 	linear, left top, right top, color-stop(0.15, #86c6da), color-stop(0.15, #dcdada) ); margin:10px 0px; }
 input[type='range']::-webkit-slider-thumb 				{ -webkit-appearance: none !important; background-color: #036685; border: 1px solid #036685; border-radius:50%; height: 15px; width: 15px; }
 .jobDetails input[type="range"]							{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(197, 197, 197)));}
 .jobWeightage input[type="range"]						{ width:74%; }
-#jobTile input[type="range"], 
+#jobTile input[type="range"],
 #jobSkills input[type="range"],
 #jobIndustry  input[type="range"]						{ background-image:-webkit-gradient(linear, 0% 0%, 100% 0%, to(rgb(134, 198, 218)), to(rgb(220, 218, 218)));}
-#jobCompany input[type="range"], 
+#jobCompany input[type="range"],
 #jobTitleDuration input[type="range"]					{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.5, rgb(134, 198, 218)), color-stop(0.5, rgb(220, 218, 218)));}
 #jobDuration input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0.75, rgb(134, 198, 218)), color-stop(0.75, rgb(220, 218, 218))); }
 #jobPromotion input[type="range"]						{ background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(134, 198, 218)), from(rgb(220, 218, 218))); }
@@ -405,6 +416,6 @@ textarea							                     { width:100%; height:100px; }
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active                                  { background-image: none !important; background-color: #ccc !important; }
 .DownloadLink ul                                                    { list-style: none; }
-.DownloadLink ul li                                                 { float: left; }
-.DownloadLink ul li.disabled a                                      { color:#333; }
+.DownloadLink ul li                                                 { float: left; list-style: none; }
+.DownloadLink ul li.disabled a                                      { color:#333; padding: 0 5px; }
 

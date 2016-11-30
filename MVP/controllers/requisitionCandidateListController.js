@@ -47,7 +47,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             else if (strValue < 15) return "BGOrange";
             else if (strValue >= 15) return "BGGreen";
         }
-        
+
         // openApplicantIframe controls
         /*$scope.openApplicantIframe = function () {
             var url = commonFunctions.getIframeUrl('applicantDetails');
@@ -60,7 +60,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             $('#applicantDetails').hide();
             $('#applicantResultdiv').show();
         });*/
-        
+
         // openSearchIframe controls
         $scope.openSearchIframe = function () {
             var url = commonFunctions.getIframeUrl('searchListCandidateDetails');
@@ -73,7 +73,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             $('#searchListCandidateDetails').hide();
             $('#searchResultdiv').show();
         });
-    
+
    // openApplicantIframe controls
         $scope.openApplicantIframe = function () {
             var url = commonFunctions.getIframeUrl('applicantDetails');
@@ -90,7 +90,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             $('#applicantDetails').hide();
             $('#applicantResultdiv').show();
         }
-        
+
         $scope.getCandidateData = function(id) {
           sharedProperties.setViewCandidateId(id);
           $('#candidatelistid').hide();
@@ -101,5 +101,5 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         console.log($('.selectpicker'))
         }, 50, false);
 
-        
+
 }]);

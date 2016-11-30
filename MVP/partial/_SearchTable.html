@@ -1,12 +1,12 @@
 <div class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Search Results({{rowCollection[0].TotalCount}})</h2> <span class="pull-left HeaderLink"><a ng-click="refreshResults();"><i class="fa fa-refresh" aria-hidden="true"></i>
+        <h2>Search Results({{rowCollection.length}})</h2> <span class="pull-left HeaderLink"><a ng-click="refreshResults();"><i class="fa fa-refresh" aria-hidden="true"></i>
  Refresh Results </a></span>
     <span class="pull-right HeaderPaging">
             <ul class="pager">
             <li class="previous" ><a ng-click='prev();'>  </a></li>
-            <li class="CurrentPage"><span> {{end}} of </span></li>
-                 <li class="TotalPage"><span> {{rowCollection[0].TotalCount}} </span></li>
+            <li class="CurrentPage"><span> {{start}} of </span></li>
+                 <li class="TotalPage"><span> {{end}} </span></li>
                 <li class="next"><a ng-click='next();'>  </a></li>
             </ul>
         </span>

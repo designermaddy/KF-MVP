@@ -32,7 +32,7 @@ $scope.itemsByPage=15;
             }
 
 		  // iframe modals.
- 
+
     $scope.openTalentLinkIframe = function() {
         var url = commonFunctions.getIframeUrl('addNewRequisitionTalentLink');
         commonFunctions.openIframe(url);
@@ -41,10 +41,10 @@ $scope.itemsByPage=15;
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
         commonFunctions.openIframe(url);
     }
-    
+
     $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);
     }
 
-         
+
 }]);

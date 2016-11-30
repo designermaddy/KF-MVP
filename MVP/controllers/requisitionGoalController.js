@@ -68,7 +68,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
     datas[j] = datas[j] || new Array();
   //  console.log('datas[' + j + '][' + i + ']' + ' = ' +arr[i].data[Object.keys(arr[i].data)[j]])
     datas[j][i] = arr[i].data[Object.keys(arr[i].data)[j]];
-  }            
+  }
 
                          }
                 }
@@ -113,7 +113,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
   };
 
    // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
-   
+
 
    /* $scope.kick = [
       [65, 59, 90, 81, 56, 55],

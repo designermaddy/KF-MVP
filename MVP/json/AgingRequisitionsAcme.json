@@ -1,0 +1,355 @@
+{
+   "transactionID":null,
+   "requisitionList":null,
+   "requisitionDetails":null,
+   "profiles":null,
+   "requisitionDocList":null,
+   "requisitionListMo":null,
+   "applications":null,
+   "application":null,
+   "requisitions":[
+      {
+         "ReqNumber":"ACME00011",
+         "JobTitle":"(Fake Job) Floor supervisor",
+         "StartDate":"11/21/2016",
+         "EndDate":"11/21/2016",
+         "Source":"TalentLink",
+         "Recruiter":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Mir",
+               "id":280,
+               "lastName":"Ali",
+               "login":"mir.ali@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC1",
+               "order":1
+            }
+         ],
+         "Team":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Matt",
+               "id":25311,
+               "lastName":"Heckler",
+               "login":"matt.heckler@kornferry.com",
+               "type":"ADVANCED",
+               "lovValue":"OperUser1",
+               "order":1
+            }
+         ],
+         "Data":{
+            "method":"reqCount",
+            "type":"company",
+            "name":"ACME Automotive",
+            "data":[
+
+            ],
+            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         },
+         "Position":9909,
+         "Client":"ACME Automotive",
+         "ClientId":"370",
+         "EngagementId":"370",
+         "Engagement":"ACME Automotive",
+         "status":"Open",
+         "location":null,
+         "organization":{
+            "unit":[
+               {
+                  "value":"ACME Automotive",
+                  "code":"ACME",
+                  "id":370,
+                  "level":1,
+                  "nameTranslation":"ACME Automotive"
+               },
+               {
+                  "value":"Manufacturing",
+                  "code":"0202",
+                  "id":10192,
+                  "level":2,
+                  "nameTranslation":"Manufacturing"
+               }
+            ]
+         },
+         "contractType":"Permanent"
+      },
+      {
+         "ReqNumber":"ACME00010",
+         "JobTitle":"SVP Corporate Controller",
+         "StartDate":"11/18/2016",
+         "EndDate":"11/21/2016",
+         "Source":"TalentLink",
+         "Recruiter":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Matt",
+               "id":25311,
+               "lastName":"Heckler",
+               "login":"matt.heckler@kornferry.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC1",
+               "order":1
+            }
+         ],
+         "Team":[
+
+         ],
+         "Data":{
+            "method":"reqCount",
+            "type":"company",
+            "name":"ACME Automotive",
+            "data":[
+
+            ],
+            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         },
+         "Position":9878,
+         "Client":"ACME Automotive",
+         "ClientId":"370",
+         "EngagementId":"370",
+         "Engagement":"ACME Automotive",
+         "status":"Open",
+         "location":null,
+         "organization":{
+            "unit":[
+               {
+                  "value":"ACME Automotive",
+                  "code":"ACME",
+                  "id":370,
+                  "level":1,
+                  "nameTranslation":"ACME Automotive"
+               },
+               {
+                  "value":"Finance",
+                  "code":"PFMB",
+                  "id":373,
+                  "level":2,
+                  "nameTranslation":"Finance"
+               }
+            ]
+         },
+         "contractType":"Permanent"
+      },
+      {
+         "ReqNumber":"ACME00007",
+         "JobTitle":"Associate HR Business Partner",
+         "StartDate":"11/17/2016",
+         "EndDate":"11/17/2016",
+         "Source":"TalentLink",
+         "Recruiter":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC1",
+               "order":1
+            }
+         ],
+         "Team":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"OperUser1",
+               "order":1
+            }
+         ],
+         "Data":{
+            "method":"reqCount",
+            "type":"company",
+            "name":"ACME Automotive",
+            "data":[
+
+            ],
+            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         },
+         "Position":9859,
+         "Client":"ACME Automotive",
+         "ClientId":"370",
+         "EngagementId":"370",
+         "Engagement":"ACME Automotive",
+         "status":"Open",
+         "location":null,
+         "organization":{
+            "unit":[
+               {
+                  "value":"ACME Automotive",
+                  "code":"ACME",
+                  "id":370,
+                  "level":1,
+                  "nameTranslation":"ACME Automotive"
+               },
+               {
+                  "value":"Human Resources",
+                  "code":"Hr",
+                  "id":10191,
+                  "level":2,
+                  "nameTranslation":"Human Resources"
+               }
+            ]
+         },
+         "contractType":"Permanent"
+      },
+      {
+         "ReqNumber":"ACME00009",
+         "JobTitle":"Manufacturing Machining Engineer",
+         "StartDate":"11/17/2016",
+         "EndDate":"11/17/2016",
+         "Source":"TalentLink",
+         "Recruiter":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC1",
+               "order":1
+            },
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC3",
+               "order":3
+            }
+         ],
+         "Team":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"OperUser1",
+               "order":1
+            }
+         ],
+         "Data":{
+            "method":"reqCount",
+            "type":"company",
+            "name":"ACME Automotive",
+            "data":[
+
+            ],
+            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         },
+         "Position":9861,
+         "Client":"ACME Automotive",
+         "ClientId":"370",
+         "EngagementId":"370",
+         "Engagement":"ACME Automotive",
+         "status":"Open",
+         "location":null,
+         "organization":{
+            "unit":[
+               {
+                  "value":"ACME Automotive",
+                  "code":"ACME",
+                  "id":370,
+                  "level":1,
+                  "nameTranslation":"ACME Automotive"
+               },
+               {
+                  "value":"Manufacturing",
+                  "code":"0202",
+                  "id":10192,
+                  "level":2,
+                  "nameTranslation":"Manufacturing"
+               }
+            ]
+         },
+         "contractType":"Permanent"
+      },
+      {
+         "ReqNumber":"ACME00008",
+         "JobTitle":"Commercial Finance Analyst",
+         "StartDate":"11/17/2016",
+         "EndDate":"11/17/2016",
+         "Source":"TalentLink",
+         "Recruiter":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"PIC1",
+               "order":1
+            }
+         ],
+         "Team":[
+            {
+               "cellphone":null,
+               "email":null,
+               "firstName":"Rodrigo",
+               "id":574,
+               "lastName":"Tubio",
+               "login":"rodrigo.tubio@futurestep.com",
+               "type":"ADVANCED",
+               "lovValue":"OperUser1",
+               "order":1
+            }
+         ],
+         "Data":{
+            "method":"reqCount",
+            "type":"company",
+            "name":"ACME Automotive",
+            "data":[
+
+            ],
+            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         },
+         "Position":9860,
+         "Client":"ACME Automotive",
+         "ClientId":"370",
+         "EngagementId":"370",
+         "Engagement":"ACME Automotive",
+         "status":"Open",
+         "location":null,
+         "organization":{
+            "unit":[
+               {
+                  "value":"ACME Automotive",
+                  "code":"ACME",
+                  "id":370,
+                  "level":1,
+                  "nameTranslation":"ACME Automotive"
+               },
+               {
+                  "value":"Finance",
+                  "code":"PFMB",
+                  "id":373,
+                  "level":2,
+                  "nameTranslation":"Finance"
+               }
+            ]
+         },
+         "contractType":"Permanent"
+      }
+   ],
+   "status":null
+}
+

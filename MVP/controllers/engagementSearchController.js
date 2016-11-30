@@ -30,7 +30,7 @@
            'industry' : $scope.ind.trim(),
            'recruiter' : 'Anna Brown',
        }
-       
+
      $http.post("http://172.25.148.147:8080/RD-WebApp/Requisition/searchRequisitions", data)
         .success(function(data, status, headers, config) {
             $scope.data = data;
@@ -40,8 +40,8 @@
             console.log('failed');
         });
     }
-    
-    
+
+
 }]);*/
 
 app.controller('engagementSearchController', ['$scope','Factory', 'sharedProperties', '$http', function ($scope, Factory, sharedProperties, $http) {
@@ -50,7 +50,7 @@ app.controller('engagementSearchController', ['$scope','Factory', 'sharedPropert
     $scope.cli = '';
     $scope.name = '';
     $scope.data = [];
-    
+
     promise.then(function(response){
         $scope.data = result = response.data.engagementList;
         sharedProperties.setrowCollection(result);
@@ -67,14 +67,14 @@ app.controller('engagementSearchController', ['$scope','Factory', 'sharedPropert
             return item.Recruiter;
         })
     });
-    
+
     $scope.searchlist = function() {
        var name = $scope.name;
        var engagement = name.replace(/[0-9]/g, '').trim();
        var engagementNumber = name.replace(/\D/g,'').trim();
        var client = $scope.cli.trim();
        var industry = $scope.ind.trim();
-    
+
         /*
         var data = {
            'engagementNumber': engagementNumber,
@@ -83,8 +83,8 @@ app.controller('engagementSearchController', ['$scope','Factory', 'sharedPropert
            'industry' : $scope.ind.trim(),
            'recruiter' : 'Anna Brown',
        }
-       
-    
+
+
      $http.post("http://172.25.148.147:8080/RD-WebApp/Requisition/searchRequisitions", data)
         .success(function(data, status, headers, config) {
             $scope.data = data;
@@ -94,45 +94,45 @@ app.controller('engagementSearchController', ['$scope','Factory', 'sharedPropert
             console.log('failed');
         });
         */
-    
+
     var engagementNumberArray = [];
     var newArray = $scope.data;
-        
+
     if (engagementNumber) {
         angular.forEach(newArray, function (input) {
         if (input.EngagementNumber == engagementNumber )
-            engagementNumberArray.push(input);            
+            engagementNumberArray.push(input);
        });
         newArray = engagementNumberArray;
     }
-    
+
     var engagementArray = [];
     if (engagement) {
         angular.forEach(newArray, function (input) {
         if (input.Engagement == engagement )
-            engagementArray.push(input);            
+            engagementArray.push(input);
        });
         newArray = engagementArray;
     }
-    
+
     var clientArray = [];
     if (client) {
         angular.forEach(newArray, function (input) {
         if (input.Client.ClientName == client )
-            clientArray.push(input);            
+            clientArray.push(input);
        });
         newArray = clientArray;
     }
-    
+
     var industryArray = [];
     if (industry) {
         angular.forEach(newArray, function (input) {
         if (input.Client.Industry == industry )
-            industryArray.push(input);            
+            industryArray.push(input);
        });
         newArray = industryArray;
     }
-    
+
     if(newArray.length == 0) {
         alert('Result not found');
         sharedProperties.setrowCollection($scope.data);
@@ -140,5 +140,5 @@ app.controller('engagementSearchController', ['$scope','Factory', 'sharedPropert
         sharedProperties.setrowCollection(newArray);
     }
     }
-    
+
 }]);

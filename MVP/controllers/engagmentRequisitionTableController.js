@@ -8,9 +8,9 @@ $scope.viewLoading = false;
         promise.then(
           function resolved(response) {
 
-             $scope.rowCollection = response.data.requisitionList  
-			 
-              
+             $scope.rowCollection = response.data.requisitionList
+
+
               $scope.getData = function (workflowSteps, value) {
                 var output = '';
                 angular.forEach(workflowSteps, function (input) {
@@ -18,11 +18,11 @@ $scope.viewLoading = false;
                     output = input.candidateCount;
                 }
                 });
-                 
+
                 return output;
                 console.log(output);
               }
-              
+
 			  if($scope.rowCollection){
 				 $scope.viewLoading = true;
 			  }
@@ -34,8 +34,8 @@ $scope.viewLoading = false;
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
       )
-    };    
-    
+    };
+
 $scope.itemsByPage=15;
 
   $scope.listVisible = true;
@@ -49,7 +49,7 @@ $scope.itemsByPage=15;
             }
 
 		  // iframe modals.
- 
+
     $scope.openTalentLinkIframe = function() {
         var url = commonFunctions.getIframeUrl('addNewRequisitionTalentLink');
         commonFunctions.openIframe(url);
@@ -59,10 +59,10 @@ $scope.itemsByPage=15;
         commonFunctions.openIframe(url);
     }
 
-    
+
     $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);
     }
 
-         
+
 }]);

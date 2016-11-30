@@ -1,8 +1,9 @@
 <!-- Global Iframe Popup   -->
 <script type="text/ng-template" id="modalContent.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2> BenchMark Profile</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+        <h2> </h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="modal-body">
+        <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
         <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
     </div>
 </script>
@@ -17,6 +18,7 @@
     <input type="hidden" name="btnSubmit" value="Login"/>
     <input type="hidden" name="ReturnUrl" value = {{ReturnUrl}}/>
 </form>
+    <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
  <iframe ng-src="{{ReturnUrl}}" frameborder="0" height="480" width="840"></iframe>
 </div>
 </script>
@@ -105,19 +107,19 @@
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="reqGoal" type='checkbox'>
-                       <label for="reqGoal" class="CheckBoxLable"> Requistion Goal <img class='img-responsive popupImg' src='content/images/sm_graph_1.png'> </label>
+                       <label for="reqGoal" class="CheckBoxLable"> Requistion Goal <img class='img-responsive popupImg' src='content/images/requisitionGoal.png'> </label>
                     </div>
                 </div>
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="reqHistory" type='checkbox' />
-                       <label for="reqHistory" class="CheckBoxLable"> Requistion History <img class='img-responsive popupImg' src='content/images/sm_graph_2.png'> </label>
+                       <label for="reqHistory" class="CheckBoxLable"> Requistion History <img class='img-responsive popupImg' src='content/images/requisitionHistory.png'> </label>
                     </div>
                 </div>
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="reqActivity" type='checkbox' />
-                       <label for="reqActivity" class="CheckBoxLable"> Requistion Status <img class='img-responsive popupImg' src='content/images/sm_graph_3.png'> </label>
+                       <label for="reqActivity" class="CheckBoxLable"> Requistion Status <img class='img-responsive popupImg' src='content/images/requisitionStatus.png'> </label>
                     </div>
                 </div>
         </div>
@@ -127,19 +129,19 @@
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id='canPipeline' type='checkbox' />
-                        <label for="canPipeline" class="CheckBoxLable"> Candidate Pipeline <img class='img-responsive popupImg' src='content/images/sm_graph_3.png'> </label>
+                        <label for="canPipeline" class="CheckBoxLable"> Candidate Pipeline <img class='img-responsive popupImg' src='content/images/candidatePipeline.png'> </label>
                     </div>
                 </div>
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="canHistory" type='checkbox' />
-                       <label for="canHistory" class="CheckBoxLable"> Candidate History <img class='img-responsive popupImg' src='content/images/sm_graph_2.png'> </label>
+                       <label for="canHistory" class="CheckBoxLable"> Candidate History <img class='img-responsive popupImg' src='content/images/candidateHistory.png'> </label>
                     </div>
                 </div>
                 <div class='col-md-4 popupDiv'>
                     <div class="FormCheckBox CheckBoxSelect clearfix">
                         <input id="canSource" type='checkbox' />
-                       <label for="canSource" class="CheckBoxLable"> Candidate Source <img class='img-responsive popupImg' src='content/images/sm_graph_1.png'> </label>
+                       <label for="canSource" class="CheckBoxLable"> Candidate Source <img class='img-responsive popupImg' src='content/images/candidateSource.png'> </label>
                     </div>
                 </div>
             </div>

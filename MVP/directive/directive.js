@@ -1,6 +1,6 @@
 app.directive('bsActiveLink', ['$location', function ($location) {
     return {
-        restrict: 'A', //use as attribute 
+        restrict: 'A', //use as attribute
         replace: false
         , link: function (scope, elem) {
             //after the route has changed

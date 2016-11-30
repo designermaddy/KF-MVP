@@ -1,33 +1,33 @@
 app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'sharedProperties', 'config', 'commonFunctions','$sce', function ($uibModal, $scope, Factory, sharedProperties, config, commonFunctions,$sce) {
-        //getEngagementId 
+        //getEngagementId
         var id = sharedProperties.getengagementPerIDSelected();
-        
-        //post data to backend with engagementId        
-        var data = {            
+
+        //post data to backend with engagementId
+        var data = {
             "engagementId": id
         };
-    
+
         var promise = Factory.postDocumentByEngagement(data);
         promise.then(
           function resolved(response) {
-              $scope.pdfDetailsData = response.data.documentList;              
-              setValues();              
+              $scope.pdfDetailsData = response.data.documentList;
+              setValues();
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
           }
         )
-        
+
      function setValues() {
       if($scope.pdfDetailsData){
             $scope.viewLoading = true;
             $scope.currentPage = 1;
             $scope.totalItems = $scope.pdfDetailsData.length;
             $scope.entryLimit = 8; // items per page
-            $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);            
+            $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
       }
     }
-    
+
     $scope.openPdf = function (url, filename) {
          var url = config.projectUrl + '/Profile/getDocumentById/' + url;
           var promise = Factory.getPDF(url);
@@ -41,7 +41,7 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
                var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'Docmodal.html'
-            , controller: 'DocModalCtrl'            
+            , controller: 'DocModalCtrl'
             , size: 'lg'
             , resolve: {
                 url: function () {
@@ -58,8 +58,8 @@ app.controller('engagementDocController', ['$uibModal','$scope','Factory', 'shar
           }
       )
     }
-    
-    
+
+
 }]);
 
 app.controller('DocModalCtrl', ['$uibModalInstance', 'url','filename', '$scope', function ($uibModalInstance, url,filename, $scope) {

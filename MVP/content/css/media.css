@@ -37,7 +37,7 @@
 .navbar-default .navbar-nav.navbar-right > li.UserProfile > a { text-align: center; }
 .UserNav .navbar-nav li > a                 { background-color:transparent; border-bottom:0; }
 .navbar-default .navbar-toggle              { border:0; }
-.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover        { background-color:transparent; }
 .navbar-toggle                              { float:left; margin-right:0; }
 .UserNav                                    { margin-top:0; width:150px; position: fixed; right: 0; z-index: 2; background-color:transparent; }
@@ -80,7 +80,7 @@
 .navbar-collapse                            { height: 100vh; margin-top:50px; }
 .navbar-brand > img                         { width: 80%; }
 .navbar-brand                               { height: 50px; padding: 6px 5px; }
-.navbar-nav li.Help                         { display: none; }    
+.navbar-nav li.Help                         { display: none; }
 .ContentBox                                 { margin-top:5px; }
 .TermSorting ul li                          { margin: 0 3px; }
 .TermSorting ul li:first-child              { margin: 0 3px 0 0; }

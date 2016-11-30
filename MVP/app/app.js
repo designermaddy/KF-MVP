@@ -7,7 +7,7 @@ app.run(function ($http, sharedProperties, $cookies, config) {
 
         var authToken = $cookies.get('RD-Access-Token');
         if (config.production < 9) {
-        var authToken = config.token
+        //var authToken = config.token
         }
 
         if (authToken) {
@@ -24,15 +24,27 @@ app.run(function ($http, sharedProperties, $cookies, config) {
     //var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
 
 });
-// var interceptor = function() {
-// if(sharedProperties.getAuthGlobalToken()){
-// return {
-// 'request': function(config) {
-// config.headers['Authorization'] = sharedProperties.getAuthGlobalToken();
-// }
-// }
-// }
-// };
+
+app.run(function ($rootScope) {
+        $rootScope.$on('$stateChangeSuccess', function () {
+            $(function () {
+                var content = $('.ContentBox').height();
+                var sidebar = $('.SideBar').height();
+                if (content > sidebar){
+                    $('.SideBar').css('min-height', content);
+                }
+            });
+        })
+    })
+    // var interceptor = function() {
+    // if(sharedProperties.getAuthGlobalToken()){
+    // return {
+    // 'request': function(config) {
+    // config.headers['Authorization'] = sharedProperties.getAuthGlobalToken();
+    // }
+    // }
+    // }
+    // };
 app.controller('MainCtrl', function ($scope) {});
 app.filter('startFrom', function () {
     return function (input, start) {
@@ -49,21 +61,31 @@ app.directive('usSpinner', ['$http', '$rootScope', function ($http, $rootScope) 
         link: function (scope, elm, attrs) {
             $rootScope.spinnerActive = false;
             scope.isLoading = function () {
-                return $http.pendingRequests.length > 0;
+                if (angular.isDefined(attrs.iframe)) {
+                    $rootScope.spinnerActive = true;
+                    var iframe = elm.next();
+                    iframe.on('load', function () {
+                        elm.addClass('ng-hide');
+                    })
+                } else {
+                    $rootScope.spinnerActive = $http.pendingRequests.length > 0;
+                }
+                return $rootScope.spinnerActive;
             };
 
-            scope.$watch(scope.isLoading, function (loading) {
-                $rootScope.spinnerActive = loading;
-                if (loading) {
+            scope.$watch(scope.isLoading, function () {
+                if ($rootScope.spinnerActive) {
                     elm.removeClass('ng-hide');
                 } else {
                     elm.addClass('ng-hide');
                 }
             });
+
         }
+
     };
 
-    }]);
+            }]);
 
 
 app.controller('LoadError', ['$uibModalInstance', 'message', '$scope', function ($uibModalInstance, message, $scope) {

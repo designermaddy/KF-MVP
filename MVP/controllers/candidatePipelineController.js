@@ -68,7 +68,7 @@ app.controller('candidatePipelineController', ['$scope','Factory','commonFunctio
 
         }, 50, false);
 
-		  
+
         }
 
     ]);

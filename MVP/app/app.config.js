@@ -22,11 +22,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 
 app.controller('MainCtrl', function ($scope) {
-  
+
 });
 app.directive('bsActiveLink', ['$location', function ($location) {
     return {
-        restrict: 'A', //use as attribute 
+        restrict: 'A', //use as attribute
         replace: false,
         link: function (scope, elem) {
             //after the route has changed
@@ -40,9 +40,9 @@ app.directive('bsActiveLink', ['$location', function ($location) {
                     if (-1 !== hrefs.indexOf(a.attr('href'))) {
                         a.parent().addClass('active');
                     } else {
-                        a.parent().removeClass('active');   
+                        a.parent().removeClass('active');
                     };
-                });     
+                });
             });
         }
     }

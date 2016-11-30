@@ -3,15 +3,15 @@
 	// sharedProperties.setAuthGlobalToken(authToken)
     // $scope.values = atob(authToken).split(',');
     // $scope.name = $scope.values[10].split(':')[1];
-    // $scope.designation = $scope.values[1].split(':')[1];   
-	
+    // $scope.designation = $scope.values[1].split(':')[1];
+
 // }]);
 
 
 app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
    var authToken = $cookies.get('RD-Access-Token');
    if (config.production < 9) {
-    var authToken = config.token;
+   // var authToken = config.token;
    }
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');
@@ -22,6 +22,8 @@ if (authToken!==undefined){
     sharedProperties.setPassword($scope.values[5].split(':')[1])
     sharedProperties.setActiveUserName($scope.values[6].split(':')[1])
     sharedProperties.setActivePassword($scope.values[7].split(':')[1])
+
+    sharedProperties.setEmail($scope.name);
      if (($http.defaults.headers.common['RD-Access-Token'])) {
                    var d = new Date();
                 setcookie('RD-Access-Token',$http.defaults.headers.common['RD-Access-Token'], d.getTime() + 2*7*24*60*60 , '/');
@@ -38,11 +40,11 @@ if (authToken!==undefined){
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-    
+
     var promise = Factory.getIframeList();
         promise.then(function(response) {
-            var data = response.data.url;                
-            sharedProperties.setIframeLinks(data);            
+            var data = response.data.url;
+            sharedProperties.setIframeLinks(data);
         })
 
         $scope.logOut=function(){

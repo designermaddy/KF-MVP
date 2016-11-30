@@ -8,7 +8,12 @@
 
         /*jshint validthis: true */
         var vm = this;
-
+        vm.editClick = true;
+        vm.editClickJobProfile=function(){
+            if(vm.editClick){
+                vm.editClick = false;
+            }
+        }
          var getreq = function(a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();

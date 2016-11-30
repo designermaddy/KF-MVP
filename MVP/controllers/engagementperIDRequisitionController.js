@@ -15,7 +15,7 @@ getRequisitionList();
                     output = input.candidateCount;
                 }
                 });
-                 
+
                 return output;
                 console.log(output);
               }
@@ -23,7 +23,7 @@ getRequisitionList();
                      $scope.engagementClient = $scope.engagementResponse.Client;
                      $scope.engagementClientContact = $scope.engagementResponse.ClientContact;
                      $scope.engagementConsultant = $scope.engagementResponse.EngagementConsultant;
-                     $scope.engagementUsers = $scope.engagementResponse.Users;                     
+                     $scope.engagementUsers = $scope.engagementResponse.Users;
                   }
                     $scope.currentPage = 1;
                     $scope.totalItems = $scope.engagementResponse.Requisitions.length;
@@ -33,9 +33,9 @@ getRequisitionList();
               function rejected(response) {
                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
               })
-           }        
+           }
     }
-    
+
      // iframe modals.
 
     $scope.openTalentLinkIframe = function() {

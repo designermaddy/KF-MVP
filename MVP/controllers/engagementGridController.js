@@ -1,12 +1,12 @@
 
 
 app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter', 'commonFunctions', 'sharedProperties', '$uibModal', function ($scope, Factory, filterFilter, commonFunctions,sharedProperties, $uibModal) {
-	
+
             if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
                 sharedProperties.setNewSearchData([$scope.item.ReqNumber, $scope.item.JobTitle]);
             }
-            
+
 	// create empty search model (object) to trigger $watch on update
 	$scope.search = {};
 
@@ -31,7 +31,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
                 url: function () {
                     return url;
                 }
-            } 
+            }
         });
     }
     $scope.openCrmIframe = function() {
@@ -41,12 +41,12 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
             , templateUrl: 'modalContent.html'
             , controller: 'ModalCancel'
             , controllerAs: '$ctrl'
-            , size: 'lg' 
+            , size: 'lg'
             , resolve: {
                 url: function () {
                     return url;
                 }
-            } 
+            }
         });
     }
 

@@ -10,8 +10,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        //return $http.get(urlAPI + '/Requisition/getAgingPositions');
-        return $http.get('json/AgingRequisitions.json');
+        //return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
+       return $http.get('json/AgingRequisitionsAcme.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -22,8 +22,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        // return $http.get(urlAPI + '/Requisition/getAllPositions');
-        return $http.get('json/AllRequisitions.json');
+         //return $http.get(urlAPI + '/Requisition/getAllPositionsById');
+        //return $http.get('json/AllRequisitions.json');
+        return $http.get('json/allRequisitionswithAcme.json');
         //}
     };
     dataFactory.getChart = function (graphName, selectedBtn, companySelected) {
@@ -224,9 +225,14 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         }
         //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function (engagementId) {
+        if(engagementId == 9848 ){
+             return $http.get('json/LambWeston.json');
+         }else{
+            return $http.get('json/Acme.json');
+         }
         // return $http.get('json/RequisitionList.json')
         // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
-        return $http.get('json/RequisitionforEngagment.json');
+
     }
     dataFactory.getViewRequisition = function () {
         return $http.get('json/viewRequisition.json');
@@ -318,7 +324,13 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getSavedSearchesResponse = function (data) {
         var orgId = data.orgId;
         var limit = data.limit;
-        var page = data.page * limit;
+
+        if(data.page == 0){
+            var page = 0;
+        }else{
+
+        var page =  (data.page-1) * limit;
+        }
         return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
         //return $http.get('json/Savedsearch.json')
     }
@@ -344,9 +356,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get(url,  {responseType: 'arraybuffer'});
     }
      /** ------- Candidate Details page api's -------**/
-  /*  dataFactory.getCandidateStatus = function (posId, canId) {
+   dataFactory.getCandidateStatus = function (posId, canId) {
         return $http.get(urlAPI + '/Candidate/CandidateStatus/' + posId + '/' + canId);
-    }*/
+    }
     dataFactory.getCandidateHistory = function (id) {
         //id = 35273950;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + id);
@@ -358,8 +370,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         });
     }
 
-    dataFactory.getCandidateRequisition = function(id) {
-        return $http.get(urlAPI + '/Candidate/CandidateRequisition/' + id);
+    dataFactory.getCandidateRequisition = function(id, reqNo) {
+        return $http.get(urlAPI + '/Candidate/CandidateRequisition/' + id + '/' +  reqNo);
     }
 
     dataFactory.getCandidateDocuments = function (id) {
@@ -407,9 +419,10 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 'RD-Access-Token': undefined
             }
             , data: {
-                "outageUnfinished": false
-                , "username": creditentialDtls.activateName
-                , "password": creditentialDtls.activatePassword
+                "outageUnfinished": false,
+               /* , "username":'eric.johnson@fmcg.com'
+                 , "password":'hay'*/
+                "username": creditentialDtls.activateName    , "password": creditentialDtls.activatePassword
             }
         });
     }
@@ -427,6 +440,10 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 "action": aryaStatus
             }
         });
+    }
+
+    dataFactory.getCountries = function() {
+        return $http.get('json/countries.json');
     }
     return dataFactory;
 }]);
@@ -539,12 +556,19 @@ app.service('sharedProperties', function () {
     var activeUserName = '';
     var activePassword = '';
     var selectedForesightGraph = '';
+    var urlPdf = '';
+    var email = '';
     return {
         setAllNotesDetails(data) {
             noteDetails = data;
         }, getAllNotesDetails() {
             return noteDetails;
-        }, setSelectedForesightGraph(data) {
+        },setURLPdf(data) {
+            urlPdf = data;
+        }, getURLPdf() {
+            return urlPdf;
+        },
+        setSelectedForesightGraph(data) {
             selectedForesightGraph = data;
         }, getSelectedForesightGraph() {
             return selectedForesightGraph;
@@ -574,7 +598,12 @@ app.service('sharedProperties', function () {
             return userName;
         }, setPassword: function (value) {
             password = value
-        }, getPassword: function () {
+        }, getEmail: function () {
+            return email;
+        }, setEmail: function (value) {
+            email = value
+        },
+        getPassword: function () {
             return password;
         }, setActiveUserName: function (value) {
             activeUserName = value

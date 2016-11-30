@@ -9,7 +9,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     var data = {
         'orgId' : 6,
         'limit' : 10,
-        'page'  : 1
+        'page'  : 0
     }
 
     function getData() {
@@ -18,7 +18,14 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
               function resolved(response) {
                   $scope.rowCollection = response.data;
                   $scope.start = data.page * data.limit - data.limit || 1;
-                  $scope.end = data.page * data.limit;
+
+                  if(data.page == 0){
+                      $scope.end = 10;
+                      data.page = 1;
+                      //$scope.end = data.page * data.limit;
+                  }else{
+                      $scope.end = data.page * data.limit
+                  }
                     //$scope.rowCollection[0].AryaStatus = "Inactive"
                   //$scope.rowCollection[1].AryaStatus = "Active"
               },

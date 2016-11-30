@@ -40,6 +40,7 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
                         data.push(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])
                          //datainsert.push[data[k]]
                   $scope.candidatePipelineData.push( {"label":label,"data":data});
+                  $scope.options = {legend: {display: true}};
 
 
                 }

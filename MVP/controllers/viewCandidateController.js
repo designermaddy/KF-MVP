@@ -48,6 +48,16 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
             canStatus(id);
         }
     }
+$scope.confirmPopup = function(){
+
+    if($scope.urlResumePdfDownload){
+         alert( $scope.informationText)
+        //confirm($scope.informationText)
+    }else{
+    alert( $scope.informationText)
+    }
+
+}
     var viewCandidates = function (id) {
         var promise = Factory.getviewCandidate(id);
         promise.then(function resolved(response) {
@@ -56,6 +66,15 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
             if (sharedProperties.getCandidateListDetails()) {
                 var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
                 var link = urlResumeLink.resumeLink
+
+                if(link){
+
+                    $scope.informationText = "The file is getting download"
+                }else{
+
+                     $scope.informationText = "Sorry the resume is not available"
+                }
+                 $scope.urlResumePdfDownload = link;
                 $scope.currentEmployer = $scope.row.profile.currentEmployer
                 $scope.currentJobTitle = $scope.row.profile.currentJobTitle
                 $scope.jobFunction = $scope.row.profile.jobFunction
@@ -108,10 +127,19 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         });
     }
-    var canReq = function (id) {
-        var pro = Factory.getCandidateRequisition(id);
+     var canReq = function (id) {
+        var reqNo = sharedProperties.getRequisitionDetails().ReqNumber;
+        var pro = Factory.getCandidateRequisition(id, reqNo);
         pro.then(function resolved(response) {
             $scope.canReq = response.data.candidateRequisition;
+            angular.forEach($scope.canReq, function (value, key) {
+                if (value.requisitionNumber == reqNo) {
+                    $scope.canReq.splice(key, 1);
+                }
+            })
+            if ($scope.canReq.length > 0){
+                $scope.showReqPopover = true;
+            }
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         });
