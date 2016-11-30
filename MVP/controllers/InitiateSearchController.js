@@ -74,8 +74,8 @@
             // TODO: Get rid of the hard coded values; Provided here just for initial demo purposes
             var jobId = sharedProperties.getClientJobID()
             this.ClientJobID = jobId; //"562139";
-            this.AryaOrgID = 1;
-            this.ClientOrgID = 1;
+            this.AryaOrgID = 6;
+            this.ClientOrgID = 6;
             this.apikey = "Z/djRosu9qHKtR4+h0y3ET0wwtOautvomeSPp6U5ENE=";
             this.JobTitle = "Sales1 Account Executive";
             //this.JobTitle = vm.criteria.JobTitle
@@ -103,6 +103,11 @@
 
         vm.save = function save () {
              vm.criteria = getCriteria(sharedProperties);
+             if(vm.criteria.Miles){
+                 delete vm.criteria.Miles;
+            }if(vm.criteria.TotalSourcedCount){
+                delete vm.criteria.TotalSourcedCount;
+            }
             var promise = Factory.saveNewSearch(vm.criteria);
             promise.then(
                 function resolved(response) {
