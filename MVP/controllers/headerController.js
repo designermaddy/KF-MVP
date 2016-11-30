@@ -11,7 +11,7 @@
 app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
    var authToken = $cookies.get('RD-Access-Token');
    if (config.production < 9) {
-   // var authToken = config.token;
+    var authToken = config.token;
    }
 if (authToken!==undefined){
    $scope.values = atob(authToken).split(',');
