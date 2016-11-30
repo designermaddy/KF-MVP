@@ -173,7 +173,8 @@
 .TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 12px; font-weight: normal; display: block; }
 .TermSorting ul li a:active, .TermSorting ul li a.active  { background-color:#007da4; color:#fff; }
 .TermSorting ul li:last-child                             { border-left:1px solid #ccc;}
-.TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
+.TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;background-image: linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color: transparent;
+    border: 0px; }
 /* --------------------------- SearchBox Style ---------------------------------- */
 .SearchBox                                                {  }
 .SearchBox label                                          { display: block; }
