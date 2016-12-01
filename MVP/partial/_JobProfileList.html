@@ -2,12 +2,14 @@
     <div class="HeaderButton"><a ng-click="initiateSearch();" class="btn btn-primary btn-sm">Initiate Candidate Search</a></div>
     <ul>
         <li  ng-repeat="pdfDtls in pdfDetailsData" >
-            <div class="WidgetPDBox" ng-click="changePdf(pdfDtls.DocumentNumber)">
+            <div class="WidgetPDBox" ng-click="changePdf(pdfDtls.id, pdfDtls.docType)">
                 <div class="WidgetPDHeader">
-                    <input type="checkbox" name='1' value="{{pdfDtls.DocumentNumber}}">
-                    <label>{{pdfDtls.FileName}}</label>
+                    <input type="checkbox" name='1' value="{{pdfDtls.id}},{{pdfDtls.docType}}">
+                    <label>{{pdfDtls.fileName}}</label>
                 </div>
-                <div class="WidgetPDContent"><img data-ng-src="data:image/PNG;base64,{{pdfDtls.Logo}}"> </div>
+                <div class="WidgetPDContent">
+                    <img src="content/images/pdf.jpg">
+                    <!--<img data-ng-src="data:image/PNG;base64,{{pdfDtls.Logo}}"> --></div>
             </div>
         </li>
       <!--   <li>

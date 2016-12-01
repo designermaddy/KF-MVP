@@ -1,4 +1,4 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
+app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
     /** -- Scope function definitons -- **/
@@ -164,6 +164,18 @@ $scope.confirmPopup = function(){
         })
     }
     getAllTags();
+
+    // call the mail function when mail icon clicked
+
+     $scope.openMailPopup = function() {
+        var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'emailPopup.html'
+            , controller: 'emailPopupController'
+            , size: 'lg'
+        });
+    }
+
     /*//------ ! I don't know where is this used as of now. Written by karthik B --------------//
     var callPdf = function (urlResumeLink) {
         var url = urlResumeLink;
@@ -190,3 +202,38 @@ $scope.confirmPopup = function(){
         getData($scope.id);
     });
             }]);
+app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout','Factory', function($uibModalInstance, $scope, $timeout, Factory) {
+
+     $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+     function pdfDetails() {
+        var promise = Factory.pdfDetailsList();
+        promise.then(function resolved(response) {
+            $scope.original = $scope.pdfDetailsData = response.data.documentList;
+           loadCompany();
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    };
+    pdfDetails();
+
+     function loadCompany(){
+
+      var data = $scope.pdfDetailsData;
+        var selectFunctionArray = ['All'];
+        if (data) {
+            angular.forEach(data, function (item) {
+                var uniqueValue = item.Function;
+                if (selectFunctionArray.indexOf(uniqueValue) == -1) {
+                    selectFunctionArray.push(uniqueValue)
+                }
+            })
+            $scope.options = selectFunctionArray;
+            $scope.form = $scope.options[0];
+            $timeout(function () {
+                $('#selectCompany').selectpicker();
+            }, 50, false);
+        }
+     }
+}])

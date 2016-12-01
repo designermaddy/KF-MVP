@@ -5,11 +5,14 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
            if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
             }
-       var promise = Factory.jobProfileDocDetailsList($scope.item.ClientId);
+        if( sharedProperties.getRequisitionDetails().Position){
+            var positionID = sharedProperties.getRequisitionDetails().Position
+          }
+       var promise = Factory.jobProfileDocDetailsList($scope.item.ClientId, positionID);
         promise.then(
           function resolved(response) {
 
-              $scope.pdfDetailsData = response.data.documentList;
+              $scope.pdfDetailsData = response.data.requisitionDocList;
 
 
              // globalDetails.userTypeID = response.data.userTypeId;
@@ -25,7 +28,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
 
 
 
-    $scope.changePdf = function(a) {
+    $scope.changePdf = function(id, docType) {
         var el = $(event.target);
         var div = $(event.currentTarget);
         var input = div.find('input');
@@ -33,12 +36,17 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
             input.prop('checked', false);
         }else {
             input.prop('checked', true);
-            callPdf(a);
+            callPdf(id, docType);
         }
     };
 
-    var callPdf = function(a){
-        var url = config.projectUrl + '/Profile/getDocumentById/' + a;
+    var callPdf = function(id, docType){
+        if(docType == 'E'){
+            var url = 'http://172.25.148.147:8080/RD-WebApp/Profile/getDocumentById/'+id
+       // var url = config.projectUrl + '/Profile/getDocumentById/' + a;
+        }else{
+        var url = 'http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionDocumentById/'+id
+        }
           var promise = Factory.getPDF(url);
         promise.then(
           function resolved(response) {
@@ -61,16 +69,30 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
 
     $scope.initiateSearch = function() {
         var checked = $('input:checked');
-        var data = [];
+       var data=[];
+       var dataPost = {};
         for(var i = 0; i < checked.length - 1; i++) {
-            data.push(checked[i].value);
+            //sdata.push(checked[i].value.split(','));
+            var splitToArray =  checked[i].value.split(',');
+          // cart.push({element: element});
+
+        data.push({
+                "id": parseInt(splitToArray[0]),
+                "docType": splitToArray[1].toString()
+            });
+
+
+
+            console.log(data)
         }
-        sharedProperties.setInitiateSearchData(data);
+        dataPost.requisitionResponseList=data
+        console.log(dataPost)
+        sharedProperties.setInitiateSearchData(dataPost);
          var redirectPath = "/InitiateSearch";
           $("li[class='active']").removeClass('active');
         $('#searchHeader').addClass('active');
          $location.path(redirectPath);
-        console.log(data);
+       // console.log(data);
     }
 
 }])

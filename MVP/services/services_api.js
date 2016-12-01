@@ -190,7 +190,11 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             data : data
         });
     }
-    dataFactory.jobProfileDocDetailsList = function (engagmentID) {
+    dataFactory.jobProfileDocDetailsList = function (engagmentID, positionID) {
+
+      var data= {"engagementId": engagmentID, "requisition":positionID}
+
+
         /*var data = {
               "Documents": [
                 "string"
@@ -200,7 +204,13 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
               "function": '',
               "requisition": 0
             }*/
-        {
+         return $http({
+            method: 'POST'
+            , url:urlAPI +'/Requisition/getAllRequisitionDocument'
+
+            , data: data
+        });
+       /* {
             var data = {
                 "Documents": [
                   "string"
@@ -215,7 +225,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             method: 'POST'
             , url: urlAPI + '/Profile/getDocumentByEngagement'
             , data: data
-        });
+        });*/
         //return $http.get('json/jobProfileDoc.json')
     }
     dataFactory.getIframeList = function () {
@@ -340,7 +350,16 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (data) {
-        return $http.get(urlAPI + '/Requisition/getJobDescription/' + data);
+        var postData =data;
+
+
+         return $http({
+            method: 'POST'
+            , url: urlAPI +'/Requisition/jobSearch'
+            , data: postData
+        });
+
+
     }
     dataFactory.getPDF = function (url) {
         return $http.get(url, {
@@ -432,9 +451,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             }
             , data: {
                 "outageUnfinished": false,
-               /* , "username":'eric.johnson@fmcg.com'
-                 , "password":'hay'*/
-                "username": creditentialDtls.activateName    , "password": creditentialDtls.activatePassword
+               "username":'eric.johnson@fmcg.com',
+                 "password":'hay'
+              //  "username": creditentialDtls.activateName    , //"password": creditentialDtls.activatePassword
             }
         });
     }
