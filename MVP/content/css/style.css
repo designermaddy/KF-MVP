@@ -153,7 +153,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .panel-transparent 				 				{ border-color:#ddd; }
 .panel-transparent .panel-heading 				{ background-image:none; background-color:transparent; border-color:#ddd; color: #106550; }
 .panel-default 				 				    { border-color:#e3e3e3; }
-.panel-default .panel-heading 				    { background-image:linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color:transparent; border-color:#e3e3e3; border-left: 2px solid #106550; }
+.panel-default .panel-heading 				    { background-image:linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color:transparent; border-color:#e3e3e3; /*border-left: 2px solid #106550;*/ }
 .panel-gray                                     { background-color:#f1f1f1; }
 /* --------------------------- Input Style ---------------------------------- */
 input[type="search"].form-control,
