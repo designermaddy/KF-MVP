@@ -15,19 +15,7 @@ app.controller('pdfLinkController', ['$scope', 'Factory', 'sharedProperties', 'c
                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
            }
        )*/
-    function pdfDetails() {
-        var data = {
-            'requisition': sharedProperties.getPositionId()
-            , 'engagementId': parseInt(sharedProperties.getRequisitionDetails().EngagementId)
-        }
-        var promise = Factory.requisitionDocDetailsList(data);
-        promise.then(function resolved(response) {
-            $scope.pdfDetailsData = response.data.requisitionDocList;
-        }, function rejected(response) {
-            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-        })
-    };
-    pdfDetails();
+
     $scope.changePdf = function (a) {
         var el = $(event.target);
         var div = $(event.currentTarget);
