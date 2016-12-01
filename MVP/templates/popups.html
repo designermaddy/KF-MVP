@@ -165,11 +165,24 @@
 </script>
 <!-- End of helpfuturestep Zendesk Widget script -->
 <script type="text/ng-template" id="pdfDocUpload.html">
-    <div class="row">
-        <div class="col-md-12">
+<div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Upload Document</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="row clearfix">
+        <div class="col-md-12 MarTp15">
             <input type="file" file-model="myFile" name="file" />
-            <textarea id="pduta"></textarea>
-            <button ng-click="uploadFile()">Upload</button>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-6 MarTp15">
+            <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
+            <input type="text" id="pduin" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
+        <div class="col-md-12 MarTp15">
+            <label class="FormLabel">Upload Requisition Document </label>
+            <textarea id="pduta" class="form-control" style=" height:200px; overflow-y:auto; "></textarea>
+        </div>
+        <div class="ButtonSection pull-right MarTp15 clearfix">
+            <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
         </div>
     </div>
 </script>

@@ -296,7 +296,7 @@
 .popupImg                                               { margin-top:3px; }
 /* --------------------------- FloatingNav Style ---------------------------------- */
 .FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
-.modal-content											{ padding: 10px; }
+.modal-content											{ padding: 15px; }
 .modal-content .modal-header 							{}
 .modal-title											{ width: 93%; float: left; }
 .icons													{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }

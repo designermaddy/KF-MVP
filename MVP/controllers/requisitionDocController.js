@@ -5,6 +5,7 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
 
 
 
+
     , function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, config, $sce) {
         var $ctrl = this;
         $ctrl.url = 'pdf/1.pdf';
@@ -49,7 +50,7 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
                 , templateUrl: 'pdfDocUpload.html'
                 , controller: 'pdfUploadModalCtrl'
                 , controllerAs: '$ctrl'
-                , size: 'lg'
+                , size: 'md'
             });
         }
 
@@ -60,7 +61,6 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
             }
             var promise = Factory.requisitionDocDetailsList(data);
             promise.then(function resolved(response) {
-                console.log(response.data);
                 $scope.pdfDetailsData = response.data.requisitionDocList;
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -119,8 +119,9 @@ app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload
         $scope.uploadFile = function () {
             var file = $scope.myFile;
             var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
-            fileUpload.uploadFileToUrl(file, uploadUrl);
-            $uibModalInstance.dismiss('cancel');
+            if (fileUpload.uploadFileToUrl(file, uploadUrl)) {
+                $uibModalInstance.dismiss('cancel');
+            }
         };
 }])
     //http://angularcode.com/simple-file-upload-example-using-angularjs/
@@ -140,22 +141,29 @@ app.directive('fileModel', ['$parse', function ($parse) {
      }]);
 app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
     this.uploadFileToUrl = function (file, uploadUrl) {
-        var fd = new FormData();
-        fd.append('file', file);
-        fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
-        fd.append('requisitionId', sharedProperties.getPositionId());
-        fd.append('searchString', $('#pduta').val());
-        $http.post(uploadUrl, fd, {
-            transformRequest: angular.identity
-            , headers: {
-                'Content-Type': undefined
-            }
-        }).success(function (response) {
-            if (response.status == 'Uploaded Successfully') {
-                sharedProperties.refreshPdfDocList(new Date());
-            }
-        }).error(function () {
-            console.log('error');
-        });
+        if (!$('#pduin').val().length > 0) {
+            return false;
+        }
+        else {
+            var fd = new FormData();
+            fd.append('file', file);
+            fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
+            fd.append('requisitionId', sharedProperties.getPositionId());
+            fd.append('searchString', $('#pduta').val());
+            fd.append('fileName', $('#pduin').val());
+            $http.post(uploadUrl, fd, {
+                transformRequest: angular.identity
+                , headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                if (response.status == 'Uploaded Successfully') {
+                    sharedProperties.refreshPdfDocList(new Date());
+                }
+            }).error(function () {
+                console.log('error');
+            });
+            return true;
+        }
     }
      }]);
