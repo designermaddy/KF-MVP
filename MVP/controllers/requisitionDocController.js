@@ -120,6 +120,7 @@ app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload
             var file = $scope.myFile;
             var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
             fileUpload.uploadFileToUrl(file, uploadUrl);
+            $uibModalInstance.dismiss('cancel');
         };
 }])
     //http://angularcode.com/simple-file-upload-example-using-angularjs/
