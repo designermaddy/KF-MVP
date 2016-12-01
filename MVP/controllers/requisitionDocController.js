@@ -141,7 +141,7 @@ app.directive('fileModel', ['$parse', function ($parse) {
      }]);
 app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
     this.uploadFileToUrl = function (file, uploadUrl) {
-        if ($('#pduin').val().length < 1 || $('#pduta').val().length < 1) {
+        if ($('#pduin').val().length < 1 || $('#pduta').val().length < 1 || file.length < 1) {
             return false;
         }
         else {
