@@ -75,9 +75,21 @@
             if (radioModel) {
                 data = createFreeSearchData();
             }
-            console.log(data);
+
+            if(data.Miles){
+                 delete data.Miles;
+            }
+            if(data.TotalSourcedCount){
+                delete data.TotalSourcedCount;
+            }
+            data.ClientOrgID= 6;
+           /* data.Recruiter_Name  = "Wes Frederick"
+                , "Recruiter_Email";
+            data.Recruiter_Email = "Wes.Frederick@KornFerry.com";*/
+              data.PostingDate = getTimeStamp();
+             console.log(data);
             var promise = Factory.saveNewSearch(data);
-            //$scope.data.PostingDate = getTimeStamp();
+
             promise.then(function (response) {
                 var code = response.data.Code;
                 if (code == 0) {
@@ -88,40 +100,44 @@
                 }
             });
         }
-
+// most of the items are static should be dynamic - karthik
         function createFreeSearchData() {
             var data = {
                 "ClientJobID": ""
-                , "AryaOrgID": 1
-                , "ClientOrgID": 1
+                , "AryaOrgID": 6
+                , "ClientOrgID": 6
                 , "apikey": "Z/djRosu9qHKtR4+h0y3ET0wwtOautvomeSPp6U5ENE="
                 , "JobTitle": ""
                 , "JobTitle_Synonyms": null
                 , "Description": ""
                 , "job_start_date": ""
                 , "job_end_date": null
-                , "Location": ""
+                , "Location": $scope.freeSearch.Location
                 , "ZipCode": ""
                 , "Country": null
                 , "MinExp": 0.0
                 , "MaxExp": 0.0
                 , "NoOfPositions": 0
-                , "job_status": ""
-               // , "Recruiter_Name":  sharedProperties.getEmail()
-               // , "Recruiter_Email": sharedProperties.getUserName() //"gsharma@leoforce.com,nikhil.amudha@leoforce.com"
-                , "Recruiter_Name": "Gaurav Sharma, Nihkil Amudha"
-                , "Recruiter_Email": "gsharma@leoforce.com,nikhil.amudha@leoforce.com"
+                , "job_status": $scope.freeSearch.job_status
+                , "Recruiter_Name":  sharedProperties.getEmail()
+                , "Recruiter_Email": sharedProperties.getUserName() //"gsharma@leoforce.com,nikhil.amudha@leoforce.com"
+               // , "Recruiter_Name": "Gaurav Sharma"
+                //, "Recruiter_Email": "gsharma@leoforce.com"
                 , "job_client": ""
                 , "SearchString": null
                 , "PostingDate": ""
                 , "job_category": null
-                , "Job_apply_url": null
+                , "Job_apply_url": null,
+
             }
             console.log($scope.freeSearch);
+            console.log(sharedProperties.getEmail())
+            console.log(sharedProperties.getUserName())
+
             for (var key in $scope.freeSearch) {
                 if (data[key] !== undefined) data[key] = $scope.freeSearch[key];
             }
-            data.Country = $scope.freeSearch.ID;
+            data.Country = $scope.freeSearch.country.Country;
             data.ClientJobID = "MANUAL - " +$scope.freeSearch.JobTitle;
             return data;
         }

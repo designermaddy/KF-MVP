@@ -1,6 +1,8 @@
 app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$http', '$sce', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $http, $sce) {
     $scope.engagmentIDName = ''
     $scope.saveButtonEnable = true;
+    $scope.factivaURL = config.factivaURL;
+    $scope.oneSourceURL = config.onesourceURL;
     sharedProperties.setprofileSelectedEngagementID($scope.engagmentIDName)
     $scope.check = function () {
         console.log($scope.searchText);
@@ -119,21 +121,24 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
             , controllerAs: '$saveCtrl'
         , });
     }
+
     $scope.selectedDocumentId = [];
     $scope.selectedDocumentFunction = [];
     $scope.toggleSelection = function toggleSelection(selectedID, selectedFunction) {
         var idx = $scope.selectedDocumentId.indexOf(selectedID);
-        var uniqueFunctionValue = $scope.selectedDocumentId.indexOf(selectedFunction);
+        var uniqueFunctionValue = $scope.selectedDocumentFunction.indexOf(selectedFunction);
         // is currently selected
         if (uniqueFunctionValue > -1) {
-            $scope.selectedDocumentFunction.splice(uniqueFunctionValue, 1);
-            sharedProperties.setprofileSelectedFunction($scope.selectedDocumentFunction)
+           // $scope.selectedDocumentFunction.splice(uniqueFunctionValue, 1);
+           // sharedProperties.setprofileSelectedFunction($scope.selectedDocumentFunction)
         }
         // is newly selected
         else {
             $scope.selectedDocumentFunction.push(selectedFunction);
             sharedProperties.setprofileSelectedFunction($scope.selectedDocumentFunction)
         }
+
+
         // is currently selected
         if (idx > -1) {
             $scope.selectedDocumentId.splice(idx, 1);
