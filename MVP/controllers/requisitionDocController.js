@@ -4,17 +4,18 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
 
 
 
+
     , function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, config, $sce) {
         var $ctrl = this;
         $ctrl.url = 'pdf/1.pdf';
         $scope.deleteButtonEnable = true;
         var idList = [];
-
-        $scope.openPdf = function (url, filename, doctype, engagementId, requisitionId) {
-            if (doctype == 'R'){
-                var url = config.localUrl + '/Requisition/getRequisitionDocumentById/' + engagementId + '/' + requisitionId;
-            }else {
-                var url = config.localUrl + '/Profile/getDocumentById/' + url;
+        $scope.openPdf = function (id, filename, doctype) {
+            if (doctype == 'R') {
+                var url = config.localUrl + '/Requisition/getRequisitionDocumentById/' + id;
+            }
+            else {
+                var url = config.localUrl + '/Profile/getDocumentById/' + id;
             }
             var promise = Factory.getPDF(url);
             promise.then(function resolved(response) {
@@ -97,6 +98,11 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
                 })
             }
         }
+        $scope.$watch(function () {
+            return sharedProperties.refreshPdfDocList();
+        }, function (newValue, oldValue) {
+            pdfDetails();
+        });
 }]);
 app.controller('ModalCtrl', ['$uibModalInstance', 'url', function ($uibModalInstance, url) {
     var $ctrl = this;
@@ -106,19 +112,17 @@ app.controller('ModalCtrl', ['$uibModalInstance', 'url', function ($uibModalInst
     }
 }])
 app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', 'config', function ($uibModalInstance, $scope, fileUpload, config) {
-    var $ctrl = this;
-    $scope.cancel = function () {
-        $uibModalInstance.dismiss('cancel');
-    }
-    $scope.uploadFile = function () {
-        var file = $scope.myFile;
-        var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
-        fileUpload.uploadFileToUrl(file, uploadUrl);
-    };
+        var $ctrl = this;
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        }
+        $scope.uploadFile = function () {
+            var file = $scope.myFile;
+            var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
+            fileUpload.uploadFileToUrl(file, uploadUrl);
+        };
 }])
-
-//http://angularcode.com/simple-file-upload-example-using-angularjs/
-
+    //http://angularcode.com/simple-file-upload-example-using-angularjs/
 app.directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A'
@@ -127,7 +131,6 @@ app.directive('fileModel', ['$parse', function ($parse) {
             var modelSetter = model.assign;
             element.bind('change', function () {
                 scope.$apply(function () {
-                    console.log(element[0].files[0]);
                     modelSetter(scope, element[0].files[0]);
                 });
             });
@@ -137,17 +140,21 @@ app.directive('fileModel', ['$parse', function ($parse) {
 app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
     this.uploadFileToUrl = function (file, uploadUrl) {
         var fd = new FormData();
-        console.log(file)
-        fd.append('document', file);
+        fd.append('file', file);
         fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
         fd.append('requisitionId', sharedProperties.getPositionId());
-        fd.append('file', file.name);
-
+        fd.append('searchString', $('#pduta').val());
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity
             , headers: {
                 'Content-Type': undefined
             }
-        }).success(function () {}).error(function () {});
+        }).success(function (response) {
+            if (response.status == 'Uploaded Successfully') {
+                sharedProperties.refreshPdfDocList(new Date());
+            }
+        }).error(function () {
+            console.log('error');
+        });
     }
      }]);

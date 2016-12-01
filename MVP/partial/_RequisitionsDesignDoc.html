@@ -10,7 +10,7 @@
                             <input ng-if="pdfDtls.docType == 'R'" type="checkbox" ng-click="addId(pdfDtls.id)">
                             <label>{{pdfDtls.JobDesc}}</label>
                         </div>
-                        <div class="WidgetPDContent" ng-click="openPdf(pdfDtls.id, pdfDtls.fileName, pdfDtls.docType, pdfDtls.engagementId, pdfDtls.requisitionId)"><img src="content/images/pdf.jpg"> </div>
+                        <div class="WidgetPDContent" ng-click="openPdf(pdfDtls.id, pdfDtls.fileName, pdfDtls.docType);"><img src="content/images/pdf.jpg"> </div>
                         <div class="WidgetPDFooter">{{pdfDtls.fileName}}</div>
                     </div>
                 </li>

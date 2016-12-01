@@ -21,7 +21,7 @@
                         <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
                         <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
                         <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
-                        <h4>Contact Info</h4> <span class="email"><i class="fa fa-lg fa-envelope mr5 clrblue" aria-hidden="true"></i><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
+                        <h4 class="mt20">Contact Info</h4> <span class="email"><i class="fa fa-lg fa-envelope mr5 clrblue" aria-hidden="true"></i><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
                         <div class="mtb15">
                             <p><i class="fa fa-lg fa-phone mr8 clrblue" aria-hidden="true"></i><span class="clsilver">Phone:</span></p>
                             <p class="ml20"><span class="clsilver">Work:</span></p>
@@ -32,7 +32,7 @@
                             <br> <span class="ml20">{{row.addresses[0].country}}</span> </div>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-sm" ng-click="searchlist()">Change Status</button>
+                        <button type="submit" class="btn btn-primary btn-sm btn-changestatus" ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
                             <div class="row padding42">    <i class="fa fa-2x fa-comment-o mr29 clrblue" aria-hidden="true"></i>
                                 <i class="fa fa-2x fa-phone clrblue" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a>
@@ -60,15 +60,24 @@
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Download </div>
                                 </div>
+<<<<<<< HEAD
+                                <div class="col-md-9 pull-right pt3 DownloadLink">
+                                    <div class="row">
+                                        <ul>
+                                        <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
+                                </a></li>
+=======
                                 <div class="col-md-10 pull-right pt3 DownloadLink">
                                     <ul>
                                     <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
 							</a>   |</li>
+>>>>>>> origin/master
 
 
-                                    <li class="disabled">Assessment Report  |</li>
-                                    <li class="disabled">Interview</li>
-                                    </ul>
+                                        <li><a href="#">Assessment Report </a></li>
+                                        <li><a href="#">Interview</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

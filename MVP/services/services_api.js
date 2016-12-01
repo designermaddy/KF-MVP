@@ -570,7 +570,13 @@ app.service('sharedProperties', function () {
     var selectedForesightGraph = '';
     var urlPdf = '';
     var email = '';
+    var date = '';
+
     return {
+        refreshPdfDocList(d){
+            date = d ? d : date;
+            return date;
+        },
         setAllNotesDetails(data) {
             noteDetails = data;
         }, getAllNotesDetails() {
