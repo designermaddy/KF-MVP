@@ -125,7 +125,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .dropdown-menu                                  { border: medium none; box-shadow: none; display: none; float: left; font-size: 12px; left: 0; list-style: none outside none; padding: 0; position: absolute; text-shadow: none; top: 100%; z-index: 9998; border: 1px solid #D9DEE4; border-top-left-radius: 0; border-top-right-radius: 0 }
 .dropdown-menu>li>a                             { color: #5A738E }
 .navbar-nav .open .dropdown-menu                { position: absolute; background: #fff; margin-top: 0; border: 1px solid #D9DEE4; border-width:0 0 1px 1px; -webkit-box-shadow: none; right: 0; left: 0px; width: 220px }
-.navbar-nav .open .dropdown-menu.msg_list       { width: 300px }
+.navbar-nav .open .dropdown-menu.msg_list       { width: 288px }
 .Help a, .Calendar a, .Notification a           { font-size: 20px !important; }
 .Help ul li a, .Calendar ul li a,
 .Notification ul li a                           { font-size:12px !important; color:#106550; }
