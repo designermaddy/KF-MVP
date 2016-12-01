@@ -366,7 +366,7 @@ textarea							                     { width:100%; height:100px; }
 .contactdiv								                 { padding-top:5px;padding-bottom:5px;background-color: #fbfbfb;}
 .timediv								                 { text-align:center;background-color:#ededed;}
 .clrblue								                 { color:#0a7fc9;}
-.navbar-nav .UserProfile.open .dropdown-menu   	         { left: -224px;}
+.navbar-nav .UserProfile.open .dropdown-menu   	         { left: -240px;}
 .navbar-nav .Calendar.open .dropdown-menu		         { left: -78px;}
 .Heading2 .icon							                 { color: #0a7fc9;margin-top: 7px;}
 /* --------------------------- candidate Profile Style ---------------------------------- */
