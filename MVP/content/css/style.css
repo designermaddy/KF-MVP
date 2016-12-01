@@ -88,7 +88,7 @@ footer .FooterBox p                             { font-size:14px; font-weight:bo
 iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 10px 20px 2px 20px !important;}
 /* --------------------------- navbar-collapse Style ---------------------------------- */
 .Navigation                                     { margin-right:300px; }
-.UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:300px; }
+.UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:285px; }
 .navbar-fixed-top                               { border-width:0; margin-bottom:0; }
 .navbar-collapse 								{ float:left; }
 .navbar-default									{ box-shadow:none; background:#106550; }
