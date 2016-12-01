@@ -140,6 +140,9 @@ $scope.confirmPopup = function(){
             if ($scope.canReq.length > 0){
                 $scope.showReqPopover = true;
             }
+            else{
+                $scope.showReqPopover = false;
+            }
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         });

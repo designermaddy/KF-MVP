@@ -1,6 +1,6 @@
 
 
-app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter', 'commonFunctions', 'sharedProperties', '$uibModal', function ($scope, Factory, filterFilter, commonFunctions,sharedProperties, $uibModal) {
+app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter', 'commonFunctions', 'sharedProperties', '$uibModal','$timeout', function ($scope, Factory, filterFilter, commonFunctions,sharedProperties, $uibModal, $timeout) {
 
             if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
@@ -9,7 +9,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
 
 	// create empty search model (object) to trigger $watch on update
 	$scope.search = {};
-
+    $scope.currentStatus = $scope.item.status;
 	$scope.resetFilters = function () {
 		// needs to be a function or it won't trigger a $watch
 		$scope.search = {};
@@ -58,6 +58,24 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
             , size: 'lg'
         });
     }
+
+
+    $scope.updateStatus = function(){
+        console.log("Status Changed to : " + $scope.item.status);
+        var requestObj = {"positionResponse" : $scope.item} ;
+        Factory.updateStatus(requestObj).then(function mySucces(response) {
+            console.log("Successfully status changed.");
+        }, function myError(response) {
+            console.log("New Status : "  + $scope.item.status);
+            console.log("Current Status : "  + $scope.currentStatus);
+            $scope.item.status = $scope.currentStatus;
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        });
+
+    }
+     /*$timeout(function () {
+        $('#requisitionStatus').selectpicker();
+        }, 50, false);*/
 }]);
 
 app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {
