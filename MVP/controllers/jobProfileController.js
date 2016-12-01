@@ -42,10 +42,10 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
 
     var callPdf = function(id, docType){
         if(docType == 'E'){
-            var url = 'http://172.25.148.147:8080/RD-WebApp/Profile/getDocumentById/'+id
+            var url = config.projectUrl +'/Profile/getDocumentById/'+id
        // var url = config.projectUrl + '/Profile/getDocumentById/' + a;
         }else{
-        var url = 'http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisitionDocumentById/'+id
+        var url =config.projectUrl+ '/Requisition/getRequisitionDocumentById/'+id
         }
           var promise = Factory.getPDF(url);
         promise.then(

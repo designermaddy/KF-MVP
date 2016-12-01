@@ -186,7 +186,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('json/requisitionPdfDoc.json')
         return $http({
             method : 'POST',
-            url : config.localUrl + '/Requisition/getAllRequisitionDocument',
+            url : urlAPI + '/Requisition/getAllRequisitionDocument',
             data : data
         });
     }
@@ -412,7 +412,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.removeRequisitionDocument = function(data){
         return $http({
             method : 'POST',
-            url : config.localUrl + '/Requisition/removeRequisitionDocument',
+            url : urlAPI + '/Requisition/removeRequisitionDocument',
             data : data
         })
     }

@@ -7,7 +7,7 @@
         iframeAction : 'https://iarya.leoforce.com/Arya/',
         hayGroupUrl:'https://activate.haygroup.com/autologin/autologin.html#/',
         hayGroupAction:'https://activate.haygroup.com/v1/actions/login',
-        foreSightGraph:'https://foresightstage.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop',
+        foreSightGraph:'https://foresight.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop',
         localUrl : 'http://172.25.148.147:8080/RD-WebApp',
         factivaURL : "http://insidekf/KFResources/Pages/FactivaSearch.aspx?PID=33&amp%3bSID=83",
         onesourceURL:"https://app.avention.com/?firstTime",
