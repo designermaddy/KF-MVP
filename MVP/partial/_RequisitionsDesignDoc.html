@@ -1,6 +1,6 @@
 <div ng-controller="requisitionDocController">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerKf.html" previous-text="" next-text=""></ul></span> <span class="pull-right"><a class="btn btn-primary btn-sm" ng-click="deleteDoc();"  ng-disabled="deleteButtonEnable"> Delete </a></span> <span class="pull-right"><a ng-click="uploadDocPdf();">Attach new document</a></span> </div>
+        <h2>Documents</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" ng-model="currentPage" template-url = "uibPagerKf.html" previous-text="" next-text=""></ul></span> <span class="pull-right MarRt15"><a class="btn btn-primary btn-sm" ng-click="deleteDoc();"  ng-disabled="deleteButtonEnable"> Delete </a></span> <span class="pull-right MarRt15 PadTp8"><a ng-click="uploadDocPdf();">Attach new document</a></span> </div>
     <div class="panel panel-default WidgetPD" id="pdfBox">
         <div class="panel-body">
             <ul class="clearfix">
@@ -14,66 +14,6 @@
                         <div class="WidgetPDFooter">{{pdfDtls.fileName}}</div>
                     </div>
                 </li>
-                <!-- <li ng-click="$ctrl.openPdf('2')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='2' value='2'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">Healthcare Sr Advisor SMB Profile</div>
-                </div>
-            </li>
-            <li ng-click="$ctrl.openPdf('3')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='3' value='3'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">Cyber Manager Enterprise Profile</div>
-                </div>
-            </li>
-            <li ng-click="$ctrl.openPdf('4')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='4' value='4'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">Finance &amp; Accounting Manager Enterprise</div>
-                </div>
-            </li>
-            <li ng-click="$ctrl.openPdf('4')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='4' value='4'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">Finance &amp; Accounting Manager</div>
-                </div>
-            </li>
-            <li ng-click="$ctrl.openPdf('4')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='4' value='4'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">IT Supervisor SMB Profile</div>
-                </div>
-            </li>
-            <li ng-click="$ctrl.openPdf('4')">
-                <div class="WidgetPDBox">
-                    <div class="WidgetPDHeader">
-                        <input type="checkbox" name='4' value='4'>
-                        <label>Benchmark profile</label>
-                    </div>
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg"> </div>
-                    <div class="WidgetPDFooter">IT Delivery Manager Enterprise Profile</div>
-                </div>
-            </li>-->
             </ul>
         </div>
     </div>

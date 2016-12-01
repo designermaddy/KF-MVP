@@ -10,7 +10,7 @@ body											{ font-family:Arial, Helvetica, sans-serif; font-size:12px; backg
 h1, h2, h3, h4, h5, h6                          { font-family:"Gotham",Helvetica,Arial,sans-serif; }
 a                                               { cursor: pointer; color:#0a7fc9; text-decoration: none;}
 a:hover                                         { text-decoration: none;}
-header a                                        { color:#fff; }
+header a                                        { /*color:#fff;*/ }
 .h1, .h2, .h3, h1, h2, h3                       { margin-top: 0; }
 /* --------------------------- Margin and Padding Style ---------------------------------- */
 .BorderNull										{ border:0 !important; }
@@ -38,7 +38,7 @@ header a                                        { color:#fff; }
 .PadLtNull									    { padding-left:0 !important;}
 .PadRtNull									    { padding-right:0 !important;}
 .PadRt30									    { padding-right:30px !important;}
-
+.PadTp8									        {padding-top: 8px !important; }
 
 .mr4											{ margin-right:4%; }
 hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
@@ -88,7 +88,7 @@ footer .FooterBox p                             { font-size:14px; font-weight:bo
 iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 10px 20px 2px 20px !important;}
 /* --------------------------- navbar-collapse Style ---------------------------------- */
 .Navigation                                     { margin-right:300px; }
-.UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:300px; }
+.UserNav                                        { background-color:#00342a; padding-right: 15px; float: right; width:285px; }
 .navbar-fixed-top                               { border-width:0; margin-bottom:0; }
 .navbar-collapse 								{ float:left; }
 .navbar-default									{ box-shadow:none; background:#106550; }
@@ -96,7 +96,7 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a 			{ color: #d0fff6; font-size:14px; }
 .navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .active > a 		{ background:#111 !important; font-size:14px;color:#fff;  }
+.navbar-default .navbar-nav > .active > a 		{ background:#111 !important; font-size:14px;color:#fff !important;  }
 .navbar-default .navbar-nav > li > a 			{ padding:20px 9px; }
 .navbar-nav > li.messages-dropdown              { width: 65px; margin-right: 10px; }
 .navbar-default .navbar-nav > li a.Alert		{ width: 65px; padding:20px 25px 20px 0; text-indent:-9999px; display:inline-block; position:relative; }
@@ -112,7 +112,7 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .nav > li.NavClose                              { display:none; }
 /* --------------------------- User Profile Style ---------------------------------- */
 .badge                                          { background-color:rgba(255, 131, 0, 0.9); left:39px; position: absolute; top: 11px; }
-li.UserProfile                                  { margin-right:14px;  }
+li.UserProfile                                  { /*margin-right:14px; */ }
 .user-profile img                               { width: 29px; height: 29px; border-radius: 50%; }
 .UserProfile.open img                           { border:1px solid #106550; }
 ul.msg_list li                                  { background: #f7f7f7; padding: 5px; display: -ms-flexbox; display: flex; margin: 6px 6px 0; width: 96% !important }
@@ -125,7 +125,7 @@ ul.msg_list li a .message                       { display: block !important; fon
 .dropdown-menu                                  { border: medium none; box-shadow: none; display: none; float: left; font-size: 12px; left: 0; list-style: none outside none; padding: 0; position: absolute; text-shadow: none; top: 100%; z-index: 9998; border: 1px solid #D9DEE4; border-top-left-radius: 0; border-top-right-radius: 0 }
 .dropdown-menu>li>a                             { color: #5A738E }
 .navbar-nav .open .dropdown-menu                { position: absolute; background: #fff; margin-top: 0; border: 1px solid #D9DEE4; border-width:0 0 1px 1px; -webkit-box-shadow: none; right: 0; left: 0px; width: 220px }
-.navbar-nav .open .dropdown-menu.msg_list       { width: 300px }
+.navbar-nav .open .dropdown-menu.msg_list       { width: 288px }
 .Help a, .Calendar a, .Notification a           { font-size: 20px !important; }
 .Help ul li a, .Calendar ul li a,
 .Notification ul li a                           { font-size:12px !important; color:#106550; }
