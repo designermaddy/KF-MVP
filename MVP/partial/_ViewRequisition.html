@@ -9,22 +9,23 @@
                     <div class="row ViewBox clearfix PadRt15">
                         <div class="col-sm-9 col-md-9 col-lg-9 PadRtNull">
                            <div class="ViewBoxCompanyName PadTp15 clearfix">
-                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="PrimaryHeader">  {{item.ReqNumber}} <span>{{item.JobTitle}}</span></div>
                                     <div class="ViewBoxCount">{{item.Data.data[0].open_positions}}</div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-4">
                                     <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
                                     <div class="ViewBoxStatus FormSelect">
-                                        <select class="selectpicker form-control">
+                                        <select class="form-control" id="requisitionStatus" ng-change="updateStatus()" ng-model="item.status">
                                             <option value="Open">Open</option>
-                                            <option value="Hold">Hold</option>
-                                            <option value="Close">Close</option>
+                                            <option value="Onhold">Onhold</option>
+                                            <option value="Closed">Closed</option>
+                                            <option value="ClosedFilled">ClosedFilled</option>
                                         </select>
                                     </div>
                                     <div class="ViewBoxDays">{{item.DaysLeft }} Days</div>
                                 </div>
-                                <div class="col-sm-12 col-md-4 col-lg-4 pull-right">
+                                <div class="col-sm-12 col-md-2 col-lg-2 pull-right">
                                     <ul class="ViewBoxActions clearfix">
                                         <!--<li><a href="#"><i class="fa fa-signal" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>

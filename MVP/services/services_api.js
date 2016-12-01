@@ -457,6 +457,14 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getCountries = function() {
         return $http.get('json/countries.json');
     }
+    
+    dataFactory.updateStatus = function(RequisitionDetail) {
+        return $http({
+            method: 'POST'
+            , url: urlAPI + '/Requisition/changeStatus'
+            , data: RequisitionDetail
+        });
+    }
     return dataFactory;
 }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', function (Factory, sharedProperties, $uibModal, $location) {
