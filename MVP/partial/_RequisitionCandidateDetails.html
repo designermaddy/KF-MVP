@@ -34,23 +34,18 @@
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary btn-sm btn-changestatus" ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
-                            <div class="row padding42">    <i class="fa fa-2x fa-comment-o mr29 clrblue" aria-hidden="true"></i>
-                                <i class="fa fa-2x fa-phone clrblue" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a>
-                                <i class="fa fa-2x fa-envelope mr29 clrblue" aria-hidden="true"></i>
-                                <i class="fa fa-2x fa-calendar-o mr29 clrblue" aria-hidden="true"></i>
-                                <i class="fa fa-2x fa-video-camera mr29 clrblue" aria-hidden="true"></i>
-                                <i class="fa fa-2x fa-share-alt mr29 clrblue" aria-hidden="true"></i> </div>
+                            <div class="row padding42"> <i class="fa fa-2x fa-comment-o mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-phone clrblue" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a> <i class="fa fa-2x fa-envelope mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-calendar-o mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-video-camera mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-share-alt mr29 clrblue" aria-hidden="true"></i> </div>
                         </div>
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Source </div>
                                 </div>
-                                 <div class="col-md-7 pull-right pt3" ng-show='showReqPopover'> <a uib-popover-template = "'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen">Show in {{canReq.length}} other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
+                                <div class="col-md-7 pull-right pt3" ng-show='showReqPopover'> <a uib-popover-template="'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen">Show in {{canReq.length}} other Requistion<i class="fa fa-angle-down ml10" aria-hidden="true"></i></a> </div>
                                 <div class="col-md-7 pull-right pt3" ng-hide='showReqPopover'><span>Not listed in any other Requisitions</span></div>
                             </div>
                         </div>
-                       <!-- <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <div class="row pt25"> <a ng-href="{{url}}"><i class="fa fa-2x fa-linkedin-square mr29" aria-hidden="true"><i class="fa fa-check" aria-hidden="true"></i></i></a> <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>  <i class="fa fa-2x fa-floppy-o mr29" aria-hidden="true"></i>
                                 <i class="fa fa-2x fa-link mr29" aria-hidden="true"></i>
                                 <i class="fa fa-2x fa-trademark mr29" aria-hidden="true"></i> </div>
@@ -60,24 +55,13 @@
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Download </div>
                                 </div>
-<<<<<<< HEAD
-                                <div class="col-md-9 pull-right pt3 DownloadLink">
-                                    <div class="row">
-                                        <ul>
-                                        <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
-                                </a></li>
-=======
                                 <div class="col-md-10 pull-right pt3 DownloadLink">
                                     <ul>
-                                    <li ><a  target="_self"  ng-href="{{urlResumePdfDownload}}"  ng-click="confirmPopup()" download="resume.pdf" >Resume
-							</a>   |</li>
->>>>>>> origin/master
-
-
+                                        <li><a target="_self" ng-href="{{urlResumePdfDownload}}" ng-click="confirmPopup()" download="resume.pdf">Resume
+							</a> |</li>
                                         <li><a href="#">Assessment Report </a></li>
                                         <li><a href="#">Interview</a></li>
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +82,8 @@
             <i class="fa fa-lg fa-thumb-tack clrblue" aria-hidden="true"></i>
 
             <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>-->
-          <!--  <h4 class="MarTp30">Recuriter Notes</h4>-->
-
-            <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>
+            <!--  <h4 class="MarTp30">Recuriter Notes</h4>--><i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>
             <h4 class="MarTp30">Recruiter Notes</h4>
-
             <textarea id="notes"></textarea>
             <div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>
             <div class="col-md-12 appointment">
