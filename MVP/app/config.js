@@ -5,8 +5,8 @@
         iframeUrl : '/Arya/SocialArya/CandidateView?CandidateId={candidateId}&JobId={jobId}',
         iframeUrlAriyaSavedSearch : 'https://iarya.leoforce.com/Arya/SocialArya/SearchResult?JobId=',
         iframeAction : 'https://iarya.leoforce.com/Arya/',
-        hayGroupUrl:'https://testactivate.haygroup.biz/autologin.html#/',
-        hayGroupAction:'https://testactivate.haygroup.biz/v1/actions/login',
+        hayGroupAction:'https://activate.haygroup.com/autologin.html#/',
+       hayGroupUrl:'https://activate.haygroup.com/v1/actions/login',
         foreSightGraph:'https://foresightstage.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop',
         localUrl : 'http://172.25.148.147:8080/RD-WebApp',
         factivaURL : "http://insidekf/KFResources/Pages/FactivaSearch.aspx?PID=33&amp%3bSID=83",
@@ -28,7 +28,7 @@
         config.logOutUrl = 'https://recruiterdesktop.kf4d-qa.com/'
     }
 
- config.token ="cmRBdXRoVG9rZW46WXpSa01HTTNZall0T0RFMll5MDBNR1ptTFRsbE5HUXRPRGsxWVRkbVl6WXdZVEprT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDplM2ZhMDAzNC1lODNhLTQ4NWQtYTM3Yi01M2RlMzcwOTRhOWYsYXJ5YVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlVkYXksZmlyc3ROYW1lOlVkYXksbGFzdE5hbWU6TmF5YWssZGlzcGxheU5hbWU6VWRheU4="
+ config.token ="cmRBdXRoVG9rZW46TURCaU1UWm1Oell0WVRCaU5pMDBPREEzTFdKbFlqWXRPR1ZtTmpReVlXRTFOakJrT25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDplM2ZhMDAzNC1lODNhLTQ4NWQtYTM3Yi01M2RlMzcwOTRhOWYsYXJ5YVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlVkYXksZmlyc3ROYW1lOlVkYXksbGFzdE5hbWU6TmF5YWssZGlzcGxheU5hbWU6VWRheU4="
      //"cmRBdXRoVG9rZW46T1dOa056bGxNbUV0T1dFMVppMDBNV0ZsTFRrME1EUXRPR1kyWWpNelpUUXhORGt5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDplM2ZhMDAzNC1lODNhLTQ4NWQtYTM3Yi01M2RlMzcwOTRhOWYsYXJ5YVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlVkYXksZmlyc3ROYW1lOlVkYXksbGFzdE5hbWU6TmF5YWssZGlzcGxheU5hbWU6VWRheU4="
 
 
