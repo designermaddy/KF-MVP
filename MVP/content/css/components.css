@@ -309,7 +309,7 @@
 
 .jobWeightagerow										{ background-color: #fff; box-shadow: 0px 0px 2px #888888; }
 .btn-screened							                {  background-color:#6cce22 !important;width:28% !important;}
-
+.btn-changestatus                                       {height:35px;font-size:13px;}
 .btn-konferry											{  border-radius: 2px; height: 44px; width: 100px; text-align: center; padding: 11px; font-size: 15px; }
 .btn-save												{ color: #fff !important; background-color: #007da4; border-color: #007da4; margin-right: 15px; }
 .btn-cancel												{ color: #007da4 !important; background-color: #fff; border-color: #007da4; }
