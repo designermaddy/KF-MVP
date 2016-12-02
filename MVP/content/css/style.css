@@ -216,7 +216,7 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 
 .Heading2 h2                                    {color: #006450;font-size: 16px;font-weight: bold;margin-top: 10px;}
 	
-.candidateProfile .progress                                       {width: 28%;height: 4px;margin-top: 10px;margin-bottom: 5px;}
+.candidateProfile .progress                                       {width: 32%;height: 4px;margin-top: 10px;margin-bottom: 5px;}
 .candidateProfile .progress-bar                                   {background-color: #da5b2a;}
 .candidateProfile .progress-bar-striped, .progress-striped .progress-bar{background-image:none;}
 
