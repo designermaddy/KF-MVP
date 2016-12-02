@@ -206,7 +206,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 }*/
         return $http({
             method: 'POST'
-            , url: urlAPI + '/Requisition/getAllRequisitionDocument'
+            , url: config.localUrl + '/Requisition/getAllProfileDocument'
             , data: data
         });
         /* {
@@ -351,7 +351,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var postData = data;
         return $http({
             method: 'POST'
-            , url: urlAPI + '/Requisition/jobSearch'
+            , url: config.localUrl + '/Requisition/jobSearch'
             , data: postData
         });
     }
@@ -403,7 +403,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.removeRequisitionDocument = function (data) {
         return $http({
             method: 'POST'
-            , url: urlAPI + '/Requisition/removeRequisitionDocument'
+            , url: config.localUrl + '/Requisition/removeRequisitionDocument'
             , data: data
         })
     }

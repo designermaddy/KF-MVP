@@ -7,11 +7,11 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
         $scope.deleteButtonEnable = true;
         var idList = [];
         $scope.openPdf = function (id, filename, doctype) {
-            if (doctype == 'R') {
-                var url = config.projectUrl + '/Requisition/getRequisitionDocumentById/' + id;
+            if (doctype == 'R' || doctype == 'O') {
+                var url = config.localUrl + '/Requisition/getRequisitionDocumentById/' + id;
             }
             else {
-                var url = config.projectUrl + '/Profile/getDocumentById/' + id;
+                var url = config.localUrl + '/Profile/getDocumentById/' + id;
             }
             var promise = Factory.getPDF(url);
             promise.then(function resolved(response) {
@@ -145,7 +145,7 @@ app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedP
                 return false;
             }
             else {
-                fd.append('otherFile', file2)
+                fd.append('file', file2)
             }
         }
         else {

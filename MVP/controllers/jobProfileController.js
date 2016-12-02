@@ -45,7 +45,7 @@ app.controller('jobProfileController', ['$uibModal','$scope','Factory', 'commonF
             var url = config.projectUrl +'/Profile/getDocumentById/'+id
        // var url = config.projectUrl + '/Profile/getDocumentById/' + a;
         }else{
-        var url =config.projectUrl+ '/Requisition/getRequisitionDocumentById/'+id
+        var url =config.localUrl+ '/Requisition/getRequisitionDocumentById/'+id
         }
           var promise = Factory.getPDF(url);
         promise.then(
