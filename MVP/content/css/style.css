@@ -215,8 +215,13 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .candidateimg img                               {border-radius: 50%;border: 2px solid #006450;}
 
 .Heading2 h2                                    {color: #006450;font-size: 16px;font-weight: bold;margin-top: 10px;}
+<<<<<<< HEAD
 	
 .candidateProfile .progress                                       {width: 32%;height: 4px;margin-top: 10px;margin-bottom: 5px;}
+=======
+
+.candidateProfile .progress                                       {width: 28%;height: 4px;margin-top: 10px;margin-bottom: 5px;}
+>>>>>>> origin/master
 .candidateProfile .progress-bar                                   {background-color: #da5b2a;}
 .candidateProfile .progress-bar-striped, .progress-striped .progress-bar{background-image:none;}
 
