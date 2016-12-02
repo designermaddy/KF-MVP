@@ -4,56 +4,44 @@
             <div ng-include="'partial/_ViewRequisition.html'"></div>
         </div>
         <div id="RDTabs" class="col-sm-12 col-md-12 col-lg-12 PaddingNull" ng-controller="requisitionCandidateListController" ng-init="indextab = showIndex">
-<uib-tabset active="indextab" >
-    <uib-tab index="0" heading="Job Profile"  >
-        <div class="container-fluid clearfix" ng-controller="pdfLinkController">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div ng-include="'partial/_JobProfileList.html'"></div>
+            <uib-tabset active="indextab">
+                <uib-tab index="0" heading="Job Profile">
+                    <div class="container-fluid clearfix" ng-controller="pdfLinkController">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div ng-include="'partial/_JobProfileList.html'"></div>
+                            </div>
+                            <div class="col-md-9">
+                                <div ng-include="'partial/_JobProfileViewer.html'"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        <div ng-include="'partial/_JobProfileViewer.html'"></div>
+                </uib-tab>
+                <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
+                <uib-tab index='2' heading="Documentation">
+                    <div class="container-fluid clearfix">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-        </div>
-    </uib-tab>
-    <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
-    <uib-tab index='2'  heading="Documentation">
-        <div class="container-fluid clearfix" >
-        <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="requisitionDocController as $ctrl">
-            <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
-        </div>
-            </div>
-        </div>
-        <script type="text/ng-template" id="modalContent.html">
-            <div class="modal-header" style="background-color : #888;">
-                <h4 style="float : left;"> BenchMark Profile</h4> <a ng-click="$ctrl.cancel()"><i class="fa fa-times" style="float : right; font-size:2.5em;"></i></a> </div>
-            <div class="modal-body">
-                <div>
-                    <ya-pdf-viewer ya-pdf-url="{{$ctrl.url}}"></ya-pdf-viewer>
-                </div>
-            </div>
-        </script>
-
-    </uib-tab>
-
-     <uib-tab index='3'  heading="Search Results">
-        <div class="container-fluid clearfix" >
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div ng-include="'partial/_SearchResultsSearch.html'"></div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div ng-include="'partial/_SearchResultsTable.html'"></div>
-            </div>
-        </div>
-    </div>
-    </uib-tab>
-
-    <uib-tab index='4'  heading="Candidates List">
-        <div class="container-fluid clearfix">
-        <!-- <div class="row">
+                </uib-tab>
+                <uib-tab index='3' heading="Search Results">
+                    <div class="container-fluid clearfix">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_SearchResultsSearch.html'"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_SearchResultsTable.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab index='4' heading="Candidates List">
+                    <div class="container-fluid clearfix">
+                        <!-- <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div ng-include="'partial/_CandidatesListSearch.html'"></div>
             </div>
@@ -61,29 +49,29 @@
                 <div ng-include="'partial/_CandidatesListTable.html'"></div>
             </div>
         </div> -->
-		<div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div ng-include="'partial/_RequistionCandidateDetails.html'"></div>
-            </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_RequistionCandidateDetails.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab index='5' heading="Applicants List">
+                    <div class="container-fluid clearfix">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_ApplicantsListSearch.html'"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div ng-include="'partial/_ApplicantsListTable.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab index='6' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
+                <uib-tab index='7' heading="History" class="disabled"> History </uib-tab>
+                <uib-tab index='8' heading="Market Insights" class="disabled"> Market Insights </uib-tab>
+            </uib-tabset>
         </div>
-    </div>
-    </uib-tab>
-    <uib-tab index='5' heading="Applicants List">
-        <div class="container-fluid clearfix" >
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div ng-include="'partial/_ApplicantsListSearch.html'"></div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div ng-include="'partial/_ApplicantsListTable.html'"></div>
-                </div>
-            </div>
-        </div>
-    </uib-tab>
-    <uib-tab index='6' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
-    <uib-tab index='7' heading="History" class="disabled"> History </uib-tab>
-    <uib-tab index='8' heading="Market Insights" class="disabled"> Market Insights </uib-tab>
-</uib-tabset>
-</div>
     </div>
 </div>
