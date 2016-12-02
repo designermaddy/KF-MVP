@@ -1,9 +1,9 @@
-<div ng-controller="candidateDetailsTabController" class="SecondaryTab MarTp15">
+<div ng-controller="candidateDetailsTabController" class="SecondaryTab MarTp15 candidateTabs">
     <uib-tabset active="indextab">
-        <uib-tab index="0" heading="Profile Summary">
+        <uib-tab index="0" heading="Profile Summary" class="tabheading">
             <div class="container-fluid clearfix">
                 <div class="row">
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateProfileSummary.html'"></div>
                     </div>
                 </div>
@@ -12,7 +12,7 @@
         <uib-tab index='1' heading="Resume">
             <div class="container-fluid clearfix">
                 <div class="row">
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateResume.html'"></div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
         <uib-tab index='2'  heading="Assessment Results" class="disabled">
             <div class="container-fluid clearfix">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateAssessmentResults.html'"></div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
         <uib-tab index='3' heading="Documents">
             <div class="container-fluid clearfix">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateDocuments.html'"></div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
         <uib-tab index='4' heading="History">
             <div class="container-fluid clearfix">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateDetailsHistory.html'"></div>
                     </div>
                 </div>
