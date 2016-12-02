@@ -18,11 +18,12 @@ if (authToken!==undefined){
     $scope.name = $scope.values[9].split(':')[1]+" "+ $scope.values[10].split(':')[1];
     $scope.designation = $scope.values[2].split(':')[1];
     $scope.email = $scope.values[1].split(':')[1];
+
     sharedProperties.setUserName($scope.values[4].split(':')[1])
     sharedProperties.setPassword($scope.values[5].split(':')[1])
     sharedProperties.setActiveUserName($scope.values[6].split(':')[1])
     sharedProperties.setActivePassword($scope.values[7].split(':')[1])
-
+    sharedProperties.setEmailID( $scope.email)
     sharedProperties.setEmail($scope.name);
      if (($http.defaults.headers.common['RD-Access-Token'])) {
                    var d = new Date();

@@ -1,8 +1,8 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout) {
+app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout','$uibModal', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout, $uibModal) {
 
         $scope.viewLoading = false;
         agingRequisitionList();
-
+         var idpush = [];
         function agingRequisitionList() {
             var positionID = sharedProperties.getRequisitionDetails().Position
             var promise = Factory.getrequisitionCandidateList(positionID);
@@ -92,14 +92,31 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         }
 
         $scope.getCandidateData = function(id) {
-          sharedProperties.setViewCandidateId(id);
+            var arridPush= [];
+            arridPush.push(id);
+          sharedProperties.setViewCandidateId(arridPush);
           $('#candidatelistid').hide();
           $('#reqCanDet').show();
+        }
+        $scope.getCandidateDatas = function(id) {
+
+            idpush.push(id);
+          sharedProperties.setViewCandidateId(idpush);
+
         }
         $timeout(function () {
         $('#candidateSavedSearchesList').selectpicker();
         console.log($('.selectpicker'))
         }, 50, false);
+  // call the mail function when mail icon clicked
 
+     $scope.openMailPopup = function() {
+        var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'emailPopup.html'
+            , controller: 'emailPopupController'
+            , size: 'lg'
+        });
+    }
 
 }]);

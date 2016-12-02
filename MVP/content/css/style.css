@@ -97,7 +97,7 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .navbar-default .navbar-nav > li > a 			{ color: #d0fff6; font-size:14px; }
 .navbar-default .navbar-nav > .open > a,
 
-.navbar-default .navbar-nav > .active > a 		{ background:#111 !important; font-size:14px;color: #fff !important;}
+.navbar-default .navbar-nav > .active > a 		{ background:#fff !important; font-size:14px;}
 
 .navbar-default .navbar-nav > li > a 			{ padding:20px 9px; }
 .navbar-nav > li.messages-dropdown              { width: 65px; margin-right: 10px; }

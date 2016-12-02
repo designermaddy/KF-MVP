@@ -205,22 +205,114 @@ $scope.confirmPopup = function(){
         getData($scope.id);
     });
             }]);
-app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout','Factory', function($uibModalInstance, $scope, $timeout, Factory) {
+app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout','Factory','commonFunctions','sharedProperties', function($uibModalInstance, $scope, $timeout, Factory, commonFunctions, sharedProperties ) {
 
+    //companyDtls();
+    emailProfileDtls();
+    $scope.data={};
+    $scope.data.candidateIDs = sharedProperties.getViewCandidateId();
+    $scope.data.userMailID = sharedProperties.getEmailID()
+    function emailProfileDtls(){
+         var promise = Factory.emailProfileDetails();
+        promise.then(function resolved(response) {
+           // console.log()
+            // $scope.data.templateId = //set the templateid
+            $scope.emailProfileOptions = response.data.emailProfile;
+           // $scope.emailProfileOptions = companyName;
+            $timeout(function () {
+                $('#selectEmailProfile').selectpicker();
+            }, 50, false);
+           //loadCompany();
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    }
      $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
-     function pdfDetails() {
-        var promise = Factory.pdfDetailsList();
+     $scope.emailProfileSelect = function(emailProfileID){
+
+         $scope.data.profileId = emailProfileID.id
+
+     }
+     function companyDtls() {
+        var promise = Factory.candidateCompany();
         promise.then(function resolved(response) {
-            $scope.original = $scope.pdfDetailsData = response.data.documentList;
-           loadCompany();
+            var companyName = response.data.company;
+            $scope.options = companyName;
+            $timeout(function () {
+                $('#selectCompany').selectpicker();
+            }, 50, false);
+           //loadCompany();
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     };
-    pdfDetails();
 
+
+ $scope.companySelect = function (form) {
+        var selectedCompanyOptions = form;
+     if(selectedCompanyOptions){
+        var companyID = selectedCompanyOptions.id;
+         if( companyID){
+             templateDropDownFunction(companyID);
+         }
+       }else{
+           var companyID = "";
+           templateDropDownFunction(companyID)
+       }
+    }
+ var reqDtls = sharedProperties.getRequisitionDetails()
+ if(reqDtls){
+     templateDropDownFunction(reqDtls.EngagementId);
+ }
+  $scope.templateSelect = function (form) {
+        var selectedTemplateOptions = form;
+        var templateID = selectedTemplateOptions.id;
+     if( templateID){
+         getTemplateContent(templateID);
+         $scope.data.templateId=templateID
+     }
+    }
+
+  function getTemplateContent(id){
+       var promise = Factory.templateContent(id);
+
+        promise.then(function resolved(response) {
+            var templateDtls = response.data;
+
+            $scope.data.body = templateDtls.templateContent.body;
+
+           // $scope.templateOptions
+           // $scope.options = companyName;
+           /* $timeout(function () {
+                $('#selectCompany').selectpicker();
+            }, 50, false);*/
+           //loadCompany();
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+
+
+  }
+ function templateDropDownFunction(id){
+        // id=2521
+      var promise = Factory.candidateTemplate(id);
+
+        promise.then(function resolved(response) {
+            var template = response.data;
+            console.log(template);
+            $scope.templateOptions=template.template;
+           // $scope.options = companyName;
+            $timeout(function () {
+                $('#selectTemplate').selectpicker();
+            }, 50, false);
+           //loadCompany();
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+
+ }
      function loadCompany(){
 
       var data = $scope.pdfDetailsData;
@@ -239,4 +331,13 @@ app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout'
             }, 50, false);
         }
      }
+     $scope.sendMail = function(){
+
+         var promise = Factory.sendMail($scope.data);
+        promise.then(function resolved(response) {
+           console.log(response.data)
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    }
 }])

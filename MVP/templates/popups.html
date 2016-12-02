@@ -44,39 +44,35 @@
 </script>
 <!-- Email Popup template   -->
 <script type="text/ng-template" id="emailPopup.html">
+
     <div class="container-fluid claerfix MarTp15">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Send Email</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">To :</span>
-            <label class="FormLabel OutputLabel">matt.austin@loopworks.com</label>
+        <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">From :</span>
+            <label class="FormLabel OutputLabel">{{data.userMailID}}</label>
         </div>
     </div>
     <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+      <!--  <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
             <label class="FormLabel">Company</label>
-            <select id="selectCompany" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)">
-
+            <select id="selectCompany" class="selectpicker form-control" required ng-model='form' ng-options='company as company.name for company in options' ng-change="companySelect(form)">
             </select>
-        </div>
+        </div>-->
         <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
             <label class="FormLabel">Template</label>
-            <select id="" class="selectpicker form-control">
-                <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
-                <option value="Supply Chain Head">Supply Chain Head</option>
-                <option value="Supply Chain President">Supply Chain President</option>
-                <option value="Supply Chain Lead">Supply Chain Lead</option>
+            <select id="selectTemplate" class="selectpicker form-control" required ng-model='form' ng-options='template as template.name for template in templateOptions' ng-change="templateSelect(form)">
+                <option value="">Please Select</option>
             </select>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
             <label class="FormLabel">Email Profile</label>
-            <select id="" class="selectpicker form-control">
-                <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
-                <option value="Supply Chain Head">Supply Chain Head</option>
-                <option value="Supply Chain President">Supply Chain President</option>
-                <option value="Supply Chain Lead">Supply Chain Lead</option>
-            </select>
+             <select id="selectEmailProfile" class="selectpicker form-control" required ng-model='form' ng-options='emailPfl as emailPfl.name for emailPfl in emailProfileOptions' ng-change="emailProfileSelect(form)">
+                 <option value="">Please Select</option>
+             </select>
         </div>
     </div>
-    <div class="row MarBt15">
+   <!-- <div class="row MarBt15">
         <div class="col-sm-6 col-md-4 col-lg-4 MarBt15">
             <label class="FormLabel">Add Attachments</label>
             <input name="myFile" type="file" /> </div>
@@ -86,22 +82,29 @@
                 <li>Overview of Company, Organisation Structure, Terms and Policies.pdf (78 KB)</li>
             </ul>
         </div>
-    </div>
+    </div>-->
     <div class="row MarBt15">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <label class="FormLabel">Subject</label>
-            <input class="input-sm form-control" type="search"> </div>
+            <input class="input-sm form-control" ng-model="data.subject" type="search"> </div>
     </div>
-    <div class="row MarBt15">
+   <!-- <div class="row MarBt15">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <textarea class="form-control" style="height:300px; overflow-y:auto;" ></textarea>
+            <textarea class="form-control" ng-model="data.contentDescription" style="height:300px; overflow-y:auto;" ></textarea>
         </div>
+        </div>-->
+
+        <div class="panel panel-default ViewBox">
+            <div class="panel-body" style="height:286px; overflow-y: scroll; ">
+            <trix-editor ng-if="true" angular-trix ng-model="data.body" class="trix-content"></trix-editor>
+            </div>
         </div>
+
         <div class="row MarBt15">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="ButtonSection pull-right">
                 <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm" >Cancel</button>
-                <button ng-click="" type="Save" class="btn btn-primary btn-sm">Send Email</button>
+                <button ng-click="sendMail()" type="Save" class="btn btn-primary btn-sm">Send Email</button>
             </div>
 
     </div>

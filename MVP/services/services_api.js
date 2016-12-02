@@ -179,6 +179,45 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.pdfDetailsList = function () {
         return $http.get(urlAPI + '/Profile/getAllDocuments')
     }
+    // call company method for the mail services in candidate details page
+
+   /*  dataFactory.candidateCompany= function () {
+        return $http.get(urlAPI + '/Candidate/Company')
+    }*/
+     dataFactory.candidateTemplate= function (id) {
+        return $http.get(urlAPI + '/Candidate/TemplatesList/'+id);
+    }
+      dataFactory.templateContent= function (id) {
+        return $http.get(urlAPI + '/Candidate/TemplateContent/'+id);
+    }
+    dataFactory.emailProfileDetails= function () {
+        return $http.get(urlAPI + '/Candidate/Profile');
+
+    }
+    dataFactory.sendMail = function (data) {
+
+     var postData =   {
+              "attachments": [
+                {
+                  "blob": "",
+                  "fileName": ""
+                }
+              ],
+              "body": data.body,
+              "candidateIDs": data.candidateIDs,
+          "profileId": data.profileId,
+          "subject": data.subject,
+          "templateId": data.templateId
+     }
+
+        //return $http.get('json/requisitionPdfDoc.json')
+        return $http({
+            method : 'POST',
+            url : urlAPI + '/Candidate/SendEmail',
+            data : postData
+        });
+    }
+
     dataFactory.getRequisitionSearchResults = function () {
         return $http.get('json/requisitionList.json')
     }
@@ -589,7 +628,7 @@ app.service('sharedProperties', function () {
     var ClientJobID = '';
     var noteDetails = {};
     var savedSearchDetails = {};
-    var viewCandidateId = '';
+    var viewCandidateId = [];
     var reportURL = '';
     var candidateListDetails = [];
     var activeUserName = '';
@@ -598,6 +637,7 @@ app.service('sharedProperties', function () {
     var urlPdf = '';
     var email = '';
     var date = '';
+    var emailID = '';
 
     return {
         refreshPdfDocList(d){
@@ -647,6 +687,11 @@ app.service('sharedProperties', function () {
             return email;
         }, setEmail: function (value) {
             email = value
+        },
+        getEmailID: function () {
+            return emailID;
+        }, setEmailID: function (value) {
+            emailID = value
         },
         getPassword: function () {
             return password;
