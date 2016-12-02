@@ -1,21 +1,21 @@
 <div class="Heading2">
     <h2>Engagements Search</h2></div>
-<div class="panel panel-default SearchBox" ng-controller="engagementSearchController">
+<div class="panel panel-default SearchBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
         <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel"> Engagement Name (or) ID</label>
-            <input class="input-sm form-control FormInput" type="search" ng-model="name" uib-typeahead="address for address in engagement | filter:$viewValue | limitTo:8" > </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="search.eng" ng-model-options="{debounce: 1000}"> </div>
         <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Client Name</label>
-            <input class="input-sm form-control FormInput" type="search" ng-model="cli" uib-typeahead="address for address in client | filter:$viewValue | limitTo:8" > </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="search.Client.ClientName" ng-model-options="{debounce: 1000}"> </div>
          <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Industry</label>
-            <input class="input-sm form-control FormInput" type="search" ng-model="ind" uib-typeahead="ind for ind in industry | filter:$viewValue | limitTo:8" > </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="search.Client.Industry" ng-model-options="{debounce: 1000}"> </div>
          <div class="col-sm-6 col-md-3 col-lg-3">
             <label class="FormLabel">Recruiter Name</label>
-            <input class="input-sm form-control" type="search" ng-model="rec" uib-typeahead="rec for rec in recruiter | filter:$viewValue | limitTo:8" > </div>
+            <input class="input-sm form-control FormInput" type="search" ng-model="search.rec"> </div>
         </div>
         <div class="row clearfix">
             <div class="col-sm-6 col-md-3 col-lg-3 DatePicker" ng-controller="DatePickerCtrl">
@@ -53,10 +53,10 @@
                 <div class="FormCheckBox">
                 <input type="checkbox" id="engagementsOnly"  disabled="disabled"  checked autocomplete="off"> <label for="engagementsOnly" class="CheckBoxLable">My Engagements Only</label> </div>
             </div>
+            <!--
             <div class="col-sm-6 col-md-1 col-lg-1 pull-right">
                 <button type="submit" class="btn btn-primary btn-sm pull-right" ng-click="searchlist()">GO</button>
-
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

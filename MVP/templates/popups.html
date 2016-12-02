@@ -45,68 +45,65 @@
 <!-- Email Popup template   -->
 <script type="text/ng-template" id="emailPopup.html">
     <div class="container-fluid claerfix MarTp15">
-    <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">To :</span>
-            <label class="FormLabel OutputLabel">matt.austin@loopworks.com</label>
-        </div>
-    </div>
-    <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
-            <label class="FormLabel">Company</label>
-            <select id="selectCompany" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)">
-
-            </select>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
-            <label class="FormLabel">Template</label>
-            <select id="" class="selectpicker form-control">
-                <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
-                <option value="Supply Chain Head">Supply Chain Head</option>
-                <option value="Supply Chain President">Supply Chain President</option>
-                <option value="Supply Chain Lead">Supply Chain Lead</option>
-            </select>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
-            <label class="FormLabel">Email Profile</label>
-            <select id="" class="selectpicker form-control">
-                <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
-                <option value="Supply Chain Head">Supply Chain Head</option>
-                <option value="Supply Chain President">Supply Chain President</option>
-                <option value="Supply Chain Lead">Supply Chain Lead</option>
-            </select>
-        </div>
-    </div>
-    <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4 MarBt15">
-            <label class="FormLabel">Add Attachments</label>
-            <input name="myFile" type="file" /> </div>
-        <div class="col-sm-12 col-md-12 col-lg-12 Attachments">
-            <ul>
-                <li>Detailed Job Description.docx (200 KB)</li>
-                <li>Overview of Company, Organisation Structure, Terms and Policies.pdf (78 KB)</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row MarBt15">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="FormLabel">Subject</label>
-            <input class="input-sm form-control" type="search"> </div>
-    </div>
-    <div class="row MarBt15">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <textarea class="form-control" style="height:300px; overflow-y:auto;" ></textarea>
-        </div>
+        <div class="row MarBt15">
+            <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">To :</span>
+                <label class="FormLabel OutputLabel">matt.austin@loopworks.com</label>
+            </div>
         </div>
         <div class="row MarBt15">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="ButtonSection pull-right">
-                <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm" >Cancel</button>
-                <button ng-click="" type="Save" class="btn btn-primary btn-sm">Send Email</button>
+            <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+                <label class="FormLabel">Company</label>
+                <select id="selectCompany" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)"> </select>
             </div>
-
+            <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+                <label class="FormLabel">Template</label>
+                <select id="" class="selectpicker form-control">
+                    <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
+                    <option value="Supply Chain Head">Supply Chain Head</option>
+                    <option value="Supply Chain President">Supply Chain President</option>
+                    <option value="Supply Chain Lead">Supply Chain Lead</option>
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+                <label class="FormLabel">Email Profile</label>
+                <select id="" class="selectpicker form-control">
+                    <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
+                    <option value="Supply Chain Head">Supply Chain Head</option>
+                    <option value="Supply Chain President">Supply Chain President</option>
+                    <option value="Supply Chain Lead">Supply Chain Lead</option>
+                </select>
+            </div>
+        </div>
+        <div class="row MarBt15">
+            <div class="col-sm-6 col-md-4 col-lg-4 MarBt15">
+                <label class="FormLabel">Add Attachments</label>
+                <input name="myFile" type="file" /> </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 Attachments">
+                <ul>
+                    <li>Detailed Job Description.docx (200 KB)</li>
+                    <li>Overview of Company, Organisation Structure, Terms and Policies.pdf (78 KB)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row MarBt15">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <label class="FormLabel">Subject</label>
+                <input class="input-sm form-control" type="search"> </div>
+        </div>
+        <div class="row MarBt15">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <textarea class="form-control" style="height:300px; overflow-y:auto;"></textarea>
+            </div>
+        </div>
+        <div class="row MarBt15">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="ButtonSection pull-right">
+                    <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm">Cancel</button>
+                    <button ng-click="" type="Save" class="btn btn-primary btn-sm">Send Email</button>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-</div>
 </script>
 <!-- Global Error Loading Popup   -->
 <script type="text/ng-template" id="LoadError.html">
@@ -231,21 +228,43 @@
 </script>
 <!-- End of helpfuturestep Zendesk Widget script -->
 <script type="text/ng-template" id="pdfDocUpload.html">
-<div class="modal-header Heading2 HeadingFloat clearfix">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2>Upload Document</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
-    <div class="row clearfix">
-        <div class="col-md-12 MarTp15">
-            <input type="file" file-model="myFile" name="file" />
+    <div class="row MarBt15 clearfix">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="btn-group">
+                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="true">Requisition File</label>
+                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="false">Other File</label>
+            </div>
+        </div>
+    </div>
+    <div ng-show="radioModel">
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15"> Requisition File :
+                <input type="file" file-model="myFile1" name="file1" /> </div>
+            <div class="col-md-6 MarTp15">
+                <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
+                <input type="text" id="pduin" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-6 MarTp15">
+                <label class="FormLabel"> Search String <span class="Mandatory">*</span></label>
+                <input type="text" id="pduss" class="form-control" name="filename" placeholder="Please Enter Search String" required/> </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15">
+                <label class="FormLabel">Job Description Text <span class="Mandatory">*</span></label>
+                <textarea id="pduJd" class="form-control" style=" height:200px; overflow-y:auto; "></textarea>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="radioModel">
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15"> Other File :
+                <input type="file" file-model="myFile2" name="file2" /> </div>
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-6 MarTp15">
-            <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
-            <input type="text" id="pduin" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
-        <div class="col-md-12 MarTp15">
-            <label class="FormLabel">Job Description Text <span class="Mandatory">*</span></label>
-            <textarea id="pduta" class="form-control" style=" height:200px; overflow-y:auto; "></textarea>
-        </div>
         <div class="ButtonSection pull-right MarTp15 clearfix">
             <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
             <button class="btn btn-default" ng-click="cancel()">Cancel</button>
