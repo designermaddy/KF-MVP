@@ -234,3 +234,7 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .nav-tabs>li                                    {margin-bottom: -2px;}
 .candidateTabs .nav-tabs>li.active>a,.candidateTabs .nav-tabs>li.active>a:focus,.candidateTabs .nav-tabs>li.active>a:hover
                                                 {color: #006450;border-bottom: 2px solid #006450;}
+
+#RDTabs .nav-tabs>li.active>a,#RDTabs .nav-tabs>li.active>a:focus,#RDTabs .nav-tabs>li.active>a:hover{color:#006450;font-size: 13px;font-weight: bold;}
+
+#RDTabs .nav-tabs>li>a                  {color:#111;}
