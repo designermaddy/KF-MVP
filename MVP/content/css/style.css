@@ -225,7 +225,7 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .candidateSkills                                {width:74%;float:right;}
 .h80                                            {height:80px;}
 .bordrRight                                     {border-right:1px solid silver;}
-.candidateTabs .tabheading a                                     {color: #111;font-size: 16px;font-weight: bold;}
+/*.candidateTabs .tabheading a                                     {color: #111;font-size: 16px;font-weight: bold;}*/
 .nav-tabs                                       {border: 0px;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
                                                 {border:0px;}
