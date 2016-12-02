@@ -216,7 +216,7 @@
 .PrimaryHeader span, .SecondaryHeader span              { color:#333; }
 .ViewBoxDate                                            { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
 .ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
-.ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
+.ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0; font-weight: normal;  }
 .ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
 .ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
 .ViewBoxActions li:last-child                           { border-right:0; }
