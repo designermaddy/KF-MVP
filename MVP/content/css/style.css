@@ -38,7 +38,7 @@ header a                                        { /*color:#fff;*/ }
 .PadLtNull									    { padding-left:0 !important;}
 .PadRtNull									    { padding-right:0 !important;}
 .PadRt30									    { padding-right:30px !important;}
-
+.PadTp8									        {padding-top: 8px !important; }
 
 .mr4											{ margin-right:4%; }
 hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
@@ -96,7 +96,9 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a 			{ color: #d0fff6; font-size:14px; }
 .navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .active > a 		{ background:#111 !important; font-size:14px;color:#fff !important;  }
+
+.navbar-default .navbar-nav > .active > a 		{ background:#fff !important; font-size:14px;}
+
 .navbar-default .navbar-nav > li > a 			{ padding:20px 9px; }
 .navbar-nav > li.messages-dropdown              { width: 65px; margin-right: 10px; }
 .navbar-default .navbar-nav > li a.Alert		{ width: 65px; padding:20px 25px 20px 0; text-indent:-9999px; display:inline-block; position:relative; }

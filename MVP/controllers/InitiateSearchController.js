@@ -42,7 +42,7 @@
         }
 
         var data = sharedProperties.getInitiateSearchData();
-        if (data.length > 0) {
+        if (data) {
             var promise = Factory.getJobDescription(data);
             promise.then(
                 function resolved(response) {
@@ -93,7 +93,7 @@
             this.NoOfPositions = 0;
             this.job_status = "Internal Job Posted - Sourcing";
             this.Recruiter_Name = sharedProperties.getEmail();
-            this.Recruiter_Email = sharedProperties.getUserName();s
+            this.Recruiter_Email = sharedProperties.getUserName()
             this.job_client = "BUS";
             this.SearchString = null;
             this.PostingDate = "2016-10-05 02:01:08";

@@ -126,11 +126,11 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
     $scope.selectedDocumentFunction = [];
     $scope.toggleSelection = function toggleSelection(selectedID, selectedFunction) {
         var idx = $scope.selectedDocumentId.indexOf(selectedID);
-        var uniqueFunctionValue = $scope.selectedDocumentFunction.indexOf(selectedFunction);
+        var uniqueFunctionValue = $scope.selectedDocumentId.indexOf(selectedID);
         // is currently selected
         if (uniqueFunctionValue > -1) {
-           // $scope.selectedDocumentFunction.splice(uniqueFunctionValue, 1);
-           // sharedProperties.setprofileSelectedFunction($scope.selectedDocumentFunction)
+            $scope.selectedDocumentFunction.splice(uniqueFunctionValue, 1);
+            sharedProperties.setprofileSelectedFunction($scope.selectedDocumentFunction)
         }
         // is newly selected
         else {
@@ -178,7 +178,25 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
     });
 }]);
 app.controller('popUpSaveEngagmentClose', ['$scope', '$uibModalInstance', 'sharedProperties', 'Factory', function ($scope, $uibModalInstance, sharedProperties, Factory) {
-    $scope.selectedFunctiontoShowinPopup = sharedProperties.getprofileSelectedFunction();
+    $scope.selectedFunctiontoShowinPopup = [];
+     var arr   = sharedProperties.getprofileSelectedFunction();
+    $scope.selectedFunctiontoShowinPopup = unique( arr)
+    function unique(origArr) {
+    var newArr = [],
+        origLen = origArr.length,
+        found,
+        x = 0; y = 0;
+
+    for ( x = 0; x < origLen; x++ ) {
+        found = undefined;
+        for ( y = 0; y < newArr.length; y++ ) {
+            if ( origArr[x] === newArr[y] ) found = true;
+        }
+        if ( !found) newArr.push( origArr[x] );
+    }
+   return newArr;
+}
+    console.log( $scope.selectedFunctiontoShowinPopup)
     $scope.close = function () {
         $uibModalInstance.dismiss('cancel');
     };
