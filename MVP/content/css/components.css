@@ -210,12 +210,12 @@
 /* --------------------------- ViewBoxHeader Style ---------------------------------- */
 .ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:10px; }
 .ViewBoxList, .ViewBoxActions                           { list-style:none; }
-.PrimaryHeader                                          { width:82%; display:inline-block; float: left; padding: 10px 0;}
+.PrimaryHeader                                          { width:79%; display:inline-block; float: left; padding: 10px 0;}
 .PrimaryHeader a, .SecondaryHeader a                    { font-size:14px; font-weight: bold; line-height: 14px; }
 .SecondaryHeader a                                     {font-weight:normal !important;}
 .PrimaryHeader span, .SecondaryHeader span              { color:#333; }
 .ViewBoxDate                                            { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
-.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
+.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; min-width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
 .ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:110px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
 .ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
 .ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
@@ -224,6 +224,7 @@
 .ViewBoxActions li a                                    { display: inline-block; font-size:16px; text-align: center; padding:5px 14px; line-height:16px; }
 .ViewBoxCompanyName, .ViewBoxFinalStatus,
 .ViewBoxName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.ViewBoxFinalStatus                                     { color: #333; font-size: 14px; font-weight: bold;  padding: 11px 0; line-height:14px; float: left; }
 .ViewBoxCompanyLocation,
 .ViewBoxDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
 .ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
