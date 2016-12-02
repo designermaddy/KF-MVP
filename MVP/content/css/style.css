@@ -225,10 +225,12 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .candidateSkills                                {width:74%;float:right;}
 .h80                                            {height:80px;}
 .bordrRight                                     {border-right:1px solid silver;}
-.tabheading a                                     {color: #006450;font-size: 16px;font-weight: bold;}
+.candidateTabs .tabheading a                                     {color: #111;font-size: 16px;font-weight: bold;}
 .nav-tabs                                       {border: 0px;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
                                                 {border:0px;}
 .nav-tabs>li>a:hover                            {border-color: #fff;}
 .nav>li>a:focus, .nav>li>a:hover                {background-color:#fff;}
 .nav-tabs>li                                    {margin-bottom: -2px;}
+.candidateTabs .nav-tabs>li.active>a,.candidateTabs .nav-tabs>li.active>a:focus,.candidateTabs .nav-tabs>li.active>a:hover
+                                                {color: #006450;border-bottom: 2px solid #006450;}
