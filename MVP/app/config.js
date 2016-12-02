@@ -25,7 +25,7 @@
         config.logOutUrl = 'https://recruiterdesktop.kf4d.com/'
     }
     else {
-        config.projectUrl = 'https://api.recruiterdesktop.kf4d-qa.com/RD-WebApp'
+        config.projectUrl = 'https://localhost:8080/RD-WebApp'
         config.logOutUrl = 'https://recruiterdesktop.kf4d-qa.com/'
     }
 
