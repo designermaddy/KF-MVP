@@ -11,7 +11,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
         //return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
-       return $http.get('json/AgingRequisitionsAcme.json');
+        return $http.get('json/AgingRequisitionsAcme.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -22,7 +22,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-         //return $http.get(urlAPI + '/Requisition/getAllPositionsById');
+        //return $http.get(urlAPI + '/Requisition/getAllPositionsById');
         //return $http.get('json/AllRequisitions.json');
         return $http.get('json/allRequisitionswithAcme.json');
         //}
@@ -224,47 +224,46 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.requisitionDocDetailsList = function (data) {
         //return $http.get('json/requisitionPdfDoc.json')
         return $http({
-            method : 'POST',
-            url : urlAPI + '/Requisition/getAllRequisitionDocument',
-            data : data
+            method: 'POST'
+            , url: config.localUrl + '/Requisition/getAllRequisitionDocument'
+            , data: data
         });
     }
     dataFactory.jobProfileDocDetailsList = function (engagmentID, positionID) {
-
-      var data= {"engagementId": engagmentID, "requisition":positionID}
-
-
-        /*var data = {
-              "Documents": [
-                "string"
-              ],
-               "engagementId": 0,
-              "function": engagment,
-              "function": '',
-              "requisition": 0
-            }*/
-         return $http({
-            method: 'POST'
-            , url:urlAPI +'/Requisition/getAllRequisitionDocument'
-
-            , data: data
-        });
-       /* {
-            var data = {
-                "Documents": [
-                  "string"
-              ]
-                , "documentId": 0
-                , "engagementId": engagmentID
-                , "function": " "
-                , "requisition": 0
+        var data = {
+                "engagementId": engagmentID
+                , "requisition": positionID
             }
-        }
+            /*var data = {
+                  "Documents": [
+                    "string"
+                  ],
+                   "engagementId": 0,
+                  "function": engagment,
+                  "function": '',
+                  "requisition": 0
+                }*/
         return $http({
             method: 'POST'
-            , url: urlAPI + '/Profile/getDocumentByEngagement'
+            , url: config.localUrl + '/Requisition/getAllProfileDocument'
             , data: data
-        });*/
+        });
+        /* {
+             var data = {
+                 "Documents": [
+                   "string"
+               ]
+                 , "documentId": 0
+                 , "engagementId": engagmentID
+                 , "function": " "
+                 , "requisition": 0
+             }
+         }
+         return $http({
+             method: 'POST'
+             , url: urlAPI + '/Profile/getDocumentByEngagement'
+             , data: data
+         });*/
         //return $http.get('json/jobProfileDoc.json')
     }
     dataFactory.getIframeList = function () {
@@ -279,14 +278,14 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         }
         //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function (engagementId) {
-        if(engagementId == 9848 ){
-             return $http.get('json/LambWeston.json');
-         }else{
+        if (engagementId == 9848) {
+            return $http.get('json/LambWeston.json');
+        }
+        else {
             return $http.get('json/Acme.json');
-         }
+        }
         // return $http.get('json/RequisitionList.json')
         // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
-
     }
     dataFactory.getViewRequisition = function () {
         return $http.get('json/viewRequisition.json');
@@ -378,27 +377,22 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getSavedSearchesResponse = function (data) {
         var orgId = data.orgId;
         var limit = data.limit;
-
-        if(data.page == 0){
+        if (data.page == 0) {
             var page = 0;
-        }else{
-
-        var page =  (data.page-1) * limit;
+        }
+        else {
+            var page = (data.page - 1) * limit;
         }
         return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
         //return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (data) {
-        var postData =data;
-
-
-         return $http({
+        var postData = data;
+        return $http({
             method: 'POST'
-            , url: urlAPI +'/Requisition/jobSearch'
+            , url: config.localUrl + '/Requisition/jobSearch'
             , data: postData
         });
-
-
     }
     dataFactory.getPDF = function (url) {
         return $http.get(url, {
@@ -406,39 +400,36 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         });
     }
     dataFactory.resumeGetPDF = function (url) {
-        /*  return $http({
-             method: 'GET',
-             url: url,
-             headers: {
-               'RD-Access-Token': undefined
-              },
-             responseType: 'arraybuffer'
+            /*  return $http({
+                 method: 'GET',
+                 url: url,
+                 headers: {
+                   'RD-Access-Token': undefined
+                  },
+                 responseType: 'arraybuffer'
 
-            })*/
-        return $http.get('https://integrations.loopworks.com/api/candidate/get/35269247/true');
-        // return $http.get(url,  {responseType: 'arraybuffer'});
-    }
-     /** ------- Candidate Details page api's -------**/
-   dataFactory.getCandidateStatus = function (posId, canId) {
+                })*/
+            return $http.get('https://integrations.loopworks.com/api/candidate/get/35269247/true');
+            // return $http.get(url,  {responseType: 'arraybuffer'});
+        }
+        /** ------- Candidate Details page api's -------**/
+    dataFactory.getCandidateStatus = function (posId, canId) {
         return $http.get(urlAPI + '/Candidate/CandidateStatus/' + posId + '/' + canId);
     }
     dataFactory.getCandidateHistory = function (id) {
         //id = 35273950;
         return $http.get(urlAPI + '/Candidate/CandidateHistory/' + id);
     }
-
-    dataFactory.getCandidateResume = function(id){
+    dataFactory.getCandidateResume = function (id) {
         return $http.get(urlAPI + '/Candidate/candidateResume/' + id, {
             responseType: 'arraybuffer'
         });
     }
-
-    dataFactory.getCandidateRequisition = function(id, reqNo) {
-        return $http.get(urlAPI + '/Candidate/CandidateRequisition/' + id + '/' +  reqNo);
+    dataFactory.getCandidateRequisition = function (id, reqNo) {
+        return $http.get(urlAPI + '/Candidate/CandidateRequisition/' + id + '/' + reqNo);
     }
-
     dataFactory.getCandidateDocuments = function (id) {
-       // id = 35107633;
+        // id = 35107633;
         return $http.get(urlAPI + '/Candidate/attachDocument/' + id);
     }
     dataFactory.getNoteToCandidate = function (data) {
@@ -448,11 +439,11 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: data
         });
     }
-    dataFactory.removeRequisitionDocument = function(data){
+    dataFactory.removeRequisitionDocument = function (data) {
         return $http({
-            method : 'POST',
-            url : urlAPI + '/Requisition/removeRequisitionDocument',
-            data : data
+            method: 'POST'
+            , url: config.localUrl + '/Requisition/removeRequisitionDocument'
+            , data: data
         })
     }
     dataFactory.getViewAllNotes = function (id) {
@@ -489,10 +480,11 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 'RD-Access-Token': undefined
             }
             , data: {
-                "outageUnfinished": false,
-               //"username":'eric.johnson@fmcg.com',
-                 //"password":'hay'
-                "username": creditentialDtls.activateName    , "password": creditentialDtls.activatePassword
+                "outageUnfinished": false
+                , //"username":'eric.johnson@fmcg.com',
+                //"password":'hay'
+                "username": creditentialDtls.activateName
+                , "password": creditentialDtls.activatePassword
             }
         });
     }
@@ -511,17 +503,26 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             }
         });
     }
-
-    dataFactory.getCountries = function() {
+    dataFactory.getCountries = function () {
         return $http.get('json/countries.json');
     }
-
-    dataFactory.updateStatus = function(RequisitionDetail) {
+    dataFactory.updateStatus = function (RequisitionDetail) {
         return $http({
             method: 'POST'
             , url: urlAPI + '/Requisition/changeStatus'
             , data: RequisitionDetail
         });
+    }
+    dataFactory.kornferry = function () {
+        return $http.get('https://qaapi.se.kornferry.com/v1/my/engagements/active', {
+  withCredentials: true,
+            useXDomain : true,
+    headers: {
+        "Authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJFQUFBQUlLQXVDb3Y0RUJGa2lQeUNtS29tcFRldmhIdVo1U1JSZEUycWlsakh3S1F5djNqRzAvRVhuYm1jMzJxK1VIbE5mZXMvck9CenpGUkQ5L3FJODhoNGtVPSIsImlzcyI6Imh0dHBzOi8vcWFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImF1ZCI6Imh0dHBzOi8vcWFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImV4cCI6MTQ4MDY3OTQ5MiwibmJmIjoxNDgwNjc4MjkyfQ.bBNeMX0_JL85TPbUHeVKkjqatOQYknjOQ5NuxwID9y8',
+        "Cookie" : "__kfsest3aaa3b340af128dd17df19c0e5e35dbf=EAAAALPGYHNbY751p1cpITBG5FKnHWLqbRCOup1jFSNG/G+tTXu0oJEQgZDSnfBzMruRRnfCmzSumKaewWVWojAq1/6SE1B16u9ljVqoEC+jgtg2V7vMH7oGPADBu5I77wC8rnTIQ6r0VULOhVVs6dy3VxZvaHL5PznRDxQ8Lg958jPJrW4DRV+72RwJ+ulWeXiiAaHrGrJH3rjpHwvsb+nN6/SNp9BcVSgxXwgcEeuQzPKad7VbfJ8l8jztf8m1biDjftzFARVe01SLg5zIv5+wiFI=; __kfseit=EAAAABb4mstJ0wV2iL1rMFrC9IzxpgcuYc4+nylBlXyDUhI7dYMbVGTzuIGHj7eaSXBGJifT2O3UtaObesrg7ZnajmntsIcs6+Cz8+8RFQAnjHGoQEuB6oICxkte3rnSqQ/7aMGG0BRakDJW1nqb0zS9RQ0fFkjP7TfgrvwT6smcyCm3; __kfsestd767ee1a06b8562e23c6f8579bc0aaf2=EAAAAJUiaXVCDWQ6mcihyiIrE+9mrz52nH5fbTB4pSJT990NC582jJsiw9iHssY6xv+5MI/Iw5EOrljib8XqbXwU+SqRJsi/eeNTpSiMe5ZCy2q4lQnpPfuZMns+Tbaai57i3DuT2C2wEH80+h8xlZy7jo1cy5Tgy1O5C+7bNoJycz7wlx7ziztBxFy0K4znySlAnoiQjEz9h2mdf206HVbvPYUIDoFz1kCvKXGlGz6ZfWzQAErhUvvc+ysPK9HXm99BKMU3yoW1JsYbGtHGYSWmoP8="
+    }
+  })
+
     }
     return dataFactory;
 }]);
@@ -551,20 +552,18 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             , controller: 'modalAryaController'
             , size: 'lg'
             , resolve: {
-
-                 userName: function () {
-                    return  userName;
-                },
-                password: function () {
-                    return  password;
-                },
-                ReturnUrl: function () {
-                    return  ReturnUrl;
-                },
-                 action: function () {
-                    return  action;
+                userName: function () {
+                    return userName;
                 }
-
+                , password: function () {
+                    return password;
+                }
+                , ReturnUrl: function () {
+                    return ReturnUrl;
+                }
+                , action: function () {
+                    return action;
+                }
             }
         });
     }
@@ -637,6 +636,7 @@ app.service('sharedProperties', function () {
     var urlPdf = '';
     var email = '';
     var date = '';
+
     var emailID = '';
 
     return {
@@ -780,5 +780,6 @@ app.service('sharedProperties', function () {
         }, setrowCollection: function (value) {
             rowCollection = value;
         }
+
     }
 });

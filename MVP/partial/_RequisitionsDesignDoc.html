@@ -7,10 +7,14 @@
                 <li ng-repeat="pdfDtls in pdfDetailsData | orderBy:'-docType'">
                     <div class="WidgetPDBox">
                         <div class="WidgetPDHeader">
-                            <input ng-if="pdfDtls.docType == 'R'" type="checkbox" ng-click="addId(pdfDtls.id)">
+                            <input ng-if="pdfDtls.docType == 'R' || pdfDtls.docType == 'O'" type="checkbox" ng-click="addId(pdfDtls.id)">
                             <label>{{pdfDtls.JobDesc}}</label>
                         </div>
-                        <div class="WidgetPDContent" ng-click="openPdf(pdfDtls.id, pdfDtls.fileName, pdfDtls.docType);"><img src="content/images/pdf.jpg"> </div>
+                        <div class="WidgetPDContent" ng-click="openPdf(pdfDtls.id, pdfDtls.fileName, pdfDtls.docType);">
+                            <img ng-if="pdfDtls.docType == 'R'" src="content/images/jobprofile.jpg">
+                            <img ng-if="pdfDtls.docType == 'O'" src="content/images/others.jpg">
+                            <img ng-if="pdfDtls.docType == 'E'" ng-src="data:image/JPEG;base64,{{pdfDtls.documentLogo}}" style="width:209px; height:140px;">
+                        </div>
                         <div class="WidgetPDFooter">{{pdfDtls.fileName}}</div>
                     </div>
                 </li>

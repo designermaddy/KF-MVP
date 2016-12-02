@@ -18,10 +18,11 @@
                         <div class="ViewBoxCompanyName  clearfix">
                             <div class="col-sm-12 col-md-3 col-lg-3">
                                 <div class="PrimaryHeader">  {{engagementResponse.EngagementNumber}} <span>{{engagementResponse.Engagement}}</span></div>
-                                <div class="ViewBoxCount">{{engagementResponse.RequsitionCount}}</div>
+                                <div class="ViewBoxCount">{{engagementResponse.Requisitions.length}}</div>
                             </div>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="col-sm-12 col-md-5 col-lg-5">
                                 <div class="ViewBoxDate"> {{engagementResponse.StartDate}} - {{engagementResponse.EndDate}} </div>
+                                <div class="ViewBoxFinalStatus MarLt15">{{engagementResponse.Status}}</div>
                                 <div class="ViewBoxDays BGRed">{{engagementResponse.DaysLeft }} Days</div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3 pull-right">
@@ -37,7 +38,6 @@
                             <div class="col-sm-12 col-md-3 col-lg-3">
                                 <div class="ViewBoxCompanyName">{{engagementResponse.Client.ClientName}} {{engagementResponse.Client.Industry}}</div>
                                 <div class="ViewBoxCompanyLocation">{{engagementResponse.Client.Location}}</div>
-                                <div class="ViewBoxFinalStatus">{{engagementResponse.Status}}</div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3">
                                 <div class="ViewBoxHeadName">Client Contact</div>

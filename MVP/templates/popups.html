@@ -46,6 +46,7 @@
 <script type="text/ng-template" id="emailPopup.html">
 
     <div class="container-fluid claerfix MarTp15">
+
     <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2>Send Email</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="row MarBt15">
@@ -97,19 +98,20 @@
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
             <trix-editor ng-if="true" angular-trix ng-model="data.body" class="trix-content"></trix-editor>
+
             </div>
         </div>
 
         <div class="row MarBt15">
+
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="ButtonSection pull-right">
                 <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm" >Cancel</button>
                 <button ng-click="sendMail()" type="Save" class="btn btn-primary btn-sm">Send Email</button>
-            </div>
 
+            </div>
+        </div>
     </div>
-    </div>
-</div>
 </script>
 <!-- Global Error Loading Popup   -->
 <script type="text/ng-template" id="LoadError.html">
@@ -234,21 +236,43 @@
 </script>
 <!-- End of helpfuturestep Zendesk Widget script -->
 <script type="text/ng-template" id="pdfDocUpload.html">
-<div class="modal-header Heading2 HeadingFloat clearfix">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
         <h2>Upload Document</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
-    <div class="row clearfix">
-        <div class="col-md-12 MarTp15">
-            <input type="file" file-model="myFile" name="file" />
+    <div class="row MarBt15 clearfix">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="btn-group">
+                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="true">Requisition File</label>
+                <label class="btn btn-default" ng-model="radioModel" uib-btn-radio="false">Other File</label>
+            </div>
+        </div>
+    </div>
+    <div ng-show="radioModel">
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15"> Requisition File :
+                <input type="file" file-model="myFile1" name="file1" /> </div>
+            <div class="col-md-6 MarTp15">
+                <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
+                <input type="text" id="pduin" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-6 MarTp15">
+                <label class="FormLabel"> Search String <span class="Mandatory">*</span></label>
+                <input type="text" id="pduss" class="form-control" name="filename" placeholder="Please Enter Search String" required/> </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15">
+                <label class="FormLabel">Job Description Text <span class="Mandatory">*</span></label>
+                <textarea id="pduJd" class="form-control" style=" height:200px; overflow-y:auto; "></textarea>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="radioModel">
+        <div class="row clearfix">
+            <div class="col-md-12 MarTp15"> Other File :
+                <input type="file" file-model="myFile2" name="file2" /> </div>
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-6 MarTp15">
-            <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
-            <input type="text" id="pduin" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
-        <div class="col-md-12 MarTp15">
-            <label class="FormLabel">Job Description Text <span class="Mandatory">*</span></label>
-            <textarea id="pduta" class="form-control" style=" height:200px; overflow-y:auto; "></textarea>
-        </div>
         <div class="ButtonSection pull-right MarTp15 clearfix">
             <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
             <button class="btn btn-default" ng-click="cancel()">Cancel</button>

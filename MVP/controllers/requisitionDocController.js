@@ -1,22 +1,17 @@
 app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'commonFunctions', 'sharedProperties', 'config', '$sce'
 
 
-
-
-
-
-
     , function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, config, $sce) {
         var $ctrl = this;
         $ctrl.url = 'pdf/1.pdf';
         $scope.deleteButtonEnable = true;
         var idList = [];
         $scope.openPdf = function (id, filename, doctype) {
-            if (doctype == 'R') {
-                var url = config.projectUrl + '/Requisition/getRequisitionDocumentById/' + id;
+            if (doctype == 'R' || doctype == 'O') {
+                var url = config.localUrl + '/Requisition/getRequisitionDocumentById/' + id;
             }
             else {
-                var url = config.projectUrl + '/Profile/getDocumentById/' + id;
+                var url = config.localUrl + '/Profile/getDocumentById/' + id;
             }
             var promise = Factory.getPDF(url);
             promise.then(function resolved(response) {
@@ -113,13 +108,15 @@ app.controller('ModalCtrl', ['$uibModalInstance', 'url', function ($uibModalInst
 }])
 app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', 'config', function ($uibModalInstance, $scope, fileUpload, config) {
         var $ctrl = this;
+        $scope.radioModel = true;
         $scope.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         }
         $scope.uploadFile = function () {
-            var file = $scope.myFile;
-            var uploadUrl = config.projectUrl + "/Requisition/uploadRequisitionDocument";
-            if (fileUpload.uploadFileToUrl(file, uploadUrl)) {
+            var file1 = $scope.myFile1;
+            var file2 = $scope.myFile2;
+            var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
+            if (fileUpload.uploadFileToUrl(file1, file2, uploadUrl, $scope.radioModel)) {
                 $uibModalInstance.dismiss('cancel');
             }
         };
@@ -140,30 +137,43 @@ app.directive('fileModel', ['$parse', function ($parse) {
     };
      }]);
 app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
-    this.uploadFileToUrl = function (file, uploadUrl) {
-        if ($('#pduin').val().length < 1 || $('#pduta').val().length < 1 || file.length < 1) {
-            return false;
+    this.uploadFileToUrl = function (file1, file2, uploadUrl, radioModel) {
+        var doc = radioModel ? 'R' : 'O';
+        var fd = new FormData();
+        if (doc == 'O') {
+            if (file2.length < 1) {
+                return false;
+            }
+            else {
+                fd.append('file', file2)
+            }
         }
         else {
-            var fd = new FormData();
-            fd.append('file', file);
-            fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
-            fd.append('requisitionId', sharedProperties.getPositionId());
-            fd.append('searchString', $('#pduta').val());
-            fd.append('fileName', $('#pduin').val());
-            $http.post(uploadUrl, fd, {
-                transformRequest: angular.identity
-                , headers: {
-                    'Content-Type': undefined
-                }
-            }).success(function (response) {
-                if (response.status == 'Uploaded Successfully') {
-                    sharedProperties.refreshPdfDocList(new Date());
-                }
-            }).error(function () {
-                console.log('error');
-            });
-            return true;
+            if ($('#pduin').val().length < 1 || $('#pduJd').val().length < 1 || file1.length < 1 || $('#pduss').val().length < 1) {
+                return false;
+            }
+            else {
+                fd.append('file', file1);
+                fd.append('searchString', $('#pduss').val());
+                fd.append('fileName', $('#pduin').val());
+                fd.append('jobDesc', $('#pduJd').val());
+            }
         }
+        fd.append('engagementId', sharedProperties.getRequisitionDetails().EngagementId);
+        fd.append('requisitionId', sharedProperties.getPositionId());
+        fd.append('docType', doc)
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity
+            , headers: {
+                'Content-Type': undefined
+            }
+        }).success(function (response) {
+            if (response.status == 'Uploaded Successfully') {
+                sharedProperties.refreshPdfDocList(new Date());
+            }
+        }).error(function () {
+            console.log('error');
+        });
+        return true;
     }
-     }]);
+}]);
