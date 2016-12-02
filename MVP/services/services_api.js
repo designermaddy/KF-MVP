@@ -451,9 +451,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             }
             , data: {
                 "outageUnfinished": false,
-               "username":'eric.johnson@fmcg.com',
-                 "password":'hay'
-              //  "username": creditentialDtls.activateName    , //"password": creditentialDtls.activatePassword
+               //"username":'eric.johnson@fmcg.com',
+                 //"password":'hay'
+                "username": creditentialDtls.activateName    , "password": creditentialDtls.activatePassword
             }
         });
     }
