@@ -12,7 +12,7 @@
 .UserProfileEdit                                        { border-top: 1px solid #e7e7e7; padding: 5px 0; }
 .UserProfileFooter                                      { border-top: 1px solid #e7e7e7; padding:10px; background-color:#f9f9f9; }
 .UserProfileFooter a                                    { color: #007da4; font-size:14px; }
-.navbar-nav .UserProfile.open .dropdown-menu            { width: 285px; right: -14px; }
+.navbar-nav .UserProfile.open .dropdown-menu            { width: 300px; right: -14px; }
 /* --------------------------- ButtonSection Style ---------------------------------- */
 .ButtonSection.ProfileButton .btn                       {  }
 .ButtonSection .btn                                     { margin-right:10px; }

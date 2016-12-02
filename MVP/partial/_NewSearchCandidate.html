@@ -1,37 +1,33 @@
 <div class="Heading2">
-    <h2>Job Profile Summary</h2> </div>
+    <h2>Job Profile Summary</h2>
+</div>
 <div class="row">
     <div class="col-md-8">
-        <div class="panel panel-default ViewBox">
+        <div class="panel panel-default ViewBox" ng-show="freeSearch.radioModel">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
-            <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
+                <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
+            </div>
+        </div>
+        <div class="panel panel-default ViewBox" ng-hide="freeSearch.radioModel">
+            <div class="panel-body" style="height:286px; overflow-y: scroll; ">
+                <trix-editor angular-trix ng-model="freeSearch.Description" class="trix-content"></trix-editor>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default ViewBox">
             <div class="panel-body">
-                <div class="Heading2 HeadingFloat clearfix">
-                    <h2>Job Type</h2> </div>
-                <div class="RadioGroup SearchRadioGroup">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default active" style="width:33.3%">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Full Time </label>
-                        <label class="btn btn-default" style="width:33.3%">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Part Time </label>
-                        <label class="btn btn-default" style="width:33.3%">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Contract </label>
+                <div class="row">
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Job Type </label>
+                        <input class="input-sm form-control FormInput" type="search"> </div>
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Pay Rate </label>
+                        <input class="input-sm form-control FormInput" type="search"> </div>
+                    <div class="FormBox MarBt15 col-sm-12 col-md-12 col-lg-12">
+                        <label class="FormLabel"> Experience (Years) </label>
+                        <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
                     </div>
-                </div>
-                <div class="Heading2 HeadingFloat clearfix">
-                    <h2>Pay Rate</h2> </div>
-
-                <div class="FormBox MarBt15">
-                    <label class="FormLabel"> Rate </label>
-                    <input class="input-sm form-control FormInput" type="search"> </div>
-<div class="FormBox MarBt15">
-                <label class="FormLabel"> Experience (Years) </label>
-                <rzslider rz-slider-model="vm.priceSlider7.minValue" rz-slider-high="vm.priceSlider7.maxValue" rz-slider-options="vm.priceSlider7.options"></rzslider>
                 </div>
             </div>
         </div>
@@ -97,6 +93,6 @@
     </div>
 </div>
 <div class="row MarBt15">
-    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a class="btn btn-save btn-konferry" ng-click="save()">Save</save>
+    <div class="col-md-12 col-lg-12 ButtonSection clearfix"> <a class="btn btn-save btn-konferry" ng-click="save(freeSearch.radioModel)">Save</a>
         <a href="#" class="btn btn-cancel btn-konferry btn-default disabled">Cancel</a> </div>
 </div>
