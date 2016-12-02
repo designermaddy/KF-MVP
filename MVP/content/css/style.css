@@ -231,3 +231,4 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
                                                 {border:0px;}
 .nav-tabs>li>a:hover                            {border-color: #fff;}
 .nav>li>a:focus, .nav>li>a:hover                {background-color:#fff;}
+.nav-tabs>li                                    {margin-bottom: -2px;}
