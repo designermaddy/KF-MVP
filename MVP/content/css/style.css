@@ -221,8 +221,8 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .candidateProfile .progress-bar-striped, .progress-striped .progress-bar{background-image:none;}
 
 
-.candidateinfo                                  {width: 26%;display: inline-block;}
-.candidateSkills                                {width:74%;float:right;}
+.candidateinfo                                  {width: 35%;display: inline-block;}
+.candidateSkills                                {width:65%;float:right;}
 .h80                                            {height:80px;}
 .bordrRight                                     {border-right:1px solid silver;}
 /*.candidateTabs .tabheading a                                     {color: #111;font-size: 16px;font-weight: bold;}*/
