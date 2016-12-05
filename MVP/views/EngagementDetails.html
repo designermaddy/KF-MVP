@@ -16,7 +16,15 @@
                             </div>
                         </div>
                     </uib-tab>
-                    <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
+                    <uib-tab index='1' heading="Team">
+                        <div class="container-fluid clearfix">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="engagementDocController">
+                                    <div ng-include="'partial/_EngagementTeam.html'"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </uib-tab>
                     <uib-tab index='2' heading="Client Information" class="disabled"> Client Information </uib-tab>
                     <uib-tab index='3' heading="Documents">
                         <div class="container-fluid clearfix">

@@ -43,6 +43,7 @@ header a                                        { /*color:#fff;*/ }
 .mr4											{ margin-right:4%; }
 hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .pb15						                    { padding-bottom: 15px; }
+.pt35                                           {padding-top:35px;}
 .mr5							                {  margin-right:5px; }
 .mb5							                {  margin-bottom:5px; }
 .ml5							                {  margin-left:5px; }
@@ -50,6 +51,7 @@ hr												{ margin: 0px 0px 30px 0px;     width: 75%; }
 .mr8							                {  margin-right:8px; }
 .ml10							                {  margin-left:10px; }
 .mr29							                {  margin-right:29px; }
+.pl8                                            {padding-left:8px;}
 .ml20							                {  margin-left:20px; }
 .mtb15							                {  margin:15px 0px; }
 .pt3							                {  padding-top:3px; }
@@ -118,7 +120,7 @@ iframe.zEWidget-launcher                        { bottom: 0 !important; margin: 
 .badge                                          { background-color:rgba(255, 131, 0, 0.9); left:39px; position: absolute; top: 11px; }
 li.UserProfile                                  { margin-right:14px; }
 .user-profile img                               { width: 29px; height: 29px; border-radius: 50%; }
-.UserProfile.open img                           { border:1px solid #106550; }
+.UserProfileImage img                           { border:1px solid #106550; }
 ul.msg_list li                                  { background: #f7f7f7; padding: 5px; display: -ms-flexbox; display: flex; margin: 6px 6px 0; width: 96% !important }
 ul.msg_list li:last-child                       { margin-bottom: 6px; padding: 10px }
 ul.msg_list li a                                { padding: 3px 5px !important }
