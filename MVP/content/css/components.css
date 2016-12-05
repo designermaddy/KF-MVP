@@ -215,7 +215,7 @@
 .SecondaryHeader a                                     {font-weight:normal !important;}
 .PrimaryHeader span, .SecondaryHeader span              { color:#333; }
 .ViewBoxDate                                            { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
-.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
+.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:6px 0px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
 .ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
 .ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
 .ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
@@ -413,32 +413,9 @@ textarea							                     { width:100%; height:100px; }
 .DownloadLink ul li.disabled a                                      { color:#333; padding: 0 5px; }
 tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;color:#333;width:600px !important;position:relative;right:45px;top:10px;text-align:left;padding:10px;box-shadow: 0px 3px 2px 0px #ccc;}
 .tooltip.bottom .tooltip-arrow					{border-bottom-color: #ffffff;position:relative;top:10px;}
+
+
 .Attachments                                                        { }
+
 .Attachments ul li                                                  { list-style: none; float: left; display: inline-block; padding:10px; margin: 0 5px; background-color: #ccc;  }
 .Attachments ul li:first-child                                       { margin: 0 5px 0 0; }
-/* --------------------------------- tag-input style ------------------------------------- */
-.tag-input-ctn                                  { border: 1px solid #ccc; padding: 2px 3px; display: inline-block; width: 750px; border-radius: 3px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075); }
-.tag-input-ctn input                            { display: inline-block; float: left; height: 18px; padding: 0px; font-size: 13px; line-height: 18px; color: black; border: 0px; margin: 2px; }
-.tag-input-ctn input:focus                      { outline: 0; box-shadow: 0px; }
-.tag-input-ctn .input-tag                       { padding: 2px 4px; line-height: 12px; font-size: 11px; background-color: #e3eaf6; display: inline-block; float: left; border-radius: 2px; margin: 2px 5px 2px 0px; border: 1px solid #a9b6d2; }
-.tag-input-ctn .input-tag .delete-tag           { display: inline-block; font-size: 12px; cursor: pointer; padding: 0px 2px; }
-.tag-input-ctn .input-tag .delete-tag:hover     { background-color: #96b4d2; }
-.candidateProfile                               {background-color: white;box-shadow: 0px 1px 1px 0px #ccc;border: 1px solid silver;margin-top: 30px;padding-top:20px;padding-bottom: 20px;}
-.candidateimg img                               {border-radius: 50%;border: 2px solid #006450;}
-.Heading2 h2                                    {color: #006450;font-size: 16px;font-weight: bold;margin-top: 10px;}
-.candidateProfile .progress                                       {width: 28%;height: 4px;margin-top: 10px;margin-bottom: 5px;}
-.candidateProfile .progress-bar                                   {background-color: #da5b2a;}
-.candidateProfile .progress-bar-striped, .progress-striped .progress-bar{background-image:none;}
-.candidateinfo                                  {width: 35%;display: inline-block;}
-.candidateSkills                                {width:65%;float:right;}
-.h80                                            {height:80px;}
-.bordrRight                                     {border-right:1px solid silver;}
-/*.candidateTabs .tabheading a                                     {color: #111;font-size: 16px;font-weight: bold;}*/
-.nav-tabs                                       {border: 0px;}
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {border:0px;}
-.nav-tabs>li>a:hover                            {border-color: #fff;}
-.nav>li>a:focus, .nav>li>a:hover                {background-color:#fff;}
-.nav-tabs>li                                    {margin-bottom: -2px;}
-.candidateTabs .nav-tabs>li.active>a,.candidateTabs .nav-tabs>li.active>a:focus,.candidateTabs .nav-tabs>li.active>a:hover {color: #006450;border-bottom: 2px solid #006450;}
-#RDTabs .nav-tabs>li.active>a,#RDTabs .nav-tabs>li.active>a:focus,#RDTabs .nav-tabs>li.active>a:hover{color:#006450;font-size: 13px;font-weight: bold;}
-#RDTabs .nav-tabs>li>a                          {color:#111;}
