@@ -513,7 +513,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: RequisitionDetail
         });
     }
-    dataFactory.kornferry = function () {
+   /* dataFactory.kornferry = function () {
         return $http.get('https://qaapi.se.kornferry.com/v1/my/engagements/active', {
   withCredentials: true,
             useXDomain : true,
@@ -523,7 +523,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
   })
 
-    }
+    }*/
     return dataFactory;
 }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', function (Factory, sharedProperties, $uibModal, $location) {
@@ -627,7 +627,7 @@ app.service('sharedProperties', function () {
     var ClientJobID = '';
     var noteDetails = {};
     var savedSearchDetails = {};
-    var viewCandidateId = [];
+    var viewCandidateId = '';
     var reportURL = '';
     var candidateListDetails = [];
     var activeUserName = '';

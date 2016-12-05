@@ -46,11 +46,11 @@ $scope.itemsByPage=15;
         commonFunctions.changeActivelink(row, htmlPath);
     }
 
-    var p  = Factory.kornferry();
+   /* var p  = Factory.kornferry();
     p.then(function resolved(response){
         console.log(response.data);
     }, function rejected(response){
         console.log(response.statusText);
-    })
+    })*/
 
 }]);
