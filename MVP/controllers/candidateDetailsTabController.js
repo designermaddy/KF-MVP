@@ -1,6 +1,7 @@
 app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.position = sharedProperties.getPositionId();
+
     $scope.byteThere = false;
     var getHistory = function () {
         if ($scope.id) {
@@ -73,4 +74,5 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
         $scope.indextab = newValue.activeTab;
         getNotes();
     })
+
 }]);

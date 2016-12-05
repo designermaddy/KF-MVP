@@ -92,16 +92,16 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         }
 
         $scope.getCandidateData = function(id) {
-            var arridPush= [];
-            arridPush.push(id);
-          sharedProperties.setViewCandidateId(arridPush);
+           // var arridPush= [];
+            //arridPush.push(id);
+          sharedProperties.setViewCandidateId(id);
           $('#candidatelistid').hide();
           $('#reqCanDet').show();
         }
         $scope.getCandidateDatas = function(id) {
 
-            idpush.push(id);
-          sharedProperties.setViewCandidateId(idpush);
+           // idpush.push(id);
+          //sharedProperties.setViewCandidateId(idpush);
 
         }
         $timeout(function () {

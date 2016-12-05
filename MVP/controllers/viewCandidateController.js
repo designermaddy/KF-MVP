@@ -210,7 +210,9 @@ app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout'
     //companyDtls();
     emailProfileDtls();
     $scope.data={};
-    $scope.data.candidateIDs = sharedProperties.getViewCandidateId();
+    var arrCandidateId =[];
+     arrCandidateId.push(sharedProperties.getViewCandidateId());
+    $scope.data.candidateIDs =arrCandidateId;
     $scope.data.userMailID = sharedProperties.getEmailID()
     function emailProfileDtls(){
          var promise = Factory.emailProfileDetails();
@@ -336,6 +338,8 @@ app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout'
          var promise = Factory.sendMail($scope.data);
         promise.then(function resolved(response) {
            console.log(response.data)
+            $scope.cancel();
+           alert(response.data.response.message);
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
