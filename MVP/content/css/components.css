@@ -440,11 +440,10 @@ tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;co
 .nav>li>a:focus, .nav>li>a:hover                {background-color:#fff;}
 .nav-tabs>li                                    {margin-bottom: -2px;}
 .candidateTabs .nav-tabs>li.active>a,.candidateTabs .nav-tabs>li.active>a:focus,.candidateTabs .nav-tabs>li.active>a:hover {color: #006450;border-bottom: 2px solid #006450;}
+
 #RDTabs .nav-tabs>li.active>a,#pdfTabs .nav-tabs>li.active>a
 #RDTabs .nav-tabs>li.active>a:focus,#pdfTabs .nav-tabs>li.active>a:focus
-#RDTabs .nav-tabs>li.active>a:hover,#pdfTabs .nav-tabs>li.active>a:hover				
-
-{color:#006450;font-size: 13px;font-weight: bold;}
+#RDTabs .nav-tabs>li.active>a:hover,#pdfTabs .nav-tabs>li.active>a:hover				                                {color:#006450;font-size: 13px;font-weight: bold;}
 
 
 
