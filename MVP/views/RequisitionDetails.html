@@ -3,7 +3,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div ng-include="'partial/_ViewRequisition.html'"></div>
         </div>
-        <div id="RDTabs" class="col-sm-12 col-md-12 col-lg-12 PaddingNull" ng-init="indextab = 3">
+        <div id="RDTabs" class="col-sm-12 col-md-12 col-lg-12 PaddingNull requistionTabs" ng-init="indextab = 3">
 
             <uib-tabset active="indextab" >
                 <uib-tab index="0" heading="Job Profile"  >
@@ -19,14 +19,14 @@
                     </div>
                 </uib-tab>
                 <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
-                <uib-tab index='2'  heading="Documentation">
+                <uib-tab index='2'  heading="Documentation"> 
                     <div class="container-fluid clearfix" >
                     <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="requisitionDocController as $ctrl">
                         <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
                     </div>
                         </div>
-                    </div>
+                    </div> 
                 </uib-tab>
 
                  <uib-tab index='3' heading="Search Results">
@@ -39,7 +39,7 @@
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div ng-include="'partial/_SearchResultsTable.html'"></div>
                         </div>
-                    </div>
+                    </div>            
                         </div>
                      <div class="container-fluid clearfix">
                     <div class="row">
@@ -52,7 +52,7 @@
                      </div>
                 </uib-tab>
 
-                <uib-tab index='4'  heading="Candidates List">
+                <uib-tab index='4'  heading="Candidates List"> 
                     <div class="container-fluid clearfix" id="candidatelistid"  ng-controller="requisitionCandidateListController" >
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
@@ -98,11 +98,14 @@
                     </div>
                 </div>
                     </div>
-                </uib-tab>
+                </uib-tab> 
                 <uib-tab index='6' heading="Client Calibration" class="disabled"> Client Calibration </uib-tab>
                 <uib-tab index='7' heading="History" class="disabled"> History </uib-tab>
                 <uib-tab index='8' heading="Market Insights" class="disabled"> Market Insights </uib-tab>
             </uib-tabset>
         </div>
+        <!--<div class="col-sm-12 col-md-12 col-lg-12">
+            <div ng-include="'partial/_CandidateProfile.html'"></div>
+        </div>-->
     </div>
 </div>

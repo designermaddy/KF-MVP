@@ -146,165 +146,166 @@
 .EventsInfo .EventsNote                                  { float:none; text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 20px; color:#333; padding-left:0; }
 
 .EventsTime                                              { font-size: 12px; font-weight: 400; margin-bottom: 5px; line-height: 12px; color: #ccc; }
-.EventsFooter                                             {  border-top:1px solid #e4e9eb; margin-top:10px; }
-.EventsFooterContent                                      { width:70%; float: left; }
-.EventLocation                                            { font-size: 12px; font-weight: 400; margin: 5px 0; line-height: 12px; color: #333; }
-.EventsShare                                              { width:30%; display: inline-block; float:right; }
-.EventsShare ul                                           { margin-bottom: 0; }
-.EventsShare ul li                                        { float: left; display: inline-block; }
-.EventsShare ul li a                                      { padding:10px 5px 5px 5px; display:block; font-size: 16px; }
-.EventsPending                                            { padding:10px 10px 0 10px; font-size: 16px; font-weight:bold; color:#333; }
+.EventsFooter                                            {  border-top:1px solid #e4e9eb; margin-top:10px; }
+.EventsFooterContent                                     { width:70%; float: left; }
+.EventLocation                                           { font-size: 12px; font-weight: 400; margin: 5px 0; line-height: 12px; color: #333; }
+.EventsShare                                             { width:30%; display: inline-block; float:right; }
+.EventsShare ul                                          { margin-bottom: 0; }
+.EventsShare ul li                                       { float: left; display: inline-block; }
+.EventsShare ul li a                                     { padding:10px 5px 5px 5px; display:block; font-size: 16px; }
+.EventsPending                                           { padding:10px 10px 0 10px; font-size: 16px; font-weight:bold; color:#333; }
 /* --------------------------- Events Style ---------------------------------- */
-.HotCandidates h4                                         { margin-top: 0;}
-.HotCandidatesList                                        { width: 100%; color: #FFF; padding: 10px 10px; min-height: 120px; border-bottom: 1px solid #edf1f2; }
-.CandidatesPhoto                                          { float: left; height: 60px; min-width: 60px; width:25%; }
-.CandidatesPhoto > img                                    { border-radius: 60px; }
-.CandidatesContent                                        { width:75%; float: right; padding:5px 0 0 15px; }
-.CandidatesName                                              { text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 16px; color:#333; }
-.CandidatesDesignation                                    { text-align: left; font-size:14px; margin-bottom: 5px; line-height: 14px; color:#333; }
-.CandidatesRating .progress                               { height: 6px; margin-bottom: 5px;}
-.CandidatesRating  .progress-bar                          { background-color: #ff8300; }
-.CandidatesMail, .CandidatesPhone                          { margin: 5px 0; color: #333; }
-.CandidatesMail i, .CandidatesPhone i                      { width:60px; height:20px; margin-right: 20px; font-size: 16px; text-align: center; }
+.HotCandidates h4                                        { margin-top: 0;}
+.HotCandidatesList                                       { width: 100%; color: #FFF; padding: 10px 10px; min-height: 120px; border-bottom: 1px solid #edf1f2; }
+.CandidatesPhoto                                         { float: left; height: 60px; min-width: 60px; width:25%; }
+.CandidatesPhoto > img                                   { border-radius: 60px; }
+.CandidatesContent                                       { width:75%; float: right; padding:5px 0 0 15px; }
+.CandidatesName                                          { text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 16px; color:#333; }
+.CandidatesDesignation                                   { text-align: left; font-size:14px; margin-bottom: 5px; line-height: 14px; color:#333; }
+.CandidatesRating .progress                              { height: 6px; margin-bottom: 5px;}
+.CandidatesRating  .progress-bar                         { background-color: #ff8300; }
+.CandidatesMail, .CandidatesPhone                        { margin: 5px 0; color: #333; }
+.CandidatesMail i, .CandidatesPhone i                    { width:60px; height:20px; margin-right: 20px; font-size: 16px; text-align: center; }
 /* --------------------------- Term Sorting Style ---------------------------------- */
-.TermSorting                                              { }
-.TermSorting ul                                           { }
-.TermSorting ul li                                        { display: inline-block; float: left; margin:0 5px; }
-.TermSorting ul li a                                      { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 12px; font-weight: normal; display: block; }
-.TermSorting ul li a:active, .TermSorting ul li a.active  { background-color:#007da4; color:#fff; }
-.TermSorting ul li:last-child                             { border-left:1px solid #ccc;}
-.TermSorting ul li select                                 { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;background-image: linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color: transparent;
-    border: 0px; }
+.TermSorting                                             { }
+.TermSorting ul                                          { }
+.TermSorting ul li                                       { display: inline-block; float: left; margin:0 5px; }
+.TermSorting ul li a                                     { padding:5px; border-radius: 5px; background-color:#d7d7d7; color:#333; font-size: 12px; font-weight: normal; display: block; }
+.TermSorting ul li a:active, .TermSorting ul li a.active { background-color:#007da4; color:#fff; }
+.TermSorting ul li:last-child                            { border-left:1px solid #ccc;}
+.TermSorting ul li select                                { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;background-image: linear-gradient(to bottom, #fbfbfb 0%, #fafafa 100%); background-color: transparent; border: 0px; }
 /* --------------------------- SearchBox Style ---------------------------------- */
-.SearchBox                                                {  }
-.SearchBox label                                          { display: block; }
+.SearchBox                                               {  }
+.SearchBox label                                         { display: block; }
 .DatePicker .input-group .input-group-btn .btn.btn-default{ padding:5px 6px 5px 6px; background-color:transparent; border-radius:0; border-width:0 0 1px 0; background-image:none;  box-shadow:0 0 0; margin-top: -1px; }
 
-.RadioGroup                                               { margin-top: 7px;}
-.RadioGroup .btn-group .btn                               { padding: 6px 9px; }
-.RadioGroup .btn-default.active,
-.RadioGroup .btn-default:active                           {}
-.RadioGroup .btn-default                                  { background-image:none; border-color: #66b1c8; border-width:1px 0; text-shadow:0 0; }
-.RadioGroup .btn-group label:first-child.btn-default      { border-width:1px 0 1px 1px; }
-.RadioGroup .btn-group label:last-child.btn-default       { border-width:1px 1px 1px 0; }
-.RadioGroup .btn-default:focus,
-.RadioGroup .btn-default:hover                            { background-color:transparent; border-color: #66b1c8; }
-.RadioGroup .btn-default.active,
-.RadioGroup .btn-default:active                           { background-color: #66b1c8; color:#fff; }
-.SearchRadioGroup .btn-group                              { width:100%; display: block; }
-.TermSorting .RadioGroup .btn-group .btn                  { padding:3px 9px; }
+.RadioGroup                                              { margin-top: 7px;}
+.RadioGroup .btn-group .btn                              { padding: 6px 9px; }
+.RadioGroup .btn-default.active
+.RadioGroup .btn-default:active                          {}
+.RadioGroup .btn-default                                 { background-image:none; border-color: #66b1c8; border-width:1px 0; text-shadow:0 0; }
+.RadioGroup .btn-group label:first-child.btn-default     { border-width:1px 0 1px 1px; }
+.RadioGroup .btn-group label:last-child.btn-default      { border-width:1px 1px 1px 0; }
+.RadioGroup .btn-default:focus
+.RadioGroup .btn-default:hover                           { background-color:transparent; border-color: #66b1c8; }
+.RadioGroup .btn-default.active
+.RadioGroup .btn-default:active                          { background-color: #66b1c8; color:#fff; }
+.SearchRadioGroup .btn-group                             { width:100%; display: block; }
+.TermSorting .RadioGroup .btn-group .btn                 { padding:3px 9px; }
 /* --------------------------- DataGridBoxList Style ---------------------------------- */
-.DataGridBoxList                                        { list-style:none; }
+.DataGridBoxList                                         { list-style:none; }
 /* --------------------------- HeaderPaging Style ---------------------------------- */
-.HeaderPaging                                           {}
-.HeaderPaging ul.pager                                  { margin:0; }
-.HeaderPaging .pager li > a                             { background-color:#007da4; color:#fff; font-family: FontAwesome; border:0; font-size: 10px; line-height:10px; }
-.HeaderPaging .pager li.previous > a                    { padding:6px 9px 6px 7px; }
-.HeaderPaging .pager li.next > a                        { padding:6px 8px; }
+.HeaderPaging                                            {}
+.HeaderPaging ul.pager                                   { margin:0; }
+.HeaderPaging .pager li > a                              { background-color:#007da4; color:#fff; font-family: FontAwesome; border:0; font-size: 10px; line-height:10px; }
+.HeaderPaging .pager li.previous > a                     { padding:6px 9px 6px 7px; }
+.HeaderPaging .pager li.next > a                         { padding:6px 8px; }
 .HeaderPaging .pager li.CurrentPage > span,
 .HeaderPaging .pager li.TotalPage > span,
-.HeaderPaging .pager li.TotalList > span                { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
-.HeaderPaging .pager li.CurrentPage > span              { padding:5px 0 5px 10px; }
-.HeaderPaging .pager li.TotalPage > span                { padding:5px 10px 5px 0; }
-.HeaderPaging .pager li.TotalList > span                { padding:5px 5px 5px 0; }
+.HeaderPaging .pager li.TotalList > span                 { background-color:transparent; color:#333; border:0; font-size: 14px; line-height:12px;  }
+.HeaderPaging .pager li.CurrentPage > span               { padding:5px 0 5px 10px; }
+.HeaderPaging .pager li.TotalPage > span                 { padding:5px 10px 5px 0; }
+.HeaderPaging .pager li.TotalList > span                 { padding:5px 5px 5px 0; }
 /* --------------------------- ViewBoxHeader Style ---------------------------------- */
-.ViewBoxHeader                                          { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:10px; }
-.ViewBoxList, .ViewBoxActions                           { list-style:none; }
-.PrimaryHeader                                          { width:82%; display:inline-block; float: left; padding: 10px 0;}
-.PrimaryHeader a, .SecondaryHeader a                    { font-size:14px; font-weight: bold; line-height: 14px; }
-.SecondaryHeader a                                     {font-weight:normal !important;}
-.PrimaryHeader span, .SecondaryHeader span              { color:#333; }
-.ViewBoxDate                                            { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
-.ViewBoxCount                                           { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:8px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
-.ViewBoxDays                                            { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 8px 0;  }
-.ViewBoxActions                                         {  display: inline-block; float: right; margin: 3px 0; }
-.ViewBoxActions li                                      {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
-.ViewBoxActions li:last-child                           { border-right:0; }
-.ViewBoxActions li:last-child a                         { border-right:0; padding-right:5px; }
-.ViewBoxActions li a                                    { display: inline-block; font-size:16px; text-align: center; padding:5px 14px; line-height:16px; }
+.ViewBoxHeader                                           { border-bottom:1px solid #dad8d6; padding-bottom:10px; margin-bottom:10px; }
+.ViewBoxList, .ViewBoxActions                            { list-style:none; }
+.PrimaryHeader                                           { width:82%; display:inline-block; float: left; padding: 10px 0;}
+.PrimaryHeader a, .SecondaryHeader a                     { font-size:14px; font-weight: bold; line-height: 14px; }
+.SecondaryHeader a                                       {font-weight:normal !important;}
+.PrimaryHeader span, .SecondaryHeader span               { color:#333; }
+.ViewBoxDate                                             { color:#aaa; padding: 11px 0; display:inline-block; float: left; }
+.ViewBoxCount                                            { background-color:#fff;  border:1px solid #0a7fc9; text-align: center; border-radius: 50%; padding:6px 0px; width:35px; height:35px; font-size:18px; line-height: 18px; color:#0a7fc9; line-height:20px; float: right; }
+.ViewBoxDays                                             { border:1px solid #ccc; border-radius:5px; width:70px; font-size:14px; line-height:14px; padding:3px 0; color:#fff; text-align: center; float: right; margin: 9px 0 0px;  }
+.ViewBoxActions                                          {  display: inline-block; float: right; margin: 3px 0; }
+.ViewBoxActions li                                       {  display: inline-block; float: left; border-right:1px solid #f3f3f3; }
+.ViewBoxActions li:last-child                            { border-right:0; }
+.ViewBoxActions li:last-child a                          { border-right:0; padding-right:5px; }
+.ViewBoxActions li a                                     { display: inline-block; font-size:16px; text-align: center; padding:5px 14px; line-height:16px; }
 .ViewBoxCompanyName, .ViewBoxFinalStatus,
-.ViewBoxName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.ViewBoxName                                             { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.viewStatus                                              {width: 46px;
+    float: left;padding: 11px 0;}
 .ViewBoxCompanyLocation,
-.ViewBoxDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
-.ViewBoxHeadName                                        { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
-.ViewBoxImage                                           { display: inline-block; float: left; }
-.ViewBoxImage img                                       { width:50px; height:50px; border:2px solid #106550; border-radius:25px; }
-.ViewBoxTeamImg                                         { display: inline-block; float: left; }
-.ViewBoxTeamImg img                                     { width:25px; height:25px; border:2px solid #106550; border-radius:25px; }
-.ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
-.SecondaryHeader                                        { padding: 5px 0; }
-.ViewBoxRight                                           { border-left:1px solid #dad8d6; }
+.ViewBoxDesignation                                      { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
+.ViewBoxHeadName                                         { color: #666; font-size: 16px; padding: 5px 0; line-height:16px; }
+.ViewBoxImage                                            { display: inline-block; float: left; }
+.ViewBoxImage img                                        { width:50px; height:50px; border:2px solid #106550; border-radius:25px; }
+.ViewBoxTeamImg                                          { display: inline-block; float: left; }
+.ViewBoxTeamImg img                                      { width:25px; height:25px; border:2px solid #106550; border-radius:25px; }
+.ViewBoxInfo                                             { display: inline-block; float: left; padding:0 5px; }
+.SecondaryHeader                                         { padding: 5px 0; }
+.ViewBoxRight                                            { border-left:1px solid #dad8d6; }
 
-.ViewDropBox                                            { min-width: 230px; }
-.ViewDropBox .dropdown-menu > li > a                    { padding: 5px 10px; }
+.ViewDropBox                                             { min-width: 230px; }
+.ViewDropBox .dropdown-menu > li > a                     { padding: 5px 10px; }
 .ViewDropInfo                                            { display: inline-block; float: left; padding:0 5px; }
-.ViewDropName                                           { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
+.ViewDropName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
 .ViewBoxCompanyLocation,
-.ViewDropDesignation                                    { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
-.ViewDropImage                                          { display: inline-block; float: left; }
+.ViewDropDesignation                                     { color: #333; font-size: 12px; padding: 5px 0; line-height:12px; }
+.ViewDropImage                                           { display: inline-block; float: left; }
 .ViewDropImage img                                       { width:40px; height:40px; border:2px solid #106550; border-radius:25px; }
-.ViewBoxInfo                                            { display: inline-block; float: left; padding:0 5px; }
-.SecondaryHeader                                        { padding: 5px 0; }
-.ViewBoxRight                                           { border-left:1px solid #dad8d6; }
+.ViewBoxInfo                                             { display: inline-block; float: left; padding:0 5px; }
+.SecondaryHeader                                         { padding: 5px 0; }
+.ViewBoxRight                                            { border-left:1px solid #dad8d6; }
 .ViewBoxStatus                                           { display: inline-block; float: left; padding: 6px 10px; }
-.ViewBoxStatus select                                   { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
-.ViewBoxHire                                            { margin-top:-26px; }
-.HireValue                                              { background-color:#fffcac; font-size:14px; padding:6px 12px; }
-.HireStatus                                             { background-color:#fffcac; margin-left: 2px; font-size:14px; margin-left:2px; padding:6px; }
-.HireStatus i                                           { font-size:12px; color: #ff0000;  }
-.ViewBoxBtn                                             { display: inline-block; float: left; padding-left: 25px;}
+.ViewBoxStatus select                                    { color:#333; font-size: 12px; font-weight: normal; padding:3px 5px; border:1px solid #ccc;  }
+.ViewBoxHire                                             { margin-top:-26px; }
+.HireValue                                               { background-color:#fffcac; font-size:14px; padding:6px 12px; }
+.HireStatus                                              { background-color:#fffcac; margin-left: 2px; font-size:14px; margin-left:2px; padding:6px; }
+.HireStatus i                                            { font-size:12px; color: #ff0000;  }
+.ViewBoxBtn                                              { display: inline-block; float: left; padding-left: 25px;}
 /* --------------------------- WidgetPD Style ---------------------------------- */
-.WidgetPD ul li                                         { display: inline-block; float: left; }
+.WidgetPD ul li                                          { display: inline-block; float: left; }
 .WidgetPDHeader,
 .WidgetPDContent,
-.WidgetPDFooter                                         { width: 100%;  }
-.WidgetPDContent                                        { cursor: pointer; }
-.WidgetPDBox                                            { max-width: 240px;  padding: 0 15px; min-height: 240px;}
-.HeaderButton                                           { padding: 0 15px 8px;  }
-.HeaderButton a i                                       { font-size: 20px; }
-.WidgetPDHeader > label                                 { vertical-align: middle; font-size:14px; }
-.WidgetPDFooter                                         { padding: 5px 10px; font-size:14px; color:#0c80c9; height: 50px; text-overflow: ellipsis; overflow: hidden; }
-.HeaderPaging                                           { padding: 5px 0 0; }
-.WidgetJP .WidgetPDBox                                  { min-height: 170px; }
-.WidgetJP .WidgetPDHeader > label                       { vertical-align: baseline; }
-.tab-content                                            { background-color: #fff; margin:0 15px; padding:15px 0;  }
-.nav-tabs                                               { margin:0 14px; }
-.KFLayout .nav-tabs                                     { margin:0 -1px; }
+.WidgetPDFooter                                          { width: 100%;  }
+.WidgetPDContent                                         { cursor: pointer; }
+.WidgetPDBox                                             { max-width: 240px;  padding: 0 15px; min-height: 240px;}
+.HeaderButton                                            { padding: 0 15px 8px;  }
+.HeaderButton a i                                        { font-size: 20px; }
+.WidgetPDHeader > label                                  { vertical-align: middle; font-size:14px; }
+.WidgetPDFooter                                          { padding: 5px 10px; font-size:14px; color:#0c80c9; height: 50px; text-overflow: ellipsis; overflow: hidden; }
+.HeaderPaging                                            { padding: 5px 0 0; }
+.WidgetJP .WidgetPDBox                                   { min-height: 170px; }
+.WidgetJP .WidgetPDHeader > label                        { vertical-align: baseline; }
+.tab-content                                             { background-color: #fff; margin:0 15px; padding:15px 0;  }
+.nav-tabs                                                { margin:0 14px; }
+.KFLayout .nav-tabs                                      { margin:0 -1px; }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a:hover                         { border-radius:0; }
-.dropdown-menu                                          { margin:0; }
-.dropdown-menu > li > a                                 { padding:5px 20px;}
-.WidgetPD                                               { min-height: 300px; }
-.SecondaryTab .tab-content                              { margin: 0; padding:0; }
-.SecondaryTab .tab-content .WidgetProfile               { border-width: 0 1px 1px 1px; }
+.nav-tabs > li.active > a:hover                          { border-radius:0; }
+.dropdown-menu                                           { margin:0; }
+.dropdown-menu > li > a                                  { padding:5px 20px;}
+.WidgetPD                                                { min-height: 300px; }
+.SecondaryTab .tab-content                               { margin: 0; padding:0; }
+.SecondaryTab .tab-content .WidgetProfile                { border-width: 0 1px 1px 1px; }
 
 /* --------------------------- WidgetPD Style ---------------------------------- */
-.Popover button:before                                  { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
-.popover                                                {top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
-.popover.left>.arrow                                    {left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
-.popover.left>.arrow:after                              {top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
-.popover.left                                           {margin-left: 50px; }
-.close-icon                                             {margin: 7px 0px;color: #00c2ff;font-size: 1.2em; margin-right: -20px;}
-.popupImg												{margin: 4px 0px;}
-.popupDiv input	                                        {margin-right: 3px;}
-.popover.bottom                                         { margin-top:0; }
-.profileDiv                                             { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
-.CheckBoxSelect                                         { padding: 6px 5px; }
-.CheckBoxSelect input                                   { float: left; }
-.CheckBoxSelect label.CheckBoxLable                     { float: left; text-indent: 17px; margin-top:-15px }
-.popupImg                                               { margin-top:3px; }
+.Popover button:before                                   { color:#007da4; font-family: FontAwesome; border:0; font-size: 16px; line-height:16px; content: "\f012";}
+.popover                                                 {top: 46px !important; display: block !important; max-width: 536px !important;     font-size: 12px;}
+.popover.left>.arrow                                     {left: 96% !important; top: -11px !important;margin-left: -11px !important;border-top-width: 0 !important;border-bottom-color: #999 !important;border-bottom-color: rgba(0, 0, 0, .25) !important;margin-top: 0px;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: #999;border-left-color: rgba(255,255,255,0.25);}
+.popover.left>.arrow:after                               {top: 2px !important;margin-left: -10px !important;content: " " !important;border-top-width: 0 !important;border-bottom-color: #fff !important;border-right-width: 10px;border-right-color: rgba(255,255,255,0.25);border-left-color: rgba(255,255,255,0.25);right: -10px;}
+.popover.left                                            {margin-left: 50px; }
+.close-icon                                              {margin: 7px 0px;color: #00c2ff;font-size: 1.2em; margin-right: -20px;}
+.popupImg												 {margin: 4px 0px;}
+.popupDiv input	                                         {margin-right: 3px;}
+.popover.bottom                                          { margin-top:0; }
+.profileDiv                                              { width: 100%; box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2); padding: 10px 10px; margin-bottom:15px;  background-color: #edf1f2; }
+.CheckBoxSelect                                          { padding: 6px 5px; }
+.CheckBoxSelect input                                    { float: left; }
+.CheckBoxSelect label.CheckBoxLable                      { float: left; text-indent: 17px; margin-top:-15px }
+.popupImg                                                { margin-top:3px; }
 /* --------------------------- FloatingNav Style ---------------------------------- */
-.FloatingNav 											{ right: 0; top: 300px; position: fixed; border-radius:8px; }
-.modal-content											{ padding: 15px; }
-.modal-content .modal-header 							{}
-.modal-title											{ width: 93%; float: left; }
-.icons													{ border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
-.popup:after											{  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
-.online													{ width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
-.rdNav 													{ width: 4%;float: left;margin-left: 14px;padding-top: 13px;color: white;margin-right: 25px;}
-.navbar-header											{ border-right: 1px solid silver;}
-.navbar-default .navbar-nav > li  > img					{ position: absolute;top: 21px;right: 0px;}
+.FloatingNav 											 { right: 0; top: 300px; position: fixed; border-radius:8px; }
+.modal-content											 { padding: 15px; }
+.modal-content .modal-header 							 {}
+.modal-title											 { width: 93%; float: left; }
+.icons													 { border: 1px solid #9E9E9E; border-radius: 50%; padding:17px; margin: 23px 11px 20px 0px; background-color: #fff; }
+.popup:after											 {  background-color: #3aa204; border: 1px solid #3aa204; border-radius:50%; height: 15px; width: 15px; position: relative; bottom: 45px; left: 77px;	 }
+.online													 { width: 35%; float: left; margin-top: 60px; margin-left: -49px; color: #3aa204; }
+.rdNav 													 { width: 4%;float: left;margin-left: 14px;padding-top: 13px;color: white;margin-right: 25px;}
+.navbar-header											 { border-right: 1px solid silver;}
+.navbar-default .navbar-nav > li  > img					 { position: absolute;top: 21px;right: 0px;}
 /* --------------------------- jobDetails Style ---------------------------------- */
 .jobDetails												{ background-color: #fff; box-shadow: 0px 0px 2px #888888;     height: 312px; }
 
@@ -393,7 +394,6 @@ textarea							                     { width:100%; height:100px; }
 .CompareCandidateName                                              { text-align: left; font-size: 16px; font-weight: 600; margin-bottom: 5px; line-height: 16px; color:#333; }
 .CompareCandidateDesignation                                    { text-align: left; font-size:14px; margin-bottom: 5px; line-height: 14px; color:#333; }
 .CandidateCheckbox                                              { text-align: left;}
-
 .alertBtn								                        {border-color:#0a7fc9; background-color: white;color: #0a7fc9;}
 .tooltip > .tooltip-inner 				                        {background-color: #ffffff;border-color: #e3e3e3;color:#333;width:600px !important;position:relative;right:45px;top:10px;text-align:left;padding:10px;box-shadow: 0px 3px 2px 0px #ccc;}
 .tooltip.bottom .tooltip-arrow					                 {border-bottom-color: #ffffff;position:relative;top:10px;}
@@ -440,5 +440,8 @@ tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;co
 .nav>li>a:focus, .nav>li>a:hover                {background-color:#fff;}
 .nav-tabs>li                                    {margin-bottom: -2px;}
 .candidateTabs .nav-tabs>li.active>a,.candidateTabs .nav-tabs>li.active>a:focus,.candidateTabs .nav-tabs>li.active>a:hover {color: #006450;border-bottom: 2px solid #006450;}
-#RDTabs .nav-tabs>li.active>a,#RDTabs .nav-tabs>li.active>a:focus,#RDTabs .nav-tabs>li.active>a:hover{color:#006450;font-size: 13px;font-weight: bold;}
+#RDTabs .nav-tabs>li.active>a,
+#RDTabs .nav-tabs>li.active>a:focus,
+#RDTabs .nav-tabs>li.active>a:hover				{color:#006450;font-size: 13px;font-weight: bold;}
 #RDTabs .nav-tabs>li>a                          {color:#111;}
+
