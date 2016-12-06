@@ -364,6 +364,7 @@ textarea							                     { width:100%; height:70px; }
 .bgfbfbfb								                 {background-color:#fbfbfb;}
 .alertBtn								                 {border-color:#0a7fc9; background-color: white;color: #0a7fc9;}
 .alertBtnred							                 { background-color: #d40a1c;border-color: #d40a1c;color: white;white-space: normal;width: 72%;}
+.btn-compare                                             {font-size:15px;border:0px;background-color: white;}
 .timeSpan								                 { line-height: 32px;color: #0a7fc9;font-weight: bold;}
 .contactdiv								                 { padding-top:5px;padding-bottom:5px;background-color: #fbfbfb;}
 .timediv								                 { text-align:center;background-color:#ededed;}
