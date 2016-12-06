@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-9">
             <div class="row candidate">
-                <div class="col-md-2 candidateimg"> <img src="content/images/user.jpg" alt="">
+                <div class="col-md-3 candidateimg"> <img src="content/images/user.jpg" alt="">
                     <h2>{{row.firstName + ' ' + row.lastName}}</h2>
                     <div class="candidateAddress"> <span>{{row.profile.currentJobTitle}}</span>
                         <br> <span>{{row.profile.currentEmployer}}</span>
@@ -15,27 +15,31 @@
                         <br> <span>{{row.address.country}}</span> </div>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"> <span class="sr-only">70% Complete</span> </div>
-                    </div> <span><input class="disabled" type="checkbox">Hot Candidate</span> </div>
-                <div class="col-md-10">
+                    </div> <span><input class="disabled" type="checkbox">Hot Candidate</span>
+                </div>
+                <div class="col-md-9">
                     <div class="col-md-6 candidateContact">
-                        <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
-                        <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
-                        <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
-                        <h4 class="mt20">Contact Info</h4> <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
-                        <div class="mtb15">
-                            <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span></p>
-                            <p class="ml20"><span class="clsilver">Work:</span></p>
-                            <p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
+                        <div class="row">
+                            <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
+                            <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
+                            <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
+                            <h4 class="mt20">Contact Info</h4> <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
+                            <div class="mtb15">
+                                <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span></p>
+                                <p class="ml20"><span class="clsilver">Work:</span></p>
+                                <p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
+                            </div>
+                            <div>
+                                <p><img src="content/images/address_big_icon.png" alt="" class="mr8"> <span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
+                                <br> <span class="ml20">{{row.addresses[0].country}}</span>
+                            </div>
                         </div>
-                        <div>
-                            <p><i class="fa fa-lg fa-book mr8 clrblue" aria-hidden="true"></i><span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
-                            <br> <span class="ml20">{{row.addresses[0].country}}</span> </div>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-sm btn-changestatus" style="margin-left:-50px;" ng-click="searchlist()">Change Status</button>
+                        <button type="submit" class="btn btn-primary btn-sm btn-changestatus"  ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
 
-                            <div class="row padding42"> <i class="fa fa-2x fa-comment-o mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-phone clrblue" aria-hidden="true"></i><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a> <a href="" ng-click="openMailPopup();"><i class="fa fa-2x fa-envelope mr29 clrblue" aria-hidden="true"></i></a> <i class="fa fa-2x fa-calendar-o mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-video-camera mr29 clrblue" aria-hidden="true"></i> <i class="fa fa-2x fa-share-alt mr29 clrblue" aria-hidden="true"></i> </div>
+                            <div class="row padding42"> <img src="content/images/chat_big_icon.png" alt="" class="mr29">  <img src="content/images/phone_big_icon.png" alt=""><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a> <a href="" ng-click="openMailPopup();"> <img src="content/images/mail_big_icon.png" alt="" class="mr29"></a> <img src="content/images/calendar_big_icon.png" alt="" class="mr29">  <img src="content/images/video_big_icon.png" alt="" class="mr29"><img src="content/images/share_big_icon.png" alt="" class="mr29"> </div>
 
                         </div>
                         <div class="col-md-12">
@@ -43,7 +47,7 @@
                                 <div class="col-md-2 srcDownload">
                                     <div class="row"> Source </div>
                                 </div>
-                                <div class="col-md-7 pull-right pt3" ng-show='showReqPopover'> <a uib-popover-template="'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen">Show in {{canReq.length}} other Requistion<i class="fa fa-angle-down ml5" aria-hidden="true"></i></a> </div>
+                                <div class="col-md-8 pull-right pt3" ng-show='showReqPopover'> <a uib-popover-template="'rcdrpt.html'" popover-placement='bottom-right' popover-is-open="isOpen">Show in {{canReq.length}} other Requistion<i class="fa fa-angle-down ml5" aria-hidden="true"></i></a> </div>
                                 <div class="col-md-8 pt3" ng-hide='showReqPopover'><span>Not listed in any other Requisitions</span></div>
                             </div>
                         </div>
