@@ -20,9 +20,9 @@
                 <div class="col-md-9">
                     <div class="col-md-6 candidateContact">
                         <div class="row">
-                            <button type="submit" class="btn btn-sm"><i class="fa fa-check-circle mr5 sourcedIcon" aria-hidden="true"></i>Sourced</button>
-                            <button type="submit" class="btn btn-sm btn-screened"><i class="fa fa-check-circle-o mr5 screenedicon" aria-hidden="true"></i>Screened</button>
-                            <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><i class="fa fa-check-circle mr5 submiticon" aria-hidden="true"></i>Submit/Invite</button>
+                            <button type="submit" class="btn btn-sm"><img src="content/images/green_tick.png" alt="" class="mr5 mb2">Sourced</button>
+                            <button type="submit" class="btn btn-sm btn-screened"><img src="content/images/white_tick.png" alt="" class="mr5 mb2">Screened</button>
+                            <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><img src="content/images/gray_tick.png" alt="" class="mr5 mb2">Submit/Invite</button>
                             <h4 class="mt20">Contact Info</h4> <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
                             <div class="mtb15">
                                 <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span></p>
@@ -39,7 +39,14 @@
                         <button type="submit" class="btn btn-primary btn-sm btn-changestatus"  ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
 
-                            <div class="row padding42"> <img src="content/images/chat_big_icon.png" alt="" class="mr29">  <img src="content/images/phone_big_icon.png" alt=""><a href="#"><i class="fa fa-angle-down mr29" aria-hidden="true" style="margin-left:5px;"></i></a> <a href="" ng-click="openMailPopup();"> <img src="content/images/mail_big_icon.png" alt="" class="mr29"></a> <img src="content/images/calendar_big_icon.png" alt="" class="mr29">  <img src="content/images/video_big_icon.png" alt="" class="mr29"><img src="content/images/share_big_icon.png" alt="" class="mr29"> </div>
+                            <div class="row padding42"> 
+                                <img src="content/images/chat_big_icon.png">
+                                <img src="content/images/phone_big_icon.png" class="lefticon"><a href="#"><i class="fa fa-angle-down" aria-hidden="true" style="margin-left:5px;"></i></a> 
+                                <a href="" ng-click="openMailPopup();"> <img src="content/images/mail_big_icon.png"  class="righticon lefticon"></a>
+                                <img src="content/images/calendar_big_icon.png" alt="" class="righticon">  
+                                <img src="content/images/video_big_icon.png" alt="" class="righticon">
+                                <img src="content/images/share_big_icon.png" alt="" class=""> 
+                            </div>
 
                         </div>
                         <div class="col-md-12">
