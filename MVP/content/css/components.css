@@ -464,37 +464,37 @@ tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;co
 /* --------------------------------- Assesment style ------------------------------------- */
 
 
-/*.horizontalTabs {
+#assesmentTab .horizontalTabs {
     background-color: #fff;
     border: 1px solid #e7e8e5;
     margin: 0px;
 }
-.tabs-left > .nav-tabs {
+#assesmentTab .tabs-left > .nav-tabs {
     float: left;
     position: relative;
     z-index: 1;
 }
-.tabs-left > .nav-tabs {
+#assesmentTab .tabs-left > .nav-tabs {
     border-bottom: 0;
 }
-.horizontalTabs .tab-content {
+#assesmentTab .tabs-left .tab-content {
     left: -1px;
     min-height: 550px;
     height: 855px;
     overflow-y: scroll;
     border-left: 1px solid silver;
 }
-.tabs-left > .nav-tabs > li {
+#assesmentTab .tabs-left > .nav-tabs > li {
     float: none;
 }
-.tabs-left > .nav-tabs > li > a {
+#assesmentTab .tabs-left > .nav-tabs > li > a {
     font-size: 15px;
     margin-left: -1px;
     margin-right: -1px;
     margin-top: -1px;
     font-family: Segoe UI semilight;
     font-weight: 300;
-    min-width: 260px;
+    min-width: 137px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -503,15 +503,15 @@ tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;co
     padding: 15px 10px;
     border: 0px;
 }
-.tab-content > .active {
+#assesmentTab .tab-content > .active {
     display: block;
 }
-.tab-content > .tab-pane {
+#assesmentTab .tab-content > .tab-pane {
     display: block;
     height: 539px;
     border-bottom: 1px solid silver;
 }
-.arrow-right {
+#assesmentTab .arrow-right {
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
@@ -521,15 +521,15 @@ tooltip > .tooltip-inner 				{background-color: #ffffff;border-color: #e3e3e3;co
     top: 12px;
     left: 0px;
 }
-.secondpane {
+#assesmentTab .secondpane {
     top: 623px;
 }
-.thirdpane {
+#assesmentTab .thirdpane {
     top: 1223px;
 }
-.fourthpane {
+#assesmentTab .fourthpane {
     top: 1819px;
 }
-.fifthpane {
+#assesmentTab .fifthpane {
     top: 2224px;
-}*/
+}
