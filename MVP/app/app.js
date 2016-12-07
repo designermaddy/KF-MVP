@@ -1,5 +1,5 @@
 // create the module and name it desktopApp
-var app = angular.module('desktopApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'angularTrix']);
+var app = angular.module('desktopApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'angularTrix', 'ncy-angular-breadcrumb']);
 
 app.run(function ($http, sharedProperties, $cookies, config, Factory, commonFunctions) {
     var count = sharedProperties.getCounter();
