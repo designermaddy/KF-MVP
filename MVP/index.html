@@ -33,7 +33,10 @@
     <div class="Wrapper" id="main">
         <div ng-include="'templates/header.html'"></div>
         <section class="Content">
-            <div ui-view></div>
+            <div ncy-breadcrumb></div>
+            <div ui-view>
+
+            </div>
             <!--<nav class="FloatingNav" ng-controller="PopupDemoCont">
                 <a class="FloatBtn FloatHelp" ng-click="open()"><img src="content/images/HelpBtn.png"></a>
             </nav>-->
@@ -65,6 +68,7 @@
     <script src="content/js/rzslider.js"></script>
     <script src="content/js/spinner.min.js"></script>
     <script src="content/js/angular-trix.js"></script>
+    <script src="content/js/angular-breadcrumb.min.js"></script>
 
     <!-- Angular Compnents app script -->
     <script src="app/app.js"></script>

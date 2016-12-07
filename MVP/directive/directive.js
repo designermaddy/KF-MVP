@@ -40,9 +40,7 @@ app.directive('customPopover', function () {
         }
     };
 });
-
-https://github.com/michaelbromley/angularUtils/tree/master/src/directives/uiBreadcrumbs
-
+//https://github.com/michaelbromley/angularUtils/tree/master/src/directives/uiBreadcrumbs
 app.directive('uiBreadCrumbs', ['$interpolate', '$state', function ($interpolate, $state) {
     return {
         restrict: 'E'
