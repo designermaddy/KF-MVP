@@ -14,7 +14,10 @@
                                     <div class="ViewBoxCount">{{item.Data.data[0].open_positions}}</div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} </div>
+                                    <div class="ViewBoxDate"> {{item.StartDate}} - {{item.EndDate}} 
+                                    </div>
+                                    <div class="ViewBoxDays {{item.Data.data[0].color}}">Days Open :{{item.Data.data[0].open_days}}
+                                    </div>
                                     <div class="ViewBoxStatus FormSelect">
                                         <select class="form-control" id="requisitionStatus" ng-change="updateStatus()" ng-model="item.status">
                                             <option value="Open">Open</option>
@@ -23,7 +26,6 @@
                                             <option value="ClosedFilled">ClosedFilled</option>
                                         </select>
                                     </div>
-                                    <div class="ViewBoxDays {{item.Data.data[0].color}}">Days Open :{{item.Data.data[0].open_days}}</div>
                                 </div>
                                 <div class="col-sm-12 col-md-2 col-lg-2 pull-right">
                                     <ul class="ViewBoxActions clearfix">
