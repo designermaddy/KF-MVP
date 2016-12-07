@@ -231,7 +231,7 @@
 .ViewBoxImage                                            { display: inline-block; float: left; }
 .ViewBoxImage img                                        { width:50px; height:50px; border:2px solid #106550; border-radius:25px; }
 .ViewBoxTeamImg                                          { display: inline-block; float: left; }
-.ViewBoxTeamImg img                                      { width:25px; height:25px; border:2px solid #106550; border-radius:25px; }
+.ViewBoxTeamImg img                                      {/* width:25px; height:25px; border:2px solid #106550; border-radius:25px;*/ }
 .ViewBoxInfo                                             { display: inline-block; float: left; padding:0 5px; }
 .SecondaryHeader                                         { padding: 5px 0; }
 .ViewBoxRight                                            { border-left:1px solid #dad8d6; }
