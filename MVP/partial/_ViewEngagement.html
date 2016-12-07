@@ -15,26 +15,26 @@
             <ul class="ViewBoxList clearfix EngagementsView">
                 <li  >
                     <div class="row ViewBox">
-                        <div class="ViewBoxCompanyName  clearfix">
+                        <div class="ViewBoxCompanyName  clearfix BorderBottom pb10">
                             <div class="col-sm-12 col-md-3 col-lg-3">
                                 <div class="PrimaryHeader">  {{engagementResponse.EngagementNumber}} <span>{{engagementResponse.Engagement}}</span></div>
                                 <div class="ViewBoxCount">{{engagementResponse.Requisitions.length}}</div>
                             </div>
-                            <div class="col-sm-12 col-md-5 col-lg-5">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="ViewBoxDate"> {{engagementResponse.StartDate}} - {{engagementResponse.EndDate}} </div>
                                 <div class="ViewBoxFinalStatus viewStatus MarLt15">{{engagementResponse.Status}}</div>
                                 <div class="ViewBoxDays BGRed">{{engagementResponse.DaysLeft }} Days</div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3 pull-right">
                                 <ul class="ViewBoxActions clearfix">
-                                    <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><img src="content/images/share_icon.png"></a></li>
+                                    <li><a href="#"><img src="content/images/chat_icon.png"></a></li>
+                                    <li><a href="#"><img src="content/images/mail_icon.png"></a></li>
+                                    <li><a href="#"><img src="content/images/pin_icon.png"></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="ViewBoxContent clearfix">
+                        <div class="ViewBoxContent clearfix mt10">
                             <div class="col-sm-12 col-md-3 col-lg-3">
                                 <div class="ViewBoxCompanyName">{{engagementResponse.Client.ClientName}} {{engagementResponse.Client.Industry}}</div>
                                 <div class="ViewBoxCompanyLocation">{{engagementResponse.Client.Location}}</div>
