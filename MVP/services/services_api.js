@@ -541,7 +541,15 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: postData
         });
 
-    }
+    };
+
+    dataFactory.getSearcherRequisitionsByEngagement=function(engagementID, postData){
+         return $http({
+            method: 'POST'
+            , url: urlAPI + '/Requisition/getSearcherRequisitionsByEngagement/'+engagementID
+            , data: postData
+        });
+    };
 
     return dataFactory;
 }]);
@@ -655,7 +663,7 @@ app.service('sharedProperties', function () {
     var urlPdf = '';
     var email = '';
     var date = '';
-
+    var engagmentSelectedObject={};
     var emailID = '';
 
     return {
@@ -667,7 +675,14 @@ app.service('sharedProperties', function () {
             noteDetails = data;
         }, getAllNotesDetails() {
             return noteDetails;
-        },setURLPdf(data) {
+        },
+         setEngagmentSelectedObject(data) {
+            engagmentSelectedObject = data;
+        },
+        getEngagmentSelectedObject() {
+            return engagmentSelectedObject;
+        },
+        setURLPdf(data) {
             urlPdf = data;
         }, getURLPdf() {
             return urlPdf;

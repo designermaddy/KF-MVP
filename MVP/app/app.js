@@ -33,6 +33,7 @@ if(config.accessTokenSearcher){
                  callSearcherJsonMethod()
               }else{
                   var searcherItems = response.data;
+                  config.searcherItemFromKornferry = searcherItems
                    getSearcherRequisitions(searcherItems);
               }
               console.log( countItem)
@@ -40,7 +41,7 @@ if(config.accessTokenSearcher){
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-             //  callSearcherJsonMethod()
+              callSearcherJsonMethod()
           }
       )
 }
@@ -49,6 +50,7 @@ function callSearcherJsonMethod(){
             promise.then(
               function resolved(response) {
                   var searcherItems = response.data;
+                   config.searcherItemFromKornferry = searcherItems;
                   getSearcherRequisitions(searcherItems);
               },
                   function rejected(response) {

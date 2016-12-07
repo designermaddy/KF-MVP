@@ -24,11 +24,11 @@
                             <button type="submit" class="btn btn-sm btn-screened"><img src="content/images/white_tick.png" alt="" class="mr5 mb2">Screened</button>
                             <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><img src="content/images/gray_tick.png" alt="" class="mr5 mb2">Submit/Invite</button>
                             <h4 class="mt20">Contact Info</h4>
-                            <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{row.contactMethods[1].address}}</span>
+                            <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{emailId.address}}</span>
                             <div class="mtb15">
-                                <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span></p>
+                                <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span>{{phoneNo.number}}</p>
                                 <p class="ml20"><span class="clsilver">Work:</span></p>
-                                <p class="ml20"><span class="clsilver">Mobile:</span>{{row.contactMethods[0].number}}</p>
+                                <p class="ml20"><span class="clsilver">Mobile:</span>{{mobile.number}}</p>
                             </div>
                             <div>
                                 <p><img src="content/images/address_big_icon.png" alt="" class="mr8"> <span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>

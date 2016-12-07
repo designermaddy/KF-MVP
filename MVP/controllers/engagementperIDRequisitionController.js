@@ -1,10 +1,20 @@
-app.controller('engagementperIDRequisitionController', ['$scope','Factory','sharedProperties','commonFunctions', '$uibModal','commonFunctions', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal,commonFunctions) {
+app.controller('engagementperIDRequisitionController', ['$scope','Factory','sharedProperties','commonFunctions', '$uibModal','commonFunctions','config', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal,commonFunctions, config) {
 $scope.viewLoading = false;
 getRequisitionList();
     function getRequisitionList() {
                                 var engagementID = sharedProperties.getengagementPerIDSelected()
+                                var engDtls = sharedProperties.getEngagmentSelectedObject();
                                 if(engagementID){
-            var promise = Factory.getRequisionforanEngagment(engagementID)
+                                    if(engDtls.thirdParty == "RPO"){
+                                         var promise = Factory.getRequisionforanEngagment(engagementID)
+
+                                    }else{
+                            if(config.searcherItemFromKornferry){
+                                             var promise = Factory.getSearcherRequisitionsByEngagement(engagementID, config.searcherItemFromKornferry)
+
+                                         }
+
+            }
              promise.then(
                 function resolved(response) {
                   $scope.engagementResponse = response.data.engagement;

@@ -62,6 +62,9 @@ $scope.confirmPopup = function(){
         var promise = Factory.getviewCandidate(id);
         promise.then(function resolved(response) {
             $scope.row = response.data.candidateDetails[0];
+            $scope.emailId = search("Email", $scope.row.contactMethods);
+            $scope.phoneNo = search("Home", $scope.row.contactMethods);
+            $scope.mobile = search("Mobile", $scope.row.contactMethods);
             sharedProperties.setCandidateListDetails($scope.row);
             if (sharedProperties.getCandidateListDetails()) {
                 var urlResumeLink = $scope.candidateDetailsList = sharedProperties.getCandidateListDetails();
@@ -100,6 +103,16 @@ $scope.confirmPopup = function(){
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     }
+    function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if(myArray[i].location === nameKey){
+            return myArray[i];
+        }
+        else if(myArray[i].type === nameKey) {
+            return myArray[i];
+        }
+    }
+}
     var canStatus = function (id) {
         var posId = sharedProperties.getPositionId();
         var canId = id;

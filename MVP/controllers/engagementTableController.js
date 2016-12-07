@@ -1,6 +1,6 @@
 
 
-app.controller('engagementTableController', ['$scope','sharedProperties','Factory', function ($scope, sharedProperties, Factory) {
+app.controller('engagementTableController', ['$scope','sharedProperties','Factory','config', function ($scope, sharedProperties, Factory, config) {
       $scope.viewLoading = false;
       $scope.rowCollection = sharedProperties.getrowCollection();
 
@@ -22,7 +22,12 @@ app.controller('engagementTableController', ['$scope','sharedProperties','Factor
     });
 	// call the API for selectedengagement per id
 	$scope.onSelectEngagementPerID = function(engagementID){
+        var engDtlsSelected = {}
+        engDtlsSelected.id = engagementID;
+        engDtlsSelected.thirdParty = "RPO";
+
 		sharedProperties.setengagementPerIDSelected(engagementID)
+        sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
 	}
 
     $scope.selectPage = function(){
