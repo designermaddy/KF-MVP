@@ -145,7 +145,8 @@ app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedP
                 return false;
             }
             else {
-                fd.append('file', file2)
+                fd.append('file', file2);
+                fd.append('fileName', $('#pdoin').val());
             }
         }
         else {

@@ -4,6 +4,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
 
             if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
+                console.log($scope.item)
                 sharedProperties.setNewSearchData([$scope.item.ReqNumber, $scope.item.JobTitle]);
             }
 
@@ -59,6 +60,10 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
         });
     }
 
+    $scope.openPencilIframe = function() {
+        var url = commonFunctions.getIframeUrl('applicantDetails');
+
+    }
 
     $scope.updateStatus = function(){
         console.log("Status Changed to : " + $scope.item.status);

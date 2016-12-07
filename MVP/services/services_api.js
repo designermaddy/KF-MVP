@@ -513,17 +513,36 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: RequisitionDetail
         });
     }
-   /* dataFactory.kornferry = function () {
-        return $http.get('https://qaapi.se.kornferry.com/v1/my/engagements/active', {
-  withCredentials: true,
-            useXDomain : true,
-    headers: {
-        "Authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJFQUFBQUlLQXVDb3Y0RUJGa2lQeUNtS29tcFRldmhIdVo1U1JSZEUycWlsakh3S1F5djNqRzAvRVhuYm1jMzJxK1VIbE5mZXMvck9CenpGUkQ5L3FJODhoNGtVPSIsImlzcyI6Imh0dHBzOi8vcWFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImF1ZCI6Imh0dHBzOi8vcWFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImV4cCI6MTQ4MDY3OTQ5MiwibmJmIjoxNDgwNjc4MjkyfQ.bBNeMX0_JL85TPbUHeVKkjqatOQYknjOQ5NuxwID9y8',
-        "Cookie" : "__kfsest3aaa3b340af128dd17df19c0e5e35dbf=EAAAALPGYHNbY751p1cpITBG5FKnHWLqbRCOup1jFSNG/G+tTXu0oJEQgZDSnfBzMruRRnfCmzSumKaewWVWojAq1/6SE1B16u9ljVqoEC+jgtg2V7vMH7oGPADBu5I77wC8rnTIQ6r0VULOhVVs6dy3VxZvaHL5PznRDxQ8Lg958jPJrW4DRV+72RwJ+ulWeXiiAaHrGrJH3rjpHwvsb+nN6/SNp9BcVSgxXwgcEeuQzPKad7VbfJ8l8jztf8m1biDjftzFARVe01SLg5zIv5+wiFI=; __kfseit=EAAAABb4mstJ0wV2iL1rMFrC9IzxpgcuYc4+nylBlXyDUhI7dYMbVGTzuIGHj7eaSXBGJifT2O3UtaObesrg7ZnajmntsIcs6+Cz8+8RFQAnjHGoQEuB6oICxkte3rnSqQ/7aMGG0BRakDJW1nqb0zS9RQ0fFkjP7TfgrvwT6smcyCm3; __kfsestd767ee1a06b8562e23c6f8579bc0aaf2=EAAAAJUiaXVCDWQ6mcihyiIrE+9mrz52nH5fbTB4pSJT990NC582jJsiw9iHssY6xv+5MI/Iw5EOrljib8XqbXwU+SqRJsi/eeNTpSiMe5ZCy2q4lQnpPfuZMns+Tbaai57i3DuT2C2wEH80+h8xlZy7jo1cy5Tgy1O5C+7bNoJycz7wlx7ziztBxFy0K4znySlAnoiQjEz9h2mdf206HVbvPYUIDoFz1kCvKXGlGz6ZfWzQAErhUvvc+ysPK9HXm99BKMU3yoW1JsYbGtHGYSWmoP8="
-    }
-  })
+    dataFactory.kornferry = function (searcherToken) {
+        return $http.get('https://naapi.se.kornferry.com/v1/my/engagements/active', {
+       crossDomain: true, withCredentials: true,
+                useXDomain : true,
+        headers: {
+            "Authorization": 'Bearer ' + searcherToken,
+           // "Cookie" : searcherToken,
+            "RD-Access-Token": undefined
+           // "RD-Access-Token": undefined
+        }
+      })
 
-    }*/
+    }
+
+  dataFactory.getSearcherReqList = function () {
+
+    return $http.get('json/searcher.json');
+
+};
+
+    dataFactory.getSearcherRequisitions=function(postData){
+
+          return $http({
+            method: 'POST'
+            , url: urlAPI + '/Requisition/getSearcherRequisitions'
+            , data: postData
+        });
+
+    }
+
     return dataFactory;
 }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', function (Factory, sharedProperties, $uibModal, $location) {

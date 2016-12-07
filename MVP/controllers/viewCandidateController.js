@@ -270,12 +270,16 @@ app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout'
  }
   $scope.templateSelect = function (form) {
         var selectedTemplateOptions = form;
-        var templateID = selectedTemplateOptions.id;
+      if(selectedTemplateOptions){
+      var templateID = selectedTemplateOptions.id;
      if( templateID){
          getTemplateContent(templateID);
          $scope.data.templateId=templateID
      }
-    }
+    }else{
+          $scope.data.body = "";
+     }
+  }
 
   function getTemplateContent(id){
        var promise = Factory.templateContent(id);

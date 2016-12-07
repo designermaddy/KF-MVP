@@ -1,6 +1,6 @@
 
 
-app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','filterFilter', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location,filterFilter) {
+app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','filterFilter','config', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location,filterFilter,config) {
 
  $scope.viewLoading = false;
  agingRequisitionList();
@@ -9,7 +9,7 @@ app.controller('requisitionTableController', ['$scope','Factory', 'sharedPropert
         promise.then(
           function resolved(response) {
 
-             $scope.rowCollection = response.data.requisitions;
+             $scope.rowCollection = response.data.requisitions.concat(config.searcherReq);
               $scope.currentPage = 1;
                     $scope.totalItems = $scope.rowCollection.length;
                     $scope.entryLimit = 10; // items per page

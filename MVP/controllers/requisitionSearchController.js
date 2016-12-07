@@ -1,4 +1,4 @@
-app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedProperties', function($scope, Factory, sharedProperties) {
+app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedProperties','config', function($scope, Factory, sharedProperties, config) {
     $scope.eng = '';
     $scope.cli = '';
     $scope.name = '';
@@ -8,7 +8,7 @@ app.controller('requisitionSearchController', ['$scope', 'Factory', 'sharedPrope
     var promise = Factory.getRequisitionTableList();
 
     promise.then(function(response){
-            var result = $scope.data = response.data.requisitions;
+            var result = $scope.data = response.data.requisitions.concat(config.searcherReq);;
             $scope.requisition = result.map(function(item){
                 return item.ReqNumber + ' ' + item.JobTitle;
             });

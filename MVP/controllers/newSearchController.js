@@ -10,7 +10,7 @@
         function getReq() {
             var promise = Factory.getRequisitionTableList();
             promise.then(function (response) {
-                result = response.data.requisitions;
+                result = response.data.requisitions.concat(config.searcherReq);;
                 $scope.requisition = result.map(function (item) {
                     return item.ReqNumber + ' ' + item.JobTitle;
                 });

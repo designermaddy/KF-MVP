@@ -1,355 +1,304 @@
 {
-   "transactionID":null,
-   "requisitionList":null,
-   "requisitionDetails":null,
-   "profiles":null,
-   "requisitionDocList":null,
-   "requisitionListMo":null,
-   "applications":null,
-   "application":null,
-   "requisitions":[
-      {
-         "ReqNumber":"ACME00011",
-         "JobTitle":"(Fake Job) Floor supervisor",
-         "StartDate":"11/21/2016",
-         "EndDate":"11/21/2016",
-         "Source":"TalentLink",
-         "Recruiter":[
+   "transactionID": null,
+   "requisitionList": null,
+   "requisitionDetails": null,
+   "requisitionListMo": null,
+   "applications": null,
+   "application": null,
+   "requisitions":    [
             {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Mir",
-               "id":280,
-               "lastName":"Ali",
-               "login":"mir.ali@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC1",
-               "order":1
-            }
-         ],
-         "Team":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Matt",
-               "id":25311,
-               "lastName":"Heckler",
-               "login":"matt.heckler@kornferry.com",
-               "type":"ADVANCED",
-               "lovValue":"OperUser1",
-               "order":1
-            }
-         ],
-         "Data":{
-            "method":"reqCount",
-            "type":"company",
-            "name":"ACME Automotive",
-            "data":[
-
-            ],
-            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
-         },
-         "Position":9909,
-         "Client":"ACME Automotive",
-         "ClientId":"370",
-         "EngagementId":"370",
-         "Engagement":"ACME Automotive",
-         "status":"Open",
-         "location":null,
-         "organization":{
-            "unit":[
-               {
-                  "value":"ACME Automotive",
-                  "code":"ACME",
-                  "id":370,
-                  "level":1,
-                  "nameTranslation":"ACME Automotive"
-               },
-               {
-                  "value":"Manufacturing",
-                  "code":"0202",
-                  "id":10192,
-                  "level":2,
-                  "nameTranslation":"Manufacturing"
-               }
-            ]
-         },
-         "contractType":"Permanent"
-      },
-      {
-         "ReqNumber":"ACME00010",
-         "JobTitle":"SVP Corporate Controller",
-         "StartDate":"11/18/2016",
-         "EndDate":"11/21/2016",
-         "Source":"TalentLink",
-         "Recruiter":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Matt",
-               "id":25311,
-               "lastName":"Heckler",
-               "login":"matt.heckler@kornferry.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC1",
-               "order":1
-            }
-         ],
-         "Team":[
-
-         ],
-         "Data":{
-            "method":"reqCount",
-            "type":"company",
-            "name":"ACME Automotive",
-            "data":[
-
-            ],
-            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
-         },
-         "Position":9878,
-         "Client":"ACME Automotive",
-         "ClientId":"370",
-         "EngagementId":"370",
-         "Engagement":"ACME Automotive",
-         "status":"Open",
-         "location":null,
-         "organization":{
-            "unit":[
-               {
-                  "value":"ACME Automotive",
-                  "code":"ACME",
-                  "id":370,
-                  "level":1,
-                  "nameTranslation":"ACME Automotive"
-               },
-               {
-                  "value":"Finance",
-                  "code":"PFMB",
-                  "id":373,
-                  "level":2,
-                  "nameTranslation":"Finance"
-               }
-            ]
-         },
-         "contractType":"Permanent"
-      },
-      {
-         "ReqNumber":"ACME00007",
-         "JobTitle":"Associate HR Business Partner",
-         "StartDate":"11/17/2016",
-         "EndDate":"11/17/2016",
-         "Source":"TalentLink",
-         "Recruiter":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC1",
-               "order":1
-            }
-         ],
-         "Team":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"OperUser1",
-               "order":1
-            }
-         ],
-         "Data":{
-            "method":"reqCount",
-            "type":"company",
-            "name":"ACME Automotive",
-            "data":[
-
-            ],
-            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
-         },
-         "Position":9859,
-         "Client":"ACME Automotive",
-         "ClientId":"370",
-         "EngagementId":"370",
-         "Engagement":"ACME Automotive",
-         "status":"Open",
-         "location":null,
-         "organization":{
-            "unit":[
-               {
-                  "value":"ACME Automotive",
-                  "code":"ACME",
-                  "id":370,
-                  "level":1,
-                  "nameTranslation":"ACME Automotive"
-               },
-               {
-                  "value":"Human Resources",
-                  "code":"Hr",
-                  "id":10191,
-                  "level":2,
-                  "nameTranslation":"Human Resources"
-               }
-            ]
-         },
-         "contractType":"Permanent"
-      },
-      {
-         "ReqNumber":"ACME00009",
-         "JobTitle":"Manufacturing Machining Engineer",
-         "StartDate":"11/17/2016",
-         "EndDate":"11/17/2016",
-         "Source":"TalentLink",
-         "Recruiter":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC1",
-               "order":1
+         "ReqNumber": "LW00000141",
+         "JobTitle": "Customer Operations Assistant",
+         "StartDate": "11/10/2016",
+         "EndDate": null,
+         "Source": "TalentLink",
+         "Recruiter":          [
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Allen",
+               "id": 25455,
+               "lastName": "Stewart",
+               "login": "allen.stewart@kornferry.com",
+               "type": "ADVANCED",
+               "lovValue": "PIC1",
+               "order": 1
             },
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC3",
-               "order":3
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Denise",
+               "id": 25454,
+               "lastName": "Varner",
+               "login": "denise.varner@kornferry.com",
+               "type": "ADVANCED",
+               "lovValue": "PIC2",
+               "order": 2
             }
          ],
-         "Team":[
-            {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"OperUser1",
-               "order":1
+         "Team":          [
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Malia",
+               "id": 25503,
+               "lastName": "Goes",
+               "login": "malia.goes@conagrafoods.com",
+               "type": "MSS",
+               "lovValue": "OperUser1",
+               "order": 1
+            },
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Kara",
+               "id": 25715,
+               "lastName": "Maglio",
+               "login": "kara.maglio@conagrafoods.com",
+               "type": "MSS",
+               "lovValue": "OperUser2",
+               "order": 2
             }
          ],
-         "Data":{
-            "method":"reqCount",
-            "type":"company",
-            "name":"ACME Automotive",
-            "data":[
-
-            ],
-            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         "Data":          {
+            "method": "reqCount",
+            "type": "company",
+            "name": "Lamb Weston",
+            "data": [            {
+               "req_number": "LW00000141",
+               "open_positions": "1",
+               "open_days": "2",
+               "sourced": "0",
+               "screen": "0",
+               "submit": "0",
+               "interview": "0",
+               "offer": "0",
+               "accept": "0",
+               "color": "BG-RED"
+            }],
+            "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
          },
-         "Position":9861,
-         "Client":"ACME Automotive",
-         "ClientId":"370",
-         "EngagementId":"370",
-         "Engagement":"ACME Automotive",
-         "status":"Open",
-         "location":null,
-         "organization":{
-            "unit":[
-               {
-                  "value":"ACME Automotive",
-                  "code":"ACME",
-                  "id":370,
-                  "level":1,
-                  "nameTranslation":"ACME Automotive"
-               },
-               {
-                  "value":"Manufacturing",
-                  "code":"0202",
-                  "id":10192,
-                  "level":2,
-                  "nameTranslation":"Manufacturing"
-               }
-            ]
-         },
-         "contractType":"Permanent"
+         "Position": 9673,
+         "Client": "Lamb Weston",
+         "ClientId": "9848",
+         "Engagement": "Supply Chain"
       },
-      {
-         "ReqNumber":"ACME00008",
-         "JobTitle":"Commercial Finance Analyst",
-         "StartDate":"11/17/2016",
-         "EndDate":"11/17/2016",
-         "Source":"TalentLink",
-         "Recruiter":[
             {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"PIC1",
-               "order":1
+         "ReqNumber": "LW00000118",
+         "JobTitle": "Process Quality Technician - Boardman East",
+         "StartDate": "11/10/2016",
+         "EndDate": null,
+         "Source": "TalentLink",
+         "Recruiter": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Marcie",
+            "id": 25456,
+            "lastName": "Stevenson",
+            "login": "marcie.stevenson@kornferry.com",
+            "type": "ADVANCED",
+            "lovValue": "PIC1",
+            "order": 1
+         }],
+         "Team": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Roslyn",
+            "id": 25519,
+            "lastName": "Pedro",
+            "login": "roslyn.pedro@conagrafoods.com",
+            "type": "MSS",
+            "lovValue": "OperUser1",
+            "order": 1
+         }],
+         "Data":          {
+            "method": "reqCount",
+            "type": "company",
+            "name": "Lamb Weston",
+            "data": [            {
+               "req_number": "LW00000118",
+               "open_positions": "2",
+               "open_days": "10",
+               "sourced": "1",
+               "screen": "0",
+               "submit": "0",
+               "interview": "0",
+               "offer": "0",
+               "accept": "0",
+               "color": "BG-YELLOW"
+            }],
+            "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
+         },
+         "Position": 9529,
+         "Client": "Lamb Weston",
+         "ClientId": "9848",
+         "Engagement": "Operations"
+      },
+            {
+         "ReqNumber": "LW00000050",
+         "JobTitle": "Packaging Engineer",
+         "StartDate": "11/04/2016",
+         "EndDate": null,
+         "Source": "TalentLink",
+         "Recruiter": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Maria",
+            "id": 25460,
+            "lastName": "Jones",
+            "login": "maria.jones@kornferry.com",
+            "type": "ADVANCED",
+            "lovValue": "PIC1",
+            "order": 1
+         }],
+         "Team": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Malia",
+            "id": 25503,
+            "lastName": "Goes",
+            "login": "malia.goes@conagrafoods.com",
+            "type": "MSS",
+            "lovValue": "OperUser1",
+            "order": 1
+         }],
+         "Data":          {
+            "method": "reqCount",
+            "type": "company",
+            "name": "Lamb Weston",
+            "data": [            {
+               "req_number": "LW00000050",
+               "open_positions": "1",
+               "open_days": "16",
+               "sourced": null,
+               "screen": null,
+               "submit": null,
+               "interview": null,
+               "offer": null,
+               "accept": null,
+               "color": "BG-RED"
+            }],
+            "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
+         },
+         "Position": 9391,
+         "Client": "Lamb Weston",
+         "ClientId": "9848",
+         "Engagement": "Research and Innovation"
+      },
+            {
+         "ReqNumber": "LW00000119",
+         "JobTitle": "Food Scientist: Domestic Chain & Long Term Innovation - Richland, WA",
+         "StartDate": "11/04/2016",
+         "EndDate": null,
+         "Source": "TalentLink",
+         "Recruiter":          [
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Allen",
+               "id": 25455,
+               "lastName": "Stewart",
+               "login": "allen.stewart@kornferry.com",
+               "type": "ADVANCED",
+               "lovValue": "PIC1",
+               "order": 1
+            },
+                        {
+               "cellphone": null,
+               "email": null,
+               "firstName": "Jenna",
+               "id": 25651,
+               "lastName": "Higgins",
+               "login": "jenna.higgins@kornferry.com",
+               "type": "ADVANCED",
+               "lovValue": "PIC2",
+               "order": 2
             }
          ],
-         "Team":[
+         "Team": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Malia",
+            "id": 25503,
+            "lastName": "Goes",
+            "login": "malia.goes@conagrafoods.com",
+            "type": "MSS",
+            "lovValue": "OperUser1",
+            "order": 1
+         }],
+         "Data":          {
+            "method": "reqCount",
+            "type": "company",
+            "name": "Lamb Weston",
+            "data": [            {
+               "req_number": "LW00000119",
+               "open_positions": "1",
+               "open_days": "9",
+               "sourced": "0",
+               "screen": "0",
+               "submit": "0",
+               "interview": "0",
+               "offer": "0",
+               "accept": "0",
+               "color": "BG-YELLOW"
+            }],
+            "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
+         },
+         "Position": 9553,
+         "Client": "Lamb Weston",
+         "ClientId": "9848",
+         "Engagement": "Research and Innovation"
+      },
             {
-               "cellphone":null,
-               "email":null,
-               "firstName":"Rodrigo",
-               "id":574,
-               "lastName":"Tubio",
-               "login":"rodrigo.tubio@futurestep.com",
-               "type":"ADVANCED",
-               "lovValue":"OperUser1",
-               "order":1
-            }
-         ],
-         "Data":{
-            "method":"reqCount",
-            "type":"company",
-            "name":"ACME Automotive",
-            "data":[
-
-            ],
-            "link":"https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company="
+         "ReqNumber": "LW00000120",
+         "JobTitle": "Sr. Package Equipment Engineer - Richland, WA",
+         "StartDate": "11/04/2016",
+         "EndDate": null,
+         "Source": "TalentLink",
+         "Recruiter": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Maria",
+            "id": 25460,
+            "lastName": "Jones",
+            "login": "maria.jones@kornferry.com",
+            "type": "ADVANCED",
+            "lovValue": "PIC1",
+            "order": 1
+         }],
+         "Team": [         {
+            "cellphone": null,
+            "email": null,
+            "firstName": "Malia",
+            "id": 25503,
+            "lastName": "Goes",
+            "login": "malia.goes@conagrafoods.com",
+            "type": "MSS",
+            "lovValue": "OperUser1",
+            "order": 1
+         }],
+         "Data":          {
+            "method": "reqCount",
+            "type": "company",
+            "name": "Lamb Weston",
+            "data": [            {
+               "req_number": "LW00000120",
+               "open_positions": "1",
+               "open_days": "9",
+               "sourced": null,
+               "screen": null,
+               "submit": null,
+               "interview": null,
+               "offer": null,
+               "accept": null,
+               "color": "BG-RED"
+            }],
+            "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
          },
-         "Position":9860,
-         "Client":"ACME Automotive",
-         "ClientId":"370",
-         "EngagementId":"370",
-         "Engagement":"ACME Automotive",
-         "status":"Open",
-         "location":null,
-         "organization":{
-            "unit":[
-               {
-                  "value":"ACME Automotive",
-                  "code":"ACME",
-                  "id":370,
-                  "level":1,
-                  "nameTranslation":"ACME Automotive"
-               },
-               {
-                  "value":"Finance",
-                  "code":"PFMB",
-                  "id":373,
-                  "level":2,
-                  "nameTranslation":"Finance"
-               }
-            ]
-         },
-         "contractType":"Permanent"
+         "Position": 9554,
+         "Client": "Lamb Weston",
+         "ClientId": "9848",
+         "Engagement": "Research and Innovation"
       }
-   ],
-   "status":null
+   ]
 }
-

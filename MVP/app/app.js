@@ -1,13 +1,17 @@
 // create the module and name it desktopApp
 var app = angular.module('desktopApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'angularTrix']);
 
-app.run(function ($http, sharedProperties, $cookies, config) {
+app.run(function ($http, sharedProperties, $cookies, config, Factory, commonFunctions) {
     var count = sharedProperties.getCounter();
     if (count == 0) {
 
         var authToken = $cookies.get('RD-Access-Token');
+        var searcherToken = $cookies.get('accessToken');
+        searcherToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJFQUFBQU5PQkhleU5Id0RCdC9QOEljeEQ2eFlpSGJMRG5XMUgyZmlQRHYxSjdIdHArVy8wUEJMWEpsRVJvdmprRzZVSm5wRHVEUWZZbXlCTUM1WWo2Y0poVXlVPSIsImlzcyI6Imh0dHBzOi8vbmFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImF1ZCI6Imh0dHBzOi8vbmFhcGkuc2Uua29ybmZlcnJ5LmNvbSIsImV4cCI6MTQ4MTAxMzI5NiwibmJmIjoxNDgxMDEyMDk2fQ.DcpWpl32J1ceZfLTwHBE-54tp-_pO03TRqBMv3JopFA";
+        config.accessTokenSearcher = searcherToken;
         if (config.production < 9) {
         var authToken = config.token
+        var searcherToken = config.accessTokenSearcher;
         }
 
         if (authToken) {
@@ -19,7 +23,53 @@ app.run(function ($http, sharedProperties, $cookies, config) {
         sharedProperties.setCounter(1)
     }
 
+if(config.accessTokenSearcher){
+    var promise = Factory.kornferry(searcherToken);
+        promise.then(
+          function resolved(response) {
+            // $scope.rowCollection = response.data.requisitions;
+              var countItem = response.data.count;
+              if(countItem==0){
+                 callSearcherJsonMethod()
+              }else{
+                  var searcherItems = response.data;
+                   getSearcherRequisitions(searcherItems);
+              }
+              console.log( countItem)
 
+          },
+          function rejected(response) {
+              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+             //  callSearcherJsonMethod()
+          }
+      )
+}
+function callSearcherJsonMethod(){
+      var promise = Factory.getSearcherReqList();
+            promise.then(
+              function resolved(response) {
+                  var searcherItems = response.data;
+                  getSearcherRequisitions(searcherItems);
+              },
+                  function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+            )
+}
+function getSearcherRequisitions(searcherItems){
+     var promise = Factory.getSearcherRequisitions(searcherItems);
+            promise.then(
+              function resolved(response) {
+
+                  config.searcherReq = response.data.requisitions;
+                  console.log(response)
+
+              },
+                  function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+            )
+}
     //sharedProperties.setAuthGlobalToken(authToken)
     //var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
 
