@@ -203,3 +203,7 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .CheckBoxSelect input                           { float: left; }
 .CheckBoxSelect label.CheckBoxLable             { float: left; text-indent: 17px; margin-top:-15px; font-size:12px; cursor: pointer;  }
 .CheckBoxSelect.Selected                        { background-color:#d9e4e7;  }
+<<<<<<< HEAD
+=======
+/* --------------------------- Style ---------------------------------- */
+>>>>>>> 1b284de219f033c7125c2621ebbf15d4bf680679
