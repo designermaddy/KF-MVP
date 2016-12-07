@@ -140,10 +140,10 @@ ul.msg_list li a .message                       { display: block !important; fon
 .SideBar                                        { background-color:#d9e4e7; padding:15px 10px; position: relative; float:right; width:300px;}
 
 /* --------------------------- Panel Style ---------------------------------- */
-.panel											{ margin-bottom:12px; }
+.panel								{ margin-bottom:12px; }
 .panel-group .panel, .panel,
 .panel-footer, .alert, .breadcrumb				{ border-radius:0 !important; }
-.panel-group 									{ margin-bottom:0; }
+.panel-group 							{ margin-bottom:0; }
 .page-header 									{ margin:10px 0 12px; }
 .panel-heading 									{ font-size:16px; font-weight:bold; border-radius:0; }
 .panel-primary 				 					{ border-color:#1abc9c; }
