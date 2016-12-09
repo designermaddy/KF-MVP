@@ -1,7 +1,7 @@
 
 
-app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','filterFilter','config', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location,filterFilter,config) {
-
+app.controller('requisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','filterFilter','config','$rootScope', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location,filterFilter,config, $rootScope) {
+commonFunctions.getSearcherJson();
  $scope.viewLoading = false;
  agingRequisitionList();
     function agingRequisitionList() {
@@ -48,6 +48,11 @@ app.controller('requisitionTableController', ['$scope','Factory', 'sharedPropert
             $scope.rowCollection = newValue;
             //setValues();
     });
+      $rootScope.$watch(function() {return config.searcherReq}, function() {
+        // do something here
+        //config.searcherReq
+       agingRequisitionList();
+    }, true);
     $scope.$watch('search', function (newVal, oldVal) {
          if($scope.rowCollection){
 		$scope.filtered = filterFilter($scope.rowCollection, newVal);
