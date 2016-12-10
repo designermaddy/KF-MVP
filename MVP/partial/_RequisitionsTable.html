@@ -35,7 +35,7 @@
                 <td st-toggle-item>
                     <div class="TblResources">{{row.Data.data[0].open_positions}}</div>
                 </td>
-                <td st-toggle-item><!--<a href="#EngagementDetails/1">-->{{row.Engagement}}<!--</a>--></td>
+                <td st-toggle-item><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(row.EngagementId, row.engagementType )">{{row.Engagement}}</a></td>
                 <td st-toggle-item>{{row.Client}}</td>
                 <td st-toggle-item>{{row.Source}}</td>
                 <td st-toggle-item>{{row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>

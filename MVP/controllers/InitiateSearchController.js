@@ -31,7 +31,10 @@
                         vm.data.Description = vm.jobDesc.Description;
                         vm.data.SearchString = vm.jobDesc.SearchString;
                     }
-                    disableInput();
+                    if(vm.data.JobTitle){
+                        disableInput();
+                    }
+                    //
                 }, function rejected(response) {
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 });

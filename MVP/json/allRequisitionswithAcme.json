@@ -48,7 +48,7 @@
           {
             "req_number": "ACME00007",
             "open_positions": "100",
-            "open_days": "20",
+            "open_days": "21",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -85,7 +85,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00009",
@@ -138,7 +139,7 @@
           {
             "req_number": "ACME00009",
             "open_positions": "100",
-            "open_days": "20",
+            "open_days": "21",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -175,7 +176,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00011",
@@ -217,7 +219,7 @@
           {
             "req_number": "ACME00011",
             "open_positions": "3",
-            "open_days": "16",
+            "open_days": "17",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -254,7 +256,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00013",
@@ -296,7 +299,7 @@
           {
             "req_number": "ACME00013",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -333,7 +336,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00014",
@@ -375,7 +379,7 @@
           {
             "req_number": "ACME00014",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -412,7 +416,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00015",
@@ -442,7 +447,7 @@
           {
             "req_number": "ACME00015",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -479,7 +484,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00016",
@@ -521,7 +527,7 @@
           {
             "req_number": "ACME00016",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -558,7 +564,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00017",
@@ -600,7 +607,7 @@
           {
             "req_number": "ACME00017",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -637,7 +644,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00018",
@@ -679,7 +687,7 @@
           {
             "req_number": "ACME00018",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -716,7 +724,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00019",
@@ -746,7 +755,7 @@
           {
             "req_number": "ACME00019",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -783,7 +792,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00020",
@@ -813,7 +823,7 @@
           {
             "req_number": "ACME00020",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -850,7 +860,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00021",
@@ -892,7 +903,7 @@
           {
             "req_number": "ACME00021",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -929,7 +940,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00022",
@@ -971,7 +983,7 @@
           {
             "req_number": "ACME00022",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1008,7 +1020,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00023",
@@ -1050,7 +1063,7 @@
           {
             "req_number": "ACME00023",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1087,7 +1100,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00024",
@@ -1129,7 +1143,7 @@
           {
             "req_number": "ACME00024",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1166,7 +1180,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00025",
@@ -1208,7 +1223,7 @@
           {
             "req_number": "ACME00025",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1245,7 +1260,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00026",
@@ -1287,7 +1303,7 @@
           {
             "req_number": "ACME00026",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1324,7 +1340,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00027",
@@ -1366,7 +1383,7 @@
           {
             "req_number": "ACME00027",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1403,7 +1420,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00028",
@@ -1445,7 +1463,7 @@
           {
             "req_number": "ACME00028",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1482,7 +1500,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00029",
@@ -1524,7 +1543,7 @@
           {
             "req_number": "ACME00029",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1561,7 +1580,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00030",
@@ -1591,7 +1611,7 @@
           {
             "req_number": "ACME00030",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1628,7 +1648,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00031",
@@ -1670,7 +1691,7 @@
           {
             "req_number": "ACME00031",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1707,7 +1728,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00032",
@@ -1749,7 +1771,7 @@
           {
             "req_number": "ACME00032",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1786,7 +1808,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00033",
@@ -1828,7 +1851,7 @@
           {
             "req_number": "ACME00033",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1865,7 +1888,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00034",
@@ -1907,7 +1931,7 @@
           {
             "req_number": "ACME00034",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -1944,7 +1968,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00035",
@@ -1986,7 +2011,7 @@
           {
             "req_number": "ACME00035",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2023,7 +2048,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00036",
@@ -2065,7 +2091,7 @@
           {
             "req_number": "ACME00036",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2102,7 +2128,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00037",
@@ -2144,7 +2171,7 @@
           {
             "req_number": "ACME00037",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2181,7 +2208,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00038",
@@ -2223,7 +2251,7 @@
           {
             "req_number": "ACME00038",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2260,7 +2288,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00039",
@@ -2302,7 +2331,7 @@
           {
             "req_number": "ACME00039",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2339,7 +2368,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00040",
@@ -2381,7 +2411,7 @@
           {
             "req_number": "ACME00040",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2418,7 +2448,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00041",
@@ -2460,7 +2491,7 @@
           {
             "req_number": "ACME00041",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2497,7 +2528,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00042",
@@ -2539,7 +2571,7 @@
           {
             "req_number": "ACME00042",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2576,7 +2608,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00043",
@@ -2618,7 +2651,7 @@
           {
             "req_number": "ACME00043",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2655,7 +2688,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00044",
@@ -2697,7 +2731,7 @@
           {
             "req_number": "ACME00044",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2734,7 +2768,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00045",
@@ -2776,7 +2811,7 @@
           {
             "req_number": "ACME00045",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2813,7 +2848,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00046",
@@ -2855,7 +2891,7 @@
           {
             "req_number": "ACME00046",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2892,7 +2928,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00047",
@@ -2934,7 +2971,7 @@
           {
             "req_number": "ACME00047",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -2971,7 +3008,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00048",
@@ -3013,7 +3051,7 @@
           {
             "req_number": "ACME00048",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3050,7 +3088,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00049",
@@ -3092,7 +3131,7 @@
           {
             "req_number": "ACME00049",
             "open_positions": "3",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3129,7 +3168,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00005",
@@ -3171,7 +3211,7 @@
           {
             "req_number": "ACME00005",
             "open_positions": "1",
-            "open_days": "34",
+            "open_days": "35",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3208,7 +3248,8 @@
           }
         ]
       },
-      "contractType": "Internship"
+      "contractType": "Internship",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00008",
@@ -3250,7 +3291,7 @@
           {
             "req_number": "ACME00008",
             "open_positions": "100",
-            "open_days": "20",
+            "open_days": "21",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3287,7 +3328,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00010",
@@ -3317,7 +3359,7 @@
           {
             "req_number": "ACME00010",
             "open_positions": "1",
-            "open_days": "19",
+            "open_days": "20",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3354,7 +3396,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00050",
@@ -3384,7 +3427,7 @@
           {
             "req_number": "ACME00050",
             "open_positions": "4",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3421,7 +3464,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "ACME00006",
@@ -3463,7 +3507,7 @@
           {
             "req_number": "ACME00006",
             "open_positions": "100",
-            "open_days": "20",
+            "open_days": "21",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -3500,107 +3544,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
-    },
-    {
-      "ReqNumber": "LW00000078",
-      "JobTitle": "Process Quality Tech",
-      "StartDate": "10/28/2016",
-      "EndDate": "12/04/2016",
-      "Source": "TalentLink",
-      "Recruiter": [
-        {
-          "cellphone": null,
-          "email": null,
-          "firstName": "Ashley",
-          "id": 25457,
-          "lastName": "Smith",
-          "login": "ashley.smith@kornferry.com",
-          "type": "ADVANCED",
-          "lovValue": "PIC1",
-          "order": 1
-        }
-      ],
-      "Team": [
-        {
-          "cellphone": null,
-          "email": null,
-          "firstName": "Brycen",
-          "id": 25510,
-          "lastName": "Webb",
-          "login": "brycen.webb@conagrafoods.com",
-          "type": "MSS",
-          "lovValue": "OperUser1",
-          "order": 1
-        }
-      ],
-      "Data": {
-        "method": "reqCount",
-        "type": "company",
-        "name": "Lamb Weston",
-        "data": [
-          {
-            "req_number": "LW00000078",
-            "open_positions": "2",
-            "open_days": "40",
-            "sourced": "9",
-            "screen": "7",
-            "submit": "5",
-            "interview": "3",
-            "offer": "0",
-            "accept": "0",
-            "color": "BG-GREEN"
-          }
-        ],
-        "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
-      },
-      "Position": 9447,
-      "Client": "Lamb Weston",
-      "ClientId": "9848",
-      "EngagementId": "9848",
-      "Engagement": "Lamb Weston",
-      "status": "Open",
-      "location": null,
-      "organization": {
-        "unit": [
-          {
-            "value": "Lamb Weston",
-            "code": "LW000",
-            "id": 9848,
-            "level": 1,
-            "nameTranslation": "Lamb Weston"
-          },
-          {
-            "value": "North America",
-            "code": "LW100",
-            "id": 9850,
-            "level": 2,
-            "nameTranslation": "North America"
-          },
-          {
-            "value": "Operations",
-            "code": "LW110",
-            "id": 9851,
-            "level": 3,
-            "nameTranslation": "Operations"
-          },
-          {
-            "value": "Manufacturing Facilities",
-            "code": "LW113",
-            "id": 9860,
-            "level": 4,
-            "nameTranslation": "Manufacturing Facilities"
-          },
-          {
-            "value": "ID - American Falls",
-            "code": "LW017",
-            "id": 9889,
-            "level": 5,
-            "nameTranslation": "ID - American Falls"
-          }
-        ]
-      },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000129",
@@ -3653,11 +3598,11 @@
           {
             "req_number": "LW00000129",
             "open_positions": "4",
-            "open_days": "33",
-            "sourced": "19",
-            "screen": "17",
-            "submit": "14",
-            "interview": "13",
+            "open_days": "34",
+            "sourced": "20",
+            "screen": "18",
+            "submit": "15",
+            "interview": "14",
             "offer": "2",
             "accept": "2",
             "color": "BG-GREEN"
@@ -3711,7 +3656,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000151",
@@ -3764,8 +3710,8 @@
           {
             "req_number": "LW00000151",
             "open_positions": "1",
-            "open_days": "23",
-            "sourced": "3",
+            "open_days": "24",
+            "sourced": "4",
             "screen": "3",
             "submit": "3",
             "interview": "2",
@@ -3822,7 +3768,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000163",
@@ -3875,14 +3822,14 @@
           {
             "req_number": "LW00000163",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": "1",
             "screen": "1",
             "submit": "1",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -3933,7 +3880,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000164",
@@ -3986,14 +3934,14 @@
           {
             "req_number": "LW00000164",
             "open_positions": "2",
-            "open_days": "15",
-            "sourced": "10",
-            "screen": "7",
-            "submit": "5",
-            "interview": "5",
+            "open_days": "16",
+            "sourced": "11",
+            "screen": "8",
+            "submit": "6",
+            "interview": "6",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -4044,7 +3992,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000160",
@@ -4086,7 +4035,7 @@
           {
             "req_number": "LW00000160",
             "open_positions": "1",
-            "open_days": "16",
+            "open_days": "17",
             "sourced": "2",
             "screen": "0",
             "submit": "0",
@@ -4130,7 +4079,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000165",
@@ -4172,14 +4122,14 @@
           {
             "req_number": "LW00000165",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": "1",
             "screen": "0",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -4216,7 +4166,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000167",
@@ -4258,7 +4209,7 @@
           {
             "req_number": "LW00000167",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -4302,7 +4253,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000168",
@@ -4344,14 +4296,14 @@
           {
             "req_number": "LW00000168",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": "2",
             "screen": "0",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -4388,7 +4340,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000169",
@@ -4430,7 +4383,7 @@
           {
             "req_number": "LW00000169",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -4474,7 +4427,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000188",
@@ -4516,13 +4470,13 @@
           {
             "req_number": "LW00000188",
             "open_positions": "1",
-            "open_days": "0",
-            "sourced": 0,
-            "screen": 0,
-            "submit": 0,
-            "interview": 0,
-            "offer": 0,
-            "accept": 0,
+            "open_days": "1",
+            "sourced": "0",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0",
             "color": "BG-RED"
           }
         ],
@@ -4560,7 +4514,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000037",
@@ -4602,7 +4557,7 @@
           {
             "req_number": "LW00000037",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "2",
             "screen": "2",
             "submit": "2",
@@ -4660,7 +4615,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000038",
@@ -4702,12 +4658,12 @@
           {
             "req_number": "LW00000038",
             "open_positions": "15",
-            "open_days": "43",
-            "sourced": "31",
-            "screen": "23",
-            "submit": "19",
+            "open_days": "44",
+            "sourced": "34",
+            "screen": "25",
+            "submit": "20",
             "interview": "19",
-            "offer": "0",
+            "offer": "4",
             "accept": "0",
             "color": "BG-RED"
           }
@@ -4760,7 +4716,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000142",
@@ -4824,7 +4781,7 @@
           {
             "req_number": "LW00000142",
             "open_positions": "2",
-            "open_days": "27",
+            "open_days": "28",
             "sourced": "3",
             "screen": "2",
             "submit": "2",
@@ -4882,7 +4839,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000143",
@@ -4946,7 +4904,7 @@
           {
             "req_number": "LW00000143",
             "open_positions": "1",
-            "open_days": "27",
+            "open_days": "28",
             "sourced": "1",
             "screen": "1",
             "submit": "1",
@@ -5004,7 +4962,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000065",
@@ -5057,11 +5016,11 @@
           {
             "req_number": "LW00000065",
             "open_positions": "1",
-            "open_days": "41",
-            "sourced": "9",
-            "screen": "4",
-            "submit": "4",
-            "interview": "0",
+            "open_days": "42",
+            "sourced": "11",
+            "screen": "5",
+            "submit": "5",
+            "interview": "1",
             "offer": "0",
             "accept": "0",
             "color": "BG-RED"
@@ -5115,7 +5074,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000068",
@@ -5157,7 +5117,7 @@
           {
             "req_number": "LW00000068",
             "open_positions": "2",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "4",
             "screen": "1",
             "submit": "0",
@@ -5215,7 +5175,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000070",
@@ -5257,7 +5218,7 @@
           {
             "req_number": "LW00000070",
             "open_positions": "1",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "4",
             "screen": "0",
             "submit": "1",
@@ -5315,7 +5276,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000185",
@@ -5390,7 +5352,7 @@
           {
             "req_number": "LW00000185",
             "open_positions": "1",
-            "open_days": "0",
+            "open_days": "1",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -5448,7 +5410,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000186",
@@ -5490,7 +5453,7 @@
           {
             "req_number": "LW00000186",
             "open_positions": "1",
-            "open_days": "0",
+            "open_days": "1",
             "sourced": "0",
             "screen": "0",
             "submit": "0",
@@ -5548,7 +5511,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000187",
@@ -5623,13 +5587,13 @@
           {
             "req_number": "LW00000187",
             "open_positions": "1",
-            "open_days": "0",
-            "sourced": 0,
-            "screen": 0,
-            "submit": 0,
-            "interview": 0,
-            "offer": 0,
-            "accept": 0,
+            "open_days": "1",
+            "sourced": "0",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0",
             "color": "BG-RED"
           }
         ],
@@ -5681,7 +5645,142 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
+    },
+    {
+      "ReqNumber": "LW00000191",
+      "JobTitle": "Team Lead Maintenance- Planner; Richland,WA Plant",
+      "StartDate": "12/09/2016",
+      "EndDate": "12/09/2016",
+      "Source": "TalentLink",
+      "Recruiter": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Allen",
+          "id": 25455,
+          "lastName": "Stewart",
+          "login": "allen.stewart@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC1",
+          "order": 1
+        },
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Jenna",
+          "id": 25651,
+          "lastName": "Higgins",
+          "login": "jenna.higgins@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC2",
+          "order": 2
+        },
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Allen",
+          "id": 25455,
+          "lastName": "Stewart",
+          "login": "allen.stewart@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC3",
+          "order": 3
+        }
+      ],
+      "Team": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Emily",
+          "id": 25563,
+          "lastName": "Long",
+          "login": "emily.long@conagrafoods.com",
+          "type": "MSS",
+          "lovValue": "OperUser1",
+          "order": 1
+        },
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Curtis",
+          "id": 25562,
+          "lastName": "Dabb",
+          "login": "curtis.dabb@conagrafoods.com",
+          "type": "MSS",
+          "lovValue": "OperUser2",
+          "order": 2
+        }
+      ],
+      "Data": {
+        "method": "reqCount",
+        "type": "company",
+        "name": "Lamb Weston",
+        "data": [
+          {
+            "req_number": "LW00000191",
+            "open_positions": "1",
+            "open_days": "0",
+            "sourced": 0,
+            "screen": 0,
+            "submit": 0,
+            "interview": 0,
+            "offer": 0,
+            "accept": 0,
+            "color": "BG-RED"
+          }
+        ],
+        "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
+      },
+      "Position": 10273,
+      "Client": "Lamb Weston",
+      "ClientId": "9848",
+      "EngagementId": "9848",
+      "Engagement": "Lamb Weston",
+      "status": "Open",
+      "location": null,
+      "organization": {
+        "unit": [
+          {
+            "value": "Lamb Weston",
+            "code": "LW000",
+            "id": 9848,
+            "level": 1,
+            "nameTranslation": "Lamb Weston"
+          },
+          {
+            "value": "North America",
+            "code": "LW100",
+            "id": 9850,
+            "level": 2,
+            "nameTranslation": "North America"
+          },
+          {
+            "value": "Operations",
+            "code": "LW110",
+            "id": 9851,
+            "level": 3,
+            "nameTranslation": "Operations"
+          },
+          {
+            "value": "Manufacturing Facilities",
+            "code": "LW113",
+            "id": 9860,
+            "level": 4,
+            "nameTranslation": "Manufacturing Facilities"
+          },
+          {
+            "value": "WA - Richland",
+            "code": "LW006",
+            "id": 9878,
+            "level": 5,
+            "nameTranslation": "WA - Richland"
+          }
+        ]
+      },
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000055",
@@ -5723,7 +5822,7 @@
           {
             "req_number": "LW00000055",
             "open_positions": "1",
-            "open_days": "42",
+            "open_days": "43",
             "sourced": "11",
             "screen": "0",
             "submit": "5",
@@ -5781,7 +5880,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000076",
@@ -5834,9 +5934,9 @@
           {
             "req_number": "LW00000076",
             "open_positions": "30",
-            "open_days": "41",
-            "sourced": "38",
-            "screen": "24",
+            "open_days": "42",
+            "sourced": "39",
+            "screen": "25",
             "submit": "31",
             "interview": "16",
             "offer": "2",
@@ -5892,7 +5992,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000130",
@@ -5934,7 +6035,7 @@
           {
             "req_number": "LW00000130",
             "open_positions": "2",
-            "open_days": "33",
+            "open_days": "34",
             "sourced": "4",
             "screen": "0",
             "submit": "1",
@@ -5992,7 +6093,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000153",
@@ -6034,7 +6136,7 @@
           {
             "req_number": "LW00000153",
             "open_positions": "1",
-            "open_days": "22",
+            "open_days": "23",
             "sourced": "16",
             "screen": "4",
             "submit": "4",
@@ -6092,7 +6194,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000178",
@@ -6145,9 +6248,9 @@
           {
             "req_number": "LW00000178",
             "open_positions": "1",
-            "open_days": "6",
-            "sourced": "7",
-            "screen": "2",
+            "open_days": "7",
+            "sourced": "8",
+            "screen": "4",
             "submit": "0",
             "interview": "0",
             "offer": "0",
@@ -6203,7 +6306,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000179",
@@ -6256,10 +6360,10 @@
           {
             "req_number": "LW00000179",
             "open_positions": "1",
-            "open_days": "6",
+            "open_days": "7",
             "sourced": "4",
-            "screen": "0",
-            "submit": "0",
+            "screen": "1",
+            "submit": "1",
             "interview": "0",
             "offer": "0",
             "accept": "0",
@@ -6314,7 +6418,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000180",
@@ -6367,8 +6472,8 @@
           {
             "req_number": "LW00000180",
             "open_positions": "1",
-            "open_days": "6",
-            "sourced": "7",
+            "open_days": "7",
+            "sourced": "9",
             "screen": "2",
             "submit": "2",
             "interview": "0",
@@ -6425,7 +6530,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000181",
@@ -6478,10 +6584,10 @@
           {
             "req_number": "LW00000181",
             "open_positions": "1",
-            "open_days": "6",
-            "sourced": "16",
-            "screen": "5",
-            "submit": "3",
+            "open_days": "7",
+            "sourced": "18",
+            "screen": "7",
+            "submit": "5",
             "interview": "0",
             "offer": "0",
             "accept": "0",
@@ -6536,7 +6642,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000183",
@@ -6578,7 +6685,7 @@
           {
             "req_number": "LW00000183",
             "open_positions": "1",
-            "open_days": "5",
+            "open_days": "6",
             "sourced": "0",
             "screen": "0",
             "submit": "0",
@@ -6636,7 +6743,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000170",
@@ -6689,7 +6797,7 @@
           {
             "req_number": "LW00000170",
             "open_positions": "1",
-            "open_days": "14",
+            "open_days": "15",
             "sourced": "2",
             "screen": "0",
             "submit": "0",
@@ -6747,7 +6855,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000174",
@@ -6800,7 +6909,7 @@
           {
             "req_number": "LW00000174",
             "open_positions": "1",
-            "open_days": "8",
+            "open_days": "9",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -6858,7 +6967,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000131",
@@ -6900,14 +7010,14 @@
           {
             "req_number": "LW00000131",
             "open_positions": "1",
-            "open_days": "30",
+            "open_days": "31",
             "sourced": "13",
             "screen": "3",
             "submit": "1",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-RED"
+            "color": "BG-GREEN"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -6958,7 +7068,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000133",
@@ -7000,14 +7111,14 @@
           {
             "req_number": "LW00000133",
             "open_positions": "2",
-            "open_days": "30",
+            "open_days": "31",
             "sourced": "20",
             "screen": "8",
             "submit": "5",
             "interview": "3",
             "offer": "2",
             "accept": "0",
-            "color": "BG-RED"
+            "color": "BG-GREEN"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -7058,7 +7169,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000134",
@@ -7100,7 +7212,7 @@
           {
             "req_number": "LW00000134",
             "open_positions": "2",
-            "open_days": "29",
+            "open_days": "30",
             "sourced": "9",
             "screen": "4",
             "submit": "2",
@@ -7158,7 +7270,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000135",
@@ -7200,7 +7313,7 @@
           {
             "req_number": "LW00000135",
             "open_positions": "2",
-            "open_days": "29",
+            "open_days": "30",
             "sourced": "4",
             "screen": "3",
             "submit": "3",
@@ -7258,7 +7371,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000136",
@@ -7300,7 +7414,7 @@
           {
             "req_number": "LW00000136",
             "open_positions": "1",
-            "open_days": "29",
+            "open_days": "30",
             "sourced": "5",
             "screen": "3",
             "submit": "2",
@@ -7358,7 +7472,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000137",
@@ -7400,7 +7515,7 @@
           {
             "req_number": "LW00000137",
             "open_positions": "3",
-            "open_days": "29",
+            "open_days": "30",
             "sourced": "9",
             "screen": "6",
             "submit": "4",
@@ -7458,7 +7573,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000138",
@@ -7500,7 +7616,7 @@
           {
             "req_number": "LW00000138",
             "open_positions": "1",
-            "open_days": "29",
+            "open_days": "30",
             "sourced": "15",
             "screen": "6",
             "submit": "4",
@@ -7558,7 +7674,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000118",
@@ -7600,7 +7717,7 @@
           {
             "req_number": "LW00000118",
             "open_positions": "2",
-            "open_days": "36",
+            "open_days": "37",
             "sourced": "14",
             "screen": "4",
             "submit": "2",
@@ -7644,7 +7761,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000096",
@@ -7686,14 +7804,14 @@
           {
             "req_number": "LW00000096",
             "open_positions": "9",
-            "open_days": "40",
-            "sourced": "15",
+            "open_days": "41",
+            "sourced": "16",
             "screen": "12",
             "submit": "2",
             "interview": "7",
             "offer": "0",
             "accept": "1",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -7744,7 +7862,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000147",
@@ -7797,7 +7916,7 @@
           {
             "req_number": "LW00000147",
             "open_positions": "7",
-            "open_days": "23",
+            "open_days": "24",
             "sourced": "5",
             "screen": "4",
             "submit": "1",
@@ -7855,7 +7974,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000148",
@@ -7908,7 +8028,7 @@
           {
             "req_number": "LW00000148",
             "open_positions": "2",
-            "open_days": "23",
+            "open_days": "24",
             "sourced": "1",
             "screen": "1",
             "submit": "1",
@@ -7966,7 +8086,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000182",
@@ -8030,7 +8151,7 @@
           {
             "req_number": "LW00000182",
             "open_positions": "3",
-            "open_days": "6",
+            "open_days": "7",
             "sourced": "4",
             "screen": "3",
             "submit": "0",
@@ -8088,7 +8209,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000059",
@@ -8130,7 +8252,7 @@
           {
             "req_number": "LW00000059",
             "open_positions": "3",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "4",
             "screen": "1",
             "submit": "2",
@@ -8188,7 +8310,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000061",
@@ -8230,11 +8353,11 @@
           {
             "req_number": "LW00000061",
             "open_positions": "1",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "1",
             "screen": "3",
             "submit": "4",
-            "interview": "1",
+            "interview": "2",
             "offer": "0",
             "accept": "0",
             "color": "BG-RED"
@@ -8288,7 +8411,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000081",
@@ -8330,14 +8454,14 @@
           {
             "req_number": "LW00000081",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "0",
             "screen": "1",
             "submit": "0",
-            "interview": "0",
+            "interview": "1",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -8388,7 +8512,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000150",
@@ -8430,8 +8555,8 @@
           {
             "req_number": "LW00000150",
             "open_positions": "4",
-            "open_days": "23",
-            "sourced": "13",
+            "open_days": "24",
+            "sourced": "21",
             "screen": "9",
             "submit": "8",
             "interview": "10",
@@ -8488,7 +8613,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000152",
@@ -8530,8 +8656,8 @@
           {
             "req_number": "LW00000152",
             "open_positions": "3",
-            "open_days": "22",
-            "sourced": "2",
+            "open_days": "23",
+            "sourced": "5",
             "screen": "0",
             "submit": "2",
             "interview": "1",
@@ -8588,7 +8714,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000154",
@@ -8630,8 +8757,8 @@
           {
             "req_number": "LW00000154",
             "open_positions": "4",
-            "open_days": "22",
-            "sourced": "5",
+            "open_days": "23",
+            "sourced": "13",
             "screen": "0",
             "submit": "1",
             "interview": "4",
@@ -8688,7 +8815,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000099",
@@ -8730,7 +8858,7 @@
           {
             "req_number": "LW00000099",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -8781,7 +8909,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000052",
@@ -8823,7 +8952,7 @@
           {
             "req_number": "LW00000052",
             "open_positions": "1",
-            "open_days": "42",
+            "open_days": "43",
             "sourced": "2",
             "screen": "2",
             "submit": "2",
@@ -8881,7 +9010,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000124",
@@ -8934,7 +9064,7 @@
           {
             "req_number": "LW00000124",
             "open_positions": "1",
-            "open_days": "35",
+            "open_days": "36",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -8992,7 +9122,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000139",
@@ -9055,14 +9186,14 @@
         "data": [
           {
             "req_number": "LW00000139",
-            "open_positions": "5",
-            "open_days": "28",
-            "sourced": "9",
+            "open_positions": "3",
+            "open_days": "29",
+            "sourced": "10",
             "screen": "2",
             "submit": "5",
             "interview": "4",
             "offer": "2",
-            "accept": "0",
+            "accept": "2",
             "color": "BG-RED"
           }
         ],
@@ -9114,7 +9245,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000158",
@@ -9178,7 +9310,7 @@
           {
             "req_number": "LW00000158",
             "open_positions": "2",
-            "open_days": "19",
+            "open_days": "20",
             "sourced": "4",
             "screen": "3",
             "submit": "3",
@@ -9236,7 +9368,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000171",
@@ -9311,7 +9444,7 @@
           {
             "req_number": "LW00000171",
             "open_positions": "1",
-            "open_days": "9",
+            "open_days": "10",
             "sourced": "0",
             "screen": "0",
             "submit": "0",
@@ -9369,7 +9502,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000172",
@@ -9433,8 +9567,8 @@
           {
             "req_number": "LW00000172",
             "open_positions": "1",
-            "open_days": "9",
-            "sourced": "1",
+            "open_days": "10",
+            "sourced": "2",
             "screen": "1",
             "submit": "1",
             "interview": "0",
@@ -9491,7 +9625,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000184",
@@ -9566,7 +9701,7 @@
           {
             "req_number": "LW00000184",
             "open_positions": "1",
-            "open_days": "1",
+            "open_days": "2",
             "sourced": "0",
             "screen": "0",
             "submit": "0",
@@ -9603,7 +9738,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000047",
@@ -9645,7 +9781,7 @@
           {
             "req_number": "LW00000047",
             "open_positions": "1",
-            "open_days": "42",
+            "open_days": "43",
             "sourced": "28",
             "screen": "2",
             "submit": "1",
@@ -9696,7 +9832,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000058",
@@ -9738,8 +9875,8 @@
           {
             "req_number": "LW00000058",
             "open_positions": "1",
-            "open_days": "41",
-            "sourced": "2",
+            "open_days": "42",
+            "sourced": "3",
             "screen": "3",
             "submit": "3",
             "interview": "5",
@@ -9789,7 +9926,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000057",
@@ -9841,14 +9979,14 @@
         "data": [
           {
             "req_number": "LW00000057",
-            "open_positions": "8",
-            "open_days": "42",
+            "open_positions": "7",
+            "open_days": "43",
             "sourced": "38",
             "screen": "19",
             "submit": "17",
             "interview": "12",
             "offer": "5",
-            "accept": "3",
+            "accept": "4",
             "color": "BG-RED"
           }
         ],
@@ -9900,7 +10038,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000074",
@@ -9964,7 +10103,7 @@
           {
             "req_number": "LW00000074",
             "open_positions": "3",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "5",
             "screen": "2",
             "submit": "2",
@@ -10022,7 +10161,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000075",
@@ -10075,8 +10215,8 @@
           {
             "req_number": "LW00000075",
             "open_positions": "1",
-            "open_days": "41",
-            "sourced": "8",
+            "open_days": "42",
+            "sourced": "14",
             "screen": "4",
             "submit": "4",
             "interview": "7",
@@ -10133,7 +10273,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000121",
@@ -10186,8 +10327,8 @@
           {
             "req_number": "LW00000121",
             "open_positions": "1",
-            "open_days": "35",
-            "sourced": "2",
+            "open_days": "36",
+            "sourced": "4",
             "screen": "0",
             "submit": "1",
             "interview": "2",
@@ -10244,7 +10385,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000122",
@@ -10296,14 +10438,14 @@
         "data": [
           {
             "req_number": "LW00000122",
-            "open_positions": "2",
-            "open_days": "35",
+            "open_positions": "1",
+            "open_days": "36",
             "sourced": "9",
             "screen": "3",
             "submit": "3",
             "interview": "3",
             "offer": "3",
-            "accept": "0",
+            "accept": "1",
             "color": "BG-GREEN"
           }
         ],
@@ -10355,7 +10497,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000123",
@@ -10408,7 +10551,7 @@
           {
             "req_number": "LW00000123",
             "open_positions": "1",
-            "open_days": "35",
+            "open_days": "36",
             "sourced": "2",
             "screen": "0",
             "submit": "0",
@@ -10466,7 +10609,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000156",
@@ -10530,7 +10674,7 @@
           {
             "req_number": "LW00000156",
             "open_positions": "1",
-            "open_days": "21",
+            "open_days": "22",
             "sourced": "3",
             "screen": "1",
             "submit": "1",
@@ -10588,7 +10732,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000159",
@@ -10641,11 +10786,11 @@
           {
             "req_number": "LW00000159",
             "open_positions": "1",
-            "open_days": "17",
-            "sourced": "0",
+            "open_days": "18",
+            "sourced": "1",
             "screen": "0",
-            "submit": "0",
-            "interview": "0",
+            "submit": "2",
+            "interview": "2",
             "offer": "0",
             "accept": "0",
             "color": "BG-RED"
@@ -10699,7 +10844,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000175",
@@ -10752,8 +10898,8 @@
           {
             "req_number": "LW00000175",
             "open_positions": "2",
-            "open_days": "8",
-            "sourced": "0",
+            "open_days": "9",
+            "sourced": "1",
             "screen": "0",
             "submit": "0",
             "interview": "0",
@@ -10810,7 +10956,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000107",
@@ -10852,7 +10999,7 @@
           {
             "req_number": "LW00000107",
             "open_positions": "1",
-            "open_days": "39",
+            "open_days": "40",
             "sourced": "5",
             "screen": "0",
             "submit": "0",
@@ -10896,7 +11043,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000110",
@@ -10949,7 +11097,7 @@
           {
             "req_number": "LW00000110",
             "open_positions": "1",
-            "open_days": "37",
+            "open_days": "38",
             "sourced": "3",
             "screen": "0",
             "submit": "1",
@@ -10993,7 +11141,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000119",
@@ -11046,7 +11195,7 @@
           {
             "req_number": "LW00000119",
             "open_positions": "1",
-            "open_days": "35",
+            "open_days": "36",
             "sourced": "3",
             "screen": "1",
             "submit": "1",
@@ -11090,7 +11239,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000120",
@@ -11132,7 +11282,7 @@
           {
             "req_number": "LW00000120",
             "open_positions": "1",
-            "open_days": "35",
+            "open_days": "36",
             "sourced": "2",
             "screen": "1",
             "submit": "1",
@@ -11176,7 +11326,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000161",
@@ -11218,14 +11369,14 @@
           {
             "req_number": "LW00000161",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": "4",
             "screen": "0",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -11262,7 +11413,8 @@
           }
         ]
       },
-      "contractType": "Internship"
+      "contractType": "Internship",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000162",
@@ -11326,14 +11478,14 @@
           {
             "req_number": "LW00000162",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": "3",
             "screen": "0",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -11370,7 +11522,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000079",
@@ -11412,14 +11565,14 @@
           {
             "req_number": "LW00000079",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "3",
             "screen": "1",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -11463,7 +11616,8 @@
           }
         ]
       },
-      "contractType": "Internship"
+      "contractType": "Internship",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000020",
@@ -11505,7 +11659,7 @@
           {
             "req_number": "LW00000020",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "42",
             "screen": "19",
             "submit": "7",
@@ -11549,7 +11703,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000006",
@@ -11591,7 +11746,7 @@
           {
             "req_number": "LW00000006",
             "open_positions": "1",
-            "open_days": "47",
+            "open_days": "48",
             "sourced": "6",
             "screen": "3",
             "submit": "2",
@@ -11635,7 +11790,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000021",
@@ -11677,7 +11833,7 @@
           {
             "req_number": "LW00000021",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "16",
             "screen": "10",
             "submit": "7",
@@ -11721,7 +11877,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000125",
@@ -11763,7 +11920,7 @@
           {
             "req_number": "LW00000125",
             "open_positions": "1",
-            "open_days": "35",
+            "open_days": "36",
             "sourced": "3",
             "screen": "2",
             "submit": "1",
@@ -11807,7 +11964,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000145",
@@ -11849,7 +12007,7 @@
           {
             "req_number": "LW00000145",
             "open_positions": "1",
-            "open_days": "23",
+            "open_days": "24",
             "sourced": "2",
             "screen": "0",
             "submit": "0",
@@ -11893,7 +12051,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000146",
@@ -11935,14 +12094,14 @@
           {
             "req_number": "LW00000146",
             "open_positions": "1",
-            "open_days": "23",
-            "sourced": 0,
-            "screen": 0,
-            "submit": 0,
-            "interview": 0,
-            "offer": 0,
-            "accept": 0,
-            "color": "BG-RED"
+            "open_days": "24",
+            "sourced": "0",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0",
+            "color": "BG-GREEN"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -11979,7 +12138,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000026",
@@ -12021,7 +12181,7 @@
           {
             "req_number": "LW00000026",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "0",
             "screen": "0",
             "submit": "1",
@@ -12072,26 +12232,16 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000073",
       "JobTitle": "Sr. Quality Specialist",
       "StartDate": "10/28/2016",
-      "EndDate": "11/11/2016",
+      "EndDate": "12/08/2016",
       "Source": "TalentLink",
       "Recruiter": [
-        {
-          "cellphone": null,
-          "email": null,
-          "firstName": "Demetria",
-          "id": 25462,
-          "lastName": "Jefferson",
-          "login": "demetria.jefferson@kornferry.com",
-          "type": "ADVANCED",
-          "lovValue": "PIC1",
-          "order": 1
-        },
         {
           "cellphone": null,
           "email": null,
@@ -12100,8 +12250,8 @@
           "lastName": "Smith",
           "login": "ashley.smith@kornferry.com",
           "type": "ADVANCED",
-          "lovValue": "PIC2",
-          "order": 2
+          "lovValue": "PIC1",
+          "order": 1
         }
       ],
       "Team": [
@@ -12125,7 +12275,7 @@
           {
             "req_number": "LW00000073",
             "open_positions": "1",
-            "open_days": "41",
+            "open_days": "42",
             "sourced": "0",
             "screen": "0",
             "submit": "0",
@@ -12176,7 +12326,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000144",
@@ -12229,8 +12380,8 @@
           {
             "req_number": "LW00000144",
             "open_positions": "1",
-            "open_days": "26",
-            "sourced": "3",
+            "open_days": "27",
+            "sourced": "4",
             "screen": "0",
             "submit": "0",
             "interview": "0",
@@ -12280,7 +12431,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000011",
@@ -12322,7 +12474,7 @@
           {
             "req_number": "LW00000011",
             "open_positions": "2",
-            "open_days": "47",
+            "open_days": "48",
             "sourced": "5",
             "screen": "2",
             "submit": "1",
@@ -12380,7 +12532,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000093",
@@ -12422,14 +12575,14 @@
           {
             "req_number": "LW00000093",
             "open_positions": "5",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "6",
             "screen": "5",
             "submit": "5",
             "interview": "4",
             "offer": "1",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -12480,7 +12633,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000094",
@@ -12522,14 +12676,14 @@
           {
             "req_number": "LW00000094",
             "open_positions": "4",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "25",
             "screen": "13",
             "submit": "9",
             "interview": "6",
-            "offer": "5",
+            "offer": "6",
             "accept": "3",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -12580,7 +12734,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000103",
@@ -12622,14 +12777,14 @@
           {
             "req_number": "LW00000103",
             "open_positions": "3",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "7",
             "screen": "4",
             "submit": "1",
             "interview": "1",
-            "offer": "0",
+            "offer": "1",
             "accept": "1",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -12680,7 +12835,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000108",
@@ -12722,7 +12878,7 @@
           {
             "req_number": "LW00000108",
             "open_positions": "3",
-            "open_days": "37",
+            "open_days": "38",
             "sourced": "11",
             "screen": "8",
             "submit": "7",
@@ -12780,7 +12936,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000155",
@@ -12822,7 +12979,7 @@
           {
             "req_number": "LW00000155",
             "open_positions": "2",
-            "open_days": "21",
+            "open_days": "22",
             "sourced": "9",
             "screen": "8",
             "submit": "5",
@@ -12880,7 +13037,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000013",
@@ -12922,7 +13080,7 @@
           {
             "req_number": "LW00000013",
             "open_positions": "1",
-            "open_days": "47",
+            "open_days": "48",
             "sourced": "15",
             "screen": "4",
             "submit": "4",
@@ -12973,7 +13131,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000140",
@@ -13015,10 +13174,10 @@
           {
             "req_number": "LW00000140",
             "open_positions": "1",
-            "open_days": "28",
+            "open_days": "29",
             "sourced": "28",
-            "screen": "15",
-            "submit": "3",
+            "screen": "16",
+            "submit": "5",
             "interview": "0",
             "offer": "0",
             "accept": "0",
@@ -13066,7 +13225,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000022",
@@ -13108,7 +13268,7 @@
           {
             "req_number": "LW00000022",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -13166,7 +13326,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000044",
@@ -13208,7 +13369,7 @@
           {
             "req_number": "LW00000044",
             "open_positions": "1",
-            "open_days": "42",
+            "open_days": "43",
             "sourced": "4",
             "screen": "2",
             "submit": "2",
@@ -13252,7 +13413,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000046",
@@ -13294,7 +13456,7 @@
           {
             "req_number": "LW00000046",
             "open_positions": "1",
-            "open_days": "42",
+            "open_days": "43",
             "sourced": "8",
             "screen": "3",
             "submit": "3",
@@ -13338,93 +13500,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
-    },
-    {
-      "ReqNumber": "LW00000114",
-      "JobTitle": "Sr. Financial Analyst – Financial Reporting",
-      "StartDate": "11/01/2016",
-      "EndDate": "12/06/2016",
-      "Source": "TalentLink",
-      "Recruiter": [
-        {
-          "cellphone": null,
-          "email": null,
-          "firstName": "Brianna",
-          "id": 25450,
-          "lastName": "West",
-          "login": "brianna.west@kornferry.com",
-          "type": "ADVANCED",
-          "lovValue": "PIC1",
-          "order": 1
-        }
-      ],
-      "Team": [
-        {
-          "cellphone": null,
-          "email": null,
-          "firstName": "Greg",
-          "id": 25851,
-          "lastName": "Jones",
-          "login": "gregory.jones2@conagrafoods.com",
-          "type": "MSS",
-          "lovValue": "OperUser1",
-          "order": 1
-        }
-      ],
-      "Data": {
-        "method": "reqCount",
-        "type": "company",
-        "name": "Lamb Weston",
-        "data": [
-          {
-            "req_number": "LW00000114",
-            "open_positions": "1",
-            "open_days": "36",
-            "sourced": "6",
-            "screen": "3",
-            "submit": "3",
-            "interview": "3",
-            "offer": "2",
-            "accept": "0",
-            "color": "BG-GREEN"
-          }
-        ],
-        "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
-      },
-      "Position": 9524,
-      "Client": "Lamb Weston",
-      "ClientId": "9848",
-      "EngagementId": "9848",
-      "Engagement": "Lamb Weston",
-      "status": "Open",
-      "location": null,
-      "organization": {
-        "unit": [
-          {
-            "value": "Lamb Weston",
-            "code": "LW000",
-            "id": 9848,
-            "level": 1,
-            "nameTranslation": "Lamb Weston"
-          },
-          {
-            "value": "North America",
-            "code": "LW100",
-            "id": 9850,
-            "level": 2,
-            "nameTranslation": "North America"
-          },
-          {
-            "value": "Finance",
-            "code": "LW150",
-            "id": 9855,
-            "level": 3,
-            "nameTranslation": "Finance"
-          }
-        ]
-      },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000166",
@@ -13466,7 +13543,7 @@
           {
             "req_number": "LW00000166",
             "open_positions": "1",
-            "open_days": "15",
+            "open_days": "16",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -13510,7 +13587,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000189",
@@ -13552,13 +13630,13 @@
           {
             "req_number": "LW00000189",
             "open_positions": "1",
-            "open_days": "0",
-            "sourced": 0,
-            "screen": 0,
-            "submit": 0,
-            "interview": 0,
-            "offer": 0,
-            "accept": 0,
+            "open_days": "1",
+            "sourced": "0",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0",
             "color": "BG-RED"
           }
         ],
@@ -13596,7 +13674,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000190",
@@ -13638,13 +13717,13 @@
           {
             "req_number": "LW00000190",
             "open_positions": "1",
-            "open_days": "0",
-            "sourced": 0,
-            "screen": 0,
-            "submit": 0,
-            "interview": 0,
-            "offer": 0,
-            "accept": 0,
+            "open_days": "1",
+            "sourced": "0",
+            "screen": "0",
+            "submit": "0",
+            "interview": "0",
+            "offer": "0",
+            "accept": "0",
             "color": "BG-RED"
           }
         ],
@@ -13682,7 +13761,83 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
+    },
+    {
+      "ReqNumber": "LW00000192",
+      "JobTitle": "Sr. Financial Analyst – Supply Chain Finance",
+      "StartDate": "12/09/2016",
+      "EndDate": "12/09/2016",
+      "Source": "TalentLink",
+      "Recruiter": [
+        {
+          "cellphone": null,
+          "email": null,
+          "firstName": "Brianna",
+          "id": 25450,
+          "lastName": "West",
+          "login": "brianna.west@kornferry.com",
+          "type": "ADVANCED",
+          "lovValue": "PIC1",
+          "order": 1
+        }
+      ],
+      "Team": [],
+      "Data": {
+        "method": "reqCount",
+        "type": "company",
+        "name": "Lamb Weston",
+        "data": [
+          {
+            "req_number": "LW00000192",
+            "open_positions": "1",
+            "open_days": "0",
+            "sourced": 0,
+            "screen": 0,
+            "submit": 0,
+            "interview": 0,
+            "offer": 0,
+            "accept": 0,
+            "color": "BG-RED"
+          }
+        ],
+        "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
+      },
+      "Position": 10283,
+      "Client": "Lamb Weston",
+      "ClientId": "9848",
+      "EngagementId": "9848",
+      "Engagement": "Lamb Weston",
+      "status": "Open",
+      "location": null,
+      "organization": {
+        "unit": [
+          {
+            "value": "Lamb Weston",
+            "code": "LW000",
+            "id": 9848,
+            "level": 1,
+            "nameTranslation": "Lamb Weston"
+          },
+          {
+            "value": "North America",
+            "code": "LW100",
+            "id": 9850,
+            "level": 2,
+            "nameTranslation": "North America"
+          },
+          {
+            "value": "Finance",
+            "code": "LW150",
+            "id": 9855,
+            "level": 3,
+            "nameTranslation": "Finance"
+          }
+        ]
+      },
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000024",
@@ -13724,7 +13879,7 @@
           {
             "req_number": "LW00000024",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "5",
             "screen": "5",
             "submit": "6",
@@ -13775,7 +13930,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000028",
@@ -13817,7 +13973,7 @@
           {
             "req_number": "LW00000028",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -13868,7 +14024,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000029",
@@ -13921,7 +14078,7 @@
           {
             "req_number": "LW00000029",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "9",
             "screen": "9",
             "submit": "7",
@@ -13972,7 +14129,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000035",
@@ -14014,7 +14172,7 @@
           {
             "req_number": "LW00000035",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": "7",
             "screen": "4",
             "submit": "5",
@@ -14065,7 +14223,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000036",
@@ -14107,7 +14266,7 @@
           {
             "req_number": "LW00000036",
             "open_positions": "1",
-            "open_days": "43",
+            "open_days": "44",
             "sourced": 0,
             "screen": 0,
             "submit": 0,
@@ -14158,22 +14317,23 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000072",
       "JobTitle": "Team Leader Sanitation",
       "StartDate": "10/28/2016",
-      "EndDate": "11/11/2016",
+      "EndDate": "12/08/2016",
       "Source": "TalentLink",
       "Recruiter": [
         {
           "cellphone": null,
           "email": null,
-          "firstName": "Demetria",
-          "id": 25462,
-          "lastName": "Jefferson",
-          "login": "demetria.jefferson@kornferry.com",
+          "firstName": "Ashley",
+          "id": 25457,
+          "lastName": "Smith",
+          "login": "ashley.smith@kornferry.com",
           "type": "ADVANCED",
           "lovValue": "PIC1",
           "order": 1
@@ -14211,8 +14371,8 @@
           {
             "req_number": "LW00000072",
             "open_positions": "1",
-            "open_days": "41",
-            "sourced": "1",
+            "open_days": "42",
+            "sourced": "4",
             "screen": "0",
             "submit": "0",
             "interview": "0",
@@ -14262,7 +14422,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000116",
@@ -14304,7 +14465,7 @@
           {
             "req_number": "LW00000116",
             "open_positions": "3",
-            "open_days": "36",
+            "open_days": "37",
             "sourced": "8",
             "screen": "6",
             "submit": "2",
@@ -14355,7 +14516,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000117",
@@ -14397,7 +14559,7 @@
           {
             "req_number": "LW00000117",
             "open_positions": "2",
-            "open_days": "36",
+            "open_days": "37",
             "sourced": "3",
             "screen": "2",
             "submit": "1",
@@ -14448,7 +14610,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000126",
@@ -14501,7 +14664,7 @@
           {
             "req_number": "LW00000126",
             "open_positions": "1",
-            "open_days": "34",
+            "open_days": "35",
             "sourced": "12",
             "screen": "6",
             "submit": "6",
@@ -14552,7 +14715,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000086",
@@ -14594,14 +14758,14 @@
           {
             "req_number": "LW00000086",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "21",
             "screen": "0",
             "submit": "0",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -14638,7 +14802,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000088",
@@ -14691,14 +14856,14 @@
           {
             "req_number": "LW00000088",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "4",
-            "screen": "1",
-            "submit": "0",
+            "screen": "2",
+            "submit": "1",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -14735,7 +14900,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000104",
@@ -14799,14 +14965,14 @@
           {
             "req_number": "LW00000104",
             "open_positions": "1",
-            "open_days": "40",
+            "open_days": "41",
             "sourced": "4",
             "screen": "1",
             "submit": "1",
             "interview": "0",
             "offer": "0",
             "accept": "0",
-            "color": "BG-GREEN"
+            "color": "BG-RED"
           }
         ],
         "link": "https://foresight.futurestep.com/?ssoprovider=recruiterdesktop&mode=reqCount&company=6655"
@@ -14843,7 +15009,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000173",
@@ -14885,10 +15052,10 @@
           {
             "req_number": "LW00000173",
             "open_positions": "1",
-            "open_days": "9",
+            "open_days": "10",
             "sourced": "4",
             "screen": "1",
-            "submit": "1",
+            "submit": "2",
             "interview": "0",
             "offer": "0",
             "accept": "0",
@@ -14929,7 +15096,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     },
     {
       "ReqNumber": "LW00000177",
@@ -14982,7 +15150,7 @@
           {
             "req_number": "LW00000177",
             "open_positions": "1",
-            "open_days": "7",
+            "open_days": "8",
             "sourced": "3",
             "screen": "2",
             "submit": "1",
@@ -15026,7 +15194,8 @@
           }
         ]
       },
-      "contractType": "Permanent"
+      "contractType": "Permanent",
+      "engagementType": "RPO"
     }
   ],
   "status": null,

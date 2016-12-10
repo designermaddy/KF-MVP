@@ -53,7 +53,17 @@ $scope.itemsByPage=15;
         //config.searcherReq
        agingRequisitionList();
     }, true);
+ // call the API for selectedengagement per id
+	$scope.onSelectEngagementPerID = function(engagementID, engagementType){
+		 var engDtlsSelected = {}
 
+        engDtlsSelected.id = engagementID;
+        engDtlsSelected.thirdParty = engagementType
+
+		sharedProperties.setengagementPerIDSelected(engagementID)
+        sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
+
+	}
    /* var p  = Factory.kornferry();
     p.then(function resolved(response){
         console.log(response.data);

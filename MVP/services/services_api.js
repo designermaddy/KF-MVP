@@ -637,7 +637,7 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
                     // $scope.rowCollection = response.data.requisitions;
                       var countItem = response.data.count;
                       if(countItem==0){
-                        // commonFunctions.callSearcherJsonMethod()
+                         //commonFunctions.callSearcherJsonMethod()
                       }else{
                           var searcherItems = response.data;
                           config.searcherItemFromKornferry = searcherItems
@@ -647,8 +647,17 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
 
                   },
                   function rejected(response) {
+                      /* var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'popupSearcher.html'
+            , controller: 'ModalCancel'
+            , controllerAs: '$ctrl'
+            , size: 'lg'
+
+        });*/
+
                         //  commonFunctions.callSearcherJsonMethod()
-                      commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
 
                   }
               )
@@ -677,7 +686,15 @@ commonFunctions.callSearcherJsonMethod = function(){
 
               },
                   function rejected(response) {
+
+
+
+
+
+
                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+
+
               }
             )
 }
@@ -872,3 +889,9 @@ app.service('sharedProperties', function () {
 
     }
 });
+app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {
+    $scope.iframeUrl = $sce.trustAsResourceUrl(url);
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])

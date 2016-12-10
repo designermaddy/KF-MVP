@@ -52,7 +52,7 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
         function pdfDetails() {
             var data = {
                 'requisition': sharedProperties.getPositionId()
-                , 'engagementId': parseInt(sharedProperties.getRequisitionDetails().EngagementId)
+                , 'engagementId': sharedProperties.getRequisitionDetails().EngagementId
             }
             var promise = Factory.requisitionDocDetailsList(data);
             promise.then(function resolved(response) {

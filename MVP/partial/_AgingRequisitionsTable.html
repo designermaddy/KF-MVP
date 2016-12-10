@@ -31,7 +31,7 @@
                     <td>
                         <div class="TblResources">{{row.Data.data[0].open_positions}}</div>
                     </td>
-                    <td><!--<a href="#EngagementDetails/1">-->{{row.Engagement}}<!--</a>--></td>
+                    <td><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(row.EngagementId, row.engagementType )">{{row.Engagement}}</a></td>
                     <td>{{row.Source}}</td>
                     <td><div class="TblClientName">{{row.Client}}</div>
                         <!--<div class="TblClientLocation">{{clientLocation}}</div>--></td>
