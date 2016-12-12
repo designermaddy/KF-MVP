@@ -205,7 +205,8 @@ app.controller('popUpSaveEngagmentClose', ['$scope', '$uibModalInstance', 'share
         console.log(sharedProperties.getprofileSelectedEngagementID())
             //var name = angular.element($('#engagementID')).val();
         var name = document.getElementById("engagementID").value;
-        var engagementNumber = name.replace(/\D/g, '').trim();
+       // var engagementNumber = name.replace(/\D/g, '').trim();
+         var engagementNumber = name.split(" ")[0];
         console.log(engagementNumber);
         console.log(sharedProperties.getprofileSelectedDocumentID())
         var data = {

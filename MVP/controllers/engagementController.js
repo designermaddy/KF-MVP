@@ -1,5 +1,6 @@
-app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties', '$http', function ($scope, Factory, sharedProperties, $http) {
+app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties', '$http','commonFunctions', function ($scope, Factory, sharedProperties, $http, commonFunctions) {
     $scope.search = {};
+     commonFunctions.getSearcherJson();
     function getData() {
         var promise = Factory.getEngagementDetailsTableList();
         promise.then(function (response) {
@@ -22,10 +23,13 @@ app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties',
     // call the API for selectedengagement per id
 	$scope.onSelectEngagementPerID = function(engagementID, engagementType){
 		 var engDtlsSelected = {}
+
         engDtlsSelected.id = engagementID;
         engDtlsSelected.thirdParty = engagementType
 
 		sharedProperties.setengagementPerIDSelected(engagementID)
         sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
+
 	}
+
 }]);

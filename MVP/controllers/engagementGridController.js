@@ -78,6 +78,17 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
         });
 
     }
+      // call the API for selectedengagement per id
+	$scope.onSelectEngagementPerID = function(engagementID, engagementType){
+		 var engDtlsSelected = {}
+
+        engDtlsSelected.id = engagementID;
+        engDtlsSelected.thirdParty = engagementType
+
+		sharedProperties.setengagementPerIDSelected(engagementID)
+        sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
+
+	}
      /*$timeout(function () {
         $('#requisitionStatus').selectpicker();
         }, 50, false);*/

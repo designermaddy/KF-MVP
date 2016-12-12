@@ -23,7 +23,8 @@ app.run(function ($http, sharedProperties, $cookies, config, Factory, commonFunc
         sharedProperties.setCounter(1)
     }
 
-if(config.accessTokenSearcher){
+/*if(config.accessTokenSearcher){
+
     var promise = Factory.kornferry(searcherToken);
         promise.then(
           function resolved(response) {
@@ -71,7 +72,7 @@ function getSearcherRequisitions(searcherItems){
                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
               }
             )
-}
+}*/
     //sharedProperties.setAuthGlobalToken(authToken)
     //var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
 

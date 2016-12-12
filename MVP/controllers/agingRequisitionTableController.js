@@ -1,14 +1,15 @@
 
 
-app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location) {
+app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','config','$rootScope', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location, config, $rootScope) {
 sharedProperties.setReportURL("empty")
  $scope.viewLoading = false;
+
  agingRequisitionList();
     function agingRequisitionList() {
         var promise = Factory.getAgingRequisitionList();
         promise.then(
           function resolved(response) {
-             $scope.rowCollection = response.data.requisitions;
+             $scope.rowCollection = response.data.requisitions.concat(config.searcherReq);
 			  if($scope.rowCollection){
 				 $scope.viewLoading = true;
 			  }
@@ -46,6 +47,23 @@ $scope.itemsByPage=15;
         commonFunctions.changeActivelink(row, htmlPath);
     }
 
+
+    $rootScope.$watch(function() {return config.searcherReq}, function() {
+        // do something here
+        //config.searcherReq
+       agingRequisitionList();
+    }, true);
+ // call the API for selectedengagement per id
+	$scope.onSelectEngagementPerID = function(engagementID, engagementType){
+		 var engDtlsSelected = {}
+
+        engDtlsSelected.id = engagementID;
+        engDtlsSelected.thirdParty = engagementType
+
+		sharedProperties.setengagementPerIDSelected(engagementID)
+        sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
+
+	}
    /* var p  = Factory.kornferry();
     p.then(function resolved(response){
         console.log(response.data);

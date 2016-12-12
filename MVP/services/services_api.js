@@ -546,14 +546,15 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getSearcherRequisitionsByEngagement=function(engagementID, postData){
          return $http({
             method: 'POST'
-            , url: urlAPI + '/Requisition/getSearcherRequisitionsByEngagement/'+engagementID
+            , url: urlAPI + '/engagement/viewSearcherEngagement/'+engagementID
             , data: postData
         });
     };
 
+
     return dataFactory;
 }]);
-app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', function (Factory, sharedProperties, $uibModal, $location) {
+app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location','config', function (Factory, sharedProperties, $uibModal, $location, config) {
     var commonFunctions = {};
     commonFunctions.getIframeUrl = function (key) {
         var iFrameArray = sharedProperties.getIframeLinks();
@@ -627,6 +628,77 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
           }
       )*/
     }
+    commonFunctions.getSearcherJson = function(){
+            if(config.accessTokenSearcher){
+                var searcherToken = config.accessTokenSearcher;
+            var promise = Factory.kornferry(searcherToken);
+                promise.then(
+                  function resolved(response) {
+                    // $scope.rowCollection = response.data.requisitions;
+                      var countItem = response.data.count;
+                      if(countItem==0){
+                         //commonFunctions.callSearcherJsonMethod()
+                      }else{
+                          var searcherItems = response.data;
+                          config.searcherItemFromKornferry = searcherItems
+                           commonFunctions.getSearcherRequisitions(searcherItems);
+                      }
+                      console.log( countItem)
+
+                  },
+                  function rejected(response) {
+                      /* var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'popupSearcher.html'
+            , controller: 'ModalCancel'
+            , controllerAs: '$ctrl'
+            , size: 'lg'
+
+        });*/
+
+                        //  commonFunctions.callSearcherJsonMethod()
+                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+
+                  }
+              )
+        }
+    }
+commonFunctions.callSearcherJsonMethod = function(){
+      var promise = Factory.getSearcherReqList();
+            promise.then(
+              function resolved(response) {
+                  var searcherItems = response.data;
+                   config.searcherItemFromKornferry = searcherItems;
+                  commonFunctions.getSearcherRequisitions(searcherItems);
+              },
+                  function rejected(response) {
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+              }
+            )
+}
+ commonFunctions.getSearcherRequisitions = function(searcherItems){
+     var promise = Factory.getSearcherRequisitions(searcherItems);
+            promise.then(
+              function resolved(response) {
+
+                  config.searcherReq = response.data.requisitions;
+                  console.log(response)
+
+              },
+                  function rejected(response) {
+
+
+
+
+
+
+                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+
+
+              }
+            )
+}
+
     return commonFunctions;
 }]);
 app.service('sharedProperties', function () {
@@ -817,3 +889,9 @@ app.service('sharedProperties', function () {
 
     }
 });
+app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {
+    $scope.iframeUrl = $sce.trustAsResourceUrl(url);
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    }
+}])

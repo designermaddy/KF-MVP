@@ -1,8 +1,8 @@
-app.controller('popoverController', ['$scope', '$timeout','sharedProperties', function ($scope, $timeout, sharedProperties) {
+app.controller('popoverController', ['$scope', '$timeout','sharedProperties','commonFunctions', function ($scope, $timeout, sharedProperties, commonFunctions) {
     $scope.cancel = function () {
       $scope.isOpen = false;
     };
-
+  commonFunctions.getSearcherJson();
     $scope.ReqUrl = "partial/_RequisitionGoal.html";
     $scope.CanUrl = "partial/_CandidatePipeline.html";
 

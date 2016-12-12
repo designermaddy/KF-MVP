@@ -16,7 +16,8 @@
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();
             if (savedSearchDetails.fromSavedSearch == true) {
                 var requisitionNumber = savedSearchDetails.clientJobId;
-                savedSearchDetails.fromSavedSearch = false;
+                sharedProperties.setClientJobID(requisitionNumber)
+                    // savedSearchDetails.fromSavedSearch = false;
             }
             $('#searchHeader').addClass('active');
             $timeout(function () {
@@ -31,7 +32,10 @@
                         vm.data.Description = vm.jobDesc.Description;
                         vm.data.SearchString = vm.jobDesc.SearchString;
                     }
-                    disableInput();
+                    if (vm.data.JobTitle) {
+                        disableInput();
+                    }
+                    //
                 }, function rejected(response) {
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 });
@@ -65,7 +69,7 @@
 
         function Criteria() {
             // TODO: Get rid of the hard coded values; Provided here just for initial demo purposes
-            var jobId = sharedProperties.getClientJobID()
+            var jobId = sharedProperties.getClientJobID();
             this.ClientJobID = jobId; //"562139";
             this.AryaOrgID = 6;
             this.ClientOrgID = 6;
@@ -94,6 +98,7 @@
             this.Job_apply_url = null;
         }
         vm.save = function save() {
+            var savedSearchDetails = sharedProperties.getSavedSearchDetails();
             vm.criteria = getCriteria();
             if (vm.criteria.Miles) {
                 delete vm.criteria.Miles;
@@ -105,7 +110,13 @@
             promise.then(function resolved(response) {
                 //sharedProperties.setJobId(response.data.JobID);
                 console.log(response.data);
-                var redirectPath = "RequisitionDetails/3";
+                if (savedSearchDetails.fromSavedSearch) {
+                    sharedProperties.getSavedSearchDetails().fromSavedSearch = false;
+                    var redirectPath = "Search"
+                }
+                else {
+                    var redirectPath = "RequisitionDetails/3";
+                }
                 $location.path(redirectPath);
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
