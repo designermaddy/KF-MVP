@@ -42,7 +42,7 @@
             }
         }
         var data = sharedProperties.getInitiateSearchData();
-        if (data.requisitionResponseList.length) {
+        if (data.requisitionResponseList) {
             var promise = Factory.getJobDescription(data);
             promise.then(function resolved(response) {
                 vm.jobDesc = response.data;

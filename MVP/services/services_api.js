@@ -504,7 +504,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         });
     }
     dataFactory.getCountries = function () {
-        return $http.get('json/countries.json');
+        //return $http.get('json/countries.json');
+        var orgID = 6;
+        return $http.get(urlAPI + '/Requisition/getAryaCountryList/' + orgID);
     }
     dataFactory.updateStatus = function (RequisitionDetail) {
         return $http({

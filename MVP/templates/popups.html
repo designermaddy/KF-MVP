@@ -8,14 +8,15 @@
 </script>
 <!--poppup for arya count in saved searches -->
 <script type="text/ng-template" id="modalAryaCount.html">
-    <div id="searchListCandidateDetails" ng-controller="searchController"> <a href="" class="btn btn-primary btn-sm IframeBtn" id="searchResultBack" ng-click="searchResultBack();"> Back </a>
-        <iframe frameborder="0" scrolling="no" style="width:1000px; height:1000px; margin-top:-80px;"></iframe>
-        <form id="aryaCount" target="iframe" action="https://iarya.leoforce.com/Arya/" method="post">
-            <input type="hidden" name="LoginName" value={{userName}}/>
-            <input type="hidden" name="Password" value={{password}}/>
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2> </h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="modal-body">
+        <form id="aryaCount" target="iframe2" method="post">
+            <input type="hidden" name="LoginName" value="{{userName}}"/>
+            <input type="hidden" name="Password" value="{{password}}"/>
             <input type="hidden" name="btnSubmit" value="Login" />
-            <input type="hidden" name="ReturnUrl" value={ {ReturnUrl}}/> </form> <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
-        <iframe ng-src="{{ReturnUrl}}" frameborder="0" height="480" width="840"></iframe>
+            <input type="hidden" name="ReturnUrl" value={{ReturnUrl}}/> </form> <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
+        <iframe name="iframe2" frameborder="0" scrolling="yes" style="width:845px; height:1000px;"></iframe>
     </div>
 </script>
 <!-- Global Document PDF Loader   -->
@@ -44,36 +45,34 @@
 </script>
 <!-- Email Popup template   -->
 <script type="text/ng-template" id="emailPopup.html">
-
     <div class="container-fluid claerfix MarTp15">
-
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        <h2>Send Email</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
-    <div class="row MarBt15">
-        <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">From :</span>
-            <label class="FormLabel OutputLabel">{{data.userMailID}}</label>
+        <div class="modal-header Heading2 HeadingFloat clearfix">
+            <h2>Send Email</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+        <div class="row MarBt15">
+            <div class="col-sm-6 col-md-4 col-lg-4"> <span class="InputText">From :</span>
+                <label class="FormLabel OutputLabel">{{data.userMailID}}</label>
+            </div>
         </div>
-    </div>
-    <div class="row MarBt15">
-      <!--  <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+        <div class="row MarBt15">
+            <!--  <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
             <label class="FormLabel">Company</label>
             <select id="selectCompany" class="selectpicker form-control" required ng-model='form' ng-options='company as company.name for company in options' ng-change="companySelect(form)">
             </select>
         </div>-->
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
-            <label class="FormLabel">Template</label>
-            <select id="selectTemplate" class="selectpicker form-control" required ng-model='form' ng-options='template as template.name for template in templateOptions' ng-change="templateSelect(form)">
-                <option value="">Please Select</option>
-            </select>
+            <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+                <label class="FormLabel">Template</label>
+                <select id="selectTemplate" class="selectpicker form-control" required ng-model='form' ng-options='template as template.name for template in templateOptions' ng-change="templateSelect(form)">
+                    <option value="">Please Select</option>
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
+                <label class="FormLabel">Email Profile</label>
+                <select id="selectEmailProfile" class="selectpicker form-control" required ng-model='form' ng-options='emailPfl as emailPfl.name for emailPfl in emailProfileOptions' ng-change="emailProfileSelect(form)">
+                    <option value="">Please Select</option>
+                </select>
+            </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 FormSelect">
-            <label class="FormLabel">Email Profile</label>
-             <select id="selectEmailProfile" class="selectpicker form-control" required ng-model='form' ng-options='emailPfl as emailPfl.name for emailPfl in emailProfileOptions' ng-change="emailProfileSelect(form)">
-                 <option value="">Please Select</option>
-             </select>
-        </div>
-    </div>
-   <!-- <div class="row MarBt15">
+        <!-- <div class="row MarBt15">
         <div class="col-sm-6 col-md-4 col-lg-4 MarBt15">
             <label class="FormLabel">Add Attachments</label>
             <input name="myFile" type="file" /> </div>
@@ -84,34 +83,29 @@
             </ul>
         </div>
     </div>-->
-    <div class="row MarBt15">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="FormLabel">Subject</label>
-            <input class="input-sm form-control" ng-model="data.subject" type="search"> </div>
-    </div>
-   <!-- <div class="row MarBt15">
+        <div class="row MarBt15">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <label class="FormLabel">Subject</label>
+                <input class="input-sm form-control" ng-model="data.subject" type="search"> </div>
+        </div>
+        <!-- <div class="row MarBt15">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <textarea class="form-control" ng-model="data.contentDescription" style="height:300px; overflow-y:auto;" ></textarea>
         </div>
         </div>-->
-
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
-            <trix-editor ng-if="true" angular-trix ng-model="data.body" class="trix-content"></trix-editor>
-
+                <trix-editor ng-if="true" angular-trix ng-model="data.body" class="trix-content"></trix-editor>
             </div>
         </div>
-
         <div class="row MarBt15">
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="ButtonSection pull-right">
-                <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm" >Cancel</button>
-                <button ng-click="sendMail()" type="Save" class="btn btn-primary btn-sm">Send Email</button>
-
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="ButtonSection pull-right">
+                    <button ng-click="cancel()" type="Cancel" class="btn btn-default btn-sm">Cancel</button>
+                    <button ng-click="sendMail()" type="Save" class="btn btn-primary btn-sm">Send Email</button>
+                </div>
             </div>
         </div>
-    </div>
 </script>
 <!-- Global Error Loading Popup   -->
 <script type="text/ng-template" id="LoadError.html">
@@ -236,9 +230,8 @@
 </script>
 <!--popup searcher express-->
 <script type="text/ng-template" id="popupSearcher.html">
-   <div ng-include="'https://qaapi.se.kornferry.com/Signin/sso?appName=Hexaware&clientSecret=1E14EA379BC34A30823690DD65BF999F&SessionId =asd234'"></div>
+    <div ng-include="'https://qaapi.se.kornferry.com/Signin/sso?appName=Hexaware&clientSecret=1E14EA379BC34A30823690DD65BF999F&SessionId =asd234'"></div>
 </script>
-
 <!-- End of helpfuturestep Zendesk Widget script -->
 <script type="text/ng-template" id="pdfDocUpload.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">

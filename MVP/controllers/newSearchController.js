@@ -335,7 +335,7 @@
         var getCountries = function () {
             var promise = Factory.getCountries();
             promise.then(function resolved(response) {
-                var countries = response.data.countries;
+                var countries = response.data.Country;
                 $scope.freeSearch.countries = countries.map(function (item) {
                     return item;
                 });
