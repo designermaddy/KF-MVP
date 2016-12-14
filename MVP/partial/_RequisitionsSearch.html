@@ -1,31 +1,30 @@
 <div class="Heading2">
-    <h2>Requisitions Search</h2>
-	<span class="HeaderButton pull-right">
+    <h2>Requisitions Search</h2> <span class="HeaderButton pull-right">
             <div class="btn-group" uib-dropdown is-open="status.isopen">
       <button id="single-button" type="button" class="btn btn-secondary btn-sm" uib-dropdown-toggle ng-disabled="disabled">Add New Requisition<span class="caret"></span> </button>
-        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-            <li role="menuitem"><a href="" ng-click="openTalentLinkIframe()">Talent Link</a></li>
-            <li role="menuitem" class="disabled"><a href="" ng-click="openCrmIframe()">CRM</a></li>
-            <li role="menuitem" class="disabled"><a href="#">Searcher Express</a></li>
-        </ul>
-    </div>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li role="menuitem"><a href="" ng-click="openTalentLinkIframe()">Talent Link</a></li>
+        <li role="menuitem" class="disabled"><a href="" ng-click="openCrmIframe()">CRM</a></li>
+        <li role="menuitem" class="disabled"><a href="#">Searcher Express</a></li>
+    </ul>
+</div>
 </span>
 </div>
-<div class="panel panel-default SearchBox" ng-controller="requisitionSearchController">
+<div class="panel panel-default SearchBox">
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel"> Requisition Name (or) ID</label>
-                <input class="input-sm form-control FormInput" type="search" ng-model="name" uib-typeahead="address for address in requisition | filter:$viewValue | limitTo:8"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.req"> </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel">Engagement Name</label>
-                <input class="input-sm form-control FormInput" type="search" ng-model="eng" uib-typeahead="address for address in engagement | filter:$viewValue | limitTo:8"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.Engagement"> </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel">Client Name</label>
-                <input class="input-sm form-control FormInput" type="search" ng-model="cli" uib-typeahead="ind for ind in client | filter:$viewValue | limitTo:8"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.Client" > </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
                 <label class="FormLabel">Recruiter Name</label>
-                <input class="input-sm form-control" type="search" ng-model="rec" uib-typeahead="rec for rec in recruiter | filter:$viewValue | limitTo:8"> </div>
+                <input class="input-sm form-control" type="search" ng-model="search.recruiter"> </div>
         </div>
         <div class="row clearfix">
             <div class="col-sm-6 col-md-3 col-lg-3 DatePicker" ng-controller="DatePickerCtrl">
@@ -60,9 +59,6 @@
                     <input type="checkbox" id="myRequisitionsOnly" autocomplete="off">
                     <label for="myRequisitionsOnly" class="CheckBoxLable">My Requisitions Only</label>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-1 col-lg-1 pull-right">
-                <button type="submit" class="btn btn-primary btn-sm pull-right" ng-click="searchlist()">GO</button>
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
-<div ng-controller="requisitionTableController" class="DataListBox">
+<div class="DataListBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
         <h2>Requisitions({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span>
 </div>
 
-<div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="RequisitionTable">
+<div st-table="displayedCollections" st-safe-src="rowCollection" class="RequisitionTable">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -38,7 +38,7 @@
                 <td st-toggle-item><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(row.EngagementId, row.engagementType )">{{row.Engagement}}</a></td>
                 <td st-toggle-item>{{row.Client}}</td>
                 <td st-toggle-item>{{row.Source}}</td>
-                <td st-toggle-item>{{row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
+                <td st-toggle-item>{{row.recruiter = row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
                 <td st-toggle-item>{{row.Data.data[0].sourced}}</td>
                 <td st-toggle-item>{{row.Data.data[0].screen}}</td>
                 <td st-toggle-item>{{row.Data.data[0].submit}}</td>
@@ -55,47 +55,4 @@
         </table>
     </div>
 </div>
-<!--<div ng-controller="agingRequisitionTableController" class="DataGrid row">
->>>>>>> origin/master
-    <div class="Heading2 Open">
-        <h2>Aging Requisitions</h2> 
-    </div>
-        <div ng-repeat="row in rowCollection" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="DataGridBox">
-                <div class="DataGridHeader clearfix">
-                    <div class="DGHeaderLeft">
-                        <div class="DGRequisition"><a href="#RequisitionDetails/3"> {{row.RequisitionNumber}} <span>{{row.Requisition}}</span></a></div>
-                        <div class="DGDate">{{row.RequisitionDate}}</div>
-                    </div>
-                    <div class="DGHeaderRight">
-                        <div class="DGResources">{{row.Resources}}</div>
-                        <div class="DGDays">{{row.DaysLeft }} {{row.Left }}</div>
-                    </div>
-                </div>
-                <div class="DataGridFooter">
-                    <ul class="DGInterviewStatus clearfix">
-                        <li>
-                            <div class="DGInterviewStatusName">Screened</div>
-                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Applied</div>
-                            <div class="DGInterviewStatusNo">{{row.Screened}}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Interviewed</div>
-                            <div class="DGInterviewStatusNo">{{row.Interviewed }}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Offered</div>
-                            <div class="DGInterviewStatusNo">{{row.Offered }}</div>
-                        </li>
-                        <li>
-                            <div class="DGInterviewStatusName">Hired</div>
-                            <div class="DGInterviewStatusNo">{{row.Hired }}</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-</div>-->
+
