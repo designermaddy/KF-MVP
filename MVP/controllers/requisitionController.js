@@ -37,4 +37,8 @@ app.controller('requisitionController', ['$scope', 'Factory', 'sharedProperties'
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
         commonFunctions.openIframe(url);
     }
+     $scope.changeActivelink = function(row, htmlPath) {
+        commonFunctions.changeActivelink(row, htmlPath);
+    }
+
 }]);
