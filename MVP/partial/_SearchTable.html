@@ -39,8 +39,8 @@
                     <td st-toggle-item>{{row.RecruiterName}}</td>
                     <td st-toggle-item>{{row.CreatedDate | date:dd.mm.yy }}</td>
                     <td st-toggle-item>{{row.Status}}</td>
-                      <td st-toggle-item><a>{{row.SourcedCount}}</a></td>
-                    <td st-toggle-item><a href = "" ng-click = openIframe(row.AryaJobID)>{{row.Results}}</a></td>
+                      <td st-toggle-item><a href = "" ng-click = openIframe(row.AryaJobID,'sourced')>{{row.SourcedCount}}</a></td>
+                    <td st-toggle-item><a href = "" ng-click = openIframe(row.AryaJobID,'social')>{{row.Results}}</a></td>
 
                      <td ><a href=""><img ng-click="onClickAryaStatusIcon(orgID, row.AryaJobID, row.AryaStatus,  $index)" ng-src= "content/images/{{rowCollection[$index].AryaStatus}}.png"></a></td>
                 </tr>

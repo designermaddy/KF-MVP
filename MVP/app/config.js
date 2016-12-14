@@ -3,6 +3,7 @@
     var config = {
         iframeUrl: '/Arya/SocialArya/CandidateView?CandidateId={candidateId}&JobId={jobId}'
         , iframeUrlAriyaSavedSearch: 'https://iarya.leoforce.com/Arya/SocialArya/SearchResult?JobId='
+        , iframeUrlAriyaSourced: 'https://iarya.leoforce.com/Arya/arya/aryasentemails?jobid='
         , iframeAction: 'https://iarya.leoforce.com/Arya/'
         , hayGroupUrl: 'https://activate.haygroup.com/autologin/autologin.html#/'
         , hayGroupAction: 'https://activate.haygroup.com/v1/actions/login'
@@ -28,27 +29,12 @@
         config.projectUrl = 'https://localhost:8080/RD-WebApp'
         config.logOutUrl = 'https://recruiterdesktop.kf4d-qa.com/'
     }
-
-
- config.token = "cmRBdXRoVG9rZW46TUdVMU4yWTJORGN0TlRjNVl5MDBNVE5tTFdKaU1tTXRNak5rTUdVeE1XWTRPVGc0T2xKaGFtVnphRVJvUUdobGVHRjNZWEpsTG1OdmJRPT0sZW1haWw6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGRlc2lnbmF0aW9uOlRlc3QgTGVhZCxpZHBVc2VySWQ6YjE3OWRmZGQtOTU3ZC00M2ViLTk2MWQtMWNlNDI1Mjg5OGViLGFyeWFVc2VySWQ6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDpyYWplc2hkaEBoZXhhd2FyZS5jb20sYWN0aXZhdGVQYXNzd29yZDpLb3JuRjNycnkhLG5hbWU6UmFqZXNoLGZpcnN0TmFtZTpSYWplc2gsbGFzdE5hbWU6RGhvbmFuLGRpc3BsYXlOYW1lOlJhamVzaERo";
-
-    config.accessTokenSearcher ="" ;
-
-
+    config.token = "cmRBdXRoVG9rZW46TUdVMU4yWTJORGN0TlRjNVl5MDBNVE5tTFdKaU1tTXRNak5rTUdVeE1XWTRPVGc0T2xKaGFtVnphRVJvUUdobGVHRjNZWEpsTG1OdmJRPT0sZW1haWw6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGRlc2lnbmF0aW9uOlRlc3QgTGVhZCxpZHBVc2VySWQ6YjE3OWRmZGQtOTU3ZC00M2ViLTk2MWQtMWNlNDI1Mjg5OGViLGFyeWFVc2VySWQ6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDpyYWplc2hkaEBoZXhhd2FyZS5jb20sYWN0aXZhdGVQYXNzd29yZDpLb3JuRjNycnkhLG5hbWU6UmFqZXNoLGZpcnN0TmFtZTpSYWplc2gsbGFzdE5hbWU6RGhvbmFuLGRpc3BsYXlOYW1lOlJhamVzaERo";
+    config.accessTokenSearcher = "";
     config.searcherReq = {};
-
-    config.searcherItemFromKornferry={};
-
-     //test for git public
+    config.searcherItemFromKornferry = {};
+    //test for git public
     //"cmRBdXRoVG9rZW46T1dOa056bGxNbUV0T1dFMVppMDBNV0ZsTFRrME1EUXRPR1kyWWpNelpUUXhORGt5T25Wa1lYbHVRRzF2WW1GamF5NWpiMjA9LGVtYWlsOnVkYXluQG1vYmFjay5jb20sZGVzaWduYXRpb246Q1RPLGlkcFVzZXJJZDplM2ZhMDAzNC1lODNhLTQ4NWQtYTM3Yi01M2RlMzcwOTRhOWYsYXJ5YVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDp1ZGF5bkBtb2JhY2suY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlVkYXksZmlyc3ROYW1lOlVkYXksbGFzdE5hbWU6TmF5YWssZGlzcGxheU5hbWU6VWRheU4="
-
-
     // search express which will be called in three places - agining, requisition tab, engagment tab
-
-
-
-app.value('config', config);
-
-
-
+    app.value('config', config);
 })();

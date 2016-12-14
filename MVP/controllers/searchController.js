@@ -85,8 +85,13 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
             })
         }
         // open iframe arya candidate
-    $scope.openIframe = function (aryajobID) {
-        var url = config.iframeUrlAriyaSavedSearch + aryajobID
+    $scope.openIframe = function (aryajobID, type) {
+        if(type == "sourced"){
+            var url = config.iframeUrlAriyaSourced + aryajobID
+        }if(type == "social"){
+             var url = config.iframeUrlAriyaSavedSearch + aryajobID
+        }
+
         $scope.ReturnUrl = url;
         $scope.userName = sharedProperties.getUserName();
         $scope.password = sharedProperties.getPassword();

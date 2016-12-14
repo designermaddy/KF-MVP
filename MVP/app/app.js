@@ -78,9 +78,11 @@ function getSearcherRequisitions(searcherItems){
 
 });
 
-app.run(function ($rootScope) {
-        $rootScope.$on('$stateChangeSuccess', function () {
+app.run(function ($rootScope, $window, $location) {
+    $window.ga('create', 'UA-70288511-2', 'auto');
+        $rootScope.$on('$stateChangeSuccess', function (event) {
             $(function () {
+                 $window.ga('send', 'pageview', $location.path());
                 var content = $('.ContentBox').height();
                 var sidebar = $('.SideBar').height();
                 if (content > sidebar){
