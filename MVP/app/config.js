@@ -3,7 +3,8 @@
     var config = {
         iframeUrl: '/Arya/SocialArya/CandidateView?CandidateId={candidateId}&JobId={jobId}'
         , iframeUrlAriyaSavedSearch: 'https://iarya.leoforce.com/Arya/SocialArya/SearchResult?JobId='
-        , iframeAction: 'https://iarya.leoforce.com/Arya/'
+        , iframeUrlAriyaSourced:'https://iarya.leoforce.com/Arya/arya/aryasentemails?jobid='
+        ,iframeAction: 'https://iarya.leoforce.com/Arya/'
         , hayGroupUrl: 'https://activate.haygroup.com/autologin/autologin.html#/'
         , hayGroupAction: 'https://activate.haygroup.com/v1/actions/login'
         , foreSightGraph: 'https://foresight.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop'
@@ -30,7 +31,7 @@
     }
 
 
- config.token ="cmRBdXRoVG9rZW46T0RneFlqZ3hPRGN0TldRMVpDMDBOVGd4TFRnek1XSXROVGRrTldFNE56RTNOekF4T2xkbGN5NUdjbVZrWlhKcFkydEFhMjl5Ym1abGNuSjVMbU52YlE9PSxlbWFpbDpXZXMuRnJlZGVyaWNrQGtvcm5mZXJyeS5jb20sZGVzaWduYXRpb246UHJvZHVjdCBNYW5hZ2VyLGlkcFVzZXJJZDo3YzhhYzBhNy02NmVkLTQ4ZGQtOWM5YS01ZTNlZDQ3MTFmODEsYXJ5YVVzZXJJZDp3ZXMuZnJlZGVyaWNrQGtvcm5mZXJyeS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOndlcy5mcmVkZXJpY2tAa29ybmZlcnJ5LmNvbSxhY3RpdmF0ZVBhc3N3b3JkOktvcm5GM3JyeSEhLG5hbWU6V2VzLGZpcnN0TmFtZTpXZXMsbGFzdE5hbWU6RnJlZGVyaWNrLGRpc3BsYXlOYW1lOldlc0Y="
+ config.token ="cmRBdXRoVG9rZW46TUdVMU4yWTJORGN0TlRjNVl5MDBNVE5tTFdKaU1tTXRNak5rTUdVeE1XWTRPVGc0T2xKaGFtVnphRVJvUUdobGVHRjNZWEpsTG1OdmJRPT0sZW1haWw6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGRlc2lnbmF0aW9uOlRlc3QgTGVhZCxpZHBVc2VySWQ6YjE3OWRmZGQtOTU3ZC00M2ViLTk2MWQtMWNlNDI1Mjg5OGViLGFyeWFVc2VySWQ6cmFqZXNoZGhAaGV4YXdhcmUuY29tLGFyeWFQYXNzd29yZDpXZWxjb21lQDEyMyxhY3RpdmF0ZVVzZXJJZDpyYWplc2hkaEBoZXhhd2FyZS5jb20sYWN0aXZhdGVQYXNzd29yZDpLb3JuRjNycnkhLG5hbWU6UmFqZXNoLGZpcnN0TmFtZTpSYWplc2gsbGFzdE5hbWU6RGhvbmFuLGRpc3BsYXlOYW1lOlJhamVzaERo"
 
     config.accessTokenSearcher ="" ;
 
