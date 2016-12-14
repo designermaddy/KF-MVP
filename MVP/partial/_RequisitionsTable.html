@@ -1,7 +1,7 @@
 <div class="DataListBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Requisitions({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span>
+        <h2>Requisitions({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="filterData.length" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span>
 </div>
 
 <div st-table="displayedCollections" st-safe-src="rowCollection" class="RequisitionTable">
@@ -26,8 +26,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr  ng-repeat="row in displayedCollections | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-
+            <tr  ng-repeat="row in filterData = (displayedCollections | filter:search) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+`
                 <td st-toggle-item>
                     <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.req = row.ReqNumber + ' ' + row.JobTitle}}</a></div>
                     <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
