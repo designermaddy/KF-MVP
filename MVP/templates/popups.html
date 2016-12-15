@@ -43,6 +43,19 @@
         </div>
     </div>
 </script>
+<!-- Requisition Details Addme Popup   -->
+<script type="text/ng-template" id="AddMe.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Add Me</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="modal-body">
+        <div>
+            <button type="submit" class="btn btn-primary" ng-click="setRecruiterType($event)" value="Primary Recruiter">Primary Recruiter</button>
+            <button type="submit" class="btn btn-primary" ng-click="setRecruiterType($event)" value="Secondary Recruiter">Secondary Recruiter</button>
+            <button type="submit" class="btn btn-primary" ng-click="proceed()"> Proceed </button>
+            <button type="submit" class="btn btn-primary" ng-click="cancel()"> Cancel </button>
+        </div>
+    </div>
+</script>
 <!-- Email Popup template   -->
 <script type="text/ng-template" id="emailPopup.html">
     <div class="container-fluid claerfix MarTp15">

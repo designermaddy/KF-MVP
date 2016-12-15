@@ -552,7 +552,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: postData
         });
     };
-
+dataFactory.loginUserAddToRequisition=function(email, positionId){
+         return $http({
+            method: 'GET'
+            , url: urlAPI + '/Requisition/loginUserAddToRequisition/' + email +"/" + positionId
+        });
+    };
 
     return dataFactory;
 }]);
