@@ -101,8 +101,25 @@ app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', fun
     }
 }])
 
-app.controller('AddMeCtrl', ['$uibModalInstance', '$scope', function($uibModalInstance, $scope) {
+app.controller('AddMeCtrl', ['$uibModalInstance', '$scope', 'commonFunctions','Factory','sharedProperties', function($uibModalInstance, $scope, commonFunctions,Factory, sharedProperties) {
      $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
+
+     $scope.recruiterType="";
+    $scope.setRecruiterType = function(event){
+        $scope.recruiterType = event.target.value;
+    }
+    $scope.proceed = function(){
+         if($scope.recruiterType == "")
+             commonFunctions.error("Select either 'Primary Recruiter' or 'Secondary Recruiter' button");
+        var emailId =sharedProperties.getEmailID();
+        var positionId = sharedProperties.getRequisitionDetails().Position;
+        Factory.loginUserAddToRequisition(emailId, positionId).then(function mySucces(response) {
+            console.log("Success");
+        }, function myError(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        });
+    }
 }])
+
