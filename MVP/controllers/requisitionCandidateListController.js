@@ -1,6 +1,8 @@
 app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout','$uibModal', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout, $uibModal) {
 
         $scope.viewLoading = false;
+        $scope.search = {};
+
         agingRequisitionList();
          var idpush = [];
         function agingRequisitionList() {

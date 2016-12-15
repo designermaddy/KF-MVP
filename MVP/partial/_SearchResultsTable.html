@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <tr  ng-repeat="row in displayedCollections  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr  ng-repeat="row in displayedCollections  | filter : search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
                         <div class="TblRequisition"><a ng-click="openSearchIframe(row.candidateId)">
                             <img class="PadRt15" src="content/images/user_icon_circle.png" alt=""/>{{row.candidateName}} </a></div>

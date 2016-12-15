@@ -2,42 +2,38 @@
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel"> Candidate Name (or) ID</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel"> Applicant List</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.candidate_name"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel">Client Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel">Location</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.location"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel">Recruiter Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel">Source</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.source"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel">All Saved Searches</label>
                 <select id="SelectApplicantsList" class="selectpicker form-control">
-          <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
-          <option value="Supply Chain Head">Supply Chain Head</option>
-          <option value="Supply Chain President">Supply Chain President</option>
-          <option value="Supply Chain Lead">Supply Chain Lead</option>
-        </select>
-                 </div>
-          <div class="col-sm-6 col-md-2 col-lg-2 pull-right">
-                <label class="FormLabel">&nbsp;</label>
-              <a class="pull-right" href="#">View Search Criteria</a> </div>
+                    <option selected="" value="All Saved Searches (4)">All Saved Searches (4)</option>
+                    <option value="Supply Chain Head">Supply Chain Head</option>
+                    <option value="Supply Chain President">Supply Chain President</option>
+                    <option value="Supply Chain Lead">Supply Chain Lead</option>
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-2 col-lg-2 pull-right">
+                <label class="FormLabel">&nbsp;</label> <a class="pull-right" href="#">View Search Criteria</a> </div>
         </div>
         <div class="row clearfix">
             <div class="col-sm-6 col-md-5 col-lg-5 RadioGroup">
-            <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-default active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Applied ({{rowCollection.length}}) </label>
-                <label class="btn btn-default">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> Interviewed (0) </label>
-                <label class="btn btn-default">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Offered (0) </label>
-                <label class="btn btn-default">
-                    <input type="radio" name="options" id="option5" autocomplete="off"> Hired (0) </label>
-            </div>
-        </div>
-            <div class="col-sm-6 col-md-1 col-lg-1 pull-right">
-                <button type="submit" class="btn btn-primary btn-sm pull-right">GO</button>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Applied &nbsp; ({{rowCollection.length}}) </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Interviewed (0) </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> Offered (0) </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option5" autocomplete="off"> Hired (0) </label>
+                </div>
             </div>
         </div>
     </div>

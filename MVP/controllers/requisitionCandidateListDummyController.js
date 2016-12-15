@@ -2,6 +2,7 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
 
 
         $scope.viewLoading = false;
+    $scope.search = {};
 
         postRequisitionApplicationList();
         var data = {}

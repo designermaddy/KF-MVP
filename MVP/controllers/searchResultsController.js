@@ -4,6 +4,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     $scope.start = 1;
     $scope.data = [];
     $scope.total = 0;
+    $scope.search = {};
 
      var values = {
         'orgId' : 6,

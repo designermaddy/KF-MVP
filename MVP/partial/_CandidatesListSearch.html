@@ -3,13 +3,13 @@
         <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-2 col-lg-2">
                 <label class="FormLabel"> Candidate Name (or) ID</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.name"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel">Client Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel">Titlee</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.currentJobTitle"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel">Recruiter Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel">Location</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.location.city"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel">All Saved Searches</label>
                 <select id="candidateSavedSearchesList" class="selectpicker form-control">
