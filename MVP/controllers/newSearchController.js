@@ -62,7 +62,7 @@
                     callBackend();
                 }
                 else {
-                    commonFunctions.error('Please select a valid Requisition NUMBER or ID');
+                    commonFunctions.error('Please select a valid Requisition Name or ID');
                 }
             }
             else {
@@ -130,9 +130,6 @@
                 , "Job_apply_url": null,
 
             }
-            console.log($scope.freeSearch);
-            console.log(sharedProperties.getEmail())
-            console.log(sharedProperties.getUserName())
 
             for (var key in $scope.freeSearch) {
                 if (data[key] !== undefined) data[key] = $scope.freeSearch[key];

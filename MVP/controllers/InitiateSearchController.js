@@ -27,6 +27,11 @@
             if (requisitionNumber) {
                 promise.then(function resolved(response) {
                     vm.data = response.data;
+                    var change = sharedProperties.getRequisitionDetails();
+                    console.log(change);
+                    vm.data.JobTitle = vm.data.searchName = change.JobTitle;
+                    vm.data.job_client = change.Client;
+                    //vm.data.NoOfPositions = change.NoOfPositions;
                     vm.data.ReqNumber = requisitionNumber;
                     if (a == 1) {
                         vm.data.Description = vm.jobDesc.Description;
@@ -58,7 +63,7 @@
         function disableInput() {
             var inputs = $('input');
             for (var i = 0; i < 7; i++) {
-                inputs[i].disabled = true;
+                if (i !== 5) inputs[i].disabled = true;
             }
         }
 
