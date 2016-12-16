@@ -116,10 +116,13 @@ app.controller('AddMeCtrl', ['$uibModalInstance', '$scope', 'commonFunctions','F
         var emailId =sharedProperties.getEmailID();
         var positionId = sharedProperties.getRequisitionDetails().Position;
         Factory.loginUserAddToRequisition(emailId, positionId).then(function mySucces(response) {
-            console.log("Success");
+            $scope.cancel();
+            $scope.recruiterType="";
+             commonFunctions.success(response.data.addMeStatus);
         }, function myError(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            $scope.cancel();
+            $scope.recruiterType="";
         });
     }
 }])
-
