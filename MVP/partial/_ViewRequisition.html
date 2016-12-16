@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="ViewBoxDays {{item.Data.data[0].color}}">Days Open :{{item.Data.data[0].open_days}}
                                     </div>
-                                    <div class="ViewBoxStatus FormSelect">
+                                    <div class="ViewBoxStatus FormSelect" ng-if="item.engagementType == 'RPO'" >
                                         <select class="form-control" id="requisitionStatus" ng-change="updateStatus()" ng-model="item.status">
                                             <option value="Open">Open</option>
                                             <option value="Onhold">Onhold</option>
@@ -78,7 +78,7 @@
                                         </div>
                                     </div>
                                     <div class="ViewBoxBtn">
-                                        <button type="submit" class="btn btn-secondary btn-sm" ng-click="openAdd();"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Me</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm" ng-click="openAdd();" ng-if="item.engagementType == 'RPO'" ><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Me</button>
                                         <button type="submit" class="btn btn-primary btn-sm hidden"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Recruiter</button>
                                     </div>
                                   <!--  <div class="pull-right ViewBoxHire">
