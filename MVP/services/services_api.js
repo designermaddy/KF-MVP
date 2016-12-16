@@ -561,7 +561,7 @@ dataFactory.loginUserAddToRequisition=function(email, positionId){
 
     return dataFactory;
 }]);
-app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location','config', function (Factory, sharedProperties, $uibModal, $location, config) {
+app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location','config','$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
     var commonFunctions = {};
     commonFunctions.getIframeUrl = function (key) {
         var iFrameArray = sharedProperties.getIframeLinks();
@@ -648,8 +648,9 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
       )*/
     }
     commonFunctions.getSearcherJson = function(){
-            if(config.accessTokenSearcher){
-                var searcherToken = config.accessTokenSearcher;
+         var searcherToken = $cookies.get('accessToken');
+            if(searcherToken){
+
             var promise = Factory.kornferry(searcherToken);
                 promise.then(
                   function resolved(response) {

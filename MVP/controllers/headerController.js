@@ -68,6 +68,53 @@ if (authToken!==undefined){
             window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
         }
 
+/*---------------REFRESH ACCESS TOKEN STARTS---------------------*/
+ var a = window.localStorage.getItem('a');
+ var tokenExpires = 900; // 15 min
+ if (a === null) {
+   getAccessToken();
+ }else {
+   checkIfAccessTokenExpired();
+ }
+
+
+function checkIfAccessTokenExpired(){
+  var b = new Date().getTime();
+  a = window.localStorage.getItem('a');
+  var secDiff = b - a; //in ms
+  //var minDiff = secDiff / 60 / 1000; //in minutes
+  if (secDiff > tokenExpires*1000) {
+    console.log("Time crossed>>..., Get the new token");
+    getAccessToken();
+  }else{
+     setTimeout( checkIfAccessTokenExpired, 2000 );
+  }
+}
+
+function getAccessToken() {
+    console.log("Refreshing Access Token>>> ");
+
+     var apiHandshakeUrl = "https://naapi.se.kornferry.com/v1/my/session/handshake";
+     var handshakeToken  = $cookies.get('handshakeToken');
+
+      $http.get(apiHandshakeUrl, {
+          withCredentials: true,
+          useXDomain : true,
+          headers: {
+              "Authorization": 'Basic '+handshakeToken
+          }
+        }).success(function(response){
+          console.log(response);
+          var d = new Date();
+          setcookie('accessToken',response.accessToken, d.getTime() + 2*7*24*60*60 , '/');
+          window.localStorage.setItem('a', d.getTime());
+          console.log("Got New Token>>> Updated new accessToken >> ");
+          checkIfAccessTokenExpired();
+
+        });
+
+  }
+/*---------------REFRESH ACCESS TOKEN ENDS---------------------*/
 
 
  /*$window.onbeforeunload = function (evt) {
