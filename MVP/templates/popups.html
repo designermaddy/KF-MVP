@@ -128,6 +128,11 @@
         <div> {{message}} </div>
     </div>
 </script>
+<!-- Global Success Popup   -->
+<script type="text/ng-template" id="Success.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        {{message}} <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+</script>
 <!-- Global Pager Set of Record By Record and Total Data  -->
 <script type="text/ng-template" id="uibPagerKf.html">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>

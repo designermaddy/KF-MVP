@@ -614,6 +614,18 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             }
         })
     }
+    commonFunctions.success = function (message) {
+        $uibModal.open({
+            animation: true
+            , templateUrl: 'Success.html'
+            , controller: 'Sucess'
+            , resolve: {
+                message: function () {
+                    return message;
+                }
+            }
+        })
+    }
     commonFunctions.changeActivelink = function (row, htmlPath) {
         $("li[class='active']").removeClass('active');
         $('#requistionHeader').addClass('active');
