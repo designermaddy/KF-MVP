@@ -13,7 +13,8 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         promise.then(function resolved(response) {
             $scope.rowCollection = response.data;
             console.log($scope.rowCollection);
-            $scope.start = data.page * data.limit - data.limit || 1;
+             setValues();
+            /*$scope.start = data.page * data.limit - data.limit || 1;
             if (data.page == 0) {
                 $scope.end = 10;
                 data.page = 1;
@@ -21,7 +22,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
             }
             else {
                 $scope.end = data.page * data.limit
-            }
+            }*/
             //$scope.rowCollection[0].AryaStatus = "Inactive"
             //$scope.rowCollection[1].AryaStatus = "Active"
         }, function rejected(response) {

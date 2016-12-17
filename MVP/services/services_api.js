@@ -278,14 +278,14 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         }
         //getrequesitionlist tab on clicking on  anyone of the engagements.
     dataFactory.getRequisionforanEngagment = function (engagementId) {
-        if (engagementId == 9848) {
+      /*  if (engagementId == 9848) {
             return $http.get('json/LambWeston.json');
         }
         else {
             return $http.get('json/Acme.json');
-        }
+        }*/
         // return $http.get('json/RequisitionList.json')
-        // return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
+         return $http.get(urlAPI + '/engagement/viewEngagement/' + engagementId)
     }
     dataFactory.getViewRequisition = function () {
         return $http.get('json/viewRequisition.json');
@@ -384,7 +384,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             var page = (data.page - 1) * limit;
         }
         return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
-        //return $http.get('json/Savedsearch.json')
+       // return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (data) {
         var postData = data;
@@ -552,10 +552,10 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: postData
         });
     };
-dataFactory.loginUserAddToRequisition=function(email, positionId){
+dataFactory.loginUserAddToRequisition=function(email, positionId, selectedVal){
          return $http({
             method: 'GET'
-            , url: urlAPI + '/Requisition/loginUserAddToRequisition/' + email +"/" + positionId
+            , url: urlAPI + '/Requisition/loginUserAddToRequisition/' + email +"/" + positionId+"/"+selectedVal
         });
     };
 
@@ -676,12 +676,13 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
 
         });*/
 
-                        //  commonFunctions.callSearcherJsonMethod()
+
                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
 
                   }
               )
         }
+          //commonFunctions.callSearcherJsonMethod()
     }
 commonFunctions.callSearcherJsonMethod = function(){
       var promise = Factory.getSearcherReqList();

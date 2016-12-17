@@ -109,13 +109,22 @@ app.controller('AddMeCtrl', ['$uibModalInstance', '$scope', 'commonFunctions','F
      $scope.recruiterType="";
     $scope.setRecruiterType = function(event){
         $scope.recruiterType = event.target.value;
+        if($scope.recruiterType == "Primary Recruiter"){
+
+            $scope.selectedVal = "PIC2"
+        }
+        if($scope.recruiterType == "Secondary Recruiter"){
+
+            $scope.selectedVal = "PIC3"
+        }
+
     }
     $scope.proceed = function(){
          if($scope.recruiterType == "")
              commonFunctions.error("Select either 'Primary Recruiter' or 'Secondary Recruiter' button");
         var emailId =sharedProperties.getEmailID();
         var positionId = sharedProperties.getRequisitionDetails().Position;
-        Factory.loginUserAddToRequisition(emailId, positionId).then(function mySucces(response) {
+        Factory.loginUserAddToRequisition(emailId, positionId, $scope.selectedVal).then(function mySucces(response) {
             $scope.cancel();
             $scope.recruiterType="";
              commonFunctions.success(response.data.addMeStatus);

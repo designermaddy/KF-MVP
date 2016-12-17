@@ -7,7 +7,7 @@
             
             <li ng-repeat="pdfDtls in pdfDetailsData  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                 <div class="WidgetPDBox">                    
-                    <div class="WidgetPDContent"><img src="content/images/pdf.jpg" ng-click="openPdf(pdfDtls.DocumentNumber, pdfDtls.FileName)"> </div>
+                    <div class="WidgetPDContent"><img ng-src="data:image/JPEG;base64,{{pdfDtls.Logo}}" style="width:209px; height:140px;" ng-click="openPdf(pdfDtls.DocumentNumber, pdfDtls.FileName)"> </div>
                     <div class="WidgetPDFooter">{{pdfDtls.FileName}}</div>
                 </div>
             </li>           
