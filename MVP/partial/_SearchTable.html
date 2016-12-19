@@ -1,5 +1,5 @@
 <div class="DataListBox">
-    <div class="Heading2 HeadingFloat clearfix">
+   <!-- <div class="Heading2 HeadingFloat clearfix">
         <h2>Search Results({{rowCollection[0].TotalCount}})</h2> <span class="pull-left HeaderLink"><a ng-click="refreshResults();"><i class="fa fa-refresh" aria-hidden="true"></i>
  Refresh Results </a></span>
     <span class="pull-right HeaderPaging">
@@ -10,7 +10,10 @@
                 <li class="next"><a ng-click='next();'>  </a></li>
             </ul>
         </span>
-    </div>
+    </div>-->
+      <div class="Heading2 HeadingFloat clearfix">
+        <h2>Requisitions({{rowCollection[0].TotalCount}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="displayedCollections.length" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span>
+</div>
     <div st-table="displayedCollections" st-safe-src="rowCollection" class="SearchTable">
         <table class="table table-striped">
             <thead>

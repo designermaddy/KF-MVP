@@ -47,7 +47,7 @@
             }
         }
         var data = sharedProperties.getInitiateSearchData();
-        if (data.requisitionResponseList) {
+        if (data.requisitionResponseList.length>0) {
             var promise = Factory.getJobDescription(data);
             promise.then(function resolved(response) {
                 vm.jobDesc = response.data;
