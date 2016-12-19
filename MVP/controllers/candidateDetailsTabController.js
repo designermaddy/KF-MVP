@@ -1,7 +1,7 @@
 app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.position = sharedProperties.getPositionId();
-    $scope.ns = {};
+    $scope.ns = $scope.date = {};
     $scope.byteThere = false;
     var getHistory = function () {
         if ($scope.id) {
@@ -76,20 +76,4 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
         getNotes();
     })
 }]);
-app.filter('myDateFilter', function () {
-    return function (items, td, fd) {
-        var parseDate = function (date) {
-            var parts = date.split('/');
-            return new Date(parts[2], part[1] - 1, part[0])
-        }
-        console.log(items + '- ' + td + '-' + fd);
-        var df = td;
-        var dt = fd;
-        var result = [];
-        var tf = new Date(items.dateCreated);
-        if (tf > df) {
-            result.push(items[i]);
-        }
-    }
-    return result;
-});
+

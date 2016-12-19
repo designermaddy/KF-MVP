@@ -1,5 +1,7 @@
 app.controller('requisitionController', ['$scope', 'Factory', 'sharedProperties', '$http', 'commonFunctions', 'config', function ($scope, Factory, sharedProperties, $http, commonFunctions, config) {
     $scope.search = {};
+    $scope.date = {};
+
 commonFunctions.getSearcherJson();
     function getData() {
         var promise = Factory.getRequisitionTableList();

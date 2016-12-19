@@ -1,5 +1,6 @@
 app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties', '$http', 'commonFunctions', function ($scope, Factory, sharedProperties, $http, commonFunctions) {
     $scope.search = {};
+    $scope.date = {};
     commonFunctions.getSearcherJson();
 
     function getData() {
@@ -16,7 +17,7 @@ app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties',
             $scope.viewLoading = true;
             $scope.currentPage = 1;
             $scope.totalItems = $scope.rowCollection.length;
-            $scope.entryLimit = 8; // items per page
+            $scope.entryLimit = 10; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
         }
     }
