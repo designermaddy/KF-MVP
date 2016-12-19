@@ -1,6 +1,7 @@
-app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties', '$http','commonFunctions', function ($scope, Factory, sharedProperties, $http, commonFunctions) {
+app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties', '$http', 'commonFunctions', function ($scope, Factory, sharedProperties, $http, commonFunctions) {
     $scope.search = {};
-     commonFunctions.getSearcherJson();
+    commonFunctions.getSearcherJson();
+
     function getData() {
         var promise = Factory.getEngagementDetailsTableList();
         promise.then(function (response) {
@@ -19,17 +20,12 @@ app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties',
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
         }
     }
-
     // call the API for selectedengagement per id
-	$scope.onSelectEngagementPerID = function(engagementID, engagementType){
-		 var engDtlsSelected = {}
-
+    $scope.onSelectEngagementPerID = function (engagementID, engagementType) {
+        var engDtlsSelected = {}
         engDtlsSelected.id = engagementID;
         engDtlsSelected.thirdParty = engagementType
-
-		sharedProperties.setengagementPerIDSelected(engagementID)
+        sharedProperties.setengagementPerIDSelected(engagementID)
         sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
-
-	}
-
+    }
 }]);

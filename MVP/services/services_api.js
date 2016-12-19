@@ -177,47 +177,42 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get(urlAPI + '/Candidate/allCandidataList/' + positionID);
     }
     dataFactory.pdfDetailsList = function () {
-        return $http.get(urlAPI + '/Profile/getAllDocuments')
+            return $http.get(urlAPI + '/Profile/getAllDocuments')
+        }
+        // call company method for the mail services in candidate details page
+        /*  dataFactory.candidateCompany= function () {
+             return $http.get(urlAPI + '/Candidate/Company')
+         }*/
+    dataFactory.candidateTemplate = function (id) {
+        return $http.get(urlAPI + '/Candidate/TemplatesList/' + id);
     }
-    // call company method for the mail services in candidate details page
-
-   /*  dataFactory.candidateCompany= function () {
-        return $http.get(urlAPI + '/Candidate/Company')
-    }*/
-     dataFactory.candidateTemplate= function (id) {
-        return $http.get(urlAPI + '/Candidate/TemplatesList/'+id);
+    dataFactory.templateContent = function (id) {
+        return $http.get(urlAPI + '/Candidate/TemplateContent/' + id);
     }
-      dataFactory.templateContent= function (id) {
-        return $http.get(urlAPI + '/Candidate/TemplateContent/'+id);
-    }
-    dataFactory.emailProfileDetails= function () {
+    dataFactory.emailProfileDetails = function () {
         return $http.get(urlAPI + '/Candidate/Profile');
-
     }
     dataFactory.sendMail = function (data) {
-
-     var postData =   {
-              "attachments": [
-                {
-                  "blob": "",
-                  "fileName": ""
+        var postData = {
+                "attachments": [
+                    {
+                        "blob": ""
+                        , "fileName": ""
                 }
-              ],
-              "body": data.body,
-              "candidateIDs": data.candidateIDs,
-          "profileId": data.profileId,
-          "subject": data.subject,
-          "templateId": data.templateId
-     }
-
-        //return $http.get('json/requisitionPdfDoc.json')
+              ]
+                , "body": data.body
+                , "candidateIDs": data.candidateIDs
+                , "profileId": data.profileId
+                , "subject": data.subject
+                , "templateId": data.templateId
+            }
+            //return $http.get('json/requisitionPdfDoc.json')
         return $http({
-            method : 'POST',
-            url : urlAPI + '/Candidate/SendEmail',
-            data : postData
+            method: 'POST'
+            , url: urlAPI + '/Candidate/SendEmail'
+            , data: postData
         });
     }
-
     dataFactory.getRequisitionSearchResults = function () {
         return $http.get('json/requisitionList.json')
     }
@@ -480,8 +475,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 'RD-Access-Token': undefined
             }
             , data: {
-                "outageUnfinished": false
-                , //"username":'eric.johnson@fmcg.com',
+                "outageUnfinished": false, //"username":'eric.johnson@fmcg.com',
                 //"password":'hay'
                 "username": creditentialDtls.activateName
                 , "password": creditentialDtls.activatePassword
@@ -517,51 +511,45 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
     dataFactory.kornferry = function (searcherToken) {
         return $http.get('https://naapi.se.kornferry.com/v1/my/engagements/active', {
-       crossDomain: true, withCredentials: true,
-                useXDomain : true,
-        headers: {
-            "Authorization": 'Bearer ' + searcherToken,
-           // "Cookie" : searcherToken,
-            "RD-Access-Token": undefined
-           // "RD-Access-Token": undefined
-        }
-      })
-
+            crossDomain: true
+            , withCredentials: true
+            , useXDomain: true
+            , headers: {
+                "Authorization": 'Bearer ' + searcherToken, // "Cookie" : searcherToken,
+                "RD-Access-Token": undefined
+                    // "RD-Access-Token": undefined
+            }
+        })
     }
-
-  dataFactory.getSearcherReqList = function () {
-
-    return $http.get('json/searcher.json');
-
-};
-
-    dataFactory.getSearcherRequisitions=function(postData){
-
-          return $http({
+    dataFactory.getSearcherReqList = function () {
+        return $http.get('json/searcher.json');
+    };
+    dataFactory.getSearcherRequisitions = function (postData) {
+        return $http({
             method: 'POST'
             , url: urlAPI + '/Requisition/getSearcherRequisitions'
             , data: postData
         });
-
     };
-
-    dataFactory.getSearcherRequisitionsByEngagement=function(engagementID, postData){
-         return $http({
+    dataFactory.getSearcherRequisitionsByEngagement = function (engagementID, postData) {
+        return $http({
             method: 'POST'
-            , url: urlAPI + '/engagement/viewSearcherEngagement/'+engagementID
+            , url: urlAPI + '/engagement/viewSearcherEngagement/' + engagementID
             , data: postData
         });
     };
-dataFactory.loginUserAddToRequisition=function(email, positionId){
-         return $http({
+    dataFactory.loginUserAddToRequisition = function (email, positionId) {
+        return $http({
             method: 'GET'
-            , url: urlAPI + '/Requisition/loginUserAddToRequisition/' + email +"/" + positionId
+            , url: urlAPI + '/Requisition/loginUserAddToRequisition/' + email + "/" + positionId
         });
     };
-
+    dataFactory.removeEngagementDocuments = function (docIds, engId) {
+        return $http.get(urlAPI + '/engagement/removeEngagementDocument/' + docIds + '/' + engId)
+    }
     return dataFactory;
 }]);
-app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location','config','$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
+app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
     var commonFunctions = {};
     commonFunctions.getIframeUrl = function (key) {
         var iFrameArray = sharedProperties.getIframeLinks();
@@ -647,27 +635,24 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
           }
       )*/
     }
-    commonFunctions.getSearcherJson = function(){
-         var searcherToken = $cookies.get('accessToken');
-            if(searcherToken){
-
+    commonFunctions.getSearcherJson = function () {
+        var searcherToken = $cookies.get('accessToken');
+        if (searcherToken) {
             var promise = Factory.kornferry(searcherToken);
-                promise.then(
-                  function resolved(response) {
-                    // $scope.rowCollection = response.data.requisitions;
-                      var countItem = response.data.count;
-                      if(countItem==0){
-                         //commonFunctions.callSearcherJsonMethod()
-                      }else{
-                          var searcherItems = response.data;
-                          config.searcherItemFromKornferry = searcherItems
-                           commonFunctions.getSearcherRequisitions(searcherItems);
-                      }
-                      console.log( countItem)
-
-                  },
-                  function rejected(response) {
-                      /* var modalInstance = $uibModal.open({
+            promise.then(function resolved(response) {
+                // $scope.rowCollection = response.data.requisitions;
+                var countItem = response.data.count;
+                if (countItem == 0) {
+                    //commonFunctions.callSearcherJsonMethod()
+                }
+                else {
+                    var searcherItems = response.data;
+                    config.searcherItemFromKornferry = searcherItems
+                    commonFunctions.getSearcherRequisitions(searcherItems);
+                }
+                console.log(countItem)
+            }, function rejected(response) {
+                /* var modalInstance = $uibModal.open({
               animation: true
             , templateUrl: 'popupSearcher.html'
             , controller: 'ModalCancel'
@@ -675,50 +660,30 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             , size: 'lg'
 
         });*/
-
-                        //  commonFunctions.callSearcherJsonMethod()
-                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-
-                  }
-              )
+                //  commonFunctions.callSearcherJsonMethod()
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            })
         }
     }
-commonFunctions.callSearcherJsonMethod = function(){
-      var promise = Factory.getSearcherReqList();
-            promise.then(
-              function resolved(response) {
-                  var searcherItems = response.data;
-                   config.searcherItemFromKornferry = searcherItems;
-                  commonFunctions.getSearcherRequisitions(searcherItems);
-              },
-                  function rejected(response) {
-                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-              }
-            )
-}
- commonFunctions.getSearcherRequisitions = function(searcherItems){
-     var promise = Factory.getSearcherRequisitions(searcherItems);
-            promise.then(
-              function resolved(response) {
-
-                  config.searcherReq = response.data.requisitions;
-                  console.log(response)
-
-              },
-                  function rejected(response) {
-
-
-
-
-
-
-                  commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-
-
-              }
-            )
-}
-
+    commonFunctions.callSearcherJsonMethod = function () {
+        var promise = Factory.getSearcherReqList();
+        promise.then(function resolved(response) {
+            var searcherItems = response.data;
+            config.searcherItemFromKornferry = searcherItems;
+            commonFunctions.getSearcherRequisitions(searcherItems);
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    }
+    commonFunctions.getSearcherRequisitions = function (searcherItems) {
+        var promise = Factory.getSearcherRequisitions(searcherItems);
+        promise.then(function resolved(response) {
+            config.searcherReq = response.data.requisitions;
+            console.log(response)
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    }
     return commonFunctions;
 }]);
 app.service('sharedProperties', function () {
@@ -755,158 +720,153 @@ app.service('sharedProperties', function () {
     var urlPdf = '';
     var email = '';
     var date = '';
-    var engagmentSelectedObject={};
+    var engagmentSelectedObject = {};
     var emailID = '';
-
     return {
-        refreshPdfDocList(d){
-            date = d ? d : date;
-            return date;
-        },
-        setAllNotesDetails(data) {
-            noteDetails = data;
-        }, getAllNotesDetails() {
-            return noteDetails;
-        },
-         setEngagmentSelectedObject(data) {
-            engagmentSelectedObject = data;
-        },
-        getEngagmentSelectedObject() {
-            return engagmentSelectedObject;
-        },
-        setURLPdf(data) {
-            urlPdf = data;
-        }, getURLPdf() {
-            return urlPdf;
-        },
-        setSelectedForesightGraph(data) {
-            selectedForesightGraph = data;
-        }, getSelectedForesightGraph() {
-            return selectedForesightGraph;
-        }, setSavedSearchDetails(data) {
-            savedSearchDetails = data;
-        }, getSavedSearchDetails() {
-            return savedSearchDetails;
-        }, setNewSearchData: function (value) {
-            newSearchData = value;
-        }, getNewSearchData: function () {
-            return newSearchData;
-        }, setPositionId: function (value) {
-            positionId = value;
-        }, getPositionId: function () {
-            return positionId;
-        }, setInitiateSearchData: function (value) {
-            initiateSearchData = value;
-        }, getInitiateSearchData: function () {
-            return initiateSearchData;
-        }, setCandidateListDetails: function (value) {
-            candidateListDetails = value;
-        }, getCandidateListDetails: function () {
-            return candidateListDetails;
-        }, setUserName: function (value) {
-            userName = value
-        }, getUserName: function () {
-            return userName;
-        }, setPassword: function (value) {
-            password = value
-        }, getEmail: function () {
-            return email;
-        }, setEmail: function (value) {
-            email = value
-        },
-        getEmailID: function () {
-            return emailID;
-        }, setEmailID: function (value) {
-            emailID = value
-        },
-        getPassword: function () {
-            return password;
-        }, setActiveUserName: function (value) {
-            activeUserName = value
-        }, getActiveUserNameName: function () {
-            return activeUserName;
-        }, setActivePassword: function (value) {
-            activePassword = value
-        }, getActivePassword: function () {
-            return activePassword;
-        }, setReportURL: function (value) {
-            reportURL = value
-        }, getReportURL: function () {
-            return reportURL;
-        }, setViewCandidateId: function (value) {
-            viewCandidateId = value;
-        }, getViewCandidateId: function () {
-            return viewCandidateId;
-        }, setJobId: function (value) {
-            JobID = value;
-        }, getJobId: function () {
-            return JobID;
-        }, setClientJobID: function (value) {
-            ClientJobID = value;
-        }, getClientJobID: function () {
-            return ClientJobID;
-        }, setRequisitionTable: function (value) {
-            RequisitionTable = value;
-        }, getRequisitionTable: function () {
-            return RequisitionTable;
-        }, getAuthGlobalToken: function () {
-            return authGlobalToken;
-        }, setAuthGlobalToken: function (value) {
-            authGlobalToken = value;
-        }, getCounter: function () {
-            return counter;
-        }, setCounter: function (value) {
-            counter = value;
-        }, getRequisitionDetails: function () {
-            return requisitionDetails;
-        }, setRequisitionDetails: function (value) {
-            requisitionDetails = value;
-        }, getIframeLinks: function () {
-            return iframeList;
-        }, setIframeLinks: function (value) {
-            iframeList = value;
-        }, getprofileSelectedEngagementID: function () {
-            return profileSelectedEngagementID
-        }, setprofileSelectedEngagementID: function (value) {
-            profileSelectedEngagementID = value;
-        }, getprofileSelectedDocumentID: function () {
-            return profileSelectedDocumentID;
-        }, setprofileSelectedDocumentID: function (value) {
-            profileSelectedDocumentID = value
-        }, getengagementPerIDSelected: function () {
-            return engagementPerIDSelected;
-        }, setengagementPerIDSelected: function (value) {
-            engagementPerIDSelected = value
-        }, getprofileSelectedFunction: function () {
-            return profileSelectedFunction;
-        }, setprofileSelectedFunction: function (value) {
-            profileSelectedFunction = value
-        }, gettabJobProfile: function () {
-            return tabJobProfile;
-        }, settabJobProfile: function (value) {
-            tabJobProfile = value;
-        }, gettabDocumentation: function () {
-            return tabDocumentation;
-        }, settabDocumentation: function (value) {
-            tabDocumentation = value;
-        }, gettabSearchResults: function () {
-            return tabSearchResults;
-        }, settabSearchResults: function (value) {
-            tabSearchResults = value;
-        }, gettabCandidateList: function () {
-            return tabCandidateList;
-        }, settabCandidateList: function (value) {
-            tabCandidateList = value;
-        }, gettabApplicationList: function () {
-            return tabApplicationList;
-        }, settabApplicationList: function (value) {
-            tabApplicationList = value;
-        }, getrowCollection: function () {
-            return rowCollection;
-        }, setrowCollection: function (value) {
-            rowCollection = value;
-        }
-
+        refreshPdfDocList(d) {
+                date = d ? d : date;
+                return date;
+            }
+            , refreshEngDetailsDocList(d) {
+                date = d ? d : date;
+                return date;
+            }, setAllNotesDetails(data) {
+                noteDetails = data;
+            }, getAllNotesDetails() {
+                return noteDetails;
+            }, setEngagmentSelectedObject(data) {
+                engagmentSelectedObject = data;
+            }, getEngagmentSelectedObject() {
+                return engagmentSelectedObject;
+            }, setURLPdf(data) {
+                urlPdf = data;
+            }, getURLPdf() {
+                return urlPdf;
+            }, setSelectedForesightGraph(data) {
+                selectedForesightGraph = data;
+            }, getSelectedForesightGraph() {
+                return selectedForesightGraph;
+            }, setSavedSearchDetails(data) {
+                savedSearchDetails = data;
+            }, getSavedSearchDetails() {
+                return savedSearchDetails;
+            }, setNewSearchData: function (value) {
+                newSearchData = value;
+            }, getNewSearchData: function () {
+                return newSearchData;
+            }, setPositionId: function (value) {
+                positionId = value;
+            }, getPositionId: function () {
+                return positionId;
+            }, setInitiateSearchData: function (value) {
+                initiateSearchData = value;
+            }, getInitiateSearchData: function () {
+                return initiateSearchData;
+            }, setCandidateListDetails: function (value) {
+                candidateListDetails = value;
+            }, getCandidateListDetails: function () {
+                return candidateListDetails;
+            }, setUserName: function (value) {
+                userName = value
+            }, getUserName: function () {
+                return userName;
+            }, setPassword: function (value) {
+                password = value
+            }, getEmail: function () {
+                return email;
+            }, setEmail: function (value) {
+                email = value
+            }, getEmailID: function () {
+                return emailID;
+            }, setEmailID: function (value) {
+                emailID = value
+            }, getPassword: function () {
+                return password;
+            }, setActiveUserName: function (value) {
+                activeUserName = value
+            }, getActiveUserNameName: function () {
+                return activeUserName;
+            }, setActivePassword: function (value) {
+                activePassword = value
+            }, getActivePassword: function () {
+                return activePassword;
+            }, setReportURL: function (value) {
+                reportURL = value
+            }, getReportURL: function () {
+                return reportURL;
+            }, setViewCandidateId: function (value) {
+                viewCandidateId = value;
+            }, getViewCandidateId: function () {
+                return viewCandidateId;
+            }, setJobId: function (value) {
+                JobID = value;
+            }, getJobId: function () {
+                return JobID;
+            }, setClientJobID: function (value) {
+                ClientJobID = value;
+            }, getClientJobID: function () {
+                return ClientJobID;
+            }, setRequisitionTable: function (value) {
+                RequisitionTable = value;
+            }, getRequisitionTable: function () {
+                return RequisitionTable;
+            }, getAuthGlobalToken: function () {
+                return authGlobalToken;
+            }, setAuthGlobalToken: function (value) {
+                authGlobalToken = value;
+            }, getCounter: function () {
+                return counter;
+            }, setCounter: function (value) {
+                counter = value;
+            }, getRequisitionDetails: function () {
+                return requisitionDetails;
+            }, setRequisitionDetails: function (value) {
+                requisitionDetails = value;
+            }, getIframeLinks: function () {
+                return iframeList;
+            }, setIframeLinks: function (value) {
+                iframeList = value;
+            }, getprofileSelectedEngagementID: function () {
+                return profileSelectedEngagementID
+            }, setprofileSelectedEngagementID: function (value) {
+                profileSelectedEngagementID = value;
+            }, getprofileSelectedDocumentID: function () {
+                return profileSelectedDocumentID;
+            }, setprofileSelectedDocumentID: function (value) {
+                profileSelectedDocumentID = value
+            }, getengagementPerIDSelected: function () {
+                return engagementPerIDSelected;
+            }, setengagementPerIDSelected: function (value) {
+                engagementPerIDSelected = value
+            }, getprofileSelectedFunction: function () {
+                return profileSelectedFunction;
+            }, setprofileSelectedFunction: function (value) {
+                profileSelectedFunction = value
+            }, gettabJobProfile: function () {
+                return tabJobProfile;
+            }, settabJobProfile: function (value) {
+                tabJobProfile = value;
+            }, gettabDocumentation: function () {
+                return tabDocumentation;
+            }, settabDocumentation: function (value) {
+                tabDocumentation = value;
+            }, gettabSearchResults: function () {
+                return tabSearchResults;
+            }, settabSearchResults: function (value) {
+                tabSearchResults = value;
+            }, gettabCandidateList: function () {
+                return tabCandidateList;
+            }, settabCandidateList: function (value) {
+                tabCandidateList = value;
+            }, gettabApplicationList: function () {
+                return tabApplicationList;
+            }, settabApplicationList: function (value) {
+                tabApplicationList = value;
+            }, getrowCollection: function () {
+                return rowCollection;
+            }, setrowCollection: function (value) {
+                rowCollection = value;
+            }
     }
 });
 app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {

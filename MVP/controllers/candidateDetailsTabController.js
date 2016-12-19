@@ -1,7 +1,7 @@
 app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.position = sharedProperties.getPositionId();
-
+    $scope.ns = {};
     $scope.byteThere = false;
     var getHistory = function () {
         if ($scope.id) {
@@ -38,20 +38,21 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
     }
     var getResume = function () {
         if ($scope.id) {
-             $scope.byteThere = false;
+            $scope.byteThere = false;
             var promise = Factory.getCandidateResume($scope.id);
             promise.then(function resolved(response) {
                 console.log(response.data);
-                if(response.data.byteLength>0){
-                var file = new Blob([response.data], {
-                    type: 'application/pdf'
-                });
-                var fileURL = URL.createObjectURL(file);
-                $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
-                sharedProperties.setURLPdf($scope.pdfContent);
-                $scope.byteThere = true;
-                //response.data.byteLength = 0;
-                }else{
+                if (response.data.byteLength > 0) {
+                    var file = new Blob([response.data], {
+                        type: 'application/pdf'
+                    });
+                    var fileURL = URL.createObjectURL(file);
+                    $scope.pdfContent = $sce.trustAsResourceUrl(fileURL);
+                    sharedProperties.setURLPdf($scope.pdfContent);
+                    $scope.byteThere = true;
+                    //response.data.byteLength = 0;
+                }
+                else {
                     $scope.byteThere = false;
                 }
             }, function rejected(response) {
@@ -74,5 +75,21 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
         $scope.indextab = newValue.activeTab;
         getNotes();
     })
-
 }]);
+app.filter('myDateFilter', function () {
+    return function (items, td, fd) {
+        var parseDate = function (date) {
+            var parts = date.split('/');
+            return new Date(parts[2], part[1] - 1, part[0])
+        }
+        console.log(items + '- ' + td + '-' + fd);
+        var df = td;
+        var dt = fd;
+        var result = [];
+        var tf = new Date(items.dateCreated);
+        if (tf > df) {
+            result.push(items[i]);
+        }
+    }
+    return result;
+});

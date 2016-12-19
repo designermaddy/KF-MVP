@@ -1,6 +1,8 @@
 <div ng-controller="viewCandidateController"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix" style="border-bottom: 1px solid #dad8d6;margin-bottom:25px"> <a ng-click="backCandidateList();" class="pull-left" style="width:2%;margin-top:10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-        <h2>Candidate Details</h2> <button class="pull-right HeaderPaging clsilver btn-compare">Compare<i class="fa fa-angle-down Mar ml5" aria-hidden="true"></i></button> </div>
+        <h2>Candidate Details</h2>
+        <button class="pull-right HeaderPaging clsilver btn-compare">Compare<i class="fa fa-angle-down Mar ml5" aria-hidden="true"></i></button>
+    </div>
     <!--<div class="col-sm-12 col-md-12 col-lg-12">
         <div ng-include="'partial/_CandidatesCompare.html'"></div>
     </div>-->
@@ -15,16 +17,14 @@
                         <br> <span>{{row.address.country}}</span> </div>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"> <span class="sr-only">70% Complete</span> </div>
-                    </div> <span><input class="disabled" type="checkbox">Hot Candidate</span>
-                </div>
+                    </div> <span><input class="disabled" type="checkbox">Hot Candidate</span> </div>
                 <div class="col-md-9">
                     <div class="col-md-6 candidateContact">
                         <div class="row">
                             <button type="submit" class="btn btn-sm"><img src="content/images/green_tick.png" alt="" class="mr5 mb2">Sourced</button>
                             <button type="submit" class="btn btn-sm btn-screened"><img src="content/images/white_tick.png" alt="" class="mr5 mb2">Screened</button>
                             <button type="submit" class="btn btn-sm btn-submit" style="min-width:120px"><img src="content/images/gray_tick.png" alt="" class="mr5 mb2">Submit/Invite</button>
-                            <h4 class="mt20">Contact Info</h4>
-                            <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{emailId.address}}</span>
+                            <h4 class="mt20">Contact Info</h4> <span class="email"><img src="content/images/mail_icon.png" alt="" class="mr5"><span class="clsilver">Email: </span> {{emailId.address}}</span>
                             <div class="mtb15">
                                 <p><img src="content/images/phone_icon.png" alt="" class="mr5"><span class="clsilver">Phone:</span>{{phoneNo.number}}</p>
                                 <p class="ml20"><span class="clsilver">Work:</span></p>
@@ -33,22 +33,15 @@
                             <div>
                                 <p><img src="content/images/address_big_icon.png" alt="" class="mr8"> <span class="clsilver">Address:</span></p> <span class="ml20">{{row.addresses[0].city + ', ' + row.addresses[0].state}} </span>
                                 <br> <span class="ml20">{{row.addresses[0].country}}</span>
+                                <div style="display : none"> Loop ID : {{row.id}} </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-sm btn-changestatus"  ng-click="searchlist()">Change Status</button>
+                        <button type="submit" class="btn btn-primary btn-sm btn-changestatus" ng-click="searchlist()">Change Status</button>
                         <div class="col-md-12">
-
-                            <div class="row padding42"> 
-                                <img src="content/images/chat_big_icon.png">
-                                <img src="content/images/phone_big_icon.png" class="lefticon"><a href="#"><i class="fa fa-angle-down" aria-hidden="true" style="margin-left:5px;"></i></a> 
-                                <a href="" ng-click="openMailPopup();"> <img src="content/images/mail_big_icon.png"  class="righticon lefticon"></a>
-                                <img src="content/images/calendar_big_icon.png" alt="" class="righticon">  
-                                <img src="content/images/video_big_icon.png" alt="" class="righticon">
-                                <img src="content/images/share_big_icon.png" alt="" class=""> 
-                            </div>
-
+                            <div class="row padding42"> <img src="content/images/chat_big_icon.png"> <img src="content/images/phone_big_icon.png" class="lefticon"><a href="#"><i class="fa fa-angle-down" aria-hidden="true" style="margin-left:5px;"></i></a>
+                                <a href="" ng-click="openMailPopup();"> <img src="content/images/mail_big_icon.png" class="righticon lefticon"></a> <img src="content/images/calendar_big_icon.png" alt="" class="righticon"> <img src="content/images/video_big_icon.png" alt="" class="righticon"> <img src="content/images/share_big_icon.png" alt="" class=""> </div>
                         </div>
                         <div class="col-md-12">
                             <div class="row">
@@ -73,10 +66,9 @@
                                     <div class="row">
                                         <ul class="pull-right">
                                             <li><a target="_self" ng-href="{{urlResumePdfDownload}}" ng-click="confirmPopup()" download="resume.pdf">Resume
-                                                 </a>
-                                            </li>
-                                            <li><a href="#">Assessment Report </a></li>
-                                            <li><a href="#">Interview</a></li>
+                                                 </a> </li>
+                                            <li><a href="">Assessment Report </a></li>
+                                            <li><a href="">Interview</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +91,8 @@
             <i class="fa fa-lg fa-thumb-tack clrblue" aria-hidden="true"></i>
 
             <i class="fa fa-lg fa-ellipsis-v clrblue" aria-hidden="true"></i>-->
-            <!--  <h4 class="MarTp30">Recuriter Notes</h4>--><a href=""><img src="content/images/elips_icon.png"></a>
+            <!--  <h4 class="MarTp30">Recuriter Notes</h4>-->
+            <a href=""><img src="content/images/elips_icon.png"></a>
             <h4 class="MarTp30">Recruiter Notes</h4>
             <textarea id="notes"></textarea>
             <div class="pull-right save"><a ng-click="saveNotes();"><i class="fa fa-lg fa-floppy-o" aria-hidden="true"></i><span>Save Notes</span></a></div>

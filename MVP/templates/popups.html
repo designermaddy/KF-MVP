@@ -130,8 +130,7 @@
 </script>
 <!-- Global Success Popup   -->
 <script type="text/ng-template" id="Success.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
-        {{message}} <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="modal-header Heading2 HeadingFloat clearfix"> {{message}} <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
 </script>
 <!-- Global Pager Set of Record By Record and Total Data  -->
 <script type="text/ng-template" id="uibPagerKf.html">
@@ -294,6 +293,48 @@
     <div class="row clearfix">
         <div class="ButtonSection pull-right MarTp15 clearfix">
             <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="uploadDocEngDetails.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Upload Document</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="row clearfix">
+        <div class="col-md-12 MarTp15"> Other File :
+            <input type="file" file-model="myFile" name="file" /> </div>
+        <div class="col-md-6 MarTp15">
+            <label class="FormLabel"> Please Enter File Name <span class="Mandatory">*</span></label>
+            <input type="text" id="udedfn" class="form-control" name="filename" placeholder="Please Enter File Name" required/> </div>
+        <div class="row clearfix">
+            <div class="col-md-6 MarTp15">
+                <label class="FormLabel"> Search String <span class="Mandatory">*</span></label>
+                <input type="text" id="udedss" class="form-control" name="filename" placeholder="Please Enter Search String" required/> </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="ButtonSection pull-right MarTp15 clearfix">
+            <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="deleteDocEngDetails.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2>Delete Documents</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="row clearfix" ng-hide="present">
+        <h4>Please select alteast one File to Delete</h4>
+        <div class="ButtonSection pull-right MarTp15 clearfix">
+            <button class="btn btn-default" ng-click="cancel()">Got it</button>
+        </div>
+    </div>
+    <div class="row clearfix" ng-show="present">
+        <h4>Following files will be deleted</h4>
+        <ul>
+            <li ng-repeat="opt in opts">{{opt.name}}</li>
+        </ul>
+        <div class="ButtonSection pull-right MarTp15 clearfix">
+            <button class="btn btn-primary" ng-click="deleteFiles()">Delete</button>
             <button class="btn btn-default" ng-click="cancel()">Cancel</button>
         </div>
     </div>
