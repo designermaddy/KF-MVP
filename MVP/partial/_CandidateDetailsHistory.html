@@ -1,20 +1,20 @@
 <div class="DataListBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
 
-    <div st-table="displayedCollections" st-safe-src="rowCollection" class="CandidateDetailsHistory">
+    <div st-table="displayedCollections" st-safe-src="historyList" class="CandidateDetailsHistory">
         <table class="table table-striped">
             <thead>
                 <tr>
-                   <th class="SortDefault"  st-toggle-column st-sort="CandidateName">Date</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Title">Phase</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Location">Step</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="CurrentCompany">Status</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="Source">Comments</th>
-                   <th class="SortDefault"  st-toggle-column st-sort="UpdatedOn">Recruiter</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="dateCreated">Date</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="type">Phase</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="name">Step</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="status">Status</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="comment">Comments</th>
+                   <th class="SortDefault"  st-toggle-column st-sort="userName">Recruiter</th>
                 </tr>
             </thead>
             <tbody>
-                 <tr  ng-repeat="row in historyList | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                 <tr  ng-repeat="row in displayedCollections | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 
                     <td st-toggle-item>{{row.dateCreated | date:dd.mm.yyyy}}</td>
                     <td st-toggle-item>{{row.type}}</td>
