@@ -8,7 +8,7 @@
         , hayGroupUrl: 'https://activate.haygroup.com/autologin/autologin.html#/'
         , hayGroupAction: 'https://activate.haygroup.com/v1/actions/login'
         , foreSightGraph: 'https://foresight.futurestep.com/ats/ats_dash.php?sso=true&ssoidprovider=recruiterdesktop'
-        , localUrl: 'https://api.recruiterdesktop.kf4d-qa.com/RD-WebApp'
+        //, localUrl: 'https://api.recruiterdesktop.kf4d-qa.com/RD-WebApp'
         , factivaURL: "http://insidekf/KFResources/Pages/FactivaSearch.aspx?PID=33&amp%3bSID=83"
         , onesourceURL: "https://app.avention.com/?firstTime"
         , production: 1 //0 -> dev, 1 -> qa, 9 -> prod

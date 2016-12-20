@@ -95,7 +95,7 @@ app.controller('DocModalCtrl', ['$uibModalInstance', 'url', 'filename', '$scope'
     }
 }])
 app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$scope', 'sharedProperties', 'config', function ($uibModalInstance, $http, $scope, sharedProperties, config) {
-    var uploadUrl = config.localUrl + '/engagement/uploadEngagementDocument';
+    var uploadUrl =  config.projectUrl + '/engagement/uploadEngagementDocument';
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
