@@ -129,7 +129,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         }
         sharedProperties.setSavedSearchDetails(savedSearchVal)
         var redirectPath = "/InitiateSearch";
-        // $("li[class='active']").removeClass('active');
+        $("li[class='active']").removeClass('active');
         $('#searchHeader').addClass('active');
         $location.path(redirectPath);
         // console.log(data);

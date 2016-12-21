@@ -10,8 +10,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
-        //return $http.get('json/AgingRequisitionsAcme.json');
+       // return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
+        return $http.get('json/AgingRequisitionsAcme.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -22,8 +22,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAllPositionsById');
-        //return $http.get('json/AllRequisitions.json');
+       // return $http.get(urlAPI + '/Requisition/getAllPositionsById');
+        return $http.get('json/AllRequisitions.json');
         // return $http.get('json/allRequisitionswithAcme.json');
         //}
     };

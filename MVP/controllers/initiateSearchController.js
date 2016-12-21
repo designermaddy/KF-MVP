@@ -19,7 +19,7 @@
                 sharedProperties.setClientJobID(requisitionNumber)
                     // savedSearchDetails.fromSavedSearch = false;
             }
-            $('#searchHeader').addClass('active');
+
             $timeout(function () {
                 $('.selectpicker').selectpicker('refresh');
             }, 5, false);
@@ -45,6 +45,7 @@
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 });
             }
+            $('#searchHeader').addClass('active');
         }
         var data = sharedProperties.getInitiateSearchData();
         if (data.requisitionResponseList && data.requisitionResponseList.length>0) {

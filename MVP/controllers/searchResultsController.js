@@ -125,7 +125,12 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             $scope.rowCollection = newArray;
         }
     }
-
+    $scope.initiateSearch = function(){
+         var redirectPath = "/InitiateSearch";
+        $("li[class='active']").removeClass('active');
+        $('#searchHeader').addClass('active');
+        $location.path(redirectPath);
+    }
     $scope.$watch(function() {
         return $scope.rowCollection;
         }, function(newValue, oldValue) {
