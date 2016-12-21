@@ -57,6 +57,11 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
             var promise = Factory.requisitionDocDetailsList(data);
             promise.then(function resolved(response) {
                 $scope.pdfDetailsData = response.data.requisitionDocList;
+                //Pagination Details
+              $scope.currentPage = 1;
+              $scope.entryLimit = 10;
+              $scope.totalItems = $scope.pdfDetailsData.length;
+              $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
