@@ -10,8 +10,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
-        //return $http.get('json/AgingRequisitionsAcme.json');
+       // return $http.get(urlAPI + '/Requisition/getAgingPositionsById');
+        return $http.get('json/AgingRequisitionsAcme.json');
         //}
     };
     dataFactory.getRequisitionTableList = function () {
@@ -22,8 +22,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('http://172.25.148.147:8080/RD-WebApp/Requisition/getRequisition');
         //return $http.get('http://recruiter-recruite-beyv5ne58xs5g-1681892743.us-east-1.elb.amazonaws.com/RD-WebApp/Requisition/getRequisition');
         //return $http.get('json/requisitionList.json');
-        return $http.get(urlAPI + '/Requisition/getAllPositionsById');
-        //return $http.get('json/AllRequisitions.json');
+       // return $http.get(urlAPI + '/Requisition/getAllPositionsById');
+        return $http.get('json/AllRequisitions.json');
         // return $http.get('json/allRequisitionswithAcme.json');
         //}
     };
@@ -220,7 +220,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('json/requisitionPdfDoc.json')
         return $http({
             method: 'POST'
-            , url: config.localUrl + '/Requisition/getAllRequisitionDocument'
+            , url:  urlAPI + '/Requisition/getAllRequisitionDocument'
             , data: data
         });
     }
@@ -240,7 +240,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 }*/
         return $http({
             method: 'POST'
-            , url: config.localUrl + '/Requisition/getAllProfileDocument'
+            , url:  urlAPI + '/Requisition/getAllProfileDocument'
             , data: data
         });
         /* {
@@ -385,7 +385,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var postData = data;
         return $http({
             method: 'POST'
-            , url: config.localUrl + '/Requisition/jobSearch'
+            , url:  urlAPI + '/Requisition/jobSearch'
             , data: postData
         });
     }
@@ -437,7 +437,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.removeRequisitionDocument = function (data) {
         return $http({
             method: 'POST'
-            , url: config.localUrl + '/Requisition/removeRequisitionDocument'
+            , url: urlAPI + '/Requisition/removeRequisitionDocument'
             , data: data
         })
     }

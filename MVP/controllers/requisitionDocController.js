@@ -8,10 +8,10 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
         var idList = [];
         $scope.openPdf = function (id, filename, doctype) {
             if (doctype == 'R' || doctype == 'O') {
-                var url = config.localUrl + '/Requisition/getRequisitionDocumentById/' + id;
+                var url =  config.projectUrl + '/Requisition/getRequisitionDocumentById/' + id;
             }
             else {
-                var url = config.localUrl + '/Profile/getDocumentById/' + id;
+                var url =  config.projectUrl + '/Profile/getDocumentById/' + id;
             }
             var promise = Factory.getPDF(url);
             promise.then(function resolved(response) {
@@ -57,6 +57,11 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
             var promise = Factory.requisitionDocDetailsList(data);
             promise.then(function resolved(response) {
                 $scope.pdfDetailsData = response.data.requisitionDocList;
+                //Pagination Details
+              $scope.currentPage = 1;
+              $scope.entryLimit = 10;
+              $scope.totalItems = $scope.pdfDetailsData.length;
+              $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
@@ -115,7 +120,7 @@ app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload
         $scope.uploadFile = function () {
             var file1 = $scope.myFile1;
             var file2 = $scope.myFile2;
-            var uploadUrl = config.localUrl + "/Requisition/uploadRequisitionDocument";
+            var uploadUrl =  config.projectUrl + "/Requisition/uploadRequisitionDocument";
             if (fileUpload.uploadFileToUrl(file1, file2, uploadUrl, $scope.radioModel)) {
                 $uibModalInstance.dismiss('cancel');
             }

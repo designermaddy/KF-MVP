@@ -48,6 +48,12 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
               $scope.candidateName = $scope.rowCollection.map(function(item) {
                   return item.candidateName;
               });
+
+              //Pagination Details
+              $scope.currentPage = 1;
+              $scope.entryLimit = 10;
+              $scope.totalItems = $scope.rowCollection.length;
+              $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
           },
           function rejected(response) {
               commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -119,7 +125,12 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
             $scope.rowCollection = newArray;
         }
     }
-
+    $scope.initiateSearch = function(){
+         var redirectPath = "/InitiateSearch";
+        $("li[class='active']").removeClass('active');
+        $('#searchHeader').addClass('active');
+        $location.path(redirectPath);
+    }
     $scope.$watch(function() {
         return $scope.rowCollection;
         }, function(newValue, oldValue) {
