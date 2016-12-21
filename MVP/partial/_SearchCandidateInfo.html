@@ -26,18 +26,18 @@
             <div class="col-sm-6 col-md-1 col-lg-1">
                 <label class="FormLabel">Zip Code</label>
                 <input class="input-sm form-control" type="search" ng-model="vm.data.ZipCode"> </div>
-            <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
+            <div class="col-sm-6 col-md-2 col-lg-2 FormSelect" >
                     <label class="FormLabel"> Status</label>
                     <select class="selectpicker form-control" ng-model="vm.data.job_status">
-                        <option value="" selected> Select </option>
-                        <option value="Open"> Open </option>
-                        <option value="Pending"> Pending </option>
-                        <option value="Close"> Close </option>
+                         <option value="">Please Select</option>
+                        <option value="Open">Open</option>
+                        <option value="Pending" selected>Pending</option>
+                        <option value="Close">Close</option>
                     </select>
                 </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel"> Miles</label>
-                <select id="selectMiles" class="selectpicker form-control" required ng-model='form' ng-options='option for option in options' ng-change="update(form)"></select>
+                <select id="selectMiles" class="selectpicker form-control" required ng-model='vm.data.Miles' ng-options='option for option in options' ng-change="update(form)"></select>
             </div>
 
         </div>
