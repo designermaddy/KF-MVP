@@ -26,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr  ng-repeat="row in filterData = (displayedCollections | filter:search | mydate:date) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+            <tr  ng-repeat="row in filterData = (displayedCollections | myfilter:search | mydate:date) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                 <td st-toggle-item>
                     <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.req = row.ReqNumber + ' ' + row.JobTitle}}</a></div>
                     <div class="TblDates">{{row.StartDate}}-{{row.EndDate}}</div>

@@ -13,15 +13,15 @@
                 </tr>
             </thead>
             <tbody> <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <tr ng-repeat="engagementListDtls in filterData = ( displayedCollections  | filter:search | mydate : date ) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit ">
+                <tr ng-repeat="engagementListDtls in filterData = ( displayedCollections  | myfilter:search | mydate : date ) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit ">
                     <td st-toggle-item>
                         <div class="TblRequisition"><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(engagementListDtls.EngagementNumber, engagementListDtls.engagementType )">{{engagementListDtls.eng = engagementListDtls.EngagementNumber + ' ' + engagementListDtls.Engagement}}</a></div>
                         <div class="TblDate">{{engagementListDtls.StartDate}}-{{engagementListDtls.EndDate}}</div>
                     </td>
-                    <td st-toggle-item>{{engagementListDtls.Client.ClientName}}
+                    <td st-toggle-item>{{engagementListDtls.ClientName = engagementListDtls.Client.ClientName}}
                         <div class="TblDate">{{engagementListDtls.Location}}</div>
                     </td>
-                    <td st-toggle-item>{{engagementListDtls.Client.Industry}}</td>
+                    <td st-toggle-item>{{engagementListDtls.Industry = engagementListDtls.Client.Industry}}</td>
                     <td st-toggle-item>{{engagementListDtls.Type}}</td>
                     <td st-toggle-item>{{engagementListDtls.Requsitions}}</td>
                 </tr>

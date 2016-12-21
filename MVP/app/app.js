@@ -177,6 +177,43 @@ app.filter('mydate', function () {
         return items;
     }
 });
+app.filter('myfilter', function () {
+    return function (items, model) {
+        var result = [];
+        if (items.length > 0) {
+            if (Object.keys(model).length) {
+                var b = 0;
+                for (var a = 0; a < Object.keys(model).length; a++) {
+                    if (model[Object.keys(model)[a]]) {
+                        b++;
+                    }
+                }
+                if (b) {
+                    var keys = Object.keys(model);
+                    var newItems = [];
+                    for(var j = 0; j < keys.length; j++) {
+                        if (model[keys[j]]){
+                            for (var i = 0; i < items.length; i++){
+                                if(items[i][keys[j]]){
+                                    var x = items[i][keys[j]].toLowerCase().indexOf(model[keys[j]]);
+                                    if (x != -1){
+                                        newItems.push(items[i]);
+                                    }
+                                }
+                            }
+                            items = newItems;
+                            newItems = [];
+                        }
+                    }
+                    return items;
+                }
+            }
+        }
+        return items;
+    }
+});
+
+
 app.directive('usSpinner', ['$http', '$rootScope', function ($http, $rootScope) {
     return {
         link: function (scope, elm, attrs) {
