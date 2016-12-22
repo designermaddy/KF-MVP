@@ -5,18 +5,18 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th class="SortDefault" st-toggle-column st-sort="RequisitionNumber">Requisition</th>
+                    <th class="SortDefault" st-toggle-column st-sort="req">Requisition</th>
                     <th></th>
-                    <th class="SortDefault" st-toggle-column st-sort="Location">Location</th>
+                    <th class="SortDefault" st-toggle-column st-sort="location">Location</th>
                     <th class="SortDefault" st-toggle-column st-sort="Source">Source</th>
-                    <th class="SortDefault" st-toggle-column st-sort="Recruiter">Recruiter</th>
+                    <th class="SortDefault" st-toggle-column st-sort="rec">Recruiter</th>
                     <th style="width:64px;">Sourced</th>
                     <th style="width:71px;">Screened</th>
                     <th style="width:74px;">Submitted</th>
                     <th style="width:82px;">Interviewed</th>
                     <th style="width:60px;">Offered</th>
                     <th style="width:70px;">Accepted</th>
-                    <th style="width:80px;" class="SortDefault" st-toggle-column st-sort="DaysOpen">Days Open</th>
+                    <th style="width:80px;" class="SortDefault" st-toggle-column st-sort="open">Days Open</th>
                     <th style="width:60px;" st-toggle-column st-sort="Status" class="SortDefault">Status</th>
                     <th style="width:30px;"></th>
                 </tr>
@@ -25,7 +25,7 @@
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
                 <tr  ng-repeat="row in engagementResponse.Requisitions | myfilter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
                     <td st-toggle-item>
-                        <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')"> <span>{{row.ReqNumber}} {{row.JobTitle}}</span></a></div>
+                        <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')"> <span>{{row.req = row.ReqNumber  + ' ' + row.JobTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>
                     </td>
                     <td st-toggle-item>
@@ -33,7 +33,7 @@
                     </td>
                     <td st-toggle-item>{{row.location}}</td>
                     <td st-toggle-item>{{row.Source}}</td>
-                    <td st-toggle-item>{{row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
+                    <td st-toggle-item>{{row.rec = row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
                     <td st-toggle-item>{{row.Data.data[0].sourced}}</td>
                     <td st-toggle-item>{{row.Data.data[0].screen}}</td>
                     <td st-toggle-item>{{row.Data.data[0].submit}}</td>
@@ -41,7 +41,7 @@
                     <td st-toggle-item>{{row.Data.data[0].offer}}</td>
                     <td st-toggle-item>{{row.Data.data[0].accept}}</td>
                     <td st-toggle-item>
-                        <div class="TblDays" ng-class="row.Data.data[0].color"> {{row.Data.data[0].open_days}}</div>
+                        <div class="TblDays" ng-class="row.Data.data[0].color"> {{row.open = row.Data.data[0].open_days}}</div>
                     </td>
                     <td st-toggle-item>{{row.Status}}</td>
                     <td st-toggle-item><i class="fa fa-pencil"></td>    					
