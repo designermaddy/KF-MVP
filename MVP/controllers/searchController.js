@@ -2,6 +2,8 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     $scope.start = 1;
     sharedProperties.setNewSearchData(0);
     $scope.orgID = 6;
+    $scope.search = {};
+
     var data = {
         'orgId': 6
         , 'limit': 10

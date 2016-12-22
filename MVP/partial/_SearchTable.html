@@ -32,7 +32,7 @@
             </thead>
             <tbody>
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <tr  ng-repeat="row in displayedCollections  | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <tr  ng-repeat="row in displayedCollections  | myfilter : search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                     <td st-toggle-item>
                         <div class="TblRequisition"><a ng-click="initiateSearch(row.ClientJobID)">{{row.SearchName}} </a></div>
                     </td>

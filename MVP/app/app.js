@@ -195,7 +195,7 @@ app.filter('myfilter', function () {
                         if (model[keys[j]]){
                             for (var i = 0; i < items.length; i++){
                                 if(items[i][keys[j]]){
-                                    var x = items[i][keys[j]].toLowerCase().indexOf(model[keys[j]]);
+                                    var x = items[i][keys[j]].toLowerCase().indexOf(model[keys[j]].toLowerCase());
                                     if (x != -1){
                                         newItems.push(items[i]);
                                     }

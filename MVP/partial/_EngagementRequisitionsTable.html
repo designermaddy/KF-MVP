@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <span us-spinner="{radius:10, width:2, length: 4}"></span>
-                <tr  ng-repeat="row in engagementResponse.Requisitions | filter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
+                <tr  ng-repeat="row in engagementResponse.Requisitions | myfilter:search | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
                     <td st-toggle-item>
                         <div class="TblRequisition"><a href="" ng-click="changeActivelink(row, 'RequisitionDetails/3')"> <span>{{row.ReqNumber}} {{row.JobTitle}}</span></a></div>
                         <div class="TblDate">{{row.StartDate}}-{{row.EndDate}}</div>

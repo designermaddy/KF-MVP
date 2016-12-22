@@ -2,14 +2,14 @@
     <div class="panel-body">
         <div class="row MarBt15 clearfix">
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel"> Candidate Name (or) ID</label>
-                <input class="input-sm form-control FormInput" type="search" ng-model="name" uib-typeahead="address for address in candidateName | filter:$viewValue | limitTo:8"> </div>
+                <label class="FormLabel"> Search Name (or) ID</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.SearchName"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
-                <label class="FormLabel">Client Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <label class="FormLabel">Requisition Name</label>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.RequisitionName"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2">
                 <label class="FormLabel">Recruiter Name</label>
-                <input class="input-sm form-control FormInput" type="search"> </div>
+                <input class="input-sm form-control FormInput" type="search" ng-model="search.RecruiterName"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel">All Saved Searches</label>
                 <select id="searchSavedSearchesList" class="selectpicker form-control">
