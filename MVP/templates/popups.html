@@ -321,7 +321,7 @@
     </div>
 </script>
 <script type="text/ng-template" id="deleteDocEngDetails.html">
-    <div class="modal-header Heading2 HeadingFloat clearfix">
+    <div class="Heading2 HeadingFloat clearfix BorderBottom">
         <h2>Delete Documents</h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
     <div class="row clearfix" ng-hide="present">
         <h4>Please select alteast one File to Delete</h4>
@@ -329,14 +329,27 @@
             <button class="btn btn-default" ng-click="cancel()">Got it</button>
         </div>
     </div>
-    <div class="row clearfix" ng-show="present">
-        <h4>Following files will be deleted</h4>
-        <ul>
-            <li ng-repeat="opt in opts">{{opt.name}}</li>
-        </ul>
+<div class="modal-body">
+    <div class="row">
+       <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row clearfix" ng-show="present">
+                <label class="FormLabel"> Following files will be deleted</label>
+             </div>
+        </div>
+    </div>
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <ul>
+        <li ng-repeat="opt in opts">
+            <div class="List">{{opt.name}} </div>
+        </li>
+    </ul>
+ </div>
+<div class="row MarTp15">
+    <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="ButtonSection pull-right MarTp15 clearfix">
             <button class="btn btn-primary" ng-click="deleteFiles()">Delete</button>
             <button class="btn btn-default" ng-click="cancel()">Cancel</button>
         </div>
     </div>
+</div>
 </script>
