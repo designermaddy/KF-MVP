@@ -1,9 +1,10 @@
 (function () {
     'use strict';
-    app.controller('initiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', initiateSearchController]);
+    app.controller('initiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout','$scope', initiateSearchController]);
     /* @ngInject */
-    function initiateSearchController(Factory, $location, sharedProperties, commonFunctions, $timeout) {
+    function initiateSearchController(Factory, $location, sharedProperties, commonFunctions, $timeout, $scope) {
         /*jshint validthis: true */
+        $scope.milesOptions=["10", "25", "35", "50", "75", "100", "Auto Expand"];
         var vm = this;
         vm.editClick = true;
         vm.editClickJobProfile = function () {
@@ -19,7 +20,7 @@
                 sharedProperties.setClientJobID(requisitionNumber)
                     // savedSearchDetails.fromSavedSearch = false;
             }
-
+            $('#searchHeader').addClass('active');
             $timeout(function () {
                 $('.selectpicker').selectpicker('refresh');
             }, 5, false);
@@ -27,10 +28,10 @@
             if (requisitionNumber) {
                 promise.then(function resolved(response) {
                     vm.data = response.data;
-                    var change = sharedProperties.getRequisitionDetails();
-                    console.log(change);
-                    vm.data.JobTitle = vm.data.searchName = change.JobTitle;
-                    vm.data.job_client = change.Client;
+                    //var change = sharedProperties.getRequisitionDetails();
+                    //console.log(change);
+                    //vm.data.JobTitle = vm.data.searchName = change.JobTitle;
+                    //vm.data.job_client = change.Client;
                     //vm.data.NoOfPositions = change.NoOfPositions;
                     vm.data.ReqNumber = requisitionNumber;
                     if (a == 1) {
@@ -45,7 +46,6 @@
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 });
             }
-            $('#searchHeader').addClass('active');
         }
         var data = sharedProperties.getInitiateSearchData();
         if (data.requisitionResponseList && data.requisitionResponseList.length>0) {
@@ -102,13 +102,14 @@
             this.PostingDate = vm.data.PostingDate;
             this.job_category = null;
             this.Job_apply_url = null;
+            this.Miles = vm.data.Miles;
         }
         vm.save = function save() {
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();
             vm.criteria = getCriteria();
-            if (vm.criteria.Miles) {
+            /*if (vm.criteria.Miles) {
                 delete vm.criteria.Miles;
-            }
+            }*/
             if (vm.criteria.TotalSourcedCount) {
                 delete vm.criteria.TotalSourcedCount;
             }

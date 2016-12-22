@@ -94,7 +94,7 @@ app.controller('DocModalCtrl', ['$uibModalInstance', 'url', 'filename', '$scope'
         $uibModalInstance.dismiss('cancel');
     }
 }])
-app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$scope', 'sharedProperties', 'config', function ($uibModalInstance, $http, $scope, sharedProperties, config) {
+app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$scope', 'sharedProperties', 'config','commonFunctions', function ($uibModalInstance, $http, $scope, sharedProperties, config, commonFunctions) {
     var uploadUrl =  config.projectUrl + '/engagement/uploadEngagementDocument';
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
@@ -102,7 +102,14 @@ app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$
     $scope.uploadFile = function () {
         var file = $scope.myFile;
         var fd = new FormData();
-        if (file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
+        var pdfEmbedded = commonFunctions.checkPDFUpload (file);
+        if (!pdfEmbedded || file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
+            if(!pdfEmbedded){
+              commonFunctions.error('Please upload PDF files only');
+            }
+            else{
+                commonFunctions.error('Please fill the mandatory fields');
+            }
             return false;
         }
         else {

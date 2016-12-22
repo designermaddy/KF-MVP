@@ -141,12 +141,19 @@ app.directive('fileModel', ['$parse', function ($parse) {
         }
     };
      }]);
-app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedProperties) {
+app.service('fileUpload', ['$http', 'sharedProperties','commonFunctions', function ($http, sharedProperties, commonFunctions) {
     this.uploadFileToUrl = function (file1, file2, uploadUrl, radioModel) {
         var doc = radioModel ? 'R' : 'O';
         var fd = new FormData();
         if (doc == 'O') {
-            if (file2.length < 1) {
+            var pdfEmbedded = commonFunctions.checkPDFUpload (file2);
+            if (!pdfEmbedded || file2.length < 1 || $('#pdoin').val().length < 1) {
+                if(!pdfEmbedded){
+                  commonFunctions.error('Please upload PDF files only');
+                }
+                else{
+                    commonFunctions.error('Please fill the mandatory fields');
+                }
                 return false;
             }
             else {
@@ -155,7 +162,14 @@ app.service('fileUpload', ['$http', 'sharedProperties', function ($http, sharedP
             }
         }
         else {
-            if ($('#pduin').val().length < 1 || $('#pduJd').val().length < 1 || file1.length < 1 || $('#pduss').val().length < 1) {
+            var pdfEmbedded = commonFunctions.checkPDFUpload (file1);
+            if (!pdfEmbedded || $('#pduin').val().length < 1 || $('#pduJd').val().length < 1 || file1.length < 1 || $('#pduss').val().length < 1) {
+                if(!pdfEmbedded){
+                  commonFunctions.error('Please upload PDF files only');
+                }
+                else{
+                    commonFunctions.error('Please fill the mandatory fields');
+                }
                 return false;
             }
             else {
