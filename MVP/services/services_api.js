@@ -552,6 +552,19 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                     }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
     var commonFunctions = {};
+    commonFunctions.checkPDFUpload = function(file){
+          var myfile= file.name;
+          var pdfTrue = false;
+           var ext = myfile.split('.').pop();
+           if(ext=="pdf"){
+               //alert(ext);
+               pdfTrue = true;
+           } else{
+               file = "";
+               pdfTrue = false;
+           }
+        return pdfTrue
+    }
     commonFunctions.getIframeUrl = function (key) {
         var iFrameArray = sharedProperties.getIframeLinks();
         return iFrameArray[0][key];

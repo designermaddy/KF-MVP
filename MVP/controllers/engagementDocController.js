@@ -102,16 +102,14 @@ app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$
     $scope.uploadFile = function () {
         var file = $scope.myFile;
         var fd = new FormData();
-        var myfile= $scope.myFile.name;
-           var ext = myfile.split('.').pop();
-           if(ext=="pdf"){
-               //alert(ext);
-           } else{
-               file = "";
-                commonFunctions.error('Failed to upload ' +ext +' file. Please upload only PDF file');
-           }
-        if (file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
-            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        var pdfEmbedded = commonFunctions.checkPDFUpload (file);
+        if (!pdfEmbedded || file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
+            if(!pdfEmbedded){
+              commonFunctions.error('Please upload PDF files only');
+            }
+            else{
+                commonFunctions.error('Please fill the mandatory fields');
+            }
             return false;
         }
         else {
