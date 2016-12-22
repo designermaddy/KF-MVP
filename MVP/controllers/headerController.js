@@ -42,11 +42,13 @@ if (authToken!==undefined){
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+       //  commonFunctions.getGraphDropdown();
     var promise = Factory.getIframeList();
         promise.then(function(response) {
             var data = response.data.url;
             sharedProperties.setIframeLinks(data);
         })
+
 
         $scope.logOut=function(){
            var promise = Factory.getLogOut();

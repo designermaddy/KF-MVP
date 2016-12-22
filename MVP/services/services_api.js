@@ -548,8 +548,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.removeEngagementDocuments = function (docIds, engId) {
         return $http.get(urlAPI + '/engagement/removeEngagementDocument/' + docIds + '/' + engId)
     }
+    dataFactory.getGraphEngagmentDropDown = function () {
+        return $http.get(urlAPI + '/engagement/getAllEngagements')
+    }
+
     return dataFactory;
-                    }]);
+ }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
     var commonFunctions = {};
     commonFunctions.checkPDFUpload = function(file){
@@ -694,6 +698,16 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         var promise = Factory.getSearcherRequisitions(searcherItems);
         promise.then(function resolved(response) {
             config.searcherReq = response.data.requisitions;
+            console.log(response)
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
+    }
+    // to fetch the engagment like lambweston, Acme etc..
+    commonFunctions.getGraphDropdown =function(){
+        var promise = Factory.getGraphEngagmentDropDown();
+        promise.then(function resolved(response) {
+            config.getAllEngagments = response.data;
             console.log(response)
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
