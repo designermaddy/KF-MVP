@@ -94,7 +94,7 @@ app.controller('DocModalCtrl', ['$uibModalInstance', 'url', 'filename', '$scope'
         $uibModalInstance.dismiss('cancel');
     }
 }])
-app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$scope', 'sharedProperties', 'config', function ($uibModalInstance, $http, $scope, sharedProperties, config) {
+app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$scope', 'sharedProperties', 'config','commonFunctions', function ($uibModalInstance, $http, $scope, sharedProperties, config, commonFunctions) {
     var uploadUrl =  config.projectUrl + '/engagement/uploadEngagementDocument';
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
@@ -102,7 +102,16 @@ app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$
     $scope.uploadFile = function () {
         var file = $scope.myFile;
         var fd = new FormData();
+        var myfile= $scope.myFile.name;
+           var ext = myfile.split('.').pop();
+           if(ext=="pdf"){
+               //alert(ext);
+           } else{
+               file = "";
+                commonFunctions.error('Failed to upload ' +ext +' file. Please upload only PDF file');
+           }
         if (file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             return false;
         }
         else {
