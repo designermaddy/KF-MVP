@@ -5,6 +5,16 @@ app.controller('engagementDocController', ['$uibModal', '$scope', 'Factory', 'sh
     var data = {
         "engagementId": id
     };
+    $scope.isDeleteButton = true;
+
+    $scope.toggleDelButton = function() {
+        if ($('input:checked').length){
+            $scope.isDeleteButton = false;
+        }else {
+            $scope.isDeleteButton = true;
+        }
+    }
+
     var getDocs = function () {
         var promise = Factory.postDocumentByEngagement(data);
         promise.then(function resolved(response) {

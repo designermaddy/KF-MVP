@@ -180,8 +180,8 @@ app.filter('mydate', function () {
 app.filter('myfilter', function () {
     return function (items, model) {
         var result = [];
-        if (items.length > 0) {
-            if (Object.keys(model).length) {
+        if (angular.isDefined(items) && items.length > 0) {
+            if (model && Object.keys(model).length) {
                 var b = 0;
                 for (var a = 0; a < Object.keys(model).length; a++) {
                     if (model[Object.keys(model)[a]]) {
