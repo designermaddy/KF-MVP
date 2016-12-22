@@ -28,7 +28,8 @@
                 <input class="input-sm form-control" type="search" ng-model="vm.data.ZipCode"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect" >
                     <label class="FormLabel"> Status</label>
-                    <select class="selectpicker form-control" ng-model="vm.data.job_status">
+                <!--selectpicker-->
+                    <select class="form-control" ng-model="vm.data.job_status">
                          <option value="">Please Select</option>
                         <option value="Open">Open</option>
                         <option value="Pending" selected>Pending</option>
@@ -37,7 +38,8 @@
                 </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel"> Miles</label>
-                <select id="selectMiles" class="selectpicker form-control" required ng-model='vm.data.Miles' ng-options='option for option in options' ng-change="update(form)"></select>
+                <!--selectpicker-->
+                <select id="selectMiles" class="form-control" required ng-model='vm.data.Miles' ng-options='option for option in options' ng-change="update(form)"></select>
             </div>
 
         </div>
