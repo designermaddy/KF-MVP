@@ -12,6 +12,10 @@
                 vm.editClick = false;
             }
         }
+        $timeout(function() {
+            $('#searchHeader').addClass('active');
+        }, 100);
+
         var getreq = function (a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();

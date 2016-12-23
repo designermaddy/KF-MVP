@@ -29,7 +29,7 @@
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect" >
                     <label class="FormLabel"> Status</label>
                 <!--selectpicker-->
-                    <select class="form-control" ng-model="vm.data.job_status">
+                    <select class="selectpicker form-control" ng-model="vm.data.job_status">
                          <option value="">Please Select</option>
                         <option value="Open">Open</option>
                         <option value="Pending" selected>Pending</option>
@@ -39,7 +39,7 @@
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                 <label class="FormLabel"> Miles</label>
                 <!--selectpicker-->
-                <select id="selectMiles" class="form-control" required ng-model='vm.data.Miles' ng-options='option for option in options' ng-change="update(form)"></select>
+                <select id="selectMiles" class="selectpicker form-control" required ng-model='vm.data.Miles' ng-options='option for option in options' ng-change="update(form)"></select>
             </div>
 
         </div>
