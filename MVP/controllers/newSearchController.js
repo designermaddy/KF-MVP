@@ -7,6 +7,8 @@
         var result;
         var reqValue = 0;
 
+        $timeout(function(){$('#searchHeader').addClass('active')},100);
+
         function getReq() {
             var promise = Factory.getRequisitionTableList();
             promise.then(function (response) {

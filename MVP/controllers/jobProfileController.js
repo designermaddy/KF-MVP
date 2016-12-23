@@ -1,4 +1,4 @@
-app.controller('jobProfileController', ['$uibModal', '$scope', 'Factory', 'commonFunctions', 'sharedProperties', '$location', '$sce', 'config', function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, $location, $sce, config) {
+app.controller('jobProfileController', ['$uibModal', '$scope', 'Factory', 'commonFunctions', 'sharedProperties', '$location', '$sce', 'config','$timeout', function ($uibModal, $scope, Factory, commonFunctions, sharedProperties, $location, $sce, config,$timeout) {
     function jobProfileDocDetails() {
         if (sharedProperties.getRequisitionDetails()) {
             $scope.item = sharedProperties.getRequisitionDetails();
