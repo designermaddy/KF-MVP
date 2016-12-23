@@ -4,7 +4,6 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
 
             if(sharedProperties.getRequisitionDetails()){
                 $scope.item  = sharedProperties.getRequisitionDetails();
-                console.log($scope.item)
                 sharedProperties.setNewSearchData([$scope.item.ReqNumber, $scope.item.JobTitle]);
             }
 
@@ -15,7 +14,7 @@ app.controller('engagementGridController', ['$scope', 'Factory', 'filterFilter',
 		// needs to be a function or it won't trigger a $watch
 		$scope.search = {};
 	};
-
+$timeout(function(){$('#requistionHeader').addClass('active')},100);
 
 
     // iframe modals.

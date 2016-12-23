@@ -1,7 +1,8 @@
-app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$uibModal', 'commonFunctions', 'config', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, commonFunctions, config) {
+app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$uibModal', 'commonFunctions', 'config','$timeout', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, commonFunctions, config,$timeout) {
     $scope.viewLoading = false;
     getRequisitionList();
 
+    $timeout(function(){$('#engHeader').addClass('active');},100);
     function getRequisitionList() {
         var engagementID = sharedProperties.getengagementPerIDSelected()
         var engDtls = sharedProperties.getEngagmentSelectedObject();
