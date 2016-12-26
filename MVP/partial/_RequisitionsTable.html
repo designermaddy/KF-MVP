@@ -45,7 +45,9 @@
                 <td st-toggle-item>{{row.Data.data[0].offer}}</td>
                 <td st-toggle-item>{{row.Data.data[0].accept}}</td>
                 <td st-toggle-item>
-                    <div class="TblDays" ng-class="row.Data.data[0].color"> {{row.Data.data[0].open_days}}</div>
+                    <div class="TblDays" ng-class="row.Data.data[0].color">{{row.Data.data[0].open_days}} <!--{{parseInt(row.Data.data[0].open_days)}}-->
+                        <!--ng-bind="displayVal({{row.Data.data[0].open_days}})"-->
+                        </div>
                 </td>
                 <td st-toggle-item>{{row.status}}</td>
                 <td st-toggle-item><img src="content/images/edit_icon.png" alt=""></td>

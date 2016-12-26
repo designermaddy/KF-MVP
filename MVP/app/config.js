@@ -20,10 +20,12 @@
     else if (config.production === 1) {
         config.projectUrl = 'https://api.recruiterdesktop.kf4d-qa.com/RD-WebApp'
         config.logOutUrl = 'https://recruiterdesktop.kf4d-qa.com/'
+        config.loginUrl = 'https://recruiterdesktop.kf4d-qa.com/saml/rd';
     }
     else if (config.production === 9) {
         config.projectUrl = 'https://api.recruiterdesktop.kf4d.com/RD-WebApp'
         config.logOutUrl = 'https://recruiterdesktop.kf4d.com/'
+        config.loginUrl = 'https://recruiterdesktop.kf4d.com/saml/rd';
     }
     else {
         config.projectUrl = 'https://localhost:8080/RD-WebApp'

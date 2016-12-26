@@ -34,6 +34,10 @@ if (authToken!==undefined){
                }else{
                die("Authentication Failed!!");
             }
+    }else{
+
+            window.location.href = config.loginUrl;
+
     }
     function setcookie(cname, cvalue, exdays) {
     var d = new Date();

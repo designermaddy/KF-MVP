@@ -6,7 +6,33 @@ commonFunctions.getSearcherJson();
     function getData() {
         var promise = Factory.getRequisitionTableList();
         promise.then(function resolved(response) {
-            $scope.rowCollection = response.data.requisitions.concat(config.searcherReq);
+            var collection = response.data.requisitions.concat(config.searcherReq);
+            for(var i in collection)
+            {
+                 if(collection[i].Data){
+                     if(collection[i].Data.data){
+                        if(collection[i].Data.data.length>0){
+                            if(isNaN(parseInt(collection[i].Data.data[0].open_days))){
+                                collection[i].Data.data[0].open_days = 0;
+
+                            }else{
+                                collection[i].Data.data[0].open_days =  parseInt(collection[i].Data.data[0].open_days);
+                                }
+                        }
+                   else{
+                        collection[i].Data['data']=[];
+                        collection[i].Data.data.push({
+                        open_days:parseInt(0)
+                        });
+
+                        }
+                     }
+                }
+
+                 //var name = data[i].name;
+            }
+                        $scope.rowCollection = collection;
+                //response.data.requisitions.concat(config.searcherReq);
             setValues();
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -22,6 +48,10 @@ commonFunctions.getSearcherJson();
             $scope.entryLimit = 10; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
         }
+    }
+    $scope.displayVal=function(val){
+        var value = parseInt(val);
+        return value;
     }
     // call the API for selectedengagement per id
     $scope.onSelectEngagementPerID = function (engagementID, engagementType) {
