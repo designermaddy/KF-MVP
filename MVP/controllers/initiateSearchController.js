@@ -4,7 +4,7 @@
     /* @ngInject */
     function initiateSearchController(Factory, $location, sharedProperties, commonFunctions, $timeout, $scope) {
         /*jshint validthis: true */
-        $scope.milesOptions=["10", "25", "35", "50", "75", "100", "Auto Expand"];
+        $scope.milesOptions=[10, 25, 35, 50, 75, 100, "Auto Expand"];
         var vm = this;
         vm.editClick = true;
         vm.editClickJobProfile = function () {

@@ -3,6 +3,9 @@
         $scope.vm = {};
         $scope.freeSearch = {};
         $scope.freeSearch.radioModel = true;
+        $scope.milesOptions=[10, 25, 35, 50, 75, 100, "Auto Expand"];
+        $scope.freeSearch.Miles = "Auto Expand";
+        $scope.data.Miles = "Auto Expand";
         var redirectPath = "Search";
         var result;
         var reqValue = 0;
@@ -12,7 +15,7 @@
         function getReq() {
             var promise = Factory.getRequisitionTableList();
             promise.then(function (response) {
-                result = response.data.requisitions.concat(config.searcherReq);;
+                result = response.data.requisitions.concat(config.searcherReq);
                 $scope.requisition = result.map(function (item) {
                     return item.ReqNumber + ' ' + item.JobTitle;
                 });
@@ -39,6 +42,9 @@
             var promise = Factory.getAryaJobId(reqNum);
             promise.then(function (response) {
                 $scope.data = response.data;
+                if($scope.milesOptions.indexOf(response.data.Miles) < 0){
+                      $scope.data.Miles = "Auto Expand";
+                }
                 disableInput(i);
             });
         }
@@ -290,6 +296,8 @@
                 promise.then(function resolved(response) {
                     $scope.freeSearch.SearchString = response.data.SearchString;
                     $scope.freeSearch.Description = response.data.Description;
+                }, function error(response){
+                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 })
             }
             else {
