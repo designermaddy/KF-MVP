@@ -1,7 +1,7 @@
 <div class="DataListBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Candidates List({{candidateListDtls.candidateList.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="filtered.length" template-url = "uibPagerKf.html" ng-model="currentPage" previous-text="" next-text=""></ul></span> <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm">Add Candidate</button></span></div>
+        <h2>Candidates List({{candidateListDtls.candidateList.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="filtered.length" template-url = "uibPagerKf.html" ng-model="currentPage" previous-text="" next-text=""></ul></span> <span class="HeaderButton pull-right"><button type="submit" class="btn btn-primary btn-sm" ng-click="openAddCandidateIframe()">Add Candidate</button></span></div>
     <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="CandidatesListTable">
         <table class="table table-striped">
             <thead>

@@ -4,13 +4,12 @@
     <li ><a id="mypipes"  href="" ng-click="callmyClientRequisition('mygraph')">My Pipe</a></li>
     <li ><a id="clientPipes" href="" ng-click="callmyClientRequisition('company')" class="active">Client Pipe</a></li>
     <li class="FormSelect">
-        <select >
+        <select id="selectFunction" class=" form-control" required ng-model='selectedEngagment' ng-change="update()">
 
-
-          <option>Lamb Weston</option>
+             <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
 
         </select>
-    </li>
+</li>
     </ul>
     </span></div>
      <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>

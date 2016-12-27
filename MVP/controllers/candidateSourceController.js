@@ -1,9 +1,24 @@
-app.controller('candidateSourceController', ['$scope','Factory','commonFunctions','$timeout','$location','sharedProperties', function ($scope, Factory, commonFunctions, $timeout,$location,sharedProperties) {
+app.controller('candidateSourceController', ['$scope','Factory','commonFunctions','$timeout','$location','sharedProperties','$rootScope','config', function ($scope, Factory, commonFunctions, $timeout,$location,sharedProperties, $rootScope, config) {
 
     var graphName = "CandidateSource";
     var deeplinkURL = '';
 
      $scope.selectedButton = 'company';
+      callgraphDropDownFunc();
+  function callgraphDropDownFunc(){
+    if(config.getAllEngagments){
+        console.log(config.getAllEngagments)
+        $scope.allEngagments = config.getAllEngagments;
+            if( $scope.allEngagments.length > 0) {
+            $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+            candidatePipelineDonutChart($scope.selectedEngagment);
+        }
+    }
+  }
+
+ $scope.update = function(selectedDropdownValue){
+     candidatePipelineDonutChart($scope.selectedEngagment)
+ }
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
       if(selectedButton == "mygraph"){
@@ -14,13 +29,13 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
         $('#clientCandidateSource').addClass('active');
       }
 
- candidatePipelineDonutChart(graphName, $scope.selectedButton);
+candidatePipelineDonutChart( $scope.selectedEngagment);
 
   }
  candidatePipelineDonutChart(graphName, $scope.selectedButton);
 
-    function candidatePipelineDonutChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton);
+    function candidatePipelineDonutChart(engagment) {
+        var promise = Factory.getChart(graphName, $scope.selectedButton, engagment);
         var label = [];
         var data = [];
         var datainsert=[]
@@ -65,6 +80,11 @@ app.controller('candidateSourceController', ['$scope','Factory','commonFunctions
        $location.path( '/Reports' );
 
   };
+       $rootScope.$watch(function() {return config.getAllEngagments}, function() {
+        // do something here
+        //config.searcherReq
+    callgraphDropDownFunc();
+    }, true);
         $timeout(function () {
         $('#candidatePipelineList').selectpicker();
 

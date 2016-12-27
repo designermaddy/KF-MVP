@@ -4,11 +4,10 @@
     <li ><a id="myCandidateSource"  href="" ng-click="callmyClientRequisition('mygraph')">My Source</a></li>
     <li ><a id="clientCandidateSource" href="" ng-click="callmyClientRequisition('company')" class="active">
 Client Source</a></li>
-    <li class="FormSelect">
-        <select>
+   <li class="FormSelect">
+        <select id="candidateSource" class=" form-control" required ng-model='selectedEngagment' ng-change="update()">
 
-
-          <option>Lamb Weston</option>
+             <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
 
         </select>
 </li>
