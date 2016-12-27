@@ -191,7 +191,23 @@ $scope.confirmPopup = function(){
             , size: 'lg'
         });
     }
-
+ $scope.updateCandidate = function(candidateID){
+            var urlLink = commonFunctions.getIframeUrl('editCandidateLoop');
+            var urliframJoin = commonFunctions.getIframeUrl('iframeTrue')
+            var url = urlLink+candidateID+'/?'+urliframJoin;
+        var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'modalContent.html'
+            , controller: 'ModalCancel'
+            , controllerAs: '$ctrl'
+            , size: 'lg'
+            , resolve: {
+                url: function () {
+                    return url;
+                }
+            }
+        });
+     }
     /*//------ ! I don't know where is this used as of now. Written by karthik B --------------//
     var callPdf = function (urlResumeLink) {
         var url = urlResumeLink;
@@ -361,4 +377,6 @@ app.controller('emailPopupController', ['$uibModalInstance', '$scope','$timeout'
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     }
+     //update candidate deep link
+
 }])

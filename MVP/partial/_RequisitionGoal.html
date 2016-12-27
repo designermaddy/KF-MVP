@@ -5,10 +5,9 @@
     <li ><a id="clientReqs" href="" ng-click="callmyClientRequisition('company')" class="active">
 Client Reqs</a></li>
     <li class="FormSelect">
-        <select >
+        <select id="selectFunction" class=" form-control" required ng-model='selectedEngagment' ng-change="update()">
 
-
-          <option>Lamb Weston</option>
+             <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
 
         </select>
 </li>

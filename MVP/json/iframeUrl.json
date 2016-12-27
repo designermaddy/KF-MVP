@@ -11,6 +11,9 @@
 		"newsAndInsights": "https://ondemand.kf4d.com/kf/workforce-insights#",
 		"profileDesignResarchLinkFactiva": "https://ondemand.kf4d.com/kf/user#/",
 		"profileDesignResarchLinkOneSource": "https://ondemand.kf4d.com/kf/user#/",
-		"profileDesignResarchLinkRecruiterTrends": "https://ondemand.kf4d.com/kf/user#/"
+		"profileDesignResarchLinkRecruiterTrends": "https://ondemand.kf4d.com/kf/user#/",
+        "addCandidateLoop":"https://client.loopworks.com/people/add/?iframe=true&sso=true&ssoidprovider=recruiterdesktop",
+        "editCandidateLoop":"https://client.loopworks.com/people/edit/",
+        "iframeTrue":"iframe=true&sso=true&ssoidprovider=recruiterdesktop"
 	}]
 }

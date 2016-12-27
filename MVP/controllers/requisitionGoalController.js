@@ -1,9 +1,26 @@
-app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout) {
+app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout','config','$rootScope', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout, config, $rootScope) {
   var labels=[];
   var datas = [];
   var deeplinkURL = '';
   $scope.selectedButton = 'company';
   var graphName = 'RequisitionGoal';//'CandidatePipeline';
+  callgraphDropDownFunc();
+  function callgraphDropDownFunc(){
+    if(config.getAllEngagments){
+        console.log(config.getAllEngagments)
+        $scope.allEngagments = config.getAllEngagments;
+        if( $scope.allEngagments.length > 0) {
+            $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+            requisitonGoalStackBarChart($scope.selectedEngagment);
+        }
+    }
+  }
+
+ $scope.update = function(){
+     console.log($scope.selectedEngagment)
+     //$scope.selectedEngagment = selectedDropdownValue.Engagement
+     requisitonGoalStackBarChart($scope.selectedEngagment)
+ }
   $scope.callmyClientRequisition = function(selectedButton){
       $scope.selectedButton = selectedButton;
       if(selectedButton == "mygraph"){
@@ -13,13 +30,13 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
            $("#myReqs").removeClass('active');
            $('#clientReqs').addClass('active');
       }
- requisitonGoalStackBarChart(graphName, $scope.selectedButton );
+requisitonGoalStackBarChart($scope.selectedEngagment );
 
   }
 
    requisitonGoalStackBarChart(graphName, $scope.selectedButton );
-    function requisitonGoalStackBarChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton);
+    function requisitonGoalStackBarChart(engagement) {
+        var promise = Factory.getChart(graphName, $scope.selectedButton, engagement);
         promise.then(
           function resolved(response) {
               if( response.data.graphDetails){
@@ -46,7 +63,7 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
     };
 
   //  $scope.data = datas
- //  console.log("karthik"+$scope.data)
+//  console.log("karthik"+$scope.data)
                /*
 			 arr=[];var array=[];label=[]
               for (var k in Object.keys(response.data.graphDetails.data))
@@ -111,7 +128,11 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
        $location.path( '/Reports' );
 
   };
-
+    $rootScope.$watch(function() {return config.getAllEngagments}, function() {
+        // do something here
+        //config.searcherReq
+    callgraphDropDownFunc();
+    }, true);
    // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
 
 
@@ -124,6 +145,6 @@ app.controller('requisitionGoalController', ['$scope','Factory','sharedPropertie
 
     $timeout(function () {
         $('#requisitionGoalList').selectpicker();
-        console.log($('.selectpicker'))
+      //  console.log($('.selectpicker'))
         }, 50, false);
   }]);

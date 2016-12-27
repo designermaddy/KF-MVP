@@ -30,7 +30,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getChart = function (graphName, selectedBtn, companySelected) {
         //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
         data = {
-            "companyName": "LambWeston"
+            "companyName": companySelected
             , "graphName": graphName
             , "graphType": selectedBtn
             , "quater": ""

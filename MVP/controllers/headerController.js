@@ -46,7 +46,7 @@ if (authToken!==undefined){
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-       //  commonFunctions.getGraphDropdown();
+        commonFunctions.getGraphDropdown();
     var promise = Factory.getIframeList();
         promise.then(function(response) {
             var data = response.data.url;
