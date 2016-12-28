@@ -8,7 +8,7 @@
         <div class="panel panel-default ViewBox">
             <div class="panel-body" style="height:286px; overflow-y: scroll; ">
                <div ng-show="vm.editClick" ng-bind-html="vm.data.Description"></div>
-                 <trix-editor ng-hide="vm.editClick" angular-trix ng-model="vm.data.Description" class="trix-content"></trix-editor>
+                <div ng-hide="vm.editClick" text-angular="text-angular" name="htmlcontent" ng-model="vm.data.Description"></div>
             </div>
         </div>
     </div>
