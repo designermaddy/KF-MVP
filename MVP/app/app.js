@@ -179,6 +179,30 @@ app.filter('mydate', function () {
 });
 app.filter('myfilter', function () {
     return function (items, model) {
+        var addItem = function (key, item) {
+            var static = {
+                'req': ['ReqNumber', 'JobTitle']
+                , 'eng': ['EngagementNumber', 'Engagement']
+                , 'canName': ['firstName', 'lastName']
+                , 'recruiter': [{
+                    'Recruiter': ['firstName', 'lastName']
+                }]
+            }
+            if (static[key]) {
+                var a = static[key];
+                if (typeof a[0] === 'object') {
+                    if (Object.keys(a[0])[0] == 'Recruiter') {
+                        if (item['Recruiter'] && item['Recruiter'].length > 0) {
+                            item[key] = item['Recruiter'][0]['firstName'] + ' ' + item['Recruiter'][0]['lastName'];
+                        }
+                    }
+                }
+                else {
+                    item[key] = item[a[0]] + ' ' + item[a[1]];
+                }
+            }
+            return item;
+        }
         var result = [];
         if (angular.isDefined(items) && items.length > 0) {
             if (model && Object.keys(model).length) {
@@ -189,14 +213,16 @@ app.filter('myfilter', function () {
                     }
                 }
                 if (b) {
+                    //model = expandModel(model);
                     var keys = Object.keys(model);
                     var newItems = [];
-                    for(var j = 0; j < keys.length; j++) {
-                        if (model[keys[j]]){
-                            for (var i = 0; i < items.length; i++){
-                                if(items[i][keys[j]]){
+                    for (var j = 0; j < keys.length; j++) {
+                        if (model[keys[j]]) {
+                            for (var i = 0; i < items.length; i++) {
+                                items[i] = addItem(keys[j], items[i]);
+                                if (items[i][keys[j]]) {
                                     var x = items[i][keys[j]].toLowerCase().indexOf(model[keys[j]].toLowerCase());
-                                    if (x != -1){
+                                    if (x != -1) {
                                         newItems.push(items[i]);
                                     }
                                 }
@@ -212,8 +238,6 @@ app.filter('myfilter', function () {
         return items;
     }
 });
-
-
 app.directive('usSpinner', ['$http', '$rootScope', function ($http, $rootScope) {
     return {
         link: function (scope, elm, attrs) {
@@ -260,23 +284,17 @@ app.controller('Sucess', ['$uibModalInstance', 'message', '$scope', function ($u
  * @return string
  */
 app.filter('truncate', function () {
-        return function (text, length, end) {
-            if (isNaN(length))
-                length = 10;
-
-            if (end === undefined)
-                end = "...";
-
-            if (text.length <= length || text.length - end.length <= length) {
-                return text;
-            }
-            else {
-                return String(text).substring(0, length-end.length) + end;
-            }
-
-        };
-    });
-
+    return function (text, length, end) {
+        if (isNaN(length)) length = 10;
+        if (end === undefined) end = "...";
+        if (text.length <= length || text.length - end.length <= length) {
+            return text;
+        }
+        else {
+            return String(text).substring(0, length - end.length) + end;
+        }
+    };
+});
 /**
  * Usage
  *

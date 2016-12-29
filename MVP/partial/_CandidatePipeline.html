@@ -4,7 +4,7 @@
     <li ><a id="mypipes"  href="" ng-click="callmyClientRequisition('mygraph')">My Pipe</a></li>
     <li ><a id="clientPipes" href="" ng-click="callmyClientRequisition('company')" class="active">Client Pipe</a></li>
     <li class="FormSelect">
-        <select id="selectFunction" class=" form-control" required ng-model='selectedEngagment' ng-change="update()">
+        <select id="cpsfsp" class="selectpicker form-control" required ng-model='selectedEngagment' ng-change="update()">
 
              <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
 
