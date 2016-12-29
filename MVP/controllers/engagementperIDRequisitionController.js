@@ -38,6 +38,22 @@ app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sh
                 $scope.totalItems = $scope.engagementResponse.Requisitions.length;
                 $scope.entryLimit = 10; // items per page
                 $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
+
+                //Adding unique recruiter name in drop down
+                $scope.recruiters=[];
+                var recruiterNames = [];
+                angular.forEach($scope.engagementResponse.Requisitions,function(requisition){
+                    angular.forEach(requisition.Recruiter, function(recruiter){
+                        var name = recruiter.firstName + " " + recruiter.lastName;
+                        if(recruiterNames.indexOf(name) < 0){
+                            recruiterNames.push(name);
+                            $scope.recruiters.push(recruiter);
+                        }
+                    });
+                });
+                console.log(recruiterNames.length);
+                console.log($scope.recruiters.length);
+
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
