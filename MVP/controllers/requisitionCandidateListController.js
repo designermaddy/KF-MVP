@@ -135,5 +135,20 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             }
         });
      }
+     $scope.openResumeIframe = function(){
+          var url = commonFunctions.getIframeUrl('resumeUploadLoop');
+        var modalInstance = $uibModal.open({
+              animation: true
+            , templateUrl: 'modalContent.html'
+            , controller: 'ModalCancel'
+            , controllerAs: '$ctrl'
+            , size: 'lg'
+            , resolve: {
+                url: function () {
+                    return url;
+                }
+            }
+        });
+     }
 
 }]);
