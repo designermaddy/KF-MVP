@@ -378,7 +378,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         else {
             var page = (data.page - 1) * limit;
         }
-        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId + '/' + limit + '/' + page);
+        return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId);
         // return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (id) {
