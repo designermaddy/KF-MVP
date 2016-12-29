@@ -5,12 +5,13 @@
     <div class="col-md-12">
         <div class="panel panel-default ViewBox" ng-show="freeSearch.radioModel">
             <div class="panel-body" style="height:245px; overflow-y: scroll; ">
-                <trix-editor angular-trix ng-model="data.Description" class="trix-content"></trix-editor>
+
+                <div text-angular="text-angular" name="htmlcontent" ng-model="data.Description"></div>
             </div>
         </div>
         <div class="panel panel-default ViewBox" ng-hide="freeSearch.radioModel">
             <div class="panel-body" style="height:245px; overflow-y: scroll; ">
-                <trix-editor angular-trix ng-model="freeSearch.Description" class="trix-content"></trix-editor>
+                <div text-angular="text-angular" name="htmlcontent" ng-model="freeSearch.Description"></div>
             </div>
         </div>
     </div>
