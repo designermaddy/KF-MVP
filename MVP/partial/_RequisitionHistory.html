@@ -11,6 +11,15 @@
           <option>2015</option>
           <option>2014</option>
         </select>
+</li> <li ><a id="myReqs"  href="" ng-click="callmyClientRequisition('mygraph')">My Reqs</a></li>
+    <li ><a id="clientReqs" href="" ng-click="callmyClientRequisition('company')" class="active">
+Client Reqs</a></li>
+    <li class="FormSelect">
+        <select id="rgsfsp" class="form-control" required ng-model='selectedEngagment' ng-change="update()">
+
+             <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
+
+        </select>
 </li>
     </ul>
     </span> </div>
