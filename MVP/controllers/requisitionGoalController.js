@@ -13,9 +13,9 @@ app.controller('requisitionGoalController', ['$scope', 'Factory', 'sharedPropert
             if ($scope.allEngagments.length > 0) {
                 $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
                 requisitonGoalStackBarChart($scope.selectedEngagment);
-                $timeout(function () {
+              /*  $timeout(function () {
                     $('#rgsfsp').selectpicker();
-                }, 50, false);
+                }, 50, false);*/
             }
         }
     }
