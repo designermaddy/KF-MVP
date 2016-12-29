@@ -9,7 +9,7 @@
                     <th class="SortDefault" st-toggle-column st-sort="Client.ClientName">Client Name</th>
                     <th class="SortDefault" st-toggle-column st-sort="Client.Industry">Industry</th>
                     <th class="SortDefault" st-toggle-column st-sort="Type">Type</th>
-                    <th class="SortDefault" st-toggle-column st-sort="Requsitions">Requisitions</th>
+                    <th class="SortDefault" st-toggle-column st-sort="RequisitionCount">Requisitions</th>
                 </tr>
             </thead>
             <tbody> <span us-spinner="{radius:10, width:2, length: 4}"></span>
@@ -23,7 +23,7 @@
                     </td>
                     <td st-toggle-item>{{engagementListDtls.Industry = engagementListDtls.Client.Industry}}</td>
                     <td st-toggle-item>{{engagementListDtls.Type}}</td>
-                    <td st-toggle-item>{{engagementListDtls.Requsitions}}</td>
+                    <td st-toggle-item>{{engagementListDtls.RequisitionCount}}</td>
                 </tr>
             </tbody>
         </table>

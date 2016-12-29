@@ -254,6 +254,9 @@
 .HireStatus                                              { background-color:#fffcac; margin-left: 2px; font-size:14px; margin-left:2px; padding:6px; }
 .HireStatus i                                            { font-size:12px; color: #ff0000;  }
 .ViewBoxBtn                                              { display: inline-block; float: left; padding-left: 25px;}
+.ViewBoxCompanyType{
+    font-weight: bold;
+}
 /* --------------------------- WidgetPD Style ---------------------------------- */
 .WidgetPD ul li                                          { display: inline-block; float: left; }
 .WidgetPDHeader,
