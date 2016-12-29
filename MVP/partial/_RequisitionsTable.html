@@ -28,7 +28,7 @@
         <tbody>
             <tr  ng-repeat="row in filterData = (displayedCollections | myfilter:search | mydate:date) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                 <td st-toggle-item>
-                    <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.req = row.ReqNumber + ' ' + row.JobTitle}}</a></div>
+                    <div class="TblRequisition"><a href ng-click="changeActivelink(row, 'RequisitionDetails/3')">{{row.ReqNumber + ' ' + row.JobTitle}}</a></div>
                     <div class="TblDates">{{row.StartDate}}-{{row.EndDate}}</div>
                 </td>
                 <td st-toggle-item>
@@ -37,7 +37,7 @@
                 <td st-toggle-item><a ui-sref="engagementDetails({tab:1})" ng-click="onSelectEngagementPerID(row.EngagementId, row.engagementType )">{{row.Engagement}}</a></td>
                 <td st-toggle-item>{{row.Client}}</td>
                 <td st-toggle-item>{{row.Source}}</td>
-                <td st-toggle-item>{{row.recruiter = row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
+                <td st-toggle-item>{{row.Recruiter[0].firstName + ' ' + row.Recruiter[0].lastName}}</td>
                 <td st-toggle-item>{{row.Data.data[0].sourced}}</td>
                 <td st-toggle-item>{{row.Data.data[0].screen}}</td>
                 <td st-toggle-item>{{row.Data.data[0].submit}}</td>

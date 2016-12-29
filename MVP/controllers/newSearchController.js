@@ -11,6 +11,9 @@
         var reqValue = 0;
 
         $timeout(function(){$('#searchHeader').addClass('active')},100);
+        $timeout(function () {
+                $('.selectMiles').selectpicker('refresh');
+            }, 50, false);
 
         function getReq() {
             var promise = Factory.getRequisitionTableList();

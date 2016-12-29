@@ -37,7 +37,7 @@
                     <input class="input-sm form-control" type="search" ng-model="data.ZipCode"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                     <label class="FormLabel"> Miles</label>
-                    <select id="selectMiles" class="form-control" required ng-model="data.Miles" ng-options='option for option in milesOptions'>
+                    <select class=" selectMiles selectpicker form-control" required ng-model="data.Miles" ng-options='option for option in milesOptions'>
                     </select>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     <input class="input-sm form-control" type="search" ng-model="freeSearch.ZipCode"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                     <label class="FormLabel"> Miles</label>
-                    <select id="selectMiles" class="form-control" required ng-model="freeSearch.Miles" ng-options='option for option in milesOptions'>
+                    <select class="selectMiles selectpicker form-control" required ng-model="freeSearch.Miles" ng-options='option for option in milesOptions'>
                     </select>
                     </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
@@ -95,7 +95,7 @@
                     <input class="input-sm form-control" type="search" ng-model="freeSearch.JobTitle_Synonyms"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                     <label class="FormLabel"> Status</label>
-                    <select class="form-control" ng-model="freeSearch.job_status">
+                    <select class="selectpicker form-control" ng-model="freeSearch.job_status">
                         <option value="" selected> Select </option>
                         <option value="Open"> Open </option>
                         <option value="Pending"> Pending </option>

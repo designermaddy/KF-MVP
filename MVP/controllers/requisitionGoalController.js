@@ -1,70 +1,69 @@
-app.controller('requisitionGoalController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout','config','$rootScope', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout, config, $rootScope) {
-  var labels=[];
-  var datas = [];
-  var deeplinkURL = '';
-  $scope.selectedButton = 'company';
-  var graphName = 'RequisitionGoal';//'CandidatePipeline';
-  callgraphDropDownFunc();
-  function callgraphDropDownFunc(){
-    if(config.getAllEngagments){
-        console.log(config.getAllEngagments)
-        $scope.allEngagments = config.getAllEngagments;
-        if( $scope.allEngagments.length > 0) {
-            $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
-            requisitonGoalStackBarChart($scope.selectedEngagment);
+app.controller('requisitionGoalController', ['$scope', 'Factory', 'sharedProperties', '$location', 'commonFunctions', '$timeout', 'config', '$rootScope', function ($scope, Factory, sharedProperties, $location, commonFunctions, $timeout, config, $rootScope) {
+    var labels = [];
+    var datas = [];
+    var deeplinkURL = '';
+    $scope.selectedButton = 'company';
+    var graphName = 'RequisitionGoal'; //'CandidatePipeline';
+    callgraphDropDownFunc();
+
+    function callgraphDropDownFunc() {
+        if (config.getAllEngagments) {
+            console.log(config.getAllEngagments)
+            $scope.allEngagments = config.getAllEngagments;
+            if ($scope.allEngagments.length > 0) {
+                $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+                requisitonGoalStackBarChart($scope.selectedEngagment);
+                $timeout(function () {
+                    $('#rgsfsp').selectpicker();
+                }, 50, false);
+            }
         }
     }
-  }
-
- $scope.update = function(){
-     console.log($scope.selectedEngagment)
-     //$scope.selectedEngagment = selectedDropdownValue.Engagement
-     requisitonGoalStackBarChart($scope.selectedEngagment)
- }
-  $scope.callmyClientRequisition = function(selectedButton){
-      $scope.selectedButton = selectedButton;
-      if(selectedButton == "mygraph"){
+    $scope.update = function () {
+        console.log($scope.selectedEngagment)
+            //$scope.selectedEngagment = selectedDropdownValue.Engagement
+        requisitonGoalStackBarChart($scope.selectedEngagment)
+    }
+    $scope.callmyClientRequisition = function (selectedButton) {
+        $scope.selectedButton = selectedButton;
+        if (selectedButton == "mygraph") {
             $("#clientReqs").removeClass('active');
             $('#myReqs').addClass('active');
-      }else if(selectedButton == "company"){
-           $("#myReqs").removeClass('active');
-           $('#clientReqs').addClass('active');
-      }
-requisitonGoalStackBarChart($scope.selectedEngagment );
+        }
+        else if (selectedButton == "company") {
+            $("#myReqs").removeClass('active');
+            $('#clientReqs').addClass('active');
+        }
+        requisitonGoalStackBarChart($scope.selectedEngagment);
+    }
+    requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
-  }
-
-   requisitonGoalStackBarChart(graphName, $scope.selectedButton );
     function requisitonGoalStackBarChart(engagement) {
         var promise = Factory.getChart(graphName, $scope.selectedButton, engagement);
-        promise.then(
-          function resolved(response) {
-              if( response.data.graphDetails){
-              deeplinkURL = response.data.graphDetails.deepLinkURI;
-              datas = [];
-
-               datas.push(JSON.parse("[" +response.data.graphDetails.data.Okay+ "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data["Nearly Due"] + "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data.Overdue+ "]"));
+        promise.then(function resolved(response) {
+            if (response.data.graphDetails) {
+                deeplinkURL = response.data.graphDetails.deepLinkURI;
+                datas = [];
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Okay + "]"));
+                datas.push(JSON.parse("[" + response.data.graphDetails.data["Nearly Due"] + "]"));
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Overdue + "]"));
                 $scope.series = response.data.graphDetails.series
                 $scope.labels = response.data.graphDetails.lables;
-              $scope.data = datas
-               $scope.type = 'StackedBar';
-
-    $scope.options = {
-      scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true
+                $scope.data = datas
+                $scope.type = 'StackedBar';
+                $scope.options = {
+                    scales: {
+                        xAxes: [{
+                            stacked: true
+        , }]
+                        , yAxes: [{
+                            stacked: true
         }]
-      }
-    };
-
-  //  $scope.data = datas
-//  console.log("karthik"+$scope.data)
-               /*
+                    }
+                };
+                //  $scope.data = datas
+                //  console.log("karthik"+$scope.data)
+                /*
 			 arr=[];var array=[];label=[]
               for (var k in Object.keys(response.data.graphDetails.data))
               {for(var j in Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])){
@@ -90,61 +89,50 @@ requisitonGoalStackBarChart($scope.selectedEngagment );
                          }
                 }
 */
-
-
-
-             // globalDetails.userTypeID = response.data.userTypeId;
-             // globalDetails.userId = response.data.userid;
-             // globalDetails.userType = response.data.userType
-          }else{
-               $scope.data = [
-      [0, 0, 0, 0, 0, 0, 0],
+                // globalDetails.userTypeID = response.data.userTypeId;
+                // globalDetails.userId = response.data.userid;
+                // globalDetails.userType = response.data.userType
+            }
+            else {
+                $scope.data = [
       [0, 0, 0, 0, 0, 0, 0]
+      , [0, 0, 0, 0, 0, 0, 0]
     ];
-          }
-               $scope.type = 'StackedBar';
-
-    $scope.options = {
-      scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true
+            }
+            $scope.type = 'StackedBar';
+            $scope.options = {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+        , }]
+                    , yAxes: [{
+                        stacked: true
         }]
-      }
+                }
+            };
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
     };
-          },
-          function rejected(response) {
-              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-          }
-      )
-    };
-  $scope.onClick = function (points, evt) {
-    console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
-      sharedProperties.setReportURL(deeplinkURL)
+    $scope.onClick = function (points, evt) {
+        console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+        sharedProperties.setReportURL(deeplinkURL)
         $("li[class='active']").removeClass('active');
         $('#ReportHeader').addClass('active');
-       $location.path( '/Reports' );
-
-  };
-    $rootScope.$watch(function() {return config.getAllEngagments}, function() {
+        $location.path('/Reports');
+    };
+    $rootScope.$watch(function () {
+        return config.getAllEngagments
+    }, function () {
         // do something here
         //config.searcherReq
-    callgraphDropDownFunc();
+        callgraphDropDownFunc();
     }, true);
-   // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
-
-
-   /* $scope.kick = [
-      [65, 59, 90, 81, 56, 55],
-      [28, 48, 40, 19, 96, 27],
-      [34, 48, 46, 79, 76, 37]
-    ];
-    console.log($scope.kick)*/
-
-    $timeout(function () {
-        $('#requisitionGoalList').selectpicker();
-      //  console.log($('.selectpicker'))
-        }, 50, false);
+    // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
+    /* $scope.kick = [
+       [65, 59, 90, 81, 56, 55],
+       [28, 48, 40, 19, 96, 27],
+       [34, 48, 46, 79, 76, 37]
+     ];
+     console.log($scope.kick)*/
   }]);
