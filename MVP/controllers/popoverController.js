@@ -3,8 +3,8 @@ app.controller('popoverController', ['$scope', '$timeout','sharedProperties','co
       $scope.isOpen = false;
     };
   commonFunctions.getSearcherJson();
-    $scope.ReqUrl = "partial/_RequisitionHistory.html";
-    $scope.CanUrl = "partial/_CandidateHistory.html";
+    $scope.ReqUrl = "partial/_RequisitionGoal.html";
+    $scope.CanUrl = "partial/_CandidatePipeline.html";
 
     var turn = 1;
 
