@@ -1,17 +1,27 @@
 <div class="panel panel-default" ng-controller="candidateHistoryController">
     <div class="panel-heading clearfix">Candidate History <span class="TermSorting pull-right">
      <ul>
-    <!--<li><a href="#">Q1</a></li>
+    <div ng-click="quaterCall($event)">
+         <li><a href="#">Q1</a></li>
     <li><a href="#" class="active">Q2</a></li>
     <li><a href="#">Q3</a></li>
     <li><a href="#">Q4</a></li>
+         </div>
     <li>
-        <select  >
+        <select  ng-model='selectedYear' ng-change="yearCall();">
           <option>2016</option>
           <option>2015</option>
           <option>2014</option>
         </select>
-        </li>-->
+        </li>
+        <li ><a id="chmg"  href="" ng-click="callmyClientRequisition('mygraph')">My Reqs</a></li>
+  <li ><a id="chcy" href="" ng-click="callmyClientRequisition('company')" class="active">
+  Client Reqs</a></li>
+  <li class="FormSelect">
+  <select class="form-control" required ng-model='selectedEngagment' ng-change="update()">
+  <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>
+  </select>
+  </li>
     </ul>
     </span> </div>
     <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>

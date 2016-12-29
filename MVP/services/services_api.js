@@ -27,14 +27,16 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get('json/allRequisitionswithAcme.json');
         //}
     };
-    dataFactory.getChart = function (graphName, selectedBtn, companySelected) {
+    dataFactory.getChart = function (graphName, selectedBtn, companySelected, quaterYear) {
         //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
+        //quaterYear = '2016Q1';
+        //companySelected = "Lamb Weston";
         data = {
             "companyName": companySelected
             , "graphName": graphName
             , "graphType": selectedBtn
             , "quater": ""
-            , "quaterYear": ""
+            , "quaterYear": quaterYear || ""
             , "year": ""
         }
         return $http({
