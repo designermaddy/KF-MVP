@@ -1,114 +1,92 @@
-app.controller('requisitionHistoryController', ['$scope','Factory','sharedProperties','$location', 'commonFunctions', '$timeout', function ($scope, Factory,sharedProperties,$location, commonFunctions, $timeout) {
-  var labels=[];
-  var datas = [];
-  var deeplinkURL = '';
-  var graphName = 'RequisitionHistory';//'CandidatePipeline';
- var deeplinkURL = '';
-     $scope.selectedButton = 'company';
-  $scope.callmyClientRequisition = function(selectedButton){
-      $scope.selectedButton = selectedButton;
-      if(selectedButton == "myReqs"){
-            $("#clientReqs").removeClass('active');
-        $('#myReqs').addClass('active');
-      }else if(selectedButton == "clientReqs"){
-           $("#myReqs").removeClass('active');
-        $('#clientReqs').addClass('active');
-      }
+app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProperties', '$location', 'commonFunctions', '$timeout', 'config', '$rootScope', function ($scope, Factory, sharedProperties, $location, commonFunctions, $timeout, config, $rootScope) {
+    var labels = [];
+    var datas = [];
+    var deeplinkURL = '';
+    var graphName = 'RequisitionHistory'; //'CandidatePipeline';
+    var deeplinkURL = '';
+    $scope.selectedButton = 'company';
+    $scope.selectedYear = '2016';
+    var selectedQuater = 'Q1';
+    var quaterYear = $scope.selectedYear + selectedQuater;
 
-
-  }
-   requisitonGoalStackBarChart(graphName, $scope.selectedButton);
-
+    function callgraphDropDownFunc() {
+        if (config.getAllEngagments) {
+            $scope.allEngagments = config.getAllEngagments;
+            if ($scope.allEngagments.length > 0) {
+                $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+                requisitonGoalStackBarChart();
+            }
+        }
+    }
+    callgraphDropDownFunc();
+    $scope.quaterCall = function ($event) {
+        $($event.currentTarget).find('a.active').removeClass('active');
+        $($event.target).addClass('active');
+        selectedQuater = $event.target.innerHTML;
+        quaterYear = $scope.selectedYear + selectedQuater;
+    }
+    $scope.yearCall = function (){
+        quaterYear = $scope.selectedYear + selectedQuater;
+    }
+    $scope.update = function() {
+        requisitonGoalStackBarChart();
+    }
+    $scope.callmyClientRequisition = function (selectedButton) {
+            $scope.selectedButton = selectedButton;
+            if (selectedButton == "mygraph") {
+                $("#clientReqs").removeClass('active');
+                $('#myReqs').addClass('active');
+            }
+            else if (selectedButton == "company") {
+                $("#myReqs").removeClass('active');
+                $('#clientReqs').addClass('active');
+            }
+            requisitonGoalStackBarChart();
+        }
+        //requisitonGoalStackBarChart(graphName, $scope.selectedButton);
     function requisitonGoalStackBarChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton);
-        promise.then(
-          function resolved(response) {
-              if( response.data.graphDetails){
-              deeplinkURL = response.data.graphDetails.deepLinkURI;
-
-
-               datas.push(JSON.parse("[" +response.data.graphDetails.data.Fill+ "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data.Cancel + "]"));
-              datas.push(JSON.parse("[" +response.data.graphDetails.data.Hold+ "]"));
-                  datas.push(JSON.parse("[" +response.data.graphDetails.data.Open+ "]"));
-
+        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, quaterYear);
+        promise.then(function resolved(response) {
+            if (Object.keys(response.data.graphDetails.data).length > 0) {
+                deeplinkURL = response.data.graphDetails.deepLinkURI;
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Fill + "]"));
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Cancel + "]"));
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Hold + "]"));
+                datas.push(JSON.parse("[" + response.data.graphDetails.data.Open + "]"));
                 $scope.series = response.data.graphDetails.series
                 $scope.labels = response.data.graphDetails.lables;
-              $scope.data = datas
-               $scope.type = 'StackedBar';
-
-    $scope.options = {
-      scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true
+                $scope.data = datas
+                $scope.type = 'StackedBar';
+                $scope.options = {
+                    scales: {
+                        xAxes: [{
+                            stacked: true
+                         }]
+                        , yAxes: [{
+                            stacked: true
         }]
-      }
+                    }
+                };
+            }
+        }, function rejected(response) {
+            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+        })
     };
-  //  $scope.data = datas
- //  console.log("karthik"+$scope.data)
-               /*
-			 arr=[];var array=[];label=[]
-              for (var k in Object.keys(response.data.graphDetails.data))
-              {for(var j in Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])){
-                   array.push(response.data.graphDetails[Object.keys(response.data.graphDetails.data)[k]][Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])[j]])
-				  }arr.push( {"label":(Object.keys(response.data.graphDetails.data)[k]),"data":array, "months":Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])});array=[]
-
-                  console.log(arr)
-}
-             // $scope.reqGoalStackBarData = response.data.requisitionStatusList;
-
-              if(arr){
-               $scope.series = arr[0].months;
-                for(var i in arr)
-                  {
-                        labels.push(arr[i].label);
-                        //datas.push([])
-                       for(var j = 0; j < Object.keys(arr[0].data).length; j++) {
-    datas[j] = datas[j] || new Array();
-  //  console.log('datas[' + j + '][' + i + ']' + ' = ' +arr[i].data[Object.keys(arr[i].data)[j]])
-    datas[j][i] = arr[i].data[Object.keys(arr[i].data)[j]];
-  }
-
-                         }
-                }
-*/
-
-
-
-             // globalDetails.userTypeID = response.data.userTypeId;
-             // globalDetails.userId = response.data.userid;
-             // globalDetails.userType = response.data.userType
-          }
-          },
-          function rejected(response) {
-              commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-          }
-      )
-    };
-  $scope.onClick = function (points, evt) {
-    console.log('hello'+deeplinkURL); // 0 -> Series A, 1 -> Series B
-       sharedProperties.setReportURL(deeplinkURL)
-        $("li[class='active']").removeClass('active');
+/*    $scope.onClick = function (points, evt) {
+        console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+        sharedProperties.setReportURL(deeplinkURL) $("li[class='active']").removeClass('active');
         $('#ReportHeader').addClass('active');
-       $location.path( '/Reports' );
-
-  };
-
-   // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
-
-
-   /* $scope.kick = [
-      [65, 59, 90, 81, 56, 55],
-      [28, 48, 40, 19, 96, 27],
-      [34, 48, 46, 79, 76, 37]
-    ];
-    console.log($scope.kick)*/
-
-    $timeout(function () {
-        $('#requisitionGoalList').selectpicker();
-        console.log($('.selectpicker'))
-        }, 50, false);
+        $location.path('/Reports');
+    };*/
+    $rootScope.$watch(function () {
+        return config.getAllEngagments
+    }, function () {
+        // do something here
+        //config.searcherReq
+        callgraphDropDownFunc();
+    }, true);
+    $scope.$watch(function () {
+        return quaterYear;   }, function () {
+       requisitonGoalStackBarChart();
+    });
   }]);
