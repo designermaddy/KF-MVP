@@ -49,6 +49,7 @@
                       $scope.data.Miles = "Auto Expand";
                 }
                 disableInput(i);
+                console.log($scope.data.Miles);
             });
         }
 
