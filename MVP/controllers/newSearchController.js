@@ -3,7 +3,7 @@
         $scope.vm = {};
         $scope.freeSearch = {};
         $scope.freeSearch.radioModel = true;
-        $scope.milesOptions=[10, 25, 35, 50, 75, 100, "Auto Expand"];
+        $scope.milesOptions=["10", "25", "35", "50", "75", "100", "Auto Expand"];
         $scope.freeSearch.Miles = "Auto Expand";
         $scope.data.Miles = "Auto Expand";
         var redirectPath = "Search";
@@ -87,9 +87,9 @@
                 data = createFreeSearchData();
             }
 
-            if(data.Miles){
+            /*if(data.Miles){
                  delete data.Miles;
-            }
+            }*/
             if(data.TotalSourcedCount){
                 delete data.TotalSourcedCount;
             }
@@ -126,6 +126,7 @@
                 , "Location": $scope.freeSearch.Location
                 , "ZipCode": ""
                 , "Country": null
+                , "Miles" : $scope.freeSearch.Miles
                 , "MinExp": 0.0
                 , "MaxExp": 0.0
                 , "NoOfPositions": 0
