@@ -3,7 +3,25 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     sharedProperties.setNewSearchData(0);
     $scope.orgID = 6;
     $scope.search = {};
+    $scope.ch = {
+        'cmOpen': false
+        , 'cmPending': false
+    }
+    $scope.$watch(function () {
+        return $scope.ch;
+    }, function () {
+        var v = $scope.ch;
+        if (v.cmOpen && !v.cmPending) {
+            $scope.search.Status = 'Open';
+        }
+        else if (!v.cmOpen && $scope.ch.cmPending) {
+            $scope.search.Status = 'Pending';
+        }
+        else {
+            $scope.search.Status = '';
+        }
 
+    }, true);
     var data = {
         'orgId': 6
         , 'limit': 10
@@ -14,8 +32,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         var promise = Factory.getSavedSearchesResponse(data);
         promise.then(function resolved(response) {
             $scope.rowCollection = response.data;
-            console.log($scope.rowCollection);
-             setValues();
+            setValues();
             $scope.start = data.page * data.limit - data.limit || 1;
             if (data.page == 0) {
                 $scope.end = 10;
@@ -89,12 +106,12 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         }
         // open iframe arya candidate
     $scope.openIframe = function (aryajobID, type) {
-        if(type == "sourced"){
+        if (type == "sourced") {
             var url = config.iframeUrlAriyaSourced + aryajobID
-        }if(type == "social"){
-             var url = config.iframeUrlAriyaSavedSearch + aryajobID
         }
-
+        if (type == "social") {
+            var url = config.iframeUrlAriyaSavedSearch + aryajobID
+        }
         $scope.ReturnUrl = url;
         $scope.userName = sharedProperties.getUserName();
         $scope.password = sharedProperties.getPassword();
@@ -157,14 +174,14 @@ app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce','sha
     }
 }])
 */
-app.controller('modalAryaController', ['$uibModalInstance', 'userName', 'password', 'ReturnUrl', '$scope', 'config','$timeout', function ($uibModalInstance, userName, password, ReturnUrl, $scope, config, $timeout) {
+app.controller('modalAryaController', ['$uibModalInstance', 'userName', 'password', 'ReturnUrl', '$scope', 'config', '$timeout', function ($uibModalInstance, userName, password, ReturnUrl, $scope, config, $timeout) {
     $scope.userName = userName;
     $scope.password = password;
     $scope.ReturnUrl = ReturnUrl
-    $timeout(function() {
+    $timeout(function () {
         $('#aryaCount').attr('action', config.iframeAction);
         $('#aryaCount').submit();
-    },100, false);
+    }, 100, false);
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     }
