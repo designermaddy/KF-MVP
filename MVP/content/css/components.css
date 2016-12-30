@@ -236,7 +236,7 @@
 .SecondaryHeader                                         { padding: 5px 0; }
 .ViewBoxRight                                            { border-left:1px solid #dad8d6; }
 
-.ViewDropBox                                             { min-width: 230px; }
+.ViewDropBox                                             { min-width: 250px;     height: 300px;    overflow-y: auto;}
 .ViewDropBox .dropdown-menu > li > a                     { padding: 5px 10px; }
 .ViewDropInfo                                            { display: inline-block; float: left; padding:0 5px; }
 .ViewDropName                                            { color: #333; font-size: 14px; font-weight: bold;  padding: 5px 0; line-height:14px; }
