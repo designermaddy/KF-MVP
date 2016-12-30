@@ -43,7 +43,7 @@
                     <td st-toggle-item><a href="" ng-click="openIframe(row.AryaJobID, 'sourced')">{{row.SourcedCount}}</a></td>
                     <td st-toggle-item><a href="" ng-click="openIframe(row.AryaJobID, 'social')">{{row.Results}}</a></td>
                     <td>
-                        <a href=""><img ng-click="onClickAryaStatusIcon(orgID, row.AryaJobID, row.AryaStatus,  $index)" ng-src="content/images/{{rowCollection[$index].AryaStatus}}.png"></a>
+                        <a href=""><img ng-click="onClickAryaStatusIcon(orgID, row.AryaJobID, row.AryaStatus,  rowCollection.indexOf(row))" ng-src="content/images/{{rowCollection[rowCollection.indexOf(row)].AryaStatus}}.png"></a>
                     </td>
                 </tr>
             </tbody>

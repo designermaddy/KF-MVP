@@ -67,7 +67,7 @@
 
         function disableInput() {
             var i = 0;
-            if(vm.data.ReqNumber.indexOf("MANUAL - ") != -1)
+            if(vm.data.ReqNumber.indexOf("MANUAL") != -1)
                 i = 3;
             var inputs = $('input');
             for (; i < 3; i++) {

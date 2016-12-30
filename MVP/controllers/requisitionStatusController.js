@@ -32,7 +32,7 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
 
 candidatePipelineDonutChart( $scope.selectedEngagment);
   }
- candidatePipelineDonutChart(graphName, $scope.selectedButton);
+ //candidatePipelineDonutChart(graphName, $scope.selectedButton);
 
     function candidatePipelineDonutChart(engagment) {
         var promise = Factory.getChart(graphName, $scope.selectedButton, engagment);
