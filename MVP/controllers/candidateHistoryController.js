@@ -6,7 +6,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
-    var selectedQuater = 'Q1';
+    var selectedQuater = 'Q4';
     var quaterYear = $scope.selectedYear + selectedQuater;
 
     function callgraphDropDownFunc() {
