@@ -37,7 +37,9 @@
                     <input class="input-sm form-control" type="search" ng-model="data.ZipCode"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
                     <label class="FormLabel"> Miles</label>
-                    <select class="form-control" required ng-model="data.Miles" ng-options='option for option in milesOptions'>
+                    <select class="selectpicker form-control" style="
+    border: 0px;
+" required ng-model="data.Miles" ng-options='option for option in milesOptions'>
                     </select>
                 </div>
             </div>
