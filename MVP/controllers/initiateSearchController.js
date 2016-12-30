@@ -22,6 +22,7 @@
             if (savedSearchDetails.fromSavedSearch == true) {
                 var requisitionNumber = savedSearchDetails.clientJobId;
                 sharedProperties.setClientJobID(requisitionNumber)
+                sharedProperties.setSavedSearchDetails({clientJobId : requisitionNumber, fromSavedSearch:false});
                     // savedSearchDetails.fromSavedSearch = false;
             }
             $('#searchHeader').addClass('active');
