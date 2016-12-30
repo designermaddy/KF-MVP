@@ -4,24 +4,11 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     $scope.orgID = 6;
     $scope.search = {};
     $scope.ch = {
-        'cmOpen': false
-        , 'cmPending': false
+        'open': false
+        , 'pending': false
+        , 'closed': false
     }
-    $scope.$watch(function () {
-        return $scope.ch;
-    }, function () {
-        var v = $scope.ch;
-        if (v.cmOpen && !v.cmPending) {
-            $scope.search.Status = 'Open';
-        }
-        else if (!v.cmOpen && $scope.ch.cmPending) {
-            $scope.search.Status = 'Pending';
-        }
-        else {
-            $scope.search.Status = '';
-        }
 
-    }, true);
     var data = {
         'orgId': 6
         , 'limit': 10
