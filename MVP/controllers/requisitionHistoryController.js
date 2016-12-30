@@ -67,6 +67,8 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
         }]
                     }
                 };
+            }else {
+                $scope.data = [];
             }
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);

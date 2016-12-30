@@ -25,13 +25,12 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
         selectedQuater = $event.target.innerHTML;
         quaterYear = $scope.selectedYear + selectedQuater;
     }
-    $scope.yearCall = function (){
+    $scope.yearCall = function () {
         quaterYear = $scope.selectedYear + selectedQuater;
     }
-    $scope.update = function() {
+    $scope.update = function () {
         requisitonGoalStackBarChart();
     }
-
     $scope.callmyClientRequisition = function (selectedButton) {
         $scope.selectedButton = selectedButton;
         if (selectedButton == "mygraph") {
@@ -39,12 +38,11 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
             $('#chmg').addClass('active');
         }
         else if (selectedButton == "company") {
-            $("#chmg").removechmgClass('active');
+            $("#chmg").removeClass('active');
             $('#chcy').addClass('active');
         }
         requisitonGoalStackBarChart();
     }
-
 
     function requisitonGoalStackBarChart() {
         var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, quaterYear);
@@ -63,43 +61,14 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
                     scales: {
                         xAxes: [{
                             stacked: true
-        , }]
+                        , }]
                         , yAxes: [{
                             stacked: true
         }]
                     }
                 };
-                //  $scope.data = datas
-                //  console.log("karthik"+$scope.data)
-                /*
-			 arr=[];var array=[];label=[]
-              for (var k in Object.keys(response.data.graphDetails.data))
-              {for(var j in Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])){
-                   array.push(response.data.graphDetails[Object.keys(response.data.graphDetails.data)[k]][Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])[j]])
-				  }arr.push( {"label":(Object.keys(response.data.graphDetails.data)[k]),"data":array, "months":Object.keys(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])});array=[]
-
-                  console.log(arr)
-}
-             // $scope.reqGoalStackBarData = response.data.requisitionStatusList;
-
-              if(arr){
-               $scope.series = arr[0].months;
-                for(var i in arr)
-                  {
-                        labels.push(arr[i].label);
-                        //datas.push([])
-                       for(var j = 0; j < Object.keys(arr[0].data).length; j++) {
-    datas[j] = datas[j] || new Array();
-  //  console.log('datas[' + j + '][' + i + ']' + ' = ' +arr[i].data[Object.keys(arr[i].data)[j]])
-    datas[j][i] = arr[i].data[Object.keys(arr[i].data)[j]];
-  }
-
-                         }
-                }
-*/
-                // globalDetails.userTypeID = response.data.userTypeId;
-                // globalDetails.userId = response.data.userid;
-                // globalDetails.userType = response.data.userType
+            }else {
+                $scope.data = [];
             }
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
@@ -123,8 +92,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
         $('#requisitionGoalList').selectpicker();
         console.log($('.selectpicker'))
     }, 50, false);
-
-       $rootScope.$watch(function () {
+    $rootScope.$watch(function () {
         return config.getAllEngagments
     }, function () {
         // do something here
@@ -132,7 +100,8 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
         callgraphDropDownFunc();
     }, true);
     $scope.$watch(function () {
-        return quaterYear;   }, function () {
-       requisitonGoalStackBarChart();
+        return quaterYear;
+    }, function () {
+        requisitonGoalStackBarChart();
     });
   }]);
