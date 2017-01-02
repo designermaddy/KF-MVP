@@ -36,6 +36,7 @@ app.controller('pdfLinkController', ['$scope', 'Factory', 'sharedProperties', 'c
             data.push(checked[i].value);
         }
         sharedProperties.setInitiateSearchData(data);
+        //sharedProperties.setWhereFromInitiateSearch('')
         var redirectPath = "InitiateSearch";
         $location.path(redirectPath);
         console.log(data);

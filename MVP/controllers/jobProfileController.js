@@ -78,6 +78,7 @@ app.controller('jobProfileController', ['$uibModal', '$scope', 'Factory', 'commo
         var redirectPath = "/InitiateSearch";
         $("li[class='active']").removeClass('active');
         $('#searchHeader').addClass('active');
+        sharedProperties.setWhereFromInitiateSearch('RequisitionDetails/0')
         $location.path(redirectPath);
         // console.log(data);
     }

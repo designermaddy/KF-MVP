@@ -98,7 +98,7 @@
 .RequisitionTable .table-striped > tbody > tr td:nth-child(9),
 .RequisitionTable .table-striped > tbody > tr td:nth-child(10),
 .RequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#333; font-size: 16px; text-align: center; }
-.RequisitionTable .table-striped > tbody > tr td:nth-child(12)             { color:#000; font-size: 18px; text-align: center; }
+.RequisitionTable .table-striped > tbody > tr td:nth-child(12)             { color:#000; font-size: 16px; text-align: center; }
 .RequisitionTable .table-striped                        { min-height: 300px; }
 /* --------------------------- EngagementRequisitionTable Style ---------------------------------- */
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(6),
@@ -106,7 +106,7 @@
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(8),
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(9),
 .EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(10)             { color:#333; font-size: 16px; text-align: center; }
-.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 18px; text-align: center; }
+.EngagementRequisitionTable .table-striped > tbody > tr td:nth-child(11)             { color:#000; font-size: 16px; text-align: center; }
 
 /* --------------------------- Table Grid DataGridBox Style ---------------------------------- */
 .DataGrid							{ display:none; }

@@ -204,7 +204,7 @@ app.filter('myfilter', function () {
             return item;
         }
         var result = [];
-        if (angular.isDefined(items) && items.length > 0) {
+        if (angular.isDefined(items) && items !== null && items.length > 0) {
             if (model && Object.keys(model).length) {
                 var b = 0;
                 for (var a = 0; a < Object.keys(model).length; a++) {
