@@ -44,8 +44,10 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
             $scope.totalItems = $scope.rowCollection.length;
             $scope.entryLimit = 10; // items per page
             $scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
+
         }
     }
+
     $scope.prev = function () {
         if (data.page > 1) {
             data.page -= 1;
