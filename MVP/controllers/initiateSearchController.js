@@ -33,6 +33,10 @@
             if (requisitionNumber) {
                 promise.then(function resolved(response) {
                     vm.data = response.data;
+                    var jobStatus = response.data.job_status;
+                    if(jobStatus != 'Open' || jobStatus != 'Pending' || jobStatus != 'Close'){
+                        vm.data.job_status = "Open";
+                    }
                     //var change = sharedProperties.getRequisitionDetails();
                     //console.log(change);
                     //vm.data.JobTitle = vm.data.searchName = change.JobTitle;

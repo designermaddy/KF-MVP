@@ -197,7 +197,8 @@ $scope.confirmPopup = function(){
             var url = urlLink+candidateID+'/?'+urliframJoin;
         var modalInstance = $uibModal.open({
               animation: true
-            , templateUrl: 'modalContent.html'
+            , templateUrl: 'modalContentLoop.html'
+            , windowClass: 'app-modal-window'
             , controller: 'ModalCancel'
             , controllerAs: '$ctrl'
             , size: 'lg'

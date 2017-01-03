@@ -203,3 +203,4 @@ label.OutputLabel                               { color:#000; margin-bottom:0; f
 .CheckBoxSelect input                           { float: left; }
 .CheckBoxSelect label.CheckBoxLable             { float: left; text-indent: 17px; margin-top:-15px; font-size:12px; cursor: pointer;  }
 .CheckBoxSelect.Selected                        { background-color:#d9e4e7;  }
+span.mandatory                                  { color:red;}

@@ -17,7 +17,34 @@ app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sh
                 }
             }
             promise.then(function resolved(response) {
-                $scope.engagementResponse = response.data.engagement;
+               $scope.engagementResponse = response.data.engagement
+                var collection = response.data.engagement.Requisitions
+                 for(var i in collection)
+            {
+                 if(collection[i].Data){
+                     if(collection[i].Data.data){
+                        if(collection[i].Data.data.length>0){
+                            if(isNaN(parseInt(collection[i].Data.data[0].open_days))){
+                                collection[i].Data.data[0].open_days = 0;
+
+                            }else{
+                                collection[i].Data.data[0].open_days =  parseInt(collection[i].Data.data[0].open_days);
+                                }
+                        }
+                   else{
+                        collection[i].Data['data']=[];
+                        collection[i].Data.data.push({
+                        open_days:parseInt(0)
+                        });
+
+                        }
+                     }
+                }
+
+                 //var name = data[i].name;
+            }
+                 $scope.engagementResponseCollection = collection;
+
                 $scope.getData = function (workflowSteps, value) {
                     var output = '';
                     angular.forEach(workflowSteps, function (input) {
