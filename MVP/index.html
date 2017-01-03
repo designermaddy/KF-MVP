@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="content/css/jquery-ui.css">
 
     <script language="javascript" type="text/javascript">
+      //Check if the browser is IE. If its IE, send to IE page.
+        if (navigator.userAgent.indexOf('Trident') > 0) {
+            window.location = 'views/IE.html';
+        }
         function windowClose() {
             window.open('', '_parent', '');
             window.close();

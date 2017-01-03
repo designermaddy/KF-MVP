@@ -749,7 +749,14 @@ app.service('sharedProperties', function () {
     var date = '';
     var engagmentSelectedObject = {};
     var emailID = '';
+    var initiateSearchBackLink = '';
     return {
+        setWhereFromInitiateSearch (l){
+            initiateSearchBackLink = l;
+        },
+        getWhereFromInitiateSearch () {
+            return initiateSearchBackLink;
+        },
         refreshPdfDocList(d) {
             date = d ? d : date;
             return date;

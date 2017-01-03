@@ -39,6 +39,9 @@
             var reqNum = $item.split(' ')[0];
             getArya(reqNum);
         }
+        $scope.cancelButton = function() {
+            $location.path(redirectPath);
+        }
 
         function getArya(reqNum, i) {
             var i = i || 0;

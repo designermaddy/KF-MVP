@@ -39,17 +39,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         , ncyBreadcrumb: {
             label: 'Requisitions'
         }
-
     }
     var requisitionDetials = {
         name: 'requisitionDetails'
         , url: '/RequisitionDetails/{tab}'
         , templateUrl: 'views/RequisitionDetails.html'
         , ncyBreadcrumb: {
-            label: 'Requisition Details',
-            parent : 'requisitions'
+            label: 'Requisition Details'
+            , parent: 'requisitions'
         }
-
     }
     var search = {
         name: 'search'
@@ -58,37 +56,33 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         , ncyBreadcrumb: {
             label: 'Search'
         }
-
     }
     var initiateSearch = {
         name: 'initiateSearch'
         , url: '/InitiateSearch'
         , templateUrl: 'views/InitiateSearch.html'
         , ncyBreadcrumb: {
-            label: 'Initiate Search',
-            parent : 'requisitions'
+            label: 'Initiate Search'
+            , parent: 'requisitions'
         }
-
     }
     var newSearch = {
         name: 'newSearch'
         , url: '/NewSearch'
         , templateUrl: 'views/NewSearch.html'
         , ncyBreadcrumb: {
-            label: 'New Search',
-            parent : 'search'
+            label: 'New Search'
+            , parent: 'search'
         }
-
     }
     var viewSearch = {
         name: 'viewSearch'
         , url: '/ViewSearch'
         , templateUrl: 'views/ViewSearch.html'
         , ncyBreadcrumb: {
-            label: 'View Search',
-            parent : 'search'
+            label: 'View Search'
+            , parent: 'search'
         }
-
     }
     var news = {
         name: 'news'
@@ -97,7 +91,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         , ncyBreadcrumb: {
             label: 'News & Insights'
         }
-
     }
     var reports = {
         name: 'reports'
@@ -106,7 +99,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         , ncyBreadcrumb: {
             label: 'Reports'
         }
-
     }
     var resources = {
         name: 'resources'
@@ -115,7 +107,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         , ncyBreadcrumb: {
             label: 'Home'
         }
-
     }
     var logout = {
         name: 'logout'
@@ -126,6 +117,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         name: '404'
         , url: '/404'
         , templateUrl: 'views/404.html'
+    }
+    var ie = {
+        name: 'ie'
+        , url: '/IE'
+        , templateUrl: 'views/IE.html'
     }
     $urlRouterProvider.when('', '/');
     $urlRouterProvider.otherwise('/404');
@@ -144,4 +140,5 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state(resources);
     $stateProvider.state(logout);
     $stateProvider.state(error);
+    $stateProvider.state(ie);
 }]);

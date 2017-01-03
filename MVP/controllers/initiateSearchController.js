@@ -65,7 +65,6 @@
         else {
             getreq(0);
         }
-
         function disableInput() {
             var i = 0;
             if(vm.data.ReqNumber.indexOf("MANUAL") != -1)
@@ -137,6 +136,11 @@
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
             })
         };
+
+        vm.cancelButton = function () {
+            var redirect = sharedProperties.getWhereFromInitiateSearch();
+            $location.path(redirect);
+        }
         vm.priceSlider1 = {
             value: 5
             , options: {

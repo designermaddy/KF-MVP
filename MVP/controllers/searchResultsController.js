@@ -129,6 +129,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
          var redirectPath = "/InitiateSearch";
         $("li[class='active']").removeClass('active');
         $('#searchHeader').addClass('active');
+        sharedProperties.setWhereFromInitiateSearch('RequisitionDetails/3');
         $location.path(redirectPath);
     }
     $scope.$watch(function() {
