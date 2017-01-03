@@ -127,7 +127,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
             'docType' : '',
             id : clientJobID
         }]}
-        sharedProperties.setInitiateSearchData(data);
+       // sharedProperties.setInitiateSearchData(data);
         // sharedProperties.setInitiateSearchData(dataPost);
         var savedSearchVal = {
             clientJobId: clientJobID
