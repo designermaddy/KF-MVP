@@ -124,7 +124,8 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
           var url = commonFunctions.getIframeUrl('addCandidateLoop');
         var modalInstance = $uibModal.open({
               animation: true
-            , templateUrl: 'modalContent.html'
+            , templateUrl: 'modalContentLoop.html'
+            , windowClass: 'app-modal-window'
             , controller: 'ModalCancel'
             , controllerAs: '$ctrl'
             , size: 'lg'
@@ -139,8 +140,9 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
           var url = commonFunctions.getIframeUrl('resumeUploadLoop');
         var modalInstance = $uibModal.open({
               animation: true
-            , templateUrl: 'modalContent.html'
+            , templateUrl: 'modalContentLoop.html'
             , controller: 'ModalCancel'
+            , windowClass: 'app-modal-window'
             , controllerAs: '$ctrl'
             , size: 'lg'
             , resolve: {

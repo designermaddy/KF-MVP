@@ -6,6 +6,13 @@
         <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="840"></iframe>
     </div>
 </script>
+<script type="text/ng-template" id="modalContentLoop.html">
+    <div class="modal-header Heading2 HeadingFloat clearfix">
+        <h2> </h2> <span class="HeaderButton pull-right"><a ng-click="cancel()"><i class="fa fa-times"></i></a></span> </div>
+    <div class="modal-body"> <span us-spinner="{radius:10, width:2, length: 4}" iframe></span>
+        <iframe ng-src="{{iframeUrl}}" frameborder="0" height="480" width="1050"></iframe>
+    </div>
+</script>
 <!--poppup for arya count in saved searches -->
 <script type="text/ng-template" id="modalAryaCount.html">
     <div class="modal-header Heading2 HeadingFloat clearfix">
