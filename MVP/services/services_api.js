@@ -383,9 +383,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get(urlAPI + '/Requisition/getAryaSavedSearches/' + orgId);
         // return $http.get('json/Savedsearch.json')
     }
-    dataFactory.getJobDescription = function (id) {
-         //id = 35273950;
-        return $http.get(urlAPI +'/Requisition/getJobDescription/'+ id);
+    dataFactory.getJobDescription = function (data) {
+         return $http({
+            method: 'POST'
+            , url: urlAPI + '/Requisition/jobSearch/'
+            , data: data
+        });
     }
     dataFactory.getPDF = function (url) {
         return $http.get(url, {

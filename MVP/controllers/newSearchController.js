@@ -300,7 +300,11 @@
         $scope.updateViewProfile = function (filename) {
             if (filename) {
                 $scope.pdfValues = [filename.DocumentNumber, filename.FileName];
-                var promise = Factory.getJobDescription(filename.DocumentNumber);
+                var data = {'requisitionResponseList' : [{
+                    'docType' : '',
+                    id : filename.DocumentNumber
+                }]}
+                var promise = Factory.getJobDescription(data);
                 promise.then(function resolved(response) {
                     $scope.freeSearch.SearchString = response.data.SearchString;
                     $scope.freeSearch.Description = response.data.Description;

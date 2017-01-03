@@ -123,12 +123,10 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         });
     }
     $scope.initiateSearch = function (clientJobID) {
-        var checked = $('input:checked');
-        // var dataPost=undefined;
-        var data = [];
-        for (var i = 0; i < checked.length - 1; i++) {
-            data.push(checked[i].value);
-        }
+        var data = {'requisitionResponseList' : [{
+            'docType' : '',
+            id : clientJobID
+        }]}
         sharedProperties.setInitiateSearchData(data);
         // sharedProperties.setInitiateSearchData(dataPost);
         var savedSearchVal = {

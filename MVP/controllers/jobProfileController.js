@@ -73,7 +73,7 @@ app.controller('jobProfileController', ['$uibModal', '$scope', 'Factory', 'commo
             });
         }
         dataPost.requisitionResponseList = data
-        console.log(dataPost)
+        //console.log(dataPost)
         sharedProperties.setInitiateSearchData(dataPost);
         var redirectPath = "/InitiateSearch";
         $("li[class='active']").removeClass('active');
