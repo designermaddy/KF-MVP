@@ -27,19 +27,18 @@
                 <label class="FormLabel">Zip Code</label>
                 <input class="input-sm form-control" type="search" ng-model="vm.data.ZipCode"> </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect" >
-                    <label class="FormLabel"> Status</label>
+                    <label class="FormLabel"> Status<span class="mandatory">*</span></label>
                 <!--selectpicker-->
                     <select style="
     border: 0px;
-"  class="form-control" ng-model="vm.data.job_status">
-                         <option value="">Please Select</option>
-                        <option value="Open">Open</option>
+"  class="form-control" ng-model="vm.data.job_status" ng-init="vm.data.job_status='Open'">
+                         <option value="Open" selected>Open</option>
                         <option value="Pending" selected>Pending</option>
                         <option value="Close">Close</option>
                     </select>
                 </div>
             <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
-                <label class="FormLabel"> Miles</label>
+                <label class="FormLabel"> Miles </label>
                 <!--selectpicker-->
                 <select id="selectMiles" style="
     border: 0px;

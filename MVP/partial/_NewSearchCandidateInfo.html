@@ -48,8 +48,12 @@
                     <label class="FormLabel">Job Title Synonyms</label>
                     <input class="input-sm form-control" type="search" ng-model="data.JobTitle_Synonyms"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
-                    <label class="FormLabel"> Status</label>
-                    <select class="selectpicker form-control"></select>
+                    <label class="FormLabel"> Status<span class="mandatory">*</span></label>
+                    <select class="form-control" ng-model="data.job_status">
+                        <option value="Open"> Open </option>
+                        <option value="Pending"> Pending </option>
+                        <option value="Close"> Close </option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -96,10 +100,9 @@
                     <label class="FormLabel">Job Title Synonyms</label>
                     <input class="input-sm form-control" type="search" ng-model="freeSearch.JobTitle_Synonyms"> </div>
                 <div class="col-sm-6 col-md-2 col-lg-2 FormSelect">
-                    <label class="FormLabel"> Status</label>
-                    <select class="selectpicker form-control" ng-model="freeSearch.job_status">
-                        <option value="" selected> Select </option>
-                        <option value="Open"> Open </option>
+                    <label class="FormLabel"> Status<span class="mandatory">*</span></label>
+                    <select class="form-control" ng-model="freeSearch.job_status" ng-init="freeSearch.job_status = 'Open'">
+                        <option value="Open" selected> Open </option>
                         <option value="Pending"> Pending </option>
                         <option value="Close"> Close </option>
                     </select>
