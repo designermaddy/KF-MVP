@@ -8,7 +8,7 @@
 // }]);
 
 
-app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config){
+app.controller('headerController', ['$scope','$http','$cookies', 'Factory', 'sharedProperties','$window','$cookies','commonFunctions','config', 'Idle', 'Keepalive','$uibModal', function($scope,$http, $cookies, Factory, sharedProperties,$window,$cookies,commonFunctions,config, Idle, Keepalive, $uibModal){
    var authToken = $cookies.get('RD-Access-Token');
    if (config.production < 9) {
         var authToken = config.token;
@@ -122,6 +122,38 @@ function getAccessToken() {
   }
 /*---------------REFRESH ACCESS TOKEN ENDS---------------------*/
 
+    function closeModals() {
+        if ($scope.warning) {
+          $scope.warning.close();
+          $scope.warning = null;
+        }
+
+        if ($scope.timedout) {
+          $scope.timedout.close();
+          $scope.timedout = null;
+        }
+      }
+
+      $scope.$on('IdleStart', function() {
+        closeModals();
+
+        $scope.warning = $uibModal.open({
+          templateUrl: 'warning-dialog.html',
+          windowClass: 'modal-danger'
+        });
+      });
+
+      $scope.$on('IdleEnd', function() {
+        closeModals();
+      });
+
+      $scope.$on('IdleTimeout', function() {
+        closeModals();
+        $scope.timedout = $uibModal.open({
+          templateUrl: 'timedout-dialog.html',
+          windowClass: 'modal-danger'
+        });
+      });
 
  /*$window.onbeforeunload = function (evt) {
     //$scope.logOut();

@@ -1,5 +1,5 @@
 // create the module and name it desktopApp
-var app = angular.module('desktopApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'ncy-angular-breadcrumb','textAngular','angular.filter']);
+var app = angular.module('desktopApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ngAnimate', 'chart.js', 'ui.bootstrap', 'smart-table', 'easypiechart', 'ya.pdf', 'rzModule', 'angularSpinner', 'ncy-angular-breadcrumb','textAngular','angular.filter', 'ngIdle']);
 app.run(function ($http, sharedProperties, $cookies, config, Factory, commonFunctions) {
     var count = sharedProperties.getCounter();
     if (count == 0) {
@@ -350,3 +350,7 @@ app.config(['ChartJsProvider', function (ChartJsProvider) {
         //showLines: false
     });
   }])
+
+app.run(['Idle', function(Idle) {
+  Idle.watch();
+}]);
