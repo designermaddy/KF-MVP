@@ -115,7 +115,9 @@ app.controller('uploadDocEngDetailsModalCtrl', ['$uibModalInstance', '$http', '$
         var pdfEmbedded = commonFunctions.checkPDFUpload (file);
         if (!pdfEmbedded || file.length < 1 || $('#udedfn').val().length < 1 || $('#udedss').val().length < 1) {
             if(!pdfEmbedded){
-              commonFunctions.error('Please upload PDF files only');
+              var myfile= file.name;
+              var ext = myfile.split('.').pop();
+               commonFunctions.error('The '+ext+' file will not be allowed');
             }
             else{
                 commonFunctions.error('Please fill the mandatory fields');

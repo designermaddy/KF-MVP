@@ -558,10 +558,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
     var commonFunctions = {};
     commonFunctions.checkPDFUpload = function(file){
+        var matches = ['Doc','Docx','xls','xlsx','ppt','pptx','PDF','RTF','TXT','txt','rtf','pdf','PPTX','PPT','XLSX','XLS','DOCX','docx','doc','DOC'];
           var myfile= file.name;
           var pdfTrue = false;
            var ext = myfile.split('.').pop();
-           if(ext=="pdf"){
+        if(~ matches.indexOf(ext)){
+           /*if(ext=="pdf"){*/
                //alert(ext);
                pdfTrue = true;
            } else{
