@@ -325,7 +325,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var jobId = values.jobId;
         var count = values.limit
         var start = values.page * count;
-        var url = urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId + "/" + count + "/" + start;
+        var url = urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId ;
         return $http.get(url).then(getAryaCandidatesComplete).catch(function (message) {
             exception.catcher('XHR Failed for getAvengers')(message);
             $location.url('/');
