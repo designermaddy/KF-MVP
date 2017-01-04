@@ -149,7 +149,10 @@ app.service('fileUpload', ['$http', 'sharedProperties','commonFunctions', functi
             var pdfEmbedded = commonFunctions.checkPDFUpload (file2);
             if (!pdfEmbedded || file2.length < 1 || $('#pdoin').val().length < 1) {
                 if(!pdfEmbedded){
-                  commonFunctions.error('Please upload PDF files only');
+                     var myfile= file2.name;
+              var ext = myfile.split('.').pop();
+               commonFunctions.error('The '+ext+' file will not be allowed');
+
                 }
                 else{
                     commonFunctions.error('Please fill the mandatory fields');
@@ -165,7 +168,10 @@ app.service('fileUpload', ['$http', 'sharedProperties','commonFunctions', functi
             var pdfEmbedded = commonFunctions.checkPDFUpload (file1);
             if (!pdfEmbedded || $('#pduin').val().length < 1 || $('#pduJd').val().length < 1 || file1.length < 1 || $('#pduss').val().length < 1) {
                 if(!pdfEmbedded){
-                  commonFunctions.error('Please upload PDF files only');
+                    var myfile= file1.name;
+                    var ext = myfile.split('.').pop();
+                    commonFunctions.error('The '+ext+' file will not be allowed');
+
                 }
                 else{
                     commonFunctions.error('Please fill the mandatory fields');
