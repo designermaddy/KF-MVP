@@ -32,7 +32,7 @@
         config.logOutUrl = 'https://recruiterdesktop.kf4d-qa.com/'
     }
 
-    config.token = "cmRBdXRoVG9rZW46Tnpsa1lqQTVNVGd0T0dZNFlTMDBZMlV6TFdJeU16TXROV1kzWlRsa1kyUXhOMkppT25ObFpYUm9ZV2xoYUcxQWFHVjRZWGRoY21VdVkyOXQsZW1haWw6c2VldGhhaWFobUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246U2VuaW9yIFRlc3RlcixpZHBVc2VySWQ6YTU0ZjRmYWItMGQyOC00NDc2LTg5ZmUtYzViOGQ3M2NhMzhmLGFyeWFVc2VySWQ6c2VldGhhaWFobUBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnNlZXRoYWlhaG1AaGV4YXdhcmUuY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlNlZXRoYWlhaCxmaXJzdE5hbWU6U2VldGhhaWFoLGxhc3ROYW1lOk0sZGlzcGxheU5hbWU6U2VldGhhaWFoTQ==";
+    config.token = "cmRBdXRoVG9rZW46Wm1VMU5HVTFPREF0WVRnelpDMDBOR1k1TFdJek16VXRPVEZtTTJVMk4yRTFORE5sT25ObFpYUm9ZV2xoYUcxQWFHVjRZWGRoY21VdVkyOXQsZW1haWw6c2VldGhhaWFobUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246U2VuaW9yIFRlc3RlcixpZHBVc2VySWQ6YTU0ZjRmYWItMGQyOC00NDc2LTg5ZmUtYzViOGQ3M2NhMzhmLGFyeWFVc2VySWQ6c2VldGhhaWFobUBoZXhhd2FyZS5jb20sYXJ5YVBhc3N3b3JkOldlbGNvbWVAMTIzLGFjdGl2YXRlVXNlcklkOnNlZXRoYWlhaG1AaGV4YXdhcmUuY29tLGFjdGl2YXRlUGFzc3dvcmQ6S29ybkYzcnJ5ISxuYW1lOlNlZXRoYWlhaCxmaXJzdE5hbWU6U2VldGhhaWFoLGxhc3ROYW1lOk0sZGlzcGxheU5hbWU6U2VldGhhaWFoTQ==";
 
     config.accessTokenSearcher = "";
     config.searcherReq = {};
@@ -44,7 +44,7 @@
     app.value('config', config);
 
     app.config(function(IdleProvider, KeepaliveProvider) {
-      IdleProvider.idle(5);
+      IdleProvider.idle(600);
       IdleProvider.timeout(120);
       KeepaliveProvider.interval(10);
     });
