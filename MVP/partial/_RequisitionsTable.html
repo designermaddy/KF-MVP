@@ -45,12 +45,23 @@
                 <td st-toggle-item>{{row.Data.data[0].offer}}</td>
                 <td st-toggle-item>{{row.Data.data[0].accept}}</td>
                 <td st-toggle-item>
+                    <button class="TblButton" title="{{row.Data.data[0].reason}}">
                     <div class="TblDays" ng-class="row.Data.data[0].color">{{row.Data.data[0].open_days}} <!--{{parseInt(row.Data.data[0].open_days)}}-->
                         <!--ng-bind="displayVal({{row.Data.data[0].open_days}})"-->
                         </div>
+                        </button>
                 </td>
                 <td st-toggle-item>{{row.status}}</td>
-                <td st-toggle-item><img src="content/images/edit_icon.png" alt=""></td>
+                <td st-toggle-item>
+                    <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <button id="pencil-button" type="button" class="btn btn-pencil btn-sm" uib-dropdown-toggle ng-disabled="disabled"><img id="pencil-img" src="content/images/edit_icon.png" alt="" ><span class="caret"></span> </button>
+                <ul class="dropdown-menu dropdown-pencil" uib-dropdown-menu role="menu" aria-labelledby="pencil-button">
+                    <li role="menuitem"><a href="" ng-click="openTalentLinkIframe()">Talent Link</a></li>
+                    <li role="menuitem" class="disabled"><a href="" ng-click="openCrmIframe()">CRM</a></li>
+                    <li role="menuitem" class="disabled"><a href="#">Searcher Express</a></li>
+                </ul>
+                </div>
+                </td>
                 </tr>
             </tbody>
         </table>
