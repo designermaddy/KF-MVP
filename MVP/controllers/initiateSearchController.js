@@ -34,8 +34,8 @@
                 promise.then(function resolved(response) {
                     vm.data = response.data;
                     var jobStatus = response.data.job_status;
-                    if(jobStatus != 'Open' || jobStatus != 'Pending' || jobStatus != 'Close'){
-                        vm.data.job_status = "Open";
+                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
+                        vm.data.job_status = "Please Select";
                     }
                     //var change = sharedProperties.getRequisitionDetails();
                     //console.log(change);
@@ -116,29 +116,39 @@
             this.Miles = vm.data.Miles;
         }
         vm.save = function save() {
-            var savedSearchDetails = sharedProperties.getSavedSearchDetails();
-            vm.criteria = getCriteria();
-            /*if (vm.criteria.Miles) {
-                delete vm.criteria.Miles;
-            }*/
-            if (vm.criteria.TotalSourcedCount) {
-                delete vm.criteria.TotalSourcedCount;
+
+            try{
+                //Validation
+                if(vm.data.job_status == "Please Select") {
+                    throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
+                }
+
+                var savedSearchDetails = sharedProperties.getSavedSearchDetails();
+                vm.criteria = getCriteria();
+                /*if (vm.criteria.Miles) {
+                    delete vm.criteria.Miles;
+                }*/
+                if (vm.criteria.TotalSourcedCount) {
+                    delete vm.criteria.TotalSourcedCount;
+                }
+                var promise = Factory.saveNewSearch(vm.criteria);
+                promise.then(function resolved(response) {
+                    //sharedProperties.setJobId(response.data.JobID);
+                    console.log(response.data);
+                    if (savedSearchDetails.fromSavedSearch) {
+                        sharedProperties.getSavedSearchDetails().fromSavedSearch = false;
+                        var redirectPath = "Search"
+                    }
+                    else {
+                        var redirectPath = "RequisitionDetails/3";
+                    }
+                    $location.path(redirectPath);
+                }, function rejected(response) {
+                    commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+                })
+            } catch(errMsg) {
+                commonFunctions.error(errMsg);
             }
-            var promise = Factory.saveNewSearch(vm.criteria);
-            promise.then(function resolved(response) {
-                //sharedProperties.setJobId(response.data.JobID);
-                console.log(response.data);
-                if (savedSearchDetails.fromSavedSearch) {
-                    sharedProperties.getSavedSearchDetails().fromSavedSearch = false;
-                    var redirectPath = "Search"
-                }
-                else {
-                    var redirectPath = "RequisitionDetails/3";
-                }
-                $location.path(redirectPath);
-            }, function rejected(response) {
-                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-            })
         };
 
         vm.cancelButton = function () {

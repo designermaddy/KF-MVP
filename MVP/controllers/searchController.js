@@ -107,6 +107,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         var modalInstance = $uibModal.open({
             animation: true
             , templateUrl: 'modalAryaCount.html'
+           // , windowClass: 'arya-modal-window'
             , controller: 'modalAryaController'
             , size: 'lg'
             , resolve: {

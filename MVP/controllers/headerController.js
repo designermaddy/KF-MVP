@@ -149,10 +149,12 @@ function getAccessToken() {
 
       $scope.$on('IdleTimeout', function() {
         closeModals();
-        $scope.timedout = $uibModal.open({
+          // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
+          $scope.logOut();
+       /* $scope.timedout = $uibModal.open({
           templateUrl: 'timedout-dialog.html',
           windowClass: 'modal-danger'
-        });
+        });*/
       });
 
  /*$window.onbeforeunload = function (evt) {
