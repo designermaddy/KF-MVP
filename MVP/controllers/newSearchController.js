@@ -48,6 +48,10 @@
             var promise = Factory.getAryaJobId(reqNum);
             promise.then(function (response) {
                 $scope.data = response.data;
+                var jobStatus = response.data.job_status;
+                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
+                        $scope.data.job_status = "Please Select";
+                    }
                 if($scope.milesOptions.indexOf(response.data.Miles) < 0){
                       $scope.data.Miles = "Auto Expand";
                 }
@@ -64,24 +68,33 @@
             }
         }
         $scope.save = function (radioModel) {
-            if (radioModel) {
-                if (reqValue !== 0) {
-                    if (reqValue[0] + ' ' + reqValue[1] == $scope.vm.name) {
+            try{
+                //Validation
+                if($scope.data.job_status == "Please Select") {
+                    throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
+                }
+
+                if (radioModel) {
+                    if (reqValue !== 0) {
+                        if (reqValue[0] + ' ' + reqValue[1] == $scope.vm.name) {
+                            callBackend();
+                        }
+                        else {
+                            commonFunctions.error('Please enter valid Requistion value');
+                        }
+                    }
+                    else if (checkReq()) {
                         callBackend();
                     }
                     else {
-                        commonFunctions.error('Please enter valid Requistion value');
+                        commonFunctions.error('Please select a valid Requisition Name or ID');
                     }
                 }
-                else if (checkReq()) {
-                    callBackend();
-                }
                 else {
-                    commonFunctions.error('Please select a valid Requisition Name or ID');
+                    callBackend(1);
                 }
-            }
-            else {
-                callBackend(1);
+             }catch(errMsg) {
+                commonFunctions.error(errMsg);
             }
         }
 
