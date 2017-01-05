@@ -21,6 +21,7 @@
 .btn-white                                              { background-color: #fff; border-color: #007da4; color: #007da4; }
 .btn-primary						{background-color:#007da4 !important;border-color: #007da4;opacity: initial !important;}
 .btn-secondary						{background-color:#fff !important; border-color: #007da4; color:#007da4; }
+.btn-pencil 						{background-color:transparent; color:#007da4; }
 .IframeBtn                                              { vertical-align: top; position: absolute; float:left; }
 .btn .caret                                             { margin-left: 3px; }
 /* --------------------------- Bar Chart Style ---------------------------------- */
@@ -68,8 +69,12 @@
 .table-striped > tbody > tr td:nth-child(2) .TblResources,
 .table-striped > tbody > tr td .TblDays,
 .TblRequisition                                         { padding: 3px; vertical-align: middle; }
+.TblButton                                              {
+    border: none;
+    cursor: default;
+}
 .table-striped > tbody > tr td:nth-child(2) .TblResources { background-color: #fff; border:1px solid #0a7fc9; border-radius:50%; color:#0a7fc9; font-size: 16px; width: 30px; height: 30px; padding: 2px; text-align: center; }
-.table-striped > tbody > tr td .TblDays      { border-radius:4px; color:#fff;  padding:2px; font-size:12px; font-weight:normal; text-align: center; }
+.table-striped > tbody > tr td .TblDays      { border-radius:4px; color:#fff;  padding:2px 32px; font-size:12px; font-weight:normal; text-align: center; }
 .TblRequisition                                         { padding:0; text-align:left; }
 .TblRequisition a                                       { font-size:14px; line-height: 16px; display: block; }
 .TblRequisition span                                    { color: #000; }
@@ -278,6 +283,7 @@
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover                          { border-radius:0; }
 .dropdown-menu                                           { margin:0; }
+.dropdown-pencil                                           { margin-left:-105px; }
 .dropdown-menu > li > a                                  { padding:5px 20px;}
 .WidgetPD                                                { min-height: 300px; }
 .SecondaryTab .tab-content                               { margin: 0; padding:0; }
