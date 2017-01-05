@@ -1,27 +1,10 @@
-app.controller('requisitionGoalController', ['$scope', 'Factory', 'sharedProperties', '$location', 'commonFunctions', '$timeout', 'config', '$rootScope', function ($scope, Factory, sharedProperties, $location, commonFunctions, $timeout, config, $rootScope) {
+app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 'sharedProperties', '$location', 'commonFunctions', '$timeout', 'config', '$rootScope', function ($scope, $rootScope, Factory, sharedProperties, $location, commonFunctions, $timeout, config, $rootScope) {
     var labels = [];
     var datas = [];
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
     var graphName = 'RequisitionGoal'; //'CandidatePipeline';
-    callgraphDropDownFunc();
 
-    function callgraphDropDownFunc() {
-        if (config.getAllEngagments) {
-            console.log(config.getAllEngagments)
-            $scope.allEngagments = config.getAllEngagments;
-            if ($scope.allEngagments.length > 0) {
-                $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
-                requisitonGoalStackBarChart($scope.selectedEngagment);
-                /*  $timeout(function () {
-                      $('#rgsfsp').selectpicker();
-                  }, 50, false);*/
-            }
-        }
-    }
-    $scope.update = function () {
-        requisitonGoalStackBarChart($scope.selectedEngagment)
-    }
     $scope.callmyClientRequisition = function (selectedButton) {
         $scope.selectedButton = selectedButton;
         if (selectedButton == "mygraph") {
@@ -34,6 +17,32 @@ app.controller('requisitionGoalController', ['$scope', 'Factory', 'sharedPropert
         }
         requisitonGoalStackBarChart($scope.selectedEngagment);
     }
+
+    callgraphDropDownFunc();
+
+
+    function callgraphDropDownFunc() {
+        if (config.getAllEngagments) {
+            console.log(config.getAllEngagments)
+            $scope.allEngagments = config.getAllEngagments;
+            if ($scope.allEngagments.length > 0) {
+                if ($rootScope.graphDetails.RequisitionGraphName == 'RequisitionGoal') {
+                    $scope.selectedEngagment = $rootScope.graphDetails.Engagement;
+                    $scope.callmyClientRequisition($rootScope.graphDetails.GraphType);
+                }else {
+                    $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+                }
+                requisitonGoalStackBarChart($scope.selectedEngagment);
+                /*  $timeout(function () {
+                      $('#rgsfsp').selectpicker();
+                  }, 50, false);*/
+            }
+        }
+    }
+    $scope.update = function () {
+        requisitonGoalStackBarChart($scope.selectedEngagment)
+    }
+
     requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
     function requisitonGoalStackBarChart(engagement) {

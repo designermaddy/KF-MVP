@@ -552,6 +552,10 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getGraphEngagmentDropDown = function () {
         return $http.get(urlAPI + '/engagement/getAllEngagements')
     }
+     dataFactory.getGraphList = function () {
+        //return $http.get(urlAPI + '/engagement/getAllEngagements')
+         return $http.get('json/graphlist.json');
+    }
 
     return dataFactory;
  }]);
