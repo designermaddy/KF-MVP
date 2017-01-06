@@ -198,7 +198,7 @@ $scope.confirmPopup = function(){
         var modalInstance = $uibModal.open({
               animation: true
             , templateUrl: 'modalContentLoop.html'
-            , windowClass: 'arya-modal-window'
+             , windowClass: 'app-modal-window'
             , controller: 'ModalCancel'
             , controllerAs: '$ctrl'
             , size: 'lg'
