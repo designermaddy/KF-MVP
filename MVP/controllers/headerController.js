@@ -150,7 +150,7 @@ function getAccessToken() {
       $scope.$on('IdleTimeout', function() {
         closeModals();
           // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
-          $scope.logOut();
+         // $scope.logOut();
        /* $scope.timedout = $uibModal.open({
           templateUrl: 'timedout-dialog.html',
           windowClass: 'modal-danger'
