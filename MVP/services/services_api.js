@@ -553,8 +553,8 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get(urlAPI + '/engagement/getAllEngagements')
     }
      dataFactory.getGraphList = function () {
-        //return $http.get(urlAPI + '/engagement/getAllEngagements')
-         return $http.get('json/graphlist.json');
+        return $http.get(urlAPI + '/engagement/getUserPreference')
+         //return $http.get('json/graphlist.json');
     }
 
     return dataFactory;

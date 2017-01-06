@@ -327,6 +327,8 @@
             }
             else {
                 $scope.pdfValues = [];
+                $scope.freeSearch.SearchString = "";
+                $scope.freeSearch.Description = "";
             }
         }
         $scope.showPdf = function () {

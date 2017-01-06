@@ -3,17 +3,26 @@ app.controller('requisitionStatusController', ['$scope','Factory','commonFunctio
     var graphName = "RequisitionStatus";
     var deeplinkURL = '';
      $scope.selectedButton = 'company';
-      callgraphDropDownFunc();
+
+      if (angular.isDefined($rootScope.graph[graphName])){
+        var a = $rootScope.graph[graphName];
+        $scope.selectedEngagment = a.Engagement;
+        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+    }
+
   function callgraphDropDownFunc(){
     if(config.getAllEngagments){
         console.log(config.getAllEngagments)
         $scope.allEngagments = config.getAllEngagments;
          if( $scope.allEngagments.length > 0) {
-            $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+            if (!$scope.selectedEngagment){
+                $scope.selectedEngagment = config.getAllEngagments[0].Engagement;
+            }
             candidatePipelineDonutChart($scope.selectedEngagment);
         }
     }
   }
+    callgraphDropDownFunc();
 
  $scope.update = function(selectedDropdownValue){
    /*  console.log(selectedDropdownValue.Engagement)
