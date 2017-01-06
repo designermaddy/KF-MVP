@@ -1,7 +1,7 @@
 app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeout', 'sharedProperties', 'commonFunctions', function ($scope, $rootScope, Factory, $timeout, sharedProperties, commonFunctions) {
     var list = {
         'reqGoal': {
-            'status': 0
+            'status': 1
             , 'url': 'RequisitionGoal'
         }
         , 'reqHistory': {
@@ -13,7 +13,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
             , 'url': 'RequisitionStatus'
         }
         , 'canPipeline': {
-            'status': 0
+            'status': 2
             , 'url': 'CandidatePipeline'
         }
         , 'canHistory': {
@@ -26,10 +26,23 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
         }
     }
     var turn = 1;
-    $rootScope.graphDetails = {};
+    $rootScope.graph = {};
     var promise = Factory.getGraphList();
     promise.then(function resolved(response) {
-        angular.forEach(response.data, function (value) {
+        var a = response.data;
+        if (a.length){
+            for (var i = 0; i < a.length; i++){
+                for (var key in list){
+                    if (list[key]['url'] == a[i].GraphName) {
+                        $rootScope.graph[a[i].GraphName] = a[i];
+                    }
+                }
+            }
+        }
+
+        $scope.ReqUrl = "partial/_RequisitionGoal.html";
+        $scope.CanUrl = "partial/_CandidatePipeline.html";
+        /*angular.forEach(response.data, function (value) {
             if (value['RequisitionGraphName'] !== null && value['CandidateGraphName'] !== null) {
                 $rootScope.graphDetails = value;
             }
@@ -37,6 +50,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
 
         $scope.ReqUrl = "partial/_" + $rootScope.graphDetails.RequisitionGraphName + ".html";
         $scope.CanUrl = "partial/_" + $rootScope.graphDetails.CandidateGraphName + ".html";
+
         var p = list;
         for (var key in p) {
             if (p.hasOwnProperty(key)) {
@@ -48,7 +62,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                 }
                 else {};
             }
-        }
+        }*/
     });
     $scope.cancel = function () {
         $scope.isOpen = false;

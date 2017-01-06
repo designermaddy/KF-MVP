@@ -3,47 +3,47 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     var datas = [];
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
-    var graphName = 'RequisitionGoal'; //'CandidatePipeline';
+
+
+    var graphName = 'RequisitionGoal';
+
+    if (angular.isDefined($rootScope.graph[graphName])){
+        var a = $rootScope.graph[graphName];
+        $scope.selectedEngagment = a.Engagement;
+        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+    }
 
     $scope.callmyClientRequisition = function (selectedButton) {
-        $scope.selectedButton = selectedButton;
-        if (selectedButton == "mygraph") {
-            $("#clientReqs").removeClass('active');
-            $('#myReqs').addClass('active');
+        if (selectedButton) {
+            $scope.selectedButton = selectedButton;
+            if (selectedButton == "mygraph") {
+                $("#clientReqs").removeClass('active');
+                $('#myReqs').addClass('active');
+            }
+            else if (selectedButton == "company") {
+                $("#myReqs").removeClass('active');
+                $('#clientReqs').addClass('active');
+            }
+            else {}
+            requisitonGoalStackBarChart($scope.selectedEngagment);
         }
-        else if (selectedButton == "company") {
-            $("#myReqs").removeClass('active');
-            $('#clientReqs').addClass('active');
-        }
-        requisitonGoalStackBarChart($scope.selectedEngagment);
     }
-
     callgraphDropDownFunc();
 
-
     function callgraphDropDownFunc() {
-        if (config.getAllEngagments) {
-            console.log(config.getAllEngagments)
+        if (config.getAllEngagments.length > 0) {
             $scope.allEngagments = config.getAllEngagments;
-            if ($scope.allEngagments.length > 0) {
-                if ($rootScope.graphDetails.RequisitionGraphName == 'RequisitionGoal') {
-                    $scope.selectedEngagment = $rootScope.graphDetails.Engagement;
-                    $scope.callmyClientRequisition($rootScope.graphDetails.GraphType);
-                }else {
-                    $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
-                }
-                requisitonGoalStackBarChart($scope.selectedEngagment);
-                /*  $timeout(function () {
-                      $('#rgsfsp').selectpicker();
-                  }, 50, false);*/
+            if (!$scope.selectedEngagment){
+                $scope.selectedEngagment = config.getAllEngagments[0].Engagement;
             }
+            requisitonGoalStackBarChart($scope.selectedEngagment);
         }
     }
+
     $scope.update = function () {
         requisitonGoalStackBarChart($scope.selectedEngagment)
     }
-
-    requisitonGoalStackBarChart(graphName, $scope.selectedButton);
+    //requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
     function requisitonGoalStackBarChart(engagement) {
         var promise = Factory.getChart(graphName, $scope.selectedButton, engagement);
