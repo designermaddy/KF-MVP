@@ -7,13 +7,27 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
+
+
+     if (angular.isDefined($rootScope.graph[graphName])){
+        var a = $rootScope.graph[graphName];
+        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+        $scope.selectedEngagment = a.Engagement;
+        if(a.QuaterYear){
+            $scope.selectedYear = a.QuaterYear.slice(0, 4);
+            selectedQuater = a.QuaterYear.slice(4, 6);
+        }
+    }
+
     var quaterYear = $scope.selectedYear + selectedQuater;
 
     function callgraphDropDownFunc() {
         if (config.getAllEngagments) {
             $scope.allEngagments = config.getAllEngagments;
             if ($scope.allEngagments.length > 0) {
-                $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+                 if (!$scope.selectedEngagment){
+                    $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
+                }
                 requisitonGoalStackBarChart();
             }
         }
