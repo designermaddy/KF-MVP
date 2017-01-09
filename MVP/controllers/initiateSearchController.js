@@ -23,7 +23,7 @@
                 var requisitionNumber = savedSearchDetails.clientJobId;
                 sharedProperties.setClientJobID(requisitionNumber)
                 sharedProperties.setSavedSearchDetails({clientJobId : requisitionNumber, fromSavedSearch:true});
-                    // savedSearchDetails.fromSavedSearch = false;
+                     savedSearchDetails.fromSavedSearch = false;
             }
             $('#searchHeader').addClass('active');
             $timeout(function () {
