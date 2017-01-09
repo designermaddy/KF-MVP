@@ -138,6 +138,8 @@
                     if (savedSearchDetails.fromSavedSearch) {
                         sharedProperties.getSavedSearchDetails().fromSavedSearch = false;
                         var redirectPath = "Search"
+                    }else if (sharedProperties.getWhereFromInitiateSearch() == 'Search'){
+                        var redirectPath = "Search";
                     }
                     else {
                         var redirectPath = "RequisitionDetails/3";
