@@ -122,7 +122,8 @@
                 if(vm.data.job_status == "Please Select") {
                     throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
                 }
-
+                 var data = [];
+                sharedProperties.setInitiateSearchData(data);
                 var savedSearchDetails = sharedProperties.getSavedSearchDetails();
                 vm.criteria = getCriteria();
                 /*if (vm.criteria.Miles) {
