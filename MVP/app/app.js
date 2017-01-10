@@ -179,6 +179,18 @@ app.filter('mydate', function () {
 });
 app.filter('myfilter', function () {
     return function (items, model) {
+        /*
+            Edited by Isaac Jefferson
+
+            Some bug in smart table
+
+            st-table(in html) variable contains a undefined object even when rowCollection variable is zero in length.
+
+            To remove the undefined object. I have done some changes in next 3 lines.
+        */
+        if(items[0] == undefined){
+            items.splice(0,1);
+        }
         var addItem = function (key, item) {
             var static = {
                 'req': ['ReqNumber', 'JobTitle']

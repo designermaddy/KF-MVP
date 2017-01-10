@@ -3,6 +3,7 @@
 app.controller('agingRequisitionTableController', ['$scope','Factory', 'sharedProperties', 'commonFunctions', '$uibModal','$location','config','$rootScope', function ($scope, Factory, sharedProperties, commonFunctions, $uibModal, $location, config, $rootScope) {
 sharedProperties.setReportURL("empty")
  $scope.viewLoading = false;
+ $scope.agingRequisitionCount = 0;
 
  agingRequisitionList();
     function agingRequisitionList() {
@@ -12,6 +13,13 @@ sharedProperties.setReportURL("empty")
              $scope.rowCollection = response.data.requisitions.concat(config.searcherReq);
 			  if($scope.rowCollection){
 				 $scope.viewLoading = true;
+
+                  if($scope.rowCollection.length > 5){
+                      $scope.agingRequisitionCount = 5;
+                  }
+                  else {
+                      $scope.agingRequisitionCount = $scope.rowCollection.length;
+                  }
 			  }
           },
           function rejected(response) {
