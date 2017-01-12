@@ -141,18 +141,22 @@
 </script>
 <!-- Global Pager Set of Record By Record and Total Data  -->
 <script type="text/ng-template" id="uibPagerKf.html">
+    <div ng-if="totalItems != 0">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
     <li class="CurrentPage"><span>{{ page == 1 ? page : page * pager.itemsPerPage - pager.itemsPerPage + 1}} to </span></li>
     <li class="TotalList"><span>{{(page * pager.itemsPerPage) < totalItems ? page * pager.itemsPerPage : totalItems}} of </span></li>
     <li class="TotalPage"><span>{{ totalItems }}</span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+    </div>
 </script>
 <!-- Global Pager Page By Page  -->
 <script type="text/ng-template" id="uibPagerPf.html">
+<div ng-if="totalPages != 0">
     <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"> <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle>{{::getText('previous')}}</a></li>
     <li class="CurrentPage"><span>{{ page }} of </span></li>
     <li class="TotalPage"><span>{{ totalPages }} </span></li>
     <li ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle>{{::getText('next')}}</a></li>
+    </div>
 </script>
 <!-- Requistion Candidate Detials Requistion link Popover -->
 <script type="text/ng-template" id="rcdrpt.html">
