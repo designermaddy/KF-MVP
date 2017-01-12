@@ -60,7 +60,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     }
 
     function requisitonGoalStackBarChart() {
-         var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagment);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, $scope.selectedEngagment);
         var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId, quaterYear);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {

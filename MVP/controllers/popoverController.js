@@ -104,6 +104,9 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     $scope.open = function () {
         var el = $(event.target);
         var activeEl = '';
+        var checkedListGraph = [];
+
+
         if (el.is('input')) {
             angular.forEach(list, function (val, key) {
                 if (val.status == 1) {
@@ -115,10 +118,16 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                 }
                 if (val.status == 2) {
                     val.status = 1;
+                    checkedListGraph[val.status] = val.url;
+                   // checkedList.graphName=val.url;
+                   // graphSelection(checkedList);
                 }
                 if (key == el.attr('id')) {
                     var str = 'partial/_' + val.url + '.html';
                     sharedProperties.setSelectedForesightGraph(val.url);
+                    checkedListGraph[val.status] = val.url;
+                    //checkedList.graphName=val.url;
+                   // graphSelection(checkedList);
                     if (turn == 1) {
                         $scope.ReqUrl = str;
                         turn = 2;
@@ -132,6 +141,28 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                     val.status = 2;
                 }
             });
+        }
+        console.log( checkedListGraph)
+        if(checkedListGraph){
+            graphSelection(checkedListGraph)
+        }
+    }
+    function graphSelection(selectedGraphJson){
+         var checkedList ={
+                          "companyId": "",
+                          "companyName": "",
+                          "graphName": "",
+                          "graphType": "",
+                          "quater": "",
+                          "quaterYear": "",
+                          "year": ""
+                        }
+            for(var i=0; i<selectedGraphJson.length;i++){
+                checkedList.graphName = selectedGraphJson[i];
+                 var promise = Factory.getGraphSelection(checkedList);
+                 promise.then(function resolved(response) {
+                    console.log(response.data)
+               });
         }
     }
 }]);

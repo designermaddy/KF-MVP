@@ -554,7 +554,13 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
        return $http.get(urlAPI + '/engagement/getUserPreference');
         // return $http.get('json/graphlist.json');
     }
-
+      dataFactory.getGraphSelection = function (data) {
+         return $http({
+            method: 'POST'
+            , url: urlAPI + '/dashboard/graphSelection'
+            , data: data
+        });
+    }
     return dataFactory;
  }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
