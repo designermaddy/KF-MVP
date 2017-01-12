@@ -16,7 +16,7 @@
 .ContentBox                                 { width: 75.8%; }
 }
 @media (max-width:1280px)                   {
-.ContentBox                                 { width: 74.4%; }
+.ContentBox                                 { width: 67.4%; }
 }
 @media (min-width: 320px) and (max-width: 1024px) {
 .UserNav                                    { width: 100%; margin-top:60px; }
@@ -56,7 +56,7 @@
 
 .Content                                    { margin:0; }
 .ContentBox                                 { margin-top:75px;  margin-right:15px; position:relative; width:98%; }
-.SideBar                                    { display: none; }
+.SideBar                                    { /*display: none;*/width:100%; }
 .DataListBox				                { display: none; }
 .DataGrid							        { display:block; }
 
