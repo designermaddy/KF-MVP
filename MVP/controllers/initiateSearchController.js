@@ -37,12 +37,14 @@
                     if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
                         vm.data.job_status = "Please Select";
                     }
-                    //var change = sharedProperties.getRequisitionDetails();
-                    //console.log(change);
-                    //vm.data.JobTitle = vm.data.searchName = change.JobTitle;
-                    //vm.data.job_client = change.Client;
-                    //vm.data.NoOfPositions = change.NoOfPositions;
                     vm.data.ReqNumber = requisitionNumber;
+                    if(sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0"){
+                        var change = sharedProperties.getRequisitionDetails();
+                        vm.data.JobTitle = vm.data.searchName = change.JobTitle;
+                        vm.data.job_client = change.Client;
+                        vm.data.ReqNumber = change.ReqNumber;
+                    }
+
                     if (a == 1) {
                         vm.data.Description = vm.jobDesc.Description;
                         vm.data.SearchString = vm.jobDesc.SearchString;
@@ -122,7 +124,8 @@
                 if(vm.data.job_status == "Please Select") {
                     throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
                 }
-
+                 var data = [];
+                sharedProperties.setInitiateSearchData(data);
                 var savedSearchDetails = sharedProperties.getSavedSearchDetails();
                 vm.criteria = getCriteria();
                 /*if (vm.criteria.Miles) {
