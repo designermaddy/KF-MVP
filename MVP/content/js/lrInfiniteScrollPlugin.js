@@ -1,4 +1,4 @@
-angular.module('smart-table')
+angular.module('smart-table', [])
     .directive('stPaginationScroll', ['$timeout', function (timeout) {
         return{
             require: 'stTable',

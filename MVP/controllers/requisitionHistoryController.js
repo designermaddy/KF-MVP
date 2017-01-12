@@ -4,6 +4,7 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
     var deeplinkURL = '';
     var graphName = 'RequisitionHistory';
     var deeplinkURL = '';
+    $scope.selectedEngagment = null;
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
@@ -59,7 +60,8 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
         }
         //requisitonGoalStackBarChart(graphName, $scope.selectedButton);
     function requisitonGoalStackBarChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, quaterYear);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, $scope.selectedEngagment);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId, quaterYear);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {
                 deeplinkURL = response.data.graphDetails.deepLinkURI;

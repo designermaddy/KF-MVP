@@ -27,21 +27,38 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     }
     var turn = 1;
     $rootScope.graph = {};
+    $scope.ReqUrl = "partial/_RequisitionGoal.html";
+    $scope.CanUrl = "partial/_CandidatePipeline.html";
     var promise = Factory.getGraphList();
     promise.then(function resolved(response) {
         var a = response.data;
-        if (a.length){
-            for (var i = 0; i < a.length; i++){
-                for (var key in list){
+        if (a.length) {
+            for (var i = 0; i < a.length; i++) {
+                for (var key in list) {
                     if (list[key]['url'] == a[i].GraphName) {
                         $rootScope.graph[a[i].GraphName] = a[i];
+                        if (i === 0) {
+                            angular.forEach(list, function (val) {
+                                if (val.status === 1) {
+                                    val.status = 0;
+                                }
+                            });
+                            list[key]['status'] = 1;
+                            $scope.ReqUrl = "partial/_" + a[i].GraphName + ".html";
+                        }
+                        else if (i === 1) {
+                            angular.forEach(list, function (val) {
+                                if (val.status === 2) {
+                                    val.status = 0;
+                                }
+                            });
+                            list[key]['status'] = 2;
+                            $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
+                        }
                     }
                 }
             }
         }
-
-        $scope.ReqUrl = "partial/_RequisitionGoal.html";
-        $scope.CanUrl = "partial/_CandidatePipeline.html";
         /*angular.forEach(response.data, function (value) {
             if (value['RequisitionGraphName'] !== null && value['CandidateGraphName'] !== null) {
                 $rootScope.graphDetails = value;

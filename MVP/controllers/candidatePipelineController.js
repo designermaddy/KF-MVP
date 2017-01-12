@@ -2,7 +2,7 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
     var graphName = "CandidatePipeline";
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
-    callgraphDropDownFunc();
+    $scope.selectedEngagment = null;
     if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         $scope.selectedEngagment = a.Engagement;
@@ -24,6 +24,7 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
             }
         }
     }
+    callgraphDropDownFunc();
     $scope.update = function (selectedDropdownValue) {
         // console.log(selectedDropdownValue.Engagement)
         //  $scope.selectedEngagment = selectedDropdownValue.Engagement
@@ -41,10 +42,10 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
         }
         candidatePipelineDonutChart($scope.selectedEngagment);
     }
-    candidatePipelineDonutChart(graphName, $scope.selectedButton);
 
     function candidatePipelineDonutChart(engagment) {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, engagment);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagment);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, engagment, companyId);
         var label = [];
         var data = [];
         var datainsert = []
@@ -77,7 +78,7 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
         })
     };
     $scope.onClick = function (points, evt) {
-        console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+        //console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
         sharedProperties.setReportURL(deeplinkURL)
         $("li[class='active']").removeClass('active');
         $('#ReportHeader').addClass('active');

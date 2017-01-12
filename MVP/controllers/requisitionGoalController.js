@@ -3,6 +3,7 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     var datas = [];
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
+    $scope.selectedEngagment = null;
 
 
     var graphName = 'RequisitionGoal';
@@ -46,7 +47,8 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     //requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
     function requisitonGoalStackBarChart(engagement) {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, engagement);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagement);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {
                 deeplinkURL = response.data.graphDetails.deepLinkURI;
