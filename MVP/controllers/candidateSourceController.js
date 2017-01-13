@@ -8,12 +8,12 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
             if (selectedButton) {
                 $scope.selectedButton = selectedButton;
                 if (selectedButton == "mygraph") {
-                    $("#clientReqs").removeClass('active');
+                    $("#myCandidateSource").removeClass('active');
                     $('#clientCandidateSource').addClass('active');
                 }
                 else if (selectedButton == "company") {
                     $("#clientCandidateSource").removeClass('active');
-                    $('#clientReqs').addClass('active');
+                    $('#myCandidateSource').addClass('active');
                 }
                 if (!test) {
                     candidatePipelineDonutChart($scope.selectedEngagment);
