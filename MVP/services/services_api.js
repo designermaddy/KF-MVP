@@ -27,11 +27,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get('json/allRequisitionswithAcme.json');
         //}
     };
-    dataFactory.getChart = function (graphName, selectedBtn, companySelected, quaterYear) {
-        //  return $http.get(urlAPI + '/dashboard/graphs/' + graphName);
-        //quaterYear = '2016Q1';
-        //companySelected = "Lamb Weston";
+    dataFactory.getChart = function (graphName, selectedBtn, companySelected, companyId, quaterYear ) {
         data = {
+            "companyId" : companyId,
             "companyName": companySelected
             , "graphName": graphName
             , "graphType": selectedBtn
@@ -553,14 +551,30 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         return $http.get(urlAPI + '/engagement/getAllEngagements')
     }
      dataFactory.getGraphList = function () {
-       // return $http.get(urlAPI + '/engagement/getUserPreference')
-         return $http.get('json/graphlist.json');
+       return $http.get(urlAPI + '/engagement/getUserPreference');
+        // return $http.get('json/graphlist.json');
     }
-
+      dataFactory.getGraphSelection = function (data) {
+         return $http({
+            method: 'POST'
+            , url: urlAPI + '/dashboard/graphSelection'
+            , data: data
+        });
+    }
     return dataFactory;
  }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', '$window', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, $window, config, $cookies) {
     var commonFunctions = {};
+
+    commonFunctions.getCompanyId = function(arr, name){
+        if (angular.isDefined(arr) && arr.length > 0) {
+           for (var i = 0; i < arr.length; i++){
+               if (arr[i].Engagement == name){
+                   return arr[i].EngagementNumber;
+               }
+           }
+       }
+    }
     commonFunctions.checkPDFUpload = function(file){
         var matches = ['Doc','Docx','xls','xlsx','ppt','pptx','PDF','RTF','TXT','txt','rtf','pdf','PPTX','PPT','XLSX','XLS','DOCX','docx','doc','DOC'];
           var myfile= file.name;
@@ -715,7 +729,6 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         var promise = Factory.getGraphEngagmentDropDown();
         promise.then(function resolved(response) {
             config.getAllEngagments = response.data;
-            console.log(response)
         }, function rejected(response) {
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })

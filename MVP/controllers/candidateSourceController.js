@@ -2,16 +2,17 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
         var graphName = "CandidateSource";
         var deeplinkURL = '';
         $scope.selectedButton = 'company';
+        $scope.selectedEngagment = null;
+
         if (angular.isDefined($rootScope.graph[graphName])) {
             var a = $rootScope.graph[graphName];
             $scope.selectedEngagment = a.Engagement;
             $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
         }
-        callgraphDropDownFunc();
+
 
         function callgraphDropDownFunc() {
             if (config.getAllEngagments) {
-                console.log(config.getAllEngagments)
                 $scope.allEngagments = config.getAllEngagments;
                 if ($scope.allEngagments.length > 0) {
                     if (!$scope.selectedEngagment) {
@@ -21,6 +22,7 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
                 }
             }
         }
+    callgraphDropDownFunc();
         $scope.update = function (selectedDropdownValue) {
             candidatePipelineDonutChart($scope.selectedEngagment)
         }
@@ -36,10 +38,11 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
             }
             candidatePipelineDonutChart($scope.selectedEngagment);
         }
-        candidatePipelineDonutChart(graphName, $scope.selectedButton);
+
 
         function candidatePipelineDonutChart(engagment) {
-            var promise = Factory.getChart(graphName, $scope.selectedButton, engagment);
+            var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagment);
+            var promise = Factory.getChart(graphName, $scope.selectedButton, engagment, companyId);
             var label = [];
             var data = [];
             var datainsert = []

@@ -281,6 +281,37 @@ app.filter('ssopcfilter', function(){
         return items;
     }
 })
+
+app.filter('rtopcfilter', function(){
+    return function(items, model){
+        if (angular.isDefined(items) && items.length > 0 && angular.isDefined(items[0])){
+            var static = ['Open', 'ClosedFilled', 'Closed', 'OnHold'];
+            if (model && Object.keys(model).length){
+                var b = 0;
+                for (var i = 0; i < Object.keys(model).length; i++){
+                    if (model[Object.keys(model)[i]]){
+                        b++;
+                    }
+                }
+                if (b){
+                    var keys = Object.keys(model);
+                    var newItems = [];
+                    for (var j = 0; j < keys.length; j++){
+                        if (model[keys[j]]){
+                            for (var k = 0; k < items.length; k++){
+                                if (items[k]['status'] == static[j]) {
+                                    newItems.push(items[k])
+                                }
+                            }
+                        }
+                    }
+                    return newItems;
+                }
+            }
+        }
+        return items;
+    }
+})
 app.directive('usSpinner', ['$http', '$rootScope', function ($http, $rootScope) {
     return {
         link: function (scope, elm, attrs) {

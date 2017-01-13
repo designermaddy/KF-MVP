@@ -4,6 +4,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     var deeplinkURL = '';
     var graphName = 'CandidateHistory'; //'CandidatePipeline';
     var deeplinkURL = '';
+    $scope.selectedEngagment = null;
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
@@ -59,7 +60,8 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     }
 
     function requisitonGoalStackBarChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, quaterYear);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, $scope.selectedEngagment);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId, quaterYear);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {
                 deeplinkURL = response.data.graphDetails.deepLinkURI;
@@ -104,7 +106,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
      console.log($scope.kick)*/
     $timeout(function () {
         $('#requisitionGoalList').selectpicker();
-        console.log($('.selectpicker'))
+        //console.log($('.selectpicker'))
     }, 50, false);
     $rootScope.$watch(function () {
         return config.getAllEngagments
