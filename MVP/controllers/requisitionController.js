@@ -5,7 +5,7 @@ app.controller('requisitionController', ['$scope', 'Factory', 'sharedProperties'
         'open': false
         , 'closedFilled': false
         , 'closed': false
-         ,'onHold':false
+         ,'onhold':false
      }
 commonFunctions.getSearcherJson();
     function getData() {
