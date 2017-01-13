@@ -69,6 +69,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     };
     commonFunctions.getSearcherJson();
     $scope.initial = function () {
+      commonFunctions.GAEventHandler(sharedProperties.getGAEventData().SelectChartButton);
         $timeout(function () {
             initialSetup();
         }, 10);

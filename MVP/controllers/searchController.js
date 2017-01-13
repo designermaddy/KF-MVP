@@ -62,6 +62,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         getData();
     }
     $scope.newSearch = function () {
+            commonFunctions.GAEventHandler(sharedProperties.getGAEventData().NewSearch);
             $location.path('NewSearch');
         }
         // to load image based on the ariya status key... active green ariya or normal arya image
@@ -124,6 +125,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
         });
     }
     $scope.initiateSearch = function (clientJobID) {
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().Edit);
         var data = {'requisitionResponseList' : [{
             'docType' : '',
             id : clientJobID

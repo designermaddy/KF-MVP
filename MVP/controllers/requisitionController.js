@@ -62,15 +62,21 @@ commonFunctions.getSearcherJson();
         sharedProperties.setEngagmentSelectedObject(engDtlsSelected);
     }
     $scope.openTalentLinkIframe = function () {
+         commonFunctions.GAEventHandler(sharedProperties.getGAEventData().EditRequisition);
         var url = commonFunctions.getIframeUrl('addNewRequisitionTalentLink');
         commonFunctions.openIframe(url);
     }
     $scope.openCrmIframe = function () {
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().EditRequisition);
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
         commonFunctions.openIframe(url);
     }
      $scope.changeActivelink = function(row, htmlPath) {
         commonFunctions.changeActivelink(row, htmlPath);
     }
+
+     $scope.addNewReuqisitionClick = function (){
+          commonFunctions.GAEventHandler(sharedProperties.getGAEventData().AddNewRequisition);
+     }
 
 }]);

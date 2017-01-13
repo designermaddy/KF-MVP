@@ -165,6 +165,7 @@ app.controller('searchResultsController', ['$scope', 'Factory', 'commonFunctions
     }
 
     $scope.newSearch = function() {
+         commonFunctions.GAEventHandler(sharedProperties.getGAEventData().CandidatesListNewSearch);
         $location.path('NewSearch');
     }
 

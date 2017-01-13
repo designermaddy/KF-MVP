@@ -1,4 +1,4 @@
-app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$http', '$sce', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $http, $sce) {
+app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', 'config', '$timeout', '$sce', function ($uibModal, $scope, Factory, sharedProperties, commonFunctions, config, $timeout, $sce) {
     $scope.engagmentIDName = ''
     $scope.saveButtonEnable = true;
     $scope.factivaURL = config.factivaURL;
@@ -39,7 +39,14 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     }
-    $scope.postHayGroupToGetLink = function () {
+    $scope.postHayGroupToGetLink = function (eventData) {
+        if(eventData == "CreateJob"){
+            commonFunctions.GAEventHandler(sharedProperties.getGAEventData().CreateJob);
+    }
+        else if(eventData == "CreateJobGradePrice"){
+            commonFunctions.GAEventHandler(sharedProperties.getGAEventData().CreateJobGradePrice);
+        }
+
         var credentialName = {
             activateName: sharedProperties.getActiveUserNameName()
             , activatePassword: sharedProperties.getActivePassword()
@@ -115,6 +122,7 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
         }
     }
     $scope.openPopForSave = function () {
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().SaveToEngagement);
         var modalInstance = $uibModal.open({
             controller: 'popUpSaveEngagmentClose'
             , templateUrl: 'partial/_ProfilePopUpSaveEngagment.html'
@@ -176,6 +184,27 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
             return item.EngagementNumber + '  ' + item.Engagement;
         });
     });
+
+    $scope.RequestJobGradePriceClick = function(){
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().RequestJobGradePrice);
+    }
+
+
+    $scope.supplyDemandClick = function(){
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().RequestSupplyDemand);
+    }
+
+    $scope.onFactivaClick = function(){
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().FactivaResearch);
+    }
+
+    $scope.onOneSourceURLClick = function(){
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().OneSourceResearch);
+    }
+
+    $scope.onRecruitingClick = function(){
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().RecruitingResearch);
+    }
 }]);
 app.controller('popUpSaveEngagmentClose', ['$scope', '$uibModalInstance', 'sharedProperties', 'Factory', function ($scope, $uibModalInstance, sharedProperties, Factory) {
     $scope.selectedFunctiontoShowinPopup = [];
