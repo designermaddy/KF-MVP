@@ -13,7 +13,7 @@
 .ContentBox                                 { width:77%; }
 }
 @media (max-width:1366px)                   {
-.ContentBox                                 { width: 75.8%; }
+.ContentBox                                 { width: 73.8%; }
 }
 @media (max-width:1280px)                   {
 .ContentBox                                 { width: 67.4%; }
@@ -76,6 +76,7 @@
 .navbar-default .navbar-nav.navbar-right > li > a { padding:20px 15px; min-width:60px; height: 60px; text-align: center; }
 .navbar-default .navbar-nav.navbar-right > li.UserProfile > a { padding:15px 0 15px 15px; color:#fff; text-align: left;  height:60px; }
 }
+
 @media (min-width:320px) and (max-width: 767px) {
 .navbar-collapse                            { height: 100vh; margin-top:50px; }
 .navbar-brand > img                         { width: 80%; }
