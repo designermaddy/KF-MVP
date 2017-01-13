@@ -150,12 +150,16 @@ function getAccessToken() {
       $scope.$on('IdleTimeout', function() {
         closeModals();
           // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
-         // $scope.logOut();
+          //$scope.logOut();
        /* $scope.timedout = $uibModal.open({
           templateUrl: 'timedout-dialog.html',
           windowClass: 'modal-danger'
         });*/
       });
+    $scope.openIframe = function(){
+          var url = commonFunctions.getIframeUrl('captivativeRdapp');
+        commonFunctions.openIframe(url);
+    }
 
  /*$window.onbeforeunload = function (evt) {
     //$scope.logOut();

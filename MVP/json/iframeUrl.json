@@ -15,6 +15,7 @@
         "addCandidateLoop":"https://client.loopworks.com/people/add/?iframe=true&sso=true&ssoidprovider=recruiterdesktop",
         "editCandidateLoop":"https://client.loopworks.com/people/edit/",
         "iframeTrue":"iframe=true&sso=true&ssoidprovider=recruiterdesktop",
-        "resumeUploadLoop":"https://client.loopworks.com/people/add/resume/?iframe=true&sso=true&ssoidprovider=recruiterdesktop"
+        "resumeUploadLoop":"https://client.loopworks.com/people/add/resume/?iframe=true&sso=true&ssoidprovider=recruiterdesktop",
+        "captivativeRdapp":"https://recruiterdesktop.kf4d-qa.com/captivate/"
 	}]
 }
