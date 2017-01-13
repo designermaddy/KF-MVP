@@ -4,28 +4,34 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     var deeplinkURL = '';
     var graphName = 'CandidateHistory'; //'CandidatePipeline';
     var deeplinkURL = '';
+    $scope.selectedEngagment = null;
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
 
-
-     if (angular.isDefined($rootScope.graph[graphName])){
+    function setInitialValues() {
+        $('div[ng-controller="candidateHistoryController"] a.active').removeClass('active');
+        $scope.selectedButton == 'mygraph' ? $('#chmg').addClass('active') : $('#chcy').addClass('active');
+        $('div#chqcdiv a:contains("' + selectedQuater + '")').addClass('active');
+    }
+    setInitialValues();
+    if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
         $scope.selectedEngagment = a.Engagement;
-        if(a.QuaterYear){
+        if (a.QuaterYear) {
             $scope.selectedYear = a.QuaterYear.slice(0, 4);
             selectedQuater = a.QuaterYear.slice(4, 6);
         }
+        setInitialValues();
     }
-
     var quaterYear = $scope.selectedYear + selectedQuater;
 
     function callgraphDropDownFunc() {
         if (config.getAllEngagments) {
             $scope.allEngagments = config.getAllEngagments;
             if ($scope.allEngagments.length > 0) {
-                 if (!$scope.selectedEngagment){
+                if (!$scope.selectedEngagment) {
                     $scope.selectedEngagment = $scope.allEngagments[0].Engagement;
                 }
                 requisitonGoalStackBarChart();
@@ -59,7 +65,8 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     }
 
     function requisitonGoalStackBarChart() {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, quaterYear);
+        var companyId = commonFunctions.getCompanyId($scope.allEngagments, $scope.selectedEngagment);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId, quaterYear);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {
                 deeplinkURL = response.data.graphDetails.deepLinkURI;
@@ -81,7 +88,8 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
         }]
                     }
                 };
-            }else {
+            }
+            else {
                 $scope.data = [];
             }
         }, function rejected(response) {
@@ -104,7 +112,7 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
      console.log($scope.kick)*/
     $timeout(function () {
         $('#requisitionGoalList').selectpicker();
-        console.log($('.selectpicker'))
+        //console.log($('.selectpicker'))
     }, 50, false);
     $rootScope.$watch(function () {
         return config.getAllEngagments

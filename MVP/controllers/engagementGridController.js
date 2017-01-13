@@ -51,6 +51,7 @@ $timeout(function(){$('#requistionHeader').addClass('active')},100);
     }
 
     $scope.openAdd = function() {
+        commonFunctions.GAEventHandler(sharedProperties.getGAEventData().CandidatesListAddMe);
         var modalInstance = $uibModal.open({
               animation: true
             , templateUrl: 'AddMe.html'

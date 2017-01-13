@@ -3,6 +3,10 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
         $scope.viewLoading = false;
         $scope.search = {};
 
+        $scope.GAEventTrigger = function(){
+            commonFunctions.GAEventHandler(sharedProperties.getGAEventData().CandidatesListAddCandidate);
+        }
+
         agingRequisitionList();
          var idpush = [];
         function agingRequisitionList() {

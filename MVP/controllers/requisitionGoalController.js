@@ -3,17 +3,12 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     var datas = [];
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
+    $scope.selectedEngagment = null;
 
 
     var graphName = 'RequisitionGoal';
 
-    if (angular.isDefined($rootScope.graph[graphName])){
-        var a = $rootScope.graph[graphName];
-        $scope.selectedEngagment = a.Engagement;
-        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
-    }
-
-    $scope.callmyClientRequisition = function (selectedButton) {
+      $scope.callmyClientRequisition = function (selectedButton, test) {
         if (selectedButton) {
             $scope.selectedButton = selectedButton;
             if (selectedButton == "mygraph") {
@@ -24,10 +19,20 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
                 $("#myReqs").removeClass('active');
                 $('#clientReqs').addClass('active');
             }
-            else {}
-            requisitonGoalStackBarChart($scope.selectedEngagment);
+            if (!test){
+                requisitonGoalStackBarChart($scope.selectedEngagment);
+            }
         }
     }
+
+    if (angular.isDefined($rootScope.graph[graphName])){
+        var a = $rootScope.graph[graphName];
+        $scope.selectedEngagment = a.Engagement;
+        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+        $scope.callmyClientRequisition($scope.selectedButton, true)
+    }
+
+
     callgraphDropDownFunc();
 
     function callgraphDropDownFunc() {
@@ -46,7 +51,8 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     //requisitonGoalStackBarChart(graphName, $scope.selectedButton);
 
     function requisitonGoalStackBarChart(engagement) {
-        var promise = Factory.getChart(graphName, $scope.selectedButton, engagement);
+         var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagement);
+        var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
         promise.then(function resolved(response) {
             if (Object.keys(response.data.graphDetails.data).length > 0) {
                 deeplinkURL = response.data.graphDetails.deepLinkURI;
