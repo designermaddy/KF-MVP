@@ -309,6 +309,36 @@ app.directive('usSpinner', ['$http', '$rootScope', function ($http, $rootScope) 
         }
     };
             }]);
+
+/* resize window dynamic height for dashboard page*/
+app.directive('myDirective', ['$window', function ($window) {
+
+     return {
+        link: link,
+        restrict: 'E',
+        template: '<div>window size: {{width}}px</div>'
+     };
+
+     function link(scope, element, attrs){
+
+       scope.width = $window.innerWidth;
+
+       angular.element($window).bind('resize', function(){
+
+         scope.width = $window.innerWidth;
+          var col1 = document.getElementsByClassName("ContentBox");
+          var col2 = document.getElementsByClassName("mh879");
+           console.log(col1[0].offsetHeight);
+           console.log(col2[0].offsetHeight);
+          col2[0].style.height = (col1[0].offsetHeight)+ 'px';
+         // manuall $digest required as resize event
+         // is outside of angular
+         scope.$digest();
+       });
+
+     }
+
+ }]);
 app.controller('LoadError', ['$uibModalInstance', 'message', '$scope', function ($uibModalInstance, message, $scope) {
     $scope.message = message;
     $scope.cancel = function () {
