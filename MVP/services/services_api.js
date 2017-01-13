@@ -563,7 +563,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     }
     return dataFactory;
  }]);
-app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, config, $cookies) {
+app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', '$window', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, $window, config, $cookies) {
     var commonFunctions = {};
 
     commonFunctions.getCompanyId = function(arr, name){
@@ -733,6 +733,10 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     }
+
+    commonFunctions.GAEventHandler = function(eventData){
+        $window.ga(eventData);
+    }
     return commonFunctions;
 }]);
 app.service('sharedProperties', function () {
@@ -772,6 +776,44 @@ app.service('sharedProperties', function () {
     var engagmentSelectedObject = {};
     var emailID = '';
     var initiateSearchBackLink = '';
+    var GAEventData = {
+	SelectChartButton: "'send', {  hitType: 'event',  eventCategory: 'Chart',  eventAction: 'select',  eventLabel: 'Select Chart button'}",
+	SaveToEngagement: "'send', {  hitType: 'event',  eventCategory: 'Save',  eventAction: 'save',  eventLabel: 'Save to Engagement'}",
+	CreateJob: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: ' Create Job'}",
+	CreateJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: 'Create Job Grade/Price'}",
+	RequestJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Job Grade/Price'}",
+	RequestSupplyDemand: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Supply & Demand'}",
+	FactivaResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Factiva Research'}",
+	OneSourceResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'OneSource Research'}",
+	RecruitingResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Recruiting Research'}",
+	RecruiterListDropdown: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Recruiter List dropdown'}",
+	AddNewRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Add New Requisition'}",
+	EditRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Edit Requisition'}",
+	RequisitionsTab: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Requisitions Tab'}",
+	AttachNewDocument: "'send', {  hitType: 'event',  eventCategory: 'Attach',  eventAction: 'attach',  eventLabel: 'Attach New Document'}",
+	AddNewRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Add New Requisition'}",
+	EditRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit Requisition'}",
+	FallCampaign: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'play',  eventLabel: 'Fall Campaign'}",
+	SearchResultComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Search Result Comment'}",
+	SearchResultEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Search Result Edit'}",
+	SearchResultAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Me'}",
+	SearchResultNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Search Result New Search'}",
+	SearchResultAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Candidate'}",
+	CandidatesListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Candidates List Comment'}",
+	CandidatesListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Candidates List Edit'}",
+	CandidatesListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Me'}",
+	CandidatesListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Candidates List New Search'}",
+	CandidatesListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Candidate'}",
+	ApplicantsListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Applicants List Comment'}",
+	ApplicantsListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Applicants List Edit'}",
+	ApplicantsListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Me'}",
+	ApplicantsListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Applicants List New Search'}",
+	ApplicantsListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Candidate'}",
+	NewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'New Search'}",
+	Edit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit'}",
+	Delete: "'send', {  hitType: 'event',  eventCategory: 'Delete',  eventAction: 'delete',  eventLabel: 'Delete'}"
+};
+
     return {
         setWhereFromInitiateSearch (l){
             initiateSearchBackLink = l;
@@ -921,6 +963,8 @@ app.service('sharedProperties', function () {
             return rowCollection;
         }, setrowCollection: function (value) {
             rowCollection = value;
+        }, getGAEventData : function(){
+            return GAEventData;
         }
     }
 });

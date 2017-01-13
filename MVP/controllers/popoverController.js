@@ -27,8 +27,8 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     }
     var turn = 1;
     $rootScope.graph = {};
-    $scope.ReqUrl = "partial/_RequisitionGoal.html";
-    $scope.CanUrl = "partial/_CandidatePipeline.html";
+    /*$scope.ReqUrl = "partial/_RequisitionGoal.html";
+    $scope.CanUrl = "partial/_CandidatePipeline.html";*/
     var promise = Factory.getGraphList();
     promise.then(function resolved(response) {
         var a = response.data;
@@ -86,6 +86,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     };
     commonFunctions.getSearcherJson();
     $scope.initial = function () {
+      commonFunctions.GAEventHandler(sharedProperties.getGAEventData().SelectChartButton);
         $timeout(function () {
             initialSetup();
         }, 10);
@@ -142,7 +143,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                 }
             });
         }
-        console.log( checkedListGraph)
+        //console.log( checkedListGraph)
         if(checkedListGraph){
             graphSelection(checkedListGraph)
         }

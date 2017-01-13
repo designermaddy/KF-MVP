@@ -40,6 +40,7 @@ app.controller('requisitionDocController', ['$uibModal', '$scope', 'Factory', 'c
             })
         }
         $scope.uploadDocPdf = function () {
+             commonFunctions.GAEventHandler(sharedProperties.getGAEventData().AttachNewDocument);
             var modalInstance = $uibModal.open({
                 animation: true
                 , templateUrl: 'pdfDocUpload.html'
@@ -111,7 +112,7 @@ app.controller('ModalCtrl', ['$uibModalInstance', 'url', function ($uibModalInst
         $uibModalInstance.dismiss('cancel');
     }
 }])
-app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', 'config', function ($uibModalInstance, $scope, fileUpload, config) {
+app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload', 'config', 'commonFunctions', 'sharedProperties', function ($uibModalInstance, $scope, fileUpload, config, commonFunctions, sharedProperties) {
         var $ctrl = this;
         $scope.radioModel = true;
         $scope.cancel = function () {
@@ -125,6 +126,9 @@ app.controller('pdfUploadModalCtrl', ['$uibModalInstance', '$scope', 'fileUpload
                 $uibModalInstance.dismiss('cancel');
             }
         };
+        $scope.GAEventTrigger = function(){
+             commonFunctions.GAEventHandler(sharedProperties.getGAEventData().AddNewRequisitionOther);
+        }
 }])
     //http://angularcode.com/simple-file-upload-example-using-angularjs/
 app.directive('fileModel', ['$parse', function ($parse) {
