@@ -46,7 +46,7 @@
     app.value('config', config);
 
     app.config(function(IdleProvider, KeepaliveProvider) {
-      IdleProvider.idle(600);
+      IdleProvider.idle(780);
       IdleProvider.timeout(120);
       KeepaliveProvider.interval(10);
     });
