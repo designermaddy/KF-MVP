@@ -3,11 +3,29 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
     var deeplinkURL = '';
     $scope.selectedButton = 'company';
     $scope.selectedEngagment = null;
-    if (angular.isDefined($rootScope.graph[graphName])) {
-        var a = $rootScope.graph[graphName];
-        $scope.selectedEngagment = a.Engagement;
-        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
-    }
+    $scope.callmyClientRequisition = function (selectedButton, test) {
+            if (selectedButton) {
+                $scope.selectedButton = selectedButton;
+                if (selectedButton == "mygraph") {
+                    $("#clientReqs").removeClass('active');
+                    $('#myReqs').addClass('active');
+                }
+                else if (selectedButton == "company") {
+                    $("#myReqs").removeClass('active');
+                    $('#clientReqs').addClass('active');
+                }
+                if (!test) {
+                     candidatePipelineDonutChart($scope.selectedEngagment);
+                }
+            }
+        }
+        if (angular.isDefined($rootScope.graph[graphName])) {
+            var a = $rootScope.graph[graphName];
+            $scope.selectedEngagment = a.Engagement;
+            $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+            $scope.callmyClientRequisition($scope.selectedButton, true)
+        }
+
 
     function callgraphDropDownFunc() {
         if (config.getAllEngagments) {
@@ -30,18 +48,7 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
         //  $scope.selectedEngagment = selectedDropdownValue.Engagement
         candidatePipelineDonutChart($scope.selectedEngagment)
     }
-    $scope.callmyClientRequisition = function (selectedButton) {
-        $scope.selectedButton = selectedButton;
-        if (selectedButton == "mygraph") {
-            $("#clientPipes").removeClass('active');
-            $('#mypipes').addClass('active');
-        }
-        else if (selectedButton == "company") {
-            $("#mypipes").removeClass('active');
-            $('#clientPipes').addClass('active');
-        }
-        candidatePipelineDonutChart($scope.selectedEngagment);
-    }
+
 
     function candidatePipelineDonutChart(engagment) {
          var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagment);

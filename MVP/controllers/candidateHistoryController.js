@@ -9,18 +9,23 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
 
-
-     if (angular.isDefined($rootScope.graph[graphName])){
+  if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
         $scope.selectedEngagment = a.Engagement;
-        if(a.QuaterYear){
+        if (a.QuaterYear) {
             $scope.selectedYear = a.QuaterYear.slice(0, 4);
             selectedQuater = a.QuaterYear.slice(4, 6);
         }
+        setInitialValues();
     }
-
     var quaterYear = $scope.selectedYear + selectedQuater;
+
+    function setInitialValues() {
+        $('div a.active').removeClass('active');
+        $scope.selectedButton == 'mygraph' ? $('#myReqs').addClass('active') : $('#clientReqs').addClass('active');
+        $('a:contains("' +selectedQuater+ '")').addClass('active');
+    }
 
     function callgraphDropDownFunc() {
         if (config.getAllEngagments) {

@@ -8,13 +8,7 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
 
     var graphName = 'RequisitionGoal';
 
-    if (angular.isDefined($rootScope.graph[graphName])){
-        var a = $rootScope.graph[graphName];
-        $scope.selectedEngagment = a.Engagement;
-        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
-    }
-
-    $scope.callmyClientRequisition = function (selectedButton) {
+      $scope.callmyClientRequisition = function (selectedButton, test) {
         if (selectedButton) {
             $scope.selectedButton = selectedButton;
             if (selectedButton == "mygraph") {
@@ -25,10 +19,20 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
                 $("#myReqs").removeClass('active');
                 $('#clientReqs').addClass('active');
             }
-            else {}
-            requisitonGoalStackBarChart($scope.selectedEngagment);
+            if (!test){
+                requisitonGoalStackBarChart($scope.selectedEngagment);
+            }
         }
     }
+
+    if (angular.isDefined($rootScope.graph[graphName])){
+        var a = $rootScope.graph[graphName];
+        $scope.selectedEngagment = a.Engagement;
+        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
+        $scope.callmyClientRequisition($scope.selectedButton, true)
+    }
+
+
     callgraphDropDownFunc();
 
     function callgraphDropDownFunc() {
