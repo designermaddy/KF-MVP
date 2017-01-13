@@ -143,7 +143,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                 }
             });
         }
-        console.log( checkedListGraph)
+        //console.log( checkedListGraph)
         if(checkedListGraph){
             graphSelection(checkedListGraph)
         }

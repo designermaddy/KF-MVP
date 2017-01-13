@@ -8,6 +8,13 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
     $scope.selectedButton = 'company';
     $scope.selectedYear = '2016';
     var selectedQuater = 'Q4';
+
+    function setInitialValues() {
+       $('div[ng-controller="requisitionHistoryController"] a.active').removeClass('active');
+        $scope.selectedButton == 'mygraph' ? $('#myReqsRH').addClass('active') : $('#clientReqsRH').addClass('active');
+        $('div#rhqcdiv a:contains("' + selectedQuater + '")').addClass('active');
+    }
+    setInitialValues();
     if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
@@ -19,12 +26,6 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
         setInitialValues();
     }
     var quaterYear = $scope.selectedYear + selectedQuater;
-
-    function setInitialValues() {
-        $('div a.active').removeClass('active');
-        $scope.selectedButton == 'mygraph' ? $('#myReqs').addClass('active') : $('#clientReqs').addClass('active');
-        $('a:contains("' +selectedQuater+ '")').addClass('active');
-    }
 
     function callgraphDropDownFunc() {
         if (config.getAllEngagments) {
@@ -53,12 +54,12 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
     $scope.callmyClientRequisition = function (selectedButton) {
             $scope.selectedButton = selectedButton;
             if (selectedButton == "mygraph") {
-                $("#clientReqs").removeClass('active');
-                $('#myReqs').addClass('active');
+                $("#clientReqsRH").removeClass('active');
+                $('#myReqsRH').addClass('active');
             }
             else if (selectedButton == "company") {
-                $("#myReqs").removeClass('active');
-                $('#clientReqs').addClass('active');
+                $("#myReqsRH").removeClass('active');
+                $('#clientReqsRH').addClass('active');
             }
             requisitonGoalStackBarChart();
         }

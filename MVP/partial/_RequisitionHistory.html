@@ -1,8 +1,8 @@
 <div class="panel panel-default" ng-controller="requisitionHistoryController">
     <div class="panel-heading clearfix"> Requisition History <span class="TermSorting pull-right">
       <ul>
-        <li ><a id="myReqs"  href="" ng-click="callmyClientRequisition('mygraph')">My Reqs</a></li>
-  <li ><a id="clientReqs" href="" ng-click="callmyClientRequisition('company')" class="active">
+        <li ><a id="myReqsRH"  href="" ng-click="callmyClientRequisition('mygraph')">My Reqs</a></li>
+  <li ><a id="clientReqsRH" href="" ng-click="callmyClientRequisition('company')" class="active">
   Client Reqs</a></li>
   <li class="FormSelect">
   <select id="rgsfsp" class="form-control" required ng-model='selectedEngagment' ng-change="update()">
@@ -19,7 +19,7 @@
     width: 225px;
 ">
               <ul>
-     <div ng-click="quaterCall($event)">
+     <div ng-click="quaterCall($event)" id="rhqcdiv">
         <li><a href="#" >Q1</a></li>
         <li><a href="#">Q2</a></li>
         <li><a href="#">Q3</a></li>

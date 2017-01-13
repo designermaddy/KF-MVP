@@ -7,12 +7,12 @@ app.controller('requisitionStatusController', ['$scope', 'Factory', 'commonFunct
             if (selectedButton) {
                 $scope.selectedButton = selectedButton;
                 if (selectedButton == "mygraph") {
-                    $("#clientReqs").removeClass('active');
-                    $('#myReqs').addClass('active');
+                    $("#clientReqsSource").removeClass('active');
+                    $('#myReqsSource').addClass('active');
                 }
                 else if (selectedButton == "company") {
-                    $("#myReqs").removeClass('active');
-                    $('#clientReqs').addClass('active');
+                    $("#myReqsSource").removeClass('active');
+                    $('#clientReqsSource').addClass('active');
                 }
                 if (!test) {
                     candidatePipelineDonutChart($scope.selectedEngagment);

@@ -8,10 +8,10 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
                 $scope.selectedButton = selectedButton;
                 if (selectedButton == "mygraph") {
                     $("#clientReqs").removeClass('active');
-                    $('#myReqs').addClass('active');
+                    $('#clientCandidateSource').addClass('active');
                 }
                 else if (selectedButton == "company") {
-                    $("#myReqs").removeClass('active');
+                    $("#clientCandidateSource").removeClass('active');
                     $('#clientReqs').addClass('active');
                 }
                 if (!test) {
