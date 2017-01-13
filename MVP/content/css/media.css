@@ -13,7 +13,7 @@
 .ContentBox                                 { width:77%; }
 }
 @media (max-width:1366px)                   {
-.ContentBox                                 { width: 75.8%; }
+.ContentBox                                 { width: 73.8%; }
 }
 @media (max-width:1280px)                   {
 .ContentBox                                 { width: 67.4%; }
@@ -62,7 +62,6 @@
 
 }
 
-
 @media (min-width:768px) and (max-width: 1024px) {
 .navbar-collapse                            { width:300px; height: 100vh; margin-left: 10px; }
 .UserNav                                    { width: 250px; float: right; margin-top:0; position: fixed; right: 0; z-index: 3; }
@@ -75,6 +74,9 @@
 .navbar-toggle                              { margin-left:10px; }
 .navbar-default .navbar-nav.navbar-right > li > a { padding:20px 15px; min-width:60px; height: 60px; text-align: center; }
 .navbar-default .navbar-nav.navbar-right > li.UserProfile > a { padding:15px 0 15px 15px; color:#fff; text-align: left;  height:60px; }
+}
+ @media (min-width: 992px) {
+.AgingRequisitionTable.table-responsive {height: 341px;}
 }
 @media (min-width:320px) and (max-width: 767px) {
 .navbar-collapse                            { height: 100vh; margin-top:50px; }
