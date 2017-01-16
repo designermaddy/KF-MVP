@@ -359,7 +359,9 @@ app.directive('myDirective', ['$window', function ($window) {
          scope.width = $window.innerWidth;
           var col1 = document.getElementsByClassName("ContentBox");
           var col2 = document.getElementsByClassName("mh879");
-          col2[0].style.height = (col1[0].offsetHeight)+ 'px';
+           if(col1[0].offsetHeight){
+            col2[0].style.height = (col1[0].offsetHeight)+ 'px';
+           }
          // manuall $digest required as resize event
          // is outside of angular
          scope.$digest();
