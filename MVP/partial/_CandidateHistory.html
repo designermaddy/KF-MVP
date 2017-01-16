@@ -2,9 +2,9 @@
     <div class="panel-heading clearfix">Candidate History <span class="TermSorting pull-right">
      <ul>
 
-        <li ><a id="chmg"  href="" ng-click="callmyClientRequisition('mygraph')">My Reqs</a></li>
+        <li ><a id="chmg"  href="" ng-click="callmyClientRequisition('mygraph')">My Hist</a></li>
   <li ><a id="chcy" href="" ng-click="callmyClientRequisition('company')" class="active">
-  Client Reqs</a></li>
+  Client Hist</a></li>
   <li class="FormSelect">
   <select class="form-control" required ng-model='selectedEngagment' ng-change="update()">
   <option ng-repeat="option in allEngagments" value="{{option.Engagement}}" title="{{option.Engagement}}" >{{option.Engagement |truncate: 15}}</option>

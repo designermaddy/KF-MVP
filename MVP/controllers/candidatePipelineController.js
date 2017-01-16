@@ -1,6 +1,7 @@
 app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunctions', '$timeout', '$location', 'sharedProperties', 'config', '$rootScope', function ($scope, Factory, commonFunctions, $timeout, $location, sharedProperties, config, $rootScope) {
     var graphName = "CandidatePipeline";
     var deeplinkURL = '';
+    var graphVar = {};
     $scope.selectedButton = 'company';
     $scope.selectedEngagment = null;
     $scope.callmyClientRequisition = function (selectedButton, test) {
@@ -21,9 +22,24 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
     }
     if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
-        $scope.selectedEngagment = a.Engagement;
-        $scope.selectedButton = a.GraphType ? a.GraphType : 'company';
-        $scope.callmyClientRequisition($scope.selectedButton, true)
+        var d = '';
+        if (a.firstTime == true) {
+            if (a.loadedFromBackend == true) {
+                d = a.data;
+            }
+            else {
+                //use default values.
+            }
+            $rootScope.graph[graphName].firstTime = false;
+        }
+        else {
+            d = a.mdata;
+        }
+        if (angular.isObject(d)) {
+            $scope.selectedEngagment = d.Engagement;
+            $scope.selectedButton = d.GraphType ? d.GraphType : 'company';
+            $scope.callmyClientRequisition($scope.selectedButton, true)
+        }
     }
 
     function callgraphDropDownFunc() {
@@ -48,39 +64,51 @@ app.controller('candidatePipelineController', ['$scope', 'Factory', 'commonFunct
         candidatePipelineDonutChart($scope.selectedEngagment)
     }
 
-    function candidatePipelineDonutChart(engagment) {
-        var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagment);
-        var promise = Factory.getChart(graphName, $scope.selectedButton, engagment, companyId);
-        var label = [];
-        var data = [];
-        var datainsert = []
-        $scope.candidatePipelineData = []
-        promise.then(function resolved(response) {
-            if (response.data.graphDetails) {
-                deeplinkURL = response.data.graphDetails.deepLinkURI;
-                datas = [];
-                // = response.data.candidateList;
-                $scope.candidatePipelineData = [];
-                for (var k in Object.keys(response.data.graphDetails.data)) {
-                    label.push((Object.keys(response.data.graphDetails.data)[k]))
-                    data.push(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])
-                        //datainsert.push[data[k]]
+    function candidatePipelineDonutChart(engagement) {
+        var companyId = commonFunctions.getCompanyId($scope.allEngagments, engagement);
+        var v = {
+            'GraphType': $scope.selectedButton
+            , 'Engagement': engagement
+            , 'companyId': companyId
+        }
+        if (angular.equals(graphVar, v)) {
+            //do nothing
+        }
+        else {
+            graphVar = Object.assign({}, v);
+            $rootScope.graph[graphName].mdata = Object.assign({}, v);
+            var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
+            var label = [];
+            var data = [];
+            var datainsert = []
+            $scope.candidatePipelineData = []
+            promise.then(function resolved(response) {
+                if (response.data.graphDetails) {
+                    deeplinkURL = response.data.graphDetails.deepLinkURI;
+                    datas = [];
+                    // = response.data.candidateList;
+                    $scope.candidatePipelineData = [];
+                    for (var k in Object.keys(response.data.graphDetails.data)) {
+                        label.push((Object.keys(response.data.graphDetails.data)[k]))
+                        data.push(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])
+                            //datainsert.push[data[k]]
+                        $scope.candidatePipelineData.push({
+                            "label": label
+                            , "data": data
+                        });
+                    }
+                }
+                else {
+                    data = [0, 0, 0]
                     $scope.candidatePipelineData.push({
                         "label": label
                         , "data": data
                     });
                 }
-            }
-            else {
-                data = [0, 0, 0]
-                $scope.candidatePipelineData.push({
-                    "label": label
-                    , "data": data
-                });
-            }
-        }, function rejected(response) {
-            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-        })
+            }, function rejected(response) {
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            })
+        }
     };
     $scope.onClick = function (points, evt) {
         //console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B

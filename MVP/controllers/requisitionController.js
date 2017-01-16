@@ -1,7 +1,12 @@
 app.controller('requisitionController', ['$scope', 'Factory', 'sharedProperties', '$http', 'commonFunctions', 'config', function ($scope, Factory, sharedProperties, $http, commonFunctions, config) {
     $scope.search = {};
     $scope.date = {};
-
+     $scope.ch = {
+        'open': false
+        , 'closedFilled': false
+        , 'closed': false
+         ,'onhold':false
+     }
 commonFunctions.getSearcherJson();
     function getData() {
         var promise = Factory.getRequisitionTableList();

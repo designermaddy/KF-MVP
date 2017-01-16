@@ -285,7 +285,7 @@ app.filter('ssopcfilter', function(){
 app.filter('rtopcfilter', function(){
     return function(items, model){
         if (angular.isDefined(items) && items.length > 0 && angular.isDefined(items[0])){
-            var static = ['Open', 'ClosedFilled', 'Closed', 'OnHold'];
+            var static = ['Open', 'ClosedFilled', 'Closed', 'Onhold'];
             if (model && Object.keys(model).length){
                 var b = 0;
                 for (var i = 0; i < Object.keys(model).length; i++){
