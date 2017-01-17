@@ -1,6 +1,7 @@
 <div class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Engagements({{filterData.length}})</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html" total-items="filterData.length" ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
+        <h2>Engagements({{filterData.length}})</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html" total-items="filterData.length" ng-model="currentPage" previous-text="" next-text=""></ul></span><span class="pull-left HeaderLink"><a ng-click="refreshEngagements();"><i class="fa fa-refresh" aria-hidden="true"></i>
+ Refresh Engagements </a></span> </div>
     <div st-table="displayedCollections" st-safe-src="rowCollection" class="EngagementsTable">
         <table class="table table-striped">
             <thead>

@@ -33,4 +33,8 @@ app.controller('engagementTableController', ['$scope','sharedProperties','Factor
     $scope.selectPage = function(){
         alert('hello')
     }
+	/**Refresh Engagements**/
+	 $scope.refreshEngagements = function() {
+       getData();
+    }
 }]);

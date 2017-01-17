@@ -1,6 +1,7 @@
 <div ng-controller="agingRequisitionTableController" class="DataListBox">
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Aging Requisitions ({{agingRequisitionCount}})</h2> <span class="pull-right Link disabled"><a href="#/Requisitions">View All Open Requisitions <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span> </div>
+        <h2>Aging Requisitions ({{agingRequisitionCount}})</h2> <span class="pull-right Link disabled"><a href="#/Requisitions">View All Open Requisitions <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span> <span class="pull-left HeaderLink"><a ng-click="refreshRequisitionResults();"><i class="fa fa-refresh" aria-hidden="true"></i>
+ Refresh Requisitions </a></span></div>
     <div class="AgingRequisitionTable table-responsive" st-table="displayedCollections" st-safe-src="rowCollection">
         <table class="table table-striped">
             <thead>
