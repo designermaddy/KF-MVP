@@ -29,4 +29,8 @@ app.controller('engagementController', ['$scope', 'Factory', 'sharedProperties',
         sharedProperties.setengagementPerIDSelected(engagementID)
         sharedProperties.setEngagmentSelectedObject(engDtlsSelected)
     }
+	/**Refresh Engagements**/
+	 $scope.refreshEngagements = function() {
+       getData();
+    }
 }]);
