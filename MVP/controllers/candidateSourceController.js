@@ -7,11 +7,11 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
         $scope.callmyClientRequisition = function (selectedButton, test) {
             if (selectedButton) {
                 $scope.selectedButton = selectedButton;
-                if (selectedButton == "mygraph") {
+                if (selectedButton == "company") {
                     $("#myCandidateSource").removeClass('active');
                     $('#clientCandidateSource').addClass('active');
                 }
-                else if (selectedButton == "company") {
+                else if (selectedButton == "mygraph") {
                     $("#clientCandidateSource").removeClass('active');
                     $('#myCandidateSource').addClass('active');
                 }
@@ -23,6 +23,7 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
         if (angular.isDefined($rootScope.graph[graphName])) {
             var a = $rootScope.graph[graphName];
             var d = '';
+             $scope.position = $rootScope.graph[graphName].Position;
             if (a.firstTime == true) {
                 if (a.loadedFromBackend == true) {
                     d = a.data;
@@ -71,13 +72,13 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
             else {
                 graphVar = Object.assign({}, v);
                 $rootScope.graph[graphName].mdata = Object.assign({}, v);
-                var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
+                var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId, $scope.position);
                 var label = [];
                 var data = [];
                 var datainsert = []
                 $scope.candidatePipelineData = []
                 promise.then(function resolved(response) {
-                    if (response.data.graphDetails) {
+                    if (response.data.graphDetails && response.data.graphDetails.data && Object.keys(response.data.graphDetails.data).length > 0) {
                         deeplinkURL = response.data.graphDetails.deepLinkURI;
                         // = response.data.candidateList;
                         $scope.candidatePipelineData = [];
@@ -97,7 +98,7 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
                         }
                     }
                     else {
-                        data = [0, 0, 0]
+                        data = [];
                         $scope.candidatePipelineData.push({
                             "label": label
                             , "data": data

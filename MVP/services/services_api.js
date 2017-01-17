@@ -27,15 +27,16 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get('json/allRequisitionswithAcme.json');
         //}
     };
-    dataFactory.getChart = function (graphName, selectedBtn, companySelected, companyId, quaterYear ) {
+    dataFactory.getChart = function (graphName, selectedBtn, companySelected, companyId, position, quaterYear) {
         data = {
-            "companyId" : companyId,
-            "companyName": companySelected
+            "companyId": companyId
+            , "companyName": companySelected
             , "graphName": graphName
             , "graphType": selectedBtn
             , "quater": ""
             , "quaterYear": quaterYear || ""
             , "year": ""
+            , "position": position
         }
         return $http({
             method: 'POST'
@@ -220,7 +221,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         //return $http.get('json/requisitionPdfDoc.json')
         return $http({
             method: 'POST'
-            , url:  urlAPI + '/Requisition/getAllRequisitionDocument'
+            , url: urlAPI + '/Requisition/getAllRequisitionDocument'
             , data: data
         });
     }
@@ -240,7 +241,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
                 }*/
         return $http({
             method: 'POST'
-            , url:  urlAPI + '/Requisition/getAllProfileDocument'
+            , url: urlAPI + '/Requisition/getAllProfileDocument'
             , data: data
         });
         /* {
@@ -323,7 +324,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         var jobId = values.jobId;
         var count = values.limit
         var start = values.page * count;
-        var url = urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId ;
+        var url = urlAPI + "/Requisition/getAryaCandidates/" + orgId + "/" + jobId;
         return $http.get(url).then(getAryaCandidatesComplete).catch(function (message) {
             exception.catcher('XHR Failed for getAvengers')(message);
             $location.url('/');
@@ -382,7 +383,7 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
         // return $http.get('json/Savedsearch.json')
     }
     dataFactory.getJobDescription = function (data) {
-         return $http({
+        return $http({
             method: 'POST'
             , url: urlAPI + '/Requisition/jobSearch/'
             , data: data
@@ -550,12 +551,12 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
     dataFactory.getGraphEngagmentDropDown = function () {
         return $http.get(urlAPI + '/engagement/getAllEngagements')
     }
-     dataFactory.getGraphList = function () {
-       return $http.get(urlAPI + '/engagement/getUserPreference');
+    dataFactory.getGraphList = function () {
+        return $http.get(urlAPI + '/engagement/getUserPreference');
         // return $http.get('json/graphlist.json');
     }
-      dataFactory.getGraphSelection = function (data) {
-         return $http({
+    dataFactory.getGraphSelection = function (data) {
+        return $http({
             method: 'POST'
             , url: urlAPI + '/dashboard/graphSelection'
             , data: data
@@ -565,29 +566,29 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
  }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', '$window', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, $window, config, $cookies) {
     var commonFunctions = {};
-
-    commonFunctions.getCompanyId = function(arr, name){
+    commonFunctions.getCompanyId = function (arr, name) {
         if (angular.isDefined(arr) && arr.length > 0) {
-           for (var i = 0; i < arr.length; i++){
-               if (arr[i].Engagement == name){
-                   return arr[i].EngagementNumber;
-               }
-           }
-       }
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].Engagement == name) {
+                    return arr[i].EngagementNumber;
+                }
+            }
+        }
     }
-    commonFunctions.checkPDFUpload = function(file){
-        var matches = ['Doc','Docx','xls','xlsx','ppt','pptx','PDF','RTF','TXT','txt','rtf','pdf','PPTX','PPT','XLSX','XLS','DOCX','docx','doc','DOC'];
-          var myfile= file.name;
-          var pdfTrue = false;
-           var ext = myfile.split('.').pop();
-        if(~ matches.indexOf(ext)){
-           /*if(ext=="pdf"){*/
-               //alert(ext);
-               pdfTrue = true;
-           } else{
-               file = "";
-               pdfTrue = false;
-           }
+    commonFunctions.checkPDFUpload = function (file) {
+        var matches = ['Doc', 'Docx', 'xls', 'xlsx', 'ppt', 'pptx', 'PDF', 'RTF', 'TXT', 'txt', 'rtf', 'pdf', 'PPTX', 'PPT', 'XLSX', 'XLS', 'DOCX', 'docx', 'doc', 'DOC'];
+        var myfile = file.name;
+        var pdfTrue = false;
+        var ext = myfile.split('.').pop();
+        if (~matches.indexOf(ext)) {
+            /*if(ext=="pdf"){*/
+            //alert(ext);
+            pdfTrue = true;
+        }
+        else {
+            file = "";
+            pdfTrue = false;
+        }
         return pdfTrue
     }
     commonFunctions.getIframeUrl = function (key) {
@@ -716,16 +717,16 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         })
     }
     commonFunctions.getSearcherRequisitions = function (searcherItems) {
-        var promise = Factory.getSearcherRequisitions(searcherItems);
-        promise.then(function resolved(response) {
-            config.searcherReq = response.data.requisitions;
-            console.log(response)
-        }, function rejected(response) {
-            commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
-        })
-    }
-    // to fetch the engagment like lambweston, Acme etc..
-    commonFunctions.getGraphDropdown =function(){
+            var promise = Factory.getSearcherRequisitions(searcherItems);
+            promise.then(function resolved(response) {
+                config.searcherReq = response.data.requisitions;
+                console.log(response)
+            }, function rejected(response) {
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            })
+        }
+        // to fetch the engagment like lambweston, Acme etc..
+    commonFunctions.getGraphDropdown = function () {
         var promise = Factory.getGraphEngagmentDropDown();
         promise.then(function resolved(response) {
             config.getAllEngagments = response.data;
@@ -733,8 +734,7 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
         })
     }
-
-    commonFunctions.GAEventHandler = function(eventData){
+    commonFunctions.GAEventHandler = function (eventData) {
         $window.ga(eventData);
     }
     return commonFunctions;
@@ -777,195 +777,194 @@ app.service('sharedProperties', function () {
     var emailID = '';
     var initiateSearchBackLink = '';
     var GAEventData = {
-	SelectChartButton: "'send', {  hitType: 'event',  eventCategory: 'Chart',  eventAction: 'select',  eventLabel: 'Select Chart button'}",
-	SaveToEngagement: "'send', {  hitType: 'event',  eventCategory: 'Save',  eventAction: 'save',  eventLabel: 'Save to Engagement'}",
-	CreateJob: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: ' Create Job'}",
-	CreateJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: 'Create Job Grade/Price'}",
-	RequestJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Job Grade/Price'}",
-	RequestSupplyDemand: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Supply & Demand'}",
-	FactivaResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Factiva Research'}",
-	OneSourceResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'OneSource Research'}",
-	RecruitingResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Recruiting Research'}",
-	RecruiterListDropdown: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Recruiter List dropdown'}",
-	AddNewRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Add New Requisition'}",
-	EditRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Edit Requisition'}",
-	RequisitionsTab: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Requisitions Tab'}",
-	AttachNewDocument: "'send', {  hitType: 'event',  eventCategory: 'Attach',  eventAction: 'attach',  eventLabel: 'Attach New Document'}",
-	AddNewRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Add New Requisition'}",
-	EditRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit Requisition'}",
-	FallCampaign: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'play',  eventLabel: 'Fall Campaign'}",
-	SearchResultComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Search Result Comment'}",
-	SearchResultEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Search Result Edit'}",
-	SearchResultAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Me'}",
-	SearchResultNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Search Result New Search'}",
-	SearchResultAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Candidate'}",
-	CandidatesListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Candidates List Comment'}",
-	CandidatesListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Candidates List Edit'}",
-	CandidatesListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Me'}",
-	CandidatesListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Candidates List New Search'}",
-	CandidatesListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Candidate'}",
-	ApplicantsListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Applicants List Comment'}",
-	ApplicantsListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Applicants List Edit'}",
-	ApplicantsListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Me'}",
-	ApplicantsListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Applicants List New Search'}",
-	ApplicantsListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Candidate'}",
-	NewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'New Search'}",
-	Edit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit'}",
-	Delete: "'send', {  hitType: 'event',  eventCategory: 'Delete',  eventAction: 'delete',  eventLabel: 'Delete'}"
-};
-
+        SelectChartButton: "'send', {  hitType: 'event',  eventCategory: 'Chart',  eventAction: 'select',  eventLabel: 'Select Chart button'}"
+        , SaveToEngagement: "'send', {  hitType: 'event',  eventCategory: 'Save',  eventAction: 'save',  eventLabel: 'Save to Engagement'}"
+        , CreateJob: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: ' Create Job'}"
+        , CreateJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Create',  eventAction: 'create',  eventLabel: 'Create Job Grade/Price'}"
+        , RequestJobGradePrice: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Job Grade/Price'}"
+        , RequestSupplyDemand: "'send', {  hitType: 'event',  eventCategory: 'Request',  eventAction: 'request',  eventLabel: 'Request Supply & Demand'}"
+        , FactivaResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Factiva Research'}"
+        , OneSourceResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'OneSource Research'}"
+        , RecruitingResearch: "'send', {  hitType: 'event',  eventCategory: 'Research',  eventAction: 'load',  eventLabel: 'Recruiting Research'}"
+        , RecruiterListDropdown: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Recruiter List dropdown'}"
+        , AddNewRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Add New Requisition'}"
+        , EditRequisition: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Edit Requisition'}"
+        , RequisitionsTab: "'send', {  hitType: 'event',  eventCategory: 'View',  eventAction: 'view',  eventLabel: 'Requisitions Tab'}"
+        , AttachNewDocument: "'send', {  hitType: 'event',  eventCategory: 'Attach',  eventAction: 'attach',  eventLabel: 'Attach New Document'}"
+        , AddNewRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Add New Requisition'}"
+        , EditRequisitionOther: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit Requisition'}"
+        , FallCampaign: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'play',  eventLabel: 'Fall Campaign'}"
+        , SearchResultComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Search Result Comment'}"
+        , SearchResultEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Search Result Edit'}"
+        , SearchResultAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Me'}"
+        , SearchResultNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Search Result New Search'}"
+        , SearchResultAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Search Result Add Candidate'}"
+        , CandidatesListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Candidates List Comment'}"
+        , CandidatesListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Candidates List Edit'}"
+        , CandidatesListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Me'}"
+        , CandidatesListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Candidates List New Search'}"
+        , CandidatesListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Candidates List Add Candidate'}"
+        , ApplicantsListComment: "'send', {  hitType: 'event',  eventCategory: 'Comment',  eventAction: 'comment',  eventLabel: Applicants List Comment'}"
+        , ApplicantsListEdit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Applicants List Edit'}"
+        , ApplicantsListAddMe: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Me'}"
+        , ApplicantsListNewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'Applicants List New Search'}"
+        , ApplicantsListAddCandidate: "'send', {  hitType: 'event',  eventCategory: 'Add',  eventAction: 'add',  eventLabel: 'Applicants List Add Candidate'}"
+        , NewSearch: "'send', {  hitType: 'event',  eventCategory: 'Search',  eventAction: 'search',  eventLabel: 'New Search'}"
+        , Edit: "'send', {  hitType: 'event',  eventCategory: 'Edit',  eventAction: 'edit',  eventLabel: 'Edit'}"
+        , Delete: "'send', {  hitType: 'event',  eventCategory: 'Delete',  eventAction: 'delete',  eventLabel: 'Delete'}"
+    };
     return {
-        setWhereFromInitiateSearch (l){
-            initiateSearchBackLink = l;
-        },
-        getWhereFromInitiateSearch () {
-            return initiateSearchBackLink;
-        },
-        refreshPdfDocList(d) {
-            date = d ? d : date;
-            return date;
-        }, refreshEngDetailsDocList(d) {
-            date = d ? d : date;
-            return date;
-        }, setAllNotesDetails(data) {
-            noteDetails = data;
-        }, getAllNotesDetails() {
-            return noteDetails;
-        }, setEngagmentSelectedObject(data) {
-            engagmentSelectedObject = data;
-        }, getEngagmentSelectedObject() {
-            return engagmentSelectedObject;
-        }, setURLPdf(data) {
-            urlPdf = data;
-        }, getURLPdf() {
-            return urlPdf;
-        }, setSelectedForesightGraph(data) {
-            selectedForesightGraph = data;
-        }, getSelectedForesightGraph() {
-            return selectedForesightGraph;
-        }, setSavedSearchDetails(data) {
-            savedSearchDetails = data;
-        }, getSavedSearchDetails() {
-            return savedSearchDetails;
-        }, setNewSearchData: function (value) {
-            newSearchData = value;
-        }, getNewSearchData: function () {
-            return newSearchData;
-        }, setPositionId: function (value) {
-            positionId = value;
-        }, getPositionId: function () {
-            return positionId;
-        }, setInitiateSearchData: function (value) {
-            initiateSearchData = value;
-        }, getInitiateSearchData: function () {
-            return initiateSearchData;
-        }, setCandidateListDetails: function (value) {
-            candidateListDetails = value;
-        }, getCandidateListDetails: function () {
-            return candidateListDetails;
-        }, setUserName: function (value) {
-            userName = value
-        }, getUserName: function () {
-            return userName;
-        }, setPassword: function (value) {
-            password = value
-        }, getEmail: function () {
-            return email;
-        }, setEmail: function (value) {
-            email = value
-        }, getEmailID: function () {
-            return emailID;
-        }, setEmailID: function (value) {
-            emailID = value
-        }, getPassword: function () {
-            return password;
-        }, setActiveUserName: function (value) {
-            activeUserName = value
-        }, getActiveUserNameName: function () {
-            return activeUserName;
-        }, setActivePassword: function (value) {
-            activePassword = value
-        }, getActivePassword: function () {
-            return activePassword;
-        }, setReportURL: function (value) {
-            reportURL = value
-        }, getReportURL: function () {
-            return reportURL;
-        }, setViewCandidateId: function (value) {
-            viewCandidateId = value;
-        }, getViewCandidateId: function () {
-            return viewCandidateId;
-        }, setJobId: function (value) {
-            JobID = value;
-        }, getJobId: function () {
-            return JobID;
-        }, setClientJobID: function (value) {
-            ClientJobID = value;
-        }, getClientJobID: function () {
-            return ClientJobID;
-        }, setRequisitionTable: function (value) {
-            RequisitionTable = value;
-        }, getRequisitionTable: function () {
-            return RequisitionTable;
-        }, getAuthGlobalToken: function () {
-            return authGlobalToken;
-        }, setAuthGlobalToken: function (value) {
-            authGlobalToken = value;
-        }, getCounter: function () {
-            return counter;
-        }, setCounter: function (value) {
-            counter = value;
-        }, getRequisitionDetails: function () {
-            return requisitionDetails;
-        }, setRequisitionDetails: function (value) {
-            requisitionDetails = value;
-        }, getIframeLinks: function () {
-            return iframeList;
-        }, setIframeLinks: function (value) {
-            iframeList = value;
-        }, getprofileSelectedEngagementID: function () {
-            return profileSelectedEngagementID
-        }, setprofileSelectedEngagementID: function (value) {
-            profileSelectedEngagementID = value;
-        }, getprofileSelectedDocumentID: function () {
-            return profileSelectedDocumentID;
-        }, setprofileSelectedDocumentID: function (value) {
-            profileSelectedDocumentID = value
-        }, getengagementPerIDSelected: function () {
-            return engagementPerIDSelected;
-        }, setengagementPerIDSelected: function (value) {
-            engagementPerIDSelected = value
-        }, getprofileSelectedFunction: function () {
-            return profileSelectedFunction;
-        }, setprofileSelectedFunction: function (value) {
-            profileSelectedFunction = value
-        }, gettabJobProfile: function () {
-            return tabJobProfile;
-        }, settabJobProfile: function (value) {
-            tabJobProfile = value;
-        }, gettabDocumentation: function () {
-            return tabDocumentation;
-        }, settabDocumentation: function (value) {
-            tabDocumentation = value;
-        }, gettabSearchResults: function () {
-            return tabSearchResults;
-        }, settabSearchResults: function (value) {
-            tabSearchResults = value;
-        }, gettabCandidateList: function () {
-            return tabCandidateList;
-        }, settabCandidateList: function (value) {
-            tabCandidateList = value;
-        }, gettabApplicationList: function () {
-            return tabApplicationList;
-        }, settabApplicationList: function (value) {
-            tabApplicationList = value;
-        }, getrowCollection: function () {
-            return rowCollection;
-        }, setrowCollection: function (value) {
-            rowCollection = value;
-        }, getGAEventData : function(){
-            return GAEventData;
-        }
+        setWhereFromInitiateSearch(l) {
+                initiateSearchBackLink = l;
+            }
+            , getWhereFromInitiateSearch() {
+                return initiateSearchBackLink;
+            }
+            , refreshPdfDocList(d) {
+                date = d ? d : date;
+                return date;
+            }, refreshEngDetailsDocList(d) {
+                date = d ? d : date;
+                return date;
+            }, setAllNotesDetails(data) {
+                noteDetails = data;
+            }, getAllNotesDetails() {
+                return noteDetails;
+            }, setEngagmentSelectedObject(data) {
+                engagmentSelectedObject = data;
+            }, getEngagmentSelectedObject() {
+                return engagmentSelectedObject;
+            }, setURLPdf(data) {
+                urlPdf = data;
+            }, getURLPdf() {
+                return urlPdf;
+            }, setSelectedForesightGraph(data) {
+                selectedForesightGraph = data;
+            }, getSelectedForesightGraph() {
+                return selectedForesightGraph;
+            }, setSavedSearchDetails(data) {
+                savedSearchDetails = data;
+            }, getSavedSearchDetails() {
+                return savedSearchDetails;
+            }, setNewSearchData: function (value) {
+                newSearchData = value;
+            }, getNewSearchData: function () {
+                return newSearchData;
+            }, setPositionId: function (value) {
+                positionId = value;
+            }, getPositionId: function () {
+                return positionId;
+            }, setInitiateSearchData: function (value) {
+                initiateSearchData = value;
+            }, getInitiateSearchData: function () {
+                return initiateSearchData;
+            }, setCandidateListDetails: function (value) {
+                candidateListDetails = value;
+            }, getCandidateListDetails: function () {
+                return candidateListDetails;
+            }, setUserName: function (value) {
+                userName = value
+            }, getUserName: function () {
+                return userName;
+            }, setPassword: function (value) {
+                password = value
+            }, getEmail: function () {
+                return email;
+            }, setEmail: function (value) {
+                email = value
+            }, getEmailID: function () {
+                return emailID;
+            }, setEmailID: function (value) {
+                emailID = value
+            }, getPassword: function () {
+                return password;
+            }, setActiveUserName: function (value) {
+                activeUserName = value
+            }, getActiveUserNameName: function () {
+                return activeUserName;
+            }, setActivePassword: function (value) {
+                activePassword = value
+            }, getActivePassword: function () {
+                return activePassword;
+            }, setReportURL: function (value) {
+                reportURL = value
+            }, getReportURL: function () {
+                return reportURL;
+            }, setViewCandidateId: function (value) {
+                viewCandidateId = value;
+            }, getViewCandidateId: function () {
+                return viewCandidateId;
+            }, setJobId: function (value) {
+                JobID = value;
+            }, getJobId: function () {
+                return JobID;
+            }, setClientJobID: function (value) {
+                ClientJobID = value;
+            }, getClientJobID: function () {
+                return ClientJobID;
+            }, setRequisitionTable: function (value) {
+                RequisitionTable = value;
+            }, getRequisitionTable: function () {
+                return RequisitionTable;
+            }, getAuthGlobalToken: function () {
+                return authGlobalToken;
+            }, setAuthGlobalToken: function (value) {
+                authGlobalToken = value;
+            }, getCounter: function () {
+                return counter;
+            }, setCounter: function (value) {
+                counter = value;
+            }, getRequisitionDetails: function () {
+                return requisitionDetails;
+            }, setRequisitionDetails: function (value) {
+                requisitionDetails = value;
+            }, getIframeLinks: function () {
+                return iframeList;
+            }, setIframeLinks: function (value) {
+                iframeList = value;
+            }, getprofileSelectedEngagementID: function () {
+                return profileSelectedEngagementID
+            }, setprofileSelectedEngagementID: function (value) {
+                profileSelectedEngagementID = value;
+            }, getprofileSelectedDocumentID: function () {
+                return profileSelectedDocumentID;
+            }, setprofileSelectedDocumentID: function (value) {
+                profileSelectedDocumentID = value
+            }, getengagementPerIDSelected: function () {
+                return engagementPerIDSelected;
+            }, setengagementPerIDSelected: function (value) {
+                engagementPerIDSelected = value
+            }, getprofileSelectedFunction: function () {
+                return profileSelectedFunction;
+            }, setprofileSelectedFunction: function (value) {
+                profileSelectedFunction = value
+            }, gettabJobProfile: function () {
+                return tabJobProfile;
+            }, settabJobProfile: function (value) {
+                tabJobProfile = value;
+            }, gettabDocumentation: function () {
+                return tabDocumentation;
+            }, settabDocumentation: function (value) {
+                tabDocumentation = value;
+            }, gettabSearchResults: function () {
+                return tabSearchResults;
+            }, settabSearchResults: function (value) {
+                tabSearchResults = value;
+            }, gettabCandidateList: function () {
+                return tabCandidateList;
+            }, settabCandidateList: function (value) {
+                tabCandidateList = value;
+            }, gettabApplicationList: function () {
+                return tabApplicationList;
+            }, settabApplicationList: function (value) {
+                tabApplicationList = value;
+            }, getrowCollection: function () {
+                return rowCollection;
+            }, setrowCollection: function (value) {
+                rowCollection = value;
+            }, getGAEventData: function () {
+                return GAEventData;
+            }
     }
 });
 app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {

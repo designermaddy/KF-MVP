@@ -19,6 +19,7 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
     if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         var d = '';
+        $scope.position = $rootScope.graph[graphName].Position;
         if (a.firstTime == true) {
             if (a.loadedFromBackend == true) {
                 d = a.data;
@@ -94,7 +95,7 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
         else {
             graphVar = Object.assign({}, v);
             $rootScope.graph[graphName].mdata = Object.assign({}, v);
-            var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId, quaterYear);
+            var promise = Factory.getChart(graphName, $scope.selectedButton, $scope.selectedEngagment, companyId,$scope.position, quaterYear);
             promise.then(function resolved(response) {
                 if (response.data.graphDetails && Object.keys(response.data.graphDetails.data).length > 0) {
                     deeplinkURL = response.data.graphDetails.deepLinkURI;
@@ -119,6 +120,8 @@ app.controller('requisitionHistoryController', ['$scope', 'Factory', 'sharedProp
                 }
                 else {
                     $scope.data = [];
+                    if (response.data.graphDetails && response.data.graphDetails.deepLinkURI)
+                        deeplinkURL = response.data.graphDetails.deepLinkURI;
                 }
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);

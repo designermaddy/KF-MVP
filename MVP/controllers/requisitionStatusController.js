@@ -23,6 +23,7 @@ app.controller('requisitionStatusController', ['$scope', 'Factory', 'commonFunct
         if (angular.isDefined($rootScope.graph[graphName])) {
             var a = $rootScope.graph[graphName];
             var d = '';
+            $scope.position = $rootScope.graph[graphName].Position;
             if (a.firstTime == true) {
                 if (a.loadedFromBackend == true) {
                     d = a.data;
@@ -73,7 +74,7 @@ app.controller('requisitionStatusController', ['$scope', 'Factory', 'commonFunct
             else {
                 graphVar = Object.assign({}, v);
                 $rootScope.graph[graphName].mdata = Object.assign({}, v);
-                var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
+                var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId, $scope.position);
                 var label = [];
                 var data = [];
                 var datainsert = []
@@ -95,7 +96,7 @@ app.controller('requisitionStatusController', ['$scope', 'Factory', 'commonFunct
                         }
                     }
                     else {
-                        data = [0, 0, 0]
+                        data = []
                         $scope.candidatePipelineData.push({
                             "label": label
                             , "data": data

@@ -28,12 +28,13 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
     if (angular.isDefined($rootScope.graph[graphName])) {
         var a = $rootScope.graph[graphName];
         var d = '';
+        $scope.position = $rootScope.graph[graphName].Position;
         if (a.firstTime == true) {
             if (a.loadedFromBackend == true) {
                 d = a.data;
             }
             else {
-                //use default values.
+
             }
             $rootScope.graph[graphName].firstTime = false;
         }
@@ -73,9 +74,10 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
         }else {
             graphVar = Object.assign({},v);
             $rootScope.graph[graphName].mdata = Object.assign({},v);
-            var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId);
+            var promise = Factory.getChart(graphName, $scope.selectedButton, engagement, companyId, $scope.position);
             promise.then(function resolved(response) {
-                if (Object.keys(response.data.graphDetails.data).length > 0) {
+                $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
+                if (response.data.graphDetails && response.data.graphDetails.data && Object.keys(response.data.graphDetails.data).length > 0) {
                     deeplinkURL = response.data.graphDetails.deepLinkURI;
                     datas = [];
                     datas.push(JSON.parse("[" + response.data.graphDetails.data.Okay + "]"));
@@ -98,6 +100,8 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
                 }
                 else {
                     $scope.data = [];
+                    if (response.data.graphDetails && response.data.graphDetails.deepLinkURI)
+                        deeplinkURL = response.data.graphDetails.deepLinkURI;
                 }
             }, function rejected(response) {
                 commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
