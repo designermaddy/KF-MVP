@@ -74,7 +74,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                                 }
                                 else {
                                     $scope.ReqUrl = "partial/_RequisitionGoal.html";
-                                    $rootScope.graph['RequsitionGoal'].Position = 'left';
+                                    $rootScope.graph['RequisitionGoal'].Position = 'left';
                                     $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
                                     $rootScope.graph[a[i].GraphName].Position = 'right';
                                 }
@@ -130,7 +130,7 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
         }
         else {
             $scope.ReqUrl = "partial/_RequisitionGoal.html";
-            $rootScope.graph['RequsitionGoal'].Position = 'left';
+            $rootScope.graph['RequisitionGoal'].Position = 'left';
             $scope.CanUrl = "partial/_CandidatePipeline.html";
             $rootScope.graph['CandidatePipeline'].Position = 'right';
         }
