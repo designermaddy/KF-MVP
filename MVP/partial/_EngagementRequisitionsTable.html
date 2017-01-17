@@ -2,7 +2,7 @@
     <div class="Heading2 HeadingFloat clearfix">
 
         <h2>Requisitions({{engagementResponse.Requisitions.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html"  total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span>
-        <span class="HeaderButton pull-right">
+        <span class="HeaderButton pull-right" ng-hide="true">
             <div class="btn-group" uib-dropdown is-open="status.isopen">
       <button id="single-button" type="button" class="btn btn-secondary btn-sm" uib-dropdown-toggle ng-disabled="disabled">Create New Requisition<span class="caret"></span>
       </button>
@@ -63,7 +63,7 @@
                         </button>
                     </td>
                     <td st-toggle-item>{{row.status}}</td>
-                    <td st-toggle-item><i class="fa fa-pencil"></td>    					
+                    <td st-toggle-item><i class="fa fa-pencil" ng-hide="true" /></td>
                 </tr>
             </tbody>
         </table>
