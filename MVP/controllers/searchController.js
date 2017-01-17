@@ -37,6 +37,11 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     }
     getData();
 
+	 /**Refresh Saved Searches**/
+		 $scope.refreshSavedSearch = function() {
+		   getData();
+		}
+
     function setValues() {
         if ($scope.rowCollection) {
             $scope.viewLoading = true;

@@ -12,7 +12,8 @@
         </span>
     </div>-->
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Saved Searches({{filterlist.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="filterlist.length" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
+        <h2>Saved Searches({{filterlist.length}})</h2> <span class="pull-left HeaderLink"><a ng-click="refreshSavedSearch();"><i class="fa fa-refresh" aria-hidden="true"></i>
+ Refresh Saved Searches </a></span><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="filterlist.length" template-url = "uibPagerKf.html"  ng-model="currentPage" previous-text="" next-text=""></ul></span> </div>
     <div st-table="displayedCollections" st-safe-src="rowCollection" class="SearchTable">
         <table class="table table-striped">
             <thead>
