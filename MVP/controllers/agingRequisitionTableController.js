@@ -79,4 +79,10 @@ $scope.itemsByPage=15;
         console.log(response.statusText);
     })*/
 
+	/** Refersh agingrequisition Control**/
+
+	$scope.refreshRequisitionResults = function() {
+       agingRequisitionList();
+    }
+
 }]);

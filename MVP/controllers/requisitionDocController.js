@@ -206,4 +206,6 @@ app.service('fileUpload', ['$http', 'sharedProperties','commonFunctions', functi
         });
         return true;
     }
+
+
 }]);

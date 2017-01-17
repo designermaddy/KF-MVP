@@ -25,7 +25,10 @@ app.controller('engagementDocController', ['$uibModal', '$scope', 'Factory', 'sh
         })
     }
     getDocs();
-
+	 /**Refresh Profile Documents**/
+	 $scope.refreshDocuments = function() {
+       pdfDetails();
+    }
     function setValues() {
         if ($scope.pdfDetailsData) {
             $scope.viewLoading = true;
@@ -176,4 +179,6 @@ app.controller('deleteDocEngDetailsModalCtrl', ['$uibModalInstance', 'Factory', 
         })
         $scope.cancel();
     }
+
+
 }])
