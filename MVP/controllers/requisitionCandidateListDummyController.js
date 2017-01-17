@@ -5,6 +5,10 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
     $scope.search = {};
 
         postRequisitionApplicationList();
+	    /**Refresh Applicants**/
+		 $scope.refreshApplicants = function() {
+		   postRequisitionApplicationList();
+		}
         var data = {}
         //get the applicationlist for a requisition using position id
         function postRequisitionApplicationList() {
@@ -105,4 +109,6 @@ app.controller('requisitionCandidateListDummyController', ['$scope', 'Factory', 
         $('#SelectApplicantsList').selectpicker();
         console.log($('.selectpicker'))
         }, 50, false);
+
+
 }]);

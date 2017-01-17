@@ -1,5 +1,8 @@
 <div class="Heading2 HeadingFloat clearfix">
-    <h2>Documents({{pdfDetailsData.length}})</h2><span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" template-url = "uibPagerKf.html" ng-model="currentPage" previous-text="" next-text=""></ul></span>
+    <h2>Documents({{pdfDetailsData.length}})</h2>
+	<span class="pull-left HeaderLink"><a ng-click="refreshDocuments();"><i class="fa fa-refresh" aria-hidden="true"></i>
+ Refresh Documents </a></span>
+	<span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" total-items="totalItems" template-url = "uibPagerKf.html" ng-model="currentPage" previous-text="" next-text=""></ul></span>
     <span class="HeaderButton pull-right"><button ng-disabled="saveButtonEnable" ng-click="openPopForSave()" type="submit" class="btn btn-primary btn-sm">Save to Engagement</button></span>
    
 </div>

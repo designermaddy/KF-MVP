@@ -156,5 +156,9 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
             }
         });
      }
+	  /**Refresh Requisitions Canditates**/
+	 $scope.refreshCanditates = function() {
+       agingRequisitionList();
+    }
 
 }]);
