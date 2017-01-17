@@ -12,7 +12,7 @@
   </ul>
   </span> </div>
     <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
-        <div ng-if="data.length > 1">
+        <div ng-if="data.length > 0">
         <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" chart-click="onClick"></canvas>
         </div>
         <div ng-if="data.length < 1">

@@ -14,7 +14,7 @@
     </span></div>
      <div class="panel-body" style="height: 266px;"> <span us-spinner="{radius:10, width:2, length: 4}"></span>
   <!--  <div class="panel-body" style="height: 266px;">-->
-         <div ng-if="candidatePipelineData[0].data.length > 1">
+         <div ng-if="candidatePipelineData[0].data.length > 0">
        <canvas id="bar" class="chart chart-bar" chart-data="candidatePipelineData[0].data" chart-labels="candidatePipelineData[0].label" chart-series="candidatePipelineData[0].series" chart-click="onClick"> </canvas>
         </div>
         <div ng-if="candidatePipelineData[0].data.length < 1">
