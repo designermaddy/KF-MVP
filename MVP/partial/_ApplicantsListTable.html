@@ -1,7 +1,8 @@
 <div class="DataListBox">
     <span us-spinner="{radius:10, width:2, length: 4}"></span>
     <div class="Heading2 HeadingFloat clearfix">
-        <h2>Applicants List({{rowCollection.length}})</h2> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html"  total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></div>
+        <h2>Applicants List({{rowCollection.length}})</h2><span class="pull-left HeaderLink"><a ng-click="refreshApplicants();"><i class="fa fa-refresh" aria-hidden="true"></i>
+ Refresh Applicants </a></span> <span class="pull-right HeaderPaging"><ul uib-pager page="currentPage" max-size="noOfPages" items-per-page="entryLimit" template-url = "uibPagerKf.html"  total-items="totalItems" ng-model="currentPage" previous-text="" next-text=""></ul></span></div>
     <div ng-show="listVisible" st-table="displayedCollections" st-safe-src="rowCollection" class="ApplicantsListTable">
         <table class="table table-striped">
             <thead>

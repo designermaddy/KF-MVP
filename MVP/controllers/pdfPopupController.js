@@ -76,7 +76,10 @@ app.controller('pdfPopupController', ['$uibModal', '$scope', 'Factory', 'sharedP
         })
     };
     pdfDetails();
-
+     /**Refresh Profile Documents**/
+	 $scope.refreshDocuments = function() {
+       pdfDetails();
+    }
     function setValues() {
         if ($scope.pdfDetailsData) {
             $scope.viewLoading = true;

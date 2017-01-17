@@ -91,6 +91,10 @@ app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sh
         var url = commonFunctions.getIframeUrl('addNewRequisitionTalentLink');
         commonFunctions.openIframe(url)
     }
+	/**Refresh Requisitions**/
+	$scope.refreshEngRequistions = function() {
+       getRequisitionList();
+    }
     $scope.openCrmIframe = function () {
         var url = commonFunctions.getIframeUrl('addNewRequisitionCRM');
         commonFunctions.openIframe(url);

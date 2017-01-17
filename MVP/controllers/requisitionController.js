@@ -83,5 +83,9 @@ commonFunctions.getSearcherJson();
      $scope.addNewReuqisitionClick = function (){
           commonFunctions.GAEventHandler(sharedProperties.getGAEventData().AddNewRequisition);
      }
+	  /**Refresh Requisitions**/
+	 $scope.refreshRequisitions = function() {
+       getData();
+    }
 
 }]);
