@@ -30,7 +30,8 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
     for (var key in list) {
         $rootScope.graph[list[key].url] = {
             'firstTime': true
-            , 'loadedFromBackend': false
+            , 'loadedFromBackend': false,
+            'Position' : null
         }
     }
     var promise = Factory.getGraphList();
@@ -46,12 +47,18 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                             //check if the array contains just 1 element
                             var status;
                             if (a.length === 1) {
-                                var type = a[i].GraphName.indexOf('Req');
-                                if (type != -1) {
-                                    status = 1;
+                                if (a[i].Position) {
+                                    if (a[i].Position.toLowerCase() == 'left') status = 1;
+                                    if (a[i].Position.toLowerCase() == 'right') status = 2;
                                 }
                                 else {
-                                    status = 2;
+                                    var type = a[i].GraphName.indexOf('Req');
+                                    if (type != -1) {
+                                        status = 1;
+                                    }
+                                    else {
+                                        status = 2;
+                                    }
                                 }
                                 angular.forEach(list, function (val) {
                                     if (val.status === status) {
@@ -61,31 +68,61 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                                 list[key]['status'] = status;
                                 if (status == 1) {
                                     $scope.ReqUrl = "partial/_" + a[i].GraphName + ".html";
+                                    $rootScope.graph[a[i].GraphName].Position = 'left';
                                     $scope.CanUrl = "partial/_CandidatePipeline.html";
+                                    $rootScope.graph['CandidatePipeline'].Position = 'right';
                                 }
                                 else {
                                     $scope.ReqUrl = "partial/_RequisitionGoal.html";
+                                    $rootScope.graph['RequsitionGoal'].Position = 'left';
                                     $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
+                                    $rootScope.graph[a[i].GraphName].Position = 'right';
                                 }
                             }
                             else {
+                                status = 1;
+                                if (a[i].Position) {
+                                    if (a[i].Position.toLowerCase() == 'left') status = 1;
+                                    if (a[i].Position.toLowerCase() == 'right') status = 2;
+                                }else if (a[i + 1].Position){
+                                    if (a[i + 1].Position.toLowerCase() == 'left') status = 2;
+                                }
                                 angular.forEach(list, function (val) {
-                                    if (val.status === 1) {
+                                    if (val.status === status) {
                                         val.status = 0;
                                     }
                                 });
-                                list[key]['status'] = 1;
-                                $scope.ReqUrl = "partial/_" + a[i].GraphName + ".html";
+                                list[key]['status'] = status;
+                                if (status === 1) {
+                                    $scope.ReqUrl = "partial/_" + a[i].GraphName + ".html";
+                                    $rootScope.graph[a[i].GraphName].Position = 'left';
+                                }
+                                else {
+                                    $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
+                                    $rootScope.graph[a[i].GraphName].Position = 'right';
+                                }
                             }
                         }
                         else if (i === 1) {
+                            status = 2;
+                            if (a[i].Position) {
+                                if (a[i].Position.toLowerCase() == 'left') status = 1;
+                                if (a[i].Position.toLowerCase() == 'right') status = 2;
+                            }
                             angular.forEach(list, function (val) {
-                                if (val.status === 2) {
+                                if (val.status === status) {
                                     val.status = 0;
                                 }
                             });
-                            list[key]['status'] = 2;
-                            $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
+                            list[key]['status'] = status;
+                            if (status === 1) {
+                                $scope.ReqUrl = "partial/_" + a[i].GraphName + ".html";
+                                $rootScope.graph[a[i].GraphName].Position = 'left';
+                            }
+                            else {
+                                $scope.CanUrl = "partial/_" + a[i].GraphName + ".html";
+                                $rootScope.graph[a[i].GraphName].Position = 'right';
+                            }
                         }
                     }
                 }
@@ -93,7 +130,9 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
         }
         else {
             $scope.ReqUrl = "partial/_RequisitionGoal.html";
+            $rootScope.graph['RequsitionGoal'].Position = 'left';
             $scope.CanUrl = "partial/_CandidatePipeline.html";
+            $rootScope.graph['CandidatePipeline'].Position = 'right';
         }
         /*angular.forEach(response.data, function (value) {
             if (value['RequisitionGraphName'] !== null && value['CandidateGraphName'] !== null) {
@@ -165,10 +204,12 @@ app.controller('popoverController', ['$scope', '$rootScope', 'Factory', '$timeou
                     // graphSelection(checkedList);
                     if (turn == 1) {
                         $scope.ReqUrl = str;
+                        $rootScope.graph[val.url].Position = 'left';
                         turn = 2;
                     }
                     else {
                         $scope.CanUrl = str;
+                        $rootScope.graph[val.url].Position = 'right';
                         turn = 1;
                     }
                     el.parent().addClass('Selected');
