@@ -18,7 +18,7 @@ Client Reqs</a></li>
         <canvas id="bar" class="chart chart-bar" chart-data="candidatePipelineData[0].data" chart-labels="candidatePipelineData[0].label" chart-series="candidatePipelineData[0].series" chart-click="onClick"> </canvas>
         </div>
         <div ng-if="candidatePipelineData[0].data.length < 1">
-            <img src="content/images/empty_graph.png">
+            <img src="content/images/empty_graph.png" ng-click="imageClick()">
         </div>
 
 

@@ -17,7 +17,7 @@
         <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" chart-click="onClick"></canvas>
         </div>
         <div ng-if="data.length < 1">
-            <img src="content/images/empty_graph.png">
+            <img src="content/images/empty_graph.png"  ng-click="imageClick()">
         </div>
     </div>
       <div class="panel-heading clearfix"><span class="TermSorting pull-right" style="

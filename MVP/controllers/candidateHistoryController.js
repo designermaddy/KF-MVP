@@ -135,6 +135,13 @@ app.controller('candidateHistoryController', ['$scope', 'Factory', 'sharedProper
         $('#ReportHeader').addClass('active');
         $location.path('/Reports');
     };
+    $scope.imageClick = function(){
+              console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+            sharedProperties.setReportURL(deeplinkURL)
+            $("li[class='active']").removeClass('active');
+            $('#ReportHeader').addClass('active');
+            $location.path('/Reports');
+        }
     // $scope.labels = ['Source', 'Screen', 'Submit', 'Interview', 'Offer', 'Accept'];
     /* $scope.kick = [
        [65, 59, 90, 81, 56, 55],
