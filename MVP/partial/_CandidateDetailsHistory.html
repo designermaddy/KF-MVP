@@ -11,6 +11,9 @@
                    <th class="SortDefault"  st-toggle-column st-sort="status">Status</th>
                    <th class="SortDefault"  st-toggle-column st-sort="comment">Comments</th>
                    <th class="SortDefault"  st-toggle-column st-sort="userName">Recruiter</th>
+				   <th><span class="pull-left"><a ng-click="refreshHistory();" title=
+"Refresh History"><i class="fa fa-refresh" aria-hidden="true"></i>
+  </a></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +25,7 @@
                     <td st-toggle-item>{{row.status}}</td>
                     <td st-toggle-item>{{row.comment  }}</td>
                     <td st-toggle-item>{{row.userName}}</td>
+					<td></td>
                 </tr>
             </tbody>
         </table>

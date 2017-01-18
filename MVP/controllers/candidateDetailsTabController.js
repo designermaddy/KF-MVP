@@ -75,5 +75,13 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
         $scope.indextab = newValue.activeTab;
         getNotes();
     })
+	 /**Refresh Requisitions Canditates History**/
+	 $scope.refreshHistory = function() {
+       getHistory();
+    }
+	 /**Refresh Requisitions Canditates Notes**/
+	 $scope.refreshNotes = function() {
+       getNotes();
+    }
 }]);
 
