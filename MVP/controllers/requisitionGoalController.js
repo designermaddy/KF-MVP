@@ -115,6 +115,13 @@ app.controller('requisitionGoalController', ['$scope', '$rootScope', 'Factory', 
         $('#ReportHeader').addClass('active');
         $location.path('/Reports');
     };
+    $scope.imageClick = function(){
+              console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+            sharedProperties.setReportURL(deeplinkURL)
+            $("li[class='active']").removeClass('active');
+            $('#ReportHeader').addClass('active');
+            $location.path('/Reports');
+        }
     $rootScope.$watch(function () {
         return config.getAllEngagments
     }, function () {

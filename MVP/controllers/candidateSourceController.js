@@ -82,6 +82,7 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
                         deeplinkURL = response.data.graphDetails.deepLinkURI;
                         // = response.data.candidateList;
                         $scope.candidatePipelineData = [];
+                         if(Object.keys(response.data.graphDetails.data).length>0){
                         for (var k in Object.keys(response.data.graphDetails.data)) {
                             label.push((Object.keys(response.data.graphDetails.data)[k]))
                             data.push(response.data.graphDetails.data[Object.keys(response.data.graphDetails.data)[k]])
@@ -96,6 +97,13 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
                                 }
                             };
                         }
+                         }else {
+                        data = [];
+                        $scope.candidatePipelineData.push({
+                            "label": label
+                            , "data": data
+                        });
+                    }
                     }
                     else {
                         data = [];
@@ -116,6 +124,14 @@ app.controller('candidateSourceController', ['$scope', 'Factory', 'commonFunctio
             $('#ReportHeader').addClass('active');
             $location.path('/Reports');
         };
+
+ $scope.imageClick = function(){
+              console.log('hello' + deeplinkURL); // 0 -> Series A, 1 -> Series B
+            sharedProperties.setReportURL(deeplinkURL)
+            $("li[class='active']").removeClass('active');
+            $('#ReportHeader').addClass('active');
+            $location.path('/Reports');
+        }
         $rootScope.$watch(function () {
             return config.getAllEngagments
         }, function () {
