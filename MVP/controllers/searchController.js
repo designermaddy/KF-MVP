@@ -38,7 +38,7 @@ app.controller('searchController', ['$scope', 'Factory', 'commonFunctions', '$sc
     getData();
 
 	 /**Refresh Saved Searches**/
-		 $scope.refreshSavedSearch = function() {
+	$scope.refreshSavedSearch = function() {
 		   getData();
 		}
 
