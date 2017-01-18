@@ -8,7 +8,7 @@
             <uib-tabset active="activetab">
 
                 <uib-tab index="0" heading="Job Profile">
-                    <div class="container-fluid clearfix" ng-controller="jobProfileController">
+                    <div ng-if="activetab == 0" class="container-fluid clearfix" ng-controller="jobProfileController">
                         <div class="row">
                             <div class="col-md-3">
                                 <div ng-include="'partial/_JobProfileList.html'"></div>
@@ -21,7 +21,7 @@
                 </uib-tab>
                 <uib-tab index='1' heading="Team" class="disabled"> Team </uib-tab>
                 <uib-tab index='2' heading="Documentation">
-                    <div class="container-fluid clearfix">
+                    <div class="container-fluid clearfix" ng-if="activetab == 2">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="requisitionDocController as $ctrl">
                                 <div ng-include="'partial/_RequisitionsDesignDoc.html'"></div>
@@ -30,7 +30,7 @@
                     </div>
                 </uib-tab>
                 <uib-tab index='3' heading="Search Results">
-                    <div ng-controller="searchResultsController">
+                    <div ng-controller="searchResultsController" ng-if="activetab == 3">
                         <div class="container-fluid clearfix" id="searchResultdiv">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">
@@ -51,7 +51,7 @@
                     </div>
                 </uib-tab>
                 <uib-tab index='4' heading="Candidates List">
-                    <div class="container-fluid clearfix" id="candidatelistid" ng-controller="requisitionCandidateListController">
+                    <div class="container-fluid clearfix" id="candidatelistid" ng-controller="requisitionCandidateListController" ng-if="activetab == 4">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12">
                                 <div ng-include="'partial/_CandidatesListSearch.html'"></div>
@@ -76,7 +76,7 @@
                     </div>
                 </uib-tab>
                 <uib-tab index='5' heading="Applicants List">
-                    <div ng-controller="requisitionCandidateListDummyController">
+                    <div ng-controller="requisitionCandidateListDummyController" ng-if="activetab == 5">
                         <div class="container-fluid clearfix" id="applicantResultdiv">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">

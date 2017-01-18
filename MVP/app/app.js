@@ -188,6 +188,7 @@ app.filter('myfilter', function () {
 
             To remove the undefined object. I have done some changes in next 3 lines.
         */
+        if(items && items.length>1){
         if(items[0] == undefined){
             items.splice(0,1);
         }
@@ -248,6 +249,7 @@ app.filter('myfilter', function () {
             }
         }
         return items;
+    }
     }
 });
 
