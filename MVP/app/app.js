@@ -149,7 +149,7 @@ app.filter('mydate', function () {
         var mdf = '';
         var mdt = '';
         var result = [];
-        if (items.length > 0) {
+        if (items && items.length > 0) {
             if (Object.keys(model).length && model.StartDate || model.EndDate) {
                 mdf = model.StartDate;
                 mdt = model.EndDate;
@@ -188,7 +188,7 @@ app.filter('myfilter', function () {
 
             To remove the undefined object. I have done some changes in next 3 lines.
         */
-        if(items && items.length>1){
+        if(items && items.length>0){
         if(items[0] == undefined){
             items.splice(0,1);
         }

@@ -57,6 +57,13 @@
                         return;
                     }
                     Factory.addTag($scope.canId, $scope.tagText);
+                     if ($scope.inputTags.indexOf($scope.tagText) !== -1) {
+
+                        commonFunctions.error($scope.tagText + ' -- Tag aleady exists.');
+
+                        return $scope.tagText = '';
+
+                    }
                     tagArray = $scope.tagArray();
                     tagArray.push($scope.tagText);
                     $scope.inputTags = tagArray.join(',');
