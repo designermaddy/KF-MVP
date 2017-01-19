@@ -645,6 +645,18 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
             }
         })
     }
+        commonFunctions.tagInputError = function (message) {
+        $uibModal.open({
+            animation: true
+            , templateUrl: 'TagInput.html'
+            , controller: 'LoadError'
+            , resolve: {
+                message: function () {
+                    return message;
+                }
+            }
+        })
+    }
     commonFunctions.success = function (message) {
         $uibModal.open({
             animation: true

@@ -60,7 +60,7 @@
                     if ($scope.type == 'candidate')Factory.addTag($scope.canId, $scope.tagText);
                      if ($scope.inputTags.indexOf($scope.tagText) !== -1) {
 
-                        commonFunctions.error($scope.tagText + ' -- Tag aleady exists.');
+                        commonFunctions.tagInputError($scope.tagText + ' -- Tag aleady exists.');
 
                         return $scope.tagText = '';
 

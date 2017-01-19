@@ -133,7 +133,11 @@
 
         function callBackend(radioModel) {
             var data = $scope.data;
-            data.Industries = tagsList;
+            if(tagsList == ""){
+                 data.Industries = $scope.data.industries
+            }else{
+                data.Industries = tagsList;
+            }
             if (radioModel) {
                 data = createFreeSearchData();
             }
