@@ -1,11 +1,12 @@
 (function () {
-    app.directive('tagInput', ['Factory', 'commonFunctions', function (Factory, commonFunctions) {
+    app.directive('tagInput', ['Factory', 'commonFunctions', '$rootScope', function (Factory, commonFunctions, $rootScope) {
         return {
             restrict: 'E'
             , scope: {
                 inputTags: '=taglist'
                 , autocomplete: '=autocomplete'
-                , canId: '=id'
+                , canId: '=id',
+                type : '=type'
             }
             , link: function ($scope, element, attrs) {
                 $scope.defaultWidth = 150;
@@ -56,7 +57,7 @@
                         commonFunctions.error($scope.tagText + ' -- No such tag exists. Please select one of the tags from Dropdown.');
                         return;
                     }
-                    Factory.addTag($scope.canId, $scope.tagText);
+                    if ($scope.type == 'candidate')Factory.addTag($scope.canId, $scope.tagText);
                      if ($scope.inputTags.indexOf($scope.tagText) !== -1) {
 
                         commonFunctions.error($scope.tagText + ' -- Tag aleady exists.');
@@ -67,6 +68,7 @@
                     tagArray = $scope.tagArray();
                     tagArray.push($scope.tagText);
                     $scope.inputTags = tagArray.join(',');
+                    $rootScope.$broadcast('tagChange', $scope.inputTags);
                     return $scope.tagText = '';
                 };
 
@@ -89,8 +91,10 @@
                             tag = tagArray.splice(key, 1)[0];
                         }
                     }
-                    if (tag.length > 1)Factory.removeTag($scope.canId, tag);
-                    return $scope.inputTags = tagArray.join(',');
+                    if (tag.length > 1 && $scope.type == 'candidate')Factory.removeTag($scope.canId, tag);
+                    $scope.inputTags = tagArray.join(',');
+                    $rootScope.$broadcast('tagChange', $scope.inputTags);
+                    return $scope.inputTags;
                 };
                 $scope.$watch('tagText', function (newVal, oldVal) {
                     var tempEl;

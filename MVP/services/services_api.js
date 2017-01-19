@@ -562,6 +562,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: data
         });
     }
+    dataFactory.getAryaIndustriesList = function(){
+        return $http.get(urlAPI + '/Requisition/getAryaIndustriesList/6');
+    }
     return dataFactory;
  }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', '$window', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, $window, config, $cookies) {

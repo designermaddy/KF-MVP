@@ -1,19 +1,40 @@
-    app.controller('newSearchController', ['$scope', 'Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', 'config', '$sce', '$uibModal', function ($scope, Factory, $location, sharedProperties, commonFunctions, $timeout, config, $sce, $uibModal) {
+    app.controller('newSearchController', ['$scope', 'Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', 'config', '$sce', '$uibModal', '$rootScope', function ($scope, Factory, $location, sharedProperties, commonFunctions, $timeout, config, $sce, $uibModal, $rootScope) {
         $scope.data = {};
         $scope.vm = {};
         $scope.freeSearch = {};
         $scope.freeSearch.radioModel = true;
-        $scope.milesOptions=["10", "25", "35", "50", "75", "100", "Auto Expand"];
+        $scope.milesOptions = ["10", "25", "35", "50", "75", "100", "Auto Expand"];
         $scope.freeSearch.Miles = "Auto Expand";
         $scope.data.Miles = "Auto Expand";
+        $scope.alltags = [];
+        $scope.tags = '';
+        var tagsList = '';
+
+        $rootScope.$on('tagChange',function(event, val){
+            tagsList = val;
+        })
         var redirectPath = "Search";
         var result;
         var reqValue = 0;
-
-        $timeout(function(){$('#searchHeader').addClass('active')},100);
         $timeout(function () {
-                $('.selectMiles').selectpicker('refresh');
-            }, 50, false);
+            $('#searchHeader').addClass('active')
+        }, 100);
+        $timeout(function () {
+            $('.selectMiles').selectpicker('refresh');
+        }, 50, false);
+        var getAllTags = function () {
+            var p = Factory.getAryaIndustriesList();
+            p.then(function resolved(response) {
+                var d = response.data.Industry;
+                for (var i = 0, j = []; i < d.length; i++) {
+                    j.push(d[i].IndustryName)
+                }
+                $scope.alltags = j;
+            }, function rejected(response) {
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            })
+        }
+        getAllTags();
 
         function getReq() {
             var promise = Factory.getRequisitionTableList();
@@ -39,7 +60,7 @@
             var reqNum = $item.split(' ')[0];
             getArya(reqNum);
         }
-        $scope.cancelButton = function() {
+        $scope.cancelButton = function () {
             $location.path(redirectPath);
         }
 
@@ -49,14 +70,16 @@
             promise.then(function (response) {
                 $scope.data = response.data;
                 var jobStatus = response.data.job_status;
-                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
-                        $scope.data.job_status = "Please Select";
-                    }
-                if($scope.milesOptions.indexOf(response.data.Miles) < 0){
-                      $scope.data.Miles = "Auto Expand";
+                if (jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close') {
+                    $scope.data.job_status = "Please Select";
                 }
+                if ($scope.milesOptions.indexOf(response.data.Miles) < 0) {
+                    $scope.data.Miles = "Auto Expand";
+                }
+
+                $scope.tags = $scope.data.industries ? $scope.data.industries : '';
                 disableInput(i);
-                console.log($scope.data.Miles);
+               console.log($scope.data);
             });
         }
 
@@ -68,12 +91,11 @@
             }
         }
         $scope.save = function (radioModel) {
-            try{
+            try {
                 //Validation
-                if($scope.data.job_status == "Please Select") {
+                if ($scope.data.job_status == "Please Select") {
                     throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
                 }
-
                 if (radioModel) {
                     if (reqValue !== 0) {
                         if (reqValue[0] + ' ' + reqValue[1] == $scope.vm.name) {
@@ -93,31 +115,32 @@
                 else {
                     callBackend(1);
                 }
-             }catch(errMsg) {
+            }
+            catch (errMsg) {
                 commonFunctions.error(errMsg);
             }
         }
 
         function callBackend(radioModel) {
             var data = $scope.data;
+            data.Industries = tagsList;
             if (radioModel) {
                 data = createFreeSearchData();
             }
-
             /*if(data.Miles){
                  delete data.Miles;
             }*/
-            if(data.TotalSourcedCount){
+            if (data.TotalSourcedCount) {
                 delete data.TotalSourcedCount;
             }
-            data.ClientOrgID= 6;
-           /* data.Recruiter_Name  = "Wes Frederick"
-                , "Recruiter_Email";
-            data.Recruiter_Email = "Wes.Frederick@KornFerry.com";*/
-              data.PostingDate = getTimeStamp();
-             console.log(data);
+            data.ClientOrgID = 6;
+            /* data.Recruiter_Name  = "Wes Frederick"
+                 , "Recruiter_Email";
+             data.Recruiter_Email = "Wes.Frederick@KornFerry.com";*/
+            data.PostingDate = getTimeStamp();
+            delete data.industries;
+            //console.log(data);
             var promise = Factory.saveNewSearch(data);
-
             promise.then(function (response) {
                 var code = response.data.Code;
                 if (code == 0) {
@@ -128,7 +151,7 @@
                 }
             });
         }
-// most of the items are static should be dynamic - karthik
+        // most of the items are static should be dynamic - karthik
         function createFreeSearchData() {
             var data = {
                 "ClientJobID": ""
@@ -143,28 +166,27 @@
                 , "Location": $scope.freeSearch.Location
                 , "ZipCode": ""
                 , "Country": null
-                , "Miles" : $scope.freeSearch.Miles
+                , "Miles": $scope.freeSearch.Miles
                 , "MinExp": 0.0
                 , "MaxExp": 0.0
                 , "NoOfPositions": 0
                 , "job_status": $scope.freeSearch.job_status
-                , "Recruiter_Name":  sharedProperties.getEmail()
+                , "Recruiter_Name": sharedProperties.getEmail()
                 , "Recruiter_Email": sharedProperties.getUserName() //"gsharma@leoforce.com,nikhil.amudha@leoforce.com"
-               // , "Recruiter_Name": "Gaurav Sharma"
-                //, "Recruiter_Email": "gsharma@leoforce.com"
+                    // , "Recruiter_Name": "Gaurav Sharma"
+                    //, "Recruiter_Email": "gsharma@leoforce.com"
+
                 , "job_client": ""
                 , "SearchString": null
                 , "PostingDate": ""
                 , "job_category": null
-                , "Job_apply_url": null,
-
-            }
-
+                , "Job_apply_url": null
+            , }
             for (var key in $scope.freeSearch) {
                 if (data[key] !== undefined) data[key] = $scope.freeSearch[key];
             }
             data.Country = $scope.freeSearch.country.Country;
-            data.ClientJobID = "MANUAL - " +$scope.freeSearch.JobTitle;
+            data.ClientJobID = "MANUAL - " + $scope.freeSearch.JobTitle;
             return data;
         }
 
@@ -313,15 +335,17 @@
         $scope.updateViewProfile = function (filename) {
             if (filename) {
                 $scope.pdfValues = [filename.DocumentNumber, filename.FileName];
-                var data = {'requisitionResponseList' : [{
-                    'docType' : '',
-                    id : filename.DocumentNumber
-                }]}
+                var data = {
+                    'requisitionResponseList': [{
+                        'docType': ''
+                        , id: filename.DocumentNumber
+                }]
+                }
                 var promise = Factory.getJobDescription(data);
                 promise.then(function resolved(response) {
                     $scope.freeSearch.SearchString = response.data.SearchString;
                     $scope.freeSearch.Description = response.data.Description;
-                }, function error(response){
+                }, function error(response) {
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 })
             }
