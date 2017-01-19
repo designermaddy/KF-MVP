@@ -114,6 +114,14 @@ $scope.confirmPopup = function(){
     }
 }
     var canStatus = function (id) {
+         var reqDetailsperRequisition = sharedProperties.getRequisitionDetails();
+            if(reqDetailsperRequisition.ReqNumber){
+                // page and status is static mentioned by Karthik position id dynamic//
+               /* postData = {
+                    "requestParams": {"page":"2","status":"New","orgId":"9855","positionId": reqDetailsperRequisition.ReqNumber}
+                }*/
+                sharedProperties.setPositionId(reqDetailsperRequisition.Position);
+            }
         var posId = sharedProperties.getPositionId();
         var canId = id;
         $('.btn-selected').removeClass('btn-selected');
