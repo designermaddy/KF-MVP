@@ -60,6 +60,10 @@ if (authToken!==undefined){
               function resolved(response) {
                   if(response.data){
                    console.log(response.data);
+                   var cookies = $cookies.getAll();
+                   angular.forEach(cookies, function (v, k) {
+                   $cookies.remove(k);
+            });
 				   window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
                 }
               },
@@ -67,10 +71,7 @@ if (authToken!==undefined){
                   commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
               }
             )
-            var cookies = $cookies.getAll();
-            angular.forEach(cookies, function (v, k) {
-                $cookies.remove(k);
-            });
+
 
         }
 
@@ -149,7 +150,7 @@ function getAccessToken() {
 
       $scope.$on('IdleTimeout', function() {
         closeModals();
-		$scope.logOut();
+		//$scope.logOut();
           // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
 
           /* $scope.timedout = $uibModal.open({
