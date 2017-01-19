@@ -1,7 +1,7 @@
 <div ng-controller="candidateDetailsTabController" class="SecondaryTab MarTp15 candidateTabs">
     <uib-tabset active="indextab">
         <uib-tab index="0" heading="Profile Summary" class="tabheading">
-            <div class="container-fluid clearfix">
+            <div  class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateProfileSummary.html'"></div>
@@ -10,7 +10,7 @@
             </div>
         </uib-tab>
         <uib-tab index='1' heading="Resume">
-            <div class="container-fluid clearfix">
+            <div ng-if="indextab == 1" ng-controller="candidateDetailsTabController" class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateResume.html'"></div>
@@ -19,7 +19,7 @@
             </div>
         </uib-tab>
         <uib-tab index='2'  heading="Assessment Results" class="disabled">
-            <div class="container-fluid clearfix">
+            <div ng-if="indextab == 2" ng-controller="candidateDetailsTabController" class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateAssessmentResults.html'"></div>
@@ -28,7 +28,7 @@
             </div>
         </uib-tab>
         <uib-tab index='3' heading="Documents">
-            <div class="container-fluid clearfix">
+            <div ng-if="indextab == 3" ng-controller="candidateDetailsTabController" class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateDocuments.html'"></div>
@@ -37,7 +37,7 @@
             </div>
         </uib-tab>
         <uib-tab index='4' heading="History">
-            <div class="container-fluid clearfix">
+            <div ng-if="indextab == 4" ng-controller="candidateDetailsTabController" class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 mt3">
                         <div ng-include="'partial/_CandidateDetailsHistory.html'"></div>
@@ -46,7 +46,7 @@
             </div>
         </uib-tab>
         <uib-tab index='5' heading="Notes">
-            <div class="container-fluid clearfix">
+            <div ng-if="indextab == 5" ng-controller="candidateDetailsTabController" class="container-fluid clearfix">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div ng-include="'partial/_NotesFilter.html'"></div>

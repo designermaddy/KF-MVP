@@ -8,7 +8,7 @@
             <div id="pdfTabs" class="col-sm-12 col-md-12 col-lg-12 PaddingNull" ng-controller="engagementperIDRequisitionController" ng-init="indextab = showIndex">
                 <uib-tabset active="active">
                     <uib-tab index="0" heading="Requisitions">
-                        <div class="container-fluid clearfix">
+                        <div ng-if="active == 0" class="container-fluid clearfix">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">
                                     <div ng-include="'partial/_EngagementRequisitionsTable.html'"></div>
@@ -17,7 +17,7 @@
                         </div>
                     </uib-tab>
                     <uib-tab index='1' heading="Team">
-                        <div class="container-fluid clearfix">
+                        <div ng-if="active == 1" class="container-fluid clearfix">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="engagementDocController">
                                     <div ng-include="'partial/_EngagementTeam.html'"></div>
@@ -27,7 +27,7 @@
                     </uib-tab>
                     <uib-tab index='2' heading="Client Information" class="disabled"> Client Information </uib-tab>
                     <uib-tab index='3' heading="Documents">
-                        <div class="container-fluid clearfix">
+                        <div ng-if="active == 3" class="container-fluid clearfix">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12" ng-controller="engagementDocController">
                                     <div ng-include="'partial/_EngagementDesignDoc.html'"></div>
