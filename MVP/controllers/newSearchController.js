@@ -74,22 +74,17 @@
             promise.then(function (response) {
                 $scope.data = response.data;
                 var jobStatus = response.data.job_status;
-<<<<<<< HEAD
+
                 if (jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close') {
                     $scope.data.job_status = "Please Select";
                 }
                 if ($scope.milesOptions.indexOf(response.data.Miles) < 0) {
                     $scope.data.Miles = "Auto Expand";
-=======
+
 				$scope.data.job_client = $scope.selectedReq.Client;
 				$scope.data.JobTitle = $scope.selectedReq.JobTitle;
 
-                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
-                        $scope.data.job_status = "Please Select";
-                    }
-                if($scope.milesOptions.indexOf(response.data.Miles) < 0){
-                      $scope.data.Miles = "Auto Expand";
->>>>>>> MGKf/master
+
                 }
 
                 $scope.tags = $scope.data.industries ? $scope.data.industries : '';
