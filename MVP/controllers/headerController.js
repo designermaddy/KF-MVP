@@ -59,7 +59,8 @@ if (authToken!==undefined){
             promise.then(
               function resolved(response) {
                   if(response.data){
-                   console.log(response.data)
+                   console.log(response.data);
+				   window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
                 }
               },
               function rejected(response) {
@@ -71,7 +72,6 @@ if (authToken!==undefined){
                 $cookies.remove(k);
             });
 
-            window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
         }
 
 /*---------------REFRESH ACCESS TOKEN STARTS---------------------*/
@@ -149,9 +149,10 @@ function getAccessToken() {
 
       $scope.$on('IdleTimeout', function() {
         closeModals();
+		$scope.logOut();
           // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
-          //$scope.logOut();
-       /* $scope.timedout = $uibModal.open({
+
+          /* $scope.timedout = $uibModal.open({
           templateUrl: 'timedout-dialog.html',
           windowClass: 'modal-danger'
         });*/

@@ -1,4 +1,6 @@
-    app.controller('newSearchController', ['$scope', 'Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', 'config', '$sce', '$uibModal', '$rootScope', function ($scope, Factory, $location, sharedProperties, commonFunctions, $timeout, config, $sce, $uibModal, $rootScope) {
+
+    app.controller('newSearchController', ['$scope', 'Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', 'config', '$sce', '$uibModal','$filter','$rootScope', function ($scope, Factory, $location, sharedProperties, commonFunctions, $timeout, config, $sce, $uibModal, $filter, $rootScope) {
+
         $scope.data = {};
         $scope.vm = {};
         $scope.freeSearch = {};
@@ -40,6 +42,7 @@
             var promise = Factory.getRequisitionTableList();
             promise.then(function (response) {
                 result = response.data.requisitions.concat(config.searcherReq);
+				$scope.talentReq = result;
                 $scope.requisition = result.map(function (item) {
                     return item.ReqNumber + ' ' + item.JobTitle;
                 });
@@ -58,6 +61,7 @@
         }
         $scope.fillData = function ($item, $model, $label, $event) {
             var reqNum = $item.split(' ')[0];
+			$scope.selectedReq =  $filter('filter')($scope.talentReq, {ReqNumber:reqNum})[0];
             getArya(reqNum);
         }
         $scope.cancelButton = function () {
@@ -70,11 +74,22 @@
             promise.then(function (response) {
                 $scope.data = response.data;
                 var jobStatus = response.data.job_status;
+<<<<<<< HEAD
                 if (jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close') {
                     $scope.data.job_status = "Please Select";
                 }
                 if ($scope.milesOptions.indexOf(response.data.Miles) < 0) {
                     $scope.data.Miles = "Auto Expand";
+=======
+				$scope.data.job_client = $scope.selectedReq.Client;
+				$scope.data.JobTitle = $scope.selectedReq.JobTitle;
+
+                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
+                        $scope.data.job_status = "Please Select";
+                    }
+                if($scope.milesOptions.indexOf(response.data.Miles) < 0){
+                      $scope.data.Miles = "Auto Expand";
+>>>>>>> MGKf/master
                 }
 
                 $scope.tags = $scope.data.industries ? $scope.data.industries : '';
