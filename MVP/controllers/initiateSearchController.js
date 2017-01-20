@@ -1,29 +1,48 @@
 (function () {
     'use strict';
-    app.controller('initiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout','$scope', initiateSearchController]);
+    app.controller('initiateSearchController', ['Factory', '$location', 'sharedProperties', 'commonFunctions', '$timeout', '$scope', '$rootScope', initiateSearchController]);
     /* @ngInject */
-    function initiateSearchController(Factory, $location, sharedProperties, commonFunctions, $timeout, $scope) {
+    function initiateSearchController(Factory, $location, sharedProperties, commonFunctions, $timeout, $scope, $rootScope) {
         /*jshint validthis: true */
-        $scope.milesOptions=["10", "25", "35", "50", "75", "100", "Auto Expand"];
+        $scope.milesOptions = ["10", "25", "35", "50", "75", "100", "Auto Expand"];
         var vm = this;
+        var taglist = {};
         vm.editClick = true;
+        vm.tags = '';
+        vm.type = 'fromSaveSearch';
+        vm.alltags = ['hii'];
+        var getAllTags = function () {
+            var p = Factory.getAryaIndustriesList();
+            p.then(function resolved(response) {
+                var d = response.data.Industry;
+                for (var i = 0, j = []; i < d.length; i++) {
+                    j.push(d[i].IndustryName)
+                }
+                vm.alltags = j;
+            }, function rejected(response) {
+                commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
+            })
+        }
+        getAllTags();
         vm.editClickJobProfile = function () {
             if (vm.editClick) {
                 vm.editClick = false;
             }
         }
-        $timeout(function() {
+        $timeout(function () {
             $('#searchHeader').addClass('active');
         }, 100);
-
         var getreq = function (a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();
             if (savedSearchDetails.fromSavedSearch == true) {
                 var requisitionNumber = savedSearchDetails.clientJobId;
                 sharedProperties.setClientJobID(requisitionNumber)
-               sharedProperties.setSavedSearchDetails({clientJobId : requisitionNumber, fromSavedSearch:false});
-                    // savedSearchDetails.fromSavedSearch = false;
+                sharedProperties.setSavedSearchDetails({
+                    clientJobId: requisitionNumber
+                    , fromSavedSearch: false
+                });
+                // savedSearchDetails.fromSavedSearch = false;
             }
             $('#searchHeader').addClass('active');
             $timeout(function () {
@@ -34,17 +53,17 @@
                 promise.then(function resolved(response) {
                     vm.data = response.data;
                     var jobStatus = response.data.job_status;
-                    if(jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close'){
+                    if (jobStatus != 'Open' && jobStatus != 'Pending' && jobStatus != 'Close') {
                         vm.data.job_status = "Please Select";
                     }
                     vm.data.ReqNumber = requisitionNumber;
-                    if(sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0"){
+                    vm.tags = vm.data.industries ? vm.data.industries : '';
+                    if (sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0") {
                         var change = sharedProperties.getRequisitionDetails();
                         vm.data.JobTitle = vm.data.searchName = change.JobTitle;
                         vm.data.job_client = change.Client;
                         vm.data.ReqNumber = change.ReqNumber;
                     }
-
                     if (a == 1) {
                         vm.data.Description = vm.jobDesc.Description;
                         vm.data.SearchString = vm.jobDesc.SearchString;
@@ -59,7 +78,7 @@
             }
         }
         var data = sharedProperties.getInitiateSearchData();
-        if (data.requisitionResponseList && data.requisitionResponseList.length>0) {
+        if (data.requisitionResponseList && data.requisitionResponseList.length > 0) {
             var promise = Factory.getJobDescription(data);
             promise.then(function resolved(response) {
                 vm.jobDesc = response.data;
@@ -71,15 +90,18 @@
         else {
             getreq(0);
         }
+
         function disableInput() {
             var i = 0;
-            if(vm.data.ReqNumber.indexOf("MANUAL") != -1)
-                i = 3;
+            if (vm.data.ReqNumber.indexOf("MANUAL") != -1) i = 3;
             var inputs = $('input');
             for (; i < 3; i++) {
                 inputs[i].disabled = true;
             }
         }
+        $rootScope.$on('tagChange', function (event, val) {
+            taglist = val;
+        })
 
         function getCriteria() {
             // TODO: This will likely need a service, to populate the criteria
@@ -118,13 +140,12 @@
             this.Miles = vm.data.Miles;
         }
         vm.save = function save() {
-
-            try{
+            try {
                 //Validation
-                if(vm.data.job_status == "Please Select") {
+                if (vm.data.job_status == "Please Select") {
                     throw "Your search cannot be created without selecting a 'Status' of Pending, Open or Closed";
                 }
-                 var data = [];
+                var data = [];
                 sharedProperties.setInitiateSearchData(data);
                 var savedSearchDetails = sharedProperties.getSavedSearchDetails();
                 vm.criteria = getCriteria();
@@ -134,6 +155,7 @@
                 if (vm.criteria.TotalSourcedCount) {
                     delete vm.criteria.TotalSourcedCount;
                 }
+                vm.criteria.Industries = taglist.tags;
                 var promise = Factory.saveNewSearch(vm.criteria);
                 promise.then(function resolved(response) {
                     //sharedProperties.setJobId(response.data.JobID);
@@ -141,7 +163,8 @@
                     if (savedSearchDetails.fromSavedSearch) {
                         sharedProperties.getSavedSearchDetails().fromSavedSearch = false;
                         var redirectPath = "Search"
-                    }else if (sharedProperties.getWhereFromInitiateSearch() == 'Search'){
+                    }
+                    else if (sharedProperties.getWhereFromInitiateSearch() == 'Search') {
                         var redirectPath = "Search";
                     }
                     else {
@@ -151,11 +174,11 @@
                 }, function rejected(response) {
                     commonFunctions.error('Failed to load : ' + response.status + ': ' + response.statusText);
                 })
-            } catch(errMsg) {
+            }
+            catch (errMsg) {
                 commonFunctions.error(errMsg);
             }
         };
-
         vm.cancelButton = function () {
             var redirect = sharedProperties.getWhereFromInitiateSearch();
             $location.path(redirect);
