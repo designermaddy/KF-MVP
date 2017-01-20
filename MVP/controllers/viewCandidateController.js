@@ -1,6 +1,7 @@
 app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal','config', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal, config) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
+    $scope.type = "candidate"
     /** -- Scope function definitons -- **/
     $scope.backCandidateList = function () {
         $('#candidatelistid').show();

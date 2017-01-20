@@ -5,8 +5,9 @@
             , scope: {
                 inputTags: '=taglist'
                 , autocomplete: '=autocomplete'
-                , canId: '=id',
-                type : '=type'
+                , canId: '=id'
+                , type: '=type'
+                , time: '=time'
             }
             , link: function ($scope, element, attrs) {
                 $scope.defaultWidth = 150;
@@ -48,6 +49,12 @@
                         return tag !== '';
                     });
                 };
+                $scope.empty = function (newVal) {
+                    if (newVal) {
+                        if (newVal.length > 0) $scope.inputTags = newVal;
+                        else $scope.inputTags = '';
+                    }
+                }
                 $scope.addTag = function () {
                     var tagArray;
                     if ($scope.tagText.length === 0) {
@@ -57,28 +64,25 @@
                         commonFunctions.error($scope.tagText + ' -- No such tag exists. Please select one of the tags from Dropdown.');
                         return;
                     }
-                    if ($scope.type == 'candidate')Factory.addTag($scope.canId, $scope.tagText);
-                     if ($scope.inputTags.indexOf($scope.tagText) !== -1) {
-
+                    if ($scope.type == 'candidate') {
+                        Factory.addTag($scope.canId, $scope.tagText);
+                    }
+                    if ($scope.inputTags.indexOf($scope.tagText) !== -1) {
                         commonFunctions.tagInputError($scope.tagText + ' -- Tag aleady exists.');
-
                         return $scope.tagText = '';
-
                     }
                     tagArray = $scope.tagArray();
                     tagArray.push($scope.tagText);
                     $scope.inputTags = tagArray.join(',');
-                    $rootScope.$broadcast('tagChange', $scope.inputTags);
+                    $rootScope.$broadcast('tagChange', {'type' : $scope.type, 'tags' : $scope.inputTags});
                     return $scope.tagText = '';
                 };
-
-                $scope.checkTag = function(tag) {
+                $scope.checkTag = function (tag) {
                     if ($scope.autocomplete.indexOf(tag) !== -1) {
                         return true;
                     }
                     return false;
                 };
-
                 $scope.deleteTag = function (key) {
                     var tagArray;
                     var tag = '';
@@ -91,9 +95,11 @@
                             tag = tagArray.splice(key, 1)[0];
                         }
                     }
-                    if (tag.length > 1 && $scope.type == 'candidate')Factory.removeTag($scope.canId, tag);
+                    if (tag.length > 1 && $scope.type == 'candidate') {
+                        Factory.removeTag($scope.canId, tag);
+                    }
                     $scope.inputTags = tagArray.join(',');
-                    $rootScope.$broadcast('tagChange', $scope.inputTags);
+                    $rootScope.$broadcast('tagChange', {'type' : $scope.type, 'tags' : $scope.inputTags});
                     return $scope.inputTags;
                 };
                 $scope.$watch('tagText', function (newVal, oldVal) {
@@ -107,6 +113,13 @@
                         return tempEl.remove();
                     }
                 });
+                $scope.$watch(function () {
+                    return $scope.time
+                }, function (newVal, oldVal) {
+                    if (newVal !== oldVal) {
+                        $scope.empty($scope.inputTags);
+                    }
+                })
                 element.bind('keydown', function (e) {
                     var key;
                     key = e.which;
