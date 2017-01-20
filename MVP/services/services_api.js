@@ -562,6 +562,9 @@ app.factory('Factory', ['$http', 'config', '$cookies', function ($http, config, 
             , data: data
         });
     }
+    dataFactory.getAryaIndustriesList = function(){
+        return $http.get(urlAPI + '/Requisition/getAryaIndustriesList/6');
+    }
     return dataFactory;
  }]);
 app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$location', '$window', 'config', '$cookies', function (Factory, sharedProperties, $uibModal, $location, $window, config, $cookies) {
@@ -634,6 +637,18 @@ app.factory('commonFunctions', ['Factory', 'sharedProperties', '$uibModal', '$lo
         $uibModal.open({
             animation: true
             , templateUrl: 'LoadError.html'
+            , controller: 'LoadError'
+            , resolve: {
+                message: function () {
+                    return message;
+                }
+            }
+        })
+    }
+        commonFunctions.tagInputError = function (message) {
+        $uibModal.open({
+            animation: true
+            , templateUrl: 'TagInput.html'
             , controller: 'LoadError'
             , resolve: {
                 message: function () {
