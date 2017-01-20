@@ -111,9 +111,10 @@ app.controller('engagementperIDRequisitionController', ['$scope', 'Factory', 'sh
         }
     }, true);
 }]);
-app.controller('ModalCancel', ['$uibModalInstance', 'url', '$scope', '$sce', function ($uibModalInstance, url, $scope, $sce) {
+app.controller('ModalCancel', ['$uibModalInstance', 'url','$rootScope', '$scope', '$sce', function ($uibModalInstance, url, $rootScope, $scope, $sce) {
     $scope.iframeUrl = $sce.trustAsResourceUrl(url);
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
+        $rootScope.$emit("callViewCandidates", {});
     }
 }])

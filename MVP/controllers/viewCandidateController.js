@@ -1,4 +1,4 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
+app.controller('viewCandidateController', ['$rootScope', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($rootScope, $scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
     /** -- Scope function definitons -- **/
@@ -199,6 +199,10 @@ $scope.confirmPopup = function(){
             , size: 'lg'
         });
     }
+ $rootScope.$on("callViewCandidates", function(){
+            var row = sharedProperties.getCandidateListDetails();
+          viewCandidates(row.id);
+ });
  $scope.updateCandidate = function(candidateID){
             var urlLink = commonFunctions.getIframeUrl('editCandidateLoop');
             var urliframJoin = commonFunctions.getIframeUrl('iframeTrue')
