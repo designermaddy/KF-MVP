@@ -101,6 +101,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
            // var arridPush= [];
             //arridPush.push(id);
           sharedProperties.setViewCandidateId(id);
+            $rootScope.$emit("callViewCandidates", {});
           $('#candidatelistid').hide();
           $('#reqCanDet').show();
         }
