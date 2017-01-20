@@ -1,4 +1,4 @@
-app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout','$uibModal', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout, $uibModal) {
+app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$filter', 'filterFilter', 'commonFunctions', 'sharedProperties','$timeout','$uibModal','$rootScope', function ($scope, Factory, filter, filterFilter, commonFunctions, sharedProperties, $timeout, $uibModal,$rootScope) {
 
         $scope.viewLoading = false;
         $scope.search = {};
@@ -101,6 +101,7 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
            // var arridPush= [];
             //arridPush.push(id);
           sharedProperties.setViewCandidateId(id);
+            $rootScope.$emit("callViewCandidates", {});
           $('#candidatelistid').hide();
           $('#reqCanDet').show();
         }
@@ -160,5 +161,8 @@ app.controller('requisitionCandidateListController', ['$scope', 'Factory', '$fil
 	 $scope.refreshCanditates = function() {
        agingRequisitionList();
     }
+	 $rootScope.$on('callCanditateList',function(){
+		agingRequisitionList();
+	 });
 
 }]);

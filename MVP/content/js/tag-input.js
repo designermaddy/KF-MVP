@@ -61,7 +61,7 @@
                         return;
                     }
                     if (!$scope.checkTag($scope.tagText)) {
-                        commonFunctions.error($scope.tagText + ' -- No such tag exists. Please select one of the tags from Dropdown.');
+                        commonFunctions.tagInputError($scope.tagText + ' -- No such tag exists. Please select one of the tags from Dropdown.');
                         return;
                     }
                     if ($scope.type == 'candidate') {

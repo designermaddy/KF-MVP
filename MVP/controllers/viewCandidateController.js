@@ -1,10 +1,12 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
+app.controller('viewCandidateController', ['$rootScope', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', 'config', function ($rootScope, $scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal,config) {
+
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
     $scope.type = "candidate"
     /** -- Scope function definitons -- **/
     $scope.backCandidateList = function () {
         $('#candidatelistid').show();
+		$rootScope.$emit("callCanditateList", {});
         $('#reqCanDet').hide();
     };
     $scope.saveNotes = function () {
@@ -16,6 +18,7 @@ app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedPropertie
         promise.then(function resolved(response) {
             if (response.data.candidateNotes) {
                 $scope.notes = response.data.candidateNotes;
+                config.notes = $scope.notes;
                 if ($scope.notes.length >= 2) {
                     $scope.noteValue1 = $scope.notes[$scope.notes.length - 2]
                     $scope.noteValue2 = $scope.notes[$scope.notes.length - 1]
@@ -200,6 +203,17 @@ $scope.confirmPopup = function(){
             , size: 'lg'
         });
     }
+ $rootScope.$on("callViewCandidates", function(){
+            var row = sharedProperties.getCandidateListDetails();
+        if(row.length > 1){
+          viewCandidates(row.id);
+        }
+        else {
+            var id = sharedProperties.getViewCandidateId();
+            viewCandidates(id);
+        }
+
+ });
  $scope.updateCandidate = function(candidateID){
             var urlLink = commonFunctions.getIframeUrl('editCandidateLoop');
             var urliframJoin = commonFunctions.getIframeUrl('iframeTrue')

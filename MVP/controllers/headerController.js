@@ -64,7 +64,7 @@ if (authToken!==undefined){
                    angular.forEach(cookies, function (v, k) {
                    $cookies.remove(k);
             });
-				   window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
+				   window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout?return="+config.loginUrl
                 }
               },
               function rejected(response) {
@@ -151,7 +151,7 @@ function getAccessToken() {
       $scope.$on('IdleTimeout', function() {
         closeModals();
 		//$scope.logOut();
-          // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout"
+          // window.location.href = config.logOutUrl+"/Shibboleth.sso/Logout?return="+config.loginUrl
 
           /* $scope.timedout = $uibModal.open({
           templateUrl: 'timedout-dialog.html',
