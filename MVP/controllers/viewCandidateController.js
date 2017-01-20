@@ -1,9 +1,12 @@
-app.controller('viewCandidateController', ['$rootScope', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($rootScope, $scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
+app.controller('viewCandidateController', ['$rootScope', '$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', 'config', function ($rootScope, $scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal,config) {
+
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
+    $scope.type = "candidate"
     /** -- Scope function definitons -- **/
     $scope.backCandidateList = function () {
         $('#candidatelistid').show();
+		$rootScope.$emit("callCanditateList", {});
         $('#reqCanDet').hide();
     };
     $scope.saveNotes = function () {
@@ -15,6 +18,7 @@ app.controller('viewCandidateController', ['$rootScope', '$scope', 'Factory', 's
         promise.then(function resolved(response) {
             if (response.data.candidateNotes) {
                 $scope.notes = response.data.candidateNotes;
+                config.notes = $scope.notes;
                 if ($scope.notes.length >= 2) {
                     $scope.noteValue1 = $scope.notes[$scope.notes.length - 2]
                     $scope.noteValue2 = $scope.notes[$scope.notes.length - 1]
