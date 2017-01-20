@@ -1,9 +1,10 @@
-app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal) {
+app.controller('viewCandidateController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','$uibModal','$rootScope', function ($scope, Factory, sharedProperties, commonFunctions, $sce, $uibModal,$rootScope) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.alltags = [];
     /** -- Scope function definitons -- **/
     $scope.backCandidateList = function () {
         $('#candidatelistid').show();
+		$rootScope.$emit("callCanditateList", {});
         $('#reqCanDet').hide();
     };
     $scope.saveNotes = function () {
