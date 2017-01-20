@@ -205,7 +205,14 @@ $scope.confirmPopup = function(){
     }
  $rootScope.$on("callViewCandidates", function(){
             var row = sharedProperties.getCandidateListDetails();
+        if(row.length > 1){
           viewCandidates(row.id);
+        }
+        else {
+            var id = sharedProperties.getViewCandidateId();
+            viewCandidates(id);
+        }
+
  });
  $scope.updateCandidate = function(candidateID){
             var urlLink = commonFunctions.getIframeUrl('editCandidateLoop');
