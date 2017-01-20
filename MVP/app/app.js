@@ -73,6 +73,8 @@ app.run(function ($rootScope, $window, $location) {
         $window.ga('create', 'UA-70288511-2', 'auto');
         $rootScope.$on('$stateChangeSuccess', function (event) {
             $(function () {
+                $window.ga('set', 'dimension1', 'Korn Ferry');
+                $window.ga('set', 'dimension2', "123");
                 $window.ga('send', 'pageview', $location.path());
                 var content = $('.ContentBox').height();
                 var sidebar = $('.SideBar').height();

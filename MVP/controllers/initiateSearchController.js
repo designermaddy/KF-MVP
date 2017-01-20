@@ -58,7 +58,7 @@
                     }
                     vm.data.ReqNumber = requisitionNumber;
                     vm.tags = vm.data.industries ? vm.data.industries : '';
-                    if (sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0") {
+                    if ((sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0")||(sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/3")) {
                         var change = sharedProperties.getRequisitionDetails();
                         vm.data.JobTitle = vm.data.searchName = change.JobTitle;
                         vm.data.job_client = change.Client;
