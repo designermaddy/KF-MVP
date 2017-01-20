@@ -1,4 +1,4 @@
-app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce', function ($scope, Factory, sharedProperties, commonFunctions, $sce) {
+app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedProperties', 'commonFunctions', '$sce','config','$rootScope', function ($scope, Factory, sharedProperties, commonFunctions, $sce, config, $rootScope) {
     $scope.id = sharedProperties.getViewCandidateId();
     $scope.position = sharedProperties.getPositionId();
     $scope.ns = $scope.date = {};
@@ -75,6 +75,11 @@ app.controller('candidateDetailsTabController', ['$scope', 'Factory', 'sharedPro
         $scope.indextab = newValue.activeTab;
         getNotes();
     })
+    $rootScope.$watch(function() {return config.notes}, function() {
+        // do something here
+        //config.searcherReq
+       getNotes();
+    }, true);
 	 /**Refresh Requisitions Canditates History**/
 	 $scope.refreshHistory = function() {
        getHistory();
