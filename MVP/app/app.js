@@ -69,12 +69,16 @@ app.run(function ($http, sharedProperties, $cookies, config, Factory, commonFunc
     //sharedProperties.setAuthGlobalToken(authToken)
     //var authToken = "ZW1haWw6U2VldGhhaWFoTUBoZXhhd2FyZS5jb20sZGVzaWduYXRpb246bnVsbCxpZHBVc2VySWQ6NTYxN2RmMjAtYTg2NS00Yjk3LWFjODAtYmNiZTllZDA2NDQwLGFyeWFVc2VySWQ6bnVsbCxhcnlhUGFzc3dvcmQ6bnVsbCxhY3RpdmF0ZVVzZXJJZDpudWxsLGFjdGl2YXRlUGFzc3dvcmQ6bnVsbCxuYW1lOm51bGwsZmlyc3ROYW1lOm51bGwsbGFzdE5hbWU6bnVsbCxkaXNwbGF5TmFtZTpudWxsLA=="
 });
-app.run(function ($rootScope, $window, $location) {
+app.run(function ($rootScope, $window, $location, sharedProperties) {
         $window.ga('create', 'UA-70288511-2', 'auto');
         $rootScope.$on('$stateChangeSuccess', function (event) {
             $(function () {
-                $window.ga('set', 'dimension1', 'Korn Ferry');
-                $window.ga('set', 'dimension2', "123");
+                var email = sharedProperties.getEmailID();
+                var domain = email.replace(/.*@/, "");
+               var domainName = domain.substring(0, domain.lastIndexOf("."))
+                //alert(domainName+"  "+email);
+                $window.ga('set', 'dimension1', domainName);
+                $window.ga('set', 'dimension2', email );
                 $window.ga('send', 'pageview', $location.path());
                 var content = $('.ContentBox').height();
                 var sidebar = $('.SideBar').height();
