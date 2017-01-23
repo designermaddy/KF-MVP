@@ -135,7 +135,7 @@
             //this.Location = vm.criteria.Location
             this.ZipCode = vm.data.ZipCode;
             //this.ZipCode = vm.criteria.ZipCode
-            this.Country = vm.data.Country;
+            this.Country = vm.data.Country.CountryName;
             this.MinExp = 0.0;
             this.MaxExp = 0.0;
             this.NoOfPositions = vm.data.NoOfPositions;

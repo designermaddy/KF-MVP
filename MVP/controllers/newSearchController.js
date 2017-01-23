@@ -203,7 +203,9 @@ app.controller('newSearchController', ['$scope', 'Factory', '$location', 'shared
         for (var key in $scope.freeSearch) {
             if (data[key] !== undefined) data[key] = $scope.freeSearch[key];
         }
-        data.Country = $scope.freeSearch.country.Country;
+        if($scope.freeSearch.country){
+        data.Country = $scope.freeSearch.country.CountryName;
+        }
         data.ClientJobID = "MANUAL - " + $scope.freeSearch.JobTitle;
         return data;
     }
