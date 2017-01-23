@@ -190,6 +190,8 @@
             }
         };
         vm.cancelButton = function () {
+            var data={};
+            sharedProperties.setInitiateSearchData(data)
             var redirect = sharedProperties.getWhereFromInitiateSearch();
             $location.path(redirect);
         }
