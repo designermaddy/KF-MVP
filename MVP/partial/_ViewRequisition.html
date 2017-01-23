@@ -28,7 +28,7 @@
                                         {{item.Source}}
                                         {{item.StartDate}} - {{item.EndDate}}
                                     </div>
-                                    <div class="ViewBoxDays {{item.Data.data[0].color}}">Days Open :{{item.Data.data[0].open_days}}
+                                    <div class="ViewBoxDays {{item.Data.data[0].color}}">Days Open: {{item.Data.data[0].open_days}}
                                     </div>
                                     <div class="ViewBoxStatus FormSelect" ng-if="item.engagementType == 'RPO'" >
                                         <select class="form-control" id="requisitionStatus" ng-change="updateStatus()" ng-model="item.status">
