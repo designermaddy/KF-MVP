@@ -32,6 +32,16 @@
         $timeout(function () {
             $('#searchHeader').addClass('active');
         }, 100);
+        var getCountries = function () {
+            var promise = Factory.getCountries();
+            promise.then(function resolved(response) {
+                var countries = response.data.Country;
+                vm.countryList = countries.map(function (item) {
+                    return item;
+                });
+            }, function rejected(response) {})
+        }
+        getCountries();
         var getreq = function (a) {
             var requisitionNumber = sharedProperties.getRequisitionDetails().ReqNumber
             var savedSearchDetails = sharedProperties.getSavedSearchDetails();
@@ -58,7 +68,7 @@
                     }
                     vm.data.ReqNumber = requisitionNumber;
                     vm.tags = vm.data.industries ? vm.data.industries : '';
-                    if ((sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0")||(sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/3")) {
+                    if ((sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/0") || (sharedProperties.getWhereFromInitiateSearch() == "RequisitionDetails/3")) {
                         var change = sharedProperties.getRequisitionDetails();
                         vm.data.JobTitle = vm.data.searchName = change.JobTitle;
                         vm.data.job_client = change.Client;
