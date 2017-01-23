@@ -63,7 +63,7 @@ app.controller('jobProfileController', ['$uibModal', '$scope', 'Factory', 'commo
         var checked = $('input:checked');
         var data = [];
         var dataPost = {};
-        for (var i = 0; i < checked.length - 1; i++) {
+        for (var i = 0; i < checked.length; i++) {
             //sdata.push(checked[i].value.split(','));
             var splitToArray = checked[i].value.split(',');
             // cart.push({element: element});
